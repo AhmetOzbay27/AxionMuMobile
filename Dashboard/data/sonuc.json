@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 23:55:00",
+  "updated": "2026-10-01 00:05:00",
   "status": "ok",
-  "text": "2b.2-F dalga 6 TAMAM (G4): 8 dosya alindi (GameMaster, ItemLevel, Log, EventHideAndSeek, ShopManager, SetItemType, 380ItemOption, ItemBagEx — whitespace + guvenli declare'lar, donor-birebir dogrulandi), 19 dosya gerekceli korundu (SPK-imlec: ChaosBox/CustomAttack/GameServer/User/Viewport; NORMALIZE_LEVEL: BloodCastle/DevilSquare/IllusionTemple; cascade dersi: Helper/QuestReward derlemeyle yakalanip geri alindi; enum kaymasi: SetItemOption/SocketItemOption). GS temiz -> 10.776.064 B (23:54). Kalan: G5 (31 dosya) + faz kapanisi."
+  "text": "2b.2-G dalga 7 TAMAM (G5) — 2b.2'NIN TÜM BANTLARI KAPANDI (7 dalga): JewelMix (semantik-ozdes, whitespace-testi) ve 380ItemType+h (Export-zinciri: 380ItemOption+SafeGetItem+PackFileEncrypt hazirdi) alindi; 17 dosya gerekceli korundu (CustomStore 83 SPK-imlec, Protect 42+35, ServerDisplayer 52, ResetTable 42, DarkSpirit CustomArena, ItemOptionRate CustomWing, Party 5 bizim-tekil metot, ItemBagManager DropReward...). 2b.2 GENEL: 213 dosyanin 66'si alindi, 147'si gerekceli korundu, 0 belirsiz. GS temiz -> 10.775.552 B (23:59). Kalan: faz 2b kapanisi (docs/00+02 final + pano) -> 2b.3."
 }

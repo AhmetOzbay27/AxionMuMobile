@@ -7,6 +7,49 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-G — G5 bandı dalga 7: 2 dosya alındı, 17 dosya gerekçeli korundu — 2b.2 TÜM BANTLAR KAPANDI
+
+**Ne yapıldı**
+- G5'in 31 dosyasından 12'si önceki dalgalarda kararlıydı (5 kanca dosyası
+  ServerInfo/ItemManager/CommandManager/ObjectManager/Attack — 2b.0 koruması;
+  Util/ServerInfo dalga 3-4; MonsterSetBase dalga 2; CustomJewel/CustomBuyVip/
+  CustomEventTime/BotAlchemist E-kalemleri). Kalan 19 dosya profillendi
+  (SPK-imleç + alarm + bizim-tekil metot taraması).
+- **Alındı (2):**
+  - **JewelMix:** güçlü normalize testi (tüm whitespace silindi) semantik
+    özdeşlik gösterdi — tek fark GlobalText (bizim alias'la uyumlu). Donor-birebir.
+  - **380ItemType(+h):** donor ExportXML/ExportBMD zinciri TAMAMLANMADI;
+    bağımlılıkları 380ItemOption.GetValue (dalga 6) + SafeGetItem (bizim
+    Util.h:6) + PackFileEncrypt (dalga 3) — hepsi mevcut. ITEM_ADD_OPTION
+    typedef'i donor .h'den geldi (çakışma yok — diğer .h'lerde tanım yok).
+- **Gerekçeli korundu (17):**
+  - SPK-imleç yoğun: CustomStore(83), Protect(42 SPK+35 alarm),
+    ServerDisplayer(52), ResetTable(42), CustomWing(25), CustomMix(19),
+    CustomStartItem(10), SkillManager(17), Trade(17), PersonalShop(6).
+  - Modül-bağlantılı: DarkSpirit (bizim CustomArena damage-rate entegrasyonu),
+    ItemOptionRate (gCustomWing.CheckCustomWingByItem çağrısı bizim-sürümden),
+    Party (5 bizim-tekil metot: CGPartyListRecv2/GCPartyLifeSend2/
+    GCPartyListSend2/GetLevel/SetLeader), ItemBagManager (bizim DropReward
+    entegrasyonu donorde yok).
+  - GetLevel zinciri: Move(2), Quest(2) — dalga-3 Gate kararıyla aynı.
+  - Diğer: JewelMix dışında mantık-yapısal fark içeren tüm G5 dosyaları bizim
+    tabanla kaldı (2c'de canlı-kanıtla değerlendirilecek).
+
+**Neden** — G5 kuralı: iki farklı dal; satır satır çözümleme. SPK-özel
+entegrasyonların (CustomArena, CustomWing, DropReward, ResetTable Türkçe
+seviye tabloları) donorde karşılığı yok.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.775.552 B** (23:59), pdb güncel;
+- JewelMix/380ItemType donor-birebir (cmp); ITEM_ADD_OPTION çakışması yok.
+
+**2b.2 GENEL ÖZET (7 dalga):** 213 ortak dosyanın tamamı işlendi — 66 dosya
+donor'dan alındı (birçoğu adaptasyonla), 147 dosya gerekçeli bizim korundu,
+0 dosya belirsiz kaldı. Tüm kararlar canlı-kanıt/bağımlılık-zincir analiziyle
+verildi; her dalga derleme + CHANGELOG + commit ile kapatıldı.
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-F — G4 bandı dalga 6: 8 dosya alındı, 19 dosya gerekçeli korundu
 
 **Ne yapıldı**

@@ -97,7 +97,13 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     BloodCastle/DevilSquare/IllusionTemple; cascade: Helper/QuestReward derlemeyle
     yakalandı-geri alındı; enum/layout: SetItemOption/SocketItemOption;
     CastleSiege 2c'ye). GS temiz → 10.776.064 B.
-  - ⬜ 2b.2-G: G5 (31 dosya, iki farklı dal)
+  - ✅ **2b.2-G dalga 7** (30.09.2026): G5 bandı — 2 dosya alındı (JewelMix
+    semantik-özdeş, 380ItemType+h Export-zinciri tamamlandı), 17 gerekçeli
+    korundu (CustomStore/Protect/ServerDisplayer/ResetTable SPK-imleç,
+    DarkSpirit/ItemOptionRate/Party/ItemBagManager modül-bağlantılı,
+    Move/Quest GetLevel-zinciri). GS temiz → 10.775.552 B.
+    **2b.2 TAMAMLANDI (7 dalga): 66 dosya alındı, 147 gerekçeli korundu,
+    0 belirsiz.**
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.
