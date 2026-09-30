@@ -21,7 +21,7 @@
 - Doğrulama: /api/agent sohbet alanı döndürüyor; panelde 14 kayıt render
   ediliyor (Preview ekran görüntüsü onaylı).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `31ddb6a20`
 
 ## [26.09.30] Pano v4 — ajan köprüsü: panodan komut verme
 
