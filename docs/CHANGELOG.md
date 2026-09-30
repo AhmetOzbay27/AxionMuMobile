@@ -487,3 +487,14 @@ run) algoritması oldu (pdb_scan.ps1).
 - CHANGELOG: bu kayıt
 
 **Commit** — (bu kayıtla birlikte)
+
+## [26.09.30] Pano v5.1 — ilk gerçek kullanıcı komutu işlendi
+
+**Ne yapıldı**
+- Kullanıcı panodan ilk komutunu gönderdi: "deneme yapalım çalışıyormu"
+  (20:15:29, id c276aa5c). Ajan kuyruktan işledi, sonucu sonuc.json'a yazdı;
+  Sohbet Akışı'na SEN/AJAN kayıtları eklendi.
+- Akış doğrulandı: pano POST → kuyruk → sohbet tetikleyici ("pano") → işleme →
+  panoda sonuç.
+
+**Commit** — (veri dosyası değişimi; kod değişikliği yok, bir sonraki commit ile birlikte)

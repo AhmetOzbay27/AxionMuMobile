@@ -2,6 +2,10 @@
   "updated": "2026-09-30 19:55:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
   "entries": [
+    { "ts": "2026-09-30 20:15", "kim": "kullanıcı", "text": "(Panodan komut) deneme yapalım çalışıyormu" },
+    { "ts": "2026-09-30 20:16", "kim": "ajan", "text": "Deneme komutu kuyruktan işlendi — köprü uçtan uca çalışıyor. Sonuç panoya yazıldı. Protokol hatırlatma: komut → sohbete 'pano' yaz → ajan işler." },
+    { "ts": "2026-09-30 19:55", "kim": "kullanıcı", "text": "Bu sohbeti panodan canlı görebilir miyim?" },
+    { "ts": "2026-09-30 19:55", "kim": "ajan", "text": "Sohbet Akışı paneli eklendi (SEN/AJAN timeline, son 15 kayıt). Commit 31ddb6a20." },
     { "ts": "2026-09-30 19:50", "kim": "kullanıcı", "text": "Panodan bu sohbeti yönetmek, önerileri takip edip direkt komut vermek istiyorum." },
     { "ts": "2026-09-30 19:50", "kim": "ajan", "text": "Ajan Köprüsü kuruldu: öneri kartları + PIN'li komut kuyruğu + sonuç paneli. PIN: Dashboard\\data\\pin.txt. Kullanım: panodan komut ver → sohbete 'pano' yaz → ajan işler. Commit 60dc4cddd." },
     { "ts": "2026-09-30 19:20", "kim": "kullanıcı", "text": "Daha güzel tasarım; girişte amacımızı/hedefimizi yazalım, plandan sapmayalım." },
