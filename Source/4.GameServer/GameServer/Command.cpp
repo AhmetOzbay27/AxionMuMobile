@@ -14,7 +14,7 @@ CCommand gCommand;
 
 CCommand::CCommand() // OK
 {
-	memset(this->m_DefaultCommand,0,sizeof(this->m_DefaultCommand));
+	memset(this->m_DefaultCommand, 0, sizeof(this->m_DefaultCommand));
 
 	this->m_CommandInfo.clear();
 }
@@ -28,13 +28,13 @@ void CCommand::Load(char* path) // OK
 {
 	CMemScript* lpMemScript = new CMemScript;
 
-	if(lpMemScript == 0)
+	if (lpMemScript == 0)
 	{
-		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR,path);
+		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR, path);
 		return;
 	}
 
-	if(lpMemScript->SetBuffer(path) == 0)
+	if (lpMemScript->SetBuffer(path) == 0)
 	{
 		ErrorMessageBox(lpMemScript->GetLastError());
 		delete lpMemScript;
@@ -45,14 +45,14 @@ void CCommand::Load(char* path) // OK
 
 	try
 	{
-		while(true)
+		while (true)
 		{
-			if(lpMemScript->GetToken() == TOKEN_END)
+			if (lpMemScript->GetToken() == TOKEN_END)
 			{
 				break;
 			}
 
-			if(strcmp("end",lpMemScript->GetString()) == 0)
+			if (strcmp("end", lpMemScript->GetString()) == 0)
 			{
 				break;
 			}
@@ -61,7 +61,7 @@ void CCommand::Load(char* path) // OK
 
 			info.Index = lpMemScript->GetNumber();
 
-			strcpy_s(info.Command,lpMemScript->GetAsString());
+			strcpy_s(info.Command, lpMemScript->GetAsString());
 
 			info.Enable[0] = lpMemScript->GetAsNumber();
 
@@ -121,10 +121,10 @@ void CCommand::Load(char* path) // OK
 
 			info.Coin3 = lpMemScript->GetAsNumber();
 
-			this->m_CommandInfo.insert(std::pair<int,COMMAND_LIST>(info.Index,info));
+			this->m_CommandInfo.insert(std::pair<int, COMMAND_LIST>(info.Index, info));
 		}
 	}
-	catch(...)
+	catch (...)
 	{
 		ErrorMessageBox(lpMemScript->GetLastError());
 	}
@@ -134,11 +134,11 @@ void CCommand::Load(char* path) // OK
 
 char* CCommand::GetCommand(int index) // OK
 {
-	std::map<int,COMMAND_LIST>::iterator it = this->m_CommandInfo.find(index);
+	std::map<int, COMMAND_LIST>::iterator it = this->m_CommandInfo.find(index);
 
-	if(it == this->m_CommandInfo.end())
+	if (it == this->m_CommandInfo.end())
 	{
-		wsprintf(this->m_DefaultCommand,"Could not find message %d!",index);
+		wsprintf(this->m_DefaultCommand, "Could not find message %d!", index);
 		return this->m_DefaultCommand;
 	}
 	else
@@ -147,11 +147,11 @@ char* CCommand::GetCommand(int index) // OK
 	}
 }
 
-bool CCommand::GetInfo(int index,COMMAND_LIST* lpInfo) // OK
+bool CCommand::GetInfo(int index, COMMAND_LIST* lpInfo) // OK
 {
-	std::map<int,COMMAND_LIST>::iterator it = this->m_CommandInfo.find(index);
+	std::map<int, COMMAND_LIST>::iterator it = this->m_CommandInfo.find(index);
 
-	if(it == this->m_CommandInfo.end())
+	if (it == this->m_CommandInfo.end())
 	{
 		return 0;
 	}
@@ -162,11 +162,11 @@ bool CCommand::GetInfo(int index,COMMAND_LIST* lpInfo) // OK
 	}
 }
 
-bool CCommand::GetInfoByName(char* label,COMMAND_LIST* lpInfo) // OK
+bool CCommand::GetInfoByName(char* label, COMMAND_LIST* lpInfo) // OK
 {
-	for(std::map<int,COMMAND_LIST>::iterator it=this->m_CommandInfo.begin();it != this->m_CommandInfo.end();it++)
+	for (std::map<int, COMMAND_LIST>::iterator it = this->m_CommandInfo.begin(); it != this->m_CommandInfo.end(); it++)
 	{
-		if(_stricmp(it->second.Command,label) == 0)
+		if (_stricmp(it->second.Command, label) == 0)
 		{
 			(*lpInfo) = it->second;
 			return 1;

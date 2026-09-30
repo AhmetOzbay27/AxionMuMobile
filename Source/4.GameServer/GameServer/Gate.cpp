@@ -21,7 +21,7 @@ CGate::CGate() // OK
 
 CGate::~CGate() // OK
 {
-
+	this->m_GateInfo.clear();
 }
 
 void CGate::Load(char* path) // OK
@@ -87,7 +87,7 @@ void CGate::Load(char* path) // OK
 
 			info.AccountLevel = lpMemScript->GetAsNumber();
 
-			this->m_GateInfo.insert(std::pair<int,GATE_INFO>(info.Index,info));
+			this->m_GateInfo.insert(type_map_gate::value_type(info.Index,info));
 		}
 	}
 	catch(...)
@@ -98,9 +98,53 @@ void CGate::Load(char* path) // OK
 	delete lpMemScript;
 }
 
+void CGate::ExportXML(std::string filename)
+{
+}
+
+void CGate::ExportBMD(std::string filename)
+{
+	int Size = sizeof(GATE_ATTRIBUTE);
+	std::vector<GATE_ATTRIBUTE> _ReqInfo(MAX_GATES);
+
+	for (type_map_gate::iterator it = m_GateInfo.begin(); it != m_GateInfo.end(); it++)
+	{
+		GATE_INFO* s = &it->second;
+
+		if (s->Index < 0 || s->Index >= MAX_GATES)
+			continue;
+
+		GATE_ATTRIBUTE info;
+
+		info.Flag = s->Flag;
+
+		info.iMap = s->Map;
+
+		info.X = s->X;
+
+		info.Y = s->Y;
+
+		info.TX = s->TX;
+
+		info.TY = s->TY;
+
+		info.Target = s->TargetGate;
+
+		info.Angle = s->Dir;
+
+		info.MINLevel = s->MinLevel;
+
+		info.MAXLevel = s->MaxLevel;
+
+		_ReqInfo[s->Index] = (info);
+	}
+
+	PackFileEncrypt(filename.c_str(), (BYTE*)_ReqInfo.data(), MAX_GATES, Size, 0, false, false);
+}
+
 bool CGate::GetInfo(int index,GATE_INFO* lpInfo) // OK
 {
-	std::map<int,GATE_INFO>::iterator it = this->m_GateInfo.find(index);
+	type_map_gate::iterator it = this->m_GateInfo.find(index);
 
 	if(it == this->m_GateInfo.end())
 	{
@@ -168,12 +212,12 @@ bool CGate::IsInGate(LPOBJ lpObj,int index) // OK
 		return 0;
 	}
 
-	if(info.MinLevel != -1 && lpObj->Level < this->GetMoveLevel(lpObj,info.Map,info.MinLevel))
+	if(info.MinLevel != -1 && lpObj->Level < this->GetMoveLevel(lpObj,info.Map,info.MinLevel)) // SPK (Faz 2b.2-C): donor GetLevel() yerine Level — OBJECTSTRUCT::GetLevel/m_ServerLeveAddMaster chain'i bizde yok, donor defaultunda da Level ile aynı
 	{
 		return 0;
 	}
 
-	if(info.MaxLevel != -1 && lpObj->Level > info.MaxLevel)
+	if(info.MaxLevel != -1 && lpObj->Level > info.MaxLevel) // SPK (Faz 2b.2-C): donor GetLevel() yerine Level
 	{
 		return 0;
 	}

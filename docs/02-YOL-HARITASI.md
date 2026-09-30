@@ -70,7 +70,14 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     (CTCMini klasörü) bizim tarafı doğruluyor → **donör protokol alımı yok**,
     bizim taban korunur. Donör SocketManager bağımlılığı (BlackList+APIGameGuard)
     2c'ye not edildi.
-  - ⬜ 2b.2-C..D: G2 → G3/G4 (SPK korumalı) → G5
+  - ✅ **2b.2-C dalga 3** (30.09.2026): G2'nin 24 dosyası incelendi → 7 alındı
+    (CrywolfStatue, CrywolfAltar, Gate+h, ItemDrop+h, ItemMove+h, Command +
+    Util'e PackFileEncrypt zinciri), 15 gerekçeli korundu (HackCheck güvenlik
+    anahtarları, ChaosCastle/Kalima NORMALIZE_LEVEL chain'i yok, CashShop/Duel/
+    EffectManager/CustomCombo/CustomNpcQuest/MapManager/CustomMove bağımlılık,
+    Warehouse/ItemOption/MemScript G3'e, ItemValue/ItemValueTrade Level-stacking
+    kanıtsız). Detay: CHANGELOG 2b.2-C. GS derlemesi temiz → 10.781.184 B.
+  - ⬜ 2b.2-D..E: G3 → G4 (SPK korumalı) → G5
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.

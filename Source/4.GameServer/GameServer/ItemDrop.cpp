@@ -107,6 +107,68 @@ void CItemDrop::Load(char* path) // OK
 	delete lpMemScript;
 }
 
+void CItemDrop::ExportXML(std::string filename)
+{
+	pugi::xml_node leaf;
+
+	pugi::xml_document doc;
+
+	pugi::xml_node root = doc.append_child("ItemDrop");
+
+	for (int i = 0; i < m_ItemDropInfo.size(); i++)
+	{
+		ITEM_DROP_INFO* info = &m_ItemDropInfo[i];
+
+		if (info)
+		{
+			leaf = root.append_child("Info");
+
+			leaf.append_attribute("Index").set_value(info->Index);
+
+			leaf.append_attribute("Level").set_value(info->Level);
+
+			leaf.append_attribute("Grade").set_value(info->Grade);
+
+			leaf.append_attribute("Option0").set_value(info->Option0);
+
+			leaf.append_attribute("Option1").set_value(info->Option1);
+
+			leaf.append_attribute("Option2").set_value(info->Option2);
+
+			leaf.append_attribute("Option3").set_value(info->Option3);
+
+			leaf.append_attribute("Option4").set_value(info->Option4);
+
+			leaf.append_attribute("Option5").set_value(info->Option5);
+
+			leaf.append_attribute("Option6").set_value(info->Option6);
+
+			leaf.append_attribute("Duration").set_value(info->Duration);
+
+			leaf.append_attribute("MapNumber").set_value(info->MapNumber);
+
+			leaf.append_attribute("MonsterClass").set_value(info->MonsterClass);
+
+			leaf.append_attribute("MonsterLevelMin").set_value(info->MonsterLevelMin);
+
+			leaf.append_attribute("MonsterLevelMax").set_value(info->MonsterLevelMax);
+
+			leaf.append_attribute("DropRate").set_value(info->DropRate);
+
+			if (info->Index != -1)
+			{
+				leaf.append_attribute("Comment").set_value(gItemManager.GetItemName(info->Index));
+			}
+			else
+			{
+				leaf.append_attribute("Comment").set_value(" ");
+			}
+		}
+	}
+
+	doc.save_file(filename.c_str());
+}
+
 int CItemDrop::DropItem(LPOBJ lpObj,LPOBJ lpTarget) // OK
 {
 	CRandomManager RandomManager;
@@ -195,7 +257,7 @@ int CItemDrop::DropItem(LPOBJ lpObj,LPOBJ lpTarget) // OK
 
 int CItemDrop::GetItemDropRate(LPOBJ lpObj,LPOBJ lpTarget,int ItemIndex,int ItemLevel,int DropRate) // OK
 {
-	if(ItemIndex == GET_ITEM(12,15) || ItemIndex == GET_ITEM(14,13) || ItemIndex == GET_ITEM(14,14) || ItemIndex == GET_ITEM(14,16) || ItemIndex == GET_ITEM(14,22) || ItemIndex == GET_ITEM(14,31))
+	if(ItemIndex == GET_ITEM(12,25) || ItemIndex == GET_ITEM(14,13) || ItemIndex == GET_ITEM(14,14) || ItemIndex == GET_ITEM(14,16) || ItemIndex == GET_ITEM(14,22) || ItemIndex == GET_ITEM(14,31))
 	{
 		if(gCrywolfSync.CheckApplyPenalty() != 0 && gCrywolfSync.GetOccupationState() == 1)
 		{

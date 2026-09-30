@@ -68,7 +68,7 @@ void CItemMove::Load(char* path) // OK
 
 			info.AllowVault = lpMemScript->GetAsNumber();
 
-			this->m_ItemMoveInfo.insert(std::pair<int,ITEM_MOVE_INFO>(info.Index,info));
+			this->m_ItemMoveInfo.insert(type_move_item::value_type(info.Index,info));
 		}
 	}
 	catch(...)
@@ -77,6 +77,46 @@ void CItemMove::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+}
+
+void CItemMove::ExportXML(std::string filename)
+{
+	pugi::xml_node leaf;
+
+	pugi::xml_document doc;
+
+	pugi::xml_node root = doc.append_child("ItemMove");
+
+	for (type_move_item::iterator it = m_ItemMoveInfo.begin(); it != m_ItemMoveInfo.end(); it++)
+	{
+		ITEM_MOVE_INFO* info = &it->second;
+
+		if (info)
+		{
+			leaf = root.append_child("Info");
+
+			leaf.append_attribute("Index").set_value(info->Index);
+
+			leaf.append_attribute("BanDrop").set_value(info->AllowDrop);
+
+			leaf.append_attribute("BanSell").set_value(info->AllowSell);
+
+			leaf.append_attribute("BanTrade").set_value(info->AllowTrade);
+
+			leaf.append_attribute("BanVaul").set_value(info->AllowVault);
+
+			if (info->Index != -1)
+			{
+				leaf.append_attribute("Comment").set_value(gItemManager.GetItemName(info->Index));
+			}
+			else
+			{
+				leaf.append_attribute("Comment").set_value(" ");
+			}
+		}
+	}
+
+	doc.save_file(filename.c_str());
 }
 
 bool CItemMove::CheckItemMoveAllowDrop(int index) // OK

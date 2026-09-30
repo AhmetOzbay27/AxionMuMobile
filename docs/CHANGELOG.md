@@ -7,6 +7,58 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-C — G2 bandı dalga 3: 7 dosya alındı, 15 dosya gerekçeli korundu
+
+**Ne yapıldı**
+- G2'nin 24 dosyası (docs/10 listesi − Reconnect/E-10) dosya dosya diff incelendi.
+- **Alındı (donor-birebir):** CrywolfStatue, CrywolfAltar (fark yalnız GlobalText
+  — bizim Message.h:20 alias'ıyla uyumlu), ItemDrop(+h), ItemMove(+h), Command
+  (saf whitespace). Donor-tekil ExportXML metotları ve typedef'ler değişimle geldi.
+- **Alındı (2 satır adaptasyon):** Gate(+h) — donor `lpObj->GetLevel()`
+  (OBJECTSTRUCT::GetLevel / m_ServerLeveAddMaster chain'i bizde yok) → bizim
+  `lpObj->Level`; donor defaultunda da Level ile aynı (GetLevel: Level +
+  MasterLevel*ekle-0*). `// SPK (Faz 2b.2-C)` notuyla işaretli. Gate.h donor
+  MAX_GATES=1024 + GATE_ATTRIBUTE + type_map_gate typedef'i aldı (çakışma yok).
+- **Util.cpp/h'ye donor util zinciri eklendi:** BuxConvert + GenerateCheckSum2 +
+  PackFileEncrypt ×2 (donor Util.cpp:708/718/748/762) — Gate ExportBMD zinciri ve
+  G3/G4'teki Export* metotları için ortak bağımlılık. `// SPK (Faz 2b.2-C)` notu.
+- **Gerekçeli korundu (bizim taban, 15 dosya):**
+  - HackCheck: bizim PROTECT_STATE anahtarları (0xF1/0x1A, 0x77) — SPK güvenlik
+    kararı; donor 0x02/gProtect.m_EncMain hattı ALINMADI.
+  - ChaosCastle + Kalima: donor NORMALIZE_LEVEL→gServerInfo.ConvertLevel→
+    m_MaxLevelCharacter chain'i bizde yok; canlı SPK'nın düz seviye tabloları
+    canlı davranış — donor seviye mantığı canlı-kanıtsız.
+  - CashShop: donor m_DelayBuyXShop/BuyXShopTickCount/gShopbuyvip bağımlılıkları
+    bizde yok + canlı ini kanıtı yok; bizim BuyVipDone entegrasyonu (SPK) korunur.
+  - Duel: bizim Fix Dupe + m_DuelArenaAnnounceSwitch korunur; donor StartDuelBit
+    kendi zinciriyle (gObjDuelStart vs) — canlı-kanıt yok.
+  - EffectManager: donor GetActiveBuffCount donor Viewport zincirine bağlı
+    (Viewport bizde eski); bizim GenerateEffectList Viewport'la eşleşiyor.
+  - CustomCombo: bizim CheckOneSkillCombo korunur; donor sürümde yok.
+  - CustomNpcQuest: donor CustomNpcQuestMonsterQtd OBJECTSTRUCT alanı istiyor
+    (bizde yok).
+  - MapManager: donor GetMapCustomPick vb. 7 metot bizim MapManager.h'de yok
+    (donor Custom* config yapısı farkı) — G3'te tek tek.
+  - Warehouse + ItemOption: diff büyük ve içiçe (guild-warehouse, typedef
+    dönüşümleri) → G3 manuel birleştirme havuzuna itildi.
+  - CustomMove: donor 3-arg GetInfoByName(lpObj,message,Npc) + GetLevel() chain
+    istiyor; bizim Protocol.cpp (P0-korumalı) 2-arg çağırıyor.
+  - MemScript: 127 whitespace-normalize fark; her iki tarafta da `*`→-1 kuralı
+    VAR (bizim CustomJewel .txt kararı etkilenmez) → G3'e.
+  - ItemValue + ItemValueTrade: donor 2-arg GetItemMaxStack(index,Level)
+    ItemStack'te yok; donor ItemStack Level-bazlı stacking canlı-kanıtsız.
+
+**Neden** — G2 bandı "kontrollü alım" gerektirir; 15 dosyada bağımlılık/canlı-kanıt
+eksikliği tespit edildi ve her biri tek tek gerekçelendirildi. Toplu alım yapılmadı.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.781.184 B** (23:34), pdb güncel;
+- 5 dosya donor-birebir (cmp), Gate.cpp donor'a göre yalnız 2 satır fark;
+- ItemValue/ItemValueTrade bizim sürüme geri döndü (checkout ile) — doğrulandı;
+- Kanca dosyalarında değişiklik yok (dalga 3 dosyalarında kanca yoktu).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-P0 — protokol opcode/struct diff tablosu (docs/11)
 
 **Ne yapıldı**

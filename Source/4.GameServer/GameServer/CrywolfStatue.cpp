@@ -49,7 +49,7 @@ void CCrywolfStatue::CrywolfStatueAct(int aIndex) // OK
 	{
 		if(this->m_Shield.m_ShieldState == 1)
 		{
-			gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GetMessage(400));
+			gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GlobalText(400));
 			this->m_Shield.m_ShieldState = 0;
 			this->m_Shield.m_ShieldHP = 0;
 			this->m_Shield.m_ShieldMaxHP = 0;
@@ -62,7 +62,7 @@ void CCrywolfStatue::CrywolfStatueAct(int aIndex) // OK
 			this->m_Shield.m_ShieldHP = PriestHPSum;
 			this->m_Shield.m_ShieldMaxHP = PriestMaxHPSum;
 			this->m_Shield.m_PriestNumber = ContractedAlterCount;
-			gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GetMessage(401),ContractedAlterCount,PriestHPSum);
+			gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GlobalText(401),ContractedAlterCount,PriestHPSum);
 			this->SetStatueViewState(lpObj,ContractedAlterCount);
 		}
 
@@ -70,12 +70,12 @@ void CCrywolfStatue::CrywolfStatueAct(int aIndex) // OK
 	}
 	else if(this->m_Shield.m_ShieldState == 0)
 	{
-		gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GetMessage(402));
+		gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GlobalText(402));
 		this->SetStatueViewState(lpObj,ContractedAlterCount);
 	}
 	else if(this->m_Shield.m_PriestNumber != ContractedAlterCount)
 	{
-		gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GetMessage(401),ContractedAlterCount,PriestHPSum);
+		gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GlobalText(401),ContractedAlterCount,PriestHPSum);
 		this->SetStatueViewState(lpObj,ContractedAlterCount);
 	}
 

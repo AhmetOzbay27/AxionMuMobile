@@ -41,3 +41,9 @@ int getNumberOfExcOptions(int checksum);
 char* NumberFormat(int Number);
 bool GetRandomItemDropLocation(int map, int* ox, int* oy, int tx, int ty, int count);
 int random(int minN, int maxN);
+
+// SPK (Faz 2b.2-C): donor Util.h:39-40 — ExportBMD zinciri icin
+void BuxConvert(BYTE* pbyBuffer, int Size);
+DWORD GenerateCheckSum2(BYTE* pbyBuffer, int dwSize, WORD Key);
+void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Size);
+void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Size, DWORD Key, bool WriteMax = true, bool CheckSum = true);

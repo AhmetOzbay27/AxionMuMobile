@@ -102,7 +102,7 @@ void CCrywolfAltar::ResetAltarUserIndex(int AltarObjIndex,int Class) // OK
 
 	if(gObj[lpAltarInfo->m_UserIndex].Connected == OBJECT_ONLINE)
 	{
-		gNotice.GCNoticeSend(lpAltarInfo->m_UserIndex,1,0,0,0,0,0,gMessage.GetMessage(399),AltarNumber);
+		gNotice.GCNoticeSend(lpAltarInfo->m_UserIndex,1,0,0,0,0,0,gMessage.GlobalText(399),AltarNumber);
 		LogAdd(LOG_BLACK,"[ Crywolf ][Altar Op.] [%s][%s] Remove contract Altar[%d]",gObj[lpAltarInfo->m_UserIndex].Account,gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
 	}
 
@@ -164,25 +164,25 @@ bool CCrywolfAltar::SetAltarUserIndex(int AltarObjIndex,int Class,int UserIndex)
 
 	if(gObj[lpAltarInfo->m_UserIndex].Connected == OBJECT_ONLINE)
 	{
-		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GetMessage(392),AltarNumber);
+		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GlobalText(392),AltarNumber);
 		return 0;
 	}
 
 	if((CurrentTime-lpAltarInfo->m_LastValidContractTime) < 10000)
 	{
-		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GetMessage(393),AltarNumber);
+		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GlobalText(393),AltarNumber);
 		return 0;
 	}
 
 	if(lpAltarInfo->m_ContractCount > MAX_CRYWOLF_ALTAR_CONTRACT) 
 	{
-		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GetMessage(394),AltarNumber);
+		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GlobalText(394),AltarNumber);
 		return 0;
 	}
 
 	if(abs(gObj[AltarObjIndex].X-gObj[UserIndex].X) > 0 || abs(gObj[AltarObjIndex].Y-gObj[UserIndex].Y) > 0)
 	{
-		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GetMessage(395),AltarNumber);
+		gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GlobalText(395),AltarNumber);
 		return 0;
 	}
 
@@ -195,12 +195,12 @@ bool CCrywolfAltar::SetAltarUserIndex(int AltarObjIndex,int Class,int UserIndex)
 
 	gEffectManager.AddEffect(&gObj[AltarObjIndex],0,EFFECT_CRYWOLF_STATE4,0,0,0,0,0);
 
-	gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GetMessage(396),gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
+	gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GlobalText(396),gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
 
 	LogAdd(LOG_BLACK,"[ Crywolf ][Altar Op.] [%s][%s] Attempt to contract Altar[%d]",gObj[lpAltarInfo->m_UserIndex].Account,gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
 
-	gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GetMessage(397));
-	gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GetMessage(398));
+	gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GlobalText(397));
+	gNotice.GCNoticeSend(UserIndex,1,0,0,0,0,0,gMessage.GlobalText(398));
 	return 1;
 }
 
@@ -231,9 +231,9 @@ void CCrywolfAltar::SetAltarValidContract(int AltarObjIndex,int Class) // OK
 
 	if(((DWORD)lpAltarInfo->m_ValidContractTime) < GetTickCount())
 	{
-		gNotice.GCNoticeSend(lpAltarInfo->m_UserIndex,1,0,0,0,0,0,gMessage.GetMessage(390),AltarNumber);
+		gNotice.GCNoticeSend(lpAltarInfo->m_UserIndex,1,0,0,0,0,0,gMessage.GlobalText(390),AltarNumber);
 
-		gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GetMessage(391),gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
+		gCrywolfUtil.SendCrywolfUserAnyMsg(0,gMessage.GlobalText(391),gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
 
 		LogAdd(LOG_BLACK,"[ Crywolf ][Altar Op.] [%s][%s] Set Valid Contract Altar[%d]",gObj[lpAltarInfo->m_UserIndex].Account,gObj[lpAltarInfo->m_UserIndex].Name,AltarNumber);
 

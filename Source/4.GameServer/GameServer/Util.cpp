@@ -754,3 +754,87 @@ int random(int minN, int maxN)
 	srand((int)time(0));
 	return minN + rand() % (maxN + 1 - minN);
 }
+
+// SPK (Faz 2b.2-C): donor Util.cpp:708/718/748/762 — ExportBMD/paket-yazma
+// fonksiyonlari (Gate ExportBMD kullaniyor; 2b.2-C donor-tekil Export* metot
+// zinciri icin alindi). BuxConvert bizde yoktu, donorden geldi.
+void BuxConvert(BYTE* pbyBuffer, int Size)
+{
+	BYTE bBuxCode[3] = { 0xFC, 0xCF, 0xAB };
+
+	for (int i = 0; i < Size; i++)
+	{
+		pbyBuffer[i] ^= bBuxCode[i % 3];
+	}
+}
+
+DWORD GenerateCheckSum2(BYTE* pbyBuffer, int dwSize, WORD Key)
+{
+	int dwKey = Key;
+	int dwResult = Key << 9;
+
+	for (int dwChecked = 0; dwChecked <= dwSize - 4; dwChecked += 4)
+	{
+		DWORD dwTemp;
+
+		memcpy(&dwTemp, pbyBuffer + dwChecked, 4);
+
+		DWORD v4 = (Key + (dwChecked >> 2)) % 2;
+		switch (v4)
+		{
+		case 0:
+			dwResult ^= dwTemp;
+			break;
+		case 1:
+			dwResult += dwTemp;
+			break;
+		}
+
+		if (!(dwChecked % 0x10))
+		{
+			dwResult ^= (unsigned int)(dwResult + dwKey) >> ((dwChecked >> 2) % 8 + 1);
+		}
+	}
+	return dwResult;
+}
+
+void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Size)
+{
+	FILE* fp = fopen(filename, "wb");
+
+	if (fp != NULL)
+	{
+		DWORD MAX_BUFFER = (MaxLine * Size);
+		BuxConvert(pbyBuffer, MAX_BUFFER);
+		fwrite(pbyBuffer, MAX_BUFFER, 1u, fp);
+		fclose(fp);
+	}
+}
+
+void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Size, DWORD Key, bool WriteMax, bool CheckSum)
+{
+	FILE* fp = fopen(filename, "wb");
+	if (fp != NULL)
+	{
+		DWORD MAX_BUFFER = (MaxLine * Size);
+		BYTE* Buffer = new BYTE[MAX_BUFFER];
+		if (WriteMax == true)
+		{
+			fwrite(&MaxLine, 4u, 1u, fp);
+		}
+		for (int i = 0; i < MaxLine; ++i)
+		{
+			BuxConvert(pbyBuffer, Size);
+			memcpy((char*)(Buffer + Size * i), pbyBuffer, Size);
+			fwrite((char*)(Buffer + Size * i), Size, 1u, fp);
+			pbyBuffer += Size;
+		}
+		if (CheckSum)
+		{
+			DWORD dwCheckSum = GenerateCheckSum2(Buffer, MAX_BUFFER, Key);
+			fwrite(&dwCheckSum, 4u, 1u, fp);
+		}
+		fclose(fp);
+		delete[] Buffer;
+	}
+}

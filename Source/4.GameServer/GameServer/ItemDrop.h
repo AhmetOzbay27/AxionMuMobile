@@ -32,6 +32,7 @@ public:
 	CItemDrop();
 	virtual ~CItemDrop();
 	void Load(char* path);
+	void ExportXML(std::string filename);
 	int DropItem(LPOBJ lpObj,LPOBJ lpTarget);
 	int GetItemDropRate(LPOBJ lpObj,LPOBJ lpTarget,int ItemIndex,int ItemLevel,int DropRate);
 private:

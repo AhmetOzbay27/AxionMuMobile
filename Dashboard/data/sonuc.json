@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 23:05:00",
+  "updated": "2026-09-30 23:40:00",
   "status": "ok",
-  "text": "2b.2-P0 TAMAM (docs/11): protokol dosyalarinda dis opcode seti 5 dosyada birebir, metot yuzeyi farki SIFIR — fark tamamen govdede (bizim-tekil SPK handler'lar: CTCMini 0x39, RuudToken 0xEE, AutoNapThe 0x7C, LockWindow 0x1A, CustomRanking DS 0x40; donor-tekil: HolyJOH, SNS, Reqtime). Canli kanit (Data\\Event\\CTCMini klasoru) bizim tarafi dogruluyor. KARAR: donor protokol alimi YOK, bizim SPK tabani korunur. Donor SocketManager bagimliligi (BlackList+APIGameGuard) 2c'ye not edildi. Kod degisikligi yok. Siradaki: 2b.2-C (G2'nin 25 dosyasi)."
+  "text": "2b.2-C dalga 3 TAMAM: G2'nin 24 dosyasi incelendi -> 7 alindi (CrywolfStatue, CrywolfAltar, Gate+h 2-satir adaptasyon, ItemDrop+h, ItemMove+h, Command + Util'e PackFileEncrypt/BuxConvert/GenerateCheckSum2 zinciri), 15 dosya tek tek gerekcelendirilerek korundu (HackCheck guvenlik anahtarlari, ChaosCastle/Kalima NORMALIZE_LEVEL zinciri yok, CashShop/Duel/EffectManager bagimlilik, ItemValue Level-stacking kanitsiz...). GS temiz -> 10.781.184 B (23:34). Siradaki: G3 manuel birlesim (10+4 dosya) + E-kalemler."
 }
