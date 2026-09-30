@@ -120,6 +120,19 @@ while ($listener.IsListening) {
             $lines = & $GitExe -C $RepoRoot log --pretty=format:"%h %ad %s" --date=format:"%d.%m.%Y %H:%M" -$n 2>$null
             Send-Response $ctx 200 "text/plain; charset=utf-8" ($lines -join "`n")
         }
+        elseif ($path -eq "/api/timeline") {
+            # Zaman çizelgesi: git log'dan canlı okunur (hash + dd.MM.yyyy HH:mm + mesaj)
+            $lines = & $GitExe -C $RepoRoot log --pretty=format:"%h|%ad|%s" --date=format:"%d.%m.%Y %H:%M" -40 2>$null
+            $tl = @()
+            foreach ($ln in $lines) {
+                $p = $ln -split "\|", 2
+                if ($p.Count -eq 2) {
+                    $p2 = $p[1] -split "\|", 2
+                    if ($p2.Count -eq 2) { $tl += @{ hash = $p[0]; date = $p2[0]; msg = $p2[1] } }
+                }
+            }
+            Send-Response $ctx 200 "application/json; charset=utf-8" (ConvertTo-Json $tl -Depth 4)
+        }
         elseif ($path -eq "/api/agent") {
             $o = Get-Content (Join-Path $DataDir "oneriler.json") -Raw -Encoding UTF8 | ConvertFrom-Json
             $k = Get-Content (Join-Path $DataDir "komut.json") -Raw -Encoding UTF8 | ConvertFrom-Json

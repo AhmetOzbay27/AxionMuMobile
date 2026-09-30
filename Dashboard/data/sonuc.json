@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 00:10:00",
+  "updated": "2026-10-01 00:25:00",
   "status": "ok",
-  "text": "FAZ 2b KAPANIS DOGRULAMASI TAMAM: final Rebuild temiz (0 hata) -> GameServer.exe 10.775.552 B (00:03, dalga-7 ile ozdes — /LTCG). 8 kanca dosyasinin tumu dogrulandi (ServerInfo 7, Protocol 8, User 5, CommandManager 3, ObjectManager 2, Attack 2, DSProtocol 2, ItemManager 2 'Faz 2b' blok); H-007 (0x35 AUTOHP + olukod tamircisi #if(0)) yerinde. 2b.2 ozeti: 213 dosyanin 66'si donor'dan alindi, 147'si gerekceli korundu, 0 belirsiz; 7 dalga, her biri derle+docs+commit ile kapandi (son: 39a28d45e). docs/00+02 guncel. Siradaki: 2b.3 (68 MUIG-ozel modul canli envanter capraz kontrolu) -> 2c."
-}
+  "text": "ZAMAN ÇİZELGESİ eklendi: panoya '⏱️ Zaman Çizelgesi' paneli (ne, saat kaçta, hangi commit ile — git log'tan canlı okunur, 30 sn'de bir yenilenir). CHANGELOG'un TÜM kayıtlarına saat damgası işlendi: başlıklar [gg.aa.yy HH:mm] formatına, Commit satırları 'hash · Tamamlandı — tarih saat' formatına çevrildi (29 kayıt; git commit tarihleriyle doğrulandı). Sohbet Akışı ve Sonuç paneli zaten ts damgalı. Bundan sonra her yeni kayıt da bu standardı izleyecek. Faz 2b kapanış durumu değişmedi: 2b.2 tamam (66 alındı / 147 korundu / 0 belirsiz), GS 10.775.552 B. Sıradaki: 2b.3 → 2c."
+  }

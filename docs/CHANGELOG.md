@@ -1,4 +1,4 @@
-# CHANGELOG — Axion Mu Source
+﻿# CHANGELOG — Axion Mu Source
 
 > **Kural:** Projede yapılan HER değişiklik buraya kaydedilir — ne, neden,
 > nasıl doğrulandı. Amaç: kalan yerin başka bir yapay zeka / geliştirici
@@ -7,7 +7,32 @@
 
 ---
 
-## [26.09.30] Faz 2b.2-G — G5 bandı dalga 7: 2 dosya alındı, 17 dosya gerekçeli korundu — 2b.2 TÜM BANTLAR KAPANDI
+## [26.10.01 00:25] Dokümantasyon — saat damgası standardı: CHANGELOG + pano zaman çizelgesi
+
+**Ne yapıldı**
+- Kullanıcı talimatı: yapılan her işin **saat kaçta tamamlandığı** hem panoda hem
+  CHANGELOG'da görünmeli.
+- **CHANGELOG:** 29 kaydın başlığına saat damgası eklendi — format
+  `## [gg.aa.yy HH:mm] Başlık`; tüm Commit satırları `hash · Tamamlandı —
+tarih saat` formatına çevrildi (git commit tarihlerinden doğrulandı:
+  `git log --format="%h | %ci | %s"`). Bu kayıttan itibaren yeni kayıtlar da
+  bu standardı izler.
+- **Pano:** server.ps1'e `/api/timeline` endpoint'i eklendi (git log canlı:
+  hash|tarih saat|mesaj, son 40 commit); index.html'e **⏱️ Zaman Çizelgesi**
+  paneli eklendi (saat · ne bitti · commit; 30 sn'de bir yenilenir). Sohbet
+  Akışı ve Sonuç panelleri zaten `ts` damgalı.
+- Pano sunucusu yeniden başlatıldı, endpoint test edildi.
+
+**Neden** — İzlenebilirlik: hangi işin ne zaman bittiği, kaynağa bakmadan
+(panodan ve CHANGELOG'dan) doğrulanabilmeli.
+
+**Doğrulama** (kod derlemesi gerektirmez)
+- `git log` saatleriyle CHANGELOG damgaları birebir eşleşiyor;
+- `/api/timeline` HTTP 200 + JSON döndürüyor; pano paneli canlı.
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 00:25
+
+## [26.10.01 00:00] Faz 2b.2-G — G5 bandı dalga 7: 2 dosya alındı, 17 dosya gerekçeli korundu — 2b.2 TÜM BANTLAR KAPANDI
 
 **Ne yapıldı**
 - G5'in 31 dosyasından 12'si önceki dalgalarda kararlıydı (5 kanca dosyası
@@ -48,9 +73,9 @@ donor'dan alındı (birçoğu adaptasyonla), 147 dosya gerekçeli bizim korundu,
 0 dosya belirsiz kaldı. Tüm kararlar canlı-kanıt/bağımlılık-zincir analiziyle
 verildi; her dalga derleme + CHANGELOG + commit ile kapatıldı.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `39a28d45e` · **Tamamlandı** — 01.10.2026 00:00
 
-## [26.09.30] Faz 2b.2-F — G4 bandı dalga 6: 8 dosya alındı, 19 dosya gerekçeli korundu
+## [26.09.30 23:55] Faz 2b.2-F — G4 bandı dalga 6: 8 dosya alındı, 19 dosya gerekçeli korundu
 
 **Ne yapıldı**
 - G4'ün 40 dosyasından 13'ü önceki dalgalarda kararlıydı (8 protokol P0,
@@ -98,9 +123,9 @@ eskimelik mi" ayrımı yapıldı; cascade'ler derlemeyle yakalanıp geri alınd�
 - 8 cpp donor-birebir (cmp); Helper/QuestReward checkout geri dönüşü doğrulandı;
 - Log.h bizim sürümde (LOG_ANTIFLOOD korunmuş).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `470e3ef95` · **Tamamlandı** — 30.09.2026 23:55
 
-## [26.09.30] Faz 2b.2-D — G3 manuel birleştirme dalga 5: 4 dosya alındı, 6 dosya gerekçeli korundu
+## [26.09.30 23:47] Faz 2b.2-D — G3 manuel birleştirme dalga 5: 4 dosya alındı, 6 dosya gerekçeli korundu
 
 **Ne yapıldı**
 - G3 havuzu (10 dosya + G2'den itilen 4) dosya dosya işlendi:
@@ -144,9 +169,9 @@ iyileştirmeler alınır, SPK davranışı korunur.
   EventRunAndCatch donor+1'er satır SPK notlu adaptasyon;
 - .h'ler birebir (git değişiklik göstermedi).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `6b96f9ef9` · **Tamamlandı** — 30.09.2026 23:47
 
-## [26.09.30] Faz 2b.2-E kalemleri dalga 4 — E-05 uygulandı, 7 kalem gerekçeli ertelendi, deploy-config düzeltmesi
+## [26.09.30 23:42] Faz 2b.2-E kalemleri dalga 4 — E-05 uygulandı, 7 kalem gerekçeli ertelendi, deploy-config düzeltmesi
 
 **Ne yapıldı**
 - **E-05 CustomBuyVip ✅:** ServerInfo:405 `Custom\CustomBuyVip.txt` →
@@ -187,9 +212,9 @@ yollar/eksik config'ler canlıya eşlendi. Kalan kalemler 2c'de canlı-kanıtla.
   `Data\Event\{EventTime.xml,BossGuild.xml}` + `Data\Custom\CustomJewel.txt`;
 - E-05 yolu canlıyla birebir (`SPK\CustomBuyVip.txt`).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `2995c53b0` · **Tamamlandı** — 30.09.2026 23:42
 
-## [26.09.30] Faz 2b.2-C — G2 bandı dalga 3: 7 dosya alındı, 15 dosya gerekçeli korundu
+## [26.09.30 23:36] Faz 2b.2-C — G2 bandı dalga 3: 7 dosya alındı, 15 dosya gerekçeli korundu
 
 **Ne yapıldı**
 - G2'nin 24 dosyası (docs/10 listesi − Reconnect/E-10) dosya dosya diff incelendi.
@@ -239,9 +264,9 @@ eksikliği tespit edildi ve her biri tek tek gerekçelendirildi. Toplu alım yap
 - ItemValue/ItemValueTrade bizim sürüme geri döndü (checkout ile) — doğrulandı;
 - Kanca dosyalarında değişiklik yok (dalga 3 dosyalarında kanca yoktu).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `6b6ff23a7` · **Tamamlandı** — 30.09.2026 23:36
 
-## [26.09.30] Faz 2b.2-P0 — protokol opcode/struct diff tablosu (docs/11)
+## [26.09.30 23:15] Faz 2b.2-P0 — protokol opcode/struct diff tablosu (docs/11)
 
 **Ne yapıldı**
 - H-007 dersi gereği donor protokol alımından ÖNCE tablo çıkarıldı →
@@ -268,9 +293,9 @@ Donor-tekil struct/handler'ların canlı kanıtı yok (tek tek 2c'de). Connectio
 SocketManagerUdp/CSProtocol whitespace-normalize adayı olarak G3'e bırakıldı.
 Kod değişikliği YOK (salt analiz + docs) → derleme gerekmez.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `fe4bc2505` · **Tamamlandı** — 30.09.2026 23:15
 
-## [26.09.30] Faz 2b.2-B dalga 2 — bağımlılık modülleri: 9 dosya + CEventName modülü alındı
+## [26.09.30 23:04] Faz 2b.2-B dalga 2 — bağımlılık modülleri: 9 dosya + CEventName modülü alındı
 
 **Ne yapıldı**
 - 2b.2-A'da ertelenen 8 dosyanın tamamı alındı (bağımlılıklarıyla birlikte):
@@ -311,9 +336,9 @@ geçilmemesi için dalga 2 olarak alındı.
 - 8 dosyadaki `// SPK (Faz 2b)` kanca blokları korundu (dokunulan dosyalarda kanca
   yok — grep 0 eşleşme).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `531f984b3` · **Tamamlandı** — 30.09.2026 23:04
 
-## [26.09.30] Faz 2b.2-A — G1 donör alımı: 19 dosya alındı, 7 ertelendi (bağımlılık)
+## [26.09.30 21:57] Faz 2b.2-A — G1 donör alımı: 19 dosya alındı, 7 ertelendi (bağımlılık)
 
 **Ne yapıldı**
 - G1 (%90+ benzer) 30 dosyanın diff'leri satır satır incelendi. Sonuç:
@@ -351,9 +376,9 @@ bağımlılık çıkardı; bunlar 2b.2-B'de bağımlılıklarıyla birlikte alı
   sürümde — beklendiği gibi;
 - PDB: CQuestWorld(79)/CShop(49)/CRandomManager(23).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `ab1708d5d` · **Tamamlandı** — 30.09.2026 21:57
 
-## [26.09.30] Faz 2b.2 / config pasifizasyonu — 6 config eksiği kapatıldı + 2 format düzeltmesi
+## [26.09.30 21:33] Faz 2b.2 / config pasifizasyonu — 6 config eksiği kapatıldı + 2 format düzeltmesi
 
 **Ne yapıldı**
 - 09 §5 tablosundaki 6 eksik config canlı Sub-1'den salt-okunur kopyalandı:
@@ -387,9 +412,9 @@ düşmesini önlemek (özellikle CustomJewel ne .txt ne .xml bulabiliyordu).
 - PDB: CCustomJewel(42)/BotThuMuaer(17)/DoiItem(101) sembolleri.
 - 6 config dosyası boyut kanıtıyla yerinde (tablo §5 güncellendi).
 
-**Commit** — `8515c346a`
+**Commit** — `8515c346a` · **Tamamlandı** — 30.09.2026 21:33
 
-## [26.09.30] Faz 2b.2 başlangıcı — E-10 Reconnect entegre edildi (2b.2'nin ilk kalemi)
+## [26.09.30 20:48] Faz 2b.2 başlangıcı — E-10 Reconnect entegre edildi (2b.2'nin ilk kalemi)
 
 **Ne yapıldı**
 - E-10 diff analizi (bizim 152 ↔ donor 151 satır; %85 benzer): 3 fark bloğu —
@@ -416,9 +441,9 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - PDB: CReconnect(18)/ResumeParty/SetReconnectInfo/ResumeCommand sembolleri.
 - 09 raporu E-10 ✅, 02 2b.2 🔄 başlatıldı, pano güncellendi.
 
-**Commit** — `65f71d14b`
+**Commit** — `65f71d14b` · **Tamamlandı** — 30.09.2026 20:48
 
-## [26.09.30] Faz 2b.1 — ortak dosya diff matrisi (docs/10)
+## [26.09.30 20:34] Faz 2b.1 — ortak dosya diff matrisi (docs/10)
 
 **Ne yapıldı**
 - 2a.1 envanterindeki 218 ortak dosyadan 5'i donorde yok (BossGuild,
@@ -443,9 +468,9 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - Birebir sayısı (77) bağımsız cmp ile doğrulandı.
 - Örnek saplama kontrolleri: PacketManager birebir; Reconnect %85 (09/E-10 ile uyumlu).
 
-**Commit** — `acea272af`
+**Commit** — `acea272af` · **Tamamlandı** — 30.09.2026 20:34
 
-## [26.09.30] Pano v5 — canlı sohbet akışı paneli
+## [26.09.30 19:57] Pano v5 — canlı sohbet akışı paneli
 
 **Ne yapıldı**
 - Kullanıcı sorusu: "bu sohbeti canlı olarak oradan görüp son komutları takip
@@ -459,9 +484,9 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - Doğrulama: /api/agent sohbet alanı döndürüyor; panelde 14 kayıt render
   ediliyor (Preview ekran görüntüsü onaylı).
 
-**Commit** — `31ddb6a20`
+**Commit** — `31ddb6a20` · **Tamamlandı** — 30.09.2026 19:57
 
-## [26.09.30] Pano v4 — ajan köprüsü: panodan komut verme
+## [26.09.30 19:46] Pano v4 — ajan köprüsü: panodan komut verme
 
 **Ne yapıldı**
 - Kullanıcı isteği: önerileri ve süreci panodan takip edip doğrudan komut vermek.
@@ -481,9 +506,9 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - Uyarı: PIN'in koruması basittir (statik eşleşme); hassas iş için yine de
   sohbet onayı gerekir (request_elevation akışı panoyu bypass etmez).
 
-**Commit** — `60dc4cddd`
+**Commit** — `60dc4cddd` · **Tamamlandı** — 30.09.2026 19:46
 
-## [26.09.30] Pano tasarım v3 — misyon kartları + katlanabilir plan
+## [26.09.30 19:19] Pano tasarım v3 — misyon kartları + katlanabilir plan
 
 **Ne yapıldı**
 - Kullanıcı isteği: daha güzel tasarım + girişte amaç/hedef anlatımı.
@@ -498,9 +523,9 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - Doğrulama: misyon 3 kart, 10 plan grubu, 26+2 adım, 9/28 çubuk; Preview
   ekran görüntüleriyle görsel onay (giriş + durum + son işler bölümleri).
 
-**Commit** — `1b019bff6`
+**Commit** — `1b019bff6` · **Tamamlandı** — 30.09.2026 19:19
 
-## [26.09.30] Pano arayüzü v2 — sadeleştirildi, plan 02'den canlı okunuyor
+## [26.09.30 19:09] Pano arayüzü v2 — sadeleştirildi, plan 02'den canlı okunuyor
 
 **Ne yapıldı**
 - Kullanıcı geri bildirimi: ilk arayüz anlaşılmaz ve plan eksik görünüyordu.
@@ -513,9 +538,9 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - Doğrulama: /api/status + /api/doc/02 canlı; sayfa 28 adımı parse ediyor
   (9/28 tamam), Preview ekran görüntüsüyle görsel onay.
 
-**Commit** — `ba19608be`
+**Commit** — `ba19608be` · **Tamamlandı** — 30.09.2026 19:09
 
-## [26.09.30] İlerleme panosu — dış IP'den canlı takip aracı (Dashboard\)
+## [26.09.30 18:50] İlerleme panosu — dış IP'den canlı takip aracı (Dashboard\)
 
 **Ne yapıldı**
 - `Dashboard\server.ps1`: bağımlılıksız PowerShell 5.1 HttpListener sunucusu
@@ -539,9 +564,9 @@ takip etmek istiyor.
 - Tüm docs dosyaları (Türkçe İ̇ adlılar dahil) `/api/doc/` ile okunuyor.
 - Yol geçiş testi: `/api/doc/..%2F..%2Fserver.ps1` → 404.
 
-**Commit** — `ffd1cb607` + `f8d37a58e`
+**Commit** — `ffd1cb607` + `f8d37a58e` · **Tamamlandı** — 30.09.2026 18:50
 
-## [26.09.30] Faz 2b.0-E — 12 ezilen dosyanın karşılaştırma raporu (docs/09)
+## [26.09.30 18:29] Faz 2b.0-E — 12 ezilen dosyanın karşılaştırma raporu (docs/09)
 
 **Ne yapıldı**
 - 05 §4 E-01..E-12 dosyaları üçlü analiz edildi: bizim kaynak ↔ MUIG donor ↔
@@ -564,9 +589,9 @@ alımı, birleştirme veya canlıdan yeniden yazım yapılacağı karara bağlan
 - Bizim MuServer'da 6 canlı config eksik/eski (ChangeClass.xml, CustomBuyVip.txt,
   CustomJewel.txt, ZenDrop.xml eski, EventTime.xml, ThuMuaDoExc.txt).
 
-**Commit** — `8152b67ee`
+**Commit** — `8152b67ee` · **Tamamlandı** — 30.09.2026 18:29
 
-## [26.09.30] Faz 2b.0 — 4 MUIG donor modülü GS'ye entegre edildi (AddBuffer, CAUTOHP, CCustomJewelBank, CSkillDamage)
+## [26.09.30 18:13] Faz 2b.0 — 4 MUIG donor modülü GS'ye entegre edildi (AddBuffer, CAUTOHP, CCustomJewelBank, CSkillDamage)
 
 **Ne yapıldı**
 - Donör 8 dosya `Source\4.GameServer\GameServer\SPK\` altına alındı:
@@ -601,9 +626,9 @@ var, bizim GS'de yoktu (2a envanterinin 71 iş biriminin ilk 4'ü).
   + gAUTOHP/gAddBuffer/gSkillDamage/gCustomJewelBank + GetSkillDamage/
   CommandAddBuff/JewelBankRecv/GuiNgocAll.
 
-**Commit** — `599d568ef`
+**Commit** — `599d568ef` · **Tamamlandı** — 30.09.2026 18:13
 
-## [26.09.30] Faz 1 tamamlandı — Main ve GetMainInfo derlemeleri
+## [26.09.30 14:31] Faz 1 tamamlandı — Main ve GetMainInfo derlemeleri
 
 **Ne yapıldı**
 - `Source\5.Main` `"Global Release"|Win32` + v143 ile derlendi →
@@ -643,11 +668,11 @@ var, bizim GS'de yoktu (2a envanterinin 71 iş biriminin ilk 4'ü).
   varyantı — parite hedefi değil, Faz 2a.5'te karar (bkz. H-005).
 - Analiz çıktıları: `BuildLog\main_strings_*.txt`, `BuildLog\gmi_strings_*.txt`.
 
-**Commit** — `1339a290` · **Etiket** — `faz1-tamamlandi`
+**Commit** — `1339a290` · **Etiket** — `faz1-tamamlandi` · **Tamamlandı** — 30.09.2026 14:31
 
 ---
 
-## [26.09.30] Faz 1 — GameServer derlemesi + Resource.h onarımı
+## [26.09.30 13:33] Faz 1 — GameServer derlemesi + Resource.h onarımı
 
 **Ne yapıldı**
 - `Source\4.GameServer` `Release_EX603|Win32` derlendi →
@@ -664,11 +689,11 @@ var, bizim GS'de yoktu (2a envanterinin 71 iş biriminin ilk 4'ü).
 
 **Doğrulama** — GS derlemesi hatasız; PE32 GUI i386.
 
-**Commit** — `eb87f89` (Resource.h) · `c28026f` (GameServer.exe + pdb)
+**Commit** — `eb87f89` (Resource.h) · `c28026f` (GameServer.exe + pdb) · **Tamamlandı** — 30.09.2026 13:33
 
 ---
 
-## [26.09.30] Faz 1 — CS / DS / JS derlemeleri
+## [26.09.30 13:34] Faz 1 — CS / DS / JS derlemeleri
 
 **Ne yapıldı**
 - ConnectServer, DataServer, JoinServer `Release_EX603|Win32` + v143 ile
@@ -681,9 +706,11 @@ var, bizim GS'de yoktu (2a envanterinin 71 iş biriminin ilk 4'ü).
 
 **Doğrulama** — Boyutlar canlı PDB referanslarıyla birebir aynı.
 
+**Commit** — `eb87f899`/`c28026fa8` paketi · **Tamamlandı** — 30.09.2026 13:34
+
 ---
 
-## [26.09.30] Proje taşıma + repo kurulumu (Faz 0 bitişi)
+## [26.09.30 13:20] Proje taşıma + repo kurulumu (Faz 0 bitişi)
 
 **Ne yapıldı**
 - Proje `C:\Axion Mu Mobile\New Source Code\Axion Mu Source\` →
@@ -718,7 +745,7 @@ güncel dokümantasyon `docs\` klasöründedir.
 
 ---
 
-## [26.09.30] Faz 2a.2-2a.4 — Canlı sistem envanteri (salt okunur tarama)
+## [26.09.30 16:00] Faz 2a.2-2a.4 — Canlı sistem envanteri (salt okunur tarama)
 
 **Ne yapıldı**
 - **2a.2:** Canlı `GameServer.map` (1,8 MB) `BuildLog\envanter\GameServer_canli.map`
@@ -762,11 +789,11 @@ güncel dokümantasyon `docs\` klasöründedir.
   canlida_bizde_yok, muigden_alinabilir, sifirdan_yazilacak)
 - `git fsck` temiz; tüm docs boyut kontrolü yapıldı.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `929d39444` · **Tamamlandı** — 30.09.2026 16:00
 
 ---
 
-## [26.09.30] Faz 2a.1 — SPK modül envanteri (iş emri) tamamlandı
+## [26.09.30 16:22] Faz 2a.1 — SPK modül envanteri (iş emri) tamamlandı
 
 **Ne yapıldı**
 - Canlı `GameServer.pdb` (27,3 MB) derin analiz edildi:
@@ -803,11 +830,11 @@ canli_ek_dosyalar.txt (59), bizim_ek_dosyalar.txt (63).
 string'inde sessiz başarısız oldu; çözüm IndexOf + geriye-yürüme (printable
 run) algoritması oldu (pdb_scan.ps1).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `1e67ab22f` · **Tamamlandı** — 30.09.2026 16:22
 
 ---
 
-## [26.09.30] Faz 2a.5 — GetMainInfo varyant kararı: TEK HAT = SPK GETENGINE
+## [26.09.30 16:37] Faz 2a.5 — GetMainInfo varyant kararı: TEK HAT = SPK GETENGINE
 
 **Ne yapıldı (kanıt zinciri)**
 1. `GetMain\GetEngine.ini` düz UTF-8 çıktı (önceki oturumda UTF-16 sanılmış;
@@ -838,11 +865,11 @@ run) algoritması oldu (pdb_scan.ps1).
   adlandırılmış (dış müdahale; içerik aynı). Dokümanlardaki yollar güncel
   konumu ile yazılacak.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `4aedd4736` · **Tamamlandı** — 30.09.2026 16:37
 
 ---
 
-## [26.09.30] 2d.0 önhazırlığı — ConnectIP.bmd / ServerData.bmd format çözümlemesi
+## [26.09.30 16:57] 2d.0 önhazırlığı — ConnectIP.bmd / ServerData.bmd format çözümlemesi
 
 **Ne yapıldı**
 - Örnek dosyalar `BuildLog\envanter\bmd\` altına arşivlendi (ConnectIP 36 B,
@@ -869,11 +896,11 @@ run) algoritması oldu (pdb_scan.ps1).
 - Ham veri: `BuildLog\envanter\bmd\` (orijinal + decode)
 - `02-YOL-HARITASI.md`: 2e.0→2d.0 tutarlılığı
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `72f71680e` · **Tamamlandı** — 30.09.2026 16:57
 
 ---
 
-## [26.09.30] Faz 2a.5 (tamamlama) — GetMainInfo tek modül tasarımı (08 dokümanı)
+## [26.09.30 17:07] Faz 2a.5 (tamamlama) — GetMainInfo tek modül tasarımı (08 dokümanı)
 
 **Ne yapıldı**
 - **Zincirin son halkası kanıtlandı:** `GetMain\Data\CustomWing.txt` satırları
@@ -897,11 +924,11 @@ run) algoritması oldu (pdb_scan.ps1).
 - `03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md`: B-03 → tasarım tamam/2d.1
 - CHANGELOG: bu kayıt
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `cf2cb14fd` · **Tamamlandı** — 30.09.2026 17:07
 
 ---
 
-## [26.09.30] Faz 2a.1 (yeniden yazım) — 05 iş emri temiz ve kesin hale getirildi
+## [26.09.30 17:14] Faz 2a.1 (yeniden yazım) — 05 iş emri temiz ve kesin hale getirildi
 
 **Neden**
 - İlk yazımda (tek seferde heredoc) tablo ID'lerinde düzeltme izleri ve
@@ -924,9 +951,9 @@ run) algoritması oldu (pdb_scan.ps1).
 - `05-SPK-MODUL-ENVANTERI.md`: temiz yeniden yazım
 - CHANGELOG: bu kayıt
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `fae463465` · **Tamamlandı** — 30.09.2026 17:14
 
-## [26.09.30] Pano v5.1 — ilk gerçek kullanıcı komutu işlendi
+## [26.09.30 20:19] Pano v5.1 — ilk gerçek kullanıcı komutu işlendi
 
 **Ne yapıldı**
 - Kullanıcı panodan ilk komutunu gönderdi: "deneme yapalım çalışıyormu"
