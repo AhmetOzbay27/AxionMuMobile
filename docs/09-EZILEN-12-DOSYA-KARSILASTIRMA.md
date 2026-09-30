@@ -162,12 +162,18 @@ sınıflar çoğunlukla 1-3 sembol (LTCG /OPT:ICF inline → yüzeysel sayı kan
   `OnlineRewardOfflineSystems` anahtarı üzerinden çözümlenmesi; UI çizim
   kısmı bizden kalabilir (istemci tarafı zaten ayrı).
 
-### E-10 Reconnect.cpp — **Kolay** (bizim 152, donor 151)
+### E-10 Reconnect.cpp — **Kolay** (bizim 152, donor 151) — ✅ **2b.2'de entegre (30.09.2026)**
 - %85 benzerlik, 9/9 metot ortak; canlı GetEngine.ini `ReconnectTime=1`
   (07 dokümanı). Fark 7+4 satır.
-- **Strateji:** Donor alımı (veya bizim + donor 11 satırının elle birleşimi);
-  ReconnectTime davranışı GetEngine.ini okuma hattıyla (2d) eşlenir. 2b'de
-  ilk işlenecek dosya.
+- **Uygulanan:** Donörün parti-slot düzeltmesi alındı (ResumeParty'de
+  Index[1..4] sabit temizliği yerine `for i=1..MAX_PARTY_USER` — 10 kişilik
+  partide eski kod slot 5-9'da eski üye ID bırakıyordu). AutoResetEnable'daki
+  bizim `m_CommandResetAutoEnable[AccountLevel]` kontrolü **korundu** (donörde
+  yok; konfig bizim canlıda =1, donör paketinde =0 → canlı davranış). Ek fark:
+  donör `//gParty.GCPartyListSend2` yorum satırını temizlemiş (nötr).
+- **Doğrulama:** GS temiz derlendi (Rebuild, 0 error) → 10.704.896 B
+  (değişmedi — /LTCG özdeş boyut); CReconnect/ResumeParty/SetReconnectInfo
+  PDB'de doğrulandı.
 
 ### E-11 ThuMuaDoExc.cpp — **Zor** (bizim 798, donor 732)
 - Canlı kanıt: `Data\Custom\BotSystem\ThuMuaDoExc.txt` (554 B, bizde YOK;

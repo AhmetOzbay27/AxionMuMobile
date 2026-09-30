@@ -2,6 +2,8 @@
   "updated": "2026-09-30 19:55:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
   "entries": [
+    { "ts": "2026-09-30 20:50", "kim": "kullanıcı", "text": "2b.2'yi E-10 Reconnect ile başlat: donor sürümü al, derle, CHANGELOG + commit ile kapat." },
+    { "ts": "2026-09-30 20:52", "kim": "ajan", "text": "E-10 entegre edildi: donor parti-slot düzeltmesi alındı (10 kişilik partide bayat slot bug'ı), bizim AutoReset konfig kontrolü korundu (canlı ini=1 kanıtı). GS Rebuild temiz → 10.704.896 B, PDB doğrulandı. 09 raporu E-10 ✅. Sıradaki: 2b.2-A (G1) veya P0." },
     { "ts": "2026-09-30 20:33", "kim": "kullanıcı", "text": "2b.1'i başlat: 161 ortak dosyanın diff matrisini çıkar ve risk gruplarına göre sınıflandır." },
     { "ts": "2026-09-30 20:40", "kim": "ajan", "text": "2b.1 TAMAM: 218 ortaktan 5'i donorde yok (E-kalemler); 213 dosya analiz edildi → 77 birebir, G1=30 (temiz alım), G2=25, G3=10, G4=40 (SPK-özel, toplu alım yasak), G5=31. Rapor docs/10, ham veri CSV. Sıradaki: 2b.2-A (G1) + protokol P0. Panonun öneri kartları güncellendi." },
     { "ts": "2026-09-30 20:15", "kim": "kullanıcı", "text": "(Panodan komut) deneme yapalım çalışıyormu" },

@@ -7,6 +7,35 @@
 
 ---
 
+## [26.09.30] Faz 2b.2 başlangıcı — E-10 Reconnect entegre edildi (2b.2'nin ilk kalemi)
+
+**Ne yapıldı**
+- E-10 diff analizi (bizim 152 ↔ donor 151 satır; %85 benzer): 3 fark bloğu —
+  (1) ResumeParty'de parti slot temizliği: bizim Index[1..4] sabit, donor
+  `for i=1..MAX_PARTY_USER` döngüsü; (2) AutoResetEnable: donörde doğrudan
+  atama, bizimde `m_CommandResetAutoEnable[AccountLevel]` konfig kontrolü;
+  (3) donörün ölü yorum temizliği (GCPartyListSend2).
+- **Karar:** (1) donor alındı — 10 kişilik partide eski kod Index[5..9] slotlarını
+  temizlemiyordu, bayat üye ID kalıyordu (real bug). (2) **bizim korundu** —
+  kanıt: bizim canlı konfigte CommandResetAutoEnable_AL0..3 = 1
+  (MuServer\...\GameServerInfo - Command.ini:39-42), donör paketinde = 0;
+  m_CommandResetAutoEnable hattı bizim SPK ServerInfo'sunda canlı
+  (ServerInfo.cpp:2715-2722, ReadCommandInfo → "GameServerInfo - Command.ini").
+- `Source\4.GameServer\GameServer\Reconnect.cpp` güncellendi (E-10 işaretli);
+  Reconnect.h zaten birebir.
+
+**Neden** — 09 raporu E-10 stratejisi ("donor alımı / elle birleşim") + 10
+matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
+
+**Doğrulama**
+- GS `Release_EX603|Win32` **-t:Rebuild** temiz: 0 error → GameServer.exe
+  **10.704.896 B** (2b.0 ile özdeş boyut — /LTCG aynı kaynak boyutu etkisi),
+  pdb 18.182.144 B; `MuServer\4.GameServer\Sub 1` altına yazıldı.
+- PDB: CReconnect(18)/ResumeParty/SetReconnectInfo/ResumeCommand sembolleri.
+- 09 raporu E-10 ✅, 02 2b.2 🔄 başlatıldı, pano güncellendi.
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.1 — ortak dosya diff matrisi (docs/10)
 
 **Ne yapıldı**

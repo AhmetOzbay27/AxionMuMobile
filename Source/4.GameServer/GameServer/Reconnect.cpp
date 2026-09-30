@@ -117,12 +117,12 @@ void CReconnect::ResumeParty(LPOBJ lpObj,RECONNECT_INFO* lpInfo) // OK
 			lpObj->PartyNumber = lpInfo->PartyNumber;
 			gParty.m_PartyInfo[lpInfo->PartyNumber].Count = 1;
 			gParty.m_PartyInfo[lpInfo->PartyNumber].Index[0] = lpObj->Index;
-			gParty.m_PartyInfo[lpInfo->PartyNumber].Index[1] = -1;
-			gParty.m_PartyInfo[lpInfo->PartyNumber].Index[2] = -1;
-			gParty.m_PartyInfo[lpInfo->PartyNumber].Index[3] = -1;
-			gParty.m_PartyInfo[lpInfo->PartyNumber].Index[4] = -1;
+
+			for(int i=1;i < MAX_PARTY_USER;i++)	// E-10 (2b.2): donör düzeltmesi — Index[1..4] yerine tüm slotlar (10 kişilik parti)
+			{
+				gParty.m_PartyInfo[lpInfo->PartyNumber].Index[i] = -1;
+			}
 			gParty.GCPartyListSend(lpInfo->PartyNumber);
-			//gParty.GCPartyListSend2(lpInfo->PartyNumber);
 		}
 		else
 		{

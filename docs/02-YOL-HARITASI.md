@@ -49,8 +49,15 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   yasak), 31 G5 (iki farklı dal). 2b.2 sırası: G1 hızlı kazanç → G2 → protokol
   P0 diff tablosu → G3/G4 (SPK korumalı) → G5. Ham veri:
   `BuildLog\envanter\2b1_diff_matrisi.csv`.
-- ⬜ **2b.2** Risk gruplarına ayır (protokol dokunanlar / UI / yardımcı) ve
-  grup grup entegre et: her grup → derle → CHANGELOG → commit.
+- 🔄 **2b.2** Risk gruplarına göre grup grup entegrasyon (grup tanımı:
+  [10-DIFF-MATRISI.md](10-DIFF-MATRISI.md) G1-G5 + [09 raporu](09-EZILEN-12-DOSYA-KARSILASTIRMA.md) E-kalemleri).
+  - ✅ **2b.2 / E-10 Reconnect** (30.09.2026): donör parti-slot düzeltmesi alındı
+    (Index[1..4] → tüm slotlar), AutoResetEnable'daki bizim
+    m_CommandResetAutoEnable kontrolü korundu (canlı konfig =1 kanıtıyla).
+    GS Rebuild temiz → 10.704.896 B (özdeş boyut, /LTCG); PDB doğrulandı.
+  - ⬜ 2b.2-A: G1'in 30 dosyası (hızlı kazanç, 3 grup)
+  - ⬜ 2b.2-P0: protokol opcode/struct diff tablosu (donor alım ön şartı)
+  - ⬜ 2b.2-B..D: G2 → G3/G4 (SPK korumalı) → G5
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.
