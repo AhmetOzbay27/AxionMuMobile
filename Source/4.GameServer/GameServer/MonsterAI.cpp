@@ -1,4 +1,4 @@
-﻿// MonsterAI.cpp: implementation of the CMonsterAI class.
+// MonsterAI.cpp: implementation of the CMonsterAI class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -30,6 +30,9 @@ CMonsterAI::~CMonsterAI() // OK
 void CMonsterAI::MonsterAIProc() // OK
 {
 	CMonsterAIRule::MonsterAIRuleProc();
+
+	gObjMonsterClearExpiredDamage(); //  Xóa dame user ngừng đánh trên toàn bộ quái
+
 
 	for(int n=0;n < MAX_OBJECT_MONSTER;n++)
 	{

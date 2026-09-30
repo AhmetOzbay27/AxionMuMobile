@@ -3,28 +3,28 @@
   "note": "Bu dosyayi ajan (Buffy) gunceller. 'prompt' sohbete gonderilecek komutun ta kendisi.",
   "suggestions": [
     {
-      "id": "2b2a",
-      "label": "2b.2-A: G1'in 30 dosyasını al (hızlı kazanç)",
-      "desc": "Diff matrisinde %90+ benzerlikli, risksiz donor alımı — 3 grup halinde derle+commit",
-      "prompt": "2b.2-A'yı başlat: 2b.1 diff matrisinin G1 grubundaki 30 dosyayı (docs/10 §3) 3 grup halinde donörden al, her grupta derle + CHANGELOG + commit."
-    },
-    {
       "id": "p0",
       "label": "2b.2-P0: protokol diff tablosu",
-      "desc": "Protocol/DS/CS/JS/ES/Socket dosyalarının opcode+struct karşılaştırması — protokol donor alımının ön şartı",
-      "prompt": "2b.2-P0: protokol dosyalarının (Protocol, DS/CS/JS/ESProtocol, SocketManager, Connection, IpManager) diff tablosunu opcode/struct düzeyinde çıkar ve canlı exe ile doğrula."
+      "desc": "Protocol/DS/CS/JS/ES/Socket dosyalarının opcode+struct karşılaştırması — protokol donor alımının ön şartı (H-007 dersi: tablosuz alım yok)",
+      "prompt": "2b.2-P0: protokol dosyalarının (Protocol, DS/CS/JS/ESProtocol, SocketManager, Connection, IpManager) diff tablosunu opcode/struct düzeyinde çıkar, canlı exe string'leriyle doğrula ve docs/11'e yaz."
     },
     {
-      "id": "e10",
-      "label": "2b.2'yi E-10 Reconnect ile başlat",
-      "desc": "En kolay ezilen dosya: donor sürümü al, derle, CHANGELOG + commit (09 raporu sırası)",
-      "prompt": "Faz 2b.2'yi E-10 Reconnect ile başlat: donor sürümü alın, derle, CHANGELOG + commit ile adımı kapat."
+      "id": "g2",
+      "label": "2b.2-C: G2'nin 25 dosyasını al",
+      "desc": "Diff matrisinin G2 bandı (kontrollü donor alımı) — 2b.2-B'de alınan bağımlılık modülleri hazır",
+      "prompt": "2b.2-C'yi başlat: diff matrisinin G2 grubundaki 25 dosyayı (docs/10) kanca korumasıyla donörden al, grup grup derle + CHANGELOG + commit."
     },
     {
-      "id": "cfg",
-      "label": "6 config eksiğini kapat",
-      "desc": "ChangeClass.xml, CustomBuyVip.txt, CustomJewel.txt, ZenDrop.xml, EventTime.xml, ThuMuaDoExc.txt kopyala + CustomJewel çağrısını .txt'e çevir",
-      "prompt": "09 raporundaki 6 eksik config dosyasını canlı Sub-1'den salt-okunur kopyala ve ServerInfo'daki CustomJewel çağrısını .txt formatına çevirip derlemeyi doğrula."
+      "id": "ekalem",
+      "label": "E-kalemlerini sırayla kapat",
+      "desc": "E-12/E-08 kolaylardan başla → E-03/E-05/E-06/E-07 orta → E-02/E-04/E-11/E-09 zor → E-01 BossGuild en son (09 raporu sırası)",
+      "prompt": "docs/09 sırasına göre E-kalemlerini işlemeye başla: E-12 ZenDrop ve E-08 CustomRankUser ile başla, her kalemde donor/bizim/canlı üçlü kararını uygula + derle + commit."
+    },
+    {
+      "id": "g3",
+      "label": "2b.2-D: G3'ün 10 dosyasını birleştir",
+      "desc": "Manuel birleşim gerektiren G3 bandı — kanca koruması + metot yüzeyi kontrolü şart",
+      "prompt": "2b.2-D: G3 grubundaki 10 dosyayı (docs/10) dosya dosya manuel birleştir (SPK kancaları korunacak), her dosyada derle + CHANGELOG + commit."
     }
   ]
 }

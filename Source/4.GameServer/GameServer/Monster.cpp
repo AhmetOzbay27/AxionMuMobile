@@ -3415,3 +3415,15 @@ bool gObjSetBots(int aIndex,int MonsterClass) // OK SACAR LO QUE NO ES NESESARIO
 	lpObj->OldY = lpObj->Y;
 	return 1;
 }
+
+// 2b.2-B: donor MonsterAI bu fonksiyonu cagiriyor (canli SPK davranisi: boss hit-damage suresi dolan temizlenir)
+void gObjMonsterClearExpiredDamage()
+{
+	for (int i = OBJECT_START_MONSTER; i < MAX_OBJECT_MONSTER; i++)
+	{
+		if (gObjIsConnected(i) == 0 || gObj[i].Type != OBJECT_MONSTER)
+			continue;
+
+		gObjMonsterDelHitDamageUser(&gObj[i]);
+	}
+}

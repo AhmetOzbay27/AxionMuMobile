@@ -136,6 +136,7 @@
 #endif
 #include "BCustomItemBank.h"
 #include "CustomEventTime.h"
+#include "CEventName.h"	// 2b.2-B
 #include "ResetTableVIP.h"
 #include "BCustomVIPChar.h"
 #include "BCustomEdit.h"
@@ -466,6 +467,8 @@ void CServerInfo::ReadEventInfo() // OK
 	gBsVEvent.Load(gPath.GetFullPath("Event\\LoanChien.dat"));
 
 	gBloodCastle.Load(gPath.GetFullPath("Event\\BloodCastle.dat"));
+
+	gEventName.OpenFile(gPath.GetFullPath("Event\\EventName.xml"));	// 2b.2-B (donor ServerInfo:452) — EventName.xml canli Data/Event'te
 
 	gBonusManager.Load(gPath.GetFullPath("Event\\BonusManager.dat"));
 

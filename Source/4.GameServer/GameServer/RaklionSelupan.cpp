@@ -358,9 +358,13 @@ void CRaklionSelupan::SelupanAct_Berserk4() // OK
 
 bool CRaklionSelupan::CreateSelupan() // OK
 {
-	for(int n=0;n < gMonsterSetBase.m_count;n++)
+	std::vector<MONSTER_SET_BASE_INFO> base_info = gMonsterSetBase.GetMonsterMap(MAP_RAKLION2);
+
+	//for(int n=0;n < gMonsterSetBase.m_count;n++)
+	for (int n = 0; n < base_info.size(); n++)
 	{
-		MONSTER_SET_BASE_INFO* lpInfo = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
+		MONSTER_SET_BASE_INFO* lpInfo = &base_info[n];
+		//MONSTER_SET_BASE_INFO* lpInfo = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
 
 		if(lpInfo->Type != 4 || lpInfo->MonsterClass != 459 || lpInfo->Map != MAP_RAKLION2)
 		{
@@ -374,7 +378,7 @@ bool CRaklionSelupan::CreateSelupan() // OK
 			continue;
 		}
 
-		if(gObjSetPosMonster(index,n) == 0)
+		if(gObjSetPosMonster(index, lpInfo->index) == 0)
 		{
 			gObjDel(index);
 			continue;

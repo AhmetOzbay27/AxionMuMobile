@@ -12,6 +12,7 @@
 
 struct MONSTER_SET_BASE_INFO
 {
+	int index;	// 2b.2-B (donor MonsterSetBase.h:14) — gObjSetPosMonster(map, info.index) icin
 	int Type;
 	int MonsterClass;
 	int Map;
@@ -34,6 +35,11 @@ public:
 	bool GetPosition(int index,short map,short* ox,short* oy);
 	bool GetBoxPosition(int map,int x,int y,int tx,int ty,short* ox,short* oy);
 	void SetBoxPosition(int index,int map,int x,int y,int tx,int ty);
+	// 2b.2-B: array tabanli (bizim) GetMonsterMap uyarlamasi — donor std::map data modeli bizde yok
+	std::vector<MONSTER_SET_BASE_INFO> GetMonsterMap(int _map);
+	MONSTER_SET_BASE_INFO* GetMonsterMap(int _map, int _index);
+	MONSTER_SET_BASE_INFO* GetMonsterMapAt(int _map, int n);
+	int GetMonsterMapCount(int _map);
 public:
 	MONSTER_SET_BASE_INFO m_MonsterSetBaseInfo[MAX_MSB_MONSTER];
 	MONSTER_SET_BASE_INFO m_Mp[OBJ_MAXMONSTER];//MC

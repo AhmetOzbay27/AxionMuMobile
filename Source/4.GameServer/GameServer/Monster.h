@@ -11,6 +11,7 @@ bool gObjMonsterMoveCheck(LPOBJ lpObj,int tx,int ty);
 void gObjMonsterInitHitDamage(LPOBJ lpObj);
 void gObjMonsterSetHitDamage(LPOBJ lpObj,int aIndex,QWORD damage);
 int gObjMonsterDelHitDamageUser(LPOBJ lpObj);
+void gObjMonsterClearExpiredDamage();	// 2b.2-B (donor Monster.h:74)
 int gObjMonsterGetTopHitDamageUser(LPOBJ lpObj);
 QWORD gObjMonsterGetTopHitDamageParty(LPOBJ lpObj,int PartyNumber,int* TopHitDamageUser);
 int gObjAddMonster(int map);

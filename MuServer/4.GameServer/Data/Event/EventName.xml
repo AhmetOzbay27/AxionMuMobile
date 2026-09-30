@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPK (Faz 2b.2-B): CEventName modulu icin minimal config.
+     Canli sunucuda bu dosya yoktur (donor GS'te de yok) — bos birakildiginda
+     tum event isim/kalan-sure sorgulari -1 doner, dosyasiz davranisla birebir ayni.
+     Ileride event isimleri/uyari sureleri buradan ozellestirilebilir. -->
+<EventList>
+</EventList>

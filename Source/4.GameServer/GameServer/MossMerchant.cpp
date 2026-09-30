@@ -12,6 +12,7 @@
 #include "Message.h"
 #include "Monster.h"
 #include "Notice.h"
+#include "CEventName.h"	// 2b.2-B (donor MossMerchant ayni include)
 #include "RandomManager.h"
 #include "ScheduleManager.h"
 #include "ServerInfo.h"
@@ -186,22 +187,22 @@ void CMossMerchant::MainProc() // OK
 
 	if(gServerInfo.m_MossMerchantEvent == 0)
 	{
-		if (gServerDisplayer.EventMoss != -1)
+		if (gEventName.GlobalRemainTime(MOSS_MERCH_TIME) != -1)
 		{
-			gServerDisplayer.EventMoss = -1;
+			gEventName.GlobalRemainTime(MOSS_MERCH_TIME, -1);
 		}
 	}
 	else 
 	{
 		if (this->m_State == MOSS_STATE_EMPTY)
 		{
-			gServerDisplayer.EventMoss = this->m_RemainTime;
+			gEventName.GlobalRemainTime(MOSS_MERCH_TIME, this->m_RemainTime);
 		}
 		else 
 		{
-			if (gServerDisplayer.EventMoss != 0)
+			if (gEventName.GlobalRemainTime(MOSS_MERCH_TIME) != 0)
 			{
-				gServerDisplayer.EventMoss = 0;
+				gEventName.GlobalRemainTime(MOSS_MERCH_TIME, 0);
 			}
 		}
 	}
@@ -233,7 +234,7 @@ void CMossMerchant::ProcState_EMPTY() // OK
 
 	if(this->m_RemainTime <= 0)
 	{
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(208));
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(208));
 
 		this->SetState(MOSS_STATE_START);
 	}
@@ -247,7 +248,7 @@ void CMossMerchant::ProcState_START() // OK
 
 	if(this->m_RemainTime <= 0)
 	{
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(209));
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(209));
 
 		this->SetState(MOSS_STATE_EMPTY);
 	}

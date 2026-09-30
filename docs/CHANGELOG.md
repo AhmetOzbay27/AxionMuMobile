@@ -7,6 +7,49 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-B dalga 2 — bağımlılık modülleri: 9 dosya + CEventName modülü alındı
+
+**Ne yapıldı**
+- 2b.2-A'da ertelenen 8 dosyanın tamamı alındı (bağımlılıklarıyla birlikte):
+  - **BonusManager + MossMerchant**: donör alındı; `gEventName.GlobalRemainTime`
+    çağrıları için **CEventName modülü donör'dan alındı** (CEventName.cpp 225 satır /
+    CEventName.h 84 satır; BONUS_EVENT_TIME=6, MOSS_MERCH_TIME=11,
+    MAX_SIZE_EVENT_TEMPLATE=50). GameServer.vcxproj'a eklendi (CrywolfUtil yanı).
+    ServerInfo.cpp:471 `gEventName.OpenFile(gPath.GetFullPath("Event\\EventName.xml"))`
+    (gBloodCastle.Load ile gBonusManager.Load arası — donör :452 eşdeğeri).
+  - **MonsterSetBase h+cpp**: donör std::map tabanlı GetMonsterMap modeli ALINMADI;
+    array-tabanlı işlev eşdeğeri yazıldı: `info.index = this->m_count` (SetInfo'da) +
+    `GetMonsterMap(int)` (vector<MONSTER_SET_BASE_INFO> döner),
+    `GetMonsterMap(int,int)`, `GetMonsterMapAt`, `GetMonsterMapCount`. Donör
+    ImperialGuardian/Raklion/RaklionSelupan/Crywolf bu arayüzle derleniyor.
+  - **Monster h+cpp**: `gObjMonsterClearExpiredDamage()` eklendi (bizim
+    gObjMonsterDelHitDamageUser'ı kullanır; Monster.h:14 declare).
+  - **MonsterAI.cpp**: tam donör alındı (ClearExpiredDamage çağrısı uyumlu).
+  - **ImperialGuardian.cpp, RaklionSelupan.cpp, Crywolf.cpp**: tam donör alındı
+    (vector GetMonsterMap + lpInfo->index kullanıyor; Crywolf G3 bandından erken alındı).
+  - **Raklion.cpp**: tam donör alındı — `m_RaklionEvent != 0` guard'ı dahil (bizim
+    ServerInfo.cpp:4076'da config zaten vardı: `RaklionEvent` ini anahtarı). Raklion.h
+    zaten birebir idi. SPK (Faz 2b) kancası YOK (beklendiği gibi).
+- **EventName.xml kararı**: dosya canlı Sub-1\Data\Event'te YOK (donör sunucuda da
+  yok). CEventName::OpenFile (CEventName.cpp:31) load hatasında ErrorMessageBox +
+  return yapıyor → başlangıçta popup riski. Çözüm: minimal boş `<EventList>` XML'i
+  `MuServer\4.GameServer\Data\Event\EventName.xml` olarak oluşturuldu. Struct
+  default'ları m_Key=-1/m_RemainTime=-1 olduğundan boş dosya = dosyasız davranış
+  (BonusManager/MossMerchant -1 kontrolü atlanır) — birebir eşdeğer.
+
+**Neden** — G1 dosyalarının donör sürümleri 3 modül bağımlılığı istiyordu
+(CEventName, GetMonsterMap, ClearExpiredDamage); hepsi karşılanmadan G2'ye
+geçilmemesi için dalga 2 olarak alındı.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.781.696 B** (22:48), pdb güncel;
+- CEventName.cpp donor ile birebir; Raklion.cpp donor ile birebir; EventName.xml
+  hedef klasörde (`MuServer\4.GameServer\Data\Event\`);
+- 8 dosyadaki `// SPK (Faz 2b)` kanca blokları korundu (dokunulan dosyalarda kanca
+  yok — grep 0 eşleşme).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-A — G1 donör alımı: 19 dosya alındı, 7 ertelendi (bağımlılık)
 
 **Ne yapıldı**

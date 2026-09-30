@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 21:30:00",
+  "updated": "2026-09-30 22:50:00",
   "status": "ok",
-  "text": "Config pasifizasyonu TAMAM: 6 eksik config canli Sub-1'den kopyalandi (ChangeClass.xml, CustomBuyVip.txt, CustomJewel.txt, ZenDrop.xml guncel, EventTime.xml, ThuMuaDoExc.txt). 2 format duzeltmesi: CustomJewel LoadXML(.xml)->Load(.txt), ThuMuaDoExc .xml->.txt (canli exe kanitiyla). GS temiz derlendi -> 10.701.824 B, PDB dogrulandi. Yol farklari (SPK\\ vs Custom\\) E-kalem entegrasyonlarina not edildi. Siradaki: 2b.2-A (G1'in 30 dosyasi) veya 2b.2-P0 protokol tablosu."
+  "text": "2b.2-B dalga 2 TAMAM: 2b.2-A'da ertelenen 8 dosyanin tamami alindi (BonusManager, MossMerchant, MonsterAI, ImperialGuardian, RaklionSelupan, Crywolf, Raklion + MonsterSetBase/Monster uyarlamalari). Yeni CEventName modulu (EventName.xml) donor'dan alindi — dosya canlida yok, minimal bos config Data\\Event\\EventName.xml olusturuldu (davranis dosyasiz haliyle birebir). Array-tabanli GetMonsterMap + gObjMonsterClearExpiredDamage eklendi. GS temiz derlendi -> 10.781.696 B (22:48), PDB dogrulandi, kancalar korundu. Siradaki: 2b.2-P0 protokol tablosu."
 }

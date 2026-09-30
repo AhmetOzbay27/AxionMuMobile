@@ -132,6 +132,7 @@ void CMonsterSetBase::SetInfo(MONSTER_SET_BASE_INFO info) // OK
 
 	info.Dir = ((info.Dir==-1)?(GetLargeRand()%8):info.Dir);
 
+	info.index = this->m_count;	// 2b.2-B: donor .index alani (gObjSetPosMonster(map, info.index) icin)
 	this->m_MonsterSetBaseInfo[this->m_count++] = info;
 }
 
@@ -200,4 +201,60 @@ void CMonsterSetBase::SetBoxPosition(int index,int map,int x,int y,int tx,int ty
 	lpInfo->Y = y;
 	lpInfo->TX = tx;
 	lpInfo->TY = ty;
+}
+
+// ===== 2b.2-B: array-tabanli GetMonsterMap uyarlamasi (donor std::map modelinin islev esdegeri) =====
+std::vector<MONSTER_SET_BASE_INFO> CMonsterSetBase::GetMonsterMap(int _map)
+{
+	std::vector<MONSTER_SET_BASE_INFO> list;
+	for (int n = 0; n < this->m_count; n++)
+	{
+		if (this->m_MonsterSetBaseInfo[n].Map == _map)
+		{
+			list.push_back(this->m_MonsterSetBaseInfo[n]);
+		}
+	}
+	return list;
+}
+
+MONSTER_SET_BASE_INFO* CMonsterSetBase::GetMonsterMap(int _map, int _index)
+{
+	for (int n = 0; n < this->m_count; n++)
+	{
+		if (this->m_MonsterSetBaseInfo[n].Map == _map && this->m_MonsterSetBaseInfo[n].index == _index)
+		{
+			return &this->m_MonsterSetBaseInfo[n];
+		}
+	}
+	return NULL;
+}
+
+int CMonsterSetBase::GetMonsterMapCount(int _map)
+{
+	int count = 0;
+	for (int n = 0; n < this->m_count; n++)
+	{
+		if (this->m_MonsterSetBaseInfo[n].Map == _map)
+		{
+			count++;
+		}
+	}
+	return count;
+}
+
+MONSTER_SET_BASE_INFO* CMonsterSetBase::GetMonsterMapAt(int _map, int n)
+{
+	int found = 0;
+	for (int i = 0; i < this->m_count; i++)
+	{
+		if (this->m_MonsterSetBaseInfo[i].Map == _map)
+		{
+			if (found == n)
+			{
+				return &this->m_MonsterSetBaseInfo[i];
+			}
+			found++;
+		}
+	}
+	return NULL;
 }

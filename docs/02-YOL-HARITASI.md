@@ -55,9 +55,16 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     (Index[1..4] → tüm slotlar), AutoResetEnable'daki bizim
     m_CommandResetAutoEnable kontrolü korundu (canlı konfig =1 kanıtıyla).
     GS Rebuild temiz → 10.704.896 B (özdeş boyut, /LTCG); PDB doğrulandı.
-  - ⬜ 2b.2-A: G1'in 30 dosyası (hızlı kazanç, 3 grup)
+  - ✅ **2b.2-A dalga 1** (30.09.2026): G1'in 22 dosyası donör alındı; 8 dosya
+    bağımlılık nedeniyle ertelendi (detay: CHANGELOG 2b.2-A).
+  - ✅ **2b.2-B dalga 2** (30.09.2026): ertelenen 8 dosya + bağımlılık modülleri
+    alındı — BonusManager, MossMerchant, MonsterAI, ImperialGuardian,
+    RaklionSelupan, Crywolf, Raklion (+h'ler) ve yeni **CEventName modülü**
+    (EventName.xml minimal config ile). MonsterSetBase'e array-tabanlı
+    GetMonsterMap uyarlaması, Monster.cpp'ye gObjMonsterClearExpiredDamage eklendi.
+    GS derlemesi temiz → 10.781.696 B.
   - ⬜ 2b.2-P0: protokol opcode/struct diff tablosu (donor alım ön şartı)
-  - ⬜ 2b.2-B..D: G2 → G3/G4 (SPK korumalı) → G5
+  - ⬜ 2b.2-C..D: G2 → G3/G4 (SPK korumalı) → G5
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.

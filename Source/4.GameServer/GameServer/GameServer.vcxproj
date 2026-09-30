@@ -351,6 +351,7 @@
     <ClInclude Include="CrywolfStatue.h" />
     <ClInclude Include="CrywolfSync.h" />
     <ClInclude Include="CrywolfUtil.h" />
+    <ClInclude Include="CEventName.h" />
     <ClInclude Include="CSProtocol.h" />
     <ClInclude Include="CTCMini.h" />
     <ClInclude Include="CustomArena.h" />
@@ -632,6 +633,7 @@
     <ClCompile Include="CrywolfStatue.cpp" />
     <ClCompile Include="CrywolfSync.cpp" />
     <ClCompile Include="CrywolfUtil.cpp" />
+    <ClCompile Include="CEventName.cpp" />
     <ClCompile Include="CSProtocol.cpp" />
     <ClCompile Include="CTCMini.cpp" />
     <ClCompile Include="CustomArena.cpp" />

@@ -31,6 +31,13 @@
 - Satır kümesi benzerliği (whitespace/yorum normalize) %21 (BotAlchemist) ile
   %85 (Reconnect) arasında: **dosya dosya karar şart**, toplu donor alımı yanlış olur.
 - Entegrasyon sırası önerisi: **Kolay (3) → Orta (5) → Zor (4)** (§4 tablo).
+- **Dalga 2 notu (2b.2-B, 30.09.2026):** BonusManager + MossMerchant donör
+  alındı — canlıda görünen Bonus event zamanı için yeni **CEventName modülü**
+  (EventName.xml) donör'dan alındı; dosya canlıda yok → minimal boş config
+  `Data\Event\EventName.xml` oluşturuldu (davranış dosyasız haliyle birebir).
+  MonsterSetBase'e array-tabanlı GetMonsterMap, Monster.cpp'ye
+  gObjMonsterClearExpiredDamage eklendi; ImperialGuardian/Raklion*/Crywolf donör
+  alındı (Crywolf G3 bandından erken). E-01 BonusManager bağımlılığı hazır.
 
 ## 2. ENVANTER DÜZEYİ MATRİS
 

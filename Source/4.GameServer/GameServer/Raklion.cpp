@@ -213,7 +213,7 @@ void CRaklion::ProcState_NOTIFY1() // OK
 
 void CRaklion::ProcState_STANDBY() // OK
 {
-	if(((DWORD)this->m_AppearanceDelay*1000) <= (GetTickCount()-this->m_AppearanceMSec))
+	if(((DWORD)this->m_AppearanceDelay * 1000) <= (GetTickCount()-this->m_AppearanceMSec))
 	{
 		this->SetState(RAKLION_STATE_NOTIFY2);
 		return;
@@ -361,7 +361,7 @@ void CRaklion::SetState_NOTIFY2() // OK
 {
 	//LogAdd(LOG_BLACK,"[ RAKLION ] State(%d) -> NOTIFY2",this->m_RaklionState);
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(320),(((this->m_BossZoneCloseDelay/60)==0)?1:(this->m_BossZoneCloseDelay/60)));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(320),(((this->m_BossZoneCloseDelay/60)==0)?1:(this->m_BossZoneCloseDelay/60)));
 
 	this->SetRaklionState(RAKLION_STATE_NOTIFY2);
 }
@@ -388,7 +388,7 @@ void CRaklion::SetState_NOTIFY3() // OK
 {
 	//LogAdd(LOG_BLACK,"[ RAKLION ] State(%d) -> NOTIFY3",this->m_RaklionState);
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(321));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(321));
 
 	this->SetRaklionState(RAKLION_STATE_NOTIFY3);
 }
@@ -417,7 +417,7 @@ void CRaklion::SetState_NOTIFY4() // OK
 
 	this->m_BossZoneOpenMSec = GetTickCount();
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(323),(((this->m_BossZoneOpenDelay/60)==0)?1:(this->m_BossZoneOpenDelay/60)));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(323),(((this->m_BossZoneOpenDelay/60)==0)?1:(this->m_BossZoneOpenDelay/60)));
 
 	gRaklionUtil.NotifyRaklionResult(this->m_RaklionBattleOfSelupan.GetSuccessValue());
 
@@ -438,9 +438,12 @@ void CRaklion::SetState_END() // OK
 
 	this->ClearData();
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(324));
+	if (gServerInfo.m_RaklionEvent != 0)
+	{
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(324));
 
-	this->BossEggRegenAll();
+		this->BossEggRegenAll();
+	}
 
 	this->SetRaklionState(RAKLION_STATE_END);
 }
@@ -482,7 +485,7 @@ void CRaklion::RaklionMonsterDieProc(LPOBJ lpObj,LPOBJ lpTarget) // OK
 	if(lpObj->Class == 459)
 	{
 		this->SelupanDie(lpObj->Index);
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(322),lpTarget->Name);
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(322),lpTarget->Name);
 	}
 
 	if(lpObj->Class >= 460 && lpObj->Class <= 462)
@@ -518,9 +521,13 @@ bool CRaklion::BossEggDie() // OK
 
 void CRaklion::BossEggRegenAll() // OK
 {
-	for(int n=0;n < gMonsterSetBase.m_count;n++)
+	std::vector<MONSTER_SET_BASE_INFO> base_info = gMonsterSetBase.GetMonsterMap(MAP_RAKLION2);
+
+	//for(int n=0;n < gMonsterSetBase.m_count;n++)
+	for (int n = 0; n < base_info.size(); n++)
 	{
-		MONSTER_SET_BASE_INFO* lpInfo = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
+		MONSTER_SET_BASE_INFO* lpInfo = &base_info[n];
+		//MONSTER_SET_BASE_INFO* lpInfo = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
 
 		if(lpInfo->Type != 4 || (lpInfo->MonsterClass != 460 && lpInfo->MonsterClass != 461 && lpInfo->MonsterClass != 462) || lpInfo->Map != MAP_RAKLION2)
 		{
@@ -534,7 +541,7 @@ void CRaklion::BossEggRegenAll() // OK
 			continue;
 		}
 
-		if(gObjSetPosMonster(index,n) == 0)
+		if(gObjSetPosMonster(index, lpInfo->index) == 0)
 		{
 			gObjDel(index);
 			continue;

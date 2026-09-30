@@ -1913,10 +1913,13 @@ void CImperialGuardian::SetMonster(int MonsterClass) // OK
 void CImperialGuardian::SetMonsterTrap(int MonsterClass) // OK
 {
 	#if(GAMESERVER_UPDATE>=501)
+	std::vector<MONSTER_SET_BASE_INFO> base_info = gMonsterSetBase.GetMonsterMap(this->m_Map);
 
-	for(int n=0;n < gMonsterSetBase.m_count;n++)
+	//for(int n=0;n < gMonsterSetBase.m_count;n++)
+	for (int n = 0; n < base_info.size(); n++)
 	{
-		MONSTER_SET_BASE_INFO* lpInfo = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
+		MONSTER_SET_BASE_INFO* lpInfo = &base_info[n];
+		//MONSTER_SET_BASE_INFO* lpInfo = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
 
 		if(lpInfo->Type != 4 || lpInfo->MonsterClass != MonsterClass || lpInfo->Map != this->m_Map)
 		{
@@ -1932,7 +1935,7 @@ void CImperialGuardian::SetMonsterTrap(int MonsterClass) // OK
 
 		LPOBJ lpObj = &gObj[index];
 
-		if(gObjSetPosMonster(index,n) == 0)
+		if(gObjSetPosMonster(index, lpInfo->index) == 0)
 		{
 			gObjDel(index);
 			continue;
@@ -1969,7 +1972,7 @@ void CImperialGuardian::NpcJerryTheAdviser(LPOBJ lpNpc,LPOBJ lpObj) // OK
 
 	if(lpObj->Level < 15)
 	{
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(305));
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(305));
 		return;
 	}
 

@@ -12,6 +12,7 @@
 #include "Message.h"
 #include "Monster.h"
 #include "Notice.h"
+#include "CEventName.h"	// 2b.2-B (donor BonusManager ayni include)
 #include "ObjectManager.h"
 #include "ScheduleManager.h"
 #include "ServerInfo.h"
@@ -207,29 +208,28 @@ void CBonusManager::MainProc() // OK
 
 			if(gServerInfo.m_BonusManagerSwitch == 0)
 			{
-				if (gServerDisplayer.EventCustomBonus != -1)
+				if (gEventName.GlobalRemainTime(BONUS_EVENT_TIME)!= -1)
 				{
-					gServerDisplayer.EventCustomBonus = -1;
+					gEventName.GlobalRemainTime(BONUS_EVENT_TIME, -1);
 				}
 			}
 			else 
 			{
-				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gServerDisplayer.EventCustomBonus || gServerDisplayer.EventCustomBonus <= 0))
+				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gEventName.GlobalRemainTime(BONUS_EVENT_TIME) || gEventName.GlobalRemainTime(BONUS_EVENT_TIME) <= 0))
 				{
 					if (lpInfo->State == BONUS_STATE_EMPTY)
 					{
-						gServerDisplayer.EventCustomBonus = lpInfo->RemainTime;
+						gEventName.GlobalRemainTime(BONUS_EVENT_TIME, lpInfo->RemainTime);
 					}
 					else 
 					{
-						if (gServerDisplayer.EventCustomBonus != 0)
+						if (gEventName.GlobalRemainTime(BONUS_EVENT_TIME) != 0)
 						{
-							gServerDisplayer.EventCustomBonus = 0;
+							gEventName.GlobalRemainTime(BONUS_EVENT_TIME, 0);
 						}
 					}
 				}
 			}
-
 
 			switch(lpInfo->State)
 			{
@@ -256,7 +256,7 @@ void CBonusManager::ProcState_EMPTY(BONUS_INFO* lpInfo) // OK
 {
 	if(lpInfo->RemainTime <= 0)
 	{
-		if(lpInfo->StartMessage != -1){gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(lpInfo->StartMessage));}
+		if(lpInfo->StartMessage != -1){gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(lpInfo->StartMessage));}
 		this->SetState(lpInfo,BONUS_STATE_START);
 	}
 }
@@ -265,7 +265,7 @@ void CBonusManager::ProcState_START(BONUS_INFO* lpInfo) // OK
 {
 	if(lpInfo->RemainTime <= 0)
 	{
-		if(lpInfo->FinalMessage != -1){gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(lpInfo->FinalMessage));}
+		if(lpInfo->FinalMessage != -1){gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(lpInfo->FinalMessage));}
 		this->SetState(lpInfo,BONUS_STATE_EMPTY);
 	}
 }
