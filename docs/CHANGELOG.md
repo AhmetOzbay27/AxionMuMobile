@@ -41,7 +41,7 @@ düşmesini önlemek (özellikle CustomJewel ne .txt ne .xml bulabiliyordu).
 - PDB: CCustomJewel(42)/BotThuMuaer(17)/DoiItem(101) sembolleri.
 - 6 config dosyası boyut kanıtıyla yerinde (tablo §5 güncellendi).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `8515c346a`
 
 ## [26.09.30] Faz 2b.2 başlangıcı — E-10 Reconnect entegre edildi (2b.2'nin ilk kalemi)
 
