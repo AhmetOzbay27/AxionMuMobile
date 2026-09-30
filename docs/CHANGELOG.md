@@ -7,6 +7,31 @@
 
 ---
 
+## [26.09.30] Faz 2b.0-E — 12 ezilen dosyanın karşılaştırma raporu (docs/09)
+
+**Ne yapıldı**
+- 05 §4 E-01..E-12 dosyaları üçlü analiz edildi: bizim kaynak ↔ MUIG donor ↔
+  canlı kanıt (GameServer_canli.map sembolleri, canlı GS exe string taraması,
+  gs_strings_canli/bizim.txt, canlı config boyutları).
+- Yeni rapor: `docs\09-EZILEN-12-DOSYA-KARSILASTIRMA.md` — envanter matrisi,
+  metot yüzeyi farkları, dosya başına strateji (Kolay 3 / Orta 5 / Zor 4),
+  uygulama sırası (E-10 Reconnect → E-01 BossGuild), 6 config eksiği.
+- 00/02/05 çapraz bağlandı.
+
+**Neden** — 2b'nin "12 ezilen dosya" kaleminin girdisi: hangi dosyada donor
+alımı, birleştirme veya canlıdan yeniden yazım yapılacağı karara bağlanmalı.
+
+**Doğrulama** (kod değişikliği yok, analiz kaydı)
+- Donörde olmayanlar: BossGuild, ChangeClass, ZenDrop (yalnız bizim + canlı kanıt).
+- Normalize satır benzerliği %21 (BotAlchemist) - %85 (Reconnect) aralığı.
+- Canlı revizyonun iki kaynağı da aştığı örnekler: BossGuild kill→skor/ödül
+  (BONUS_POINT_MONSTER + HandleBossKill, map kanıtlı), BuyVip "configuration
+  reloaded", Alchemist "data load error %s", OfflineMode dar log seti.
+- Bizim MuServer'da 6 canlı config eksik/eski (ChangeClass.xml, CustomBuyVip.txt,
+  CustomJewel.txt, ZenDrop.xml eski, EventTime.xml, ThuMuaDoExc.txt).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.0 — 4 MUIG donor modülü GS'ye entegre edildi (AddBuffer, CAUTOHP, CCustomJewelBank, CSkillDamage)
 
 **Ne yapıldı**

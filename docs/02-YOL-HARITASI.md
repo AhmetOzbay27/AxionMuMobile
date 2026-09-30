@@ -36,6 +36,12 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   ObjectManager, CommandManager.cpp/.h) + config şablonları (AddBuff.txt,
   CongHuong.txt). GS derlendi → 10.704.896 B; semboller PDB ile doğrulandı.
   H-007: 0x35 opcode'u donor paritesiyle AUTOHP'ye verildi.
+- ✅ **2b.0-E** 12 "ezilen" dosyanın (E-01..E-12) üçlü karşılaştırma raporu
+  (30.09.2026) → [09-EZILEN-12-DOSYA-KARSILASTIRMA.md](09-EZILEN-12-DOSYA-KARSILASTIRMA.md):
+  bizim↔donor↔canlı map/exe/config analizi; dosya başına strateji
+  (Kolay 3 / Orta 5 / Zor 4), uygulama sırası ve 6 config eksiği tespit edildi.
+  Canlı revizyonun iki kaynağı da aştığı doğrulandı (BossGuild skor/ödül,
+  BuyVip reload, Alchemist load koruması hiçbir kaynakta yok).
 - ⬜ **2b.1** 161 dosyanın diff matrisi (SPK taban vs MUIG donor): hangisi
   gerçekten daha yeni, hangisi SPK-özel değişiklik içeriyor.
 - ⬜ **2b.2** Risk gruplarına ayır (protokol dokunanlar / UI / yardımcı) ve

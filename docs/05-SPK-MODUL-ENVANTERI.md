@@ -127,6 +127,7 @@ SkillDamage.cpp map deseninde yakalanamamıştı.)
 Bu dosyalar bizim kaynakta da VAR ama canlıda `SPK\` altındaki sürümleriyle
 derleniyor. Bizim sürümler ya eski ya farklı dallanma; parite için canlı
 davranış çözümlenip bizim dosyalara taşınacak (dosya adı değişmez).
+**Dosya dosya karşılaştırma + uygulama sırası: [09-EZILEN-12-DOSYA-KARSILASTIRMA.md](09-EZILEN-12-DOSYA-KARSILASTIRMA.md) (2b.0-E, 30.09.2026).**
 
 | # | Dosya | Sınıf (map) | Canlı davranış kanıtı / config |
 |---|-------|-------------|-------------------------------|
