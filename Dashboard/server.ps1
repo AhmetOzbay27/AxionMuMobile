@@ -11,6 +11,7 @@ $ErrorActionPreference = "Stop"
 $RepoRoot   = "C:\Axion Mu Source"
 $DocsDir    = Join-Path $RepoRoot "docs"
 $WwwDir     = Join-Path $PSScriptRoot "www"
+$DataDir    = Join-Path $PSScriptRoot "data"
 $GitExe     = "C:\Program Files\Git\cmd\git.exe"
 if (-not (Test-Path $GitExe)) { $GitExe = "git" }
 
@@ -118,6 +119,40 @@ while ($listener.IsListening) {
             if ($path -match "/api/log/(\d+)") { $n = [math]::Min([int]$Matches[1], 100) }
             $lines = & $GitExe -C $RepoRoot log --pretty=format:"%h %ad %s" --date=format:"%d.%m.%Y %H:%M" -$n 2>$null
             Send-Response $ctx 200 "text/plain; charset=utf-8" ($lines -join "`n")
+        }
+        elseif ($path -eq "/api/agent") {
+            $o = Get-Content (Join-Path $DataDir "oneriler.json") -Raw -Encoding UTF8 | ConvertFrom-Json
+            $k = Get-Content (Join-Path $DataDir "komut.json") -Raw -Encoding UTF8 | ConvertFrom-Json
+            $s = Get-Content (Join-Path $DataDir "sonuc.json") -Raw -Encoding UTF8 | ConvertFrom-Json
+            $obj = @{ suggestions = $o.suggestions; queue = $k.queue; history = $k.history; sonuc = $s }
+            Send-Response $ctx 200 "application/json; charset=utf-8" (ConvertTo-Json $obj -Depth 6)
+        }
+        elseif ($path -eq "/api/cmd" -and $ctx.Request.HttpMethod -eq "POST") {
+            $body = (New-Object System.IO.StreamReader($ctx.Request.InputStream, [System.Text.Encoding]::UTF8)).ReadToEnd()
+            $req = $body | ConvertFrom-Json
+            $pinFile = Join-Path $DataDir "pin.txt"
+            $pinOk = $false
+            if (Test-Path $pinFile) {
+                $pinOk = ("$($req.pin)" -eq (Get-Content $pinFile -Raw).Trim())
+            }
+            if (-not $pinOk) {
+                Send-Response $ctx 403 "application/json; charset=utf-8" '{"ok":false,"error":"PIN yanlis"}'
+            }
+            elseif ([string]::IsNullOrWhiteSpace($req.text) -or $req.text.Length -gt 500) {
+                Send-Response $ctx 400 "application/json; charset=utf-8" '{"ok":false,"error":"Komut bos veya 500 karakterden uzun"}'
+            }
+            else {
+                $kf = Join-Path $DataDir "komut.json"
+                $k = Get-Content $kf -Raw -Encoding UTF8 | ConvertFrom-Json
+                if ($null -eq $k.queue) { $k | Add-Member -NotePropertyName queue -NotePropertyValue @() }
+                $text = [string]$req.text
+                if ($text.Length -gt 500) { $text = $text.Substring(0,500) }
+                $entry = @{ text = $text; ts = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss"); id = [guid]::NewGuid().ToString("N").Substring(0,8) }
+                $k.queue = @($k.queue) + $entry
+                $k.updated = $entry.ts
+                Set-Content -Path $kf -Value (ConvertTo-Json $k -Depth 6) -Encoding UTF8
+                Send-Response $ctx 200 "application/json; charset=utf-8" '{"ok":true}'
+            }
         }
         elseif ($path -eq "/api/ping") {
             Send-Response $ctx 200 "text/plain" "ok"

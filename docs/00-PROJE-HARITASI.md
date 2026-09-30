@@ -61,7 +61,7 @@ bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 | `GetMain\` | GetMainInfo derleme çıktısı |
 | `android\`, `sokol-master\` | Mobil katman bağımlılıkları |
 | `BuildLog\` | Derleme logları + string-parite analiz çıktıları |
-| `Dashboard\` | **İlerleme panosu** — bağımlılıksız PowerShell HTTP sunucusu + tek dosya UI; port 8096. Başlat: `Dashboard\start-dashboard.cmd` (dış erişim `http://45.87.120.29:8096/`, localhost-only için `-Published 0`). Firewall kuralı "Axion Mu Pano 8096" + URL ACL http://+:8096/ eklendi. |
+| `Dashboard\` | **İlerleme panosu + ajan köprüsü** — bağımlılıksız PowerShell HTTP sunucusu + tek dosya UI; port 8096. Başlat: `Dashboard\start-dashboard.cmd` (dış erişim `http://45.87.120.29:8096/`, localhost-only için `-Published 0`). Firewall kuralı "Axion Mu Pano 8096" + URL ACL http://+:8096/ eklendi. **Ajan köprüsü:** `data\oneriler.json` (ajan önerileri, ajan yazar), `data\komut.json` (kullanıcının verdiği komut kuyruğu + geçmişi), `data\sonuc.json` (ajanın son mesajı), `data\pin.txt` (POST PIN'i, git dışı). Kullanıcı panodan komut verir → sohbete **"pano"** yazan ajan kuyruğu işler, sonucu sonuc.json'a yazar. |
 | `docs\` | **Proje dokümantasyonu (bu klasör)** — 06: canlı sistem envanteri |
 
 ### Dış referans konumları (proje dışı, salt okunur)

@@ -7,6 +7,28 @@
 
 ---
 
+## [26.09.30] Pano v4 — ajan köprüsü: panodan komut verme
+
+**Ne yapıldı**
+- Kullanıcı isteği: önerileri ve süreci panodan takip edip doğrudan komut vermek.
+- `Dashboard\data\`: `oneriler.json` (ajanın önerileri — ajan günceller),
+  `komut.json` (kullanıcı komut kuyruğu + işlenen geçmiş), `sonuc.json` (ajanın
+  son mesajı), `pin.txt` (6 haneli PIN, **git dışı** tutulacak).
+- `server.ps1` yeni uçlar: `GET /api/agent` (öneriler + kuyruk + geçmiş + son
+  mesaj), `POST /api/cmd` (PIN doğrulamalı; yanlış PIN 403, metin ≤500 karakter).
+- `index.html`: **🤖 Ajan Köprüsü** bölümü — ajan öneri kartları (tıkla → komut
+  alanı dolar), PIN + komut girişi, GÖNDER; kuyruk ve geçmiş panoda görünür;
+  ajanın son mesajı vurgulu kutuda.
+- Akış: kullanıcı panodan komut verir → komut.json kuyruğuna düşer → kullanıcı
+  sohbete **"pano"** yazar → ajan kuyruğu okur, işler, sonucu sonuc.json'a yazar
+  → pano 30 sn içinde sonucu gösterir.
+- Doğrulama: yanlış PIN → 403; doğru PIN → {ok:true}; test komutu kuyruktan
+  işlendi, sonuc.json panoya yansıdı (Preview ekran görüntüsü onaylı).
+- Uyarı: PIN'in koruması basittir (statik eşleşme); hassas iş için yine de
+  sohbet onayı gerekir (request_elevation akışı panoyu bypass etmez).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Pano tasarım v3 — misyon kartları + katlanabilir plan
 
 **Ne yapıldı**

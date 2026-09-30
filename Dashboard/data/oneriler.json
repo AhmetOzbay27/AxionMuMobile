@@ -1,0 +1,30 @@
+{
+  "updated": "2026-09-30 19:25:00",
+  "note": "Bu dosyayi ajan (Buffy) gunceller. 'prompt' sohbete gonderilecek komutun ta kendisi.",
+  "suggestions": [
+    {
+      "id": "2b1",
+      "label": "2b.1 diff matrisini başlat",
+      "desc": "161 ortak dosyanın SPK tabanı ↔ MUIG donor karşılaştırması; risk gruplarına ayırma",
+      "prompt": "Faz 2b.1'i başlat: 161 ortak dosyanın SPK tabanı ile MUIG donor arasındaki diff matrisini çıkar ve risk gruplarına göre sınıflandır."
+    },
+    {
+      "id": "e10",
+      "label": "2b.2'yi E-10 Reconnect ile başlat",
+      "desc": "En kolay ezilen dosya: donor sürümü al, derle, CHANGELOG + commit",
+      "prompt": "Faz 2b.2'yi E-10 Reconnect ile başlat: donor sürümü alın, derle, CHANGELOG + commit ile adımı kapat."
+    },
+    {
+      "id": "cfg",
+      "label": "6 config eksiğini kapat",
+      "desc": "ChangeClass.xml, CustomBuyVip.txt, CustomJewel.txt, ZenDrop.xml, EventTime.xml, ThuMuaDoExc.txt kopyala + CustomJewel çağrısını .txt'e çevir",
+      "prompt": "09 raporundaki 6 eksik config dosyasını canlı Sub-1'den salt-okunur kopyala ve ServerInfo'daki CustomJewel çağrısını .txt formatına çevirip derlemeyi doğrula."
+    },
+    {
+      "id": "bossguild",
+      "label": "BossGuild çözümlemesi (E-01)",
+      "desc": "Canlı map + log akışından skor/ödül/spawn sistemi tasarım taslağı",
+      "prompt": "E-01 BossGuild için canlı davranış çözümlemesi yap: map sembolleri + canlı log akışından HandleBossKill/SpawnBoss/ödül sisteminin tasarım taslağını çıkar."
+    }
+  ]
+}
