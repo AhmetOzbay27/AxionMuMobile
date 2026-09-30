@@ -7,6 +7,34 @@
 
 ---
 
+## [26.09.30] İlerleme panosu — dış IP'den canlı takip aracı (Dashboard\)
+
+**Ne yapıldı**
+- `Dashboard\server.ps1`: bağımlılıksız PowerShell 5.1 HttpListener sunucusu
+  (makinede php/python/node yok). Uçlar: `/` (UI), `/api/status` (git log -15,
+  çalışma ağacı durumu, derleme boyutları, disk, docs listesi), `/api/doc/<ad>.md`
+  (docs klasöründen salt-okunur okuma; Türkçe dosya adları dahil), `/api/log/N`,
+  `/api/ping`. Yol geçiş koruması: yalnız docs\*.md, `..` reddedilir.
+- `Dashboard\www\index.html`: tek dosya koyu-tema UI — faz durumu panosu (00 ile
+  uyumlu), sıradaki adım kutusu, GameServer bizim↔canlı + Main + GetMainInfo
+  boyut tablosu, son 15 commit, sistem durumu, tıklayınca açılan doküman okuyucu;
+  30 sn'de bir otomatik yenileme.
+- `Dashboard\start-dashboard.cmd`: çift tıkla başlatma (dış erişim modu).
+- Firewall kuralı "Axion Mu Pano 8096" (TCP in 8096) + URL ACL `http://+:8096/`
+  (Everyone) yönetici onayıyla eklendi.
+
+**Neden** — kullanıcı sunucu ping'i nedeniyle makinede oturamıyor; tüm ilerlemeyi
+(faz durumu, commit akışı, dokümanlar, derleme boyutları) dış IP'den tarayıcıyla
+takip etmek istiyor.
+
+**Doğrulama**
+- `http://localhost:8096/api/ping` → ok; `http://45.87.120.29:8096/api/ping` → ok
+  (dış IP'den erişim çalışıyor; HTTP.sys 0.0.0.0:8096 dinliyor).
+- Tüm docs dosyaları (Türkçe İ̇ adlılar dahil) `/api/doc/` ile okunuyor.
+- Yol geçiş testi: `/api/doc/..%2F..%2Fserver.ps1` → 404.
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.0-E — 12 ezilen dosyanın karşılaştırma raporu (docs/09)
 
 **Ne yapıldı**

@@ -61,6 +61,7 @@ bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 | `GetMain\` | GetMainInfo derleme çıktısı |
 | `android\`, `sokol-master\` | Mobil katman bağımlılıkları |
 | `BuildLog\` | Derleme logları + string-parite analiz çıktıları |
+| `Dashboard\` | **İlerleme panosu** — bağımlılıksız PowerShell HTTP sunucusu + tek dosya UI; port 8096. Başlat: `Dashboard\start-dashboard.cmd` (dış erişim `http://45.87.120.29:8096/`, localhost-only için `-Published 0`). Firewall kuralı "Axion Mu Pano 8096" + URL ACL http://+:8096/ eklendi. |
 | `docs\` | **Proje dokümantasyonu (bu klasör)** — 06: canlı sistem envanteri |
 
 ### Dış referans konumları (proje dışı, salt okunur)
