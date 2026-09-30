@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 00:25:00",
+  "updated": "2026-10-01 00:47:00",
   "status": "ok",
-  "text": "ZAMAN ÇİZELGESİ eklendi: panoya '⏱️ Zaman Çizelgesi' paneli (ne, saat kaçta, hangi commit ile — git log'tan canlı okunur, 30 sn'de bir yenilenir). CHANGELOG'un TÜM kayıtlarına saat damgası işlendi: başlıklar [gg.aa.yy HH:mm] formatına, Commit satırları 'hash · Tamamlandı — tarih saat' formatına çevrildi (29 kayıt; git commit tarihleriyle doğrulandı). Sohbet Akışı ve Sonuç paneli zaten ts damgalı. Bundan sonra her yeni kayıt da bu standardı izleyecek. Faz 2b kapanış durumu değişmedi: 2b.2 tamam (66 alındı / 147 korundu / 0 belirsiz), GS 10.775.552 B. Sıradaki: 2b.3 → 2c."
-  }
+  "text": "2b.2-A zaten tamamlanmıştı (dalga 1 ab1708d5d + dalga 2 531f984b3) — yeniden yapılmadı, yerine G1'in 30 dosyasi TEK TEK DENETLENDI: 25'i donor-birebir teyit edildi; pugixml ve Map bilinçli karar; MossMerchant/BonusManager tek fark bizim include yorumu. BULGU: dalga 1'de MoveSummon cpp eksik alınmıştı (donor PkMove satırları yoktu) — canlı MoveSummon.txt'de PkMove kolonu VAR (kanıt) → tamamlandı, donor-birebir. CustomPick tam alımı MapManager zinciri (7 metot + CustPick kolonu) istiyor — canlı MapManager.txt kanıtlı, ayrı kalem olarak önerildi. GS temiz → 10.775.552 B (00:46)."
+}

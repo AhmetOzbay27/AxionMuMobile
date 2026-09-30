@@ -7,6 +7,42 @@
 
 ---
 
+## [26.10.01 00:47] 2b.2-A G1 denetimi — 25/30 dosya donor-birebir teyit; MoveSummon PkMove tamamlaması
+
+**Ne yapıldı**
+- Kullanıcı panodan 2b.2-A'yı yeniden tetikledi; dalga 1-2'de tamamlanmıştı —
+  yeniden yapılmadı, yerine **G1'in 30 dosyasının bugünkü durumu tek tek
+  denetlendi** (cmp ile donor karşılaştırması):
+  - **25 dosya donor-birebir teyit edildi** (Notice, CustomWingMix, CustomTop,
+    ArcaBattle, MonsterSkillManager, Shop, MapServerManager, Kanturu×4,
+    ImperialGuardian, DoubleGoer, MonsterAI, MoveSummon(→aşağıda), ComboSkill,
+    CastleDeep, RaklionSelupan, QuestWorld(+Objective), Raklion, LifeStone,
+    Mercenary, Crywolf).
+  - **pugixml:** bilinçli (donor sürüm bizim pugixml.h ile uyumsuz — 2b.2-A kararı).
+  - **Map:** bilinçli (MAX_MAP=250 + MAP_NEW4/5/BOSS_GUILD — E-01 için korunur).
+  - **MossMerchant / BonusManager:** tek fark bizim CEventName.h include yorumu —
+    bilinçli, donor-birebir kabulü.
+  - **CustomPick:** donor cpp GetMapCustomPick istiyor (2 çağrı) — bizim
+    MapManager'da bu metot yok (dalga 1 notundaki 'MapManager.h:49'da mevcut'
+    ifadesi hatalıymış); tam alım MapManager zincirini (7 metot + Load
+    kolonları) gerektirir. Canlı kanıt güçlü (canlı MapManager.txt'de
+    CustPick/CustStore/CustAtt/PkDrop/DeathGate kolonları VAR) → MapManager
+    zinciri ayrı kalem olarak işlenecek (öneri kartına eklendi).
+- **Bulgu + düzeltme — MoveSummon:** dalga 1'de cpp tam alınmamış; donorün
+  PkMove okuma/kontrol satırları (8 satır) bizde eksikti. Canlı kanıt:
+  canlı Move\MoveSummon.txt başlığında PkMove kolonu VAR → tamamlama meşru.
+  MoveSummon.cpp donor'dan yeniden alındı (h zaten birebirdi) →
+  donor-birebir teyit edildi.
+
+**Neden** — Dalga kayıtlarındaki 'alındı' iddialarının gerçekten dosyada
+olup olmadığının denetimi; dalga 1'de eksik kalan 1 dosya yakalandı.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.775.552 B** (00:46,
+  boyut değişmedi — /LTCG); MoveSummon.cpp donor-birebir (cmp).
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 00:47
+
 ## [26.10.01 00:25] Dokümantasyon — saat damgası standardı: CHANGELOG + pano zaman çizelgesi
 
 **Ne yapıldı**

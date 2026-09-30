@@ -82,6 +82,8 @@ void CMoveSummon::Load(char* path) // OK
 
 			info.AccountLevel = lpMemScript->GetAsNumber();
 
+			info.PkMove = lpMemScript->GetAsNumber();
+
 			this->m_MoveSummonInfo.push_back(info);
 		}
 	}
@@ -154,7 +156,13 @@ bool CMoveSummon::CheckMoveSummon(LPOBJ lpObj,int map,int x,int y) // OK
 		if(lpObj->AccountLevel < it->AccountLevel)
 		{
 			return 0;
+		}		
+		
+		if(it->PkMove == 0 && lpObj->PKLevel >= 5)
+		{
+			return 0;
 		}
+
 		else
 		{
 			return 1;

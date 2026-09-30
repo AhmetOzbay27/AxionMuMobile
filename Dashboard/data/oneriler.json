@@ -1,24 +1,24 @@
 {
-  "updated": "2026-09-30 23:05:00",
+  "updated": "2026-10-01 00:47:00",
   "note": "Bu dosyayi ajan (Buffy) gunceller. 'prompt' sohbete gonderilecek komutun ta kendisi.",
   "suggestions": [
     {
-      "id": "g2",
-      "label": "2b.2-C: G2'nin 25 dosyasını al",
-      "desc": "Diff matrisinin G2 bandı (kontrollü donor alımı) — P0 tablosu onaylı, kanca koruması şart",
-      "prompt": "2b.2-C'yi başlat: diff matrisinin G2 grubundaki 25 dosyayı (docs/10) kanca korumasıyla donörden al, grup grup derle + CHANGELOG + commit."
+      "id": "mapmanager",
+      "label": "MapManager zincirini al (CustomPick'i acar)",
+      "desc": "Canlı MapManager.txt kanıtlı (CustPick/CustStore/CustAtt/PkDrop/DeathGate kolonları) — 7 metot + Load kolonları alınınca CustomPick tam donör olabiliyor",
+      "prompt": "MapManager zincirini donörden al (GetMapCustomPick/GetMapCustomStore/GetMapCustomAttack/GetMapPkDropItem/GetMapDeathGate/GetMapAllowTradeSafe/CheckMap + Load kolonları, canlı MapManager.txt kanıtıyla), sonra CustomPick.cpp'yi tam donörden al, derle + CHANGELOG + commit."
+    },
+    {
+      "id": "b23",
+      "label": "2b.3: MUIG-özel modül çapraz kontrolü",
+      "desc": "68 modülün canlı envanterle kontrolü — Faz 2b'nin son adımı",
+      "prompt": "2b.3'ü başlat: 68 MUIG-özel modülün canlı 2a.1/2a.2 envanteriyle çapraz kontrolünü yap, sınıflandır ve docs'a saat damgalı rapor yaz."
     },
     {
       "id": "ekalem",
-      "label": "E-kalemlerini sırayla kapat",
-      "desc": "E-12/E-08 kolaylardan başla → E-03/E-05/E-06/E-07 orta → E-02/E-04/E-11/E-09 zor → E-01 BossGuild en son (09 raporu sırası)",
-      "prompt": "docs/09 sırasına göre E-kalemlerini işlemeye başla: E-12 ZenDrop ve E-08 CustomRankUser ile başla, her kalemde donor/bizim/canlı üçlü kararını uygula + derle + commit."
-    },
-    {
-      "id": "g3",
-      "label": "2b.2-D: G3'ün 10 dosyasını birleştir",
-      "desc": "Manuel birleşim gerektiren G3 bandı — P0'ın whitespace-normalize adayları (Connection, SocketManagerUdp, CSProtocol) da burada",
-      "prompt": "2b.2-D: G3 grubundaki 10 dosyayı (docs/10) dosya dosya manuel birleştir (SPK kancaları korunacak), her dosyada derle + CHANGELOG + commit."
+      "label": "Kalan E-kalemleri işle",
+      "desc": "E-01/E-02/E-04/E-06/E-09/E-11 — docs/09 stratejileriyle, saat damgalı commit",
+      "prompt": "docs/09'daki kalan E-kalemlerini (E-01 BossGuild, E-02 BotAlchemist, E-04 ChangeClass, E-06 CustomEventTime, E-09 OfflineMode, E-11 ThuMuaDoExc) stratejilerine göre işle, her kalemde derle + CHANGELOG + commit."
     }
   ]
 }
