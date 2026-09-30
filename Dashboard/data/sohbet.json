@@ -2,6 +2,8 @@
   "updated": "2026-09-30 19:55:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
   "entries": [
+    { "ts": "2026-09-30 21:20", "kim": "kullanıcı", "text": "6 config eksiğini kapat: canlı Sub-1'den kopyala, CustomJewel çağrısını .txt'e çevir, derlemeyi doğrula." },
+    { "ts": "2026-09-30 21:30", "kim": "ajan", "text": "6 config kopyalandı + 2 format düzeltmesi: CustomJewel .xml→.txt, ThuMuaDoExc .xml→.txt (canlı exe kanıtı). GS temiz → 10.701.824 B. Bulgu: canlı config yolları SPK\ altında, bizim bir kısmı Custom\ — E-kalem entegrasyonlarında birleştirilecek. CHANGELOG + 09 §5 güncel." },
     { "ts": "2026-09-30 20:50", "kim": "kullanıcı", "text": "2b.2'yi E-10 Reconnect ile başlat: donor sürümü al, derle, CHANGELOG + commit ile kapat." },
     { "ts": "2026-09-30 20:52", "kim": "ajan", "text": "E-10 entegre edildi: donor parti-slot düzeltmesi alındı (10 kişilik partide bayat slot bug'ı), bizim AutoReset konfig kontrolü korundu (canlı ini=1 kanıtı). GS Rebuild temiz → 10.704.896 B, PDB doğrulandı. 09 raporu E-10 ✅. Sıradaki: 2b.2-A (G1) veya P0." },
     { "ts": "2026-09-30 20:33", "kim": "kullanıcı", "text": "2b.1'i başlat: 161 ortak dosyanın diff matrisini çıkar ve risk gruplarına göre sınıflandır." },

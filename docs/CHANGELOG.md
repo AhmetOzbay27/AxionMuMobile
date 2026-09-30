@@ -7,6 +7,42 @@
 
 ---
 
+## [26.09.30] Faz 2b.2 / config pasifizasyonu — 6 config eksiği kapatıldı + 2 format düzeltmesi
+
+**Ne yapıldı**
+- 09 §5 tablosundaki 6 eksik config canlı Sub-1'den salt-okunur kopyalandı:
+  `SPK\ChangeClass.xml`(241), `SPK\CustomBuyVip.txt`(135),
+  `Custom\CustomJewel.txt`(5379), `Custom\ZenDrop.xml`(7224, eski 6884 üstüne),
+  `Event\EventTime.xml`(2714), `Custom\BotSystem\ThuMuaDoExc.txt`(554).
+- **Format düzeltme 1 (E-07):** ServerInfo.cpp:411 `gCustomJewel.LoadXML(.xml)`
+  → `gCustomJewel.Load(.txt)` (canlı SPK formatı); LoadXML hattı comment olarak
+  korundu. Şema uyumu kanıtı: bizim MemScript parser'ı `*` karakterini -1'e
+  çeviriyor (MemScript.cpp:193-202) → canlı txt'deki `*` alanları sorunsuz.
+- **Format düzeltme 2 (E-11):** ServerInfo.cpp:833 ReloadBotInfo
+  `ThuMuaDoExc.xml` → `.txt` (kanıt: canlı exe'de `Custom\BotSystem\ThuMuaDoExc.txt`
+  string'i; donör Read zaten MemScript/txt). Bizim `.xml` kopyası bilgilendirme
+  amaçlı kaldı.
+- Yol farkları belgelendi (kod henüz okumuyor, entegrasyonda işlenecek):
+  canlı `SPK\CustomBuyVip.txt` ↔ bizim `Custom\` (şema aynı);
+  canlı `SPK\ChangeClass.xml` (SPK Enable=0) ↔ bizim `Custom\ChangeClass.ini`
+  (Enable=1 — davranış farkı E-04'te birleştirilecek);
+  canlı `Event\EventTime.xml` (EventMain hattı, SPK root) ↔ bizim
+  `Custom\CustomEventTime.xml` (farklı şema) → E-06 kalemi.
+  Canlı `Event\BossGuild.xml` 2739 B ↔ bizim `Event\BossGuild\BossGuild.xml`
+  4146 B → E-01'de diff işlenecek.
+
+**Neden** — 09 §5'te tespit edilen eksikler; modüllerin config'siz/sessiz
+düşmesini önlemek (özellikle CustomJewel ne .txt ne .xml bulabiliyordu).
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.701.824 B** (E-10 sonrası
+  10.704.896 → -3072 B, küçülme normal: LoadXML hattı comment'e alındı),
+  pdb 17.903.616 B; MuServer'a yazıldı.
+- PDB: CCustomJewel(42)/BotThuMuaer(17)/DoiItem(101) sembolleri.
+- 6 config dosyası boyut kanıtıyla yerinde (tablo §5 güncellendi).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2 başlangıcı — E-10 Reconnect entegre edildi (2b.2'nin ilk kalemi)
 
 **Ne yapıldı**

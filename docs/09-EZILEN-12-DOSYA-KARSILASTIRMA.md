@@ -193,19 +193,22 @@ sınıflar çoğunlukla 1-3 sembol (LTCG /OPT:ICF inline → yüzeysel sayı kan
 - **Strateji:** Kod değişikliği minimal; canlı ZenDrop.xml şablonu bizim
   MuServer'a kopyalanır (şema farkı diff'lenir), gerekirse alan eşlemesi yapılır.
 
-## 5. CONFIG EKSİKLERİ (canlıda var, bizim MuServer'da yok)
+## 5. CONFIG EKSİKLERİ (canlıda var, bizim MuServer'da yok) — ✅ **2b.2'de kapatıldı (30.09.2026)**
 
-| Canlı dosya | Boyut | Bizde | İlgili modül |
-|-------------|------:|-------|--------------|
-| `Data\SPK\ChangeClass.xml` | 241 B | ❌ | E-04 |
-| `Data\SPK\CustomBuyVip.txt` | 135 B | ❌ | E-05 |
-| `Data\Custom\CustomJewel.txt` | 5379 B | ❌ | E-07 |
-| `Data\Custom\ZenDrop.xml` | 7224 B (bizimki 6884) | ⚠️ eski | E-12 |
-| `Data\Event\EventTime.xml` | 2714 B | ❌ | E-06 |
-| `Data\Custom\BotSystem\ThuMuaDoExc.txt` | 554 B | ❌ | E-11 |
+| Canlı dosya | Boyut | Bizde (önce) | İlgili modül | Durum |
+|-------------|------:|-------|--------------|-------|
+| `Data\SPK\ChangeClass.xml` | 241 B | ❌ | E-04 | ✅ kopyalandı — **NOT:** kodumuz hâlâ `Custom\ChangeClass.ini` okuyor (ServerInfo:433); XML okuma E-04 entegrasyonunda eklenecek (bkz. §4 E-04) |
+| `Data\SPK\CustomBuyVip.txt` | 135 B | ❌ | E-05 | ✅ kopyalandı; kod `Custom\CustomBuyVip.txt` okuyor (ServerInfo:405) — **yol farkı**: canlı `SPK\`, bizim `Custom\`; içerik şeması aynı (Index/Exp/Drop/Days/Coin/VipName) |
+| `Data\Custom\CustomJewel.txt` | 5379 B | ❌ | E-07 | ✅ kopyalandı + ServerInfo:411 `LoadXML(.xml)` → `Load(.txt)` çevrildi (E-07 stratejisi); bizim Load parser'ı `*` → -1 destekliyor (MemScript '*' kuralı) → şema uyumlu |
+| `Data\Custom\ZenDrop.xml` | 7224 B (bizimki 6884) | ⚠️ eski | E-12 | ✅ canlı sürümle güncellendi; kod aynı (pugi, `ZenDropSystem` root) |
+| `Data\Event\EventTime.xml` | 2714 B | ❌ | E-06 | ✅ kopyalandı — **NOT:** okuyan modül canlı SPK'nın EventMain hattı (exe'de `Event\EventTime.xml` string'i var); bizim karşılığı `Custom\CustomEventTime.xml` (farklı şema, ServerInfo:449) — E-06 entegrasyonunda birleştirilecek |
+| `Data\Custom\BotSystem\ThuMuaDoExc.txt` | 554 B | ❌ | E-11 | ✅ kopyalandı + ServerInfo:833 `.xml` → `.txt` çevrildi (canlı exe `ThuMuaDoExc.txt` string'i kanıt); donör `Read` zaten MemScript/txt parser |
 
-Bu 6 dosya 2b.2 entegrasyonlarıyla birlikte salt-okunur kaynaktan kopyalanır
-(2b.0'daki AddBuff.txt/CongHuong.txt yöntemi).
+Ek bulgu (2b.2 config pasifizasyonu sırasında): canlı exe config yolları
+`SPK\AddBuff.txt`, `SPK\ChangeClass.xml`, `SPK\CustomBuyVip.txt`,
+`Event\EventTime.xml`, `Event\BossGuild.xml` (bizim: `Event\BossGuild\BossGuild.xml`,
+4146 B vs canlı 2739 B — E-01'de işlenecek). Yol farkları (Custom\ vs SPK\)
+E-kalem entegrasyonlarında koda yansıtılacak.
 
 ## 6. ÖNERİLEN UYGULAMA SIRASI (2b.2 girdisi)
 

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 20:52:00",
+  "updated": "2026-09-30 21:30:00",
   "status": "ok",
-  "text": "2b.2 basladi — E-10 Reconnect entegre edildi: donor parti-slot duzeltmesi alindi (10 kisilik partide eski slot temizligi bug'i), bizim AutoReset konfig kontrolu korundu (canli ini =1 kaniti). GS Rebuild temiz 0 hata -> 10.704.896 B (ozdes boyut), PDB dogrulandi. Siradaki: 2b.2-A (G1'in 30 dosyasi) veya 2b.2-P0 protokol tablosu."
+  "text": "Config pasifizasyonu TAMAM: 6 eksik config canli Sub-1'den kopyalandi (ChangeClass.xml, CustomBuyVip.txt, CustomJewel.txt, ZenDrop.xml guncel, EventTime.xml, ThuMuaDoExc.txt). 2 format duzeltmesi: CustomJewel LoadXML(.xml)->Load(.txt), ThuMuaDoExc .xml->.txt (canli exe kanitiyla). GS temiz derlendi -> 10.701.824 B, PDB dogrulandi. Yol farklari (SPK\\ vs Custom\\) E-kalem entegrasyonlarina not edildi. Siradaki: 2b.2-A (G1'in 30 dosyasi) veya 2b.2-P0 protokol tablosu."
 }

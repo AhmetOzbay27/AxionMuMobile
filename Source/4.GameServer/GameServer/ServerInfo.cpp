@@ -408,9 +408,9 @@ void CServerInfo::ReadCustomInfo() // OK
 
 	gCustomCommandDescription.Load(gPath.GetFullPath("Custom\\CustomCommandDescription.txt"));
 
-	//gCustomJewel.Load(gPath.GetFullPath("Custom\\CustomJewel.txt"));
+	gCustomJewel.Load(gPath.GetFullPath("Custom\\CustomJewel.txt"));	// E-07 (2b.2): canlı SPK formatı .txt — 09 raporu §5 config düzeltmesi
 
-	gCustomJewel.LoadXML(gPath.GetFullPath("Custom\\CustomJewel.xml"));
+	//gCustomJewel.LoadXML(gPath.GetFullPath("Custom\\CustomJewel.xml"));
 
 	gCustomMonster.Load(gPath.GetFullPath("Custom\\CustomMonster.txt"));
 
@@ -830,7 +830,7 @@ void CServerInfo::ReadUtilInfo() // OK
 //MC bot
 void CServerInfo::ReloadBotInfo() // OK
 {
-	BotThuMua.Read(gPath.GetFullPath("Custom\\BotSystem\\ThuMuaDoExc.xml"));
+	BotThuMua.Read(gPath.GetFullPath("Custom\\BotSystem\\ThuMuaDoExc.txt"));	// E-11 (2b.2): canlı SPK formatı .txt (canlı exe kanıtı) — donör Read zaten MemScript/txt
 	BotThuMua.MakeBot();
 
 #if(BOT_BUFFER == 1)

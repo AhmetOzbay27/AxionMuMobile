@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<SPK Enable="0" Coin="500000">
+	<Message>
+		<Msg Index="0" Text="This function has been disabled" />
+		<Msg Index="1" Text="Not enough Coin to change class" />
+		<Msg Index="2" Text="Invalid class" />
+	</Message>
+</SPK>
