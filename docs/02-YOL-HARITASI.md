@@ -77,7 +77,14 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     EffectManager/CustomCombo/CustomNpcQuest/MapManager/CustomMove bağımlılık,
     Warehouse/ItemOption/MemScript G3'e, ItemValue/ItemValueTrade Level-stacking
     kanıtsız). Detay: CHANGELOG 2b.2-C. GS derlemesi temiz → 10.781.184 B.
-  - ⬜ 2b.2-D..E: G3 → G4 (SPK korumalı) → G5
+  - ✅ **2b.2-E kalemleri dalga 4** (30.09.2026): E-05 yol geçişi
+    (Custom\ → canlı SPK\ yolları: CustomBuyVip.txt + AddBuff.txt), E-08 bizim
+    taban, E-12 ✅; E-01/E-02/E-03/E-04/E-06/E-09/E-11 gerekçeli 2c erteleme
+    (canlı-kanıt şartı). Deploy config tamamlandı: Data\SPK\ (3 dosya) +
+    EventTime.xml + BossGuild.xml + CustomJewel.txt asıl ağaca kopyalandı
+    (config-pasifizasyonundaki test-ağacı hatası düzeltildi). GS temiz →
+    10.781.184 B. Detay: CHANGELOG 2b.2-E.
+  - ⬜ 2b.2-D..F: G3 → G4 (SPK korumalı) → G5
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.

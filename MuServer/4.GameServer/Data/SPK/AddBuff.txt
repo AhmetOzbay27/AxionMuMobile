@@ -1,0 +1,26 @@
+0
+//EffectID	Timer	Power1	Power2	Power3	Power4	Name Comment
+1	30	100	200	300	400	// Buff Attack Elf
+2	30	100	200	300	400	// Buff Defense Elf
+4	30	100	200	300	400	// Buff ManasShield of DW
+5	30	100	200	300	400	// Buff Critical
+8	30	100	200	300	400	// Buff increase HP DK
+9	30	100	200	300	400	// Buff increase Mana
+71	30	100	200	300	400	// Buff Reflect Dame Sum
+82	30	100	200	300	400	// increase Power Attack Low Most
+129	30	100	200	300	400	// Buff ignore Defense - Piercing Penetrate
+130	30	100	200	300	400	// Buff increase Vitality
+131	30	100	200	300	400	// Buff Rate defense
+end
+
+1
+//EffectID	Timer	Power1	Power2	Power3	Power4	Name Comment
+44	30	100	200	300	400	// Buff increase Agility (xShop)        
+45	30	100	200	300	400	// Buff increase Defense (xShop)        
+46	30	100	200	300	400	// Buff Increase Damage (xShop)      
+47	30	100	200	300	400	// Buff Increase Damage magic (xShop)      
+48	30	100	200	300	400	// Buff increase Vitality - HP (xShop)                    
+49	30	100	200	300	400	// Buff increase Energy - Mana (xShop)      
+89	30	100	200	300	400	// Buff increase Critical (xShop)
+90	30	100	200	300	400	// Buff Increase Damage Excellent (xShop)
+end

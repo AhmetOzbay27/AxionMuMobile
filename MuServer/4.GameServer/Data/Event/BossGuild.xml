@@ -1,0 +1,38 @@
+<BossGuild>
+	<EventTime><Time Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="21" Minute="00" Second="0" /></EventTime>
+	
+	<NPCTalk><NPC Class="730" Map="0" X="131" Y="137"  Dir="3"/></NPCTalk>	
+	
+	<Time><Config Enabled="0" MapDienRa = "88" TimeChuanBi = "2" TimeSuKien = "30" GuildMinPlayer="1"/></Time>
+	
+	<CauHinhGate><Config GateVaoMap="402"/></CauHinhGate>	
+	<!----------------------------------------------------------------------------------------------->
+	<!--Two boss mode settings-->
+	<!--Mode1 = 3 bosses: Wizard, Warrior, Fairy-->
+	<!--Mode2 = 4 bosses: Sorcerer, Iron Soldier, Fighter, Overlord-->
+	<!----------------------------------------------------------------------------------------------->
+	<CheDoBoss><Config CheDo1="1" CheDo2="0"/></CheDoBoss>	
+	<!----------------------------------------------------------------------------------------------->
+	<!--Kill the boss to become the winning guild-->
+	<!--Mode1 = set KillBoss = 2-->
+	<!--Mode2 = set KillBoss = 3-->
+	<!----------------------------------------------------------------------------------------------->
+	<DieuKienGuildWin><Config KillBoss="2" /></DieuKienGuildWin>	
+    <!----------------------------------------------------------------------------------------------->
+	<!--Reward for the members of the winning guild-->
+	<!--Score is the total score of the guild; each member contributes a small amount-->
+	<!--WCoin each member receives-->
+	<!----------------------------------------------------------------------------------------------->
+	<GuildWin><Config	Score="200" WCoin="5000" WCoinP="0" GobinP="0" IndexBonus="0" IndexItemBag="0"/></GuildWin>	
+	<!----------------------------------------------------------------------------------------------->
+	<!--Boss reward settings-->
+	<!----------------------------------------------------------------------------------------------->
+	<BossPhuThuy>	<Config WCoin="50000" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/></BossPhuThuy>	
+	<BossChienBinh>	<Config WCoin="50000" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/></BossChienBinh>	
+	<BossTienNu>	<Config	WCoin="50000" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/></BossTienNu>	
+	<BossThuatSi>	<Config WCoin="0" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/>	</BossThuatSi>	
+	<BossThietBinh>	<Config WCoin="0" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/>	</BossThietBinh>	
+	<BossDauSi>		<Config WCoin="0" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/>	</BossDauSi>	
+	<BossChuaTe>	<Config WCoin="0" WCoinP="0" GobinP="0" IndexBonus="0" IndexType="0" IndexItem="0"/>	</BossChuaTe>	
+
+</BossGuild>

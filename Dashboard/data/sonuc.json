@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 23:40:00",
+  "updated": "2026-09-30 23:45:00",
   "status": "ok",
-  "text": "2b.2-C dalga 3 TAMAM: G2'nin 24 dosyasi incelendi -> 7 alindi (CrywolfStatue, CrywolfAltar, Gate+h 2-satir adaptasyon, ItemDrop+h, ItemMove+h, Command + Util'e PackFileEncrypt/BuxConvert/GenerateCheckSum2 zinciri), 15 dosya tek tek gerekcelendirilerek korundu (HackCheck guvenlik anahtarlari, ChaosCastle/Kalima NORMALIZE_LEVEL zinciri yok, CashShop/Duel/EffectManager bagimlilik, ItemValue Level-stacking kanitsiz...). GS temiz -> 10.781.184 B (23:34). Siradaki: G3 manuel birlesim (10+4 dosya) + E-kalemler."
+  "text": "2b.2-E kalemleri dalga 4 TAMAM: E-05 yol gecisi uygulandi (CustomBuyVip + AddBuff -> canli SPK\\ yollari), E-08 bizim taban, E-12 onceden tamam. E-01/E-02/E-03/E-04/E-06/E-09/E-11 gerekceli 2c erteleme (canli kanit sarti: BotBuffer.txt canlida YOK, ChangeClass XML Enable=0, EventTime.xml okuyucusu iki kaynakta yok...). Deploy-config duzeltmesi: config-pasifizasyonda test agacina kopyalanan EventTime.xml/CustomJewel.txt asil agaca tasindi + SPK klasoru (3 dosya) + BossGuild.xml. GS temiz -> 10.781.184 B. Kalan: G3 (14 dosya) + G4 (38) + G5 (31) + faz kapanisi."
 }

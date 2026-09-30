@@ -43,18 +43,18 @@
 
 | # | Dosya | Bizim (satır) | Donor (satır) | Bizim↔donor normalize benzerlik | Donörde var mı |
 |---|-------|--------------:|--------------:|--------------------------------:|----------------|
-| E-01 | BossGuild.cpp | 1578 | — | — | ❌ |
-| E-02 | BotAlchemist.cpp | 892 | 933 | %21 | ✅ |
-| E-03 | BotBuffer.cpp | 641 | 644 | %43 | ✅ |
-| E-04 | ChangeClass.cpp | 202 | — | — | ❌ |
-| E-05 | CustomBuyVip.cpp | 197 | 258 | %24 | ✅ |
-| E-06 | CustomEventTime.cpp | 142 | 99 | %26 | ✅ |
-| E-07 | CustomJewel.cpp | 750 | 706 | %29 | ✅ |
-| E-08 | CustomRankUser.cpp | 227 | 206 | %52 | ✅ |
-| E-09 | OfflineMode.cpp | 899 | 940 | %40 | ✅ |
-| E-10 | Reconnect.cpp | 152 | 151 | %85 | ✅ |
-| E-11 | ThuMuaDoExc.cpp | 798 | 732 | %38 | ✅ |
-| E-12 | ZenDrop.cpp | 72 | — | — | ❌ |
+| E-01 | BossGuild.cpp | 1578 | — | — | ❌ → 2c (canlı BossGuild.xml deploy'a kopyalandı) |
+| E-02 | BotAlchemist.cpp | 892 | 933 | %21 | ✅ → 2c (üçlü birleşim) |
+| E-03 | BotBuffer.cpp | 641 | 644 | %43 | ✅ → bizim korundu (canlı BotBuffer.txt YOK; donor 5-skill format uyumsuz) |
+| E-04 | ChangeClass.cpp | 202 | — | — | ❌ → 2c (canlı XML Enable=0; bizim ini hattı aktif) |
+| E-05 | CustomBuyVip.cpp | 197 | 258 | %24 | ✅ **2b.2-E'de yol geçişi: Custom\ → SPK\ (canlı yolu)** |
+| E-06 | CustomEventTime.cpp | 142 | 99 | %26 | ✅ → 2c (EventTime.xml okuyucusu iki kaynakta da yok) |
+| E-07 | CustomJewel.cpp | 750 | 706 | %29 | ✅ (.txt hattı; deploy-config düzeltmesiyle dosya yerinde) |
+| E-08 | CustomRankUser.cpp | 227 | 206 | %52 | ✅ **bizim taban kararlı (2b.2-E)** |
+| E-09 | OfflineMode.cpp | 899 | 940 | %40 | ✅ → 2c (canlı yaptırım modeli) |
+| E-10 | Reconnect.cpp | 152 | 151 | %85 | ✅ **2b.2'de entegre (30.09.2026)** |
+| E-11 | ThuMuaDoExc.cpp | 798 | 732 | %38 | ✅ → 2c (üçlü birleşim) |
+| E-12 | ZenDrop.cpp | 72 | — | — | ✅ config-pasifizasyonunda (kod aynı) |
 
 Not: Benzerlik = normalize (girinti/boşluk/yorum arındırılmış) satır kümelerinin
 ortak / birleşik oranı; yapısal eşdeğerliğin alt sınırını verir, çıktı

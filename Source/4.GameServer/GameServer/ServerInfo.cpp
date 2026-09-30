@@ -338,7 +338,7 @@ void CServerInfo::ReadCommonInfo() // OK
 
 void CServerInfo::ReadCustomInfo() // OK
 {
-	gAddBuffer.Read(gPath.GetFullPath("Custom\\HuyBeo\\AddBuff.txt"));			// SPK AddBuffer (Faz 2b)
+	gAddBuffer.Read(gPath.GetFullPath("SPK\\AddBuff.txt"));			// SPK AddBuffer (Faz 2b) — E-05: canli Data\SPK\AddBuff.txt yolu
 	gCustomJewelBank.LoadConfig(gPath.GetFullPath("Custom\\HuyBeo\\CustomJewelBank.xml"));	// SPK (Faz 2b)
 	gCustomVongQuay.LoadFileXML(gPath.GetFullPath("Custom\\CustomVongQuay.xml"));
 #if (SAUDOIITEM)
@@ -403,7 +403,7 @@ void CServerInfo::ReadCustomInfo() // OK
 
 	gCustomRanking.Load(gPath.GetFullPath("Custom\\CustomRanking.txt"));
 
-	gCustomBuyVip.Load(gPath.GetFullPath("Custom\\CustomBuyVip.txt"));
+	gCustomBuyVip.Load(gPath.GetFullPath("SPK\\CustomBuyVip.txt"));	// SPK (Faz 2b.2 E-05): canli Data\SPK\CustomBuyVip.txt yolu (135B canli sema: Index/Exp+/Drop+/Days/Coin1-3/VipName)
 
 	gCustomCombo.Load(gPath.GetFullPath("Custom\\CustomCombo.txt"));
 

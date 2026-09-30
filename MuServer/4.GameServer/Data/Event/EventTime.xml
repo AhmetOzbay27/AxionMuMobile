@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Slot: position event | Name: display name | Map: Map | Gate: warp gate | Status: 1=show, 0=hide -->
+<SPK Enable="1">
+	<Message><Msg Index="0" Text="This function has been disabled" /></Message>
+	<EventTime>
+                <!-- Event main -->
+        <Event Slot="0"  Name="Blood Castle"                             Map="2"     Gate="800"  Status="1"/>
+        <Event Slot="1"  Name="Devil Square"                      Map="3"     Gate="801"  Status="1"/>
+        <Event Slot="2"  Name="Chaos Castle"                        Map="0"     Gate="802"  Status="1"/>
+        <Event Slot="3"  Name="Castle Siege Mini"                 Map="0"     Gate="403"  Status="0"/>
+        <Event Slot="4"  Name="Free for All"                            Map="0"     Gate="804"  Status="0"/>
+        <Event Slot="5"  Name="King Mu"                               Map="0"     Gate="804"  Status="1"/>
+        <Event Slot="6"  Name="Divine War"                         Map="0"     Gate="404"  Status="0"/>
+        <Event Slot="7"  Name="Guild Boss"                            Map="0"     Gate="404"  Status="0"/>
+        <!-- Invasion -->
+        <Event Slot="8"  Name="Golden Boss"                             Map="3"     Gate="805"  Status="1"/>
+        <Event Slot="9"  Name="Jade Rabbit"                              Map="4"     Gate="806"  Status="1"/>
+        <Event Slot="10" Name="Red Dragon"                               Map="57"    Gate="807"  Status="1"/>
+        <Event Slot="11" Name="Royal Treasure"                     Map="7"     Gate="808"  Status="1"/>
+        <Event Slot="12" Name="Demon King"                             Map="33"    Gate="809"  Status="1"/>
+        <Event Slot="13" Name="Medusa"                                Map="37"    Gate="810"  Status="1"/>
+        <Event Slot="14" Name="Class Boss"                            Map="84"    Gate="811"  Status="1"/>
+        <Event Slot="15" Name="Bull Demon King"                         Map="2"     Gate="812"  Status="1"/>
+        <Event Slot="16" Name="Monkey King"                             Map="1"     Gate="813"  Status="1"/>
+        <Event Slot="17" Name="Hell Beast"                       Map="42"    Gate="814"  Status="1"/>
+        <Event Slot="18" Name="Demon God"                               Map="34"    Gate="815"  Status="1"/>
+        <Event Slot="19" Name="Bull King"                            Map="41"    Gate="816"  Status="1"/>
+        <Event Slot="20" Name="Anubis"                           Map="8"     Gate="817"  Status="1"/>
+        <Event Slot="21" Name="Invincible War God"                    Map="83"    Gate="818"  Status="1"/>
+	</EventTime>
+
+</SPK>

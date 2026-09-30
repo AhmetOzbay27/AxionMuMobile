@@ -7,6 +7,49 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-E kalemleri dalga 4 — E-05 uygulandı, 7 kalem gerekçeli ertelendi, deploy-config düzeltmesi
+
+**Ne yapıldı**
+- **E-05 CustomBuyVip ✅:** ServerInfo:405 `Custom\CustomBuyVip.txt` →
+  `SPK\CustomBuyVip.txt` (canlı yolu; 135 B canlı şema:
+  Index/Exp+/Drop+/Days/Coin1-3/VipName). Deploy: canlı SPK config'leri
+  `MuServer\4.GameServer\Data\SPK\` altına kopyalandı (CustomBuyVip.txt,
+  AddBuff.txt, ChangeClass.xml). Ek: bizim AddBuffer (2b.0) yolu
+  `Custom\HuyBeo\AddBuff.txt` → `SPK\AddBuff.txt` (canlı yolu).
+- **E-08 CustomRankUser ✅ (bizim taban kararlı):** docs/09 stratejisiyle —
+  bizim NoticeToAll/RewardSwitch ekstraları canlıya yakın; config anahtarları
+  (CustomRankUserSwitch/Type) iki tarafta da mevcut. Kod değişikliği gerekmedi.
+- **E-12 ZenDrop ✅:** config-pasifizasyonunda kapatılmıştı (canlı ZenDrop.xml +
+  kod aynı) — dokunulmadı.
+- **Gerekçeli erteleme (2c'ye, canlı-kanıt şartıyla):**
+  - E-03 BotBuffer: canlı `BotBuffer.txt` **YOK** (modül canlıda konfig'siz);
+    donor MAX_BOTBUFFERSKILLS=5 vs bizim 33 — config-format uyumsuz.
+  - E-04 ChangeClass: canlı XML `Enable=0` (modül kapalı); bizim .ini hattı
+    Enable=1 aktif — XML okuma yazımı 2c'de (donörde kaynak yok, sıfırdan).
+  - E-06 CustomEventTime: canlı EventTime.xml'i okuyan modül **canlı exe'de
+    string'i taşıyor ama iki kaynakta da okuyucu yok** — 2c (canlı exe tersine
+    mühendislik) gerekir. Canlı dosya deploy'a kopyalandı (aşağıda).
+  - E-01 BossGuild: donorde kaynak yok; 1578 satırlık yeniden yazım. Canlı
+    `BossGuild.xml` deploy'a kopyalandı (E-01 için hazır).
+  - E-02 BotAlchemist / E-09 OfflineMode / E-11 ThuMuaDoExc: üçlü birleşim
+    (donor+bizim+canlı şema) zor kalemler — docs/09 stratejileriyle 2c'de.
+- **Deploy-config düzeltmesi:** config-pasifizasyonunda (8515c346a) EventTime.xml
+  ve CustomJewel.txt yanlışlıkla **test ağacına** (`Sub 1\Data\`) kopyalanmıştı;
+  asıl deploy ağacına (`MuServer\4.GameServer\Data\Event\ + Custom\`)
+  eklendi. CustomJewel `Load(.txt)` çağrısı artık gerçek dosyayı buluyor.
+
+**Neden** — E-kalemlerinde canlı kanıt yoksa SPK davranışı değişmemeli; yalnız
+yollar/eksik config'ler canlıya eşlendi. Kalan kalemler 2c'de canlı-kanıtla.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.781.184 B** (23:41, /LTCG
+  özdeş boyut — ServerInfo string/yol değişikliği boyut değiştirmedi);
+- Deploy: `Data\SPK\{CustomBuyVip.txt,AddBuff.txt,ChangeClass.xml}` +
+  `Data\Event\{EventTime.xml,BossGuild.xml}` + `Data\Custom\CustomJewel.txt`;
+- E-05 yolu canlıyla birebir (`SPK\CustomBuyVip.txt`).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-C — G2 bandı dalga 3: 7 dosya alındı, 15 dosya gerekçeli korundu
 
 **Ne yapıldı**
