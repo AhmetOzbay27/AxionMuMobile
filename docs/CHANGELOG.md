@@ -17,10 +17,10 @@
   açıklaması, ilerleme çubuğu (9/28), "Son tamamlanan" ve "Sıradaki" kutuları,
   CHANGELOG'dan son 5 iş, tıklayınca açılan belge okuyucu (Türkçe başlıklarla),
   son 15 commit ve sade derleme tablosu.
-- Doğrulama: / api/status + /api/doc/02 canlı; sayfa 28 adımı parse ediyor
+- Doğrulama: /api/status + /api/doc/02 canlı; sayfa 28 adımı parse ediyor
   (9/28 tamam), Preview ekran görüntüsüyle görsel onay.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `ba19608be`
 
 ## [26.09.30] İlerleme panosu — dış IP'den canlı takip aracı (Dashboard\)
 
