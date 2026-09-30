@@ -34,7 +34,7 @@ matrisi G2 bandı; 2b.2'nin en düşük riskli ilk kalem.
 - PDB: CReconnect(18)/ResumeParty/SetReconnectInfo/ResumeCommand sembolleri.
 - 09 raporu E-10 ✅, 02 2b.2 🔄 başlatıldı, pano güncellendi.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `65f71d14b`
 
 ## [26.09.30] Faz 2b.1 — ortak dosya diff matrisi (docs/10)
 
