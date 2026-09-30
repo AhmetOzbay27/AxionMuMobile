@@ -32,7 +32,7 @@
 - Birebir sayısı (77) bağımsız cmp ile doğrulandı.
 - Örnek saplama kontrolleri: PacketManager birebir; Reconnect %85 (09/E-10 ile uyumlu).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `acea272af`
 
 ## [26.09.30] Pano v5 — canlı sohbet akışı paneli
 
