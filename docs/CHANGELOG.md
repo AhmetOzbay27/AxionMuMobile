@@ -42,7 +42,7 @@ var, bizim GS'de yoktu (2a envanterinin 71 iş biriminin ilk 4'ü).
   + gAUTOHP/gAddBuffer/gSkillDamage/gCustomJewelBank + GetSkillDamage/
   CommandAddBuff/JewelBankRecv/GuiNgocAll.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `599d568ef`
 
 ## [26.09.30] Faz 1 tamamlandı — Main ve GetMainInfo derlemeleri
 
