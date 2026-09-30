@@ -10,10 +10,12 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
 
 ## FAZ 2 — PARİTE (aktif faz)
 
-### Faz 2a — Canlı SPK envanteri (SIRADAKİ İŞ)
-- ⬜ **2a.1** Canlı `GameServer.pdb` analizi: 57 eksik modülün tam listesi —
-  modül adı, tahmini işlev, kaynak setlerindeki en yakın karşılık, öncelik.
-  Çıktı: `docs/05-SPK-MODUL-ENVANTERI.md` (faz 2c'nin iş emri olacak).
+### Faz 2a — Canlı SPK envanteri
+> ✅ 2a.1-2a.4 tamamlandı (30.09.2026). Kalan tek kalem: 2a.5.
+- ✅ **2a.1** Canlı `GameServer.pdb` + `GameServer.map` analizi tamam →
+  [05-SPK-MODUL-ENVANTERI.md](05-SPK-MODUL-ENVANTERI.md) yazıldı (kesin sayı
+  **59 eksik dosya**; PDB'den tam dosya yolları çıkarıldı; 57 modül
+  `GameServer\SPK\` alt klasöründe; kategori + öncelik + kaynak stratejisi hazır).
 - ✅ **2a.2** Canlı GS exe'sinden string/resource envanteri → tamam; asıl verim
   canlı `GameServer.map`'ten 242 sınıf envanteri oldu (175 bizde var, 58 eksik).
   Detay: [06-CANLI-SISTEM-ENVANTERI.md](06-CANLI-SISTEM-ENVANTERI.md)

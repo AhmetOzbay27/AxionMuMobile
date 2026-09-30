@@ -167,3 +167,44 @@ güncel dokümantasyon `docs\` klasöründedir.
 - `git fsck` temiz; tüm docs boyut kontrolü yapıldı.
 
 **Commit** — (bu kayıtla birlikte)
+
+---
+
+## [26.09.30] Faz 2a.1 — SPK modül envanteri (iş emri) tamamlandı
+
+**Ne yapıldı**
+- Canlı `GameServer.pdb` (27,3 MB) derin analiz edildi:
+  - Gömülü linker komut satırı bulundu (`pdb_linker_cmd.txt`): VS2022
+    14.44.35207 (**v143** — önceki v100 tahmini düzeltildi), /LTCG,
+    SPKThemeManiFest.xml addon'u, ara yapı `D:\BuildMU\Android\ExGameServer\`.
+  - Kaynak dosya yolları çıkarıldı: **367 benzersiz cpp** (277'si canlı GS
+    projesi; 1'i proje dışı: `Source\Include\Math.cpp`).
+  - **Canlı GS projesi 277 cpp; 218'i bizim kaynakla isim paritesinde;
+    59 dosya sadece canlıda** (map'in 58 sınıf tahminini 59'a düzeltir:
+    SkillDamage.cpp map deseninde yakalanamamış).
+- **Canlı SPK mimarisi kesinleşti:** tüm SPK modülleri
+  `GameServer\SPK\` alt klasöründe (57 cpp); 12'si bizim kaynağımızda da
+  aynı adda var (canlıda bu dosyalar SPK sürümüyle EZİLİYOR: BossGuild,
+  BotAlchemist, BotBuffer, ChangeClass, CustomBuyVip, CustomEventTime,
+  CustomJewel, CustomRankUser, OfflineMode, Reconnect, ThuMuaDoExc, ZenDrop).
+- `docs\05-SPK-MODUL-ENVANTERI.md` yazıldı: 59 modülün kategori tabloları
+  (SPK_ çekirdek 20 / SPKViet sistemleri / bot / event / UI / ekonomi),
+  canlı config eşlemeleri, P1/P2/P3 öncelik tanımları, MUIG transfer +
+  sıfırdan yazım stratejisi, modül başına 4 adımlı doğrulama yöntemi.
+
+**Doküman güncellemeleri**
+- Yeni: `docs\05-SPK-MODUL-ENVANTERI.md`
+- `02-YOL-HARITASI.md`: 2a.1 ✅ (Faz 2a'da kalan: 2a.5)
+- `00-PROJE-HARITASI.md`: aktif görev 2a.5'e çekildi
+- `03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md`: A-02 sayısı 59'a güncellendi
+
+**Yeni ham veriler** (`BuildLog\envanter\`): pdb_cpp_yollari.txt (367),
+pdb_obj_yollari.txt, pdb_linker_cmd.txt, canli_gs_s.txt (277),
+canli_spk_s.txt (57), bizim_gs_s.txt (281), ortak_dosyalar.txt (218),
+canli_ek_dosyalar.txt (59), bizim_ek_dosyalar.txt (63).
+
+**Not** — Extractor üç denemede hazırlandı: PowerShell .NET regex'i PDB
+string'inde sessiz başarısız oldu; çözüm IndexOf + geriye-yürüme (printable
+run) algoritması oldu (pdb_scan.ps1).
+
+**Commit** — (bu kayıtla birlikte)
