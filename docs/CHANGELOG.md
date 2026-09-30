@@ -119,3 +119,51 @@ güncel dokümantasyon `docs\` klasöründedir.
 
 **Commit** — ...
 ```
+
+---
+
+## [26.09.30] Faz 2a.2-2a.4 — Canlı sistem envanteri (salt okunur tarama)
+
+**Ne yapıldı**
+- **2a.2:** Canlı `GameServer.map` (1,8 MB) `BuildLog\envanter\GameServer_canli.map`
+  olarak arşivlendi; map'ten 242 sınıf/namespace çözümlendi
+  (`map_siniflar.txt`). Kaynak karşılaştırması: **175 sınıf bizde var (%72),
+  67 canlı-özel** → 9 CRT/obfuscation artığı ayıklandı → **58 gerçek eksik
+  modül** (önceki tahmin 57 idi): 4'ü MUIG donor'da (AddBuffer, CAUTOHP,
+  CCustomJewelBank, CSkillDamage), **54'ü hiçbir kaynak setinde yok (sıfırdan)**.
+- **2a.3:** Canlı `Sub-1\Data\` envanteri: 450 dosya (~10 MB); `Data\SPK\`
+  25 SPK modül config'i; `GameServer\SPK\` 225 dosya = SPK_ToolKitMain canlı
+  logları (modülün canlıda aktif olduğunun kanıtı). Config tanınırlık tablosu:
+  22 bizde / 4 MUIG'de / 24 SPK-özel (hiçbir kaynakta yok).
+- **2a.4:** Gerçek SPK istemcisi tespit edildi:
+  `Client and Tools\1Client\Engine.exe` (9.201.152 B, 19.09.2026) —
+  ConnectIP.bmd + ServerData.bmd + Data\SPK + SPK.ini hattı; AUTOHP istemci
+  UI varlığı (`Btn_AutoHp.spk`). Bizim 5.Main kaynağında SPK istemci izi
+  YOK (CBGetMain/MUIG hattı) → yeni plan adımı **2d.0** (SPK istemci format
+  katmanı) açıldı.
+- **Kritik keşifler:** (1) `C:\AxionMu\` farklı bir fork (57 modülden hiçbirini
+  içermiyor; vcruntime140**d** = debug runtime) — parite hedefi değil.
+  (2) Canlı GS v100 (VS2010) toolset'li (msvcp100/msvcr100 kanıtı).
+  (3) **H-006 açıldı:** Faz 1 GS "canlıyla birebir" iddiası düzeltildi —
+  eşleşme MuServer'daki eski referansla; canlı GS 6.979.072 B.
+
+**Doküman güncellemeleri**
+- Yeni: `docs\06-CANLI-SISTEM-ENVANTERI.md` (tüm bulgular + yeniden üretim komutları)
+- `02-YOL-HARITASI.md`: 2a.2/2a.3/2a.4 ✅; 2d.0 eklendi
+- `00-PROJE-HARITASI.md`: durum panosu güncellendi (aktif görev: 2a.1)
+- `03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md`: A-01/A-02 (58 modül, kesin liste),
+  A-03 alt kırılım, B-01/B-02 (SPK istemci) kalemleri
+- `04-HATA-GUNLUGU.md`: H-006 kaydı
+
+**Operasyon notu (disk)**
+- Oturum ortasında C: diski %100 doldu (Temp'te 6,2 GB AI/araç çöpü);
+  `cmp_axion-mu-dmncms`, `axion-spot-*`, `axion-probe-*`, Cline updater
+  temizlendi → 5,7 GB boşluk açıldı. Yazma hatası nedeniyle 03 dokümanı
+  boşalmıştı; yeniden yazıldı ve doğrulandı (5.540 B).
+
+**Doğrulama**
+- Ham çıktılar `BuildLog\envanter\` (gs_strings_*, map_siniflar, sinif_*,
+  canlida_bizde_yok, muigden_alinabilir, sifirdan_yazilacak)
+- `git fsck` temiz; tüm docs boyut kontrolü yapıldı.
+
+**Commit** — (bu kayıtla birlikte)

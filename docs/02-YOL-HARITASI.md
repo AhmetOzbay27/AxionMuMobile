@@ -14,12 +14,14 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
 - ⬜ **2a.1** Canlı `GameServer.pdb` analizi: 57 eksik modülün tam listesi —
   modül adı, tahmini işlev, kaynak setlerindeki en yakın karşılık, öncelik.
   Çıktı: `docs/05-SPK-MODUL-ENVANTERI.md` (faz 2c'nin iş emri olacak).
-- ⬜ **2a.2** Canlı GS exe'sinden string/resource envanteri: event adları,
-  komutlar, config anahtarları, dosya yolları → hangi özellikler canlıda var?
-- ⬜ **2a.3** Canlı `MuServer` config dosya envanteri (Sub-1 altı ini/txt/dat)
-  → hangi modül hangi config'i okuyor; bizim kaynaktaki karşılıkları.
-- ⬜ **2a.4** Canlı istemci (`ClientBuild`) dosya envanteri: Data\ altı bmd/ini
-  listesi + hangi özellik client modülü bekliyor (SKILL/ITEM/UI eşlemesi).
+- ✅ **2a.2** Canlı GS exe'sinden string/resource envanteri → tamam; asıl verim
+  canlı `GameServer.map`'ten 242 sınıf envanteri oldu (175 bizde var, 58 eksik).
+  Detay: [06-CANLI-SISTEM-ENVANTERI.md](06-CANLI-SISTEM-ENVANTERI.md)
+- ✅ **2a.3** Canlı `MuServer` config envanteri → tamam: Sub-1\Data 450 dosya,
+  Data\SPK 25 config; tanınırlık tablosu (22 bizde / 4 MUIG'de / 24 SPK-özel).
+- ✅ **2a.4** Canlı istemci envanteri → tamam: gerçek SPK istemcisi
+  `1Client\Engine.exe` (ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini hattı);
+  bizim 5.Main'de SPK istemci desteği yok → yeni adım **2e.0** açıldı.
 - ⬜ **2a.5** GetMainInfo varyant analizi: SPK GetEngine formatı (ConnectIP.bmd,
   ServerData.bmd, CRC) ile canlı istemcinin CBGetMain.bin hattının ilişkisi;
   tek varyant kararı. → 03 listesine karar notu düşülür.
@@ -41,6 +43,11 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   (Her modül kendi satırını alacak; plan onayından sonra buraya açılır.)
 
 ### Faz 2d — GetMainInfo birleşimi
+- ⬜ **2d.0** (2a.4'te açıldı) **SPK istemci format katmanı:** 5.Main'e
+  ConnectIP.bmd/ServerData.bmd/SPK.ini/Data\SPK okuma desteği eklenmesi;
+  referans binary `1Client\Engine.exe` (9,2 MB) + `Data\SPK\Config\*.bmd`.
+  Bu çalışma 2d.1'den önce yapılır — istemci, SPK sunucuyla aynı veri hattını
+  konuşmadan parite testi mümkün değil.
 - ⬜ **2d.1** Seçilen varyanta göre kaynağı düzenle (2a.5 kararı doğrultusunda).
 - ⬜ **2d.2** Üretilen veri dosyalarının canlı istemciyle uyum testi.
 

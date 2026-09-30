@@ -24,18 +24,20 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 | Aşama | İçerik | Durum |
 |-------|--------|-------|
 | Faz 0 | Ortam kurulumu (VS 2022, git, klasörler) | ✅ TAMAMLANDI |
-| Faz 1 | CS/DS/JS/GS/GetMainInfo/Main derlemeleri | ✅ TAMAMLANDI (`faz1-tamamlandi` etiketi, commit `1339a2903`) |
-| Faz 2a | Canlı SPK envanteri (57 eksik modülün tam listesi) | ⏳ SIRADAKİ İŞ |
-| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya) | ⏳ bekliyor |
-| Faz 2c | Eksik 57 modülün yeniden yazımı (SPK_* 20 dahil) | ⏳ bekliyor |
-| Faz 2d | GetMainInfo varyant birleşimi (SPK GetEngine formatına hizalama) | ⏳ bekliyor |
+| Faz 1 | CS/DS/JS/GS/GetMainInfo/Main derlemeleri | ✅ TAMAMLANDI (`faz1-tamamlandi` etiketi, commit `1339a290`) |
+| Faz 2a | Canlı SPK envanteri | 🔄 DEVAM: 2a.2-2a.4 ✅ (bkz. [06](06-CANLI-SISTEM-ENVANTERI.md)); kalan: **2a.1** |
+| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya + 4 modül) | ⏳ bekliyor |
+| Faz 2c | Eksik 58 modülün yeniden yazımı (54 sıfırdan) | ⏳ bekliyor |
+| Faz 2d | GetMainInfo birleşimi + SPK istemci format katmanı (2d.0) | ⏳ bekliyor |
 | Faz 2e | IP/config hizalama + istemci paketleme | ⏳ bekliyor |
 | Faz 3 | Uçtan uca test (ayrı test sunucusu + DB restore) | ⏳ bekliyor |
 | Faz 4 | Android port doğrulaması | ⏳ bekliyor |
 | Faz 5 | Canlıya geçiş | ⏳ bekliyor |
 | v2    | Parite sonrası yeni geliştirme aşaması | 🔒 kapalı (parite bitmeden açılmaz) |
 
-**Şu anki tek aktif görev:** Faz 2a (bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md)).
+**Şu anki tek aktif görev:** Faz 2a.1 — canlı GameServer.map + PDB + config
+bulgularını birleştirip `docs/05-SPK-MODUL-ENVANTERI.md`'yi yazmak (bkz.
+[02-YOL-HARITASI.md](02-YOL-HARITASI.md)).
 
 ---
 
@@ -58,7 +60,7 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 | `GetMain\` | GetMainInfo derleme çıktısı |
 | `android\`, `sokol-master\` | Mobil katman bağımlılıkları |
 | `BuildLog\` | Derleme logları + string-parite analiz çıktıları |
-| `docs\` | **Proje dokümantasyonu (bu klasör)** |
+| `docs\` | **Proje dokümantasyonu (bu klasör)** — 06: canlı sistem envanteri |
 
 ### Dış referans konumları (proje dışı, salt okunur)
 | Konum | İçerik |
