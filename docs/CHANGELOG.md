@@ -136,7 +136,7 @@ güncel dokümantasyon `docs\` klasöründedir.
   logları (modülün canlıda aktif olduğunun kanıtı). Config tanınırlık tablosu:
   22 bizde / 4 MUIG'de / 24 SPK-özel (hiçbir kaynakta yok).
 - **2a.4:** Gerçek SPK istemcisi tespit edildi:
-  `Client and Tools\1Client\Engine.exe` (9.201.152 B, 19.09.2026) —
+  `Client and Tools\Client (eski adı 1Client)\Engine.exe` (9.201.152 B, 19.09.2026) —
   ConnectIP.bmd + ServerData.bmd + Data\SPK + SPK.ini hattı; AUTOHP istemci
   UI varlığı (`Btn_AutoHp.spk`). Bizim 5.Main kaynağında SPK istemci izi
   YOK (CBGetMain/MUIG hattı) → yeni plan adımı **2d.0** (SPK istemci format
@@ -238,7 +238,7 @@ run) algoritması oldu (pdb_scan.ps1).
 - `02-YOL-HARITASI.md`: 2a.5 ✅ → **Faz 2a TAMAMLANDI**
 
 **Operasyon notu**
-- `Client and Tools\1Client\` → `Client and Tools\Client\` olarak yeniden
+- `Client and Tools\Client (eski adı 1Client)\` → `Client and Tools\Client\` olarak yeniden
   adlandırılmış (dış müdahale; içerik aynı). Dokümanlardaki yollar güncel
   konumu ile yazılacak.
 

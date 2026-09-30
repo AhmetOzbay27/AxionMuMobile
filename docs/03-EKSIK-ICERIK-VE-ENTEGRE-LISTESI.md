@@ -55,7 +55,7 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 ### KAYNAK KONUMLARI (hızlı erişim)
 - MUIG donor: `C:\Axion Mu Mobile\New Source Code\Source\Source\` (+Main5.2, +Encoder)
 - SPK GetEngine referans binary: `C:\Axion Mu Mobile\Client and Tools\GetMain\`
-- **SPK istemcisi (gerçek):** `C:\Axion Mu Mobile\Client and Tools\Client\` (Engine.exe + SPK.ini + Data\SPK; eski adı 1Client)
+- **SPK istemcisi (gerçek):** `C:\Axion Mu Mobile\Client and Tools\Client\` (Engine.exe + SPK.ini + Data\SPK; eski adı Client (eski adı 1Client))
 - Canlı sunucu (salt okunur): `C:\Axion Mu Mobile\4.MuServer\Sub-1\` (GameServer.map dahil)
 - Farklı fork (parite hedefi DEĞİL): `C:\AxionMu\`
 - Eski analiz raporları: `C:\Axion Mu Mobile\analiz\`

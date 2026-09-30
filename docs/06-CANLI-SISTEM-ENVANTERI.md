@@ -13,7 +13,7 @@
 |-------|-----|----------------------|
 | `C:\Axion Mu Mobile\4.MuServer\Sub-1\` | **Canlı SPK sunucusu** (GameServer.exe 6.979.072 B, 30.09.2026) | REFERANS/HEDEF |
 | `...\Sub-1\GameServer\GameServer.map` | Canlı derlemenin **tam sembol haritası** (1,8 MB, 16.079 satır, 19.09.2026) | 2a.1 modül envanterinin birincil kaynağı; kopya: `BuildLog\envanter\GameServer_canli.map` |
-| `C:\Axion Mu Mobile\Client and Tools\1Client\` | **Gerçek SPK istemcisi** (Engine.exe 9.201.152 B, 19.09.2026 + Launcher.exe + SPK.ini + Data\SPK) | İstemci paritesinin asıl hedefi |
+| `C:\Axion Mu Mobile\Client and Tools\Client (eski adı 1Client)\` | **Gerçek SPK istemcisi** (Engine.exe 9.201.152 B, 19.09.2026 + Launcher.exe + SPK.ini + Data\SPK) | İstemci paritesinin asıl hedefi |
 | `C:\AxionMu\` | **Farklı fork** (Kas-Ara 2025; ChatServer, StartServer, EXDataServer, DB, MuEditor; GS'ler vcruntime140**d** = debug runtime) | PARİTE HEDEFİ DEĞİL — sadece altyapı fikri |
 | `C:\Axion Mu Source\ClientBuild_192.168.99.200\` | MUIG-hat istemci paketi (Main.exe 12.003.328 B) | Bizim Main hattımızla aynı varyant; SPK değil |
 
@@ -157,7 +157,7 @@ Relife.xml, ResetChange.txt, TuLuyen.xml
 
 ## 4. FAZ 2a.4 — CANLI İSTEMCİ ENVANTERİ
 
-### Gerçek SPK istemcisi: `Client and Tools\1Client\`
+### Gerçek SPK istemcisi: `Client and Tools\Client (eski adı 1Client)\`
 | Öğe | Değer |
 |-----|-------|
 | Motor | **Engine.exe** — 9.201.152 B, **19.09.2026** (canlı GS.map tarihiyle aynı gün) |
@@ -173,7 +173,7 @@ SPK/GetEngine veri formatını konuşuyor.
 ### Hat ayrımı (hangi istemci hangi sunucuyla?)
 | İstemci | Hat | Kanıt |
 |---------|-----|-------|
-| `1Client\Engine.exe` | **SPK** | ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini/MuSPK izi |
+| `Client (eski adı 1Client)\Engine.exe` | **SPK** | ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini/MuSPK izi |
 | `ClientBuild_192.168.99.200\Main.exe` | MUIG | CBGetMain.bin + License.json hattı |
 | `C:\AxionMu\Main.exe` (32 MB, 27.09.2026) | 3. hat (paketli/string görünmez) | ASCII+UTF-16 taramada hiçbir bilinen iz yok |
 | **Bizim `ClientFile\Main.exe`** | MUIG | CBGetMain + License.json (kaynağımızda SPK izi: 0 dosya) |
@@ -188,7 +188,7 @@ SPK/GetEngine veri formatını konuşuyor.
 > **Karar kutusu (Faz 2e öncesi netleşmeli):** SPK sunucu paritesi
 > hedefleniyorsa istemcinin de SPK veri formatını konuşması gerekir. İki yol:
 > (a) 5.Main'e SPK okuma katmanı eklemek (ConnectIP.bmd/ServerData.bmd
-> format çözümlemesi 1Client referansından yapılır), (b) mevcut MUIG-hat
+> format çözümlemesi Client (eski adı 1Client) referansından yapılır), (b) mevcut MUIG-hat
 > istemciyle SPK sunucu arasına protokol köprüsü. Önerilen: (a).
 
 ---
@@ -204,6 +204,6 @@ SPK/GetEngine veri formatını konuşuyor.
    güncellemesi ayrı iş kalemi olarak sürer.
 4. **İstemci tarafı parite Faz 2e.0 ile açılıyor:** SPK istemci formatları
    (ConnectIP.bmd, ServerData.bmd, Data\SPK, SPK.ini) 5.Main'e öğretilecek;
-   referans binary: `1Client\Engine.exe`.
+   referans binary: `Client (eski adı 1Client)\Engine.exe`.
 5. **H-006:** Faz 1 GS "birebir" iddiası düzeltildi — MuServer referans hattı
    ile eşleşme, canlı GS (v100, 6.979.072 B) ile DEĞİL.

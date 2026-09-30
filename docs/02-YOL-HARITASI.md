@@ -22,7 +22,7 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
 - ✅ **2a.3** Canlı `MuServer` config envanteri → tamam: Sub-1\Data 450 dosya,
   Data\SPK 25 config; tanınırlık tablosu (22 bizde / 4 MUIG'de / 24 SPK-özel).
 - ✅ **2a.4** Canlı istemci envanteri → tamam: gerçek SPK istemcisi
-  `1Client\Engine.exe` (ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini hattı);
+  `Client (eski adı 1Client)\Engine.exe` (ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini hattı);
   bizim 5.Main'de SPK istemci desteği yok → yeni adım **2e.0** açıldı.
 - ✅ **2a.5** GetMainInfo varyant analizi → **KARAR: tek hat = SPK GetEngine.**
   Kanıtlar: GetEngine.ini (IP 45.87.120.29:44405, v1.03.34, Türkçe yorumlu) =
@@ -48,7 +48,7 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
 ### Faz 2d — GetMainInfo birleşimi
 - ⬜ **2d.0** (2a.4'te açıldı) **SPK istemci format katmanı:** 5.Main'e
   ConnectIP.bmd/ServerData.bmd/SPK.ini/Data\SPK okuma desteği eklenmesi;
-  referans binary `1Client\Engine.exe` (9,2 MB) + `Data\SPK\Config\*.bmd`.
+  referans binary `Client (eski adı 1Client)\Engine.exe` (9,2 MB) + `Data\SPK\Config\*.bmd`.
   Bu çalışma 2d.1'den önce yapılır — istemci, SPK sunucuyla aynı veri hattını
   konuşmadan parite testi mümkün değil.
 - ⬜ **2d.1** Seçilen varyanta göre kaynağı düzenle (2a.5 kararı doğrultusunda).
