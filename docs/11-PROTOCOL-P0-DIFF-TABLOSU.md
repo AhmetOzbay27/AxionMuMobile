@@ -79,4 +79,16 @@
    yok** — head setleri de aynı olduğundan istemci uyumluluğu iki tarafta eşit.
 
 ---
+
+## 6. YENİDEN DOĞRULAMA (01.10.2026 00:55)
+
+P0'dan sonra 10 protokol dosyasında **hiçbir değişiklik olmadığı** `git diff
+fe4bc2505..HEAD` ile teyit edildi; tablo geçerliliğini koruyor. Canlı exe
+(6.979.072 B) string kanıtları yeniden doğrulandı:
+- `Event\CTCMini` canlı **VE** bizim derlemede mevcut (CTCMini handler kararı);
+- `Notice.txt` iki tarafta da mevcut;
+- `ThuMuaDoExc.txt` iki tarafta da mevcut;
+- `BlackList.txt` canlıda `Sub-1\Data\` altında FİZİKSEL olarak VAR (string
+  exe'de taşınmıyor — config varlığı kanıt; BlackList modül hattı 2c notu geçerli).
+
 *P0 kapandı: tablo docs/11'de, donor protokol alımı kararı belgelendi. 2b.2-C (G2) onaylı.*

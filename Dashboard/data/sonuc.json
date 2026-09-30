@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 00:47:00",
+  "updated": "2026-10-01 00:55:00",
   "status": "ok",
-  "text": "2b.2-A zaten tamamlanmıştı (dalga 1 ab1708d5d + dalga 2 531f984b3) — yeniden yapılmadı, yerine G1'in 30 dosyasi TEK TEK DENETLENDI: 25'i donor-birebir teyit edildi; pugixml ve Map bilinçli karar; MossMerchant/BonusManager tek fark bizim include yorumu. BULGU: dalga 1'de MoveSummon cpp eksik alınmıştı (donor PkMove satırları yoktu) — canlı MoveSummon.txt'de PkMove kolonu VAR (kanıt) → tamamlandı, donor-birebir. CustomPick tam alımı MapManager zinciri (7 metot + CustPick kolonu) istiyor — canlı MapManager.txt kanıtlı, ayrı kalem olarak önerildi. GS temiz → 10.775.552 B (00:46)."
+  "text": "2b.2-P0 zaten tamamlanmisti (fe4bc2505, docs/11 — 23:15). Yeniden dogrulama yapildi: P0'dan bu yana 10 protokol dosyasinda HICBIR degisiklik yok (git diff teyit), tablo gecerliligini koruyor. Canli exe (6.979.072 B) string kanitlari yeniden dogrulandi: Event/CTCMini hem canlida hem bizim derlemede; Notice.txt ve ThuMuaDoExc.txt iki tarafta da; BlackList.txt canlida Sub-1/Data altinda fiziksel VAR (2c'deki BlackList modul notunu dogruluyor). docs/11'e '6. Yeniden Dogrulama' bolumu eklendi. Karar degismedi: donor protokol alimi YOK."
 }

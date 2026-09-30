@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-01 00:47:00",
+  "updated": "2026-10-01 00:55:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
-    { "ts": "2026-10-01 00:47", "kim": "ajan", "text": "G1 DENETİMİ: 2b.2-A zaten tamamlanmıştı — 30 dosya tek tek doğrulandı: 25 donor-birebir, 4 bilinçli karar (pugixml/Map/include yorumları). BULGU: dalga 1'de MoveSummon eksik alınmıştı (PkMove satırları yoktu) → canlı kanıtla tamamlandı. CustomPick, MapManager zinciri istiyor → ayrı kalem önerildi. GS temiz → 10.775.552 B (00:46)." },
+    { "ts": "2026-10-01 00:55", "kim": "ajan", "text": "P0 YENİDEN DOĞRULAMA: 2b.2-P0 zaten tamamlanmıştı (docs/11, 23:15). 10 protokol dosyasında değişiklik yok (git diff teyit); canlı exe kanıtları yeniden doğrulandı (CTCMini/Notice.txt/ThuMuaDoExc.txt iki tarafta da, BlackList.txt canlı Data'da fiziksel VAR). docs/11'e yeniden-doğrulama bölümü eklendi. Karar aynı: donor protokol alımı YOK." },
     { "ts": "2026-10-01 00:47", "kim": "kullanıcı", "text": "2b.2-A'yı başlat: G1 grubundaki 30 dosyayı 3 grup halinde donörden al, her grupta derle + CHANGELOG + commit." },
     { "ts": "2026-10-01 00:25", "kim": "ajan", "text": "Saat damgası standardı kuruldu: CHANGELOG'un 29 kaydına [gg.aa.yy HH:mm] başlık + 'hash · Tamamlandı — saat' damgası (git log ile doğrulandı). Panoya Zaman Çizelgesi paneli eklendi (saat · iş · commit, canlı). Bundan sonra her kayıt bu standardı izleyecek. Commit bu turda." },
     { "ts": "2026-10-01 00:10", "kim": "ajan", "text": "FAZ 2b KAPANIŞ DOĞRULAMASI: final Rebuild temiz → 10.775.552 B (00:03), 8 kanca dosyası + H-007 (0x35 AUTOHP) doğrulandı. 2b.2 toplam: 213 dosyanın 66'sı alındı, 147'si gerekçeli korundu, 0 belirsiz. docs/00+02 kapanış güncel. Sıradaki: 2b.3 → 2c." },
