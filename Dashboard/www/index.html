@@ -3,184 +3,305 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axion Mu — Ne yapıyoruz?</title>
+<title>Axion Mu — Proje Takip Panosu</title>
 <style>
 :root{
-  --bg:#0b0f14; --panel:#121822; --panel2:#0e141c; --line:#1f2a3a;
-  --tx:#dce6f2; --dim:#8ba1bd; --acc:#f0a12e; --ok:#3fd68f; --run:#4db4ff;
+  --bg:#070b10; --bg2:#0a1017;
+  --panel:rgba(18,26,38,.82); --panel2:rgba(12,18,27,.9);
+  --line:rgba(120,150,190,.14); --line2:rgba(120,150,190,.26);
+  --tx:#e8eef7; --dim:#93a7c4; --dim2:#6d82a0;
+  --acc:#f5a623; --acc2:#ffcf6e; --accbg:rgba(245,166,35,.12);
+  --ok:#43e39b; --okbg:rgba(67,227,155,.12);
+  --run:#54b9ff; --runbg:rgba(84,185,255,.13);
+  --bad:#ff6b6b;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--tx);font:15px/1.6 "Segoe UI",system-ui,sans-serif;padding:16px;max-width:900px;margin:0 auto}
-h1{font-size:22px}
-h1 .mu{color:var(--acc)}
-.sub{color:var(--dim);font-size:12.5px;margin-top:2px}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:14px}
-.panel h2{font-size:14px;margin-bottom:10px}
-.intro{font-size:15px}
-.intro b{color:var(--acc)}
-.bar{background:var(--panel2);border:1px solid var(--line);border-radius:20px;height:22px;margin:10px 0 4px;overflow:hidden;position:relative}
-.bar>div{height:100%;background:linear-gradient(90deg,#2e7d5b,var(--ok));transition:width .6s}
-.bar span{position:absolute;inset:0;text-align:center;font-size:12px;line-height:22px;color:#fff;font-weight:600}
-.now{background:linear-gradient(90deg,rgba(77,180,255,.14),transparent);border-left:4px solid var(--run);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:10px;font-size:15px}
-.next{background:linear-gradient(90deg,rgba(240,161,46,.12),transparent);border-left:4px solid var(--acc);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:10px;font-size:15px}
-.grouph{margin:16px 0 6px;font-weight:700;font-size:15px;color:var(--acc)}
-.step{display:flex;gap:10px;padding:7px 4px;border-bottom:1px dashed var(--line);font-size:14px;align-items:baseline}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(245,166,35,.07), transparent 60%),
+    radial-gradient(900px 420px at 10% 0%, rgba(84,185,255,.06), transparent 55%),
+    linear-gradient(180deg,var(--bg2),var(--bg) 400px);
+  color:var(--tx);
+  font:15px/1.65 "Segoe UI",system-ui,-apple-system,sans-serif;
+  min-height:100vh;
+}
+.wrap{max-width:960px;margin:0 auto;padding:26px 18px 40px}
+
+/* ---------- HERO ---------- */
+.hero{text-align:center;padding:26px 10px 6px}
+.hero .logo{font-size:38px;font-weight:800;letter-spacing:1px}
+.hero .logo .a{color:var(--acc)}
+.hero .logo .m{color:var(--tx)}
+.hero .tag{color:var(--dim);margin-top:4px;font-size:14px}
+.hero .tag b{color:var(--acc2)}
+
+/* ---------- MISYON KARTLARI ---------- */
+.mission{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:22px}
+.mcard{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:18px 18px 16px;position:relative;overflow:hidden;
+  backdrop-filter:blur(6px);
+}
+.mcard::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,var(--acc),transparent 70%)}
+.mcard.goal::before{background:linear-gradient(90deg,var(--ok),transparent 70%)}
+.mcard.rule::before{background:linear-gradient(90deg,var(--run),transparent 70%)}
+.mcard h3{font-size:14px;letter-spacing:1.2px;text-transform:uppercase;color:var(--acc2);margin-bottom:8px}
+.mcard.goal h3{color:var(--ok)}
+.mcard.rule h3{color:var(--run)}
+.mcard p{font-size:14px;color:var(--tx)}
+.mcard p b{color:#fff}
+.mcard p .em{color:var(--dim)}
+
+/* ---------- PANEL ---------- */
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;
+  padding:18px 20px;margin-top:16px;backdrop-filter:blur(6px);
+}
+.panel>h2{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.panel>h2 .n{color:var(--acc)}
+.hint{color:var(--dim2);font-size:12px;margin:-8px 0 10px}
+
+/* ---------- DURUM ---------- */
+.barwrap{display:flex;align-items:center;gap:14px}
+.bar{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:24px;height:26px;overflow:hidden;position:relative}
+.bar>div{height:100%;border-radius:24px;position:relative;
+  background:linear-gradient(90deg,#1f8a5f,var(--ok));transition:width .8s ease}
+.bar>div::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  animation:shine 2.6s infinite}
+@keyframes shine{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+.bartext{flex:0 0 auto;font-weight:700;color:var(--ok);font-size:15px}
+.flagbox{margin-top:12px;padding:12px 16px;border-radius:12px;font-size:14.5px;line-height:1.5}
+.flagbox b{color:#fff}
+.flagbox.done{background:var(--okbg);border:1px solid rgba(67,227,155,.3)}
+.flagbox.next{background:var(--accbg);border:1px solid rgba(245,166,35,.3)}
+.flagbox.now{background:var(--runbg);border:1px solid rgba(84,185,255,.3)}
+
+/* ---------- SON ISLER ---------- */
+.work{padding:10px 2px;border-bottom:1px dashed var(--line)}
+.work:last-child{border:none}
+.work .d{display:inline-block;font-family:Consolas,monospace;font-size:12px;color:var(--acc);
+  background:var(--accbg);border-radius:8px;padding:1px 8px;margin-bottom:3px}
+.work .t{font-size:14.5px}
+
+/* ---------- PLAN ---------- */
+.grp{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;background:var(--panel2)}
+.grp>.head{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;user-select:none}
+.grp>.head:hover{background:rgba(120,150,190,.06)}
+.grp>.head .gt{flex:1;font-weight:700;font-size:14.5px}
+.grp>.head .gs{color:var(--dim);font-size:12.5px;white-space:nowrap}
+.grp>.head .cv{color:var(--dim2);font-size:12px;transition:transform .2s}
+.grp.open>.head .cv{transform:rotate(90deg)}
+.grp>.body{display:none;border-top:1px solid var(--line)}
+.grp.open>.body{display:block}
+.step{display:flex;gap:10px;padding:8px 14px;border-bottom:1px dashed var(--line);font-size:14px;align-items:baseline}
 .step:last-child{border:none}
-.step .ic{flex:0 0 26px;text-align:center}
-.step .id{flex:0 0 76px;font-family:Consolas,monospace;color:var(--acc);font-size:13px}
+.step:hover{background:rgba(120,150,190,.05)}
+.step .ic{flex:0 0 24px;text-align:center}
+.step .id{flex:0 0 72px;font-family:Consolas,monospace;color:var(--acc);font-size:12.5px}
 .step .tx{flex:1}
-.step.done .tx{color:var(--dim)}
+.grp.alldone .step .tx{color:var(--dim)}
 .step.run .tx{color:#fff;font-weight:600}
-.chip{display:inline-block;font-size:11px;padding:1px 8px;border-radius:12px;margin-left:8px;vertical-align:middle}
-.c-ok{background:rgba(63,214,143,.15);color:var(--ok)}
-.c-run{background:rgba(77,180,255,.15);color:var(--run)}
-.c-wait{background:rgba(139,161,189,.12);color:var(--dim)}
-.c-lock{background:rgba(139,161,189,.12);color:var(--dim)}
-.today{border-bottom:1px dashed var(--line);padding:8px 2px}
-.today:last-child{border:none}
-.today .t{color:var(--acc);font-size:12px;font-family:Consolas,monospace}
-table{width:100%;border-collapse:collapse;font-size:13.5px}
-td,th{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left}
-th{color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase}
-.num{font-family:Consolas,monospace}
-.docbtn{display:block;width:100%;text-align:left;background:var(--panel2);color:var(--tx);
-  border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:5px 0;cursor:pointer;font-size:14.5px}
-.docbtn:hover{border-color:var(--acc)}
-.docbtn .meta{float:right;color:var(--dim);font-size:11px;margin-top:2px}
+.step .chip{font-size:10.5px;padding:1px 8px;border-radius:10px;margin-left:8px;vertical-align:2px}
+.c-ok{background:var(--okbg);color:var(--ok)}
+.c-run{background:var(--runbg);color:var(--run)}
+.c-wait{background:rgba(147,167,196,.1);color:var(--dim)}
+
+/* ---------- COMMIT TIMELINE ---------- */
+.tl{position:relative;padding-left:20px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--acc),var(--line))}
+.cm{position:relative;padding:6px 0 6px 10px;font-size:13.5px}
+.cm::before{content:"";position:absolute;left:-19px;top:12px;width:10px;height:10px;border-radius:50%;
+  background:var(--acc);box-shadow:0 0 0 3px rgba(245,166,35,.18)}
+.cm .h{font-family:Consolas,monospace;color:var(--acc);font-size:12.5px}
+.cm .dt{color:var(--dim2);font-size:12px}
+
+/* ---------- DOKUMANLAR ---------- */
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.docbtn{display:flex;align-items:center;gap:10px;background:var(--panel2);color:var(--tx);
+  border:1px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;font-size:14px;text-align:left}
+.docbtn:hover{border-color:var(--acc);background:rgba(245,166,35,.06)}
+.docbtn .de{font-size:19px}
+.docbtn .dn{flex:1}
+.docbtn .meta{color:var(--dim2);font-size:11px}
 #docview{display:none;white-space:pre-wrap;font-family:Consolas,monospace;font-size:12.5px;
-  background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px;max-height:480px;overflow:auto;margin-top:10px}
-.commit{display:flex;gap:10px;padding:6px 2px;border-bottom:1px dashed var(--line);font-size:13.5px}
-.commit:last-child{border:none}
-.commit .h{font-family:Consolas,monospace;color:var(--acc);flex:0 0 90px}
-footer{color:var(--dim);font-size:11px;margin-top:16px;text-align:center}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-left:6px;animation:p 2s infinite}
+  background:var(--panel2);border:1px solid var(--line2);border-radius:12px;padding:18px;
+  max-height:460px;overflow:auto;margin-top:12px;line-height:1.6}
+
+/* ---------- TEKNIK ---------- */
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+tr:last-child td{border:none}
+.num{font-family:Consolas,monospace}
+
+footer{color:var(--dim2);font-size:11.5px;margin-top:22px;text-align:center;line-height:1.8}
+.live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin:0 4px;animation:p 2s infinite}
 @keyframes p{50%{opacity:.3}}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>⚙ AXION <span class="mu">MU</span> — Ne yapıyoruz?</h1>
-<div class="sub">Canlı sunucu · <span id="host">—</span> · son yenileme <span id="ts">—</span><span class="dot"></span></div>
+  <!-- HERO + MISYON -->
+  <div class="hero">
+    <div class="logo"><span class="a">AXION</span> <span class="m">MU</span></div>
+    <div class="tag">Proje Takip Panosu · <b>45.87.120.29:8096</b> · her yerden takip</div>
+  </div>
 
-<div class="panel intro">
-  <b>Bu proje ne?</b> Haliyle çalışan oyun sunucusunun (SPK) <b>birebir aynısını</b>
-  kendi kaynak kodumuzdan üretiyoruz. Eşitleme bitmeden yeni özellik (v2) açılmayacak.
-  Her iş "adım" diye yapılıyor: uygula → derle → kaydet → GitHub'a yaz.
+  <div class="mission">
+    <div class="mcard">
+      <h3>🎯 Amacımız</h3>
+      <p>Haliyle çalışan oyun sunucumuzun <b>(SPK / canlı sunucu)</b> tüm içerik ve
+      özelliklerinin <b>birebir aynısını kendi kaynak kodumuzdan</b> üretmek.
+      Canlı sunucu kopya kalıbımız; <span class="em">ona asla dokunulmaz, sadece okunur.</span></p>
+    </div>
+    <div class="mcard goal">
+      <h3>🏁 Hedefimiz</h3>
+      <p>Eksik <b>59 modülü</b> yazıp <b>12 dosyayı</b> canlı revizyona eşitlemek →
+      test sunucusunda uçtan uca denemek → <b>Android + PC'de sorunsuz çalıştırıp
+      canlıya geçmek</b>. Ardından kapısı açılacak: <b>v2 = kendi özelliklerimiz.</b></p>
+    </div>
+    <div class="mcard rule">
+      <h3>🚦 Kuralımız</h3>
+      <p><b>Plandan şaşma yok:</b> her iş bir "adım" — uygula, derle, belgele, kaydet.
+      Parite tamamlanmadan <b>yeni özellik (v2) yapılmaz</b>. Bu pano planın kendisinden
+      (<span class="em">docs/02</span>) canlı beslenir; sapma görürsen bize yaz.</p>
+    </div>
+  </div>
+
+  <!-- GENEL DURUM -->
+  <div class="panel">
+    <h2>📌 <span class="n">Genel Durum</span></h2>
+    <div class="barwrap">
+      <div class="bar"><div id="barfill" style="width:0%"></div></div>
+      <div class="bartext" id="bartext">…</div>
+    </div>
+    <div id="flags">
+      <div class="flagbox now" id="nowbox">yükleniyor…</div>
+      <div class="flagbox next" id="nextbox" style="margin-top:10px">yükleniyor…</div>
+    </div>
+  </div>
+
+  <!-- SON ISLER -->
+  <div class="panel">
+    <h2>🆕 <span class="n">Son Yapılan İşler</span> <span style="color:var(--dim2);font-size:12px">(CHANGELOG'dan)</span></h2>
+    <div id="today">yükleniyor…</div>
+  </div>
+
+  <!-- PLAN -->
+  <div class="panel">
+    <h2>🗺️ <span class="n">Plan — Bütün Adımlar</span></h2>
+    <div class="hint">Kaynak: docs/02-YOL-HARİTASI (canlı okunuyor) · tamamlanmış fazlara tıkla-aç/kapa</div>
+    <div id="plan">yükleniyor…</div>
+  </div>
+
+  <!-- COMMITLER -->
+  <div class="panel">
+    <h2>📜 <span class="n">Kayıt Defteri</span> <span style="color:var(--dim2);font-size:12px">(son 15 commit)</span></h2>
+    <div class="tl" id="commits">yükleniyor…</div>
+  </div>
+
+  <!-- DOKUMANLAR -->
+  <div class="panel">
+    <h2>📄 <span class="n">Belgeler</span> — detayı merak eden okusun</h2>
+    <div class="docs" id="docs">yükleniyor…</div>
+    <div id="docview"></div>
+  </div>
+
+  <!-- TEKNIK -->
+  <div class="panel">
+    <h2>🔧 <span class="n">Teknik Tablo</span> — derleme çıktıları</h2>
+    <table>
+      <tr><th>Dosya</th><th>Boyut</th><th>Son Güncelleme</th></tr>
+      <tr><td>GameServer — bizim derlememiz</td><td class="num" id="b1">—</td><td class="num" id="t1">—</td></tr>
+      <tr><td>GameServer — canlı (eşitleme hedefi)</td><td class="num" id="b2">—</td><td class="num" id="t2">—</td></tr>
+      <tr><td>Main.exe — oyun istemcisi</td><td class="num" id="b3">—</td><td class="num" id="t3">—</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    AXION MU SOURCE · <span class="live"></span>30 saniyede bir yenilenir · kaynak: C:\Axion Mu Source<br>
+    Plan: docs/02 · Kayıtlar: docs/CHANGELOG · Canlı sunucu salt-okunur referanstır
+  </footer>
 </div>
-
-<div class="panel">
-  <h2>📌 Genel Durum</h2>
-  <div class="bar"><div id="barfill" style="width:0%"></div><span id="bartext">…</span></div>
-  <div class="now" id="nowbox">yükleniyor…</div>
-  <div class="next" id="nextbox">yükleniyor…</div>
-</div>
-
-<div class="panel">
-  <h2>🆕 Son yapılan işler</h2>
-  <div id="today">yükleniyor…</div>
-</div>
-
-<div class="panel">
-  <h2>🗺️ Plan — bütün adımlar (docs/02'den canlı okunuyor)</h2>
-  <div id="plan">yükleniyor…</div>
-</div>
-
-<div class="panel">
-  <h2>📜 Son kayıt işleri (git)</h2>
-  <div id="commits">yükleniyor…</div>
-</div>
-
-<div class="panel">
-  <h2>📄 Belgeleri oku</h2>
-  <div id="docs">yükleniyor…</div>
-  <div id="docview"></div>
-</div>
-
-<div class="panel">
-  <h2>🔧 Teknik detay (derlemeler)</h2>
-  <table>
-    <tr><th>Dosya</th><th>Boyut</th><th>Tarih</th></tr>
-    <tr><td>GameServer — bizim</td><td class="num" id="b1">—</td><td class="num" id="t1">—</td></tr>
-    <tr><td>GameServer — canlı (hedef)</td><td class="num" id="b2">—</td><td class="num" id="t2">—</td></tr>
-    <tr><td>Main.exe (oyun istemcisi)</td><td class="num" id="b3">—</td><td class="num" id="t3">—</td></tr>
-  </table>
-</div>
-
-<footer>Axion Mu Source · 30 sn'de bir yenilenir · kaynak: C:\Axion Mu Source</footer>
 
 <script>
 const DOCNAMES={
- "00-PROJE-HARITASI.md":"🎯 Proje Haritası — genel bakış",
- "01-ARASTIRMA-REHBERI.md":"📚 Araştırma Rehberi — eski bulgular",
- "02-YOL-HARITASI.md":"🗺️ Yol Haritası — tüm plan",
- "03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md":"📋 Eksik İçerik Listesi",
- "04-HATA-GUNLUGU.md":"🐞 Hata Günlüğü",
- "05-SPK-MODUL-ENVANTERI.md":"📦 Modül Envanteri (59 eksik modül)",
- "06-CANLI-SISTEM-ENVANTERI.md":"🔎 Canlı Sistem Envanteri",
- "07-SPK-BMD-FORMAT.md":"🧾 BMD Formatı (istencil dosya biçimi)",
- "08-GETMAININFO-TASARIM.md":"🛠️ GetMainInfo Tasarımı",
- "09-EZILEN-12-DOSYA-KARSILASTIRMA.md":"📊 12 Dosya Karşılaştırma Raporu",
- "CHANGELOG.md":"📜 CHANGELOG — yapılan her iş"
+ "00-PROJE-HARITASI.md":["🎯","Proje Haritası — genel bakış"],
+ "01-ARASTIRMA-REHBERI.md":["📚","Araştırma Rehberi — eski bulgular"],
+ "02-YOL-HARITASI.md":["🗺️","Yol Haritası — tüm plan"],
+ "03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md":["📋","Eksik İçerik Listesi"],
+ "04-HATA-GUNLUGU.md":["🐞","Hata Günlüğü"],
+ "05-SPK-MODUL-ENVANTERI.md":["📦","Modül Envanteri (59 eksik)"],
+ "06-CANLI-SISTEM-ENVANTERI.md":["🔎","Canlı Sistem Envanteri"],
+ "07-SPK-BMD-FORMAT.md":["🧾","BMD Formatı (dosya biçimi)"],
+ "08-GETMAININFO-TASARIM.md":["🛠️","GetMainInfo Tasarımı"],
+ "09-EZILEN-12-DOSYA-KARSILASTIRMA.md":["📊","12 Dosya Karşılaştırma"],
+ "CHANGELOG.md":["📜","CHANGELOG — her yapılan iş"]
 };
 const ICON={done:"✅",run:"🔄",wait:"⬜",blocked:"⏸",lock:"🔒"};
 const CHIP={done:"<span class='chip c-ok'>tamam</span>",run:"<span class='chip c-run'>ŞİMDİ</span>",
             wait:"<span class='chip c-wait'>bekliyor</span>",blocked:"<span class='chip c-wait'>engelli</span>",
-            lock:"<span class='chip c-lock'>kilitli</span>"};
-
-function strip(md){
-  return md.replace(/\*\*/g,"").replace(/\[(.+?)\]\((.+?)\)/g,"$1").trim();
-}
+            lock:"<span class='chip c-wait'>kilitli</span>"};
+function strip(md){return md.replace(/\*\*/g,"").replace(/\[(.+?)\]\((.+?)\)/g,"$1").trim()}
 function fmtSize(b){return (b/1048576).toFixed(2)+" MB"}
 
 async function loadPlan(){
   try{
     const txt = await (await fetch("/api/doc/02-YOL-HARITASI.md")).text();
     const lines = txt.split(/\r?\n/);
-    let html="", groups=[], cur=null;
+    let groups=[], cur=null;
     for(const raw of lines){
-      const line=raw.trimEnd();
-      let m;
+      const line=raw.trimEnd(); let m;
       if(m=line.match(/^#{2,3}\s+(FAZ\s+.+|Faz\s+2[a-e].+|v2\s+.+)$/)){
         cur={title:strip(m[1]),steps:[]}; groups.push(cur); continue;
       }
       if(m=line.match(/^-\s+([✅🔄⬜⏸🔒])\s+(.+)$/)){
         if(!cur){cur={title:"Diğer",steps:[]};groups.push(cur);}
         const st={"✅":"done","🔄":"run","⬜":"wait","⏸":"blocked","🔒":"lock"}[m[1]];
-        let rest=strip(m[2]);
-        let id="";
+        let rest=strip(m[2]), id="";
         const im=rest.match(/^([0-9][0-9a-zA-Z.\-]*[a-zA-Z0-9])\s+(.+)$/);
         if(im){id=im[1];rest=im[2];}
         cur.steps.push({st,id,tx:rest});
       }
     }
-    let done=0,total=0,runStep=null,nextStep=null,runGroup=null,nextGroup=null,foundRun=false,foundNext=false,lastDone=null,lastDoneGroup=null;
-    html+=`<div class="step done"><span class="ic">✅</span><span class="id">Faz 0</span><span class="tx">Ortam kurulumu (VS2022, git, klasörler) — doküman: 00-PROJE-HARİTASI</span><span class="chip c-ok">tamam</span></div>`;
-    html+=`<div class="step done"><span class="ic">✅</span><span class="id">Faz 1</span><span class="tx">İlk derlemeler — CS/DS/JS/GS/Main/GetMainInfo kaynaktan derlendi</span><span class="chip c-ok">tamam</span></div>`;
-    done+=2; total+=2;
+    // durum sayaci
+    let done=2,total=2,runStep=null,nextStep=null,runGroup=null,nextGroup=null,
+        fRun=false,fNext=false,lastDone=null,lastDoneGroup=null;
+    let html="";
     for(const g of groups){
-      html+=`<div class="grouph">${g.title}</div>`;
+      const d=g.steps.filter(s=>s.st==="done").length, n=g.steps.length;
+      const all=d===n;
+      html+=`<div class="grp ${all?"alldone":"open"}" id="g${groups.indexOf(g)}">
+        <div class="head" onclick="this.parentElement.classList.toggle('open')">
+          <span class="gt">${g.title}</span>
+          <span class="gs">${d}/${n} ${all?"✅":""}</span><span class="cv">▶</span>
+        </div><div class="body">`;
       for(const s of g.steps){
-        total++;
-        if(s.st==="done")done++;
-        if(s.st==="run"&&!foundRun){runStep=s;runGroup=g;foundRun=true;}
-        if(s.st==="wait"&&!foundNext){nextStep=s;nextGroup=g;foundNext=true;}
+        total++; if(s.st==="done")done++;
+        if(s.st==="run"&&!fRun){runStep=s;runGroup=g;fRun=true;}
+        if(s.st==="wait"&&!fNext){nextStep=s;nextGroup=g;fNext=true;}
         if(s.st==="done"){lastDone=s;lastDoneGroup=g;}
-        html+=`<div class="step ${s.st}"><span class="ic">${ICON[s.st]}</span><span class="id">${s.id||"—"}</span><span class="tx">${s.tx} ${CHIP[s.st]}</span></div>`;
+        html+=`<div class="step ${s.st}"><span class="ic">${ICON[s.st]}</span>
+          <span class="id">${s.id||"—"}</span><span class="tx">${s.tx} ${CHIP[s.st]}</span></div>`;
       }
+      html+=`</div></div>`;
     }
     document.getElementById("plan").innerHTML=html;
     document.getElementById("barfill").style.width=(total?Math.round(done*100/total):0)+"%";
-    document.getElementById("bartext").textContent=`${done} / ${total} adım tamam`;
+    document.getElementById("bartext").textContent=`${done}/${total} adım`;
+    document.getElementById("nowbox").className="flagbox "+(runStep?"now":"done");
     document.getElementById("nowbox").innerHTML = runStep
-      ? `🔄 <b>Şu an yapılan:</b> ${runGroup.title} → adım <b>${runStep.id}</b>`
-      : (lastDone ? `✔️ <b>Son tamamlanan:</b> ${lastDoneGroup.title} → adım <b>${lastDone.id||"(blok)"}</b> — plan işaretleri 02 dosyasından canlı okunuyor`
-                  : "Aktif adım yok");
+      ? `🔄 <b>Şu an yapılıyor:</b> ${runGroup.title.replace(/^Faz 2b — /,"")} → <b>${runStep.id}</b>`
+      : (lastDone ? `✔️ <b>Son tamamlanan:</b> ${lastDoneGroup.title.replace(/^Faz 2b — /,"")} → adım <b>${lastDone.id}</b>` : "—");
     document.getElementById("nextbox").innerHTML = nextStep
-      ? `👉 <b>Sıradaki:</b> ${nextGroup.title} → adım <b>${nextStep.id}</b>: ${nextStep.tx.slice(0,140)}`
+      ? `👉 <b>Sıradaki adım:</b> <b>${nextStep.id}</b> — ${nextStep.tx.slice(0,150)}`
       : "";
-  }catch(e){
-    document.getElementById("plan").textContent="plan okunamadı: "+e.message;
-  }
+  }catch(e){ document.getElementById("plan").textContent="plan okunamadı: "+e.message; }
 }
 
 async function loadToday(){
@@ -189,15 +310,13 @@ async function loadToday(){
     const re=/^## \[(.+?)\] (.+)$/gm; let m,out=[],n=0;
     while((m=re.exec(txt))&&n<5){ out.push({date:m[1],title:m[2]}); n++; }
     document.getElementById("today").innerHTML = out.map(o=>
-      `<div class="today"><span class="t">${o.date}</span><br>${o.title}</div>`).join("");
+      `<div class="work"><span class="d">${o.date}</span><div class="t">${o.title}</div></div>`).join("");
   }catch(e){ document.getElementById("today").textContent="okunamadı"; }
 }
 
 async function loadStatus(){
   try{
     const j = await (await fetch("/api/status")).json();
-    document.getElementById("host").textContent=j.host;
-    document.getElementById("ts").textContent=j.time;
     const B=j.builds||{};
     if(B.gs_bizim){b1.textContent=fmtSize(B.gs_bizim.size);t1.textContent=B.gs_bizim.mtime;}
     if(B.gs_canli){b2.textContent=fmtSize(B.gs_canli.size);t2.textContent=B.gs_canli.mtime;}
@@ -205,23 +324,24 @@ async function loadStatus(){
     const cl=document.getElementById("commits"); cl.innerHTML="";
     (j.git.commits||[]).forEach(c=>{
       const p=c.rest.split("|");
-      cl.insertAdjacentHTML("beforeend",`<div class="commit"><span class="h">${c.hash}</span><span>${p[0]} — ${p[1]||""}</span></div>`);
+      cl.insertAdjacentHTML("beforeend",
+        `<div class="cm"><span class="h">${c.hash}</span> <span class="dt">${p[0]}</span><br>${p[1]||""}</div>`);
     });
     const dg=document.getElementById("docs"); dg.innerHTML="";
     (j.docs||[]).forEach(d=>{
+      const info=DOCNAMES[d.name]||["📄",d.name];
       const b=document.createElement("button");
       b.className="docbtn";
-      b.innerHTML=`${DOCNAMES[d.name]||d.name} <span class="meta">${(d.size/1024).toFixed(0)} KB</span>`;
+      b.innerHTML=`<span class="de">${info[0]}</span><span class="dn">${info[1]}</span><span class="meta">${(d.size/1024).toFixed(0)} KB</span>`;
       b.onclick=()=>openDoc(d.name);
       dg.appendChild(b);
     });
-  }catch(e){ document.getElementById("ts").textContent="bağlantı hatası"; }
+  }catch(e){}
 }
 
 async function openDoc(name){
   const v=document.getElementById("docview");
-  v.style.display="block";
-  v.textContent="yükleniyor…";
+  v.style.display="block"; v.textContent="yükleniyor…";
   try{ v.textContent=await (await fetch("/api/doc/"+encodeURIComponent(name))).text(); v.scrollTop=0; }
   catch(e){ v.textContent="okunamadı: "+e.message; }
 }

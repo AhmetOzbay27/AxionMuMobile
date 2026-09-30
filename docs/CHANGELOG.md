@@ -7,6 +7,23 @@
 
 ---
 
+## [26.09.30] Pano tasarım v3 — misyon kartları + katlanabilir plan
+
+**Ne yapıldı**
+- Kullanıcı isteği: daha güzel tasarım + girişte amaç/hedef anlatımı.
+- `Dashboard\www\index.html` v3: (1) hero başlık + **3 misyon kartı girişte —
+  🎯 Amacımız (canlı SPK'nın birebir kopyası, canlıya dokunulmaz), 🏁 Hedefimiz
+  (59 modül + 12 dosya → test → Android+PC → canlı → v2), 🚦 Kuralımız
+  (plandan şaşma yok, v2 parite bitmeden açılmaz)**; (2) cam efektli modern
+  tasarım (radial-gradient arka plan, renk şeritli kartlar, parlayan ilerleme
+  çubuğu); (3) plan grupları **katlanabilir** — tamamlanmış fazlar kapalı,
+  aktif faz açık başlıyor; (4) commit listesi timeline görünümü; (5) doküman
+  butonları ikonlu grid.
+- Doğrulama: misyon 3 kart, 10 plan grubu, 26+2 adım, 9/28 çubuk; Preview
+  ekran görüntüleriyle görsel onay (giriş + durum + son işler bölümleri).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Pano arayüzü v2 — sadeleştirildi, plan 02'den canlı okunuyor
 
 **Ne yapıldı**
