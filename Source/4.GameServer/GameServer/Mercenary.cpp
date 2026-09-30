@@ -49,7 +49,7 @@ bool CMercenary::CreateMercenary(int aIndex,int MonsterClass,BYTE x,BYTE y) // O
 
 	if(lpObj->Map != MAP_CASTLE_SIEGE || gCastleSiegeSync.GetCastleState() != CASTLESIEGE_STATE_STARTSIEGE)
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(464));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(464));
 		return FALSE;
 	}
 
@@ -57,19 +57,19 @@ bool CMercenary::CreateMercenary(int aIndex,int MonsterClass,BYTE x,BYTE y) // O
 	{
 		if( lpObj->CsJoinSide != 1)
 		{
-			gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(465));
+			gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(465));
 			return FALSE;
 		}
 		if(lpObj->GuildStatus != 0x80 && lpObj->GuildStatus != 0x40)
 		{
-			gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(466));
+			gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(466));
 				return FALSE;
 		}
 	}
 
 	if( this->m_MercenaryCount > 100 )
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(467));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(467));
 		return FALSE;
 	}
 
@@ -113,7 +113,7 @@ bool CMercenary::CreateMercenary(int aIndex,int MonsterClass,BYTE x,BYTE y) // O
 		gObj[iMonsterIndex].CsNpcType = 2;
 		gObj[iMonsterIndex].CsJoinSide = 1;
 
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(468));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(468));
 
 		this->m_MercenaryCount++;
 
@@ -128,7 +128,7 @@ bool CMercenary::CreateMercenary(int aIndex,int MonsterClass,BYTE x,BYTE y) // O
 	}
 	else
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(469));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(469));
 		return FALSE;
 	}
 

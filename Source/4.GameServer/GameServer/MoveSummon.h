@@ -18,6 +18,7 @@ struct MOVE_SUMMON_INFO
 	int MinReset;
 	int MaxReset;
 	int AccountLevel;
+	int PkMove;
 };
 
 class CMoveSummon

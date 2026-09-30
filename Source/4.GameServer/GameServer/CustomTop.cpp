@@ -118,7 +118,7 @@ void CCustomTop::GetTop(LPOBJ lpObj,int index) // OK
 
 //	if(CustomTopInfo.MinLevel != -1 && lpObj->Level < CustomTopInfo.MinLevel)
 //	{
-//		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(224),CustomTopInfo.MinLevel);
+//		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(224),CustomTopInfo.MinLevel);
 //		return;
 //	}
 

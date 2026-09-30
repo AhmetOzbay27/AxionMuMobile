@@ -28,6 +28,7 @@ public:
 	void ItemGet(LPOBJ lpObj);
 	void PickProc(LPOBJ lpObj);
 	bool CommandPick(LPOBJ lpObj,char* arg);
+	void OnPickClose(LPOBJ lpObj);
 private:
 	std::map<int,CUSTOMPICK_INFO> m_CustomPickInfo;
 };

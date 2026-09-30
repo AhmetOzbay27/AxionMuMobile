@@ -202,7 +202,7 @@ void CKanturuBattleStanby::SetState_NOTIFY() // OK
 
 	this->SetBattleStanbyState(KANTURU_STANBY_NOTIFY);
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(338));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(338));
 }
 
 void CKanturuBattleStanby::SetState_END() // OK

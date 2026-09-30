@@ -122,7 +122,8 @@ void CRandomManager::AddElement(int value,int rate) // OK
 
 	this->m_RandomManagerInfo.push_back(info);
 }
-int CRandomManager::GetCount()
+
+int CRandomManager::GetCount() // 2b.2-A: ItemBag.cpp (bizim SPK dali) bu metodu kullaniyor - donorde silinmisti, geri geldi
 {
 	return this->m_RandomManagerInfo.size();
 }

@@ -145,9 +145,13 @@ enum TYPE_CACHEITEM
 #define CB_AUTORESETINFO			1
 #define CB_VIP_CHAR					1
 #define HAISLOTRING					1
+// 2b.2-A NOTU: NOTICE_PKSYSTEM ACILMADI — eMessagePK bizim stdafx'te zaten
+// TypeNoticeCustom enum'unda (stdafx:115); donor Notice.h'ndaki ikinci tanim
+// C2365 verir. Donor PK_NOTICE paketi kullanilacaksa enum stdafx'ten silinmeli.
 #define FIXTELE						1
 #define DOIMK						1
 #define CTCMINI						1
+#define COMBO_SKILL					1	// 2b.2-A: donor ComboSkill.cpp skill-basi konfig blogu icin (donor stdafx)
 #define CUSTOM_WINDOWLOCKITEM		1
 #define CB_VIEWCHARITEM				1
 #define CB_CUSTOMMIXINFO			1

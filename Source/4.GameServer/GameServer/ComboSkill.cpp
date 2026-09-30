@@ -1,8 +1,16 @@
+// ComboSkill.cpp: implementation of the CComboSkill class.
+//
+//////////////////////////////////////////////////////////////////////
+
 #include "stdafx.h"
 #include "ComboSkill.h"
 #include "CustomCombo.h"
 #include "ServerInfo.h"
 #include "SkillManager.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
 
 void CComboSkill::Init() // OK
 {
@@ -51,6 +59,7 @@ bool CComboSkill::CheckCombo(WORD skill) // OK
 	int type = this->GetSkillType(skill);
 
 
+#if COMBO_SKILL // Config từng skill muốn nó ra đòn thế nào
 	if (skill == SKILL_ICE_STORM && ((rand() % 100) < gServerInfo.m_TyLeRaComboDW))
 	{
 		return 1;
@@ -85,6 +94,7 @@ bool CComboSkill::CheckCombo(WORD skill) // OK
 	{
 		return 1;
 	}
+#endif
 
 	if(type == -1)
 	{

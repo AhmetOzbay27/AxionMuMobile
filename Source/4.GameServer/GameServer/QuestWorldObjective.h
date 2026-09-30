@@ -67,7 +67,6 @@ public:
 	void PressButton(LPOBJ lpObj,int QuestIndex,int QuestGroup);
 	void MonsterKill(LPOBJ lpMonster);
 	void MonsterKillParty(LPOBJ lpMonster,int PartyNumber);
-	//bool MonsterItemDrop(LPOBJ lpMonster);
 private:
 	QUEST_WORLD_OBJECTIVE_INFO m_QuestWorldObjectiveInfo[MAX_QUEST_WORLD_OBJECTIVE];
 	int m_count;

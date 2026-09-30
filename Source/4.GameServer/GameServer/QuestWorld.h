@@ -254,6 +254,9 @@ public:
 	void CGQuestWorldCancelRecv(PMSG_QUEST_WORLD_CANCEL_RECV* lpMsg,int aIndex);
 	void CGQuestWorldButtonRecv(PMSG_QUEST_WORLD_BUTTON_RECV* lpMsg,int aIndex);
 	void CGQuestWorldDetailRecv(PMSG_QUEST_WORLD_DETAIL_RECV* lpMsg,int aIndex);
+
+	void CGQuestWorldDetailSend(int aIndex, int Index, int Group);
+
 	void CGQuestWorldListRecv(int aIndex);
 	void CGQuestWorldNpcElfBufferRecv(int aIndex);
 	void GCQuestWorldButtonSend(LPOBJ lpObj,int QuestIndex,int QuestGroup,int QuestOption);

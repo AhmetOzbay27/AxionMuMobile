@@ -348,6 +348,8 @@ void CQuestWorldObjective::AddQuestWorldObjectiveKillCount(LPOBJ lpObj,QUEST_WOR
 
 	lpQuestWorldList->ObjectiveCount[lpInfo->Number]++;
 
+	gQuestWorld.CGQuestWorldDetailSend(lpObj->Index, lpInfo->RequireIndex, lpInfo->RequireGroup);
+
 	#endif
 }
 
@@ -549,53 +551,3 @@ void CQuestWorldObjective::MonsterKillParty(LPOBJ lpMonster,int PartyNumber) // 
 
 	#endif
 }
-
-/*bool CQuestWorldObjective::MonsterItemDrop(LPOBJ lpMonster) // OK
-{
-	int aIndex = gObjMonsterGetTopHitDamageUser(lpMonster);
-
-	if(OBJECT_RANGE(aIndex) == 0)
-	{
-		return 0;
-	}
-
-	LPOBJ lpObj = &gObj[aIndex];
-
-	if(OBJECT_RANGE(lpObj->PartyNumber) != 0)
-	{
-		return this->MonsterItemDropParty(lpMonster,lpObj->PartyNumber);
-	}
-
-	for(int n=0;n < this->m_count;n++)
-	{
-		QUEST_WORLD_OBJECTIVE_INFO* lpInfo = this->GetInfo(n);
-
-		if(lpInfo == 0)
-		{
-			continue;
-		}
-
-		if(this->CheckQuestWorldObjectiveRequisite(lpObj,lpInfo) == 0)
-		{
-			continue;
-		}
-
-		if(lpInfo->Type != QUEST_WORLD_OBJECTIVE_ITEM)
-		{
-			continue;
-		}
-
-		if((lpInfo->DropMinLevel == -1 && lpInfo->DropMaxLevel != lpMonster->Class) || (lpInfo->DropMinLevel != -1 && (lpInfo->DropMinLevel > lpMonster->Level || lpInfo->DropMaxLevel < lpMonster->Level)))
-		{
-			continue;
-		}
-
-		if(lpInfo->ItemDropRate > (GetLargeRand()%10000) && lpInfo->Value > this->GetQuestObjectiveCount(lpObj,lpInfo))
-		{
-			GDCreateItemSend(aIndex,lpMonster->Map,(BYTE)lpMonster->X,(BYTE)lpMonster->Y,lpInfo->Index,lpInfo->Level,0,lpInfo->Option1,lpInfo->Option2,lpInfo->Option3,aIndex,lpInfo->NewOption,0,0,0,0,0xFF,0);
-			return 1;
-		}
-	}
-
-	return 0;
-}*/

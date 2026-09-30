@@ -70,6 +70,8 @@ void CCustomWingMix::Load(char* path)
 	}
 
 	delete lpMemScript;
+
+	//LogAdd(LOG_BLUE, "[ServerInfo] CustomWingMix Info loaded successfully");
 }
 
 

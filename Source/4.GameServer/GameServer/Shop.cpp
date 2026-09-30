@@ -99,9 +99,6 @@ void CShop::Load(char* path) // OK
 			int Socket5 = lpMemScript->GetAsNumber();
 
 			this->InsertItemNew(ItemIndex,ItemLevel,ItemDurability,ItemOption1,ItemOption2,ItemOption3,ItemNewOption,AncOption,JOH,OpEx,Socket1,Socket2,Socket3,Socket4,Socket5,0);
-
-
-			//this->InsertItem(ItemIndex,ItemLevel,ItemDurability,ItemOption1,ItemOption2,ItemOption3,ItemNewOption,0);
 		}
 	}
 	catch(...)
@@ -231,7 +228,6 @@ void CShop::InsertItemNew(int ItemIndex,int ItemLevel,int ItemDurability,int Ite
 						ItemSocketOption[2] = (BYTE)((qtd > 2)?((Socket3 != 255)?Socket3:255):255);
 						ItemSocketOption[3] = (BYTE)((qtd > 3)?((Socket4 != 255)?Socket4:255):255);
 						ItemSocketOption[4] = (BYTE)((qtd > 4)?((Socket5 != 255)?Socket5:255):255);
-						//this->m_Item[slot].m_SocketOptionBonus = gSocketItemOption.GetSocketItemBonusOption(this->m_Item);
 					}
 
 
@@ -259,6 +255,11 @@ bool CShop::GetItem(CItem* lpItem,int slot) // OK
 	}
 
 	return 0;
+}
+
+CItem* CShop::GetInventory()
+{
+	return m_Item;
 }
 
 long CShop::GetItemCount() // OK
@@ -315,13 +316,13 @@ bool CShop::GCShopItemListSend(int aIndex) // OK
 	DataSend(aIndex,send,size);
 
 	this->GCItemValueSend(aIndex);
+
 	return 1;
 }
 
 void CShop::GCItemValueSend(int Index)
 {
 #if (GAMESERVER_CLIENTE_UPDATE >= 9)
-
 	if(gObjIsConnected(Index) == false)
 	{
 		return;

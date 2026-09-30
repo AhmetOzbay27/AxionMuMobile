@@ -42,7 +42,7 @@ bool CLifeStone::CreateLifeStone(int aIndex) // OK
 
 	if ( gObj[iIndex].Map != MAP_CASTLE_SIEGE || gCastleSiegeSync.GetCastleState() != CASTLESIEGE_STATE_STARTSIEGE )
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(448));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(448));
 		return FALSE;
 	}
 
@@ -53,19 +53,19 @@ bool CLifeStone::CreateLifeStone(int aIndex) // OK
 
 	if ( lpObj->CsJoinSide < 2 )
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(449));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(449));
 		return FALSE;
 	}
 
 	if ( lpObj->Guild->LifeStone )
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(450));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(450));
 		return FALSE;
 	}
 
 	if( cX > 150 && cX < 210 && cY > 175 && cY < 230 )
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(451));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(451));
 		return FALSE;
 	}
 
@@ -114,14 +114,14 @@ bool CLifeStone::CreateLifeStone(int aIndex) // OK
 		lpObj->Guild->LifeStone = &gObj[iMonsterIndex];
 		gObj[iMonsterIndex].CreatedActivationTime = 0;
 
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(452));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(452));
 		LogAdd(LOG_BLACK,"[CastleSiege] LifeStone is created - [%s] [%s][%s] (Map:%d)(X:%d, Y:%d)",lpObj->Guild->Name,
 		lpObj->Account,lpObj->Name,lpObj->Map,cX,cY);
 		lpObj->LifeStoneCount++;
 	}
 	else
 	{
-		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GetMessage(453));
+		gNotice.GCNoticeSend(iIndex,1,0,0,0,0,0,gMessage.GlobalText(453));
 		return FALSE;
 	}
 	return TRUE;

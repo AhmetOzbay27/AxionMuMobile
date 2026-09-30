@@ -98,10 +98,7 @@ void CMapServerManager::Load(char* path)
 					iInitSetVal = lpMemScript->GetAsNumber();
 
 					memcpy(szIpAddr, &lpMemScript->GetAsString()[1], 16);
-
-					//gLicencia.verifyLicense(szIpAddr);
-
-					szIpAddr[15] = 0;
+					szIpAddr[15] =0;
 
 					wPortNum = lpMemScript->GetAsNumber();
 

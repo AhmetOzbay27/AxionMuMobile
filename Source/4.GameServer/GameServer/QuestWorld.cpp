@@ -378,7 +378,7 @@ void CQuestWorld::NpcElfBuffer(LPOBJ lpNpc,LPOBJ lpObj) // OK
 
 	PMSG_QUEST_WORLD_NPC_TALK_SEND pMsg;
 
-	pMsg.header.set(0xF9,0x01,sizeof(pMsg));
+	pMsg.header.set(0xF9, 0x01,sizeof(pMsg));
 
 	pMsg.MonsterClass = lpNpc->Class;
 
@@ -768,6 +768,65 @@ void CQuestWorld::CGQuestWorldDetailRecv(PMSG_QUEST_WORLD_DETAIL_RECV* lpMsg,int
 	DataSend(aIndex,(BYTE*)&pMsg,pMsg.header.size);
 
 	#endif
+}
+
+void CQuestWorld::CGQuestWorldDetailSend(int aIndex, int Index, int Group)
+{
+#if(GAMESERVER_UPDATE>=501)
+	LPOBJ lpObj = &gObj[aIndex];
+
+	if (gObjIsConnectedGP(aIndex) == 0)
+	{
+		return;
+	}
+
+	QUEST_WORLD_LIST* lpQuestWorldList = this->GetQuestWorldList(lpObj, Index, Group);
+
+	if (lpQuestWorldList == 0)
+	{
+		return;
+	}
+
+	PMSG_QUEST_WORLD_DETAIL_SEND pMsg;
+
+	pMsg.header.set(0xF6, 0x1B, sizeof(pMsg));
+
+	pMsg.QuestIndex = Index;
+
+	pMsg.QuestGroup = Group;
+
+	pMsg.ObjectiveCount = 0;
+
+	pMsg.RewardCount = 0;
+
+	pMsg.result = 0;
+
+	for (int n = 0; n < MAX_QUEST_WORLD_OBJECTIVE_COUNT; n++)
+	{
+		if (gQuestWorldObjective.GetQuestWorldObjective(lpObj, Index, Group, &pMsg.QuestObjective[n], n) == 0)
+		{
+			memset(&pMsg.QuestObjective[n], 0, sizeof(pMsg.QuestObjective[n]));
+		}
+		else
+		{
+			pMsg.ObjectiveCount++;
+		}
+	}
+
+	for (int n = 0; n < MAX_QUEST_WORLD_OBJECTIVE_COUNT; n++)
+	{
+		if (gQuestWorldReward.GetQuestWorldReward(lpObj, Index, Group, &pMsg.QuestReward[n], n) == 0)
+		{
+			memset(&pMsg.QuestReward[n], 0, sizeof(pMsg.QuestReward[n]));
+		}
+		else
+		{
+			pMsg.RewardCount++;
+		}
+	}
+
+	DataSend(aIndex, (BYTE*)&pMsg, pMsg.header.size);
+#endif
 }
 
 void CQuestWorld::CGQuestWorldListRecv(int aIndex) // OK

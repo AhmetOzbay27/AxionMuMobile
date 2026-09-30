@@ -62,6 +62,7 @@ public:
 	void InsertItem(int ItemIndex,int ItemLevel,int ItemDurability,int ItemOption1,int ItemOption2,int ItemOption3,int ItemNewOption,int ItemValue);
 	void InsertItemNew(int ItemIndex,int ItemLevel,int ItemDurability,int ItemOption1,int ItemOption2,int ItemOption3,int ItemNewOption,int Anc, int JOH, int OpEx, int Socket1, int Socket2, int Socket3, int Socket4, int Socket5, int ItemValue);
 	bool GetItem(CItem* lpItem,int slot);
+	CItem* GetInventory();
 	long GetItemCount();
 	bool GCShopItemListSend(int aIndex);
 	void GCItemValueSend(int Index);

@@ -592,7 +592,7 @@ void CDoubleGoer::SetStage2() // OK
 
 	this->SetIceWalker();
 
-	this->NoticeSendToAll(0,gMessage.GetMessage(304));
+	this->NoticeSendToAll(0,gMessage.GlobalText(304));
 
 	#endif
 }
@@ -1281,7 +1281,7 @@ void CDoubleGoer::NpcSartiganTheAngel(LPOBJ lpNpc,LPOBJ lpObj) // OK
 
 	if(lpObj->Level < 10)
 	{
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(305));
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(305));
 		return;
 	}
 
@@ -1689,7 +1689,7 @@ void CDoubleGoer::MonsterDieProc(LPOBJ lpObj,LPOBJ lpTarget) // OK
 	if(lpObj->Class == 531 && lpObj->Index == this->m_IceWalkerIndex)
 	{
 		this->m_IceWalkerIndex = -1;
-		this->NoticeSendToAll(0,gMessage.GetMessage(306));
+		this->NoticeSendToAll(0,gMessage.GlobalText(306));
 		return;
 	}
 

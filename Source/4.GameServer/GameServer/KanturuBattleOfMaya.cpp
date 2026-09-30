@@ -678,7 +678,7 @@ void CKanturuBattleOfMaya::SetState_ENDCYCLE_MAYA1() // OK
 
 	this->SetEntrancePermit(0);
 
-	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(340));
+	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(340));
 }
 
 void CKanturuBattleOfMaya::SetState_STANBY2() // OK
@@ -762,7 +762,7 @@ void CKanturuBattleOfMaya::SetState_ENDCYCLE_MAYA2() // OK
 
 	this->SetEntrancePermit(0);
 
-	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(340));
+	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(340));
 }
 
 void CKanturuBattleOfMaya::SetState_STANBY3() // OK
@@ -861,11 +861,11 @@ void CKanturuBattleOfMaya::SetState_END() // OK
 
 	if(this->GetSuccessValue() == 0)
 	{
-		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(343));
+		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(343));
 	}
 	else
 	{
-		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(341));
+		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(341));
 	}
 
 	gKanturuUtil.NotifyKanturuResult(this->GetSuccessValue());

@@ -261,12 +261,12 @@ void CCastleDeep::ProcState_EMPTY() // OK
 	{
 		this->m_TimeNotify = 1;
 
-		GDGlobalNoticeSend(gMapServerManager.GetMapServerGroup(),0,0,0,0,0,0,gMessage.GetMessage(352));
+		GDGlobalNoticeSend(gMapServerManager.GetMapServerGroup(),0,0,0,0,0,0,gMessage.GlobalText(352));
 	}
 
 	if(this->m_RemainTime <= 0)
 	{
-		GDGlobalNoticeSend(gMapServerManager.GetMapServerGroup(),0,0,0,0,0,0,gMessage.GetMessage(353));
+		GDGlobalNoticeSend(gMapServerManager.GetMapServerGroup(),0,0,0,0,0,0,gMessage.GlobalText(353));
 
 		this->SetState(CD_STATE_START);
 	}
@@ -286,7 +286,7 @@ void CCastleDeep::ProcState_START() // OK
 
 	if(this->m_RemainTime <= 0)
 	{
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(354));
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(354));
 
 		this->SetState(CD_STATE_EMPTY);
 	}
@@ -457,12 +457,12 @@ void CCastleDeep::MonsterDieProc(LPOBJ lpObj,LPOBJ lpTarget) // OK
 
 	if(lpObj->Attribute == 62 && lpObj->Class == 295)
 	{
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(355),lpTarget->Name);
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(355),lpTarget->Name);
 	}
 
 	if(lpObj->Attribute == 62 && lpObj->Class >= 300 && lpObj->Class <= 303)
 	{
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(356),lpObj->Name,lpTarget->Name);
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(356),lpObj->Name,lpTarget->Name);
 	}
 }
 

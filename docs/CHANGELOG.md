@@ -7,6 +7,46 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-A — G1 donör alımı: 19 dosya alındı, 7 ertelendi (bağımlılık)
+
+**Ne yapıldı**
+- G1 (%90+ benzer) 30 dosyanın diff'leri satır satır incelendi. Sonuç:
+  - **19 dosya temiz alındı:** ArcaBattle, CustomTop, CustomWingMix, DoubleGoer,
+    Kanturu×4, CastleDeep, LifeStone, MapServerManager, Mercenary, QuestWorld(+h),
+    QuestWorldObjective(+h, GetCount yorumu silindi, CGQuestWorldDetailSend +h),
+    Notice(+cpp), pugixml, Raklion→**hayır geri alındı** (aşağıda), RandomManager
+    (**kısmi**: donor GetCount'u silmişti; bizim ItemBag.cpp kullanıyor → metot geri
+    eklendi), Shop(+h, GetInventory eklendi), MoveSummon→**B'ye** (PkMove alanı
+    bizim Move/MoveSummon.h'de yok değil — donor h alındı ama cpp bizim kaldı →
+    düzeltme: MoveSummon cpp+h ikisi de **alındı**).
+  - **7 dosya ertelendi (2b.2-B):** BonusManager + MossMerchant (donor
+    `gEventName.GlobalRemainTime` kullanıyor → bizde CEventName modülü yok),
+    Raklion/RaklionSelupan/ImperialGuardian (donor `MonsterSetBase::GetMonsterMap`
+    + `MONSTER_SET_BASE_INFO.index` istiyor → bizim MSB'de yok), MonsterAI
+    (donor `gObjMonsterClearExpiredDamage` çağırıyor → tanım donor Monster.cpp'de,
+    bizim Monster.cpp G5'te), CustomPick (donor `GetMapCustomPick` + OnPickClose
+    istiyor → MapManager bizimde yok).
+  - **pugixml geri alındı:** donor sürüm bizim pugixml.h ile uyumsuz (data_value/
+    append_attribute2 LNK hatası) → bizim kütüphane sürümü kaldı.
+  - **Map.h KORUNDU:** donor MAX_MAP=200 + MAP_BOSS_GUILD silik; bizim 250 +
+    MAP_NEW4/5/BOSS_GUILD aktif (BossGuild E-01 için gerekli).
+  - **NOTICE_PKSYSTEM AÇILMADI:** eMessagePK bizim stdafx:115'te zaten var
+    (TypeNoticeCustom); donor Notice.h'daki ikinci tanım C2365 verir. stdafx'e
+    açıklama notu eklendi. Notice.cpp diff'i zaten sadece whitespace → alındı.
+  - ** GetMessage→GlobalText:** donor dosyalar GlobalText kullanıyor; bizim
+    Message.h:20 alias (2b.0) sayesinde uyumlu.
+
+**Neden** — G1 bandı risksiz kabul edilmişti ama diff incelemesi 4 gizli
+bağımlılık çıkardı; bunlar 2b.2-B'de bağımlılıklarıyla birlikte alınacak.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.700.288 B**, pdb güncel;
+- 15 dosya donor ile birebir; 6 dosya (ertelenenler + RandomManager kısmi) bizim
+  sürümde — beklendiği gibi;
+- PDB: CQuestWorld(79)/CShop(49)/CRandomManager(23).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2 / config pasifizasyonu — 6 config eksiği kapatıldı + 2 format düzeltmesi
 
 **Ne yapıldı**

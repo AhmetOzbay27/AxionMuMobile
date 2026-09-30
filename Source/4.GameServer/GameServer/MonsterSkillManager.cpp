@@ -324,8 +324,5 @@ void CMonsterSkillManager::SpecialMonsterSkillAttack(LPOBJ lpObj,LPOBJ lpTarget,
 		case 565:
 			gAttack.Attack(lpObj,lpTarget,lpSkill,0,0,0,0,0);
 			break;
-		case 892:
-			gAttack.Attack(lpObj,lpTarget,lpSkill,0,0,0,0,0);
-			break;
 	}
 }

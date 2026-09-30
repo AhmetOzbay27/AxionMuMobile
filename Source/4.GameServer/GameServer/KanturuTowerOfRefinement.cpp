@@ -237,7 +237,7 @@ void CKanturuTowerOfRefinement::SetState_NOTIFY1() // OK
 
 	this->SetUseTowerOfRefinement(1);
 
-	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(336));
+	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(336));
 }
 
 void CKanturuTowerOfRefinement::SetState_CLOSE() // OK
@@ -250,7 +250,7 @@ void CKanturuTowerOfRefinement::SetState_CLOSE() // OK
 
 	this->SetUseTowerOfRefinement(1);
 
-	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(337));
+	gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(337));
 }
 
 void CKanturuTowerOfRefinement::SetState_NOTIFY2() // OK

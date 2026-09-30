@@ -7,6 +7,9 @@
 #include "MemScript.h"
 #include "Util.h"
 
+
+
+
 CNotice gNotice;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -23,7 +26,6 @@ CNotice::CNotice() // OK
 
 CNotice::~CNotice() // OK
 {
-
 }
 
 void CNotice::Load(char* path) // OK
@@ -123,7 +125,7 @@ void CNotice::GCNoticeSend(int aIndex,BYTE type,BYTE count,BYTE opacity,WORD del
 
 	va_list arg;
 	va_start(arg,message);
-	vsprintf_s(buff,message,arg);
+	vsprintf_s(buff,message,arg);	
 	va_end(arg);
 
 	int size = strlen(buff);
@@ -220,7 +222,6 @@ void CNotice::NewMessageDevTeam(int aIndex,char* message,...) // OK
 	pMsg.message[size] = 0;
 
 	DataSend(aIndex,(BYTE*)&pMsg,pMsg.header.size);
-
 }
 
 void CNotice::NewNoticeSend(int aIndex,BYTE count,BYTE opacity,WORD delay,DWORD color,BYTE speed,char* message,...) // OK

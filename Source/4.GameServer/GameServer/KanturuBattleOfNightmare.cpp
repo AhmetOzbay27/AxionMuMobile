@@ -291,7 +291,7 @@ void CKanturuBattleOfNightmare::SetState_END() // OK
 
 	if(this->GetSuccessValue() == 0)
 	{
-		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(343));
+		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(343));
 		//LogAdd(LOG_BLACK,"[ KANTURU ][ BattleOfNightmare ] Fail!! TimeOut");
 	}
 }
@@ -309,7 +309,7 @@ void CKanturuBattleOfNightmare::SetState_ENDCYCLE() // OK
 	}
 	else
 	{
-		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GetMessage(342));
+		gKanturuUtil.SendMsgKanturuBossMapUser(gMessage.GlobalText(342));
 	}
 }
 
