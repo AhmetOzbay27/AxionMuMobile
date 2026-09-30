@@ -240,6 +240,7 @@
     <ClCompile Include="source\CB_LockItem.cpp" />
     <ClCompile Include="source\CB_Mapping.cpp" />
     <ClCompile Include="source\CB_MUHelper.cpp" />
+    <ClCompile Include="source\ScenePerfTelemetry.cpp" />
     <ClCompile Include="source\CB_NewQuest.cpp" />
     <ClCompile Include="source\CB_OffMuHelper.cpp" />
     <ClCompile Include="source\CB_StatsAdvance.cpp" />

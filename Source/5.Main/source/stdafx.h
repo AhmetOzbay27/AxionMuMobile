@@ -29,7 +29,10 @@
 
 // Exclude rarely-used stuff from Windows headers
 #define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
+// NOTE: MUIG tabani windows.h'yi NOMINMAX OLMADAN include eder; kod tabanindaki
+// ciplak min()/max() cagrilari bu makrolara dayanir, std::min/std::max kullanan
+// yeni katman ise (std::max) parantezli stile yazilmistir. Donor ortamina parite
+// icin NOMINMAX TANIMLANMAZ.
 
 #if defined(_MSC_VER) && !defined(_WIN64)
 #ifndef _USE_32BIT_TIME_T
@@ -39,6 +42,12 @@
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define _CRT_NONSTDC_NO_DEPRECATE
+
+// Paylasimli (PC + Android) dosyalarda kullanilan SDL tarzi genis tip;
+// Android tarafinda SDL header'lari, PC tarafinda burada tanimlanir.
+#if !defined(__ANDROID__) && !defined(MU_IOS)
+typedef unsigned long long Uint64;
+#endif
 
 #if !defined(__ANDROID__) && !defined(MU_IOS)
 #pragma warning( push, 3 )
@@ -94,6 +103,7 @@
 #include "Platform/PlatformDefs.h"
 #include "Platform/PlatformGL.h"
 #else
+#include "Platform/MobileTime.h"
 #define GLEW_STATIC
 #include <gl/glew.h>
 #include <gl/gl.h>

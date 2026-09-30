@@ -138,7 +138,10 @@ inline int TERRAIN_INDEX_REPEAT(int x,int y)
 	return (y&TERRAIN_SIZE_MASK)*TERRAIN_SIZE+(x&TERRAIN_SIZE_MASK);
 }
 
-inline WORD TERRAIN_ATTRIBUTE(float x,float y)
+// NOT: Donor MUIG'de header'da 'extern inline' bildirimi vardi (MSVC'de COMDAT
+// garantisi sagliyordu). Burada cagiran birimlerde bildirim var, tanim yok; bu
+// yuzden tanim ici olmayan (dissal baglantili) tek kopya olarak birakildi.
+WORD TERRAIN_ATTRIBUTE(float x,float y)
 {
     int xf = (int)(x/TERRAIN_SCALE);
     int yf = (int)(y/TERRAIN_SCALE);
