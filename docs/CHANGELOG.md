@@ -274,3 +274,31 @@ run) algoritması oldu (pdb_scan.ps1).
 - `02-YOL-HARITASI.md`: 2e.0→2d.0 tutarlılığı
 
 **Commit** — (bu kayıtla birlikte)
+
+---
+
+## [26.09.30] Faz 2a.5 (tamamlama) — GetMainInfo tek modül tasarımı (08 dokümanı)
+
+**Ne yapıldı**
+- **Zincirin son halkası kanıtlandı:** `GetMain\Data\CustomWing.txt` satırları
+  (Wing200-202, ConquerorWing, cape_of_death→KF_Death_clka/clkb, Wing401-405,
+  WingCustom1-15, ChristmasW6 ve tga yol çiftleri) ServerData.bmd kanat
+  kataloğuyla (340 B kayıtlar) BİREBİR eşleşiyor. → GetMainInfo =
+  GetEngine.ini + GetMain\Data\*.txt'i .bmd'ye DERLEYEN araç (kesin).
+- **Varyant karşılaştırma tablosu** (08 dokümanı §1): 10 özellikte yan yana —
+  girdi/çıktı/format/istemci/kanıt durumu; A (SPK GetEngine) benimsendi,
+  MUIG MainInfo bayrakla devre dışı (kaynak korunur).
+- **Tek GetMainInfo tasarımı** (08 dokümanı §3): tek exe, iki mod
+  (--mode:spk varsayılan / --mode:muig legacy bayraklı); yeni SPK modülü
+  (GetEngineConfig, CrcPatch, ConnectIPWriter, ServerDataWriter,
+  CrcFileReport, main_spk); şablon-kopya stratejisi (bilinmeyen baytlar canlı
+  örnekten aynen); VMP SDK import'u kaldırılacak; 5 adımlı doğrulama
+  (boyut, çapraz diff, Engine.exe kabul testi, --check modu).
+- **D1-D9 görev kırılımı** ile 2d.1 iş planı hazır.
+
+**Doküman güncellemeleri**
+- Yeni: `docs\08-GETMAININFO-TASARIM.md`
+- `03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md`: B-03 → tasarım tamam/2d.1
+- CHANGELOG: bu kayıt
+
+**Commit** — (bu kayıtla birlikte)
