@@ -20,6 +20,7 @@
 #include "CustomArena.h"
 #include "CustomAttack.h"
 #include "CustomDeathMessage.h"  
+#include "SPK/CustomJewelBank.h"	// SPK (Faz 2b)
 #include "CustomJewel.h"
 #include "CustomMonster.h"
 #include "CustomNpcQuest.h"
@@ -4932,6 +4933,8 @@ bool CObjectManager::CharacterInfoSet(BYTE* aRecv,int aIndex) // OK
 	gCustomAttack.DGCustomAttackResumeSend(lpObj->Index);
 
 	gDarkSpirit[aIndex].SetMode(DARK_SPIRIT_MODE_NORMAL,-1);
+
+	gCustomJewelBank.CustomJewelBankInfoSend(lpObj->Index);	// SPK (Faz 2b), donor ObjectManager.cpp:4991
 
 	lpObj->HPAutoRecuperationTime = GetTickCount();
 	lpObj->MPAutoRecuperationTime = GetTickCount();

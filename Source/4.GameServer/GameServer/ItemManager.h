@@ -326,6 +326,7 @@ public:
 	bool CheckItemMoveToBlock(LPOBJ lpObj,CItem* lpItem);
 	bool CheckItemInventorySpace(LPOBJ lpObj,int index);
 	bool CheckItemInventorySpace(LPOBJ lpObj,int width,int height);
+	int CheckItemInventorySpaceCount(LPOBJ lpObj,int width,int height);	// SPK CustomJewelBank (Faz 2b)
 	void InventoryItemSet(int aIndex,int slot,BYTE type);
 	BYTE InventoryRectCheck(int aIndex,int x,int y,int width,int height);
 	BYTE InventoryInsertItem(int aIndex,CItem item);

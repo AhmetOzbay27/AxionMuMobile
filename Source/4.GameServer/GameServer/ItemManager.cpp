@@ -1018,6 +1018,30 @@ bool CItemManager::CheckItemInventorySpace(LPOBJ lpObj,int width,int height) // 
 	return 0;
 }
 
+// SPK CustomJewelBank (Faz 2b): doner MUIG ItemManager.cpp:5842 ile ayni
+int CItemManager::CheckItemInventorySpaceCount(LPOBJ lpObj,int width,int height)
+{
+	int MaxY = (this->GetInventoryMaxValue(lpObj) - INVENTORY_WEAR_SIZE) / 8;
+
+	int count = 0;
+
+	for (int y = 0; y < MaxY; y++)
+	{
+		for (int x = 0; x < 8; x++)
+		{
+			if (lpObj->InventoryMap[((y * 8) + x)] == 0xFF)
+			{
+				if (this->InventoryRectCheck(lpObj->Index, x, y, width, height) != 0xFF)
+				{
+					count++;
+				}
+			}
+		}
+	}
+
+	return count;
+}
+
 void CItemManager::InventoryItemSet(int aIndex,int slot,BYTE type) // OK
 {
 	if(INVENTORY_BASE_RANGE(slot) == 0)

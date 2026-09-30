@@ -50,8 +50,8 @@ SkillDamage.cpp map deseninde yakalanamamıştı.)
 | # | Dosya (konum) | Sınıf (map) | Canlı config | Kaynak |
 |---|---------------|-------------|--------------|--------|
 | 1 | SPK_EventMainManager.cpp (SPK\) | EventMainManager | — | sıfırdan |
-| 2 | SPK_AddBuff.cpp (SPK\) | AddBuffer | AddBuff.txt | **MUIG donor** |
-| 3 | SPK_AutoHp.cpp (SPK\) | CAUTOHP | — | **MUIG donor** |
+| 2 | SPK_AddBuff.cpp (SPK\) | AddBuffer | AddBuff.txt | **MUIG donor** ✅ 2b.0 entegre |
+| 3 | SPK_AutoHp.cpp (SPK\) | CAUTOHP | — | **MUIG donor** ✅ 2b.0 entegre |
 | 4 | SPK_Harmony.cpp (SPK\) | CustomHarmony | CustomHarmony.xml | sıfırdan |
 | 5 | SPK_TuLuyen.cpp (SPK\) | cTuLuyen | TuLuyen.xml | sıfırdan |
 | 6 | SPK_QuanHam.cpp (SPK\) | cQuanHam | QuanHam.xml | sıfırdan |
@@ -66,8 +66,8 @@ SkillDamage.cpp map deseninde yakalanamamıştı.)
 | 15 | ResetChange.cpp (SPK\) | CResetChange | ResetChange.txt | sıfırdan |
 | 16 | ResetLimiter.cpp (SPK\) | ResetLitmitLock | — | sıfırdan |
 | 17 | ReiDoMu.cpp (kök) | CReiDoMU | — | sıfırdan |
-| 18 | SkillDamage.cpp (kök) | CSkillDamage | — | **MUIG donor** |
-| 19 | CustomJewelBank.cpp (SPK\) | CCustomJewelBank | CustomJewelBank.xml | **MUIG donor** |
+| 18 | SkillDamage.cpp (kök) | CSkillDamage | — | **MUIG donor** ✅ 2b.0 entegre |
+| 19 | CustomJewelBank.cpp (SPK\) | CCustomJewelBank | CustomJewelBank.xml | **MUIG donor** ✅ 2b.0 entegre |
 
 ### P2 — 28 modül (Faz 2c ikinci dalga)
 | # | Dosya (konum) | Sınıf (map) | Canlı config | Kaynak |

@@ -10,6 +10,7 @@
 #include "CustomAttack.h"
 #include "CustomNpcQuest.h"
 #include "CustomQuest.h"
+#include "SPK/CustomJewelBank.h"	// SPK (Faz 2b)
 #include "CustomRanking.h"
 #include "Crywolf.h"
 #include "CrywolfSync.h"
@@ -653,6 +654,9 @@ void DataServerProtocolCore(BYTE head,BYTE* lpMsg,int size) // OK
 			{
 				case 0x00:
 					gCustomNpcQuest.DGCustomNpcQuestRecv((SDHP_CUSTOMNPCQUEST_RECV*)lpMsg);
+					break;
+				case 0x05:	// SPK (Faz 2b), donor DSProtocol.cpp:677
+					gCustomJewelBank.CustomJewelBankInfoRecv((SDHP_CUSTOM_JEWELBANK_INFO_RECV*)lpMsg);
 					break;
 			}
 			break;

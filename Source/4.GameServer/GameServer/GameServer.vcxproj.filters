@@ -399,6 +399,18 @@
     <ClInclude Include="SocketItemType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SPK\AUTOHP.h">
+      <Filter>SPK</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\CustomJewelBank.h">
+      <Filter>SPK</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\SkillDamage.h">
+      <Filter>SPK</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\PC_AddBuff.h">
+      <Filter>SPK</Filter>
+    </ClInclude>
     <ClInclude Include="GameMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1228,6 +1240,18 @@
     </ClCompile>
     <ClCompile Include="SocketItemType.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\AUTOHP.cpp">
+      <Filter>SPK</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\CustomJewelBank.cpp">
+      <Filter>SPK</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\SkillDamage.cpp">
+      <Filter>SPK</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\PC_AddBuff.cpp">
+      <Filter>SPK</Filter>
     </ClCompile>
     <ClCompile Include="GameMain.cpp">
       <Filter>Source Files</Filter>

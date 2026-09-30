@@ -17,6 +17,7 @@ public:
 	virtual ~CMessage();
 	void Load(char* path);
 	char* GetMessage(int index);
+	char* GlobalText(int index) { return GetMessage(index); }	// SPK AUTOHP uyumu (Faz 2b)
 private:
 	char m_DefaultMessage[128];
 	std::map<int,MESSAGE_INFO> m_MessageInfo;

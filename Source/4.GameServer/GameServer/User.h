@@ -684,6 +684,8 @@ struct OBJECTSTRUCT
 	VIEWPORT_STRUCT* VpPlayer;
 	VIEWPORT_STRUCT* VpPlayer2;
 	VIEWPORT_STRUCT* VpPlayerItem;
+
+	bool AUTOHP;	// SPK CAUTOHP (Faz 2b)
 	int VPCount;
 	int VPCount2;
 	int VPCountItem;
@@ -706,6 +708,7 @@ struct OBJECTSTRUCT
 	BYTE* TradeMap;
 	int TradeMoney;
 	bool TradeOk;
+	bool TradeDuel;	// SPK CustomJewelBank (Faz 2b)
 	CItem* Warehouse;
 	BYTE* WarehouseMap;
 	char WarehouseCount;
@@ -1203,6 +1206,9 @@ struct OBJECTSTRUCT
 	//blood,devil vip
 	int ScoreKill;
 	int ScoreKillDevil;
+
+	// SPK CustomJewelBank (Faz 2b): 10 hedef veya/yakut/jewel banka sayaci
+	int ItemBank[10];
 
 	int TongNap;
 	int NhanMocNap;

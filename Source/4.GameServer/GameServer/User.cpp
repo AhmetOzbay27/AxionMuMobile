@@ -4,6 +4,7 @@
 #include "Attack.h"
 #include "BattleSoccerManager.h"
 #include "BloodCastle.h"
+#include "SPK/AUTOHP.h"	// SPK CAUTOHP (Faz 2b)
 #include "BonusManager.h"
 #include "CannonTower.h"
 #include "CashShop.h"
@@ -143,6 +144,8 @@ DWORD gLevelExperience[MAX_CHARACTER_LEVEL+1];
 void gObjEventRunProc() // OK
 {
 	gBloodCastle.MainProc();
+
+	gAUTOHP.MainProc();	// SPK CAUTOHP (Faz 2b)
 
 	gReiDoMU.MainProc();
 

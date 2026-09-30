@@ -89,6 +89,9 @@
 #include "MoveSummon.h"
 #include "MuunSystem.h"
 #include "Notice.h"
+#include "SPK/PC_AddBuff.h"		// SPK AddBuffer (Faz 2b)
+#include "SPK/CustomJewelBank.h"	// SPK CustomJewelBank (Faz 2b)
+#include "SPK/SkillDamage.h"		// SPK SkillDamage (Faz 2b)
 #include "PacketManager.h"
 #include "Path.h"
 #include "PcPoint.h"
@@ -334,6 +337,8 @@ void CServerInfo::ReadCommonInfo() // OK
 
 void CServerInfo::ReadCustomInfo() // OK
 {
+	gAddBuffer.Read(gPath.GetFullPath("Custom\\HuyBeo\\AddBuff.txt"));			// SPK AddBuffer (Faz 2b)
+	gCustomJewelBank.LoadConfig(gPath.GetFullPath("Custom\\HuyBeo\\CustomJewelBank.xml"));	// SPK (Faz 2b)
 	gCustomVongQuay.LoadFileXML(gPath.GetFullPath("Custom\\CustomVongQuay.xml"));
 #if (SAUDOIITEM)
 	gSauChangeItem.LoadConfig(gPath.GetFullPath("Custom\\ChangeItem.xml"));
@@ -791,6 +796,7 @@ void CServerInfo::ReadSkillInfo() // OK
 	gSkillHitBox.Load(gPath.GetFullPath("Skill\\SkillElect.hit"));
 
 	gSkillManager.Load(gPath.GetFullPath("Skill\\Skill.txt"));
+	gSkillDamage.Load(gPath.GetFullPath("Skill\\SkillDamage.txt"));	// SPK SkillDamage (Faz 2b)
 
 	LogAdd(LOG_BLUE,"[ServerInfo] Skill loaded successfully");
 }

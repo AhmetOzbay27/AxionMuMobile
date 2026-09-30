@@ -26,7 +26,7 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 | Faz 0 | Ortam kurulumu (VS 2022, git, klasörler) | ✅ TAMAMLANDI |
 | Faz 1 | CS/DS/JS/GS/GetMainInfo/Main derlemeleri | ✅ TAMAMLANDI (`faz1-tamamlandi` etiketi, commit `1339a290`) |
 | Faz 2a | Canlı SPK envanteri (2a.1-2a.5) | ✅ TAMAMLANDI — iş emri: [05](05-SPK-MODUL-ENVANTERI.md), bulgular: [06](06-CANLI-SISTEM-ENVANTERI.md), karar: 03 "2a.5" |
-| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya + 4 modül) | ⏳ bekliyor |
+| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya + 4 modül) | 🔄 DEVAM — 2b.0 ✅ (4 donor modül entegre, GS 10.704.896 B); sıradaki 2b.1 diff matrisi |
 | Faz 2c | Eksik 58 modülün yeniden yazımı (54 sıfırdan) | ⏳ bekliyor |
 | Faz 2d | GetMainInfo birleşimi + SPK istemci format katmanı (2d.0) | ⏳ bekliyor |
 | Faz 2e | IP/config hizalama + istemci paketleme | ⏳ bekliyor |

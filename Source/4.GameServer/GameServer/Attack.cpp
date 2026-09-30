@@ -41,6 +41,7 @@
 #include "BossGuild.h"
 #include "CTCMini.h"
 #include "BattleSurvivor.h"
+#include "SPK/SkillDamage.h"	// SPK (Faz 2b)
 CAttack gAttack;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -701,6 +702,9 @@ bool CAttack::Attack(LPOBJ lpObj, LPOBJ lpTarget, CSkill* lpSkill, bool send, BY
 		//{
 		//	damage = (damage*(150+lpObj->RFDamageMultiplierRate[0]))/100;
 		//}
+
+		//Custom Skill Damage System
+		damage = (damage * gSkillDamage.GetSkillDamage(lpObj, skill, lpTarget->Type)) / 100;	// SPK (Faz 2b), donor Attack.cpp:566
 
 		if(count > 0 && (skill == SKILL_UPPER_BEAST || skill == SKILL_DARK_SIDE))
 		{

@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "Protocol.h"
+#include "SPK/PC_AddBuff.h"		// SPK AddBuffer (Faz 2b)
+#include "SPK/CustomJewelBank.h"	// SPK CustomJewelBank (Faz 2b)
+#include "SPK/AUTOHP.h"		// SPK CAUTOHP (Faz 2b)
 #include "ArcaBattle.h"
 #include "Attack.h"
 #include "BloodCastle.h"
@@ -409,7 +412,10 @@ void ProtocolCore(BYTE head,BYTE* lpMsg,int size,int aIndex,int encrypt,int seri
 		case 0x34:
 			gItemManager.CGItemRepairRecv((PMSG_ITEM_REPAIR_RECV*)lpMsg,aIndex);
 			break;
-#if(HAISLOTRING)
+		case 0x35:
+			gAUTOHP.CommandHp(aIndex);	// SPK CAUTOHP (Faz 2b), donor Protocol.cpp:1133
+			break;
+#if(0) // H-007: 0x35 AUTOHP'ye verildi (donor paritesi, Protocol.cpp:1133). Bu ekipman tamir isleyicisi istemciden hic cagrilmuyor (SPK istemci 0x35 gondermiyor), olU kod olarak kapatildi.
 		case 0x35:
 			gItemManager.CGItemEquipRepairRecv((PMSG_ITEM_REPAIR_RECV*)lpMsg, aIndex);
 			break;
@@ -1241,6 +1247,8 @@ void ProtocolCore(BYTE head,BYTE* lpMsg,int size,int aIndex,int encrypt,int seri
 
 			switch(lpMsg[3])
 			{
+			case 0xF5: gCustomJewelBank.JewelBankRecv((PSBMSG_JEWELBANK_RECV*)lpMsg, aIndex);					break;	// SPK (Faz 2b)
+			case 0xF6: gCustomJewelBank.JewelBankWithDrawRecv((PSBMSG_JEWELBANKWITHDRAW_RECV*)lpMsg, aIndex);	break;	// SPK (Faz 2b)
 			case 0x40: //Xu Ly Packet
 				gBossGuild.CGPacketBossGuild((BOSSGUILD_CGPACKET*)lpMsg, aIndex);
 				break;
@@ -1436,7 +1444,11 @@ void ProtocolCore(BYTE head,BYTE* lpMsg,int size,int aIndex,int encrypt,int seri
 			#if(GAMESERVER_UPDATE>=801)
 			CGSNSDataLogRecv((PMSG_SNS_DATA_LOG_RECV*)lpMsg,aIndex);
 			#endif
-			break;
+			// SPK AddBuffer (Faz 2b): donor'da 0xFC/104 fall-through'u;
+			// burada ayri case ile esdeger davranis
+			case 104:
+				gAddBuffer.CommandAddBuff(&gObj[aIndex]);
+				break;
 		case 0xFA:
 			switch (((lpMsg[0] == 0xC1) ? lpMsg[3] : lpMsg[4]))
 			{
@@ -1517,6 +1529,9 @@ void ProtocolCore(BYTE head,BYTE* lpMsg,int size,int aIndex,int encrypt,int seri
 			{
 				case 0x01:
 					gItemManager.CGMoveItemProc((PMSG_MOVEITEM*)lpMsg, aIndex);
+					break;
+				case 104:
+					gCustomJewelBank.GuiNgocAll((JEWELFOX_GUI_REQ*)lpMsg, aIndex);	// SPK (Faz 2b)
 					break;
 			}
 			break;

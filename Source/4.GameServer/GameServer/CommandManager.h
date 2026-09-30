@@ -96,6 +96,7 @@ enum eCommandNumber
 	COMMAND_SETPASSPARTY	= 83,
 	COMMAND_SETLEVEL		= 84,
 	COMMAND_SETRESET		= 85,
+	COMMAND_ADDBUFF			= 86,	// SPK (Faz 2b), donor CommandManager.h:103
 };
 
 //**********************************************//

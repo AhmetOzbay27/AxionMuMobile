@@ -7,6 +7,43 @@
 
 ---
 
+## [26.09.30] Faz 2b.0 — 4 MUIG donor modülü GS'ye entegre edildi (AddBuffer, CAUTOHP, CCustomJewelBank, CSkillDamage)
+
+**Ne yapıldı**
+- Donör 8 dosya `Source\4.GameServer\GameServer\SPK\` altına alındı:
+  AUTOHP.cpp/.h, CustomJewelBank.cpp/.h, SkillDamage.cpp/.h, PC_AddBuff.cpp/.h
+  (AddBuffer sınıfı PC_AddBuff içinde). GameServer.vcxproj + .filters güncellendi
+  (4 ClCompile + 4 ClInclude, Filter=SPK); include yolu için
+  AdditionalIncludeDirectories'e `$(ProjectDir)` eklendi.
+- Yardımcı eksikler: SPK paket struct'ları (PSBMSG_JEWELBANK*, JEWELFOX_GUI_REQ,
+  SDHP_CUSTOM_JEWELBANK_INFO_RECV) donorde CustomJewelBank.h içinde olduğundan
+  ayrıca taşınmadı. User.h'e `ItemBank[10]`/`AUTOHP`/`TradeDuel`, Message.h'e
+  `GlobalText` alias, ItemManager.h/.cpp'e `CheckItemInventorySpaceCount` eklendi.
+- 8 kanca dosyası: User.cpp (gAUTOHP.MainProc), Protocol.cpp (0x35 AUTOHP,
+  0xF5/0xF6 JewelBank, 0x79/104 GuiNgocAll, 0xFC/104 AddBuff), ServerInfo.cpp
+  (3 Load), Attack.cpp (SkillDamage hasar çarpanı), DSProtocol.cpp (0xF7/0x05
+  JewelBankInfoRecv), ObjectManager.cpp (CustomJewelBankInfoSend),
+  CommandManager.h/.cpp (COMMAND_ADDBUFF=86 + case).
+- Config şablonları canlı Sub-1'den kopyalandı (salt okunur kaynak):
+  `Data\SPK\AddBuff.txt` + `Data\Custom\BotSystem\CongHuong.txt`.
+
+**Neden** — 05 envanteri P1'in 4 "MUIG donor" kalemi; canlı GS'de bu 4 modül
+var, bizim GS'de yoktu (2a envanterinin 71 iş biriminin ilk 4'ü).
+
+**Doğrulama**
+- GS `Release_EX603|Win32` temiz derlendi → GameServer.exe **10.704.896 B**
+  (önceki 10.690.560), pdb 18.182.144 B; `MuServer\4.GameServer\Sub 1`'e yazıldı.
+- Derleme sırasında 2 hata çözüldü: (1) CommandManager.cpp'de Move.h include'u
+  kazara silinmişti (C2065 MOVE_INFO/gMove); (2) 0x35 opcode çakışması → **H-007**:
+  Protocol.cpp'de HAISLOTRING CGItemEquipRepairRecv `#if(0)` ile kapatıldı;
+  kanıt: bizim SPK istemcisi 0x35 göndermiyor, AutoHP istemcide yerel
+  (Protect.m_MainInfo.DelayAutoHP).
+- PDB sembolleri: CAUTOHP(14)/CSkillDamage(17)/CCustomJewelBank(18)/AddBuffer(12)
+  + gAUTOHP/gAddBuffer/gSkillDamage/gCustomJewelBank + GetSkillDamage/
+  CommandAddBuff/JewelBankRecv/GuiNgocAll.
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 1 tamamlandı — Main ve GetMainInfo derlemeleri
 
 **Ne yapıldı**

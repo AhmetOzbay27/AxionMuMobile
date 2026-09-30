@@ -30,6 +30,12 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   2d.0/2d.1'de. Detay: 03 listesi "2a.5 KARARI" bölümü.
 
 ### Faz 2b — MUIG ortak dosya güncellemesi (161 dosya)
+- ✅ **2b.0** İlk entegrasyon dalgası (30.09.2026): 4 MUIG donor modülü GS'ye
+  eklendi — AddBuffer (PC_AddBuff), CAUTOHP, CCustomJewelBank, CSkillDamage;
+  8 kanca dosyası (User, Protocol, ServerInfo, Attack, DSProtocol,
+  ObjectManager, CommandManager.cpp/.h) + config şablonları (AddBuff.txt,
+  CongHuong.txt). GS derlendi → 10.704.896 B; semboller PDB ile doğrulandı.
+  H-007: 0x35 opcode'u donor paritesiyle AUTOHP'ye verildi.
 - ⬜ **2b.1** 161 dosyanın diff matrisi (SPK taban vs MUIG donor): hangisi
   gerçekten daha yeni, hangisi SPK-özel değişiklik içeriyor.
 - ⬜ **2b.2** Risk gruplarına ayır (protokol dokunanlar / UI / yardımcı) ve

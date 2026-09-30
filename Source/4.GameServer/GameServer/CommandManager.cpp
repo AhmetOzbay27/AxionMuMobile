@@ -46,6 +46,7 @@
 #include "Message.h"
 #include "Monster.h"
 #include "Move.h"
+#include "SPK/PC_AddBuff.h"	// SPK (Faz 2b)
 #include "Notice.h"
 #include "ObjectManager.h"
 #include "PcPoint.h"
@@ -657,6 +658,9 @@ bool CCommandManager::ManagementCore(LPOBJ lpObj,char* message, int Npc) // OK
 			break;
 		case COMMAND_SETRESET:			
 			Result = CommandSetReset(lpObj, argument);								
+			break;
+		case COMMAND_ADDBUFF:	// SPK (Faz 2b), donor CommandManager.cpp:648
+			Result = gAddBuffer.CommandAddBuff(lpObj);
 			break;
 		default:
 			return 0;

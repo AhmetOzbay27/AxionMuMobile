@@ -15,6 +15,7 @@ Durum: 🔴 AÇIK · 🟢 ÇÖZÜLDÜ · 🟡 ERTELENDİ
 | H-004 | 30.09.2026 | Main (Client) | Kaynak içine gömülü IP `171.235.182.88` canlıdaki `192.168.0.150` ile uyuşmuyor; ayrıca config'ten okuma düzeni net değil | 🔴 → Faz 2e.1'de çözülecek |
 | H-005 | 30.09.2026 | GetMainInfo | Bizim derleme (3,69 MB) canlı istemci akışıyla ilişkisiz varyant; 369 KB SPK GetEngine referansıyla format farkı | 🟡 karar alındı (2a.5): SPK GetEngine hattı benimsendi; uygulama 2d.0/2d.1, kapanış orada |
 | H-006 | 30.09.2026 | GameServer (parite) | Faz 1'de GS "canlıyla birebir" sanıldı — yanlış: eşleşme MuServer'daki ESKİ referansla (10.689.536 B, 28.04.2026); CANLI GS 6.979.072 B ve v100 toolset (msvcp100/msvcr100 kanıtı) | 🔴 → anlayış düzeltildi; parite hedefi işlevsel olacak, boyut değil (bkz. 06 envanter §1) |
+| H-007 | 30.09.2026 | GameServer (Faz 2b) | 0x35 opcode çakışması: yeni AUTOHP kancası mevcut HAISLOTRING `case 0x35` (CGItemEquipRepairRecv) ile C2196 verdi | Canlı SPK çiftinde 0x35 çift tanımlıydı; donörde AUTOHP kazanıyor; bizim SPK istemcisi 0x35'i hiç göndermiyor (AutoHP istemcide yerel, Protect.m_MainInfo.DelayAutoHP) | Donör paritesi: AUTOHP case kaldı, HAISLOTRING tamircisi Protocol.cpp'de `#if(0)` ile kapatıldı (ölü kod, kanıt notuyla) | GS derlemesi temiz; CAUTOHP/gAUTOHP PDB'de doğrulandı |
 
 ## ÇÖZÜLEN HATALAR (arşiv)
 
