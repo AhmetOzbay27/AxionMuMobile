@@ -7,6 +7,21 @@
 
 ---
 
+## [26.09.30] Pano arayüzü v2 — sadeleştirildi, plan 02'den canlı okunuyor
+
+**Ne yapıldı**
+- Kullanıcı geri bildirimi: ilk arayüz anlaşılmaz ve plan eksik görünüyordu.
+- `Dashboard\www\index.html` yeniden yazıldı: sabit faz özeti yerine **docs/02
+  YOL HARİTASI dosyası canlı okunup tüm adımlar (✅/🔄/⬜) tek listede
+  gösteriliyor** (Faz 0/1 satırları JS ile ekleniyor). Üstte: "bu proje ne?"
+  açıklaması, ilerleme çubuğu (9/28), "Son tamamlanan" ve "Sıradaki" kutuları,
+  CHANGELOG'dan son 5 iş, tıklayınca açılan belge okuyucu (Türkçe başlıklarla),
+  son 15 commit ve sade derleme tablosu.
+- Doğrulama: / api/status + /api/doc/02 canlı; sayfa 28 adımı parse ediyor
+  (9/28 tamam), Preview ekran görüntüsüyle görsel onay.
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] İlerleme panosu — dış IP'den canlı takip aracı (Dashboard\)
 
 **Ne yapıldı**
@@ -15,10 +30,8 @@
   çalışma ağacı durumu, derleme boyutları, disk, docs listesi), `/api/doc/<ad>.md`
   (docs klasöründen salt-okunur okuma; Türkçe dosya adları dahil), `/api/log/N`,
   `/api/ping`. Yol geçiş koruması: yalnız docs\*.md, `..` reddedilir.
-- `Dashboard\www\index.html`: tek dosya koyu-tema UI — faz durumu panosu (00 ile
-  uyumlu), sıradaki adım kutusu, GameServer bizim↔canlı + Main + GetMainInfo
-  boyut tablosu, son 15 commit, sistem durumu, tıklayınca açılan doküman okuyucu;
-  30 sn'de bir otomatik yenileme.
+- `Dashboard\www\index.html` (v1): faz panosu + derleme tablosu + commit akışı +
+  doküman okuyucu; 30 sn'de bir otomatik yenileme.
 - `Dashboard\start-dashboard.cmd`: çift tıkla başlatma (dış erişim modu).
 - Firewall kuralı "Axion Mu Pano 8096" (TCP in 8096) + URL ACL `http://+:8096/`
   (Everyone) yönetici onayıyla eklendi.
@@ -27,7 +40,7 @@
 (faz durumu, commit akışı, dokümanlar, derleme boyutları) dış IP'den tarayıcıyla
 takip etmek istiyor.
 
-**Doğrulama**
+**Doğrulama (v1)**
 - `http://localhost:8096/api/ping` → ok; `http://45.87.120.29:8096/api/ping` → ok
   (dış IP'den erişim çalışıyor; HTTP.sys 0.0.0.0:8096 dinliyor).
 - Tüm docs dosyaları (Türkçe İ̇ adlılar dahil) `/api/doc/` ile okunuyor.

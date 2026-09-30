@@ -3,174 +3,231 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Axion Mu — İlerleme Panosu</title>
+<title>Axion Mu — Ne yapıyoruz?</title>
 <style>
 :root{
   --bg:#0b0f14; --panel:#121822; --panel2:#0e141c; --line:#1f2a3a;
-  --tx:#dce6f2; --dim:#8ba1bd; --acc:#f0a12e; --ok:#3fd68f; --bad:#ff5d5d; --run:#4db4ff;
+  --tx:#dce6f2; --dim:#8ba1bd; --acc:#f0a12e; --ok:#3fd68f; --run:#4db4ff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--tx);font:14px/1.55 "Segoe UI",system-ui,sans-serif;padding:18px;max-width:1180px;margin:0 auto}
-h1{font-size:20px;letter-spacing:.4px}
+body{background:var(--bg);color:var(--tx);font:15px/1.6 "Segoe UI",system-ui,sans-serif;padding:16px;max-width:900px;margin:0 auto}
+h1{font-size:22px}
 h1 .mu{color:var(--acc)}
-.sub{color:var(--dim);font-size:12px;margin-top:2px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-@media(max-width:820px){.grid{grid-template-columns:1fr}}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.panel h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-bottom:10px}
-.wide{grid-column:1/-1}
-.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;margin-right:6px}
-.b-ok{background:rgba(63,214,143,.15);color:var(--ok)}
-.b-bad{background:rgba(255,93,93,.15);color:var(--bad)}
-.b-run{background:rgba(77,180,255,.15);color:var(--run)}
-.b-dim{background:rgba(139,161,189,.12);color:var(--dim)}
-table{width:100%;border-collapse:collapse;font-size:13px}
-td,th{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.6px}
-tr:last-child td{border-bottom:none}
-.hash{font-family:Consolas,monospace;color:var(--acc)}
+.sub{color:var(--dim);font-size:12.5px;margin-top:2px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:14px}
+.panel h2{font-size:14px;margin-bottom:10px}
+.intro{font-size:15px}
+.intro b{color:var(--acc)}
+.bar{background:var(--panel2);border:1px solid var(--line);border-radius:20px;height:22px;margin:10px 0 4px;overflow:hidden;position:relative}
+.bar>div{height:100%;background:linear-gradient(90deg,#2e7d5b,var(--ok));transition:width .6s}
+.bar span{position:absolute;inset:0;text-align:center;font-size:12px;line-height:22px;color:#fff;font-weight:600}
+.now{background:linear-gradient(90deg,rgba(77,180,255,.14),transparent);border-left:4px solid var(--run);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:10px;font-size:15px}
+.next{background:linear-gradient(90deg,rgba(240,161,46,.12),transparent);border-left:4px solid var(--acc);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:10px;font-size:15px}
+.grouph{margin:16px 0 6px;font-weight:700;font-size:15px;color:var(--acc)}
+.step{display:flex;gap:10px;padding:7px 4px;border-bottom:1px dashed var(--line);font-size:14px;align-items:baseline}
+.step:last-child{border:none}
+.step .ic{flex:0 0 26px;text-align:center}
+.step .id{flex:0 0 76px;font-family:Consolas,monospace;color:var(--acc);font-size:13px}
+.step .tx{flex:1}
+.step.done .tx{color:var(--dim)}
+.step.run .tx{color:#fff;font-weight:600}
+.chip{display:inline-block;font-size:11px;padding:1px 8px;border-radius:12px;margin-left:8px;vertical-align:middle}
+.c-ok{background:rgba(63,214,143,.15);color:var(--ok)}
+.c-run{background:rgba(77,180,255,.15);color:var(--run)}
+.c-wait{background:rgba(139,161,189,.12);color:var(--dim)}
+.c-lock{background:rgba(139,161,189,.12);color:var(--dim)}
+.today{border-bottom:1px dashed var(--line);padding:8px 2px}
+.today:last-child{border:none}
+.today .t{color:var(--acc);font-size:12px;font-family:Consolas,monospace}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td,th{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--dim);font-weight:600;font-size:11px;text-transform:uppercase}
 .num{font-family:Consolas,monospace}
 .docbtn{display:block;width:100%;text-align:left;background:var(--panel2);color:var(--tx);
-  border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:4px 0;cursor:pointer;font-size:13px}
+  border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:5px 0;cursor:pointer;font-size:14.5px}
 .docbtn:hover{border-color:var(--acc)}
-.docbtn .meta{float:right;color:var(--dim);font-size:11px}
+.docbtn .meta{float:right;color:var(--dim);font-size:11px;margin-top:2px}
 #docview{display:none;white-space:pre-wrap;font-family:Consolas,monospace;font-size:12.5px;
-  background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px;max-height:520px;overflow:auto;margin-top:10px}
-.kv{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--line);font-size:13px}
-.kv:last-child{border:none}
-.kv .k{color:var(--dim)}
-.pill-ok{color:var(--ok)} .pill-bad{color:var(--bad)}
-.next{background:linear-gradient(90deg,rgba(240,161,46,.12),transparent);border-left:3px solid var(--acc);padding:8px 12px;margin-top:8px;font-size:13px;border-radius:0 8px 8px 0}
-footer{color:var(--dim);font-size:11px;margin-top:14px;text-align:center}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-right:6px;animation:p 2s infinite}
-@keyframes p{50%{opacity:.35}}
-a{color:var(--run);text-decoration:none}
+  background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:16px;max-height:480px;overflow:auto;margin-top:10px}
+.commit{display:flex;gap:10px;padding:6px 2px;border-bottom:1px dashed var(--line);font-size:13.5px}
+.commit:last-child{border:none}
+.commit .h{font-family:Consolas,monospace;color:var(--acc);flex:0 0 90px}
+footer{color:var(--dim);font-size:11px;margin-top:16px;text-align:center}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);margin-left:6px;animation:p 2s infinite}
+@keyframes p{50%{opacity:.3}}
 </style>
 </head>
 <body>
-<h1>⚙ AXION <span class="mu">MU</span> — Geliştirme İlerleme Panosu</h1>
-<div class="sub">Canlı sunucudan kendi bilgisayarından takip · <span id="host">—</span> · son yenileme <span id="ts">—</span> <span class="dot"></span></div>
 
-<div class="grid">
-  <div class="panel">
-    <h2>Faz Durumu</h2>
-    <div id="phases">yükleniyor…</div>
-  </div>
-  <div class="panel">
-    <h2>Derleme Karşılaştırma</h2>
-    <div id="builds">yükleniyor…</div>
-  </div>
+<h1>⚙ AXION <span class="mu">MU</span> — Ne yapıyoruz?</h1>
+<div class="sub">Canlı sunucu · <span id="host">—</span> · son yenileme <span id="ts">—</span><span class="dot"></span></div>
 
-  <div class="panel">
-    <h2>Son Commit'ler</h2>
-    <table id="commits"><thead><tr><th>Hash</th><th>Tarih · Mesaj</th></tr></thead><tbody></tbody></table>
-  </div>
-  <div class="panel">
-    <h2>Sistem</h2>
-    <div id="system">yükleniyor…</div>
-  </div>
-
-  <div class="panel wide">
-    <h2>Dokümanlar (okumak için tıkla)</h2>
-    <div id="docs" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px">yükleniyor…</div>
-    <div id="docview"></div>
-  </div>
+<div class="panel intro">
+  <b>Bu proje ne?</b> Haliyle çalışan oyun sunucusunun (SPK) <b>birebir aynısını</b>
+  kendi kaynak kodumuzdan üretiyoruz. Eşitleme bitmeden yeni özellik (v2) açılmayacak.
+  Her iş "adım" diye yapılıyor: uygula → derle → kaydet → GitHub'a yaz.
 </div>
 
-<footer>Axion Mu Source · otomatik yenileme 30 sn · kaynak: C:\Axion Mu Source (canlı salt-okunur referans)</footer>
+<div class="panel">
+  <h2>📌 Genel Durum</h2>
+  <div class="bar"><div id="barfill" style="width:0%"></div><span id="bartext">…</span></div>
+  <div class="now" id="nowbox">yükleniyor…</div>
+  <div class="next" id="nextbox">yükleniyor…</div>
+</div>
+
+<div class="panel">
+  <h2>🆕 Son yapılan işler</h2>
+  <div id="today">yükleniyor…</div>
+</div>
+
+<div class="panel">
+  <h2>🗺️ Plan — bütün adımlar (docs/02'den canlı okunuyor)</h2>
+  <div id="plan">yükleniyor…</div>
+</div>
+
+<div class="panel">
+  <h2>📜 Son kayıt işleri (git)</h2>
+  <div id="commits">yükleniyor…</div>
+</div>
+
+<div class="panel">
+  <h2>📄 Belgeleri oku</h2>
+  <div id="docs">yükleniyor…</div>
+  <div id="docview"></div>
+</div>
+
+<div class="panel">
+  <h2>🔧 Teknik detay (derlemeler)</h2>
+  <table>
+    <tr><th>Dosya</th><th>Boyut</th><th>Tarih</th></tr>
+    <tr><td>GameServer — bizim</td><td class="num" id="b1">—</td><td class="num" id="t1">—</td></tr>
+    <tr><td>GameServer — canlı (hedef)</td><td class="num" id="b2">—</td><td class="num" id="t2">—</td></tr>
+    <tr><td>Main.exe (oyun istemcisi)</td><td class="num" id="b3">—</td><td class="num" id="t3">—</td></tr>
+  </table>
+</div>
+
+<footer>Axion Mu Source · 30 sn'de bir yenilenir · kaynak: C:\Axion Mu Source</footer>
 
 <script>
-// ---- Statik faz haritası (docs/00 pano ile uyumlu; 09 raporu + 2b.0-E dahil) ----
-const PHASES = [
-  ["Faz 0",  "Ortam kurulumu", "ok"],
-  ["Faz 1",  "CS/DS/JS/GS/Main/GetMainInfo derlemeleri", "ok"],
-  ["Faz 2a", "Canlı SPK envanteri (2a.1–2a.5)", "ok"],
-  ["Faz 2b", "MUIG entegrasyonu — 2b.0 ✅ 4 modül · 2b.0-E ✅ 12 ezilen dosya raporu · sıradaki 2b.1 diff matrisi", "run"],
-  ["Faz 2c", "59 eksik modülün yeniden yazımı (71 iş birimi)", "wait"],
-  ["Faz 2d", "GetMainInfo birleşimi + SPK istemci format katmanı", "wait"],
-  ["Faz 2e", "IP/config hizalama + istemci paketleme", "wait"],
-  ["Faz 3",  "Uçtan uca test (ayrı test sunucusu)", "wait"],
-  ["Faz 4",  "Android port doğrulaması", "wait"],
-  ["Faz 5",  "Canlıya geçiş", "wait"],
-  ["v2",     "Parite sonrası yeni geliştirme (kilitli)", "lock"]
-];
-const CLS = {ok:"b-ok",run:"b-run",wait:"b-dim",lock:"b-dim"};
-const LBL = {ok:"✅ TAMAM",run:"🔄 DEVAM",wait:"⬜ bekliyor",lock:"🔒 kapalı"};
+const DOCNAMES={
+ "00-PROJE-HARITASI.md":"🎯 Proje Haritası — genel bakış",
+ "01-ARASTIRMA-REHBERI.md":"📚 Araştırma Rehberi — eski bulgular",
+ "02-YOL-HARITASI.md":"🗺️ Yol Haritası — tüm plan",
+ "03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md":"📋 Eksik İçerik Listesi",
+ "04-HATA-GUNLUGU.md":"🐞 Hata Günlüğü",
+ "05-SPK-MODUL-ENVANTERI.md":"📦 Modül Envanteri (59 eksik modül)",
+ "06-CANLI-SISTEM-ENVANTERI.md":"🔎 Canlı Sistem Envanteri",
+ "07-SPK-BMD-FORMAT.md":"🧾 BMD Formatı (istencil dosya biçimi)",
+ "08-GETMAININFO-TASARIM.md":"🛠️ GetMainInfo Tasarımı",
+ "09-EZILEN-12-DOSYA-KARSILASTIRMA.md":"📊 12 Dosya Karşılaştırma Raporu",
+ "CHANGELOG.md":"📜 CHANGELOG — yapılan her iş"
+};
+const ICON={done:"✅",run:"🔄",wait:"⬜",blocked:"⏸",lock:"🔒"};
+const CHIP={done:"<span class='chip c-ok'>tamam</span>",run:"<span class='chip c-run'>ŞİMDİ</span>",
+            wait:"<span class='chip c-wait'>bekliyor</span>",blocked:"<span class='chip c-wait'>engelli</span>",
+            lock:"<span class='chip c-lock'>kilitli</span>"};
 
-function fmtSize(b){return b.toLocaleString("tr-TR")+" B"}
-function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function strip(md){
+  return md.replace(/\*\*/g,"").replace(/\[(.+?)\]\((.+?)\)/g,"$1").trim();
+}
+function fmtSize(b){return (b/1048576).toFixed(2)+" MB"}
 
-async function refresh(){
+async function loadPlan(){
   try{
-    const r = await fetch("/api/status");
-    const j = await r.json();
+    const txt = await (await fetch("/api/doc/02-YOL-HARITASI.md")).text();
+    const lines = txt.split(/\r?\n/);
+    let html="", groups=[], cur=null;
+    for(const raw of lines){
+      const line=raw.trimEnd();
+      let m;
+      if(m=line.match(/^#{2,3}\s+(FAZ\s+.+|Faz\s+2[a-e].+|v2\s+.+)$/)){
+        cur={title:strip(m[1]),steps:[]}; groups.push(cur); continue;
+      }
+      if(m=line.match(/^-\s+([✅🔄⬜⏸🔒])\s+(.+)$/)){
+        if(!cur){cur={title:"Diğer",steps:[]};groups.push(cur);}
+        const st={"✅":"done","🔄":"run","⬜":"wait","⏸":"blocked","🔒":"lock"}[m[1]];
+        let rest=strip(m[2]);
+        let id="";
+        const im=rest.match(/^([0-9][0-9a-zA-Z.\-]*[a-zA-Z0-9])\s+(.+)$/);
+        if(im){id=im[1];rest=im[2];}
+        cur.steps.push({st,id,tx:rest});
+      }
+    }
+    let done=0,total=0,runStep=null,nextStep=null,runGroup=null,nextGroup=null,foundRun=false,foundNext=false,lastDone=null,lastDoneGroup=null;
+    html+=`<div class="step done"><span class="ic">✅</span><span class="id">Faz 0</span><span class="tx">Ortam kurulumu (VS2022, git, klasörler) — doküman: 00-PROJE-HARİTASI</span><span class="chip c-ok">tamam</span></div>`;
+    html+=`<div class="step done"><span class="ic">✅</span><span class="id">Faz 1</span><span class="tx">İlk derlemeler — CS/DS/JS/GS/Main/GetMainInfo kaynaktan derlendi</span><span class="chip c-ok">tamam</span></div>`;
+    done+=2; total+=2;
+    for(const g of groups){
+      html+=`<div class="grouph">${g.title}</div>`;
+      for(const s of g.steps){
+        total++;
+        if(s.st==="done")done++;
+        if(s.st==="run"&&!foundRun){runStep=s;runGroup=g;foundRun=true;}
+        if(s.st==="wait"&&!foundNext){nextStep=s;nextGroup=g;foundNext=true;}
+        if(s.st==="done"){lastDone=s;lastDoneGroup=g;}
+        html+=`<div class="step ${s.st}"><span class="ic">${ICON[s.st]}</span><span class="id">${s.id||"—"}</span><span class="tx">${s.tx} ${CHIP[s.st]}</span></div>`;
+      }
+    }
+    document.getElementById("plan").innerHTML=html;
+    document.getElementById("barfill").style.width=(total?Math.round(done*100/total):0)+"%";
+    document.getElementById("bartext").textContent=`${done} / ${total} adım tamam`;
+    document.getElementById("nowbox").innerHTML = runStep
+      ? `🔄 <b>Şu an yapılan:</b> ${runGroup.title} → adım <b>${runStep.id}</b>`
+      : (lastDone ? `✔️ <b>Son tamamlanan:</b> ${lastDoneGroup.title} → adım <b>${lastDone.id||"(blok)"}</b> — plan işaretleri 02 dosyasından canlı okunuyor`
+                  : "Aktif adım yok");
+    document.getElementById("nextbox").innerHTML = nextStep
+      ? `👉 <b>Sıradaki:</b> ${nextGroup.title} → adım <b>${nextStep.id}</b>: ${nextStep.tx.slice(0,140)}`
+      : "";
+  }catch(e){
+    document.getElementById("plan").textContent="plan okunamadı: "+e.message;
+  }
+}
 
-    document.getElementById("host").textContent = j.host;
-    document.getElementById("ts").textContent = j.time;
+async function loadToday(){
+  try{
+    const txt = await (await fetch("/api/doc/CHANGELOG.md")).text();
+    const re=/^## \[(.+?)\] (.+)$/gm; let m,out=[],n=0;
+    while((m=re.exec(txt))&&n<5){ out.push({date:m[1],title:m[2]}); n++; }
+    document.getElementById("today").innerHTML = out.map(o=>
+      `<div class="today"><span class="t">${o.date}</span><br>${o.title}</div>`).join("");
+  }catch(e){ document.getElementById("today").textContent="okunamadı"; }
+}
 
-    // Fazlar
-    document.getElementById("phases").innerHTML = PHASES.map(p=>
-      `<div class="kv"><span class="k"><b>${p[0]}</b> — ${esc(p[1])}</span>
-       <span class="badge ${CLS[p[2]]}">${LBL[p[2]]}</span></div>`).join("")
-      + `<div class="next"><b>Sıradaki adım:</b> 2b.1 — 161 ortak dosyanın diff matrisi (SPK taban ↔ MUIG donor)</div>`;
-
-    // Derlemeler
+async function loadStatus(){
+  try{
+    const j = await (await fetch("/api/status")).json();
+    document.getElementById("host").textContent=j.host;
+    document.getElementById("ts").textContent=j.time;
     const B=j.builds||{};
-    const gsB=B.gs_bizim, gsC=B.gs_canli, main=B.main_bizim, gmi=B.getmaininfo;
-    document.getElementById("builds").innerHTML = `
-      <table>
-      <tr><th>GameServer</th><th>Boyut</th><th>Datetime</th></tr>
-      <tr><td>Bizim (2b.0 sonrası)</td><td class="num">${gsB?fmtSize(gsB.size):"—"}</td><td class="num">${gsB?gsB.mtime:"—"}</td></tr>
-      <tr><td>Canlı referans</td><td class="num">${gsC?fmtSize(gsC.size):"—"}</td><td class="num">${gsC?gsC.mtime:"—"}</td></tr>
-      <tr><td>Main.exe (bizim)</td><td class="num">${main?fmtSize(main.size):"—"}</td><td class="num">${main?main.mtime:"—"}</td></tr>
-      <tr><td>GetMainInfo.exe</td><td class="num">${gmi?fmtSize(gmi.size):"—"}</td><td class="num">${gmi?gmi.mtime:"—"}</td></tr>
-      </table>
-      <div class="sub" style="margin-top:8px">Not: parite hedefi işlevsel — canlı GS 6.98 MB (v100 toolset), bizim 10.70 MB (v143). H-006'ya bak.</div>`;
-
-    // Commitler
-    const tb=document.querySelector("#commits tbody"); tb.innerHTML="";
+    if(B.gs_bizim){b1.textContent=fmtSize(B.gs_bizim.size);t1.textContent=B.gs_bizim.mtime;}
+    if(B.gs_canli){b2.textContent=fmtSize(B.gs_canli.size);t2.textContent=B.gs_canli.mtime;}
+    if(B.main_bizim){b3.textContent=fmtSize(B.main_bizim.size);t3.textContent=B.main_bizim.mtime;}
+    const cl=document.getElementById("commits"); cl.innerHTML="";
     (j.git.commits||[]).forEach(c=>{
-      const parts=c.rest.split("|");
-      tb.insertAdjacentHTML("beforeend",
-        `<tr><td class="hash">${c.hash}</td><td>${esc(parts[0])} — ${esc(parts[1]||"")}</td></tr>`);
+      const p=c.rest.split("|");
+      cl.insertAdjacentHTML("beforeend",`<div class="commit"><span class="h">${c.hash}</span><span>${p[0]} — ${p[1]||""}</span></div>`);
     });
-
-    // Sistem
-    const g=j.git;
-    document.getElementById("system").innerHTML = `
-      <div class="kv"><span class="k">Git dalı</span><span class="num">${esc(g.branch)}</span></div>
-      <div class="kv"><span class="k">Çalışma ağacı</span><span>${g.dirty==0?'<span class="pill-ok">temiz</span>':`<span class="pill-bad">${g.dirty} değişiklik</span>`}</span></div>
-      <div class="kv"><span class="k">İzlenmeyen dosya</span><span class="num">${g.untracked}</span></div>
-      <div class="kv"><span class="k">Disk boş (C:)</span><span class="num">${j.diskGB} GB</span></div>
-      <div class="kv"><span class="k">Doküman sayısı</span><span class="num">${(j.docs||[]).length}</span></div>`;
-
-    // Dokümanlar
     const dg=document.getElementById("docs"); dg.innerHTML="";
     (j.docs||[]).forEach(d=>{
       const b=document.createElement("button");
       b.className="docbtn";
-      b.innerHTML=`${esc(d.name)} <span class="meta">${(d.size/1024).toFixed(1)} KB · ${d.mtime}</span>`;
+      b.innerHTML=`${DOCNAMES[d.name]||d.name} <span class="meta">${(d.size/1024).toFixed(0)} KB</span>`;
       b.onclick=()=>openDoc(d.name);
       dg.appendChild(b);
     });
-  }catch(e){
-    document.getElementById("ts").textContent="bağlantı hatası: "+e.message;
-  }
+  }catch(e){ document.getElementById("ts").textContent="bağlantı hatası"; }
 }
 
 async function openDoc(name){
   const v=document.getElementById("docview");
   v.style.display="block";
   v.textContent="yükleniyor…";
-  try{
-    const r=await fetch("/api/doc/"+encodeURIComponent(name));
-    v.textContent=await r.text();
-    v.scrollTop=0;
-  }catch(e){ v.textContent="okunamadı: "+e.message }
+  try{ v.textContent=await (await fetch("/api/doc/"+encodeURIComponent(name))).text(); v.scrollTop=0; }
+  catch(e){ v.textContent="okunamadı: "+e.message; }
 }
 
-refresh();
-setInterval(refresh,30000);
+loadPlan(); loadToday(); loadStatus();
+setInterval(()=>{loadStatus();loadToday();},30000);
 </script>
 </body>
 </html>
