@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-01 00:05:00",
+  "updated": "2026-10-01 00:10:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
   "entries": [
-    { "ts": "2026-10-01 00:05", "kim": "ajan", "text": "2b.2-G dalga 7 TAMAM (G5) — 2b.2'NİN TÜM BANTLARI KAPANDI (7 dalga): JewelMix + 380ItemType alındı, 17 gerekçeli korundu. GENEL: 213 dosyanın 66'sı alındı, 147'si gerekçeli korundu, 0 belirsiz. GS temiz → 10.775.552 B. Kalan: faz kapanışı → 2b.3." },
+    { "ts": "2026-10-01 00:10", "kim": "ajan", "text": "FAZ 2b KAPANIŞ DOĞRULAMASI: final Rebuild temiz → 10.775.552 B (00:03), 8 kanca dosyası + H-007 (0x35 AUTOHP) doğrulandı. 2b.2 toplam: 213 dosyanın 66'sı alındı, 147'si gerekçeli korundu, 0 belirsiz. docs/00+02 kapanış güncel. Sıradaki: 2b.3 → 2c." },
     { "ts": "2026-09-30 21:20", "kim": "kullanıcı", "text": "6 config eksiğini kapat: canlı Sub-1'den kopyala, CustomJewel çağrısını .txt'e çevir, derlemeyi doğrula." },
     { "ts": "2026-09-30 21:30", "kim": "ajan", "text": "6 config kopyalandı + 2 format düzeltmesi: CustomJewel .xml→.txt, ThuMuaDoExc .xml→.txt (canlı exe kanıtı). GS temiz → 10.701.824 B. Bulgu: canlı config yolları SPK\ altında, bizim bir kısmı Custom\ — E-kalem entegrasyonlarında birleştirilecek. CHANGELOG + 09 §5 güncel." },
     { "ts": "2026-09-30 20:50", "kim": "kullanıcı", "text": "2b.2'yi E-10 Reconnect ile başlat: donor sürümü al, derle, CHANGELOG + commit ile kapat." },

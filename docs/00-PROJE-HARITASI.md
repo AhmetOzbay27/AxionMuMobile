@@ -26,7 +26,7 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 | Faz 0 | Ortam kurulumu (VS 2022, git, klasörler) | ✅ TAMAMLANDI |
 | Faz 1 | CS/DS/JS/GS/GetMainInfo/Main derlemeleri | ✅ TAMAMLANDI (`faz1-tamamlandi` etiketi, commit `1339a290`) |
 | Faz 2a | Canlı SPK envanteri (2a.1-2a.5) | ✅ TAMAMLANDI — iş emri: [05](05-SPK-MODUL-ENVANTERI.md), bulgular: [06](06-CANLI-SISTEM-ENVANTERI.md), karar: 03 "2a.5" |
-| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya + 4 modül) | 🔄 DEVAM — 2b.0 ✅ (4 donor modül entegre, GS 10.704.896 B); sıradaki 2b.1 diff matrisi |
+| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya + 4 modül) | 🔄 DEVAM — 2b.0 ✅ + 2b.1 ✅ + **2b.2 ✅ (7 dalga: 213 dosyanın 66'sı donor'dan alındı, 147'si gerekçeli korundu; P0 protokol tablosu docs/11)**; sıradaki 2b.3 MUIG-özel modül çapraz kontrolü |
 | Faz 2c | Eksik 58 modülün yeniden yazımı (54 sıfırdan) | ⏳ bekliyor |
 | Faz 2d | GetMainInfo birleşimi + SPK istemci format katmanı (2d.0) | ⏳ bekliyor |
 | Faz 2e | IP/config hizalama + istemci paketleme | ⏳ bekliyor |
@@ -37,8 +37,10 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 
 **Şu anki tek aktif görev:** Faz 2b — MUIG ortak dosya entegrasyonu
 (2b.0 ✅ 4 donor modül · 2b.0-E ✅ 12 ezilen dosya raporu → [09](09-EZILEN-12-DOSYA-KARSILASTIRMA.md) ·
-2b.1 ✅ diff matrisi → [10](10-DIFF-MATRISI.md); sıradaki **2b.2**: G1 30 dosya
-hızlı kazanç + protokol P0 diff tablosu). bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
+2b.1 ✅ diff matrisi → [10](10-DIFF-MATRISI.md) · 2b.2 ✅ 7 dalga tamam —
+G1/G2/G3/G4/G5 + P0 protokol tablosu → [11](11-PROTOCOL-P0-DIFF-TABLOSU.md);
+sıradaki **2b.3**: 68 MUIG-özel modülün canlı envanteriyle çapraz kontrolü.
+bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 
 ---
 

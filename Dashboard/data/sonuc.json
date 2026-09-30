@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 00:05:00",
+  "updated": "2026-10-01 00:10:00",
   "status": "ok",
-  "text": "2b.2-G dalga 7 TAMAM (G5) — 2b.2'NIN TÜM BANTLARI KAPANDI (7 dalga): JewelMix (semantik-ozdes, whitespace-testi) ve 380ItemType+h (Export-zinciri: 380ItemOption+SafeGetItem+PackFileEncrypt hazirdi) alindi; 17 dosya gerekceli korundu (CustomStore 83 SPK-imlec, Protect 42+35, ServerDisplayer 52, ResetTable 42, DarkSpirit CustomArena, ItemOptionRate CustomWing, Party 5 bizim-tekil metot, ItemBagManager DropReward...). 2b.2 GENEL: 213 dosyanin 66'si alindi, 147'si gerekceli korundu, 0 belirsiz. GS temiz -> 10.775.552 B (23:59). Kalan: faz 2b kapanisi (docs/00+02 final + pano) -> 2b.3."
+  "text": "FAZ 2b KAPANIS DOGRULAMASI TAMAM: final Rebuild temiz (0 hata) -> GameServer.exe 10.775.552 B (00:03, dalga-7 ile ozdes — /LTCG). 8 kanca dosyasinin tumu dogrulandi (ServerInfo 7, Protocol 8, User 5, CommandManager 3, ObjectManager 2, Attack 2, DSProtocol 2, ItemManager 2 'Faz 2b' blok); H-007 (0x35 AUTOHP + olukod tamircisi #if(0)) yerinde. 2b.2 ozeti: 213 dosyanin 66'si donor'dan alindi, 147'si gerekceli korundu, 0 belirsiz; 7 dalga, her biri derle+docs+commit ile kapandi (son: 39a28d45e). docs/00+02 guncel. Siradaki: 2b.3 (68 MUIG-ozel modul canli envanter capraz kontrolu) -> 2c."
 }
