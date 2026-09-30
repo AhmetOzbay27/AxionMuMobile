@@ -30,7 +30,7 @@ alımı, birleştirme veya canlıdan yeniden yazım yapılacağı karara bağlan
 - Bizim MuServer'da 6 canlı config eksik/eski (ChangeClass.xml, CustomBuyVip.txt,
   CustomJewel.txt, ZenDrop.xml eski, EventTime.xml, ThuMuaDoExc.txt).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `8152b67ee`
 
 ## [26.09.30] Faz 2b.0 — 4 MUIG donor modülü GS'ye entegre edildi (AddBuffer, CAUTOHP, CCustomJewelBank, CSkillDamage)
 
