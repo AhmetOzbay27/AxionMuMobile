@@ -32,12 +32,14 @@ public:
 	virtual ~CCustomBuyVip();
 	void Init();
 	void Load(char* path);
+	void Reload();	// E-05 (Faz 2b.2): canlı SPK 'CustomBuyVip configuration reloaded' log deseni — /reload buyvip
 	void SetInfo(CUSTOM_BUYVIP_INFO info);
 	CUSTOM_BUYVIP_INFO* GetInfo(int index);
 	void BuyVip(int aIndex, BUYPREMIUM_REQ* lpMsg);
 	void BuyVipDone(LPOBJ lpObj);
 public:
 	CUSTOM_BUYVIP_INFO m_CustomBuyVipInfo[MAX_CUSTOM_BUYVIP];
+	char m_Path[256];	// E-05: Load'ta saklanan config yolu (reload için)
 };
 
 extern CCustomBuyVip gCustomBuyVip;

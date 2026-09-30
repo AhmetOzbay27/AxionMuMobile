@@ -11,6 +11,7 @@
 #include "Command.h"
 #include "CustomArena.h"
 #include "CustomAttack.h"
+#include "CustomBuyVip.h"	// E-05 (Faz 2b.2): /reload buyvip
 #include "CustomEventDrop.h"
 #include "CustomPick.h"
 #include "CustomQuest.h"
@@ -3441,6 +3442,10 @@ bool CCommandManager::CommandReload(LPOBJ lpObj,char* arg) // OK
     else if (strcmp(name,"bots") == 0)
     {
 		gServerInfo.ReloadBotInfo();
+    }
+    else if (strcmp(name,"buyvip") == 0) // E-05 (Faz 2b.2): canlı SPK deseni — CustomBuyVip config hot-reload
+    {
+		gCustomBuyVip.Reload();
     }
     else if (strcmp(name,"all") == 0)
     {

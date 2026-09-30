@@ -7,6 +7,37 @@
 
 ---
 
+## [26.10.01 00:56] E-05 CustomBuyVip reload — canlı SPK 'configuration reloaded' deseni entegre edildi
+
+**Ne yapıldı**
+- Kullanıcı tetiklemesi: E-05'in kalan parçası (reload) istendi. Yol geçişi
+  dalga 4'te yapılmıştı (`SPK\CustomBuyVip.txt` — ServerInfo:406); bu turda:
+- **Canlı kanıt:** canlı exe (6.979.072 B) string taraması →
+  `CustomBuyVip configuration reloaded` canlıda VAR, bizim derlemede YOKTU;
+  ayrıca canlı reload ailesi görünür oldu (Gate/Move/MoveSummon/Notice/
+  ResetTable/Skill/GameMaster/CustomShop/ExperienceTable ... configuration
+  reloaded) — 2c'de diğer modüllere uygulanacak desen listesi.
+- **CustomBuyVip.cpp/h:** `Reload()` metodu eklendi — Load'ta saklanan yolu
+  (`char m_Path[256]`, yeni alan) kullanır; parse gövdesi Load ile aynı
+  (canlı şema: Index/Exp+/Drop+/Days/Coin1-3/VipName); hata durumunda mevcut
+  verileri korur (Init parse'tan sonra), başarıda
+  `LogAdd(LOG_BLUE,"CustomBuyVip configuration reloaded")` (canlı string;
+  LOG_BLUE=ServerDisplayer.h:21). Include'lar: Path.h (gPath declare), Log.h.
+- **CommandManager.cpp:** `/reload buyvip` dalı eklendi (`gCustomBuyVip.Reload()`;
+  include CustomBuyVip.h). İlk derlemede C2065 yakalandı → include eklendi.
+
+**Neden** — docs/09 E-05 stratejisi: 'txt format korunur, reload eklenir'.
+Reload, canlı operatörün GS'yi durdurmadan VIP fiyatlarını güncelleyebilmesi.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.776.576 B** (00:56,
+  +1024 B — reload kodu); `CustomBuyVip configuration reloaded` + `buyvip`
+  string'leri bizim derlemede artık VAR (canlı parite);
+- Zincir: `/reload buyvip` → CommandManager:3446 → CCustomBuyVip::Reload
+  (CustomBuyVip.cpp:113) → aynı dosyayı yeniden parse eder.
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 00:56
+
 ## [26.10.01 00:47] 2b.2-A G1 denetimi — 25/30 dosya donor-birebir teyit; MoveSummon PkMove tamamlaması
 
 **Ne yapıldı**

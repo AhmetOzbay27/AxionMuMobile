@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 00:55:00",
+  "updated": "2026-10-01 00:56:00",
   "status": "ok",
-  "text": "2b.2-P0 zaten tamamlanmisti (fe4bc2505, docs/11 — 23:15). Yeniden dogrulama yapildi: P0'dan bu yana 10 protokol dosyasinda HICBIR degisiklik yok (git diff teyit), tablo gecerliligini koruyor. Canli exe (6.979.072 B) string kanitlari yeniden dogrulandi: Event/CTCMini hem canlida hem bizim derlemede; Notice.txt ve ThuMuaDoExc.txt iki tarafta da; BlackList.txt canlida Sub-1/Data altinda fiziksel VAR (2c'deki BlackList modul notunu dogruluyor). docs/11'e '6. Yeniden Dogrulama' bolumu eklendi. Karar degismedi: donor protokol alimi YOK."
+  "text": "E-05 CustomBuyVip RELOAD entegre edildi: canli exe'de 'CustomBuyVip configuration reloaded' string'i vardi (bizde yoktu) -> CCustomBuyVip::Reload() eklendi (Load'ta saklanan yolu yeniden parse eder, hata durumunda mevcut veriler korunur) + /reload buyvip komutu (CommandManager:3446). Canli reload ailesi de listelendi (Gate/Move/MoveSummon/Notice/ResetTable/Skill/GameMaster/CustomShop...) — 2c'de diger modullere ayni desen. GS temiz -> 10.776.576 B (00:56, +1024 B). Yol zaten dalga 4'te SPK/CustomBuyVip.txt'e gecirilmisti."
 }

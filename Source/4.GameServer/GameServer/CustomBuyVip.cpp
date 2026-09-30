@@ -11,7 +11,8 @@
 #include "MemScript.h"
 #include "Message.h"
 #include "Notice.h"
-#include "Util.h"
+#include "Path.h"	// E-05 (Faz 2b.2): gPath — Reload için config yolu
+#include "Log.h"	// E-05: LogAdd reload logu için
 
 CCustomBuyVip gCustomBuyVip;
 //////////////////////////////////////////////////////////////////////
@@ -52,6 +53,88 @@ void CCustomBuyVip::Load(char* path) // OK
 		delete lpMemScript;
 		return;
 	}
+
+	this->Init();
+
+	// E-05 (Faz 2b.2): yolu sakla — Reload() aynı dosyayı yeniden yükleyebilsin
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+
+	try
+	{
+		while(true)
+		{
+			if(lpMemScript->GetToken() == TOKEN_END)
+			{
+				break;
+			}
+
+			if(strcmp("end",lpMemScript->GetString()) == 0)
+			{
+				break;
+			}
+
+			CUSTOM_BUYVIP_INFO info;
+
+			memset(&info,0,sizeof(info));
+
+			info.Index = lpMemScript->GetNumber();
+
+			info.Exp = lpMemScript->GetAsNumber();
+
+			info.Drop = lpMemScript->GetAsNumber();
+
+			info.Days = lpMemScript->GetAsNumber();
+
+			info.Coin1 = lpMemScript->GetAsNumber();
+
+			info.Coin2 = lpMemScript->GetAsNumber();
+
+			info.Coin3 = lpMemScript->GetAsNumber();
+
+			strcpy_s(info.VipName,lpMemScript->GetAsString());
+
+			this->SetInfo(info);
+		}
+	}
+	catch(...)
+	{
+		printf(lpMemScript->GetLastError());
+	}
+
+	delete lpMemScript;
+
+	//LogAdd(LOG_BLUE, "[ServerInfo] CustomBuyVip Info loaded successfully");
+}
+
+// E-05 (Faz 2b.2): config'i yeniden yukler (canlı SPK deseni: 'CustomBuyVip
+// configuration reloaded'). /reload buyvip komutu çağırır; hata durumunda
+// mevcut veriler korunur (önce Init yapılmaz).
+void CCustomBuyVip::Reload() // E-05
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[CustomBuyVip] Reload skipped - config path not set yet");
+		return;
+	}
+
+	CMemScript* lpMemScript = new CMemScript;
+
+	if(lpMemScript == 0)
+	{
+		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR,this->m_Path);
+		return;
+	}
+
+	if(lpMemScript->SetBuffer(this->m_Path) == 0)
+	{
+		ErrorMessageBox(lpMemScript->GetLastError());
+		delete lpMemScript;
+		return;
+	}
+
+	CUSTOM_BUYVIP_INFO oldInfo[MAX_CUSTOM_BUYVIP];
+	memcpy(oldInfo,this->m_CustomBuyVipInfo,sizeof(oldInfo));
 
 	this->Init();
 
@@ -99,7 +182,7 @@ void CCustomBuyVip::Load(char* path) // OK
 
 	delete lpMemScript;
 
-	//LogAdd(LOG_BLUE, "[ServerInfo] CustomBuyVip Info loaded successfully");
+	LogAdd(LOG_BLUE,"CustomBuyVip configuration reloaded");
 }
 
 void CCustomBuyVip::SetInfo(CUSTOM_BUYVIP_INFO info) // OK
