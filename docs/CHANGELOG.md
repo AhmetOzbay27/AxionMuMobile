@@ -30,7 +30,7 @@ tarih saat` formatına çevrildi (git commit tarihlerinden doğrulandı:
 - `git log` saatleriyle CHANGELOG damgaları birebir eşleşiyor;
 - `/api/timeline` HTTP 200 + JSON döndürüyor; pano paneli canlı.
 
-**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 00:25
+**Commit** — `f7d8b6b7f` · **Tamamlandı** — 01.10.2026 00:40
 
 ## [26.10.01 00:00] Faz 2b.2-G — G5 bandı dalga 7: 2 dosya alındı, 17 dosya gerekçeli korundu — 2b.2 TÜM BANTLAR KAPANDI
 
