@@ -7,6 +7,37 @@
 
 ---
 
+## [26.10.01 01:04] Pano otomatik başlatma — Task Scheduler görevi (AxionPano)
+
+**Ne yapıldı**
+- Kullanıcı istği: makine yeniden başlasa bile pano (port 8096) ayakta kalsın.
+- **Görev:** `AxionPano` — Register-ScheduledTask ile kuruldu (admin yetkisi
+  mevcuttu): tetik **AtStartup** (+20 sn gecikme), hesap **SYSTEM**
+  (ServiceAccount, RunLevel Highest), `RestartCount 999 / RestartInterval 1 dk`
+  (çökerse kendini yeniden başlatır), `ExecutionTimeLimit 0` (süresiz),
+  batarya koşullarında da çalışır. Aksiyon:
+  `powershell -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File
+  "C:\Axion Mu Source\Dashboard\server.ps1" -Published 1` (WorkDir: Dashboard).
+- **Bulgu + düzeltme:** görev ilk başlatmada `/api/timeline` 500 verdi —
+  SYSTEM hesabı için repo "dubious ownership" korumasına takılıyordu (repo
+  Administrator'a ait). server.ps1'deki 5 git çağrısının hepsine
+  `-c safe.directory=*` eklendi (hem SYSTEM hem kullanıcı oturumunda çalışır).
+- Manuel sunucu süreci kapatılıp görev hemen başlatılarak kanıtlandı:
+  `/`, `/api/timeline`, `/api/agent`, `/api/status` → **HTTP 200** (SYSTEM
+  bağlamından, git verisi dolu).
+- Dış erişim ACL'i zaten mevcuttu (http://+:8096/ → Everyone — önceki kuru­lum).
+
+**Neden** — Panonun canlı takip aracı olarak sürekli erişilebilir olması
+istemci makinesinin oturum durumundan bağımsız olmalı.
+
+**Doğrulama**
+- `Get-ScheduledTask AxionPano` → Ready; Start-ScheduledTask sonrası 4/4
+  endpoint 200;
+- Sunucu artık kullanıcı oturumuna değil göreve bağlı (oturum kapansa da
+  çalışır); kod derlemesi gerektirmez.
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 01:04
+
 ## [26.10.01 00:56] E-05 CustomBuyVip reload — canlı SPK 'configuration reloaded' deseni entegre edildi
 
 **Ne yapıldı**

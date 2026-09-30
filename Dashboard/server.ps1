@@ -45,13 +45,13 @@ function Get-BuildInfo {
 }
 
 function Get-GitInfo {
-    $log  = & $GitExe -C $RepoRoot log --pretty=format:"%h|%ad|%s" --date=format:"%d.%m %H:%M" -15 2>$null
+    $log  = & $GitExe -c safe.directory=* -C $RepoRoot log --pretty=format:"%h|%ad|%s" --date=format:"%d.%m %H:%M" -15 2>$null
     $commits = @()
     foreach ($l in $log) { $p = $l -split "\|", 2; if ($p.Count -eq 2) { $commits += @{ hash = $p[0]; rest = $p[1] } } }
-    $st = & $GitExe -C $RepoRoot status --porcelain 2>$null
+    $st = & $GitExe -c safe.directory=* -C $RepoRoot status --porcelain 2>$null
     $dirty = @($st | Where-Object { $_ -notmatch "^\?\?" }).Count
     $untracked = @($st | Where-Object { $_ -match "^\?\?" }).Count
-    $branch = (& $GitExe -C $RepoRoot rev-parse --abbrev-ref HEAD 2>$null)
+    $branch = (& $GitExe -c safe.directory=* -C $RepoRoot rev-parse --abbrev-ref HEAD 2>$null)
     return @{ branch = $branch; commits = $commits; dirty = $dirty; untracked = $untracked }
 }
 
@@ -117,12 +117,12 @@ while ($listener.IsListening) {
         elseif ($path -like "/api/log/*") {
             $n = 20
             if ($path -match "/api/log/(\d+)") { $n = [math]::Min([int]$Matches[1], 100) }
-            $lines = & $GitExe -C $RepoRoot log --pretty=format:"%h %ad %s" --date=format:"%d.%m.%Y %H:%M" -$n 2>$null
+            $lines = & $GitExe -c safe.directory=* -C $RepoRoot log --pretty=format:"%h %ad %s" --date=format:"%d.%m.%Y %H:%M" -$n 2>$null
             Send-Response $ctx 200 "text/plain; charset=utf-8" ($lines -join "`n")
         }
         elseif ($path -eq "/api/timeline") {
             # Zaman çizelgesi: git log'dan canlı okunur (hash + dd.MM.yyyy HH:mm + mesaj)
-            $lines = & $GitExe -C $RepoRoot log --pretty=format:"%h|%ad|%s" --date=format:"%d.%m.%Y %H:%M" -40 2>$null
+            $lines = & $GitExe -c safe.directory=* -C $RepoRoot log --pretty=format:"%h|%ad|%s" --date=format:"%d.%m.%Y %H:%M" -40 2>$null
             $tl = @()
             foreach ($ln in $lines) {
                 $p = $ln -split "\|", 2
