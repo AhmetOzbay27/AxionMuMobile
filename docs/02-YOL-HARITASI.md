@@ -42,8 +42,13 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   (Kolay 3 / Orta 5 / Zor 4), uygulama sırası ve 6 config eksiği tespit edildi.
   Canlı revizyonun iki kaynağı da aştığı doğrulandı (BossGuild skor/ödül,
   BuyVip reload, Alchemist load koruması hiçbir kaynakta yok).
-- ⬜ **2b.1** 161 dosyanın diff matrisi (SPK taban vs MUIG donor): hangisi
-  gerçekten daha yeni, hangisi SPK-özel değişiklik içeriyor.
+- ✅ **2b.1** Ortak dosya diff matrisi (30.09.2026) →
+  [10-DIFF-MATRISI.md](10-DIFF-MATRISI.md): 213 gerçek ortak dosya analiz edildi
+  (218 − 5 donorde-yok). Sonuç: 77 birebir, 30 G1 (temiz donor alımı), 25 G2
+  (kontrollü), 10 G3 (manuel birleşim), 40 G4 (SPK-özel şüpheli — toplu alım
+  yasak), 31 G5 (iki farklı dal). 2b.2 sırası: G1 hızlı kazanç → G2 → protokol
+  P0 diff tablosu → G3/G4 (SPK korumalı) → G5. Ham veri:
+  `BuildLog\envanter\2b1_diff_matrisi.csv`.
 - ⬜ **2b.2** Risk gruplarına ayır (protokol dokunanlar / UI / yardımcı) ve
   grup grup entegre et: her grup → derle → CHANGELOG → commit.
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,

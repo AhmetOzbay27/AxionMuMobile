@@ -36,9 +36,9 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 | v2    | Parite sonrası yeni geliştirme aşaması | 🔒 kapalı (parite bitmeden açılmaz) |
 
 **Şu anki tek aktif görev:** Faz 2b — MUIG ortak dosya entegrasyonu
-(2b.0 ✅ 4 donor modül; 2b.0-E ✅ 12 ezilen dosya karşılaştırma raporu →
-[09](09-EZILEN-12-DOSYA-KARSILASTIRMA.md); sıradaki 2b.1 diff matrisi).
-bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
+(2b.0 ✅ 4 donor modül · 2b.0-E ✅ 12 ezilen dosya raporu → [09](09-EZILEN-12-DOSYA-KARSILASTIRMA.md) ·
+2b.1 ✅ diff matrisi → [10](10-DIFF-MATRISI.md); sıradaki **2b.2**: G1 30 dosya
+hızlı kazanç + protokol P0 diff tablosu). bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 
 ---
 
@@ -85,6 +85,7 @@ bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 | [03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md](03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md) | Eksikler + kaynak eşlemesi | Her entegrasyon tamamlandığında |
 | [04-HATA-GUNLUGU.md](04-HATA-GUNLUGU.md) | Açık/kapalı hata kayıtları | Hata bulunduğunda/çözüldüğünde |
 | [09-EZILEN-12-DOSYA-KARSILASTIRMA.md](09-EZILEN-12-DOSYA-KARSILASTIRMA.md) | 12 ezilen dosyanın bizim↔donor↔canlı analizi + 2b.2 uygulama sırası | Her E-kalem entegre edildiğinde |
+| [10-DIFF-MATRISI.md](10-DIFF-MATRISI.md) | 2b.1 çıktısı: 213 ortak dosyanın diff matrisi, G1-G5 risk grupları | 2b.2 grup alımlarında |
 | [CHANGELOG.md](CHANGELOG.md) | Tüm değişikliklerin kaydı | **Her değişiklikte** |
 
 Dış plan dosyası: `C:\Axion Mu Mobile\analiz\SPK-UYGULAMA-PLANI.md` (eski

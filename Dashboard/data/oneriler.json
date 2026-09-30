@@ -1,17 +1,23 @@
 {
-  "updated": "2026-09-30 19:25:00",
+  "updated": "2026-09-30 20:40:00",
   "note": "Bu dosyayi ajan (Buffy) gunceller. 'prompt' sohbete gonderilecek komutun ta kendisi.",
   "suggestions": [
     {
-      "id": "2b1",
-      "label": "2b.1 diff matrisini başlat",
-      "desc": "161 ortak dosyanın SPK tabanı ↔ MUIG donor karşılaştırması; risk gruplarına ayırma",
-      "prompt": "Faz 2b.1'i başlat: 161 ortak dosyanın SPK tabanı ile MUIG donor arasındaki diff matrisini çıkar ve risk gruplarına göre sınıflandır."
+      "id": "2b2a",
+      "label": "2b.2-A: G1'in 30 dosyasını al (hızlı kazanç)",
+      "desc": "Diff matrisinde %90+ benzerlikli, risksiz donor alımı — 3 grup halinde derle+commit",
+      "prompt": "2b.2-A'yı başlat: 2b.1 diff matrisinin G1 grubundaki 30 dosyayı (docs/10 §3) 3 grup halinde donörden al, her grupta derle + CHANGELOG + commit."
+    },
+    {
+      "id": "p0",
+      "label": "2b.2-P0: protokol diff tablosu",
+      "desc": "Protocol/DS/CS/JS/ES/Socket dosyalarının opcode+struct karşılaştırması — protokol donor alımının ön şartı",
+      "prompt": "2b.2-P0: protokol dosyalarının (Protocol, DS/CS/JS/ESProtocol, SocketManager, Connection, IpManager) diff tablosunu opcode/struct düzeyinde çıkar ve canlı exe ile doğrula."
     },
     {
       "id": "e10",
       "label": "2b.2'yi E-10 Reconnect ile başlat",
-      "desc": "En kolay ezilen dosya: donor sürümü al, derle, CHANGELOG + commit",
+      "desc": "En kolay ezilen dosya: donor sürümü al, derle, CHANGELOG + commit (09 raporu sırası)",
       "prompt": "Faz 2b.2'yi E-10 Reconnect ile başlat: donor sürümü alın, derle, CHANGELOG + commit ile adımı kapat."
     },
     {
@@ -19,12 +25,6 @@
       "label": "6 config eksiğini kapat",
       "desc": "ChangeClass.xml, CustomBuyVip.txt, CustomJewel.txt, ZenDrop.xml, EventTime.xml, ThuMuaDoExc.txt kopyala + CustomJewel çağrısını .txt'e çevir",
       "prompt": "09 raporundaki 6 eksik config dosyasını canlı Sub-1'den salt-okunur kopyala ve ServerInfo'daki CustomJewel çağrısını .txt formatına çevirip derlemeyi doğrula."
-    },
-    {
-      "id": "bossguild",
-      "label": "BossGuild çözümlemesi (E-01)",
-      "desc": "Canlı map + log akışından skor/ödül/spawn sistemi tasarım taslağı",
-      "prompt": "E-01 BossGuild için canlı davranış çözümlemesi yap: map sembolleri + canlı log akışından HandleBossKill/SpawnBoss/ödül sisteminin tasarım taslağını çıkar."
     }
   ]
 }

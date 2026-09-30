@@ -7,6 +7,33 @@
 
 ---
 
+## [26.09.30] Faz 2b.1 — ortak dosya diff matrisi (docs/10)
+
+**Ne yapıldı**
+- 2a.1 envanterindeki 218 ortak dosyadan 5'i donorde yok (BossGuild,
+  ChangeClass, CustomPet, FakeOnline, ZenDrop → 09 raporu E-kalemleri); kalan
+  **213 gerçek ortak dosya** analiz edildi.
+- Script: `BuildLog\envanter\2b1_analiz.sh` → `2b1_diff_matrisi.csv`
+  (dosya; satırlar; birebir; benzer%; metot yüzeyi; ham diff).
+- Rapor: `docs\10-DIFF-MATRISI.md` — G1..G5 risk grupları + 2b.2 sırası:
+  **77 birebir · G1=30 (%90+, temiz donor alımı) · G2=25 (%70-89, kontrollü) ·
+  G3=10 (%50-69, manuel birleşim) · G4=40 (%30-49, SPK-özel — toplu alım
+  yasak) · G5=31 (<%30, iki farklı dal)**.
+- Kritik bulgular: protokol katmanı benzerliği %27-45 (P0 diff tablosu olmadan
+  donor alınamaz); 2b.0 kanca dosyaları G4/G5'te (ServerInfo %7, ItemManager %13)
+  → alımlarda kancalar korunacak; PacketManager zaten birebir.
+- 00/02 güncellendi; dashboard öneri kartları 2b.2-A/P0'a çekildi.
+
+**Neden** — 2b.2'nin hangi dosyaya nasıl davranacağını (alım/birleştirme/
+çözümleme) önceden belirlemek; toplu donor alımı riskini elemek.
+
+**Doğrulama**
+- CSV 213 satır + başlık; bant sayıları toplamı 213 ile tutarlı.
+- Birebir sayısı (77) bağımsız cmp ile doğrulandı.
+- Örnek saplama kontrolleri: PacketManager birebir; Reconnect %85 (09/E-10 ile uyumlu).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Pano v5 — canlı sohbet akışı paneli
 
 **Ne yapıldı**
