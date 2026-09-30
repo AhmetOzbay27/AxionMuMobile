@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 
 struct cItemLevel
 {
@@ -14,7 +15,7 @@ public:
 	cCItemLevel();
 	~cCItemLevel();
 	void Load(char* path);
-	char * GetItemName(int ItemIndex, int Level);
+	const char* GetItemName(int ItemIndex, int Level);
 public:
 	std::map<int, cItemLevel> m_ItemData;
 }; extern cCItemLevel gItemLevel;

@@ -90,7 +90,14 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     (CustomMonster CB_BXHDMG, GameMain G5-include'ları, DefaultClassInfo global
     ad-zinciri, ItemOption enum kayması, Warehouse DS-çifti, MemScript parser).
     GS temiz → 10.776.064 B.
-  - ⬜ 2b.2-E..F: G4 (SPK korumalı) → G5
+  - ✅ **2b.2-F dalga 6** (30.09.2026): G4 bandı — 8 dosya alındı (GameMaster,
+    ItemLevel, Log, EventHideAndSeek, ShopManager, SetItemType, 380ItemOption,
+    ItemBagEx — whitespace+güvenli declare), 19 gerekçeli korundu (SPK-imleç:
+    ChaosBox/CustomAttack/GameServer/User/Viewport; NORMALIZE_LEVEL:
+    BloodCastle/DevilSquare/IllusionTemple; cascade: Helper/QuestReward derlemeyle
+    yakalandı-geri alındı; enum/layout: SetItemOption/SocketItemOption;
+    CastleSiege 2c'ye). GS temiz → 10.776.064 B.
+  - ⬜ 2b.2-G: G5 (31 dosya, iki farklı dal)
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.

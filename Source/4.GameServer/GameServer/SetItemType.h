@@ -14,6 +14,12 @@ struct SET_ITEM_TYPE_INFO
 	int OptionIndex[MAX_SET_ITEM_OPTION_INDEX];
 };
 
+typedef	struct
+{
+	BYTE	byOption[2];
+	BYTE	byMixItemLevel[2];
+}ITEM_SET_TYPE;
+
 class CSetItemType
 {
 public:
@@ -22,6 +28,9 @@ public:
 	void Init();
 	void Load(char* path);
 	void SetInfo(SET_ITEM_TYPE_INFO info);
+	void ExportXML(std::string filename);
+	void ExportBMD(std::string filename);
+
 	SET_ITEM_TYPE_INFO* GetInfo(int index);
 	bool CheckSetItemType(int index);
 	int GetSetItemOptionIndex(int index,int number);

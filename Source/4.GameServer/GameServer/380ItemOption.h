@@ -36,8 +36,11 @@ public:
 	virtual ~C380ItemOption();
 	void Init();
 	void Load(char* path);
+	void ExportXML(std::string filename);
+
 	void SetInfo(ITEM_380_OPTION_INFO info);
 	ITEM_380_OPTION_INFO* GetInfo(int index);
+	int GetValue(int index);
 	bool Is380Item(CItem* lpItem);
 	void Calc380ItemOption(LPOBJ lpObj,bool flag);
 	void InsertOption(LPOBJ lpObj,int index,int value,bool flag);

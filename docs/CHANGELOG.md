@@ -7,6 +7,56 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-F — G4 bandı dalga 6: 8 dosya alındı, 19 dosya gerekçeli korundu
+
+**Ne yapıldı**
+- G4'ün 40 dosyasından 13'ü önceki dalgalarda kararlıydı (8 protokol P0,
+  Monster dalga-2, BotBuffer/OfflineMode/ThuMuaDoExc E-kalemleri). Kalan 27
+  dosya: alarm taraması (NORMALIZE_LEVEL/GetLevel/gProtect/BlackList/
+  HolyItem/vipIndex vb. donor-tekil satırlarda) + bizim-tekil metot + .h enum
+  kontrolü.
+- **Alındı (donor-birebir, whitespace+güvenli declare):** GameMaster(+h),
+  ItemLevel(+h), Log.cpp (**Log.h bizim kaldı — LOG_ANTIFLOOD bizim ek**),
+  EventHideAndSeek(+h), ShopManager(+h GetInventory declare), SetItemType(+h
+  ITEM_SET_TYPE + Export*), 380ItemOption(+h ExportXML/GetValue),
+  ItemBagEx(+h CreateItem declare).
+- **Cascade-deny dersi (derleme ile yakalandı):** Helper donor'u donor-
+  OfflineMode API'si istedi (Start(aIndex) 1-arg + Unpack) → bizim
+  OfflineMode'da yok → **Helper bizim döndü**. QuestReward donor'u
+  `gCharacterManager` (DefaultClassInfo ad-değişimi) + donor Quest API
+  (GCQuestRewardSend 2-arg) istedi → **QuestReward bizim döndü**. İkisi de
+  checkout ile geri alındı.
+- **Gerekçeli korundu (19):**
+  - Protokol 8: P0 kararı (docs/11).
+  - SPK-imleç: ChaosBox(40), CustomAttack(51), GameServer.cpp(33), User(26),
+    Viewport(8) — bizim-olan satırlarda SPK modül çağrıları yoğun.
+  - NORMALIZE_LEVEL zinciri: BloodCastle(14), DevilSquare(12),
+    IllusionTemple(5) alarm'lı — dalga-3 ChaosCastle/Kalima kararıyla aynı.
+  - Cascade/bağımlılık: QuestReward (gCharacterManager), Helper (donor
+    OfflineMode API), Fruit (vector<int> tablo refactor'u), MonsterManager
+    (EventGvG/EventFindPath donorde VAR bizde YOK), Guild.h (**bizim
+    BOSS_GUILD TotalScore1 alanı** — E-01 için kritik), ItemBag
+    (GetItemNewOption_New bizim-tekil), MasterSkillTree
+    (GetMasterLevelExpTlbInfo bizim-tekil), SetItemOption (**MAX_SET_ITEM_OPTION
+    254↔100 enum kayması**), SocketItemOption (**Name[32]→[64] struct-layout**).
+  - Semantik satır: MapItem — donor DropCreateItem'a `Option1=
+    CheckItemSkill(index)` eklemiş (silah-skill drop davranışı) — canlı kanıt
+    yok, bizim korunur.
+  - Büyük fark: CastleSiege (donor +1913/−1426) alarm'sız ama revizyon
+    derin — satır-satır inceleme 2c'ye.
+  - E-kalemleri: OfflineMode(E-09), ThuMuaDoExc(E-11), BotBuffer(E-03) —
+    dalga-4 kararları.
+
+**Neden** — G4 kuralı: toplu alım yasak; her dosya için "SPK-özellik mi,
+eskimelik mi" ayrımı yapıldı; cascade'ler derlemeyle yakalanıp geri alındı.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.776.064 B** (23:54), pdb güncel;
+- 8 cpp donor-birebir (cmp); Helper/QuestReward checkout geri dönüşü doğrulandı;
+- Log.h bizim sürümde (LOG_ANTIFLOOD korunmuş).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-D — G3 manuel birleştirme dalga 5: 4 dosya alındı, 6 dosya gerekçeli korundu
 
 **Ne yapıldı**

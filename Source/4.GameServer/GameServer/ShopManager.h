@@ -32,6 +32,9 @@ public:
 	bool GetItemByIndex(int index,CItem* lpItem,int slot);
 	bool GetItemByMonsterClass(int MonsterClass,CItem* lpItem,int slot);
 	long GetItemCountByIndex(int index);
+
+	CItem* GetInventory(int index);
+
 	long GetItemCountByMonsterClass(int MonsterClass);
 	bool GCShopItemListSendByIndex(int index,int aIndex);
 	bool GCShopItemListSendByMonsterClass(int MonsterClass,int Map,int X,int Y,int aIndex);

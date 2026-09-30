@@ -50,6 +50,7 @@ public:
 	bool DropItem(LPOBJ lpObj,int map,int x,int y);
 	bool CheckDropClass(LPOBJ lpObj,int type,int RequireClass[MAX_CLASS]);
 	bool GetRandomItemDropLocation(int map,int* ox,int* oy,int tx,int ty,int count);
+	void CreateItem(ITEM_BAG_EX_ITEM_INFO* lpItemBagItemInfo, LPOBJ lpObj, int OptionValue, int map, int px, int py);
 public:
 	std::map<int,ITEM_BAG_EX_INFO> m_ItemBagInfo;
 	std::map<int,std::vector<ITEM_BAG_EX_ITEM_INFO>> m_ItemBagItemInfo;

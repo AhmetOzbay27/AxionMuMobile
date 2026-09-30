@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 23:50:00",
+  "updated": "2026-09-30 23:55:00",
   "status": "ok",
-  "text": "2b.2-D dalga 5 TAMAM (G3 manuel birlesim): 4 dosya alindi — CustomDeathMessage(+h), EventKillAll(+h) donor-birebir; CustomQuest(+h) GetLevel->Level ve EventRunAndCatch(+h) gate=1 korumasiyla 1'er satir adaptasyon. 6 dosya gerekceli korundu: CustomMonster (CB_BXHDMG feature), GameMain (G5 include'lari + PROTECT makrolari), DefaultClassInfo (global ad-zinciri), ItemOption (enum kaymasi 128/129), Warehouse (DS 0x76 cifti), MemScript (parser riske karsi korundu). GS temiz -> 10.776.064 B (23:46). Kalan: G4 (38 dosya) + G5 (31) + faz kapanisi."
+  "text": "2b.2-F dalga 6 TAMAM (G4): 8 dosya alindi (GameMaster, ItemLevel, Log, EventHideAndSeek, ShopManager, SetItemType, 380ItemOption, ItemBagEx — whitespace + guvenli declare'lar, donor-birebir dogrulandi), 19 dosya gerekceli korundu (SPK-imlec: ChaosBox/CustomAttack/GameServer/User/Viewport; NORMALIZE_LEVEL: BloodCastle/DevilSquare/IllusionTemple; cascade dersi: Helper/QuestReward derlemeyle yakalanip geri alindi; enum kaymasi: SetItemOption/SocketItemOption). GS temiz -> 10.776.064 B (23:54). Kalan: G5 (31 dosya) + faz kapanisi."
 }
