@@ -99,3 +99,4 @@ BuildLog/
 *.sdf
 Source/Util/cryptopp/[Rr]elease/
 Source/Util/cryptopp/[Dd]ebug/
+ClientBuild_192.168.99.200/
