@@ -145,3 +145,22 @@ camera = float32(sv[~0x55A]); ...
 5. `IpAddressPort`'un ServerData'daki konumu (header'da bulunamadı; port
    muhtemelen ConnectIP'de değil — bağlantı portu ini'den gelmeye devam
    edebilir; Engine.exe testiyle netleşecek).
+
+---
+
+## 7. EKLEME: Engine.exe OKUMA İPUÇLARI (ilk tarama, 30.09.2026)
+
+- `Data\SPK\Connect.P.bmd` (string, nokta=aynı byte) — IP yükü "Connect" +
+  "IP" ayrı segmentlerde; muhtemelen dosya adı iki parça halinde birleştiriliyor
+  (anti-string taktiği). Okuma noktası: `[SPK] Data\SPK\Connect?P.bmd`.
+- `Data\SPK\ServerData.bmd` doğrudan geçiyor; komşusu: `Error 0x0000FF —
+  "The input data is inconsistent! Please verify..."` → dosya açılışta
+  **okunuyor ve doğrulanıyor** (yanlış içerik = açılış hatası). Bu, 2d.0'da
+  ürettiğimiz dosyanın canlı istemcide kabul testinin nasıl yapılacağını
+  gösterir: Engine.exe'yi dekode edilmiş ServerData ile başlatmak.
+- `Data\SPK\Config%s\Info\*.bmd` deseni: Config altında dinamik alt klasör
+  (muhtemelen dil/tema değişkeni %s) — SPK_CRCFILE.ini'deki FOUND/NOT FOUND
+  listesiyle uyumlu.
+- `SPK_CRCFILE.ini` Engine.exe'de YOK → CRC raporu yalnızca GetMainInfo
+  (üretici) tarafının aracı; istemci doğrudan binary doğrulama yapıyor.
+- Kaynak imza: "8.5.8 - Website: http://mu-spk.info [SPK]" (motor sürüm satırı).
