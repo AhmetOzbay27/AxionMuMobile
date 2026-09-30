@@ -1,0 +1,54 @@
+1	"Stadium"	"Arena"	100000	300	50	400
+24	"Loren Deep"	"LorenDeep"	0	50	104	400
+2	"Lorencia"	"Lorencia"	0	10	17	400
+3	"Noria"	"Noria"	0	10	27	400
+31	"Elveland"	"Elbeland"	0	10	0	400
+32	"Elveland2"	"Elbeland2"	2500	10	268	400
+43	"Elveland3"	"Elbeland3"	3000	10	269	400
+4	"Devias"	"Devias"	2000	20	22	400
+5	"Devias2"	"Devias2"	2500	20	72	400
+6	"Devias3"	"Devias3"	3000	20	73	400
+7	"Devias4"	"Devias4"	3500	20	74	400
+8	"Dungeon"	"Dungeon"	3000	30	2	400
+9	"Dungeon2"	"Dungeon2"	3500	40	6	400
+10	"Dungeon3"	"Dungeon3"	4000	50	10	400
+11	"Atlans"	"Atlans"	4000	70	49	400
+12	"Atlans2"	"Atlans2"	4500	80	75	400
+13	"Atlans3"	"Atlans3"	5000	90	76	400
+14	"LostTower"	"LostTower"	5000	50	42	400
+15	"LostTower2"	"LostTower2"	5500	50	31	400
+16	"LostTower3"	"LostTower3"	6000	50	33	400
+17	"LostTower4"	"LostTower4"	6500	60	35	400
+18	"LostTower5"	"LostTower5"	7000	60	37	400
+19	"LostTower6"	"LostTower6"	7500	70	39	400
+20	"LostTower7"	"LostTower7"	8000	70	41	400
+21	"Tarkan"	"Tarkan"	8000	140	57	400
+22	"Tarkan2"	"Tarkan2"	8500	140	77	400
+25	"Aida1"	"Aida1"	8500	150	119	400
+27	"Aida2"	"Aida2"	8500	150	140	400
+23	"Icarus"	"Icarus"	10000	170	63	400
+28	"KanturuRuins1"	"Kanturu_ruin1"	9000	160	138	400
+29	"KanturuRuins2"	"Kanturu_ruin2"	9000	160	141	400
+45	"KanturuRuins3"	"Kanturu_ruin_island"	15000	160	334	400
+30	"KanturuRelics"	"Kanturu_Remain"	12000	230	139	400
+46	"Karutan1"	"Karutan1"	13000	170	335	400
+47	"Karutan2"	"Karutan2"	14000	170	344	400
+34	"LaCleon"	"Raklion"	15000	280	287	400
+33	"PeaceSwamp"	"Swamp_of_Calmness"	15000	400	273	400
+42	"Vulcanus"	"Vulcanus"	15000	300	294	400
+83	"Acheron"	"Acheron"	9000	160	443	400
+84	"Debenter"	"Debenter"	9000	160	452	400
+85	"Uruk"	"Uruk"	15000	160	453	400
+86	"Ferea"	"Ferea"	12000	230	454	400
+87	"Nars"	"Nars"	13000	170	488	400
+88	"NixieLake"	"Nixies_Lake"	14000	170	455	400
+89	"DeppDungeon1"	"Depp_Dungeon1"	15000	280	456	400
+90	"DeppDungeon2"	"Depp_Dungeon2"	15000	280	457	400
+91	"DeppDungeon3"	"Depp_Dungeon3"	15000	280	458	400
+92	"DeppDungeon4"	"Depp_Dungeon4"	15000	280	459	400
+94	"SwampOfDarkness"	"Swamp_Of_Darkness"	15000	200	461	400
+95	"Kubera Mine"	"kubera_Mine"	15000	200	460	400
+96	"Scotch Canyon"	"Scotch_Canyon"	15000	200	460	400
+97	"DareDevil"	"DareDevil"	15000	200	460	400
+98	"Exilio"	"Exilio"	15000	200	460	400
+end

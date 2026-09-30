@@ -1,0 +1,1 @@
+Use Scale 99 in custommonster.txt

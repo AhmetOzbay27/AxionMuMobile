@@ -1,0 +1,52 @@
+// ----------------------------------------------------------------------------------
+// Type = 0: NPC
+// Type = 1: Monster
+// ----------------------------------------------------------------------------------
+// MonsterID | Type 	| Name 					| Dir 								| Folder 						| BMDFile 			| Size
+// ----------------------------------------------------------------------------------
+600		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_423"			1.00
+601		0		"SpiritNixie"			"Data\\Custom\\Monster\\Nixie\\"	"Custom\\Monster\\Nixie\\"		"SpiritNixie"		1.50
+602		0		"Priest James"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"james"				3.00
+603		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_012"			1.00
+604		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_421"			1.00
+609		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_420"			1.00
+610		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_425"			1.00
+611		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_031"			1.00
+612		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_032"			1.00
+613		0		"NPC TESTING"			"Data\\Custom\\Monster\\NPC\\"		"Custom\\Monster\\NPC\\"		"NPC_419"			1.00
+700		1		"Devilfairy"			"Data\\Custom\\Monster\\Debenter\\"	"Custom\\Monster\\Debenter\\"	"monster240"		1.50
+701		1		"Elemental Beast"		"Data\\Custom\\Monster\\Debenter\\"	"Custom\\Monster\\Debenter\\"	"monster241"		0.50
+702		1		"Elemental Knight"		"Data\\Custom\\Monster\\Debenter\\"	"Custom\\Monster\\Debenter\\"	"monster242"		1.50
+703		1		"Fairy Uruk"			"Data\\Custom\\Monster\\Urk\\"		"Custom\\Monster\\Urk\\"		"monster260"		1.50
+704		1		"Elemental Beast Uruk"	"Data\\Custom\\Monster\\Urk\\"		"Custom\\Monster\\Urk\\"		"monster261"		1.50
+705		1		"Elemental Knight Uruk"	"Data\\Custom\\Monster\\Urk\\"		"Custom\\Monster\\Urk\\"		"monster262"		1.50
+706		1		"Boss Lord Silvester"	"Data\\Custom\\Monster\\Urk\\"		"Custom\\Monster\\Urk\\"		"monster263"		1.80
+880		1		"Ferea Knight"			"Data\\Custom\\Monster\\Ferea\\"	"Custom\\Monster\\Ferea\\"		"monster286"		0.60
+881		1		"Ferea Fighter"			"Data\\Custom\\Monster\\Ferea\\"	"Custom\\Monster\\Ferea\\"		"monster288"		0.60
+882		1		"Ferea Archer"			"Data\\Custom\\Monster\\Ferea\\"	"Custom\\Monster\\Ferea\\"		"monster287"		0.60
+883		1		"Ferea General"			"Data\\Custom\\Monster\\Ferea\\"	"Custom\\Monster\\Ferea\\"		"monster289"		3.50
+884		1		"Lord Of Ferea"			"Data\\Custom\\Monster\\Ferea\\"	"Custom\\Monster\\Ferea\\"		"monster290"		1.00
+885		1		"Nars DevilFairy"		"Data\\Custom\\Monster\\Nars\\"		"Custom\\Monster\\Nars\\"		"monster274"		1.50
+886		1		"Nars Elemental Beast"	"Data\\Custom\\Monster\\Nars\\"		"Custom\\Monster\\Nars\\"		"monster275"		1.50
+887		1		"Nars Elemental Knight"	"Data\\Custom\\Monster\\Nars\\"		"Custom\\Monster\\Nars\\"		"monster276"		1.50
+888		1		"Boss Core Magriffy"	"Data\\Custom\\Monster\\Nars\\"		"Custom\\Monster\\Nars\\"		"monster277"		1.50
+889		1		"Paraca"				"Data\\Custom\\Monster\\Nixie\\"	"Custom\\Monster\\Nixie\\"		"Paraca"			1.30
+890		1		"Bass"					"Data\\Custom\\Monster\\Nixie\\"	"Custom\\Monster\\Nixie\\"		"Bass"				1.30
+891		1		"Vasuky"				"Data\\Custom\\Monster\\Nixie\\"	"Custom\\Monster\\Nixie\\"		"Vasuki"			1.30
+892		1		"Boss Nix"				"Data\\Custom\\Monster\\Nixie\\"	"Custom\\Monster\\Nixie\\"		"BossNixie"			1.50
+893		1		"Mindigger"				"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster338"		1.50
+894		1		"Main Carrier"			"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster339"		1.50
+895		1		"Mine Porter"			"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster340"		1.50
+896		1		"Main Driller"			"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster341"		1.50
+897		1		"Death Digger"			"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster342"		1.50
+898		1		"Death Showbell"		"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster343"		1.50
+899		1		"Death Porter"			"Data\\Custom\\Monster\\Kubera\\"	"Custom\\Monster\\Kubera\\"		"Monster344"		1.50
+900		1		"Boss God of Darkness"	"Data\\Custom\\Monster\\Darkness\\"	"Custom\\Monster\\Darkness\\"	"Monster332"		1.90
+901		1		"Monster in the Swamp"	"Data\\Custom\\Monster\\Darkness\\"	"Custom\\Monster\\Darkness\\"	"Monster330"		1.50
+902		1		"Swamp Monster Pet"		"Data\\Custom\\Monster\\Darkness\\"	"Custom\\Monster\\Darkness\\"	"Monster328"		1.00
+903		1		"Water Monster"			"Data\\Custom\\Monster\\Darkness\\"	"Custom\\Monster\\Darkness\\"	"Monster331"		1.50
+904		1		"Golden Hell Main"			"Data\\Custom\\Monster\\Gold\\HellMain\\"	"Custom\\Monster\\Gold\\HellMain\\"	"monster106"		1.80
+905		1		"Golden Kundun Ilusion"		"Data\\Custom\\Monster\\Gold\\Kundun\\"	"Custom\\Monster\\Gold\\Kundun\\"	"monster65"		2.20
+906		1		"Golden Selupan"			"Data\\Custom\\Monster\\Gold\\Selupan\\"	"Custom\\Monster\\Gold\\Selupan\\"	"Monster151"		2.00
+907		1		"Golden Medusa"			"Data\\Custom\\Monster\\Gold\\Medusa\\"	"Custom\\Monster\\Gold\\Medusa\\"	"monster193"		1.60
+end

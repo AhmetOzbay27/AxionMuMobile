@@ -1,0 +1,1 @@
+ALTER TABLE [MuOnline].[dbo].[WarehouseGuild] ADD StatusRender int NOT NULL DEFAULT (0)

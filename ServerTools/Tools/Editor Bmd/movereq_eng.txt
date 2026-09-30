@@ -1,0 +1,38 @@
+40	"DMU (VIP)"	"Silent"	10000	10	345	400
+1	"Arena"	"Arena"	100000	200	50	400
+97	"Stadium"	"Stadium"	100000	200	51	400
+2	"Lorencia"	"Lorencia"	0	10	17	400
+3	"Noria"	"Noria"	0	10	27	400
+4	"Devias"	"Devias"	2000	20	22	400
+5	"Devias2"	"Devias2"	2500	30	72	400
+6	"Devias3"	"Devias3"	3000	40	73	400
+7	"Devias4"	"Devias4"	3500	45	74	400
+8	"Dungeon"	"Dungeon"	3000	30	2	400
+9	"Dungeon2"	"Dungeon2"	3500	40	6	400
+10	"Dungeon3"	"Dungeon3"	4000	50	10	400
+11	"Atlans"	"Atlans"	4000	70	49	400
+12	"Atlans2"	"Atlans2"	4500	80	75	400
+13	"Atlans3"	"Atlans3"	5000	90	76	400
+14	"LostTower"	"LostTower"	5000	50	42	400
+15	"LostTower2"	"LostTower2"	5500	60	31	400
+16	"LostTower3"	"LostTower3"	6000	70	33	400
+17	"LostTower4"	"LostTower4"	6500	80	35	400
+18	"LostTower5"	"LostTower5"	7000	90	37	400
+19	"LostTower6"	"LostTower6"	7500	100	39	400
+20	"LostTower7"	"LostTower7"	8000	110	41	400
+21	"Tarkan"	"Tarkan"	8000	140	57	400
+22	"Tarkan2"	"Tarkan2"	8500	160	77	400
+25	"Aida1"	"Aida1"	8500	150	119	400
+27	"Aida2"	"Aida2"	8500	170	140	400
+23	"Icarus"	"Icarus"	10000	170	63	400
+28	"KanturuRuins1"	"Kanturu_ruin1"	9000	170	138	400
+29	"KanturuRuins2"	"Kanturu_ruin2"	9000	190	141	400
+45	"KanturuRuins3"	"Kanturu_ruin_island"	15000	170	334	400
+30	"KanturuRelics"	"Kanturu_Remain"	12000	230	139	400
+34	"LaCleon"	"Raklion"	15000	280	287	400
+33	"PeaceSwamp"	"Swamp_of_Calmness"	15000	400	273	400
+42	"Vulcanus"	"Vulcanus"	15000	300	294	400
+24	"Loren Deep"	"LorenDeep"	0	350	104	400
+26	"CryWolf"	"Crywolf"	10000	190	63	400
+41	"Barracks"	"Barrack"	10000	190	63	400
+end

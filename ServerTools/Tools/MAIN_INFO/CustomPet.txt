@@ -1,0 +1,62 @@
+//==============================================================================
+// MasterCodex Season 6 - Mu Online
+// Developer: MasterCodex
+// Last review: 02.20.2020
+//==============================================================================
+// Custom Pet Config File
+// Agregar archivos en: [Data/Item]
+// Index  - ItemIndex
+// IndexInv - Index Texture view in inventory
+// ModelName - Name File BMD
+// Fenrir    - Effect Fenrir
+// 1 - Effect Fenrir
+// 2 - Effect Fenrir Golden
+// Inv - Inventory
+// Drop - Drop in game
+// View - Size in use player
+// Type: Moviment like a:
+// 0  - Demon			[NO FOUNT][UPDATE 14]
+// 1  - Rudolf			[NO FOUNT][UPDATE 14]
+// 2  - Panda			[NO FOUNT][UPDATE 14]
+// 3  - Unicorn			[NO FOUNT][UPDATE 14]
+// 4  - Skeleton		[NO FOUNT][UPDATE 14]
+// 5  - Fenrir (Mount)		[UPDATE 13]
+// 6  - Dark Horse (Mount) 	[UPDATE 13]
+// 7  - Uniria (Mount) 	[NO FOUNT][UPDATE 14]
+// 8  - Muun Pet 		[UPDATE 7]
+// 9  - Angel
+// 10 - Satan
+// 11 - Dinorant (Mount) 		[NO FOUNT][UPDATE 14]
+//===========================================================================
+//Index	IndexInv Type	ModelName		Fenrir	Inv	Drop	View
+//===========================================================================
+  6856	6856	8	"Pet38"			0	1.0	1.0	1.0
+  6857	6857	8	"ghost"			0	1.0	1.0	1.0
+  6858	6858	8	"petsteel"		0	1.0	1.0	1.0
+  6859	6859	8	"adventurecat"		0	1.0	1.0	1.0
+  6860	6860	8	"angrychickenup"	0	1.0	1.0	1.0
+  6861	6861	8	"baelpet_evol"		0	1.0	1.0	1.0
+  6862	6862	8	"bateriaup"		0	1.0	1.0	1.0
+  6863	6863	8	"beagle"		0	1.0	1.0	1.0
+  6864	6864	9	"bluefairyup"		0	0.6	0.6	0.6
+  6865	6865	8	"bogeonpet_evol"	0	1.0	1.0	1.0
+  6866	6866	8	"bulldog"		0	1.0	1.0	1.0
+  6867	6867	8	"cyclopspet_evol"	0	1.0	1.0	1.0
+  6868	6868	8	"figure"		0	1.0	1.0	1.0
+  6869	6869	8	"knightinstructorup"	0	1.0	1.0	1.0
+  6870	6870	8	"knightzombieup"	0	1.0	1.0	1.0
+  6871	6871	8	"lycanpet_evol"		0	1.0	1.0	1.0
+  6872	6872	8	"mermaidpet_evol"	0	1.0	1.0	1.0
+  6873	6873	8	"minopet_evol"		0	1.0	1.0	1.0
+  6874	6874	8	"mommothpet_evol"	0	1.0	1.0	1.0
+  6875	6875	8	"mummyboy"		0	1.0	1.0	1.0
+  6876	6876	9	"polarispet_evol"	0	1.0	1.0	1.0
+  6877	6877	8	"reynerpet_evol"	0	1.0	1.0	1.0
+  6878	6878	8	"rio"			0	1.0	1.0	1.0
+  6879	6879	8	"skullpet"		0	1.0	1.0	1.0
+  6880	6880	8	"alcamopet"		0	1.0	1.0	1.0
+  6881	6881	8	"alcamopet_evol"	0	1.0	1.0	1.0
+  6886	6660	6	"ghost_horse"		0	1.0	1.0	1.0
+  6887	6693	5	"fenril_gold"		2	1.0	1.0	0.85
+  6888	6658	7	"Pet_YYXS"		2	1.0	1.0	1.0
+end

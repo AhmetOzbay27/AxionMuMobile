@@ -1,0 +1,11 @@
+//=====================================================================
+// Edited by Willian Bento
+// Programmer Takumi12
+// Files CastleSiegeMU
+// PET  Glow
+//=====================================================================
+//Index	Type	Effect  ColorR	ColorG	ColorB
+6886	3	70	94	94	153
+6886	2	70	42	80	50
+6886	1	2	255	255	255
+end

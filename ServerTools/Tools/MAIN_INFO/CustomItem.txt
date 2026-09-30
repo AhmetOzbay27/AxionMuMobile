@@ -1,0 +1,384 @@
+//=======================================================
+// BY: TAKUMI12 FILES GAMINGMU
+//=======================================================
+// Index     = ItemIndex: (Type * 512) + Index;
+// R         = ColorRed;
+// G         = ColorGreen;
+// B         = ColorBlue;
+// ModelName = "Name" file bmd of the model;
+//=======================================================
+//Index	R	G	B	ModelName
+//=======================================================
+//=========================
+// Set BloodAngel
+//=========================
+//-- BloodAngel Helm
+3682	205	192	176	"BloodangelKnightHelm"		//Bloodangel kinght
+3683	205	192	176	"BloodangelWizardHelm"		//Bloodangel Wizzar
+3684	205	192	176	"BloodangelFairyHelm"		//Bloodangel Elf
+3685	205	192	176	"BloodangelCursedHelm"		//Bloodangel Summoner
+3687	205	192	176	"BloodangelLordHelm"		//Bloodangel Lord
+3688	205	192	176	"BloodangelFighterHelm"		//Bloodangel fighter
+//-- BloodAngel Armor
+4194	205	192	176	"BloodangelKnightArmor"		//Bloodangel kinght
+4195	205	192	176	"BloodangelWizardArmor"		//Bloodangel Wizzard
+4196	205	192	176	"BloodangelFairyArmor"		//Bloodangel Elf
+4197	205	192	176	"BloodangelCursedArmor"		//Bloodangel Summoner
+4198	205	192	176	"BloodangelKnightArmor"		//Bloodangel magic
+4199	205	192	176	"BloodangelWizardArmor"		//Bloodangel lord
+4200	205	192	176	"BloodangelKnightArmor"		//Bloodangel fighter
+//-- BloodAngel Pants
+4706	205	192	176	"BloodangelKnightPants"		//Bloodangel kinght
+4707	205	192	176	"BloodangelWizardPants"		//Bloodangel Wizzard
+4708	205	192	176	"BloodangelFairyPants"		//Bloodangel Elf
+4709	205	192	176	"BloodangelCursedPants"		//Bloodangel Summoner
+4710	205	192	176	"BloodangelKnightPants"		//Bloodangel magic
+4711	205	192	176	"BloodangelWizardPants"		//Bloodangel lord
+4712	205	192	176	"BloodangelKnightPants"		//Bloodangel fighter
+//-- BloodAngel Glove
+5218	205	192	176	"BloodangelKnightGloves"	//Awakening Soul kinght
+5219	205	192	176	"BloodangelWizardGloves"	//Awakening Soul Wizzard
+5220	205	192	176	"BloodangelFairyGloves"		//Awakening Soul Elf
+5221	205	192	176	"BloodangelCursedGloves"	//Awakening Soul Summoner
+5222	205	192	176	"BloodangelKnightGloves"	//Awakening Soul Magic
+5223	205	192	176	"BloodangelWizardGloves"	//Awakening Soul Lord
+//-- BloodAngel Boots
+5730	205	192	176	"BloodangelKnightBoots"		//Bloodangel kinght
+5731	205	192	176	"BloodangelWizardBoots"		//Bloodangel Wizzar
+5732	205	192	176	"BloodangelFairyBoots"		//Bloodangel Elf
+5733	205	192	176	"BloodangelCursedBoots"		//Bloodangel Summoner
+5734	205	192	176	"BloodangelKnightBoots"		//Bloodangel Magic
+5735	205	192	176	"BloodangelWizardBoots"		//Bloodangel Lord
+5736	205	192	176	"BloodangelKnightBoots"		//Bloodangel fighter
+//=========================
+// Set DarkAngel
+//=========================
+//-- DarkAngel Helm
+3722	255 	226	115	"DarkangelKnightHelm"		//Darkangel kinght
+3723	255 	226	115	"DarkangelWizardHelm"		//Darkangel Wizzar
+3724	255 	226	115	"HelmMale184"			//Darkangel Elf
+3725	255 	226	115	"HelmMale184_curse"		//Darkangel Summoner
+3727	255 	226	115	"DarkangelLordHelm"		//Darkangel Lord
+3728	255 	226	115	"DarkangelFighterHelm"		//Darkangel fighter
+//-- DarkAngel Armor
+4234	255	226	115	"DarkangelKnightArmor"		//Darkangel kinght
+4235	255	226	115	"DarkangelWizardArmor"		//Darkangel Wizzard
+4236	255	226	115	"ArmorMale184"			//Darkangel Elf
+4237	255	226	115	"ArmorMale184"			//Darkangel Summoner
+4238	255	226	115	"DarkangelMagicArmor"		//Darkangel magic
+4239	255	226	115	"DarkangelWizardArmor"		//Darkangel lord
+4240	255	226	115	"DarkangelKnightArmor"		//Darkangel fighter
+//--DarkAngel Pants
+4746	255	226	115	"DarkangelKnightPants"		//Darkangel kinght
+4747	255	226	115	"DarkangelWizardPants"		//Darkangel Wizzard
+4748	255	226	115	"PantMale184"			//Darkangel Elf
+4749	255	226	115	"PantMale184"			//Darkangel Summoner
+4750	255	226	115	"DarkangelKnightPants"		//Darkangel magic
+4751	255	226	115	"DarkangelWizardPants"		//Darkangel lord
+4752	255	226	115	"DarkangelKnightPants"		//Darkangel fighter
+//-- DarkAngel Gloves
+5258	255	226	115	"DarkangelKnightGloves"		//Darkangel kinght
+5259	255	226	115	"DarkangelWizardGloves"		//Darkangel Wizzard
+5260	255	226	115	"GloveMale184"			//Darkangel Elf
+5261	255	226	115	"GloveMale184"			//Darkangel Summoner
+5262	255	226	115	"DarkangelKnightGloves"		//Darkangel Magic
+5263	255	226	115	"DarkangelWizardGloves"		//Darkangel Lord
+//-- DarkAngel Boots
+5770	255	226 	115	"DarkangelKnightBoots"		//Darkangel kinght
+5771	255	226 	115	"DarkangelWizardBoots"		//Darkangel Wizzard
+5772	255	226 	115	"BootMale184"			//Darkangel Elf
+5773	255	226 	115	"BootMale184"			//Darkangel Summoner
+5774	255	226 	115	"DarkangelKnightBoots"		//Darkangel Magic
+5775	255	226 	115	"DarkangelWizardBoots"		//Darkangel Lord
+5776	255	226 	115	"DarkangelKnightBoots"		//Darkangel fighter
+//=========================
+// Set HolyAngel 
+//=========================
+//-- HolyAngel Helm
+3734	122	147	99	"HelmMale112_knight"		//Holyangel kinght
+3735	122	147	99	"HelmMale111_magic"		//Holyangel Wizzar
+3736	122	147	99	"HelmMale109_elf"		//Holyangel Elf
+3737	122	147	99	"HelmMale109_alice"		//Holyangel Summoner
+3739	122	147	99	"HelmMale111_dark"		//Holyangel Lord
+3740	122	147	99	"HelmMale112_fight"		//Holyangel fighter
+//-- HolyAngel Armor
+4246	122	147	99	"ArmorMale112"			//Holyangel kinght
+4247	122	147	99	"ArmorMale111"			//Holyangel Wizzard
+4248	122	147	99	"ArmorMale109_elf"		//Holyangel Elf
+4249	122	147	99	"ArmorMale109_alice"		//Holyangel Summoner
+4250	122	147	99	"ArmorMale112"			//Holyangel magic
+4251	122	147	99	"ArmorMale111"			//Holyangel lord
+4252	122	147	99	"ArmorMale112"			//Holyangel fighter
+//-- HolyAngel Pants
+4758	122	147	99	"PantMale112"			//Holyangel kinght
+4759	122	147	99	"PantMale111"			//Holyangel Wizzard
+4760	122	147	99	"PantMale109_elf"		//Holyangel Elf
+4761	122	147	99	"PantMale109_alice"		//Holyangel Summoner
+4762	122	147	99	"PantMale112"			//Holyangel magic
+4763	122	147	99	"PantMale111"			//Holyangel lord
+4764	122	147	99	"PantMale112"			//Holyangel fighter
+//-- HolyAngel Glove
+5270	122	147	99	"GloveMale112"			//Holyangel kinght
+5271	122	147	99	"GloveMale111"			//Holyangel Wizzard
+5272	122	147	99	"GloveMale109"			//Holyangel Elf
+5273	122	147	99	"GloveMale109"			//Holyangel Summoner
+5274	122	147	99	"GloveMale112"			//Holyangel Magic
+5275	122	147	99	"GloveMale111"			//Holyangel Lord
+//-- HolyAngel Boots
+5782	122	147	99	"BootMale112"			//Holyangel kinght
+5783	122	147	99	"BootMale111"			//Holyangel Wizzard
+5784	122	147	99	"BootMale109"			//Holyangel Elf
+5785	122	147	99	"BootMale109"			//Holyangel Summoner
+5786	122	147	99	"BootMale112"			//Holyangel Magic
+5787	122	147	99	"BootMale111"			//Holyangel Lord
+5788	122	147	99	"BootMale112"			//Holyangel fighter
+//=========================
+// Set Awakening 
+//=========================
+//-- Awakening Helm
+3690	239	154	70	"HelmMale116_knight"		//Awakening Soul kinght
+3691	239	154	70	"HelmMale115_magic"		//Awakening Soul Wizzard
+3692	239	154	70	"HelmMale113_elf"		//Awakening Soul Elf
+3693	239	154	70	"HelmMale113_alice"		//Awakening Soul Summoner
+3695	239	154	70	"HelmMale115_dark"		//Awakening Soul Lord
+3696	239	154	70	"HelmMale116_fight"		//Awakening Soul fighter
+3698	239	154	70	"HelmMale113_alice"		//HelmMale113_alice
+//-- Awakening Armor
+4202	239	154	70	"ArmorMale116"			//Awakening Soul kinght
+4203	239	154	70	"ArmorMale115"			//Awakening Soul Wizzard
+4204	239	154	70	"ArmorMale113_elf"		//Awakening Soul Elf
+4205	239	154	70	"ArmorMale113_alice"		//Awakening Soul Summoner
+4206	239	154	70	"ArmorMale116"			//Awakening Soul magic
+4207	239	154	70	"ArmorMale115"			//Awakening Soul lord
+4208	239	154	70	"ArmorMale116"			//Awakening Soul fighter
+4210	239	154	70	"ArmorMale113_elf"		//Awakening Soul Elf
+4211	239	154	70	"ArmorMale116"			//Awakening Soul Magic
+//-- Awakening Pants
+4714	239	154	70	"PantMale116"			//Awakening Soul kinght
+4715	239	154	70	"PantMale115"			//Awakening Soul Wizzard
+4716	239	154	70	"PantMale113_elf"		//Awakening Soul Elf
+4717	239	154	70	"PantMale113_alice"		//Awakening Soul Summoner
+4718	239	154	70	"PantMale116"			//Awakening Soul magic
+4719	239	154	70	"PantMale115"			//Awakening Soul Lord
+4720	239	154	70	"PantMale116"			//Awakening Soul fighter
+4722	239	154	70	"PantMale113_elf"		//Awakening Soul Elf
+4723	239	154	70	"PantMale116"			//Awakening Soul magic
+//-- Awakening Gloves
+5226	239	154	70	"GloveMale116"			//Awakening Soul kinght
+5227	239	154	70	"GloveMale115"			//Awakening Soul Wizzard
+5228	239	154	70	"GloveMale113_elf"		//Awakening Soul Elf
+5229	239	154	70	"GloveMale113_alice"		//Awakening Soul Summoner
+5230	239	154	70	"GloveMale116"			//Awakening Soul Magic
+5231	239	154	70	"GloveMale115"			//Awakening Soul Lord
+5234	239	154	70	"GloveMale113_elf"		//Awakening Soul Elf
+5235	239	154	70	"GloveMale116"			//Awakening Soul Magic
+//-- Awakening Boots
+5738	239	154	70	"BootMale116"			//Awakening Soul kinght
+5739	239	154	70	"BootMale115"			//Awakening Soul Wizzard
+5740	239	154	70	"BootMale113_elf"		//Awakening Soul Elf
+5741	239	154	70	"BootMale113_alice"		//Awakening Soul Summoner
+5742	239	154	70	"BootMale116"			//Awakening Soul Magic
+5743	239	154	70	"BootMale115"			//Awakening Soul Lord
+5744	239	154	70	"BootMale116"			//Awakening Soul fighter
+5746	239	154	70	"BootMale113_elf"		//Awakening Soul Elf
+5747	239	154	70	"BootMale116"			//Awakening Soul Magic
+//=========================
+// Set BlueEyes
+//=========================
+//-- BlueEye Helm
+3748	127	127	127	"HelmMale120_knight"		//BlueEyes king
+3749	127	127	127	"HelmMale119_magic"		//BlueEyes wizzar
+3750	127	127	127	"HelmMale117_elf"		//BlueEyes Elf
+3751	127	127	127	"HelmMale117_alice"		//BlueEyes Summoner
+3753	127	127	127	"HelmMale119_dark"		//BlueEyes Lord
+3754	127	127	127	"HelmMale120_fight"		//BlueEyes fighter
+3756	127	127	127	"HelmMale117_elf"		//BlueEyes Elf
+//-- BlueEye Armor
+4260	127	127	127	"ArmorMale120_knight"		//BlueEyes king
+4261	127	127	127	"ArmorMale119"			//BlueEyes wizzar
+4262	127	127	127	"ArmorMale117"			//BlueEyes Elf
+4263	127	127	127	"ArmorMale117"			//BlueEyes Summoner
+4264	127	127	127	"ArmorMale120_ma"		//BlueEyes Magic
+4265	127	127	127	"ArmorMale119"			//BlueEyes Lord
+4266	127	127	127	"ArmorMale120_fight"		//BlueEyes fighter
+4268	127	127	127	"ArmorMale117"			//BlueEyes Elf
+4269	127	127	127	"ArmorMale120_ma"		//BlueEyes Magic
+//-- BlueEye Pants
+4772	127	127	127	"PantMale120_knight"		//BlueEyes king
+4773	127	127	127	"PantMale119"			//BlueEyes wizzar
+4774	127	127	127	"PantMale117"			//BlueEyes Elf
+4775	127	127	127	"PantMale117"			//BlueEyes Summoner
+4776	127	127	127	"PantMale120_ma"		//BlueEyes Magic
+4777	127	127	127	"PantMale119"			//BlueEyes Lord
+4778	127	127	127	"PantMale120_fight"		//BlueEyes fighter
+4780	127	127	127	"PantMale117"			//BlueEyes Elf
+4781	127	127	127	"PantMale120_ma"		//BlueEyes Magic
+//-- BlueEye Gloves
+5284	127	127	127	"GloveMale120_knight"		//BlueEyes king
+5285	127	127	127	"GloveMale119"			//BlueEyes wizzar
+5286	127	127	127	"GloveMale117"			//BlueEyes Elf
+5287	127	127	127	"GloveMale117"			//BlueEyes Summoner
+5288	127	127	127	"GloveMale120_ma"		//BlueEyes Magic
+5289	127	127	127	"GloveMale119"			//BlueEyes Lord
+5292	127	127	127	"GloveMale117"			//BlueEyes Elf
+5293	127	127	127	"GloveMale120_ma"		//BlueEyes Magic
+//-- BlueEye Boots
+5796	127	127	127	"BootMale120_knight"		//BlueEyes king
+5797	127	127	127	"BootMale119"			//BlueEyes wizzar
+5798	127	127	127	"BootMale117"			//BlueEyes Elf
+5799	127	127	127	"BootMale117"			//BlueEyes Summoner
+5800	127	127	127	"BootMale120_ma"		//BlueEyes Magic
+5801	127	127	127	"BootMale119"			//BlueEyes Lord
+5802	127	127	127	"BootMale120_fight"		//BlueEyes fighter
+5804	127	127	127	"BootMale117"			//BlueEyes Elf
+5805	127	127	127	"BootMale120_ma"		//BlueEyes Magic
+//=========================
+// Set SilverHear S15 Part2
+//=========================
+//-- SilverHear Helm
+3773	222	222	199	"HelmMale131" 			//Silverheart king
+3774	222	222	199	"HelmMale130"			//Silverheart wizzar
+3775	222	222	199	"HelmMale128_elf"		//Silverheart Elf
+3776	222	222	199	"HelmMale128_alice"		//Silverheart Summoner
+3778	222	222	199	"HelmMale130_lord"		//Silverheart Lord
+3779	222	222	199	"HelmMale131_fight"		//Silverheart fighter
+3781	222	222	199	"HelmMale128_elf"		//Silverheart Elf
+//-- SilverHear Armor
+4285	222	222	199	"ArmorMale131" 			//Silverheart king
+4286	222	222	199	"ArmorMale130"			//Silverheart wizzar
+4287	222	222	199	"ArmorMale128_elf"		//Silverheart Elf
+4288	222	222	199	"ArmorMale128_alice"		//Silverheart Summoner
+4289	222	222	199	"ArmorMale131" 			//SilverHeart Magic
+4290	222	222	199	"ArmorMale130"			//Silverheart Lord
+4291	222	222	199	"ArmorMale131"			//Silverheart fighter
+4293	222	222	199	"ArmorMale128_elf"		//Silverheart Elf
+4294	222	222	199	"ArmorMale131" 			//SilverHeart Magic
+//-- SilverHear Pants
+4797	222 	222	199	"PantMale131" 			//Silverheart king
+4798	222 	222	199	"PantMale130"			//Silverheart wizzar
+4799	222 	222	199	"PantMale128_elf"		//Silverheart Elf (A)
+4800	222 	222	199	"PantMale128_alice"		//Silverheart Summoner
+4801	222	222	199	"PantMale131" 			//SilverHeart Magic (A)
+4802	222 	222	199	"PantMale130"			//Silverheart Lord
+4803	222 	222	199	"PantMale131" 			//Silverheart fighter
+4805	222 	222	199	"PantMale128_elf"		//Silverheart Elf (B)
+4806	222	222	199	"PantMale131" 			//SilverHeart Magic (B)
+//-- SilverHear Glove
+5309	222 	222	199	"GloveMale131"			//Silverheart king
+5310	222 	222	199	"GloveMale130"			//Silverheart wizzar
+5311	222 	222	199	"GloveMale128_elf"		//Silverheart Elf
+5312	222 	222	199	"GloveMale128_alice"		//Silverheart Summoner
+5313	222	222	199	"GloveMale131"			//SilverHeart Magic
+5314	222 	222	199	"GloveMale130"			//Silverheart Lord
+5317	222 	222	199	"GloveMale128_elf"		//Silverheart Elf
+5318	222	222	199	"GloveMale131"			//SilverHeart Magic
+//-- SilverHear Boots
+5821	222 	222	199	"BootMale131"			//Silverheart king
+5822	222 	222	199	"BootMale130"			//Silverheart wizzar
+5823	222 	222	199	"BootMale128_elf"		//Silverheart Elf
+5824	222 	222	199	"BootMale128_alice"		//Silverheart Summoner
+5825	222	222	199	"BootMale131"			//SilverHeart Magic
+5826	222 	222	199	"BootMale130"			//Silverheart Lord
+5827	222 	222	199	"BootMale131"			//Silverheart fighter
+5829	222 	222	199	"BootMale128_elf"		//Silverheart Elf
+5830	222	222	199	"BootMale131"			//SilverHeart Magic
+//=========================
+// Weapons
+//=========================
+//-- Weapons Bloodangel
+42	205	192	176	"blood_angelsword_s"		//Bloodangel Sword
+44	205	192 	176	"blood_anglesword"		//Bloodangel Magic Sword
+1046	205	192	176	"booldangel_sapter"		//Bloodangel Scepter
+2601	205	192	176	"bloodangelstaff01"		//Bloodangel Staff
+2603	205	192	176	"bloodangelstick01"		//Bloodangel Stick
+//-- Blessed
+51	253	255	119	"absolute02_sword"		//Blessed Divine Arch Sword
+1049	253	255	119	"absolute_septer"		//Blessed Divine Arch Scepter
+1058	253	255	119	"Absolute_Mace"			//Blessed Divine Arch Sword
+1059	253	255	119	"Bless_Absolute_Mace"		//Blessed Divine Arch Sword
+1563	253	255	119	"blessedabsolute_lance"		//Darkangel Lance
+2609	253	255	119	"absolute02_staff"		//Darkangel Staff
+2610	253	255	119	"absolute_stick"		//Darkangel Stick
+//-- Darkangel
+54	255	226 	115	"DarkangelSword"		//Darkangel Sword
+55	255	226 	115	"DarkangelMagicsword"		//Darkangel Magic Sword
+1050	255	226 	115	"Darkangel_Scepter"		//Darkangel Scepter
+1057	255	226 	115	"DarkAngel_Mace"		//Darkangel Runic Mace
+1560	255	226 	115	"Darkangel_Lance"		//Darkangel Lance
+2611	255	226 	115	"Darkangel_Staff"		//Darkangel Staff
+2612	255	226 	115	"DarkangelStick"		//Darkangel Stick
+//-- Holyangel
+57	255	197	57	"HolyAngelSword"		//Holyangel Sword
+58	255	197	57	"HolyAngelMagicSword"		//Holyangel Magic Sword
+1051	255	197	57	"HolyAngelSepter"		//Holyangel Scepter
+1062	255	197	57	"HolyAngel_Mace"		//Holyangel Rune Mace
+1561	255	197	57	"HolyAngelLance"		//Holyangel Lance
+2613	255	197	57	"HolyAngelStaff"		//Holyangel Staff
+2614	255	197	57	"HolyAngelStick"		//Holyangel Stick
+//-- Awakening Soul
+62	239	154	70	"soulknightsword"		//Soul Sword
+63	239	154	70	"SoulmagicSword"		//Soul Magic Sword
+1060	239	154	70	"seoulRoad_septer"		//Soul Scepter
+1063	239	154	70	"Soul_Mace"			//Soul Rune Mace
+1564	239	154	70	"sd_soullance01_final"		//Soul Lance
+2615	239	154	70	"sd_SoulWizardStaff01_max7"	//Soul Staff
+2616	239	154	70	"sd_soulsummoner"		//Soul Stick
+//-- Blue Eyes
+78	127	127	127	"hs_blueeyeknightA"		//Blue Eye Sword
+79	127	127	127	"blue_eye_magicsword01"		//Blue Eye Magic Sword
+1064	127	127	127	"Blue_eye_road_secpter"		//Blue Eye Scepter
+1065	127	127	127	"mace5masterf"			//Blue Eye Mace
+1565	127	127	127	"hs_blueeyelance"		//Blue Eye Lance
+2621	127	127	127	"blue_eye_ws"			//Blue Eye Staff
+2622	127	127	127	"blueeye_summoner"		//Blue Eye Stick
+//--
+7730	0	0	0	"SummonScroll"			//summon scroll
+//-- ex700
+29	255	162	31	"balhalla_sword"		//Sonic Blade
+30	127 	127 	127 	"asura"				//Asura Sword
+37 	20 	231 	255 	"blastbreak"			//BlastSword
+1043	172 	169 	255 	"thunder_bolt"			//Thunderbolt
+1044	255 	255 	255 	"hornofsteel"			//Horn of Steal
+1548	127 	127 	127 	"MagmaSpear"			//Magmus Peer
+2595	127	127	127	"MiracleStaff"			//Miracle Staff
+2597	255	107	37	"kerberos_spear_dark_road"	//Spite Staff
+//--- ItemMix
+6805	10	10	10	"nudldisivna"
+6806	10	10	10	"hs_hammerB"
+6807	10	10	10	"hs_hammerA"
+6808	10	10	10	"MixMaterial"
+6809	10	10	10	"3cha_lightstone"
+6810	10	10	10	"James_anvil"
+6811	10	10	10	"holyangelanvil"
+6821	10	10	10	"GarudaFeather"
+6822	10	10	10	"GarudaFlame"
+6823	10	10	10	"goldarms01"
+6824	10	10	10	"spellstone1"
+6825	10	10	10	"spellstone2"
+6826	10	10	10	"spellstone3"
+6827	10	10	10	"petegg"
+6829	10	10	10	"FrostSoul"
+6830	10	10	10	"BlueEyeAnvil"
+6831	10	10	10	"sd_AwakeningSoul01"
+6832	10	10	10	"soulanvil"
+//-----
+3112	204	40	28	"Masteryshild_dk01"
+3113	28	64	29	"Masteryshild_dk02"
+3114	117	113	87	"Masteryshild_dk03"
+3115	193	144	77	"Masteryshild_dk04"
+3116	122	139	168	"Masteryshild_dk05"
+3117	215	89	0	"Masteryshild_dk06"
+//-- custom book
+2584	0	0	0	"Yigye1Book"
+2585	0	0	0	"Yigye2Book"
+2586	0	0	0	"HolyBook"
+2587	0	0	0	"AwakeningBook"
+2588	0	0	0	"Yigye5Book"
+7880	0	0	0	"Ghosthorse_item_mask01"
+//--Custom QUIVER
+2082	0	0	0	"hs_quiverlv1"
+7338	0	0	0	"RudeBox_green"
+7339	0	0	0	"RudeBox_blue"
+7340	0	0	0	"RudeBox_red"
+7341	0	0	0	"PentaCintamani"
+end

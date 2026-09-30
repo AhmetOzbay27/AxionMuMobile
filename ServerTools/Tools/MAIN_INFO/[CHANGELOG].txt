@@ -1,0 +1,237 @@
+﻿// 		 FILES PREMIUN GAMINGMASTER
+//==============================================
+// MasterCodec Season 6 - Mu Online
+// Developer: MasterCodec [Takumi12]
+// Last review: 18.04.2020
+//==============================================
+// HYSTORY CHANGE UP
+//==============================================
+[CHANGELOG UPDATE 1.0]
+- 5 PuglinName Liberados
+- Downgrade Ex700 - Legend
+- Custom Crossbows Index [4 25] to [4 70]
+- Marlon Teleport (2) Minutos
+- Dragon Invasión Effect SWITCH ACTIVE/DESACTIVE
+[CHANGELOG UPDATE 2.0]
+- Downgrade Interface S2/S3
+- Custom SelectChar S3
+- Post Item (SHELL)
+[CHANGELOG UPDATE 3.0]
+- Monitor FPS/MS [Ping]
+- Custom Gloves max 100
+- Custom Pets max 300
+[CHANGELOG UPDATE 4.0]
+- Fix PostItem + Interface Custom
+- Advanced status
+- Limit FPS [25,30,34]
+- View Monster,Npc,Party,Players in minimap
+- Change Items Guard, Elf Buff [Testing]
+- Custom Map Name,Respaw,Music,MiniMap[Testing]
+[CHANGELOG UPDATE 5.0]
+- Fix CustomMonster TripleKIll [UP13 LOUIS]
+- Limit FPS Increment to [25,30,34,40]
+- Effect Wings LEVEL 4
+- Mix Wings level 4
+[CHANGELOG UPDATE 6.0]
+- Fix CustomBow Rechange Arrows
+- Fix CustomClaws Position
+- Fix CustomPet Position
+- Add Position in CustomBow
+- Add CustomEfectRemake
+[CHANGELOG UPDATE 6.1]
+- Add Stadis Character v[s2/s3].
+- Opcion para desactivar funtions s6 para downgrade.
+[CHANGELOG UPDATE 7]
+- agregado interface 99 sin SD.
+- agregado soporte hasta 96 mapas index[0 - 95].
+- respawnlocation para mapas custom.
+- Fix Error no visualizaba coordenadas en interfaces downgrade.
+- se agrega soporte de mapas custom hasta 100
+- Se agrega Soporte para Música de mapas custom
+- Se agrega soporte para Nombres de Mpas Personalizados
+- Se agrega Soporte de Efectos y Animación para mapas personalizados.
+- ANTIDUPE FIX
+[CHANGELOG UPDATE 8]
+- Custom Cloak 100%
+- Custom Close Store
+- Soporte Max. 100 custom acc
+- Move + Nixie Spirit evento boss
+- ItemValue.txt lado cliente para wings index mayor a 260
+- Fix MasterSkill Interface ex700 poderes en blanco
+- Fix Skill DL, RF, MG interface ex700
+- Fix Barra Upgrade Ex700 Barra negra en ventanas
+- Fix Credits en select char.
+- Fix Score Duel con interface ex700
+[CHANGELOG UPDATE 9]
+- Fix Custom Pet + healt buff
+- Cambia formato de FPS + ARP
+- CustomInfoItemEx
+- Fix Visual Limite en defensa y ataque
+- CustomACC max 100
+- MasterSkill S15 (Testing)
+[CHANGELOG UPDATE 9 . 1]
+- Fix Kriss Index 0 AUTOCLOSE CLIENTE
+- Fix CustomBow y CrossBow
+- Fix Skill UPPERCOUT disconect
+- Fix CustomACC.
+- Fix Custom Gloves IndexL & IndexR.
+- Expands CustomMonster Index.
+- Agregado de Monster respecto al Mapa Custom.
+- Remove CustomEffectPet.
+- Fix CustomCloak + Kriss.
+- Corrección de Item_eng.bmd con Item.txt.
+- Se Agrega Custom Scroll desde servidor.
+- Se Agrega CustomNPCTALCK desde Servidor.
+- Fix CustomPet Refresh + Kriss
+- Se agrega Switch para quitar barra de hora [F4]
+- Se agrega Switch para quitar minimap [F5]
+- Select Char S13
+- Se agrega Inventario UPGRADE
+- Animación en SelectChar
+- Fix en ICONO RANKUSER
+- Se Fixea Summon Scroll 100%
+[CHANGELOG UPDATE 10]
+- Fix Agi Bug BK,MG,SM, ELF.
+- MasterSkillTreeS15 Terminado
+- add PK LIMIT
+- CustomMix
+- CustomMonsterSkill
+- Sistema AntiFlood Para Ataques pequeños
+- PKFree en mapa por coordenada, Mapa NOPK + ZONA PK FREE
+- Sistema de Advanced Complete 100%
+- Sistema de SetAcc Custom 100%
+- Nuevo Sistema de Comando /Readd
+- Fix Interface ex700 Skill DL
+- FIx Interface s2/99 Skill DL
+- Fix Skill Dl Barra negra
+- Fix DisableMuHelpert
+- Fix Dragones en interfaces Downgrade
+- Fix Barra SD y AG Downgrade
+- Fix Textura Interface Downgrade
+- Fix Visual Barra de exp Downgrade
+- Fix Botones de CustomStore
+- Se retira Dragones Dorados en Select Char
+- marlon nuevo sistema de teleport
+[CHANGELOG UPDATE 11]
+- CustomMonster Glow
+- CustomMonster Golden
+- Clic right Equipt
+- Fixs kill Raven
+- Fix Skillboxnumberinterface ex700
+- Fix SkillBox Position InterfaceS3/99
+- Custom EffectModel
+- Fix Barra interface ex700,legends mapa tarkan y lacleon
+- Custom Chat ex700
+- NuevaInterface CustomWindows ranking
+- NuevaInterface CustomWindows timeevent
+- NuevaInterface CustomWindows BuyVip
+- NuevaInterface CustomWindows Command
+- NuevaInterface CustomWindows Menu
+- Nueva HPBar + Nombre en Monster
+- customGlow Funcional con NPC
+- Fix Button CustomStore Close
+[CHANGELOG UPDATE 12]
+- CustomBook Add limit 6 [index 24 to 29]
+- Fix auto move from Icarus if dinorant/fenrir died
+- Fix Size effect in ModelEFFECT
+- Fix HealBar in Players
+- Fix TotalCreate MuError
+- Fix CustomRankUser Level + MasterLevel
+- Max Invasion Manager 30
+- MuHelper + Inventory
+- Fix Clic Right 2 scepter DL
+- Fix Clic Right Items RageFighter
+- CustomPetEffectDinamic
+- CustomPetEffectStatic
+- Fix Windows veryfic Shop
+- New Advanced Status
+- Fix Skill Penetration bug visual
+- Fix Skill UpperCut Disconect
+[UPDATE 13]
+- CHAT DOWNGRADE S1
+- HP Bar Pet DOWNGRADE
+- MINIMAP DOWNGRADE S1
+- add time bar in minimap
+- INVENTORY SLOT DOWNGRADE S1
+- CHAT S13 UPGRADE
+- MUHELPER S15
+- HP PARTY FIX IN INTERFACE EX700
+- REPAIR ANIMATION FIX IN INTERFACE EX700
+- add Switch MonsterBarName [F7]
+- add separate chat [F6]
+- Fix Ring Started level 40 and 80
+- Include camera F10 active
+- Switch Restore Camera3D F11
+- Switch IconTrayMode [MINIMIZE] F12
+- PositionClaws 100%
+- Position Custom Cape in Game 100%
+- Fix CustomPetEffect Dinamic, Static, SkillEffect
+- Fix CustomPet in SelectServer
+- CustomPet Montura Horse
+- CustomPet Montura Fenrir
+- Remove SD Gameserver
+- DelectChar max level
+- Fix Client AutoClosed
+- Restring Party For Level
+- Fix Click right remove wings in map icarus
+- Fix Click right remove dinoran in map icarus
+- Fix Click right Equip uniria in map Atlans
+- Fix Click right Equip dinoran in map Atlans
+[UPDATE 14]
+- Fix Drop Item + skill
+- Fix PostItem + Post Message
+- Fix Click Right Update ItemList
+- Fix Disable Party Every Reset For restinger Level
+- Fix AntiFlood
+- Fix Disconect Account Offattack/offstore
+- New ItemtooltipS15
+- Fix Custom Horse + Custom Fenrir Ejecute Skill
+- Fix Skill DrawImage CustomHorse
+- Fix Speed Custom Fenrir
+- Custom Pet Angel Guardian
+- Custom Farm 4 type Money in custommonster
+- Custom Box Drop 4 Type money
+- Custom Icon Buff + time bar
+- Custom Icon Party Buff
+- Increase 5000 Effect Static Dinamic.
+- Increase 3000 Effect Pet
+- New PostItem + DrawImg
+- MuOffhelper 1er Version
+- new System Information Tooltip BuffBar
+- Fix Animation Raven in DL
+- new Order Skillbox in SoulMaster
+- Fix Screen Shot in 1366
+- CustomPetGlow
+- 90% Windows retexture
+[UPDATE 15]
+- Custom Monster Dinamic Effect
+- Custom Monster Static Effect
+- Monster 904 and 905 Hit Effect
+- Monster 904 and 905 Die Effect
+- New System Monster Glow
+- New System MakeSelectChar
+- Fix CustomWings Option
+- Increase 8140 Line in Item.txt Maininfo
+- Add New System Panel Option
+- Add Button Press "O" Open Panel Option
+- Antilag [Effect Dinamic]
+- Antilag [Effect Static]
+- Antilag [Effect Skill]
+- Antilag [Map Object]
+- Antilag [Remove Shadow]
+- Party Bar + HP + MP
+- Fix Move Marry /Marry Trace , /Marry Track
+- Adition ItemNameLevel
+- new System Tooltip Information
+- MasterSkill s10 fix point
+- MasterSkill Render Img skill fix
+- Interface Ex700 Wide Screem for resolution 1366 * 766
+- New Chat Ex700
+- Disable Blocked Mouse in tap map
+- Fix BP in attack Helper
+- Fix AutoBuff and Healing elf in helper
+- Remove Glow in Texture int Item Equip
+- MuOffhelper PickUp ItemList
+- System Rewar For reset, Master Reset
+- Add Shados in custom pet
+- new Shop Ruud working money ruud
