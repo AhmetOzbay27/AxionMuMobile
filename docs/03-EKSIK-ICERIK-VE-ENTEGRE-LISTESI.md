@@ -30,8 +30,8 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 
 | # | Modül / Özellik | Kaynak | Hedef | Durum |
 |---|-----------------|--------|-------|-------|
-| B-01 | **SPK istemci format katmanı**: ConnectIP.bmd, ServerData.bmd, SPK.ini, Data\SPK okuma | `1Client\Engine.exe` + `Data\SPK\Config\*.bmd` analizi (yeni adım **2d.0**) | `Source\5.Main\` | ⬜ |
-| B-02 | SPK client içerik varlıkları (Btn_AutoHp.spk, Btn_AutoPK.spk, ai_newui_skill*.ozj, Config\Info\) | `1Client\Data\SPK\` | istemci paketi | ⬜ 2d.0 sonrası |
+| B-01 | **SPK istemci format katmanı**: ConnectIP.bmd, ServerData.bmd, SPK.ini, Data\SPK okuma | `Client\Engine.exe` + `Data\SPK\Config\*.bmd` analizi (yeni adım **2d.0**) | `Source\5.Main\` | ⬜ |
+| B-02 | SPK client içerik varlıkları (Btn_AutoHp.spk, Btn_AutoPK.spk, ai_newui_skill*.ozj, Config\Info\) | `Client\Data\SPK\` | istemci paketi | ⬜ 2d.0 sonrası |
 | B-03 | GetMainInfo varyant birleşimi | SPK GetEngine referansı + MUIG MainInfo kaynağı | `Source\6.GetMainInfo\` | ⬜ 2a.5/2d karar |
 | B-04 | Gömülü IP / config okuma düzeni (H-004) | Canlı değer: 192.168.0.150 | `Source\5.Main\` | ⬜ 2e.1 |
 | B-05 | MUIG 68 özel modülünün canlı karşılığı kontrolü | MUIG donor | `Source\5.Main\` | ⬜ 2b.3 |
@@ -55,7 +55,7 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 ### KAYNAK KONUMLARI (hızlı erişim)
 - MUIG donor: `C:\Axion Mu Mobile\New Source Code\Source\Source\` (+Main5.2, +Encoder)
 - SPK GetEngine referans binary: `C:\Axion Mu Mobile\Client and Tools\GetMain\`
-- **SPK istemcisi (gerçek):** `C:\Axion Mu Mobile\Client and Tools\1Client\` (Engine.exe + SPK.ini + Data\SPK)
+- **SPK istemcisi (gerçek):** `C:\Axion Mu Mobile\Client and Tools\Client\` (Engine.exe + SPK.ini + Data\SPK; eski adı 1Client)
 - Canlı sunucu (salt okunur): `C:\Axion Mu Mobile\4.MuServer\Sub-1\` (GameServer.map dahil)
 - Farklı fork (parite hedefi DEĞİL): `C:\AxionMu\`
 - Eski analiz raporları: `C:\Axion Mu Mobile\analiz\`
