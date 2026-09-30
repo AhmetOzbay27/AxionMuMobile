@@ -124,7 +124,8 @@ while ($listener.IsListening) {
             $o = Get-Content (Join-Path $DataDir "oneriler.json") -Raw -Encoding UTF8 | ConvertFrom-Json
             $k = Get-Content (Join-Path $DataDir "komut.json") -Raw -Encoding UTF8 | ConvertFrom-Json
             $s = Get-Content (Join-Path $DataDir "sonuc.json") -Raw -Encoding UTF8 | ConvertFrom-Json
-            $obj = @{ suggestions = $o.suggestions; queue = $k.queue; history = $k.history; sonuc = $s }
+            $so = Get-Content (Join-Path $DataDir "sohbet.json") -Raw -Encoding UTF8 | ConvertFrom-Json
+            $obj = @{ suggestions = $o.suggestions; queue = $k.queue; history = $k.history; sonuc = $s; sohbet = $so.entries }
             Send-Response $ctx 200 "application/json; charset=utf-8" (ConvertTo-Json $obj -Depth 6)
         }
         elseif ($path -eq "/api/cmd" -and $ctx.Request.HttpMethod -eq "POST") {

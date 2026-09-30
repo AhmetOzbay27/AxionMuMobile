@@ -1,0 +1,20 @@
+{
+  "updated": "2026-09-30 19:55:00",
+  "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
+  "entries": [
+    { "ts": "2026-09-30 19:50", "kim": "kullanıcı", "text": "Panodan bu sohbeti yönetmek, önerileri takip edip direkt komut vermek istiyorum." },
+    { "ts": "2026-09-30 19:50", "kim": "ajan", "text": "Ajan Köprüsü kuruldu: öneri kartları + PIN'li komut kuyruğu + sonuç paneli. PIN: Dashboard\\data\\pin.txt. Kullanım: panodan komut ver → sohbete 'pano' yaz → ajan işler. Commit 60dc4cddd." },
+    { "ts": "2026-09-30 19:20", "kim": "kullanıcı", "text": "Daha güzel tasarım; girişte amacımızı/hedefimizi yazalım, plandan sapmayalım." },
+    { "ts": "2026-09-30 19:20", "kim": "ajan", "text": "v3 tasarım: hero + 3 misyon kartı (Amaç/Hedef/Kural), cam efekt, katlanabilir plan, timeline commit. Commit 1b019bff6." },
+    { "ts": "2026-09-30 19:05", "kim": "kullanıcı", "text": "Pano hiç anlaşılır değil, fazlar plandaki gibi eksik görünüyor; sadeleştir." },
+    { "ts": "2026-09-30 19:05", "kim": "ajan", "text": "v2 arayüz: sabit özet kaldırıldı, tüm plan docs/02'den canlı okunuyor (28 adım, 9/28 tamam). Commit ba19608be." },
+    { "ts": "2026-09-30 18:40", "kim": "kullanıcı", "text": "Ping yüzünden makinede oturamıyorum; ilerlemeyi dış IP'den takip etmek istiyorum." },
+    { "ts": "2026-09-30 18:40", "kim": "ajan", "text": "İlerleme panosu kuruldu: http://45.87.120.29:8096/ (PowerShell HTTP sunucusu, firewall+ACL onaylı). Commit ffd1cb607." },
+    { "ts": "2026-09-30 18:15", "kim": "kullanıcı", "text": "12 'ezilen' dosyanın karşılaştırma raporunu hazırla." },
+    { "ts": "2026-09-30 18:15", "kim": "ajan", "text": "docs/09 raporu: bizim↔donor↔canlı üçlü analiz; Kolay 3/Orta 5/Zor 4 sırası, 6 config eksiği. Commit 8152b67ee." },
+    { "ts": "2026-09-30 17:30", "kim": "kullanıcı", "text": "Faz 2a.5'i yap: GetEngine/MainInfo karşılaştır + ConnectIP.bmd çözümle + tek tasarım kararı." },
+    { "ts": "2026-09-30 17:30", "kim": "ajan", "text": "2a.5 zaten tamamlanmıştı (commit 4aedd4736 + cf2cb14fd); üç çıktının yerinde olduğu doğrulandı. Uygulama 2d'de." },
+    { "ts": "2026-09-30 16:30", "kim": "kullanıcı", "text": "Son kaydedilen adımdan devam et (Faz 2b'nin kalan 4 kancası)." },
+    { "ts": "2026-09-30 16:30", "kim": "ajan", "text": "4 kanca uygulandı, H-007 (0x35 çakışması) çözüldü; GS derlendi 10.704.896 B, PDB doğrulandı. Commit 599d568ef." }
+  ]
+}

@@ -7,6 +7,22 @@
 
 ---
 
+## [26.09.30] Pano v5 — canlı sohbet akışı paneli
+
+**Ne yapıldı**
+- Kullanıcı sorusu: "bu sohbeti canlı olarak oradan görüp son komutları takip
+  edebilir miyim?" → sohbetin kendisi panoya akıtmak için yeni panel.
+- `Dashboard\data\sohbet.json`: ajan protokolü — **her turun sonunda en üste 1
+  kayıt** (kullanıcı isteği + ajanın yaptığı + commit); mevcut oturumun tüm
+  turları geriye dönük dolduruldu (14 kayıt).
+- `server.ps1`: /api/agent yanıtına sohbet alanı eklendi.
+- `index.html`: **💬 Sohbet Akışı** paneli — SEN (turuncu) / 🤖 AJAN (yeşil)
+  timeline, son 15 kayıt, 30 sn yenileme.
+- Doğrulama: /api/agent sohbet alanı döndürüyor; panelde 14 kayıt render
+  ediliyor (Preview ekran görüntüsü onaylı).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Pano v4 — ajan köprüsü: panodan komut verme
 
 **Ne yapıldı**

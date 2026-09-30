@@ -156,6 +156,20 @@ body{
 .hitem:last-child{border:none}
 .hitem .ht{color:var(--acc);font-size:11px;font-family:Consolas,monospace}
 
+/* ---------- SOHBET AKISI ---------- */
+.feed{position:relative;padding-left:24px}
+.feed::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--run),var(--acc),var(--line))}
+.fe{position:relative;padding:7px 0 7px 8px;font-size:13.5px}
+.fe::before{content:"";position:absolute;left:-21px;top:13px;width:9px;height:9px;border-radius:50%}
+.fe.k-ajan::before{background:var(--ok);box-shadow:0 0 0 3px rgba(67,227,155,.15)}
+.fe.k-kullanici::before{background:var(--acc);box-shadow:0 0 0 3px rgba(245,166,35,.15)}
+.fe .meta{font-size:11px;color:var(--dim2);font-family:Consolas,monospace}
+.fe .kim{font-weight:800;font-size:11.5px;letter-spacing:.5px}
+.fe.k-ajan .kim{color:var(--ok)}
+.fe.k-kullanici .kim{color:var(--acc)}
+.fe .txt{color:var(--tx);line-height:1.5}
+
 /* ---------- TEKNIK ---------- */
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 td,th{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left}
@@ -222,6 +236,14 @@ footer{color:var(--dim2);font-size:11.5px;margin-top:22px;text-align:center;line
     <h2>🗺️ <span class="n">Plan — Bütün Adımlar</span></h2>
     <div class="hint">Kaynak: docs/02-YOL-HARİTASI (canlı okunuyor) · tamamlanmış fazlara tıkla-aç/kapa</div>
     <div id="plan">yükleniyor…</div>
+  </div>
+
+  <!-- SOHBET AKISI -->
+  <div class="panel">
+    <h2>💬 <span class="n">Sohbet Akışı</span> <span style="color:var(--dim2);font-size:12px">— bu sohbetin canlı özeti</span></h2>
+    <div class="hint">Ajan her turun sonunda buraya yazar: ne istendi + ne yapıldı + commit.
+    Ayrıntı için CHANGELOG'a bak.</div>
+    <div class="feed" id="feed">yükleniyor…</div>
   </div>
 
   <!-- AJAN KOPRUSU -->
@@ -360,6 +382,12 @@ async function loadToday(){
 async function loadAgent(){
   try{
     const j = await (await fetch("/api/agent")).json();
+    // Sohbet akisi
+    const fd=document.getElementById("feed");
+    if(fd){
+      fd.innerHTML = (j.sohbet||[]).slice(0,15).map(e=>
+        `<div class="fe k-${e.kim}"><span class="meta">${e.ts}</span> <span class="kim">${e.kim==="ajan"?"🤖 AJAN":"👤 SEN"}</span><div class="txt">${e.text}</div></div>`).join("");
+    }
     // Oneriler
     const sg=document.getElementById("sugs"); sg.innerHTML="";
     (j.suggestions||[]).forEach(s=>{
