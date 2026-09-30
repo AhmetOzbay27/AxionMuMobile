@@ -27,7 +27,7 @@
 - Uyarı: PIN'in koruması basittir (statik eşleşme); hassas iş için yine de
   sohbet onayı gerekir (request_elevation akışı panoyu bypass etmez).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `60dc4cddd`
 
 ## [26.09.30] Pano tasarım v3 — misyon kartları + katlanabilir plan
 
