@@ -98,15 +98,15 @@ void CEventKillAll::MainProc() // OK
 		{
 			if (this->m_Members < 2)
 			{
-				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(808));
+				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(808));
 				LogAdd(LOG_EVENT,"[EVENT KILL ALL] Canceled");
 
 				this->Clear();
 			}
 			else
 			{
-				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(805));
-				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(806));
+				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(805));
+				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(806));
 				this->m_EventKillAllActive = 1;
 				this->m_EventKillAllEnter = 0;
 			}
@@ -117,7 +117,7 @@ void CEventKillAll::MainProc() // OK
 		if(this->m_RemainTime <= 0 && (this->m_EventKillAllEnter != 0 || this->m_EventKillAllActive != 0))
 		{
 			    this->m_EventKillAllActive = 0;
-				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(807));
+				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(807));
 				LogAdd(LOG_EVENT,"[EVENT KILL ALL] Time is over");
 
 				this->Clear();
@@ -141,7 +141,7 @@ void CEventKillAll::MainProc() // OK
 							GDSetCoinSend(this->User[n].Index, gServerInfo.m_EventKillAllAutoReward1[0], gServerInfo.m_EventKillAllAutoReward2[0], gServerInfo.m_EventKillAllAutoReward3[0],"KillAll");
 						}
 
-						gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(812),gObj[this->User[n].Index].Name,this->User[n].Score);
+						gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(812),gObj[this->User[n].Index].Name,this->User[n].Score);
 
 						LogAdd(LOG_EVENT,"[EVENT PVP] (Winner1: %s)",gObj[this->User[n].Index].Name);
 					}
@@ -154,7 +154,7 @@ void CEventKillAll::MainProc() // OK
 							GDSetCoinSend(this->User[n].Index, gServerInfo.m_EventKillAllAutoReward1[1], gServerInfo.m_EventKillAllAutoReward2[1], gServerInfo.m_EventKillAllAutoReward3[1],"KillAll");
 						}
 
-						gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(813),gObj[this->User[n].Index].Name,this->User[n].Score);
+						gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(813),gObj[this->User[n].Index].Name,this->User[n].Score);
 
 						LogAdd(LOG_EVENT,"[EVENT PVP] (Winner2: %s)",gObj[this->User[n].Index].Name);
 					}
@@ -167,12 +167,12 @@ void CEventKillAll::MainProc() // OK
 							GDSetCoinSend(this->User[n].Index, gServerInfo.m_EventKillAllAutoReward1[2], gServerInfo.m_EventKillAllAutoReward2[2], gServerInfo.m_EventKillAllAutoReward3[2],"KillAll");
 						}
 
-						gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(814),gObj[this->User[n].Index].Name,this->User[n].Score);
+						gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(814),gObj[this->User[n].Index].Name,this->User[n].Score);
 
 						LogAdd(LOG_EVENT,"[EVENT PVP] (Winner3: %s)",gObj[this->User[n].Index].Name);
 					}
 
-					gNotice.GCNoticeSend(this->User[n].Index,1,0,0,0,0,0,gMessage.GetMessage(815),this->User[n].Rank,this->User[n].Score);
+					gNotice.GCNoticeSend(this->User[n].Index,1,0,0,0,0,0,gMessage.GlobalText(815),this->User[n].Rank,this->User[n].Score);
 					
 				}
 
@@ -204,7 +204,7 @@ bool CEventKillAll::CommandEventKillAll(LPOBJ lpObj,char* arg) // OK
 		this->Clear();
 		LogAdd(LOG_EVENT,"[EVENT KILL ALL] Canceled");
 
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(808));
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(808));
 
 		return 0;
 	}
@@ -216,8 +216,8 @@ bool CEventKillAll::CommandEventKillAll(LPOBJ lpObj,char* arg) // OK
 	this->m_MapX					= lpObj->X;
 	this->m_MapY					= lpObj->Y-1;
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(809),gServerInfo.m_EventKillAllMaxPlayers);
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(810));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(809),gServerInfo.m_EventKillAllMaxPlayers);
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(810));
 
 	LogAdd(LOG_EVENT,"[EVENT KILL ALL] Start by %s",lpObj->Name);
 
@@ -260,7 +260,7 @@ void CEventKillAll::CommandEventKillAllJoin(LPOBJ lpObj,char* arg) // OK
 
 	lpObj->KillAll = 1;
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(811),this->m_Members, lpObj->Name);
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(811),this->m_Members, lpObj->Name);
 
 	gObjTeleport(lpObj->Index,this->m_Map,this->m_MapX,this->m_MapY);
 
@@ -402,13 +402,13 @@ void CEventKillAll::UserDieProc(LPOBJ lpObj,LPOBJ lpTarget) // OK
 		if(this->User[n].Index == lpObj->Index)
 		{
 			this->User[n].Score -= ((this->User[n].Score>gServerInfo.m_EventKillAllDeadDecrease)?gServerInfo.m_EventKillAllDeadDecrease:this->User[n].Score);
-			gNotice.GCNoticeSend(this->User[n].Index,1,0,0,0,0,0,gMessage.GetMessage(816),this->User[n].Score);
+			gNotice.GCNoticeSend(this->User[n].Index,1,0,0,0,0,0,gMessage.GlobalText(816),this->User[n].Score);
 		}
 
 		if(this->User[n].Index == lpTarget->Index)
 		{
 			this->User[n].Score += gServerInfo.m_EventKillAllKillIncrease;
-			gNotice.GCNoticeSend(this->User[n].Index,1,0,0,0,0,0,gMessage.GetMessage(816),this->User[n].Score);
+			gNotice.GCNoticeSend(this->User[n].Index,1,0,0,0,0,0,gMessage.GlobalText(816),this->User[n].Score);
 		}
 	}
 }

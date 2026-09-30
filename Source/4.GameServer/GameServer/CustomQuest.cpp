@@ -313,112 +313,112 @@ bool CCustomQuest::CheckCharacter(LPOBJ lpObj,int quest,int Npc) // OK
 			continue;
 		}
 
-		if (it->Level > 0 && lpObj->Level < it->Level)
+		if (it->Level > 0 && lpObj->Level < it->Level) // SPK (Faz 2b.2-D): donor GetLevel() yerine Level — OBJECTSTRUCT::GetLevel chain'i bizde yok (Gate.cpp 2b.2-C adaptasyonu ile aynı)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(692),quest, it->Level);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(692),quest, it->Level);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(692),quest, it->Level);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(692),quest, it->Level);
 			}
 			return 0;
 		}
 
 		if (it->Reset > 0 && lpObj->Reset < it->Reset)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(693),quest, it->Reset);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(693),quest, it->Reset);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(693),quest, it->Reset);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(693),quest, it->Reset);
 			}
 			return 0;
 		}
 
 		if (it->MReset > 0 && lpObj->MasterReset < it->MReset)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(694),quest, it->MReset);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(694),quest, it->MReset);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(694),quest, it->MReset);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(694),quest, it->MReset);
 			}
 			return 0;
 		}
 
 		if (it->Zen > 0 && lpObj->Money < (DWORD)it->Zen)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(695),quest, it->Zen);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(695),quest, it->Zen);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(695),quest, it->Zen);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(695),quest, it->Zen);
 			}
 			return 0;
 		}
 
 		if (it->Coin1 > 0 && lpObj->Coin1 < it->Coin1)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(849),quest, it->Coin1);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(849),quest, it->Coin1);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(849),quest, it->Coin1);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(849),quest, it->Coin1);
 			}
 			return 0;
 		}
 
 		if (it->Coin2 > 0 && lpObj->Coin2 < it->Coin2)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(850),quest, it->Coin2);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(850),quest, it->Coin2);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(850),quest, it->Coin2);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(850),quest, it->Coin2);
 			}
 			return 0;
 		}
 
 		if (it->Coin3 > 0 && lpObj->Coin3 < it->Coin3)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(851),quest, it->Coin3);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(851),quest, it->Coin3);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(851),quest, it->Coin3);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(851),quest, it->Coin3);
 			}
 			return 0;
 		}
 
 		if (it->VipLevel >= 0 && lpObj->AccountLevel < it->VipLevel)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(697),quest);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(697),quest);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(697),quest);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(697),quest);
 			}
 			return 0;
 		}
 
 		if (it->RankUser >= 0 && gCustomRankUser.GetRankIndex(lpObj->Index) < it->RankUser)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(856),quest);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(856),quest);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(856),quest);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(856),quest);
 			}
 			return 0;
 		}
 
 		if (it->Kills > 0 && lpObj->Kills < it->Kills)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(857),quest, it->Kills);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(857),quest, it->Kills);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(857),quest, it->Kills);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(857),quest, it->Kills);
 			}
 			return 0;
 		}
@@ -506,11 +506,11 @@ bool CCustomQuest::CheckItem(LPOBJ lpObj,int quest,int Npc) // OK
 				wsprintf(level,"+%d", it->Level);
 
 				wsprintf(text,"%d %s %s %s %s",it->Quantity,gItemManager.GetItemName(GET_ITEM(it->Category,it->ItemIndex)),(it->Level >= 0) ? level : "",(it->Luck >= 0) ? (it->Luck == 1) ? "+Luck" : "-No Luck" : "",(it->Skill >= 0) ? (it->Skill == 1) ? "+Skill" : "-No Skill" : "");
-				gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(698),quest,text);
+				gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(698),quest,text);
 
 				if (Npc >= 0)
 				{
-					GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(698),quest,text);
+					GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(698),quest,text);
 				}
 				return 0;
 			}
@@ -542,11 +542,11 @@ bool CCustomQuest::CheckMonster(LPOBJ lpObj,int quest,int Npc) // OK
 				lpObj->CustomQuestMonsterQtd	= it->Quantity;
 			}
 
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(699),quest, it->Quantity, gMonsterManager.GetMonsterName(it->MonsterIndex),lpObj->CustomQuestMonsterQtd);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(699),quest, it->Quantity, gMonsterManager.GetMonsterName(it->MonsterIndex),lpObj->CustomQuestMonsterQtd);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(699),quest, it->Quantity, gMonsterManager.GetMonsterName(it->MonsterIndex),lpObj->CustomQuestMonsterQtd);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(699),quest, it->Quantity, gMonsterManager.GetMonsterName(it->MonsterIndex),lpObj->CustomQuestMonsterQtd);
 			}
 			return 0;
 		}
@@ -579,11 +579,11 @@ bool CCustomQuest::CheckItemRewardInventorySpace(LPOBJ lpObj,int quest,int Npc) 
 
 		if (this->CheckItemInventorySpace(lpObj,it->ItemIndex) == 0)
 		{
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(852),quest);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(852),quest);
 
 			if (Npc >= 0)
 			{
-				GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(852),quest);
+				GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(852),quest);
 			}
 			return 0;
 		}
@@ -813,7 +813,15 @@ void CCustomQuest::AddRewardBuff(LPOBJ lpObj,int quest) // OK
 			continue;
 		}
 
-		gEffectManager.AddEffect(lpObj,1,it->EffectID,it->Time*60,it->Power1,it->Power2,0,0);
+		EFFECT_INFO* lpInfo = gEffectManager.GetInfo(it->EffectID);
+
+		if(lpInfo == 0)
+		{
+			continue;
+		}
+
+		gEffectManager.AddEffect(lpObj,1,it->EffectID,(lpInfo->Type==2)?(int)(time(0)+(it->Time*60)):it->Time*60,it->Power1,it->Power2,0,0);
+
 	}
 }
 
@@ -860,15 +868,20 @@ void CCustomQuest::QuestCommand(LPOBJ lpObj,char* arg,int Npc)
 		return;
 	}
 
+	if(lpObj->TradeDuel != 0)
+	{
+		return;
+	}
+
 	int quest = lpObj->CustomQuest+1;
 
 	if(this->CheckAll(quest) == 0)
 	{
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(700));
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(700));
 
 		if (Npc >= 0)
 		{
-			GCChatTargetNewSend(lpObj,Npc,gMessage.GetMessage(700));
+			GCChatTargetNewSend(lpObj,Npc,gMessage.GlobalText(700));
 		}
 		return;
 	}

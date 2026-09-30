@@ -27,8 +27,6 @@ CustomDeathMessage::CustomDeathMessage() // OK
 
 CustomDeathMessage::~CustomDeathMessage() // OK
 {
-
-
 }
 
 
@@ -36,14 +34,14 @@ void CustomDeathMessage::Load(char* path) // OK
 {
 	CMemScript* lpMemScript = new CMemScript;
 
-	if(lpMemScript == 0)
+	if (lpMemScript == 0)
 	{
-		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR,path);
+		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR, path);
 		return;
 	}
 
 
-	if(lpMemScript->SetBuffer(path) == 0)
+	if (lpMemScript->SetBuffer(path) == 0)
 	{
 		ErrorMessageBox(lpMemScript->GetLastError());
 		delete lpMemScript;
@@ -57,35 +55,35 @@ void CustomDeathMessage::Load(char* path) // OK
 	try
 	{
 
-	while(true)
-	{
-		if(lpMemScript->GetToken() == TOKEN_END)
+		while (true)
 		{
-		break;
+			if (lpMemScript->GetToken() == TOKEN_END)
+			{
+				break;
+			}
+
+
+			if (strcmp("end", lpMemScript->GetString()) == 0)
+			{
+				break;
+			}
+
+
+			CUSTOMDEATHMESSAGE_INFO info;
+
+
+			info.Index = lpMemScript->GetNumber();
+
+
+			strcpy_s(info.Text, lpMemScript->GetAsString());
+
+
+			this->m_CustomDeathMessage.insert(std::pair<int, CUSTOMDEATHMESSAGE_INFO>(info.Index, info));
 		}
-
-
-		if(strcmp("end",lpMemScript->GetString()) == 0)
-		{
-		break;
-		}
-
-
-		CUSTOMDEATHMESSAGE_INFO info;
-
-
-		info.Index = lpMemScript->GetNumber();
-
-
-		strcpy_s(info.Text,lpMemScript->GetAsString());
-
-
-	this->m_CustomDeathMessage.insert(std::pair<int,CUSTOMDEATHMESSAGE_INFO>(info.Index,info));
 	}
-	}
-	catch(...)
+	catch (...)
 	{
-	ErrorMessageBox(lpMemScript->GetLastError());
+		ErrorMessageBox(lpMemScript->GetLastError());
 	}
 
 
@@ -97,29 +95,29 @@ void CustomDeathMessage::GetDeathText(LPOBJ lpTarget, LPOBJ lpObj, int index) //
 {
 #if GAMESERVER_CLIENTE_UPDATE >= 4
 
-	if(gServerInfo.m_CustomDeathMessageSwitch == 0)
+	if (gServerInfo.m_CustomDeathMessageSwitch == 0)
 	{
 		return;
 	}
 
 	CUSTOMDEATHMESSAGE_INFO CustomDM;
 
-	if(this->GetInfo(index,&CustomDM) == 0)
+	if (this->GetInfo(index, &CustomDM) == 0)
 	{
 		return;
 	}
 
-	GCChatTargetSend(lpTarget,lpObj->Index,CustomDM.Text);
+	GCChatTargetSend(lpTarget, lpObj->Index, CustomDM.Text);
 #endif
 }
 
 
-bool CustomDeathMessage::GetInfo(int index,CUSTOMDEATHMESSAGE_INFO* lpInfo) // OK
+bool CustomDeathMessage::GetInfo(int index, CUSTOMDEATHMESSAGE_INFO* lpInfo) // OK
 {
 
-	std::map<int,CUSTOMDEATHMESSAGE_INFO>::iterator it = this->m_CustomDeathMessage.find(index);
+	std::map<int, CUSTOMDEATHMESSAGE_INFO>::iterator it = this->m_CustomDeathMessage.find(index);
 
-	if(it == this->m_CustomDeathMessage.end())
+	if (it == this->m_CustomDeathMessage.end())
 	{
 		return 0;
 	}
@@ -128,4 +126,4 @@ bool CustomDeathMessage::GetInfo(int index,CUSTOMDEATHMESSAGE_INFO* lpInfo) // O
 		(*lpInfo) = it->second;
 		return 1;
 	}
-} 
+}

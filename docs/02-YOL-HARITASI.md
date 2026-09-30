@@ -84,7 +84,13 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     EventTime.xml + BossGuild.xml + CustomJewel.txt asıl ağaca kopyalandı
     (config-pasifizasyonundaki test-ağacı hatası düzeltildi). GS temiz →
     10.781.184 B. Detay: CHANGELOG 2b.2-E.
-  - ⬜ 2b.2-D..F: G3 → G4 (SPK korumalı) → G5
+  - ✅ **2b.2-D dalga 5** (30.09.2026): G3 manuel birleştirme — 4 dosya alındı
+    (CustomDeathMessage, EventKillAll, CustomQuest +h'leri, EventRunAndCatch;
+    CustomQuest GetLevel ve RAC gate=1 adaptasyonları), 6 gerekçeli korundu
+    (CustomMonster CB_BXHDMG, GameMain G5-include'ları, DefaultClassInfo global
+    ad-zinciri, ItemOption enum kayması, Warehouse DS-çifti, MemScript parser).
+    GS temiz → 10.776.064 B.
+  - ⬜ 2b.2-E..F: G4 (SPK korumalı) → G5
 - ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
   CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
   envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.

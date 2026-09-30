@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-30 23:45:00",
+  "updated": "2026-09-30 23:50:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
   "entries": [
-    { "ts": "2026-09-30 23:45", "kim": "ajan", "text": "2b.2-E kalemleri dalga 4 TAMAM: E-05 yol geçişi (canlı SPK\ yolları), E-08 bizim taban, 7 kalem gerekçeli 2c erteleme. Deploy-config düzeltmesi: EventTime.xml/CustomJewel.txt asıl ağaca + SPK klasörü + BossGuild.xml. GS temiz → 10.781.184 B. Kalan: G3/G4/G5 + faz kapanışı." },
+    { "ts": "2026-09-30 23:50", "kim": "ajan", "text": "2b.2-D dalga 5 TAMAM (G3): 4 dosya alındı (CustomDeathMessage, EventKillAll, CustomQuest, EventRunAndCatch — 2 adaptasyonla), 6 gerekçeli korundu (CustomMonster CB_BXHDMG, GameMain G5-include'lar, ItemOption enum kayması...). GS temiz → 10.776.064 B. Kalan: G4/G5 + faz kapanışı." },
     { "ts": "2026-09-30 21:20", "kim": "kullanıcı", "text": "6 config eksiğini kapat: canlı Sub-1'den kopyala, CustomJewel çağrısını .txt'e çevir, derlemeyi doğrula." },
     { "ts": "2026-09-30 21:30", "kim": "ajan", "text": "6 config kopyalandı + 2 format düzeltmesi: CustomJewel .xml→.txt, ThuMuaDoExc .xml→.txt (canlı exe kanıtı). GS temiz → 10.701.824 B. Bulgu: canlı config yolları SPK\ altında, bizim bir kısmı Custom\ — E-kalem entegrasyonlarında birleştirilecek. CHANGELOG + 09 §5 güncel." },
     { "ts": "2026-09-30 20:50", "kim": "kullanıcı", "text": "2b.2'yi E-10 Reconnect ile başlat: donor sürümü al, derle, CHANGELOG + commit ile kapat." },

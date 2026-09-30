@@ -7,6 +7,52 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-D — G3 manuel birleştirme dalga 5: 4 dosya alındı, 6 dosya gerekçeli korundu
+
+**Ne yapıldı**
+- G3 havuzu (10 dosya + G2'den itilen 4) dosya dosya işlendi:
+- **Alındı (donor-birebir):** CustomDeathMessage(+h, saf girinti farkı —
+  normalize-diff 32, hepsi whitespace), EventKillAll(+h, tamamen
+  GetMessage→GlobalText).
+- **Alındı (1'er satır adaptasyon):**
+  - CustomQuest(+h): donor `lpObj->GetLevel()` → bizim `lpObj->Level`
+    (2b.2-C Gate adaptasyonu ile aynı gerekçe;
+    `// SPK (Faz 2b.2-D)` notu). CustomQuestMonsterQtd alanı bizde VAR
+    (User.h/ObjectManager/User.cpp) — donor satırları uyumlu geldi.
+  - EventRunAndCatch(+h): donor yakalanan-oyuncu kapısını 1(Lorencia)→17(Devias)
+    değiştirmiş — canlı kanıt yok, **bizim değer 1 korundu**
+    (`// SPK (Faz 2b.2-D)` notu). Diğer tüm farklar GlobalText.
+- **Gerekçeli korundu (bizim taban):**
+  - CustomMonster: bizim CB_BXHDMG=1 feature bloğu (ShowBXHDmg okuma +
+    gObjMonsterGetTopHitDamageUser çağrısı) donorde YOK — SPK ödül/top-damage
+    sistemi korunur.
+  - GameMain: bizim include setinde FakeOnline/CustomAttack (G5 modülleri) +
+    PROTECT_START/FINAL makroları + Conectar bloğu var; donor 149 satır
+    eklemesi bunların içinden geçiyor — alım G5 modüllerini kırar.
+  - DefaultClassInfo: donor global adı `gDefaultClassInfo`→`gCharacterManager`
+    yapmış; bizim tree'de 4 dosya (ChangeClass/CommandManager/Fruit/
+    ObjectManager) eski adı kullanıyor — zincir alımı gerekir, kanıt yok.
+  - ItemOption(+h): donor .h'de enum kayması (bizim ADD_SD=128/129 satırları
+    silinmiş, sonraki değerler 2 kaymış) — kayıtlı config/istemci numaraları
+    bozulur; ExportXML + typedef farkı semantik değil.
+  - Warehouse: bizim GDWarehouseGuildOpenRecv/Consult + DS 0x76 hattı bizim
+    DSProtocol'le çift (P0-korumalı); donor Close-tekil yapısı uyumsuz.
+  - MemScript: 127 whitespace-normalize fark; `*`→-1 kuralı iki tarafta da VAR
+    (CustomJewel .txt kararı etkilenmez) — donor alımı nötr ama risksiz değil
+    (parser'ı 40+ modül kullanıyor); işaretlendi, G4 taramasında yeniden
+    değerlendirilecek.
+
+**Neden** — G3 kuralı: her iki tarafta gerçek gelişme var; yalnız kanıtlı
+iyileştirmeler alınır, SPK davranışı korunur.
+
+**Doğrulama**
+- GS temiz derlendi (0 error) → GameServer.exe **10.776.064 B** (23:46), pdb güncel;
+- CustomDeathMessage/EventKillAll donor-birebir (cmp); CustomQuest/
+  EventRunAndCatch donor+1'er satır SPK notlu adaptasyon;
+- .h'ler birebir (git değişiklik göstermedi).
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-E kalemleri dalga 4 — E-05 uygulandı, 7 kalem gerekçeli ertelendi, deploy-config düzeltmesi
 
 **Ne yapıldı**

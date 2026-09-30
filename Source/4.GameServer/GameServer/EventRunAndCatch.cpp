@@ -75,8 +75,8 @@ void CEventRunAndCatch::MainProc() // OK
 	{ 
 		if(this->m_RemainTime <= (this->m_TotalTime-gServerInfo.m_EventRunAndCatchTimeToEnter) && this->m_EventRunAndCatchEnter == 1)
 		{
-			gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(683));
-			gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(684));
+			gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(683));
+			gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(684));
 			this->m_EventRunAndCatchActive = 1;
 			this->m_EventRunAndCatchEnter = 0;
 		}
@@ -86,7 +86,7 @@ void CEventRunAndCatch::MainProc() // OK
 		if(this->m_RemainTime <= 0)
 		{
 			    this->m_EventRunAndCatchActive = 0;
-				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(685));
+				gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(685));
 				LogAdd(LOG_EVENT,"[EVENT RUN AND CATCH] Time is over");
 
 				this->Clear();
@@ -99,7 +99,6 @@ void CEventRunAndCatch::MainProc() // OK
 
 void CEventRunAndCatch::CommandEventRunAndCatch(LPOBJ lpObj,char* arg) // OK 
 {
-
 	if(gServerInfo.m_EventRunAndCatchSwitch == 0)
 	{
 		return;
@@ -115,7 +114,7 @@ void CEventRunAndCatch::CommandEventRunAndCatch(LPOBJ lpObj,char* arg) // OK
 		this->Clear();
 		LogAdd(LOG_EVENT,"[EVENT RUN AND CATCH] Canceled");
 
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(686));
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(686));
 
 		return;
 	}
@@ -128,8 +127,8 @@ void CEventRunAndCatch::CommandEventRunAndCatch(LPOBJ lpObj,char* arg) // OK
 	this->m_MapX					= lpObj->X;
 	this->m_MapY					= lpObj->Y-1;
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(687));
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(688));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(687));
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(688));
 
 	LogAdd(LOG_EVENT,"[EVENT RUN AND CATCH] Start by %s",lpObj->Name);
 }
@@ -163,7 +162,7 @@ void CEventRunAndCatch::CommandEventRunAndCatchJoin(LPOBJ lpObj,char* arg) // OK
 
 	lpObj->RunAndCatch = 1;
 
-	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(689),lpObj->Name);
+	gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(689),lpObj->Name);
 
 	gObjTeleport(lpObj->Index,this->m_Map,this->m_MapX,this->m_MapY);
 
@@ -211,7 +210,7 @@ void CEventRunAndCatch::EventRunAndCatchHit(int aIndex,int bIndex) // OK
 	{
 		this->Clear();
 		LogAdd(LOG_EVENT,"[EVENT RUN AND CATCH] Canceled");
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(686));
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(686));
 
 		return;
 	}
@@ -220,7 +219,7 @@ void CEventRunAndCatch::EventRunAndCatchHit(int aIndex,int bIndex) // OK
 	{
 		this->Clear();
 
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(690),lpObj->Name);
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(690),lpObj->Name);
 		GCFireworksSend(lpObj,lpObj->X,lpObj->Y);
 
 		if (gServerInfo.m_EventRunAndCatchAutoReward1 > 0 || gServerInfo.m_EventRunAndCatchAutoReward2 > 0 || gServerInfo.m_EventRunAndCatchAutoReward3 > 0)
@@ -233,10 +232,10 @@ void CEventRunAndCatch::EventRunAndCatchHit(int aIndex,int bIndex) // OK
 	}
 	else 
 	{
-		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(691),lpObj->Name);
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(691),lpObj->Name);
 		LogAdd(LOG_EVENT,"[EVENT RUN AND CATCH] (Catched: %s)",lpObj->Name);
 		lpObj->RunAndCatch = 0;
-		gObjMoveGate(lpObj->Index,1);
+		gObjMoveGate(lpObj->Index,1); // SPK (Faz 2b.2-D): donor gate 17 (Devias), bizim davranis gate 1 (Lorencia) — canli-kanitsiz degisim alinmadi
 	}
 
 	return;

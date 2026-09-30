@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 23:45:00",
+  "updated": "2026-09-30 23:50:00",
   "status": "ok",
-  "text": "2b.2-E kalemleri dalga 4 TAMAM: E-05 yol gecisi uygulandi (CustomBuyVip + AddBuff -> canli SPK\\ yollari), E-08 bizim taban, E-12 onceden tamam. E-01/E-02/E-03/E-04/E-06/E-09/E-11 gerekceli 2c erteleme (canli kanit sarti: BotBuffer.txt canlida YOK, ChangeClass XML Enable=0, EventTime.xml okuyucusu iki kaynakta yok...). Deploy-config duzeltmesi: config-pasifizasyonda test agacina kopyalanan EventTime.xml/CustomJewel.txt asil agaca tasindi + SPK klasoru (3 dosya) + BossGuild.xml. GS temiz -> 10.781.184 B. Kalan: G3 (14 dosya) + G4 (38) + G5 (31) + faz kapanisi."
+  "text": "2b.2-D dalga 5 TAMAM (G3 manuel birlesim): 4 dosya alindi — CustomDeathMessage(+h), EventKillAll(+h) donor-birebir; CustomQuest(+h) GetLevel->Level ve EventRunAndCatch(+h) gate=1 korumasiyla 1'er satir adaptasyon. 6 dosya gerekceli korundu: CustomMonster (CB_BXHDMG feature), GameMain (G5 include'lari + PROTECT makrolari), DefaultClassInfo (global ad-zinciri), ItemOption (enum kaymasi 128/129), Warehouse (DS 0x76 cifti), MemScript (parser riske karsi korundu). GS temiz -> 10.776.064 B (23:46). Kalan: G4 (38 dosya) + G5 (31) + faz kapanisi."
 }
