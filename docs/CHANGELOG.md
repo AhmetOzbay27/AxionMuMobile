@@ -33,7 +33,7 @@ takip etmek istiyor.
 - Tüm docs dosyaları (Türkçe İ̇ adlılar dahil) `/api/doc/` ile okunuyor.
 - Yol geçiş testi: `/api/doc/..%2F..%2Fserver.ps1` → 404.
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `ffd1cb607` + `f8d37a58e`
 
 ## [26.09.30] Faz 2b.0-E — 12 ezilen dosyanın karşılaştırma raporu (docs/09)
 
