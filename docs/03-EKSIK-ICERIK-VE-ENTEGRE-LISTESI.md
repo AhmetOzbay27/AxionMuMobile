@@ -32,7 +32,7 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 |---|-----------------|--------|-------|-------|
 | B-01 | **SPK istemci format katmanı**: ConnectIP.bmd, ServerData.bmd, SPK.ini, Data\SPK okuma | `Client\Engine.exe` + `Data\SPK\Config\*.bmd` analizi (yeni adım **2d.0**) | `Source\5.Main\` | ⬜ |
 | B-02 | SPK client içerik varlıkları (Btn_AutoHp.spk, Btn_AutoPK.spk, ai_newui_skill*.ozj, Config\Info\) | `Client\Data\SPK\` | istemci paketi | ⬜ 2d.0 sonrası |
-| B-03 | GetMainInfo varyant birleşimi | SPK GetEngine referansı + MUIG MainInfo kaynağı | `Source\6.GetMainInfo\` | ⬜ 2a.5/2d karar |
+| B-03 | GetMainInfo varyant birleşimi — **tasarım tamam** ([08 dokümanı](08-GETMAININFO-TASARIM.md), D1-D9 iş planı) | SPK GetEngine benimsendi; MUIG legacy bayraklı | `Source\6.GetMainInfo\SPK\` | 🔄 2d.1 uygulaması |
 | B-04 | Gömülü IP / config okuma düzeni (H-004) | Canlı değer: 192.168.0.150 | `Source\5.Main\` | ⬜ 2e.1 |
 | B-05 | MUIG 68 özel modülünün canlı karşılığı kontrolü | MUIG donor | `Source\5.Main\` | ⬜ 2b.3 |
 
