@@ -1,147 +1,180 @@
 # 05 — SPK MODÜL ENVANTERİ (Faz 2a.1 çıktısı — FAZ 2c İŞ EMRİ)
 
-> Tarih: 30.09.2026. Kaynak kanıtları: canlı `GameServer.map` (242 sınıf) +
-> canlı `GameServer.pdb` (367 cpp yolu, 277 GS proje dosyası) + 06 envanteri
-> config bulguları. Ham veriler `BuildLog\envanter\` altında (canli_gs_s.txt,
-> bizim_gs_s.txt, canli_ek_dosyalar.txt, ortak_dosyalar.txt, bizim_ek_dosyalar.txt,
-> canli_spk_s.txt, pdb_cpp_yollari.txt, pdb_linker_cmd.txt).
+> Tarih: 30.09.2026 (temiz yeniden yazım). Kaynak kanıtları:
+> canlı `GameServer.map` (242 sınıf) + canlı `GameServer.pdb` (367 cpp yolu,
+> 277 GS proje dosyası) + 06 envanteri config eşlemeleri. Ham veriler:
+> `BuildLog\envanter\` (canli_gs_s.txt, bizim_gs_s.txt, canli_ek_dosyalar.txt,
+> ortak_dosyalar.txt, bizim_ek_dosyalar.txt, canli_spk_s.txt,
+> pdb_cpp_yollari.txt, pdb_linker_cmd.txt).
 
 ---
 
-## 1. CANLI GS PROJE YAPISI (PDB'den kesin)
+## 1. CANLI GS PROJE YAPISI (PDB + map'ten kesin)
 
-- Canlı derleme yolu: `D:\Mu-Mobile\MuSPK\Source\ExGameServer\GameServer\`
-- **277 cpp** derleniyor; **218'i bizim kaynağımızda da VAR** (isim paritesi).
-- **SPK modüllerinin tamamı `GameServer\SPK\` alt klasöründe (57 cpp).**
-- Ara yapı: `D:\BuildMU\Android\ExGameServer\` (+ spk_messlang.obj yolu →
-  SPK_MessLang tek birim değil, alt katman da var).
-- Linker: VS2022 14.44.35207 (v143!), /LTCG /OPT:REF /OPT:ICF, SPKThemeManiFest.xml.
-- Canlı-özel dosyalardan 1'i proje dışı klasörde: `Source\Include\Math.cpp`.
+- Canlı derleme: `D:\Mu-Mobile\MuSPK\Source\ExGameServer\GameServer\` —
+  VS2022 14.44.35207 (**v143**), /LTCG /OPT:REF /OPT:ICF, SPKThemeManiFest.xml.
+- **277 cpp** derleniyor; SPK modülleri `GameServer\SPK\` alt klasöründe (57).
+- Ara yapı: `D:\BuildMU\Android\ExGameServer\` (spk_messlang.obj izi →
+  SPK_MessLang alt birimleri içerebilir).
+- 1 dosya proje dışı: `MuSPK\Source\Include\Math.cpp`.
 
 ## 2. KARŞILAŞTIRMA ÖZETİ
 
 | Ölçüm | Değer |
 |-------|-------|
-| Canlı GS cpp (277) | bizim 281 ile karşılaştırıldı |
+| Canlı GS cpp | 277 |
+| Bizim GS cpp | 281 |
 | Ortak (isim paritesi) | 218 |
-| **Sadece canlıda (eksik modül)** | **59** |
-| Sadece bizde (bizim eklerimiz) | 63 |
+| **Sadece canlıda (YENİ yazılacak)** | **59** (45 SPK\ altında + 14 kökte) |
+| **SPK\ altında olup bizde de olan (SPK revizyonuyla EZİLEN)** | **12** |
+| Sadece bizde (bizim dallanma; 2b.1'de değerlendirilir) | 63 |
 
-> **Sayı düzeltmesi:** Map analizi 58 demişti; PDB dosya analizi **59 dosya**
-> verdi (SkillDamage.cpp map'te yakalanamamıştı). Kesin sayı: **59**.
-
----
-
-## 3. EKSİK 59 MODÜL — KATEGORİLİ İŞ EMRİ
-
-### K-1) SPK_ önekli çekirdek modüller (20) — `GameServer\SPK\` içinden
-| # | Dosya | Sınıf (map) | Canlı config | Öncelik |
-|---|-------|-------------|--------------|---------|
-| 1 | SPK_EventMainManager.cpp | EventMainManager | — | P1 |
-| 2 | SPK_AddBuff.cpp | AddBuffer* | AddBuff.txt | P1 |
-| 3 | SPK_AutoHp.cpp | CAUTOHP | — | P1 |
-| 4 | SPK_Harmony.cpp | CustomHarmony | CustomHarmony.xml | P1 |
-| 5 | SPK_TuLuyen.cpp | cTuLuyen | TuLuyen.xml | P1 |
-| 6 | SPK_QuanHam.cpp | cQuanHam | QuanHam.xml | P1 |
-| SPK-15 | SPK_HonHoan.cpp | cHonHoan | HonHoan.xml | P1 |
-| SPK-16 | SPK_DanhHieu.cpp | cDanhHieu | DanhHieu.xml | P1 |
-| SPK-17 | SPK_Relife.cpp | TaiSinh | Relife.xml | P1 |
-| SPK-18 | SPK_DungLuyen.cpp | cDungLuyen | DungLuyen.xml | P1 |
-| SPK-19 | SPK_ExtendShop.cpp | CExtendShop | ExtendShop.xml | P2 |
-| SPK-20 | SPK_NewXShop.cpp | NewCashShop | CustomShop.xml | P2 |
-| SPK-21 | SPK_ItemTrader.cpp | BotThuMua(er) | ThuMuaDoExc.txt | P2 |
-| SPK-22 | SPK_MessLang.cpp | cMessageNew | Message.xml (yeni bloklar) | P1 |
-| SPK-23 | SPK_MonsterSkill.cpp | CCustomMonsterSkill | CustomMonsterSkill.txt | P2 |
-| SPK-24 | SPK_CmdSocket.cpp | CCommandUI | CustomCommandSocket.xml | P2 |
-| SPK-25 | SPK_CustomNameColor.cpp | cCustomNameColor | CustomNameColor.ini | P2 |
-| SPK-26 | SPK_StatsInfo.cpp | CSGetInfoCharacter | CharOption.xml | P2 |
-| SPK-27 | SPK_CastleEvent.cpp | CastleStartGuild | — | P2 |
-
-### K-2) SPKViet özel sistemler (14) — SPK\ klasörü
-| # | Dosya | Sategori | Canlı config | Öncelik |
-|---|-------|----------|--------------|---------|
-| V-01 | B_MocNap / B_MocNap.cpp | ödeme/recharge (móc nap) | CustomMocNap.xml | P1 |
-| V-02 | BEventThanMa.cpp | CThanMaChien (savaş) | — | P2 |
-| V-03 | CharOption.cpp | CCustomCharOption | CharOption.xml | P1 |
-| K-04 | ChangePass.cpp + PassLock.cpp | ChangePassOption + ItemPassLocker | — | P2 |
-| V-03b | ChecklevelVip.cpp | CheckItemVip | — | P3 |
-| V-04 | CustomDameBoss.cpp | VPDameBoss | — | P2 |
-| V-05 | CustomItemPro.cpp | SystemItemChanger | CustomItemPro.xml | P2 |
-| V-06 | CustomItemSetPro.cpp | CustomSetDameItem | CustomItemSetPro.xml | P2 |
-| MoveOptionNew | (dosya yok; MoveOptionNew sınıfı mevcut dosyalara gömülü) | — | MoveOptionNew | P3 |
-| V-07 | CustomJewelBank.cpp | CCustomJewelBank | CustomJewelBank.xml | P1 |
-| V-07b | CustomLuckySpin.cpp | CCustomLuckySpin | CustomVongQuay.xml | P2 |
-| V-08 | CustomRenameChar.cpp | CCustomRenameChar | — | P3 |
-| V-09 | CustomNewBuff.cpp | CustomNewBuff | CustomNewBuff.xml | P2 |
-| V-10 | GuildUpgrade.cpp | cSystemGuildUpgrade | GuildUpgrade.txt | P2 |
-| V-11 | RankingServer.cpp | cRanking | — | P2 |
-| V-12 | ResetChange.cpp | CResetChange | ResetChange.txt | P1 |
-| V-13 | ResetLimiter.cpp | ResetLitmitLock | — | P1 |
-| V-14 | SkyEvent.cpp | cSkyEvent | — | Tema |
-| V-15 | TEventGreatPK.cpp | CCustomGreatPK | — | P2 |
-| V-16 | ExWinQuestSystem.cpp | ExWinQuestSystem | CreationQuest*.{ini,xml} | P2 |
-| V-17 | CustomReadGuildServer.cpp | (guild okuma) | — | P3 |
-| V-18 | GetLicenseID.cpp | lisans | — | P3 (opsiyonel) |
-| V-19 | ZzzToolKit.cpp | SPK_ToolKitMain + yardımcılar | — | P1 |
-| V-20 | ItemExcellentOptionRate.cpp | CItemExOptionRate | — | P3 |
-| V-21 | LogErrorForm.cpp | CLogErrorForm | — | P3 |
-| V-22 | ShopManagerUI.cpp | CShopManagerUI | — | P3 |
-| V-23 | EventItemBagUI.cpp | CEventItemBagUI(+ManagerUI) | EventItemBagManager.txt | P3 |
-| V-24 | CustomStartItemDame.cpp | CCustomStartItemDame | CustomStartItemDame.txt | P3 |
-| V-25 | CustomStartSetItemDame.cpp | CCustomStartSetItemDame | CustomStartSetItemDame.txt | P3 |
-| V-26 | CongHuong.cpp | CongHuong (bot yön) | CongHuong.txt | P3 |
-| V-27 | BotOnline.cpp | ObjBotOnline | BotOnline.txt | P2 |
-| V-28 | BotTradeMix.cpp + CBotMixSystem.cpp | BotTradeMixCore + CBotMixSystem | BotTradeMix.txt | P2 |
-| V-29 | SkillDamage.cpp | CSkillDamage | — | P1 (MUIG'de hazır) |
-| V-30 | CustomJewelBank.cpp | CCustomJewelBank | CustomJewelBank.xml | P1 (MUIG'de hazır) |
-| V-31 | SPK_AutoHp.cpp | CAUTOHP | — | P1 (MUIG'de hazır) |
-
-K-1/K-2 tablolarında tekrar eden satırlar birleştirilacak; kesin liste:
-`BuildLog\envanter\canli_ek_dosyalar.txt` (59 satır).
-
-**Öncelik tanımları:**
-- **P1 = Çekirdek oyun:** EventMainManager (event iskeleti), AddBuffer,
-  SPK_AutoHp (oyuncu korunma), Harmony (item güçlendirme), TuLuyen/QuanHam/
-  HonHoan/DanhHieu/Relife (karakter gelişim sistemi), ZzzToolKit (SPK alt yapı),
-  MocNap (ödeme), ResetChange/ResetLimiter (reset sistemi), SkillDamage +
-  CustomJewelBank (MUIG'den transfer).
-- **P2 = Önemli içerik:** shop/economy (ExtendShop, NewXShop, ItemTrader),
-  bot sistemi (BotOnline, BotTradeMix, CBotMixSystem), CustomEventTime,
-  TEventGreatPK, BEventThanMa, CustomDameBoss, CustomItemPro/SetPro, GuildUpgrade,
-  RankingServer, CharOption, CustomNewBuff, MessLang (dil blokları), CmdSocket,
-  CustomNameColor, StatsInfo, CastleEvent, MonsterSkill, ChangePass/PassLock,
-  CustomLuckySpin, CustomRenameChar.
-- **P3 = Tamamlama:** UI sınıfları (ShopManagerUI, EventItemBagUI, LogErrorForm),
-  ItemExcellentOptionRate, ChecklevelVip, GetLicenseID, MoveOptionNew (gömülü),
-  CustomReadGuildServer, CustomStartItemDame/SetSetItemDame, CongHuong.
+**Toplam iş kapsamı: 59 yeni dosya + 12 SPK revizyon taşıması = 71 birim.**
+(map tabanlı sınıf analizi 58 demişti; PDB dosya analizi 59'a çıkardı —
+SkillDamage.cpp map deseninde yakalanamamıştı.)
 
 ---
 
-## 4. KAYNAK STRATEJİSİ
+## 3. 59 YENİ MODÜL — ÖNCELİK SIRALI İŞ EMRİ
 
-### 4a. MUIG donor transferi (hızlı kazanç — Faz 2b ile birlikte)
-| Modül | MUIG donor konumu |
-|-------|-------------------|
-| SkillDamage.cpp/h | `.../Source/Source/GameServer/` |
-| CustomJewelBank.cpp/h | `.../Source/Source/GameServer/` |
-| CAUTOHP (SPK_AutoHp benzeri) | `.../Source/Source/GameServer/` |
-| AddBuffer | `.../SPK_AddBuff benzeri işlev — MUIG'de AddBuffer sınıfı var` |
-| *Not:* MUIG modülü canlı SPK sürümünden ESKİ olabilir → parite için davranış karşılaştırması gerekir (event/protocol izleri) | |
+Öncelik tanımları:
+- **P1 = Çekirdek oyun/ekonomi:** event iskeleti, karakter gelişim sistemleri
+  (TuLuyen/QuanHam/HonHoan/DanhHieu/Relife/DungLuyen), item güçlendirme
+  (Harmony), buff, ödeme (MocNap), reset sistemi, dil mesajları, SPK altyapısı,
+  MUIG donor'dan hazır gelenler.
+- **P2 = Önemli içerik:** shop/ekonomi genişlemesi, bot sistemi, event'ler,
+  komut/UI katmanı, ağ altyapı modernizasyonu, karakter/ek ipuçları.
+- **P3 = Tamamlama:** salt UI formları, küçük QoL, opsiyonel/lisans.
 
-### 4b. Sıfırdan yazım (54-55 modül)
-- **Birim adı:** tek modül = tek PR benzeri adım: header + cpp + vcxproj ekleme
-  + config üretimi + derleme + CHANGELOG + commit.
-- **Format çözümlemesi:** her modül için canlı config dosyası (Sub-1\Data\SPK\)
-  birebir okunacak (XML/INI/txt yapısı korunur); davranış kanıtı: canlı loglar
-  (GameServer\SPK\*.txt), map sembol listesi (modülün public API yüzü),
-  Main.exe/Engine.exe protokol string'leri.
-- **Entegrasyon noktaları:** map sembolleri hangi çekirdek dosyalara dokunduğunu
-  gösterir (ör. cTuLuyen çağrıları User.cpp/Protocol.cpp içinde aranacak).
+### P1 — 19 modül (Faz 2c ilk dalga)
+| # | Dosya (konum) | Sınıf (map) | Canlı config | Kaynak |
+|---|---------------|-------------|--------------|--------|
+| 1 | SPK_EventMainManager.cpp (SPK\) | EventMainManager | — | sıfırdan |
+| 2 | SPK_AddBuff.cpp (SPK\) | AddBuffer | AddBuff.txt | **MUIG donor** |
+| 3 | SPK_AutoHp.cpp (SPK\) | CAUTOHP | — | **MUIG donor** |
+| 4 | SPK_Harmony.cpp (SPK\) | CustomHarmony | CustomHarmony.xml | sıfırdan |
+| 5 | SPK_TuLuyen.cpp (SPK\) | cTuLuyen | TuLuyen.xml | sıfırdan |
+| 6 | SPK_QuanHam.cpp (SPK\) | cQuanHam | QuanHam.xml | sıfırdan |
+| 7 | SPK_HonHoan.cpp (SPK\) | cHonHoan | HonHoan.xml | sıfırdan |
+| 8 | SPK_DanhHieu.cpp (SPK\) | cDanhHieu | DanhHieu.xml | sıfırdan |
+| 9 | SPK_Relife.cpp (SPK\) | TaiSinh | Relife.xml | sıfırdan |
+| 10 | SPK_DungLuyen.cpp (SPK\) | cDungLuyen | DungLuyen.xml | sıfırdan |
+| 11 | SPK_MessLang.cpp (SPK\) | cMessageNew | Message.xml (yeni bloklar) | sıfırdan |
+| 12 | ZzzToolKit.cpp (SPK\) | SPK_ToolKitMain | — (SPK\ log çıktısı) | sıfırdan |
+| 13 | B_MocNap.cpp (SPK\) | CSystemMocNap | CustomMocNap.xml | sıfırdan |
+| 14 | CharOption.cpp (SPK\) | CCustomCharOption | CharOption.xml | sıfırdan |
+| 15 | ResetChange.cpp (SPK\) | CResetChange | ResetChange.txt | sıfırdan |
+| 16 | ResetLimiter.cpp (SPK\) | ResetLitmitLock | — | sıfırdan |
+| 17 | ReiDoMu.cpp (kök) | CReiDoMU | — | sıfırdan |
+| 18 | SkillDamage.cpp (kök) | CSkillDamage | — | **MUIG donor** |
+| 19 | CustomJewelBank.cpp (SPK\) | CCustomJewelBank | CustomJewelBank.xml | **MUIG donor** |
 
-## 5. DOĞRULAMA YÖNTEMİ (her modül için)
+### P2 — 28 modül (Faz 2c ikinci dalga)
+| # | Dosya (konum) | Sınıf (map) | Canlı config | Kaynak |
+|---|---------------|-------------|--------------|--------|
+| 20 | SPK_ExtendShop.cpp (SPK\) | CExtendShop | ExtendShop.xml | sıfırdan |
+| 21 | SPK_NewXShop.cpp (SPK\) | NewCashShop | CustomShop.xml | sıfırdan |
+| 22 | SPK_ItemTrader.cpp (SPK\) | BotThuMua(er) | ThuMuaDoExc.txt | sıfırdan |
+| 23 | SPK_MonsterSkill.cpp (SPK\) | CCustomMonsterSkill | CustomMonsterSkill.txt | sıfırdan |
+| 24 | SPK_CmdSocket.cpp (SPK\) | CCommandUI | CustomCommandSocket.xml | sıfırdan |
+| 25 | SPK_CustomNameColor.cpp (SPK\) | cCustomNameColor | CustomNameColor.ini | sıfırdan |
+| 26 | SPK_StatsInfo.cpp (SPK\) | CSGetInfoCharacter | CharOption.xml (paylaşımlı) | sıfırdan |
+| 27 | SPK_CastleEvent.cpp (SPK\) | CastleStartGuild | — | sıfırdan |
+| 28 | BotOnline.cpp (SPK\) | ObjBotOnline | BotOnline.txt | sıfırdan |
+| 29 | BotTradeMix.cpp (SPK\) | BotTradeMixCore | BotTradeMix.txt | sıfırdan |
+| 30 | CBotMixSystem.cpp (SPK\) | CBotMixSystem | BotTradeMix.txt (paylaşımlı) | sıfırdan |
+| 31 | ActiveInvasions.cpp (SPK\) | CActiveInvasions | — | sıfırdan |
+| 32 | BEventThanMa.cpp (SPK\) | CThanMaChien | — | sıfırdan |
+| 33 | SkyEvent.cpp (SPK\) | cSkyEvent | — | sıfırdan |
+| 34 | TEventGreatPK.cpp (SPK\) | CCustomGreatPK | — | sıfırdan |
+| 35 | CustomDameBoss.cpp (SPK\) | VPDameBoss | — | sıfırdan |
+| 36 | CustomItemPro.cpp (SPK\) | SystemItemChanger | CustomItemPro.xml | sıfırdan |
+| 37 | CustomItemSetPro.cpp (SPK\) | CustomSetDameItem | CustomItemSetPro.xml | sıfırdan |
+| 38 | CustomNewBuff.cpp (SPK\) | CustomNewBuff | CustomNewBuff.xml | sıfırdan |
+| 39 | CustomLuckySpin.cpp (SPK\) | CCustomLuckySpin | CustomVongQuay.xml | sıfırdan |
+| 40 | GuildUpgrade.cpp (SPK\) | cSystemGuildUpgrade | GuildUpgrade.txt | sıfırdan |
+| 41 | RankingServer.cpp (SPK\) | cRanking | — | sıfırdan |
+| 42 | ChangePass.cpp (SPK\) | ChangePassOption | — | sıfırdan |
+| 43 | PassLock.cpp (SPK\) | ItemPassLocker | — | sıfırdan |
+| 44 | SocketConnection.cpp (kök) | CConnection | — | sıfırdan |
+| 45 | SocketManagerModern.cpp (kök) | CSocketManager (modern) | — | sıfırdan |
+| 46 | ViewInfoItem.cpp (SPK\) | ViewItemPlayer | — | sıfırdan |
+| 47 | CongHuong.cpp (SPK\) | CongHuong (bot yön) | CongHuong.txt | sıfırdan |
 
-1. Kaynak derleniyor (GS tam derleme hatasız).
-2. Config dosyası canlı formatında üretilir, GS açılışında hatasız okunur.
-3. Modülün map sembolleri yeni binary'de belirir (yeni derlemenin map'inden
-   sınıf adı grep'i).
-4. Cekirdek dosyalara eklenen cagri noktalari listelenir (CHANGELOG).
+### P3 — 12 modül (Faz 2c tamamlama dalgası)
+| # | Dosya (konum) | Sınıf (map) | Canlı config | Kaynak |
+|---|---------------|-------------|--------------|--------|
+| 48 | PartySetPass.cpp (kök) | CPartySetPass | — | sıfırdan |
+| 49 | ChecklevelVip.cpp (kök) | CheckItemVip | — | sıfırdan |
+| 50 | ExWinQuestSystem.cpp (kök) | ExWinQuestSystem | CreationQuestSystem.xml + CreationQuestData_1.ini | sıfırdan |
+| 51 | CustomRenameChar.cpp (SPK\) | CCustomRenameChar | — | sıfırdan |
+| 52 | CustomReadGuildServer.cpp (SPK\) | (guild veri okuma) | — | sıfırdan |
+| 53 | EventItemBagUI.cpp (kök) | CEventItemBagUI (+ManagerUI) | EventItemBagManager.txt | sıfırdan |
+| 54 | ShopManagerUI.cpp (kök) | CShopManagerUI | ShopManager.txt | sıfırdan |
+| 55 | CustomStartItemDame.cpp (kök) | CCustomStartItemDame | CustomStartItemDame.txt | sıfırdan |
+| 56 | CustomStartSetItemDame.cpp (kök) | CCustomStartSetItemDame | CustomStartSetItemDame.txt | sıfırdan |
+| 57 | ItemExcellentOptionRate.cpp (kök) | CItemExOptionRate | — | sıfırdan |
+| 58 | LogErrorForm.cpp (kök) | CLogErrorForm | — | sıfırdan |
+| 59 | GetLicenseID.cpp (kök) | (lisans) | — | sıfırdan (opsiyonel) |
+
+**Toplam denetim: 19 (P1) + 28 (P2) + 12 (P3) = 59 ✓** — kesin liste
+`BuildLog\envanter\canli_ek_dosyalar.txt` ile birebir.
+
+---
+
+## 4. 12 EZİLEN DOSYA — SPK REVİZYON TAŞIMASI
+
+Bu dosyalar bizim kaynakta da VAR ama canlıda `SPK\` altındaki sürümleriyle
+derleniyor. Bizim sürümler ya eski ya farklı dallanma; parite için canlı
+davranış çözümlenip bizim dosyalara taşınacak (dosya adı değişmez).
+
+| # | Dosya | Sınıf (map) | Canlı davranış kanıtı / config |
+|---|-------|-------------|-------------------------------|
+| E-01 | BossGuild.cpp | CBossGuild (29 sembol) | — |
+| E-02 | BotAlchemist.cpp | ObjBotAlchemist | "BotAlchemist data load error %s" (canlı string) |
+| E-03 | BotBuffer.cpp | ObjBotBuffer | buffer bot |
+| E-04 | ChangeClass.cpp | CCustomChangeClass | ChangeClass.xml |
+| E-05 | CustomBuyVip.cpp | CCustomBuyVip | CustomBuyVip.txt |
+| E-06 | CustomEventTime.cpp | CCustomEventTime | — |
+| E-07 | CustomJewel.cpp | CCustomJewel | CustomJewel.txt |
+| E-08 | CustomRankUser.cpp | CCustomRankUser | — |
+| E-09 | OfflineMode.cpp | OfflineMode | — |
+| E-10 | Reconnect.cpp | CReconnect | GetEngine.ini ReconnectTime=1 |
+| E-11 | ThuMuaDoExc.cpp | BotThuMua(er) | ThuMuaDoExc.txt |
+| E-12 | ZenDrop.cpp | cZenDrop | ZenDrop.xml |
+
+---
+
+## 5. MODÜL BAŞINA UYGULAMA AKIŞI (her birim için)
+
+1. **Çözümleme:** map sembolleri (sınıfın public yüzü) + canlı config dosyası
+   (`Sub-1\Data\...`) + varsa canlı log izleri (`GameServer\SPK\*.txt`) +
+   istemci karşılığı (Main/Engine.exe string'leri, MENUBUTTON_* etiketleri).
+2. **İskelet:** header + cpp; sınıf adı map ile aynı; config okuma canlı
+   formatla birebir (XML/INI/txt yapısı korunur).
+3. **Entegrasyon:** çağrı noktaları (User.cpp/Protocol.cpp/GameMain.cpp vb.)
+   eklenir; her dokunuş CHANGELOG'a yazılır.
+4. **Derleme:** GS tam derleme hatasız (Release_EX603|Win32).
+5. **Doğrulama:** yeni derlemenin .map'inde modül sembolleri belirir;
+   config açılışta hatasız okunur.
+6. **Kayıt:** CHANGELOG kaydı + git commit (tek birim = tek commit).
+
+## 6. KABUL KRİTERLERİ (Faz 2c kapanışı)
+
+- 59/59 yeni modül derleniyor ve map'te görünüyor; 12/12 ezilen dosya
+  SPK davranışıyla uyumlu.
+- `Sub-1\Data\` SPK config setinin tamamı (25 + Custom/BotSystem) okunuyor.
+- GetEngine.ini MENUBUTTON_* dizisindeki her istemci özelliğinin sunucu
+  karşılığı çalışır durumda (Faz 2e istemci testiyle birleşir).
+
+## 7. AÇIK SORULAR
+
+- SPK_MessLang: `spk_messlang.obj` izi → tek dosyadan fazla birim olabilir;
+  D-dalga sırasında netleşecek.
+- 63 "sadece bizde" dosya: 2b.1 diff matrisinde SPK tabanıyla karşılaştırılır
+  (silme yok).
+- `FilterRaname.cpp` (canlıdaki yazım hatalı ad) bizim kaynakta `FilterRename`
+  olarak var — bu 59 listesinde değil, ortak 218'de; isim paritesi kararının
+  2b'ye bırakıldı.
+- EventMainManager'ın 293 sembolü: tek dosya değil, event çekirdeğinin
+  tamamı — en büyük tek birim; 2c ilk dalgada en çok zaman alacak kalem.

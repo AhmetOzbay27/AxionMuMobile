@@ -302,3 +302,30 @@ run) algoritması oldu (pdb_scan.ps1).
 - CHANGELOG: bu kayıt
 
 **Commit** — (bu kayıtla birlikte)
+
+---
+
+## [26.09.30] Faz 2a.1 (yeniden yazım) — 05 iş emri temiz ve kesin hale getirildi
+
+**Neden**
+- İlk yazımda (tek seferde heredoc) tablo ID'lerinde düzeltme izleri ve
+  58/59 karışık sayılar kalmıştı; kullanıcı isteği üzerine temiz tek kaynaklı
+  iş emri olarak yeniden yazıldı.
+
+**Ne yapıldı**
+- `docs\05-SPK-MODUL-ENVANTERI.md` baştan yazıldı (10,4 KB):
+  - Kesin sayılar: 59 yeni dosya (45 SPK\ + 14 kök) + 12 ezilen dosya =
+    **71 iş birimi**; ortak 218; sadece bizde 63.
+  - **59 modülün numaralı kartları** tek tabloda: P1=19, P2=28, P3=12
+    (denetim: 19+28+12=59 ✓); her kartta dosya+konum, map sınıfı,
+    canlı config, kaynak stratejisi (sıfırdan / MUIG donor×3).
+  - **12 ezilen dosya** ayrı bölümde (E-01..E-12) canlı davranış kanıtıyla.
+  - Modül başına 6 adımlı uygulama akışı, Faz 2c kabul kriterleri,
+    4 açık soru (MessLang alt birimleri, EventMainManager büyüklüğü vb.).
+- Sayı tutarlılığı: 58 (map) → 59 (PDB dosya) düzeltmesi korunuyor.
+
+**Doküman güncellemeleri**
+- `05-SPK-MODUL-ENVANTERI.md`: temiz yeniden yazım
+- CHANGELOG: bu kayıt
+
+**Commit** — (bu kayıtla birlikte)
