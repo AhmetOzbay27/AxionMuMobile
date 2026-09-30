@@ -243,3 +243,34 @@ run) algoritması oldu (pdb_scan.ps1).
   konumu ile yazılacak.
 
 **Commit** — (bu kayıtla birlikte)
+
+---
+
+## [26.09.30] 2d.0 önhazırlığı — ConnectIP.bmd / ServerData.bmd format çözümlemesi
+
+**Ne yapıldı**
+- Örnek dosyalar `BuildLog\envanter\bmd\` altına arşivlendi (ConnectIP 36 B,
+  ServerData 1.089.576 B).
+- **ServerData.bmd XOR 0x20 KANITLANDI:** decode sonrası tam okunur —
+  `Axion Mu`/`Axion Mu 2..4` (4×32 B sunucu slotu, 0x200+),
+  `Engine.exe`/`AxionMu`/`Axion Mu` (0x2A0+), `Photos\Screen(...).jpg`,
+  `1.03.34` + `!571Axion@Mobile` (0x4E0), 7×int32=65000 hız limitleri (0x52C),
+  float 45.0 (=CameraDefault) + float 240.0, kanat kataloğu (340 B stride:
+  Wing200..WingCustom15, SPK\Item\*.tga yolları), item opsiyon tablosu
+  (260 B stride: "[+9] Damage: +100" formatı), LEVEL tabloları (100 B stride),
+  1.510 printable string. **GetEngine.ini'nin binary aynası.**
+- **ConnectIP.bmd:** 12 B IP (XOR 0x20) + 20 B pad + 4 B CRC. Standart CRC32
+  ve 8 basit varyant test edildi → EŞLEŞMEDİ (özel tablo/seed). Geçici çözüm
+  dokümante edildi: üreticide CRC alanına 0x00 yazılabilir, 2d.0'da
+  Engine.exe crc tablosundan çözülecek.
+- `docs\07-SPK-BMD-FORMAT.md` yazıldı: alan tabloları + üretici/okuyucu sözde
+  kodu + 5 açık kalem (CRC varyantı, opsiyon tuple semantiği, footer, port
+  konumu). Arıza notu: PS byte döngüsü 5 dk timeout → openssl AES-ECB hilesi
+  (yanlış sonuç, silindi) → perl tr // ile 1 saniyede doğru decode.
+
+**Doküman güncellemeleri**
+- Yeni: `docs\07-SPK-BMD-FORMAT.md`
+- Ham veri: `BuildLog\envanter\bmd\` (orijinal + decode)
+- `02-YOL-HARITASI.md`: 2e.0→2d.0 tutarlılığı
+
+**Commit** — (bu kayıtla birlikte)

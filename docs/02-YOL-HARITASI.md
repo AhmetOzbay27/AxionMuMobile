@@ -23,7 +23,7 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   Data\SPK 25 config; tanınırlık tablosu (22 bizde / 4 MUIG'de / 24 SPK-özel).
 - ✅ **2a.4** Canlı istemci envanteri → tamam: gerçek SPK istemcisi
   `Client (eski adı 1Client)\Engine.exe` (ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini hattı);
-  bizim 5.Main'de SPK istemci desteği yok → yeni adım **2e.0** açıldı.
+  bizim 5.Main'de SPK istemci desteği yok → yeni adım **2d.0** açıldı.
 - ✅ **2a.5** GetMainInfo varyant analizi → **KARAR: tek hat = SPK GetEngine.**
   Kanıtlar: GetEngine.ini (IP 45.87.120.29:44405, v1.03.34, Türkçe yorumlu) =
   ConnectIP.bmd XOR 0x20 decode; SPK_CRCFILE.ini doğrulayıcı rapor. Uygulama
