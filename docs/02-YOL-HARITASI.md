@@ -11,7 +11,7 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
 ## FAZ 2 — PARİTE (aktif faz)
 
 ### Faz 2a — Canlı SPK envanteri
-> ✅ 2a.1-2a.4 tamamlandı (30.09.2026). Kalan tek kalem: 2a.5.
+> ✅ **TAMAMLANDI** (2a.1-2a.5, 30.09.2026) → sıradaki faz: **2b**.
 - ✅ **2a.1** Canlı `GameServer.pdb` + `GameServer.map` analizi tamam →
   [05-SPK-MODUL-ENVANTERI.md](05-SPK-MODUL-ENVANTERI.md) yazıldı (kesin sayı
   **59 eksik dosya**; PDB'den tam dosya yolları çıkarıldı; 57 modül
@@ -24,9 +24,10 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
 - ✅ **2a.4** Canlı istemci envanteri → tamam: gerçek SPK istemcisi
   `1Client\Engine.exe` (ConnectIP.bmd/ServerData.bmd/Data\SPK/SPK.ini hattı);
   bizim 5.Main'de SPK istemci desteği yok → yeni adım **2e.0** açıldı.
-- ⬜ **2a.5** GetMainInfo varyant analizi: SPK GetEngine formatı (ConnectIP.bmd,
-  ServerData.bmd, CRC) ile canlı istemcinin CBGetMain.bin hattının ilişkisi;
-  tek varyant kararı. → 03 listesine karar notu düşülür.
+- ✅ **2a.5** GetMainInfo varyant analizi → **KARAR: tek hat = SPK GetEngine.**
+  Kanıtlar: GetEngine.ini (IP 45.87.120.29:44405, v1.03.34, Türkçe yorumlu) =
+  ConnectIP.bmd XOR 0x20 decode; SPK_CRCFILE.ini doğrulayıcı rapor. Uygulama
+  2d.0/2d.1'de. Detay: 03 listesi "2a.5 KARARI" bölümü.
 
 ### Faz 2b — MUIG ortak dosya güncellemesi (161 dosya)
 - ⬜ **2b.1** 161 dosyanın diff matrisi (SPK taban vs MUIG donor): hangisi

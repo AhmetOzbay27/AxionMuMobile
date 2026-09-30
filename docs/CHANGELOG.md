@@ -208,3 +208,38 @@ string'inde sessiz başarısız oldu; çözüm IndexOf + geriye-yürüme (printa
 run) algoritması oldu (pdb_scan.ps1).
 
 **Commit** — (bu kayıtla birlikte)
+
+---
+
+## [26.09.30] Faz 2a.5 — GetMainInfo varyant kararı: TEK HAT = SPK GETENGINE
+
+**Ne yapıldı (kanıt zinciri)**
+1. `GetMain\GetEngine.ini` düz UTF-8 çıktı (önceki oturumda UTF-16 sanılmış;
+   mojibake iconv hatalısından): IpAddress=45.87.120.29, IpAddressPort=44405,
+   ClientVersion=1.03.34 (= Client\SPK.ini MainCode ile aynı), ClientName=Engine.exe,
+   AntPort=58584, MaxAttackSpeed*=67000, DefaultFPS=24, Türkçe yorumlar
+   (Axion'un kendi konfig aracı olduğu kesinleşti), MENUBUTTON_* Vietnamca
+   SPK modül menü etiketleri, JewelBankTab, MaxLevel seti.
+2. `Client\Data\SPK\ConnectIP.bmd` (36 B) formatı çözüldü:
+   **XOR 0x20(IP string) + 0x20 pad + 4 B CRC** → decode = 45.87.120.29 =
+   GetEngine.ini değeri. GetMainInfo bu dosyayı üretiyor.
+3. `ServerData.bmd` (1.089.576 B): aynı gizleme tekniği + veri blokları
+   (0xDF dolguları blok sınırlarını işaretliyor).
+4. `GetMain\SPK_CRCFILE.ini`: GetMainInfo'nun bütünlük raporu ("Code by
+   SuperHung": SPK_*.bmd CRC + FOUND/NOT FOUND listesi) — araç doğrulayıcı.
+5. **KARAR (A varyantı):** SPK GetEngine hattı benimsendi; GetMainInfo
+   GetEngine davranışına geliştirilecek (2d.1), Main'e SPK format okuma
+   katmanı (2d.0) eklenecek; MUIG CBGetMain hattı bayrakla devre dışı.
+   H-005 kararlandı (uygulama/kapanış 2d'de).
+
+**Doküman güncellemeleri**
+- `03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md`: "2a.5 KARARI" bölümü (kanıt zinciri + 4 maddelik uygulama kararı + B-01 ek kanıtları)
+- `04-HATA-GUNLUGU.md`: H-005 → karar alındı
+- `02-YOL-HARITASI.md`: 2a.5 ✅ → **Faz 2a TAMAMLANDI**
+
+**Operasyon notu**
+- `Client and Tools\1Client\` → `Client and Tools\Client\` olarak yeniden
+  adlandırılmış (dış müdahale; içerik aynı). Dokümanlardaki yollar güncel
+  konumu ile yazılacak.
+
+**Commit** — (bu kayıtla birlikte)

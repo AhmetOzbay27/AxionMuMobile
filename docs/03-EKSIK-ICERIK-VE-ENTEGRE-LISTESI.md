@@ -59,3 +59,36 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 - Canlı sunucu (salt okunur): `C:\Axion Mu Mobile\4.MuServer\Sub-1\` (GameServer.map dahil)
 - Farklı fork (parite hedefi DEĞİL): `C:\AxionMu\`
 - Eski analiz raporları: `C:\Axion Mu Mobile\analiz\`
+
+---
+
+## ✅ 2a.5 KARARI (30.09.2026) — TEK HAT: SPK GETENGINE
+
+**Kanıtlar:**
+- `GetMain\GetEngine.ini` (UTF-8): IpAddress=45.87.120.29, IpAddressPort=44405,
+  ClientVersion=1.03.34 (= SPK.ini MainCode), ClientName=Engine.exe,
+  WindowName=Axion Mu, AntPort=58584, MaxAttackSpeed*=67000, DefaultFPS=24,
+  MENUBUTTON_* Vietnamca menü etiketleri (Relife/Reset/DanhHieu/Spin/MocNap/
+  HonHoan/X-Shop...), JewelBankTab=2 — **Türkçe yorumlu** (Axion'un kendi konfig'i).
+- `Data\SPK\ConnectIP.bmd` (36 B): `XOR 0x20("45.87.120.29") + 0x20 pad + CRC4`
+  → GetEngine.ini IP ile birebir; GetMainInfo'nun ürettiği format.
+- `Data\SPK\ServerData.bmd` (1.089.576 B): aynı XOR/pad tekniği + veri blokları.
+- `GetMain\SPK_CRCFILE.ini`: GetMainInfo'nun bütünlük raporu ("Code by SuperHung";
+  SPK_*.bmd CRC'leri + FOUND/NOT FOUND listesi) → araç doğrulayıcı da.
+
+**KARAR: A varyantı — SPK GetEngine hattı benimsenir.**
+1. `Source\6.GetMainInfo` → GetEngine davranışına geliştirilecek: GetEngine.ini
+   oku → ConnectIP.bmd + ServerData.bmd üret (XOR 0x20 + CRC4) → SPK_CRCFILE.ini
+   raporu. Mevcut MUIG Custom* veri işleme görevi KORUNUR (GetMain\Data\ altı).
+2. `Source\5.Main` → SPK format okuma katmanı (adım **2d.0**): ConnectIP.bmd
+   (XOR 0x20) + ServerData.bmd + SPK.ini; Main.exe Engine.exe deployment'ına
+   paralel (ClientName config'ten okunur).
+3. MUIG MainInfo/CBGetMain hattı → kod korunur ama bayrakla devre dışı
+   (OfflineMode çatallanma mantığı gibi); v2'de gerekiyse yeniden açılır.
+4. H-005: karar alındı → uygulama Faz 2d.0/2d.1'de; kapanış orada yapılır.
+
+**GetEngine.ini'den gelen ek istemci kanıtları (B-01 kapsamı):**
+ClientVersion zinciri (1.03.34), AntiPort 58584, MaxAttackSpeed 67000 seti,
+DefaultFPS, MENUBUTTON_ UI dizisi (SPK modüllerin istemci karşılıkları),
+JewelBankTab, Rank from FSP, MaxLevel (DanhHieu 20 / Synham 21 / Tuchanh 32 /
+Honhoan 50) → 2d.0'da SPK.ini/GetEngine.ini okuma ile Main'e taşınacak.
