@@ -1,0 +1,76 @@
+# 02 — YOL HARİTASI (adım adım çalışma planı)
+
+> **Ana hedef:** Canlı SPK sunucu + istemcisiyle birebir parite. Parite tam
+> olmadan v2 açılmaz. Her adım: uygula → derle/doğrula → CHANGELOG → commit →
+> burada işaretle. **Adım atlamak yasak.**
+
+Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ engelli
+
+---
+
+## FAZ 2 — PARİTE (aktif faz)
+
+### Faz 2a — Canlı SPK envanteri (SIRADAKİ İŞ)
+- ⬜ **2a.1** Canlı `GameServer.pdb` analizi: 57 eksik modülün tam listesi —
+  modül adı, tahmini işlev, kaynak setlerindeki en yakın karşılık, öncelik.
+  Çıktı: `docs/05-SPK-MODUL-ENVANTERI.md` (faz 2c'nin iş emri olacak).
+- ⬜ **2a.2** Canlı GS exe'sinden string/resource envanteri: event adları,
+  komutlar, config anahtarları, dosya yolları → hangi özellikler canlıda var?
+- ⬜ **2a.3** Canlı `MuServer` config dosya envanteri (Sub-1 altı ini/txt/dat)
+  → hangi modül hangi config'i okuyor; bizim kaynaktaki karşılıkları.
+- ⬜ **2a.4** Canlı istemci (`ClientBuild`) dosya envanteri: Data\ altı bmd/ini
+  listesi + hangi özellik client modülü bekliyor (SKILL/ITEM/UI eşlemesi).
+- ⬜ **2a.5** GetMainInfo varyant analizi: SPK GetEngine formatı (ConnectIP.bmd,
+  ServerData.bmd, CRC) ile canlı istemcinin CBGetMain.bin hattının ilişkisi;
+  tek varyant kararı. → 03 listesine karar notu düşülür.
+
+### Faz 2b — MUIG ortak dosya güncellemesi (161 dosya)
+- ⬜ **2b.1** 161 dosyanın diff matrisi (SPK taban vs MUIG donor): hangisi
+  gerçekten daha yeni, hangisi SPK-özel değişiklik içeriyor.
+- ⬜ **2b.2** Risk gruplarına ayır (protokol dokunanlar / UI / yardımcı) ve
+  grup grup entegre et: her grup → derle → CHANGELOG → commit.
+- ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
+  CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
+  envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.
+
+### Faz 2c — 57 eksik modülün yeniden yazımı
+- ⬜ **2c.1** 05-SPK-MODUL-ENVANTERI.md'yi öncelik sırasına diz (oyun akışı
+  etkisine göre: core gameplay > event > QoL > anticheat > kosmetik).
+- ⬜ **2c.2..N** Modül modül: iskelet yaz → GS derle → config dosyasını üret →
+  istemci tarafı ihtiyacı varsa Main'e ekle → test → CHANGELOG + commit.
+  (Her modül kendi satırını alacak; plan onayından sonra buraya açılır.)
+
+### Faz 2d — GetMainInfo birleşimi
+- ⬜ **2d.1** Seçilen varyanta göre kaynağı düzenle (2a.5 kararı doğrultusunda).
+- ⬜ **2d.2** Üretilen veri dosyalarının canlı istemciyle uyum testi.
+
+### Faz 2e — Hizalama ve paketleme
+- ⬜ **2e.1** Gömülü IP/config hizalama (kaynakta `171.235.182.88` vs canlı
+  `192.168.0.150`) — hangi config'den okunacağı netleştirilip tek noktaya bağlanır.
+- ⬜ **2e.2** Derleme çıktılarının canlı paket yapısına göre kurulması
+  (Main.exe + DLL'ler + Data) — ClientBuild kopyası üzerinde test.
+- ⬜ **2e.3** Sunucu tarafı: bizim GS/CS/DS/JS çıktılarının test klasörüne
+  kurulması (canlıya dokunmadan), DB restore: `ServerTools\DB_SQL_12.bak`.
+
+### ÇIKIŞ KRİTERİ (Faz 2 → 3 geçişi)
+Tüm 2a-2e adımları ✅ + GS/Main/CS/DS/JS derlemeleri hatasız + modül
+envanterinde açık kalem kalmamış.
+
+---
+
+## FAZ 3 — UÇTAN UCA TEST
+- ⬜ 3.1 Test sunucusunu ayağa kaldır (CS/DS/JS/GS bizim derlemeler, test DB).
+- ⬜ 3.2 ClientBuild kopyasıyla bağlantı, login, karakter yaratma, kısa oyun akışı.
+- ⬜ 3.3 Canlı ile davranış karşılaştırma listesi (event, drop, skill vb.).
+- ⬜ 3.4 Sorunları 04-HATA-GUNLUGU.md'ye işle → düzelt → yeniden test.
+
+## FAZ 4 — ANDROID PORT DOĞRULAMASI
+- ⬜ 4.1 android\ katmanının güncel kaynakla derleme kontrolü.
+- ⬜ 4.2 PC/Android protokol ve içerik parite kontrolü.
+
+## FAZ 5 — CANLIYA GEÇİŞ (kullanıcı onayı olmadan BAŞLAMAZ)
+- ⬜ 5.1 Yedek + geçiş planı + geri dönüş planı.
+- ⬜ 5.2 Canlı binary değişimi ve doğrulama.
+
+## v2 — YENİ GELİŞTİRME AŞAMASI
+🔒 Parite testleri (Faz 3) kullanıcıca onaylanmadan açılmaz.

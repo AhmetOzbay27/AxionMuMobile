@@ -1,0 +1,123 @@
+# AXION MU SOURCE — PROJE HARİTASI
+
+> **Bu dosya projenin ana giriş noktasıdır.** Her yapay zeka / geliştirici oturuma
+> BURADAN başlar. Diğer dokümanlara buradan yönlendirilir. Bir iş bitince bu
+> dosyadaki durum panosu GÜNCELLENMEK ZORUNDADIR.
+
+---
+
+## 1. NİHAİ HEDEF
+
+`C:\Axion Mu Mobile\4.MuServer\Sub-1\` altındaki **canlı SPK sunucusunun** ve
+SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
+(`C:\Axion Mu Source`). Canlı sunucu **referans ve asıl hedeftir**; dokunulmaz.
+
+- Tüm içerik ve özellikler canlı SPK ile **eşitlenene** kadar adım adım düzeltme/ekleme.
+- Eşitleme **tam ve eksiksiz** tamamlandıktan sonra **v2** aşamasına geçilir.
+- Çalışma disiplini: **adım adım, oradan oraya atlama yok.** Her adım
+  derleme/doğrulama + CHANGELOG kaydı ile kapanır.
+
+---
+
+## 2. DURUM PANOSU
+
+| Aşama | İçerik | Durum |
+|-------|--------|-------|
+| Faz 0 | Ortam kurulumu (VS 2022, git, klasörler) | ✅ TAMAMLANDI |
+| Faz 1 | CS/DS/JS/GS/GetMainInfo/Main derlemeleri | ✅ TAMAMLANDI (`faz1-tamamlandi` etiketi, commit `1339a2903`) |
+| Faz 2a | Canlı SPK envanteri (57 eksik modülün tam listesi) | ⏳ SIRADAKİ İŞ |
+| Faz 2b | MUIG (daha yeni) ortak dosya entegrasyonu (161 dosya) | ⏳ bekliyor |
+| Faz 2c | Eksik 57 modülün yeniden yazımı (SPK_* 20 dahil) | ⏳ bekliyor |
+| Faz 2d | GetMainInfo varyant birleşimi (SPK GetEngine formatına hizalama) | ⏳ bekliyor |
+| Faz 2e | IP/config hizalama + istemci paketleme | ⏳ bekliyor |
+| Faz 3 | Uçtan uca test (ayrı test sunucusu + DB restore) | ⏳ bekliyor |
+| Faz 4 | Android port doğrulaması | ⏳ bekliyor |
+| Faz 5 | Canlıya geçiş | ⏳ bekliyor |
+| v2    | Parite sonrası yeni geliştirme aşaması | 🔒 kapalı (parite bitmeden açılmaz) |
+
+**Şu anki tek aktif görev:** Faz 2a (bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md)).
+
+---
+
+## 3. KLASÖR HARİTASI
+
+### Proje kökü — `C:\Axion Mu Source\`
+| Klasör | İçerik |
+|--------|--------|
+| `Source\1.ConnectServer` | CS kaynağı (Release_EX603\|Win32, v143) |
+| `Source\2.DataServer` | DS kaynağı (Release_EX603\|Win32, v143) |
+| `Source\3.JoinServer` | JS kaynağı (Release_EX603\|Win32, v143) |
+| `Source\4.GameServer` | GS kaynağı (8 konfig, v143; Resource.h onarıldı) |
+| `Source\5.Main` | İstemci kaynağı ("Global Release"\|Win32, v143; OutDir → `..\..\ClientFile`) |
+| `Source\6.GetMainInfo` | Info aracı (Release\|Win32, v143; OutDir → `..\..\GetMain`) |
+| `Source\EncryptBMD`, `Source\Util` | Yardımcı araçlar |
+| `MuServer\` | Referans binary'ler + bizim derlemelerimiz (218 MB, repoda) |
+| `ServerTools\` | Tools + MuServer_S6_2020 + DB_SQL_12.bak |
+| `ClientBuild_192.168.99.200\` | **Canlı test istemci paketi (git dışı, dokunulma-kopyalanabilir)** |
+| `ClientFile\` | Main derleme çıktısı (Main.exe repoda, ara ürünler hariç) |
+| `GetMain\` | GetMainInfo derleme çıktısı |
+| `android\`, `sokol-master\` | Mobil katman bağımlılıkları |
+| `BuildLog\` | Derleme logları + string-parite analiz çıktıları |
+| `docs\` | **Proje dokümantasyonu (bu klasör)** |
+
+### Dış referans konumları (proje dışı, salt okunur)
+| Konum | İçerik |
+|--------|--------|
+| `C:\Axion Mu Mobile\4.MuServer\Sub-1\` | **CANLI SPK SUNUCUSU — ASLA DOKUNULMAZ** |
+| `C:\Axion Mu Mobile\New Source Code\Source\Source\` | MUIG donor kaynağı (Main5.2 + sunucu bileşenleri + Encoder) |
+| `C:\Axion Mu Mobile\analiz\` | Eski analiz raporları (içerik bu docs'a taşındı) |
+| `C:\Axion Mu Mobile\Client and Tools\GetMain\` | SPK GetEngine varyant referansı (369 KB) |
+| `C:\Axion Mu Mobile\New Source Code\Source\Source\Main5.2\Release\` | MUIG referans Main.exe + Main.pdb (korunur) |
+
+---
+
+## 4. DOKÜMAN İNDEKSİ
+
+| Dosya | Amaç | Ne zaman güncellenir |
+|-------|------|----------------------|
+| [00-PROJE-HARITASI.md](00-PROJE-HARITASI.md) | Bu dosya — giriş + durum panosu | Her adım sonunda |
+| [01-ARASTIRMA-REHBERI.md](01-ARASTIRMA-REHBERI.md) | Tüm önceki araştırmanın derlemesi | Yeni mimari bilgi edinilince |
+| [02-YOL-HARITASI.md](02-YOL-HARITASI.md) | Adım adım çalışma planı | Adım tamamlandı/başladığında |
+| [03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md](03-EKSIK-ICERIK-VE-ENTEGRE-LISTESI.md) | Eksikler + kaynak eşlemesi | Her entegrasyon tamamlandığında |
+| [04-HATA-GUNLUGU.md](04-HATA-GUNLUGU.md) | Açık/kapalı hata kayıtları | Hata bulunduğunda/çözüldüğünde |
+| [CHANGELOG.md](CHANGELOG.md) | Tüm değişikliklerin kaydı | **Her değişiklikte** |
+
+Dış plan dosyası: `C:\Axion Mu Mobile\analiz\SPK-UYGULAMA-PLANI.md` (eski
+kayıtlar; güncel bilgi bu docs setidir).
+
+---
+
+## 5. AI ÇALIŞMA PROTOKOLÜ (her oturumda uygulanır)
+
+1. **Bu dosyayı oku** → durum panosundan aktif görevi bul.
+2. **02-YOL-HARITASI.md**'de aktif fazın adım listesine git; ilk açık adımı seç.
+3. Adım çalışmadan önce: ilgili doküman satırını "🔄 DEVAM EDİYOR" yap.
+4. Adım bitince: derleme/doğrulama çalıştır → **CHANGELOG'a kayıt yaz** →
+   durum panosunu güncelle → git commit (tek adım = tek commit tercihen).
+5. Hata çıkarsa: **04-HATA-GUNLUGU.md**'ye aç, çözünce kapat (kök neden + fix).
+6. **Atlama yok:** bir adım tamamlanmadan sonrakine geçilmez. Kısmi iş bırakmak
+   zorunluysa adım satırına kalan kısmı net yaz.
+
+### Kritik kurallar
+- `C:\Axion Mu Mobile\4.MuServer\` **ASLA** değiştirilmez/kopyalanmaz üzerine.
+- `ClientBuild_192.168.99.200\` git dışıdır; içindekiler değiştirilmez.
+- MuServer\ referans binary'ler üzerine yazılmaz; yeni çıktılar konumlarına
+  bilinçli olarak (Faz 1'de yapıldığı gibi) yazılır ve commit'lenir.
+- VS 2022 Community, toolset **v143**, Win SDK 10.0.22621, ATL kurulu.
+  MFC kullanılmaz (hiçbir projede UseOfMfc=true yok).
+- MSYS2 bash'te MSBuild çağrıları için `export MSYS2_ARG_CONV_EXCL='*'` şart.
+- Disk ~5 GB boş: büyük temizlik yapmadan yeni workload açma.
+- Git: stale `index.lock` görülürse `rm -f .git/index.lock` (timeout sonrası).
+
+---
+
+## 6. İKİ KAYNAK HATTI (özet — detay: 01-ARASTIRMA-REHBERI)
+
+| Hat | Konum | Rol |
+|-----|-------|-----|
+| **SPK / Takumi** | Canlı PDB kanıtı: `D:\Mu-Mobile\MuSPK\Source\ExGameServer\GameServer\` | **Referans/HEDEF** — canlı sunucu bu hattın binary'si |
+| **MUIG** | `C:\Axion Mu Mobile\New Source Code\Source\Source\` | **DONÖR** — 161 ortak dosyada daha yeni + 68 özel modül |
+
+Bizim taban kaynak: SPK/Takumi (Android portlu, Platform/Scenes katmanlı) +
+MUIG'den seçilmiş güncellemeler. Canlıda olan ama hiçbir kaynak setinde
+olmayan 57 modül (SPK_* 20 dahil) Faz 2c'de sıfırdan yazılacak.
