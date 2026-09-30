@@ -22,7 +22,7 @@
 - Doğrulama: misyon 3 kart, 10 plan grubu, 26+2 adım, 9/28 çubuk; Preview
   ekran görüntüleriyle görsel onay (giriş + durum + son işler bölümleri).
 
-**Commit** — (bu kayıtla birlikte)
+**Commit** — `1b019bff6`
 
 ## [26.09.30] Pano arayüzü v2 — sadeleştirildi, plan 02'den canlı okunuyor
 
