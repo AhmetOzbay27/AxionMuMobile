@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 22:50:00",
+  "updated": "2026-09-30 23:05:00",
   "status": "ok",
-  "text": "2b.2-B dalga 2 TAMAM: 2b.2-A'da ertelenen 8 dosyanin tamami alindi (BonusManager, MossMerchant, MonsterAI, ImperialGuardian, RaklionSelupan, Crywolf, Raklion + MonsterSetBase/Monster uyarlamalari). Yeni CEventName modulu (EventName.xml) donor'dan alindi — dosya canlida yok, minimal bos config Data\\Event\\EventName.xml olusturuldu (davranis dosyasiz haliyle birebir). Array-tabanli GetMonsterMap + gObjMonsterClearExpiredDamage eklendi. GS temiz derlendi -> 10.781.696 B (22:48), PDB dogrulandi, kancalar korundu. Siradaki: 2b.2-P0 protokol tablosu."
+  "text": "2b.2-P0 TAMAM (docs/11): protokol dosyalarinda dis opcode seti 5 dosyada birebir, metot yuzeyi farki SIFIR — fark tamamen govdede (bizim-tekil SPK handler'lar: CTCMini 0x39, RuudToken 0xEE, AutoNapThe 0x7C, LockWindow 0x1A, CustomRanking DS 0x40; donor-tekil: HolyJOH, SNS, Reqtime). Canli kanit (Data\\Event\\CTCMini klasoru) bizim tarafi dogruluyor. KARAR: donor protokol alimi YOK, bizim SPK tabani korunur. Donor SocketManager bagimliligi (BlackList+APIGameGuard) 2c'ye not edildi. Kod degisikligi yok. Siradaki: 2b.2-C (G2'nin 25 dosyasi)."
 }

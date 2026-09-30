@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-30 22:50:00",
+  "updated": "2026-09-30 23:05:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir.",
   "entries": [
-    { "ts": "2026-09-30 22:50", "kim": "ajan", "text": "2b.2-B dalga 2 TAMAM: ertelenen 8 dosya + bağımlılık modülleri alındı (CEventName modülü yeni, GetMonsterMap uyarlaması, ClearExpiredDamage). EventName.xml canlıda yok → minimal boş config oluşturuldu. GS temiz → 10.781.696 B, kancalar korundu. Docs+pano güncel. Sıradaki: 2b.2-P0." },
+    { "ts": "2026-09-30 23:05", "kim": "ajan", "text": "2b.2-P0 TAMAM (docs/11): dış opcode seti 5 dosyada birebir, metot yüzeyi farkı sıfır — fark gövdede (SPK handler'lar vs donor Holy/SNS). Canlı CTCMini kanıtı bizim tarafı doğruluyor → donor protokol alımı YOK, bizim taban korunur. SocketManager bağımlılığı (BlackList) 2c'ye. Sıradaki: 2b.2-C (G2)." },
     { "ts": "2026-09-30 21:20", "kim": "kullanıcı", "text": "6 config eksiğini kapat: canlı Sub-1'den kopyala, CustomJewel çağrısını .txt'e çevir, derlemeyi doğrula." },
     { "ts": "2026-09-30 21:30", "kim": "ajan", "text": "6 config kopyalandı + 2 format düzeltmesi: CustomJewel .xml→.txt, ThuMuaDoExc .xml→.txt (canlı exe kanıtı). GS temiz → 10.701.824 B. Bulgu: canlı config yolları SPK\ altında, bizim bir kısmı Custom\ — E-kalem entegrasyonlarında birleştirilecek. CHANGELOG + 09 §5 güncel." },
     { "ts": "2026-09-30 20:50", "kim": "kullanıcı", "text": "2b.2'yi E-10 Reconnect ile başlat: donor sürümü al, derle, CHANGELOG + commit ile kapat." },

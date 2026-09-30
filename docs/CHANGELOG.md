@@ -7,6 +7,35 @@
 
 ---
 
+## [26.09.30] Faz 2b.2-P0 — protokol opcode/struct diff tablosu (docs/11)
+
+**Ne yapıldı**
+- H-007 dersi gereği donor protokol alımından ÖNCE tablo çıkarıldı →
+  docs/11-PROTOCOL-P0-DIFF-TABLOSU.md. Kapsam: Protocol, DSProtocol, CSProtocol,
+  JSProtocol, ESProtocol, SocketManager, SocketManagerUdp, Connection, IpManager
+  (+ PacketManager referans).
+- Bulgular: (1) dış opcode seti Protocol(9)/DSProtocol(4)/CS(1)/JS(1)/ES(1)
+  **birebir aynı**; (2) metot yüzeyi farkı 8 dosyada **sıfır** — fark tamamen
+  gövdede; (3) bizim-tekil case'ler SPK handler'ları (0x1A LockWindow, 0x39
+  CTCMini, 0x75 CB_NewQuest, 0x7B XULY, 0x7C AutoNapThe, 0xEE RuudToken,
+  0xFF post-item; DS: 0x40 CustomRanking, 0x7A/7B AutoNapGame), donor-tekil
+  case'ler donor özellikleri (0x8/0x9 HolyJOH, 0x71 CGReqtimeState, 0xFB SNS,
+  DS 0x41/0x75; 0xF8 donorde zaten comment'li).
+- Canlı kanıt: `Sub-1\Data\Event\CTCMini\` (CongThanhChien.xml) bizim
+  ServerInfo:503 yoluyla birebir; `Data\BlackList.txt` canlıda var → donor
+  SocketManager'ın BlackList/APIGameGuard bağımlılığı gerçek ama modül donor
+  GS klasöründe yok → 2c'ye.
+- SocketManager.h: bizim buffer sabitleri 5× büyütülmüş (MAX_MAIN_PACKET_SIZE
+  40960, MAX_SIDE 81920, WORKER 16) — SPK ölçek kararı, korunur. IpManager:
+  bizim sürümde FLOOD IP-ban koruması (LOG_ANTIFLOOD, Log.h:19) — korunur.
+
+**Karar** — Donör protokol dosyası bu fazda ALINMAZ; bizim SPK tabanı korunur.
+Donor-tekil struct/handler'ların canlı kanıtı yok (tek tek 2c'de). Connection/
+SocketManagerUdp/CSProtocol whitespace-normalize adayı olarak G3'e bırakıldı.
+Kod değişikliği YOK (salt analiz + docs) → derleme gerekmez.
+
+**Commit** — (bu kayıtla birlikte)
+
 ## [26.09.30] Faz 2b.2-B dalga 2 — bağımlılık modülleri: 9 dosya + CEventName modülü alındı
 
 **Ne yapıldı**

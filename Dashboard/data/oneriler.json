@@ -1,17 +1,11 @@
 {
-  "updated": "2026-09-30 20:40:00",
+  "updated": "2026-09-30 23:05:00",
   "note": "Bu dosyayi ajan (Buffy) gunceller. 'prompt' sohbete gonderilecek komutun ta kendisi.",
   "suggestions": [
     {
-      "id": "p0",
-      "label": "2b.2-P0: protokol diff tablosu",
-      "desc": "Protocol/DS/CS/JS/ES/Socket dosyalarının opcode+struct karşılaştırması — protokol donor alımının ön şartı (H-007 dersi: tablosuz alım yok)",
-      "prompt": "2b.2-P0: protokol dosyalarının (Protocol, DS/CS/JS/ESProtocol, SocketManager, Connection, IpManager) diff tablosunu opcode/struct düzeyinde çıkar, canlı exe string'leriyle doğrula ve docs/11'e yaz."
-    },
-    {
       "id": "g2",
       "label": "2b.2-C: G2'nin 25 dosyasını al",
-      "desc": "Diff matrisinin G2 bandı (kontrollü donor alımı) — 2b.2-B'de alınan bağımlılık modülleri hazır",
+      "desc": "Diff matrisinin G2 bandı (kontrollü donor alımı) — P0 tablosu onaylı, kanca koruması şart",
       "prompt": "2b.2-C'yi başlat: diff matrisinin G2 grubundaki 25 dosyayı (docs/10) kanca korumasıyla donörden al, grup grup derle + CHANGELOG + commit."
     },
     {
@@ -23,7 +17,7 @@
     {
       "id": "g3",
       "label": "2b.2-D: G3'ün 10 dosyasını birleştir",
-      "desc": "Manuel birleşim gerektiren G3 bandı — kanca koruması + metot yüzeyi kontrolü şart",
+      "desc": "Manuel birleşim gerektiren G3 bandı — P0'ın whitespace-normalize adayları (Connection, SocketManagerUdp, CSProtocol) da burada",
       "prompt": "2b.2-D: G3 grubundaki 10 dosyayı (docs/10) dosya dosya manuel birleştir (SPK kancaları korunacak), her dosyada derle + CHANGELOG + commit."
     }
   ]
