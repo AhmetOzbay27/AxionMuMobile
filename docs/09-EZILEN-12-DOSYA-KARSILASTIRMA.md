@@ -271,3 +271,19 @@ Notlar:
 - 2b.2-N'den kalıtsal bug bu turda düzeltildi: `CNotice::Reload` geri
   yüklemede `m_count`'u geri koymuyordu (eski veri dönse de Notice döngüsü
   boş kalırdı). Diğer 2b.2-N modülleri konteyner-tabanlı — etkilenmedi.
+
+## 9. E-KALEMLERİ KALAN PARÇALAR — DURUM (01.10.2026 19:xx turu)
+
+2b.2-O temel entegrasyonundan sonra araştırma turunun §4 denetiminden
+çıkan alt parçalar:
+
+| Kalem | Alt parça | Karar | Kayıt |
+|-------|-----------|-------|-------|
+| E-04 | ClearMasterChangeClass INI anahtarı + koşul | ✅ uygulandı — canlı `Command.ini:270 ClearMasterChangeClass = 0`, koşulsuz çağrı koşula bağlandı (default off = canlı) | `0c0f57431` |
+| E-02 | 5 Vietnamese hata stringi → canlı `BotAlchemist error:` formatı | ✅ uygulandı (oyuncu-yönelimli Vietnamese mesajlar korundu — işlev) | `d75ca6f2a` |
+| E-09 | OnlineRewardOfflineSystems donor deseni | ⛔ entegre EDİLMEDİ — donor'un tam OnlineReward sistemi (`m_OnlineRewardCoin1Delay` + PcPoint/User yazıcıları) canlıda YOK; canlı kanıt sadece config anahtarı (bizde de okunuyor ✓) + alan yazıcıları için kanıt yok; tüketici de yok → ölü yazı eklemek parite değil risk | bu kayıt |
+| E-09 | `OfflineMode::regresar` (canlıda metot yok) | ✅ KORUNDU — GameMain.cpp:223'ten çağrılan çalışan QoL (offline karakteri koordinatına geri yürütür); kaldırmak işlev kırar, canlı kanıt yalnız yokluk | bu kayıt |
+| E-09 | RenderAttack distance 6 vs donor 8 | ✅ değişiklik YOK — canlı 6, bizim 6 zaten tutarlı (§4'teki 8 iddiası donor farkıydı) | araştırma turu |
+| E-11 | kalan | ✅ KAPALI — ek doğrulama: `ThuMuaDoExc error` live=1 ours=1, txt şeması ✓, `[BotThuMua]`/`AllowLuck`/`Alchemy` iki tarafta da sessiz ✓; iş yok | bu kayıt |
+| E-06 | canlı EventTime.xml mimarisi | → ayrı kayıt (aşağıda) | — |
+| E-01 | BossGuild yeniden yazım | → ayrı kayıt (aşağıda) | — |
