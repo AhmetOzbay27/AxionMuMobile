@@ -39,7 +39,7 @@ CHANGELOG + commit")
 taraması: **7/7 anahtar VAR** (canlıyla aynı set); PDB: `EventGvG.cpp` kaynak
 ×3 + `ProcState_START` ×74 + `gGvGEvent` ×5; User.obj'te kanca referansı ✓.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 14:31
+**Commit** — `3d0a8e6eb` · **Tamamlandı** — 01.10.2026 14:31
 
 ---
 
