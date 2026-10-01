@@ -54,7 +54,7 @@ reload deseni) GameMaster/ExperienceTable hariç çekirdek 6 modüle uygulandı;
 - `/reload move|skill` mevcut zincirleri korundu (davranış değişmedi; Load'lar
   m_Path saklar).
 
-**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 09:25
+**Commit** — `97878b551` · **Tamamlandı** — 01.10.2026 09:25 (commit 09:28)
 
 ## [26.10.01 07:40] 2b.2-M ek dalga — MapManager zinciri donor'dan alındı, CustomPick tam donör oldu (pano önerisi)
 
