@@ -49,7 +49,7 @@ paritesi; davranış değişikliği yok (yol farkı persist dosyası konumu).
   `..\Data\Event\CTCMini\GuildWin.ini` ×1 VAR; `tiêu diệt` ×0 (kalıntı
   yok). Score/Reward Item/Spawn Boss next ×0 — bilinçli (2/2 kapsamı).
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:40
+**Commit** — `6c27fbcd8` · **Tamamlandı** — 01.10.2026 19:40
 
 ## [26.10.01 19:24] E-06 kalan parça (1/2) — canlı EventTime.xml mimarisi: Load + GetEventTime + ServerInfo bağlantısı + deploy
 
