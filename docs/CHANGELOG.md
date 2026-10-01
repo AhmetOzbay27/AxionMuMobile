@@ -41,7 +41,7 @@ farkı gerçekti (koşulsuz master sıfırlama vs canlı koşullu).
 - Diğer 5 E-kalem parçası ayrı kayıtlarda: E-02 (19:xx), E-09+E-11 karar
   kaydı, E-06, E-01.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:03
+**Commit** — `0c0f57431` · **Tamamlandı** — 01.10.2026 19:03
 
 ## [26.10.01 18:49] 2b.2-R — Reload ailesinin kalanı: GameMaster + ExperienceTable + SPK alt kümesi (AddBuff/CustomMonsterSkill)
 
