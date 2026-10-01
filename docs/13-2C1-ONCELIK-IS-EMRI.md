@@ -65,7 +65,7 @@
 | Sıra | # | Modül | Sınıf(map) | Kaynak | Not |
 |---:|---:|---|---|---|---|
 | B1 | 1 | SPK_EventMainManager | EventMainManager | sıfırdan | **event iskeleti** — diğer event'lerin taşıyıcısı, B grubunun ilk işi |
-| B2 | 60 | **EventGvG** (YENİ keşif) ✅ **iskelet kuruldu** (26.10.01 14:31) | CGvGEvent | sıfırdan (canlı 7 anahtar) | ServerInfo 7 anahtar okunuyor (exe'de 7/7), donor header birebir, state machine iskeleti User.cpp MainProc'de; tam uygulama (NPC/Dialog/rank) 2c.1-B2 |
+| B2 | 60 | **EventGvG** (YENİ keşif) ✅ **tam uygulama** (26.10.01 21:43) | CGvGEvent | donor birebir + canlı denetim (7 anahtar) | donor 1138 satır birebir port (tek sapma: donor `gettype`→GetAsNumber + load guard); 9 kanca (Load/Init/Dialog/Attack×2/respawn/UserDie/IDM+komut, COMMAND_STARTGVG=86 pozisyonel); canlı exe'de motor sembolleri YOK → denetim: donor canlısında GvGEvent.dat deploy'suz + /startgvg yok = kapalı modül; inert GvGEvent.dat ×3 deploy; derleme 10.816.512 B (21:42) |
 | B3 | 31 | ActiveInvasions | CActiveInvasions | sıfırdan | invasion takibi |
 | B4 | 27 | SPK_CastleEvent | CastleStartGuild | sıfırdan | castle etkinliği |
 | B5 | 32 | BEventThanMa | CThanMaChien | sıfırdan | ThanMaChien |

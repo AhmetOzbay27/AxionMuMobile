@@ -88,7 +88,7 @@ Etkinleştirme: Switch=1 + bölüm 1'e zaman satırı.
 - GvGEvent.dat ×3 dizinde; guard yolu: dosya silinirse bile GS boot
   devam eder (BLANK).
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 21:43
+**Commit** — `c6df22bd7` · **Tamamlandı** — 01.10.2026 21:43
 
 ---
 

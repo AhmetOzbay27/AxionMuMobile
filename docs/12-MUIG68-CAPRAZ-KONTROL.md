@@ -87,7 +87,7 @@ canli_string;bizim_string;donor_config;canli_config;canli_log`):
 
 | Modül (donör) | Canlı kanıt | Bizim taban | 2c kalem |
 |---|---|---|---|
-| **EventGvG** (CGvGEvent) | canlı ServerInfo.obj'te **7 config anahtarı**: `EventGvGSwitch, EventGvGNpc, EventGvGNpcMap, EventGvGNpcX, EventGvGNpcY, EventGvGMinUsers, EventGvGMaxUsers` — modül canlıda VAR | bizim ServerInfo.cpp'te EventGvG **0** vuruş → canlıda olan bu blok bizde eksik | **YENİ 2c kalemi:** ServerInfo EventGvG bloğu + CGvGEvent modülü, canlı config şemasından yazılacak |
+| **EventGvG** (CGvGEvent) | canlı ServerInfo.obj'te **7 config anahtarı**: `EventGvGSwitch, EventGvGNpc, EventGvGNpcMap, EventGvGNpcX, EventGvGNpcY, EventGvGMinUsers, EventGvGMaxUsers` — modül canlıda VAR | bizim ServerInfo.cpp'te EventGvG **0** vuruş → canlıda olan bu blok bizde eksik | **YENİ 2c kalemi (2c.1-B2 TAMAMLANDI 26.10.01 21:43):** motor donor'dan birebir alındı — canlı map yeniden tarandı, **CGvGEvent sınıf sembolleri canlıda YOK** (motor canlı exe'de derli değil, sadece config okuma bloğu var); donor canlısında da `Event\\GvGEvent.dat` deploy'suz + `/startgvg` komut satırı yok → kapalı modül; bizde donor birebir + load guard + inert GvGEvent.dat (Switch=0/BLANK) — donor canlı davranışı korunur |
 | **AntiSkillDelay** (CSkillDelayManager) | canlıda işlev `SkillManager.obj → CSkillManager::CheckSkillDelay` içinde; ayrı modül değil | bizim SkillManager.cpp'te CheckSkillDelay **VAR** | İşlev zaten parite; donör dosyası çöp → ayrı kalem YOK |
 | **ThuongDanhBoss** | donor'da derleniyor (ClCompile VAR) ama canlıda SIFIR iz (map/PDB/string/config/log) → MUIG-özel, SPK'ya hiç geçmemiş | bizde yok | Canlıda olmadığı için **parite kapsamı DIŞI**; istenirse v2 özelliği olarak değerlendirilir |
 

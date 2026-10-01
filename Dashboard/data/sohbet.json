@@ -1,37 +1,81 @@
 {
-  "updated": "2026-10-01 20:58:00",
+  "updated": "2026-10-01 21:43:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
-    { "ts": "2026-10-01 20:58", "kim": "kullanıcı", "text": "2c.1-B ilk iş: EventMainManager event iskeletini canlı kanıtlarla yaz (diğer event'lerin taşıyıcısı)." },
-    { "ts": "2026-10-01 20:58", "kim": "ajan", "text": "2c.1-B1 TAMAM: EventMainManager iskeleti (9454d5d98) — canlı SPK_EventMainManager.obj 3 katman çözüldü (SPK editor / config şema anahtarları / SkyEvent runtime); SkyEvent canlı şemalarından yazıldı (Config.xml Stage/Time/Win + Monster.ini stage bölümleri), 5-durum state machine + jokerli CheckSync, kancalar ReadEventInfo+gObjEventRunProc; 5 canlı .ini + SkyEvent deploy'a kopyalandı (şemalar bizimle birebir; .dat→.ini yol-geçişi ayrı kalem). Derleme temiz → 10.809.344 B (20:55). Sirada: B tekil event'leri veya A2." },
-    { "ts": "2026-10-01 20:33", "kim": "kullanıcı", "text": "2c.1-A dalgasını başlat: SPK_Harmony modülünü canlı CustomHarmony.xml şemasından sıfırdan yaz, derle + commit et." },
-    { "ts": "2026-10-01 20:33", "kim": "ajan", "text": "2c.1-A1 TAMAM: SPK_Harmony sıfırdan yazıldı (01c7d2b16) — canlı yüzey (10 metot + map<int,HM_HAMORNY>), XML şeması birebir; kritik bulgu: canlı OptIndex = engine harmony-byte kodlaması (opt<<4|level); dispatcher canlı jump-table'den çözülüp 0xD3 ailesine 4 dal olarak bağlandı (0x6F/0x70/0x71/0x72, SauChangeItem deseni); ProcMix XML tablo+kademeli Rate+taşı 14,41+coin/Zen ödeme; canlı stringler birebir. Derleme temiz → 10.802.688 B (20:30); obj'de canlı mangled sembol birebir. Sirada: A2 MonsterSkill." },
-    { "ts": "2026-10-01 19:42", "kim": "kullanıcı", "text": "docs/09'daki kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) stratejilerine göre işle, her kalemde derle + CHANGELOG + commit. Bu iş bitti mi?" },
-    { "ts": "2026-10-01 19:42", "kim": "ajan", "text": "KALAN PARÇALAR TURU TAMAM: E-04 ClearMasterChangeClass anahtar+koşul (0c0f57431); E-02 5 hata stringi canlı format (d75ca6f2a); E-09 karar kaydı — OnlineReward entegre edilmedi (canlıda kanıt yok), regresar korundu (5417f5d02); E-11 kapandı. E-06 (1/2): canlı EventTime.xml Load+GetEventTime+store+deploy, switch 1→0 (8af2a6f3a); E-01 (1/2): 7 kill-notice+StartBoss+Winning+Finish+CTCMini yolu (6c27fbcd8). Derleme 10.795.520 B (19:39). 2c'ye kalan: E-06 canlı GCReqEventTime paket çözümü + invasion tablo dolumu; E-01 SpawnBoss/HandleBossKill/MonsterDie yeniden-yazımı (2/2)." },
-    { "ts": "2026-10-01 18:49", "kim": "kullanıcı", "text": "Reload ailesinin kalanını uygula: GameMaster ve ExperienceTable'a (/reload gamemaster, /reload experiencetable) + SPK alt kümesine (AddBuff, CustomMonsterSkill, CustomShop, ResetChange — canlı 'saved and reloaded' deseni) m_Path+Reload ekle, derle + CHANGELOG + commit." },
-    { "ts": "2026-10-01 18:49", "kim": "ajan", "text": "2b.2-R TAMAM: GameMaster/ExperienceTable/AddBuff/CustomMonsterSkill'e m_Path+Reload (yedek-geri-yükle, boş-dosya koruması), /reload'a 4 dal (gamemaster/experiencetable/addbuff/custommonsterskill); canlı loglar birebir ([CGameMaster]/[CExperienceTable] reloaded, [SPK] AddBuff+CMS saved and reloaded). CNotice::Reload'un 2b.2-N kalıtsal m_count bug'ı düzeltildi. CustomShop+ResetChange: sınıf iki tarafta da yok (canlı-özel SPK) → portaj ayrı iş; GameMaster txt↔xml ve CMS Custom\\ ↔ SPK\\ yol farkları docs/09 §8'e işlendi. Derleme temiz → 10.791.424 B (18:48), 4/4 log + 4/4 komut adı exe'de." },
-    { "ts": "2026-10-01 14:34", "kim": "kullanıcı", "text": "EventGvG modülünü canlı kanıttan yaz: ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle + CHANGELOG + commit (2c.1 öncesi ısınma kalemi)." },
-    { "ts": "2026-10-01 14:34", "kim": "ajan", "text": "2c.1-B2 ISINMA TAMAM: EventGvG — ServerInfo 7 anahtari (donor deseni birebir, kosulsuz default 0/0/0/0/0/2/20), EventGvG.h donor cp, EventGvG.cpp iskelet (state machine BLANK/EMPTY/STAND/START/CLEAN), kanca User.cpp MainProc + Init + vcxproj. Derleme temiz 10.789.376 B (14:31); exe 7/7 anahtar, PDB+obj kanitlari tam. Tam uygulama 2c.1-B2 (donor 1138 satir + canli kanit denetimi). Sonraki: 2c.1-A Harmony veya 2c.1-B EventMainManager." },
-    { "ts": "2026-10-01 14:07", "kim": "kullanıcı", "text": "2c.1'i başlat: docs/05 + docs/12'deki 60 modülü oyun akışı etkisine göre önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat damgalı iş emri yaz ve commit'le." },
-    { "ts": "2026-10-01 14:07", "kim": "ajan", "text": "2c.1 TAMAM: docs/13-2C1-ONCELIK-IS-EMRI.md yazildi (14:05) — A Cekirdek=24, B Event=9 (EventMainManager + EventGvG #60), C QoL=21, D Anticheat=3, E Kozmetik=3 = 60/60. Her sinif icin tablo + gerekce + kaynak (donor/2b.0 tam/sifirdan) + dalga plani §8 (A->B->C->D/E, ilk is Harmony). Kapsam disi: C grubu 19 OFF + ThuongDanhBoss. docs/05 + docs/00 + CHANGELOG guncellendi; kod degisikligi yok. Sonraki: 2c.1-A (SPK_Harmony)." },
-    { "ts": "2026-10-01 13:52", "kim": "kullanıcı", "text": "Kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) docs/09 stratejilerine göre işle." },
-    { "ts": "2026-10-01 13:52", "kim": "ajan", "text": "E-KALEMLERI KAPANDI: E-06 donor CustomEventTime + 11 yazici gEventName'e; E-02 donor BotAlchemist (canli WcoinC/WcoinP -> Coin1/Coin2, data load error korumasi, CongHuong deploy); E-04 canli SPK\\ChangeClass.xml okuyucu (ini YOK kanitiyla kaldirildi) + ClearMasterChangeClass + XML mesajlari; E-11 Read canli TXT'ye cevrildi (donor + canli 3 bolum, GP atlandi, canli hata stringi) + donor Alchemy + 4 log sessiz; E-09 7 notice canli sessizlige (kisit return korunur) + OnlineRewardOfflineSystems anahtari; E-01 Event\\BossGuild.xml yol gecisi (deploy birebir). Derleme temiz -> 10.786.304 B (13:47), 6 exe-string testi + 2 sessizlik testi gecti. Kalan 2c: E-01 yeniden yazim, E-09 donor davranis (RenderAttack/PickUP/close), OnlineReward kullanimi. Sonraki: 2c.1." },
-    { "ts": "2026-10-01 12:44", "kim": "kullanıcı", "text": "Devam etmeden önce sistemde gereksiz dosyaları sil ve disk temizliği yap — boş yerimiz kalmadı." },
-    { "ts": "2026-10-01 12:45", "kim": "ajan", "text": "DİSK TEMİZLİĞİ TAMAM: C: 1.6 -> 3.7 GB bos. Takipsiz/geci artiklar silindi (BuildLog ~419 MB - envanter korundu, cryptopp ciktilari ~250 MB - tracked'lar checkout, temp ~610 MB, git gc ~40 MB) + kullanici onayiyla ClientBuild_192.168.99.200 (1 GB, git rm) -> commit 15d1bdbe4. Boost takipsiz 26 MB dokunulmadi; WIP E-kalem degisiklikleri korundu. Not: GS sonraki derleme full rebuild olacak. Devam: E-kalemleri (E-04 XML gecisi asamada)." },
-    { "ts": "2026-10-01 09:30", "kim": "kullanıcı", "text": "Reload desenini Gate/Move/MoveSummon/Notice/ResetTable/Skill modüllerine uygula (canlı kanıtlı 'configuration reloaded' ailesi)." },
-    { "ts": "2026-10-01 09:30", "kim": "ajan", "text": "2b.2-N EK DALGA TAMAM: 6 modüle m_Path+Reload (E-05 deseni, yedek-geri-yükle), canlı birebir [CSınıf] ... reloaded. logları, /reload gate|movesummon|notice|resettable eklendi; move|skill'de mevcut ServerInfo zincirleri korundu (çoklu-config reload + m_Path). ResetTable ilk denemede #else dalına gitmişti — derleme yakaladı, aktif CB_AUTORESETINFO dalına taşındı. GS Rebuild temiz → 10.784.256 B (09:22), 5/5 canlı-birebir string exe'de. Sonraki: 2c.1." },
-    { "ts": "2026-10-01 07:45", "kim": "kullanıcı", "text": "MapManager zincirini donörden al, CustomPick'i tam donör yap, derle + commit." },
-    { "ts": "2026-10-01 07:45", "kim": "ajan", "text": "2b.2-M EK DALGA TAMAM: MapManager donor alindi (SPK GetMapNonPK gPKFree zinciri + canli 16-kolon Load adaptasyonu ile — donor sirasi canli dosyayla desync olacakti, Load duzeltildi), CustomPick.cpp tam donor (OnPickClose + TradeDuel + GetMapCustomPick gate), CustomAttack/OfflineMode CustAtt adina gecti, canli MapManager.txt deploy agacina kopyalandi. GS temiz -> 10.775.552 B (07:38), PDB sembolleri dogrulandi. Sonraki: 2c.1." },
-    { "ts": "2026-10-01 07:02", "kim": "kullanıcı", "text": "2b.3'ü başlat: 68 MUIG-özel modülün canlı envanterle çapraz kontrolünü yap, saat damgalı rapor yaz." },
-    { "ts": "2026-10-01 07:02", "kim": "ajan", "text": "2b.3 TAMAM → FAZ 2b KAPANDI. 68 etiketi netleşti: 62 donor-özel dosya / 29 cpp modülü, 6 kanıt hattıyla sınıflandırma: 7 canlıda VAR-parite tamam, 3 iş-kalemi 2c'ye (YENİ KEŞİF: EventGvG), 19 canlıda YOK → OFF/taşınmaz. Rapor docs/12. Sıradaki: 2c.1." },
-    { "ts": "2026-10-01 01:04", "kim": "kullanıcı", "text": "Panoya otomatik başlatma görevi ekle (Task Scheduler): makine yeniden başlasa bile pano ayakta kalsın." },
-    { "ts": "2026-10-01 01:04", "kim": "ajan", "text": "AxionPano görevi kuruldu: boot+20sn'de SYSTEM olarak başlar, çökerse 1 dk'da yeniden başlar. SYSTEM'te git 'dubious ownership' 500 veriyordu → 5 git çağrısına safe.directory=* eklendi. 4/4 endpoint 200." },
-    { "ts": "2026-10-01 00:25", "kim": "ajan", "text": "Saat damgası standardı kuruldu: CHANGELOG'un 29 kaydına [gg.aa.yy HH:mm] başlık + 'hash · Tamamlandı — saat' damgası. Panoya Zaman Çizelgesi paneli eklendi. Bundan sonra her kayıt bu standardı izleyecek." },
-    { "ts": "2026-10-01 00:10", "kim": "ajan", "text": "FAZ 2b KAPANIŞ DOĞRULAMASI: final Rebuild temiz → 10.775.552 B (00:03), 8 kanca dosyası + H-007 (0x35 AUTOHP) doğrulandı. 2b.2 toplam: 213 dosyanın 66'sı alındı, 147'si gerekçeli korundu, 0 belirsiz." },
-    { "ts": "2026-09-30 23:55", "kim": "ajan", "text": "2b.2-F dalga 6 TAMAM (G4): 8 dosya alındı (whitespace+güvenli declare), 19 gerekçeli korundu. Cascade dersi: Helper/QuestReward donor bağımlılık zinciri derlemeyle yakalanıp geri alındı. GS temiz → 10.776.064 B." },
-    { "ts": "2026-09-30 23:50", "kim": "ajan", "text": "2b.2-D dalga 5 TAMAM (G3): 4 dosya alındı (CustomDeathMessage, EventKillAll, CustomQuest, EventRunAndCatch — 2 adaptasyonla), 6 gerekçeli korundu. GS temiz → 10.776.064 B." },
-    { "ts": "2026-09-30 23:45", "kim": "ajan", "text": "2b.2-E kalemleri dalga 4 TAMAM: E-05 yol geçişi (canlı SPK klasörü yolları), E-08 bizim taban, 7 kalem gerekçeli 2c erteleme. Deploy-config düzeltmesi. GS temiz → 10.781.184 B." },
-    { "ts": "2026-09-30 23:40", "kim": "ajan", "text": "2b.2-C dalga 3 TAMAM: G2'nin 24 dosyası incelendi → 7 alındı (Gate 2-satır adaptasyonla, Util'e PackFileEncrypt zinciri), 15 tek tek gerekçelendirilerek korundu. GS temiz → 10.781.184 B." },
-    { "ts": "2026-09-30 23:05", "kim": "ajan", "text": "2b.2-P0 TAMAM (docs/11): dış opcode seti 5 dosyada birebir, metot yüzeyi farkı sıfır. Canlı CTCMini kanıtı bizim tarafı doğruluyor → donor protokol alımı YOK. SocketManager bağımlılığı (BlackList) 2c'ye." }
+    {
+      "ts": "2026-10-01 21:43",
+      "kim": "kullanıcı",
+      "text": "EventGvG iskeletini tam uygulamaya taşı: donor 1138 satırı canlı kanıtla denetleyip NPC spawn/Dialog/rank/StartGvG işlevlerini bağla."
+    },
+    {
+      "ts": "2026-10-01 21:43",
+      "kim": "ajan",
+      "text": "2c.1-B2 TAMAM: EventGvG tam uygulama — donor 1138 satır birebir port (tek sapma: donor gettype→GetAsNumber + load guard); canlı denetim: canlı map'te CGvGEvent sembolleri YOK, donor canlısında GvGEvent.dat deploy'suz + /startgvg yok → kapalı modül kararı (inert GvGEvent.dat ×3, Switch=0 BLANK). 9 kanca donor wiring birebir (Load/Init/Dialog/Attack/respawn/UserDie/IDM/komut). Derleme temiz → 10.816.512 B (21:42)."
+    },
+    {
+      "ts": "2026-10-01 20:58",
+      "kim": "kullanıcı",
+      "text": "2c.1-B ilk iş: EventMainManager event iskeletini canlı kanıtlarla yaz (diğer event'lerin taşıyıcısı)."
+    },
+    {
+      "ts": "2026-10-01 20:58",
+      "kim": "ajan",
+      "text": "2c.1-B1 TAMAM: EventMainManager iskeleti (9454d5d98) — canlı SPK_EventMainManager.obj 3 katman çözüldü (SPK editor / config şema anahtarları / SkyEvent runtime); SkyEvent canlı şemalarından yazıldı (Config.xml Stage/Time/Win + Monster.ini stage bölümleri), 5-durum state machine + jokerli CheckSync, kancalar ReadEventInfo+gObjEventRunProc; 5 canlı .ini + SkyEvent deploy'a kopyalandı (şemalar bizimle birebir; .dat→.ini yol-geçişi ayrı kalem). Derleme temiz → 10.809.344 B (20:55). Sirada: B tekil event'leri veya A2."
+    },
+    {
+      "ts": "2026-10-01 20:33",
+      "kim": "kullanıcı",
+      "text": "2c.1-A dalgasını başlat: SPK_Harmony modülünü canlı CustomHarmony.xml şemasından sıfırdan yaz, derle + commit et."
+    },
+    {
+      "ts": "2026-10-01 20:33",
+      "kim": "ajan",
+      "text": "2c.1-A1 TAMAM: SPK_Harmony sıfırdan yazıldı (01c7d2b16) — canlı yüzey (10 metot + map<int,HM_HAMORNY>), XML şeması birebir; kritik bulgu: canlı OptIndex = engine harmony-byte kodlaması (opt<<4|level); dispatcher canlı jump-table'den çözülüp 0xD3 ailesine 4 dal olarak bağlandı (0x6F/0x70/0x71/0x72, SauChangeItem deseni); ProcMix XML tablo+kademeli Rate+taşı 14,41+coin/Zen ödeme; canlı stringler birebir. Derleme temiz → 10.802.688 B (20:30); obj'de canlı mangled sembol birebir. Sirada: A2 MonsterSkill."
+    },
+    {
+      "ts": "2026-10-01 19:42",
+      "kim": "kullanıcı",
+      "text": "docs/09'daki kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) stratejilerine göre işle, her kalemde derle + CHANGELOG + commit. Bu iş bitti mi?"
+    },
+    {
+      "ts": "2026-10-01 19:42",
+      "kim": "ajan",
+      "text": "KALAN PARÇALAR TURU TAMAM: E-04 ClearMasterChangeClass anahtar+koşul (0c0f57431); E-02 5 hata stringi canlı format (d75ca6f2a); E-09 karar kaydı — OnlineReward entegre edilmedi (canlıda kanıt yok), regresar korundu (5417f5d02); E-11 kapandı. E-06 (1/2): canlı EventTime.xml Load+GetEventTime+store+deploy, switch 1→0 (8af2a6f3a); E-01 (1/2): 7 kill-notice+StartBoss+Winning+Finish+CTCMini yolu (6c27fbcd8). Derleme 10.795.520 B (19:39). 2c'ye kalan: E-06 canlı GCReqEventTime paket çözümü + invasion tablo dolumu; E-01 SpawnBoss/HandleBossKill/MonsterDie yeniden-yazımı (2/2)."
+    },
+    {
+      "ts": "2026-10-01 18:49",
+      "kim": "kullanıcı",
+      "text": "Reload ailesinin kalanını uygula: GameMaster ve ExperienceTable'a (/reload gamemaster, /reload experiencetable) + SPK alt kümesine (AddBuff, CustomMonsterSkill, CustomShop, ResetChange — canlı 'saved and reloaded' deseni) m_Path+Reload ekle, derle + CHANGELOG + commit."
+    },
+    {
+      "ts": "2026-10-01 18:49",
+      "kim": "ajan",
+      "text": "2b.2-R TAMAM: GameMaster/ExperienceTable/AddBuff/CustomMonsterSkill'e m_Path+Reload (yedek-geri-yükle, boş-dosya koruması), /reload'a 4 dal (gamemaster/experiencetable/addbuff/custommonsterskill); canlı loglar birebir ([CGameMaster]/[CExperienceTable] reloaded, [SPK] AddBuff+CMS saved and reloaded). CNotice::Reload'un 2b.2-N kalıtsal m_count bug'ı düzeltildi. CustomShop+ResetChange: sınıf iki tarafta da yok (canlı-özel SPK) → portaj ayrı iş; GameMaster txt↔xml ve CMS Custom\\ ↔ SPK\\ yol farkları docs/09 §8'e işlendi. Derleme temiz → 10.791.424 B (18:48), 4/4 log + 4/4 komut adı exe'de."
+    },
+    {
+      "ts": "2026-10-01 14:34",
+      "kim": "kullanıcı",
+      "text": "EventGvG modülünü canlı kanıttan yaz: ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle + CHANGELOG + commit (2c.1 öncesi ısınma kalemi)."
+    },
+    {
+      "ts": "2026-10-01 14:34",
+      "kim": "ajan",
+      "text": "2c.1-B2 ISINMA TAMAM: EventGvG — ServerInfo 7 anahtari (donor deseni birebir, kosulsuz default 0/0/0/0/0/2/20), EventGvG.h donor cp, EventGvG.cpp iskelet (state machine BLANK/EMPTY/STAND/START/CLEAN), kanca User.cpp MainProc + Init + vcxproj. Derleme temiz 10.789.376 B (14:31); exe 7/7 anahtar, PDB+obj kanitlari tam. Tam uygulama 2c.1-B2 (donor 1138 satir + canli kanit denetimi). Sonraki: 2c.1-A Harmony veya 2c.1-B EventMainManager."
+    },
+    {
+      "ts": "2026-10-01 14:07",
+      "kim": "kullanıcı",
+      "text": "2c.1'i başlat: docs/05 + docs/12'deki 60 modülü oyun akışı etkisine göre önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat damgalı iş emri yaz ve commit'le."
+    },
+    {
+      "ts": "2026-10-01 14:07",
+      "kim": "ajan",
+      "text": "2c.1 TAMAM: docs/13-2C1-ONCELIK-IS-EMRI.md yazildi (14:05) — A Cekirdek=24, B Event=9 (EventMainManager + EventGvG #60), C QoL=21, D Anticheat=3, E Kozmetik=3 = 60/60. Her sinif icin tablo + gerekce + kaynak (donor/2b.0 tam/sifirdan) + dalga plani §8 (A->B->C->D/E, ilk is Harmony). Kapsam disi: C grubu 19 OFF + ThuongDanhBoss. docs/05 + docs/00 + CHANGELOG guncellendi; kod degisikligi yok. Sonraki: 2c.1-A (SPK_Harmony)."
+    },
+    {
+      "ts": "2026-10-01 13:52",
+      "kim": "kullanıcı",
+      "text": "Kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) docs/09 stratejilerine göre işle."
+    }
   ]
 }
