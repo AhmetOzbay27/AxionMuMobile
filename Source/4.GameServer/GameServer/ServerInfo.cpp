@@ -471,6 +471,8 @@ void CServerInfo::ReadEventInfo() // OK
 
 	gBloodCastle.Load(gPath.GetFullPath("Event\\BloodCastle.dat"));
 
+	gCustomEventTime.Load(gPath.GetFullPath("Event\\EventTime.xml"));	// E-06 (kalan parça): canli ServerInfo.obj yolu — EventTime.xml canli Data/Event'te (2714 B)
+
 	gEventName.OpenFile(gPath.GetFullPath("Event\\EventName.xml"));	// 2b.2-B (donor ServerInfo:452) — EventName.xml canli Data/Event'te
 
 	gBonusManager.Load(gPath.GetFullPath("Event\\BonusManager.dat"));

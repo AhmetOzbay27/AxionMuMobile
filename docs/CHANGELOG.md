@@ -7,6 +7,60 @@
 
 ---
 
+## [26.10.01 19:24] E-06 kalan parça (1/2) — canlı EventTime.xml mimarisi: Load + GetEventTime + ServerInfo bağlantısı + deploy
+
+**Ne yapıldı** (araştırma turunun BÜYÜK bulgusu: canlı mimari bizden farklı —
+CEventName/EventName.xml canlıda YOK; canlı CCustomEventTime kendi
+Load/GetEventTime/GCReqEventTime'ına sahip, `Event\EventTime.xml` okuyor)
+- **Canlı kanıt (giriş):** canlı map: `?Load@CCustomEventTime@@QAEXPAD@Z`
+  0x473C80, `?GetEventTime@@QAEHE@Z` 0x4742A0, GCReqEventTime 0x474340
+  (disasm satır 146450+); `MESSAGE_INFO_EVENTIME` map tipi canlı map'te;
+  canlı EventTime.xml 2714 B okundu: `SPK Enable=1` + `Message/Msg
+  Index/Text` + 22× `Event{Slot,Name,Map,Gate,Status}` — Event main slot
+  0-7 (Blood Castle/Devil Square/Chaos Castle/CTCMini/FFA/King Mu/Divine
+  War/Guild Boss), Invasion slot 8-21 (Golden Boss…Invincible War God).
+- **Kritik config bulgusu:** canlı `Custom.ini:196 CustomEventTimeSwitch =
+  0` → canlı GCReqEventTime `cmp ds:[0A9D39C],0 / je return` ile ERKEN
+  DÖNÜYOR — event-saat penceresi canlıda KAPALI. Bizim deploy'da anahtar 1
+  ama EventName.xml hiç yok → liste zaten boş. **Deploy INI 1→0** (canlı
+  birebir) yapıldı.
+- **[CustomEventTime.h](../Source/4.GameServer/GameServer/CustomEventTime.h):**
+  `MESSAGE_INFO_EVENTTIME` (int+Text[0x100], canlı map değeri 260B) +
+  `EVENT_INFO_EVENTTIME` (46B: Slot+Name[30]+Map+Gate+Status — disasm
+  `imul 2Eh`) + MAX_EVENTTIME_TABLE=30 (canlı 0x1E); store: m_Enable,
+  `std::map<int,MESSAGE_INFO_EVENTTIME>`, 42×46B m_EventInfo, m_SlotUsed
+  (canlı +0x185C bayt dizisi), m_RemainTime[30] (canlı 0x9AE5F8 tablosu).
+- **[CustomEventTime.cpp](../Source/4.GameServer/GameServer/
+  CustomEventTime.cpp):** `Load()` pugixml (E-04 deseni): SPK/Enable →
+  Message/Msg map → EventTime/Event (Slot 0..41 sınırı — canlı 0x29).
+  `GetEventTime(BYTE)`: slot 0-7 → `gEventName.GlobalRemainTime(slot)`
+  (2b.2-O'da bağlanan 11 yazıcının beslediği global sayaç deposu — canlı
+  yazar adresleriyle aynı semantik: 9AE5DC←BC bölgesi 0x43DA58, 9AE5E4←CC
+  bölgesi 0x45AA91); slot ≥8 → m_RemainTime[slot-8]; sınır dışı 0.
+- **[ServerInfo.cpp](../Source/4.GameServer/GameServer/ServerInfo.cpp):**
+  ReadEventInfo'ya `gCustomEventTime.Load("Event\\EventTime.xml")` (canlı
+  ServerInfo.obj yolu birebir).
+- **Deploy:** canlı EventTime.xml (2714 B) Data\Event\ altına birebir
+  kopyalandı; Custom.ini 234: `CustomEventTimeSwitch = 0`.
+- **Kapsam dışı bırakılan (belgeli):** GCReqEventTime paket yolu DOKUNULMADI
+  (donor 132B girdi vs canlı iç 46B — canlı paket düzeni tam çözülmeden
+  swap riskli; pencere iki tarafta da ölü: canlı switch=0, bizim liste
+  boştu). Kalan: canlı GCReqEventTime disasm çözümü (satır 146450+),
+  invasion tablo dolumu (InvasionManager paritesi) ve donor index seti ↔
+  canlı event-main seti birleşimi. docs/09 §9'a işlendi.
+
+**Neden** — E-06 stratejisinin çekirdek iddiası: veri katmanı canlı
+EventTime.xml şemasına geçecek; mimari (Load+GetEventTime+global sayaçlar)
+artık bizde de canlıyla aynı hatta.
+
+**Doğrulama**
+- GS derlemesi temiz → **10.795.520 B (19:23)** (+4.096 B).
+- Yeni exe: `Event\EventTime.xml` yolu ×1 VAR (canlı ServerInfo.obj ile
+  aynı string); CustomEventTime.obj: `?Load@CCustomEventTime@@QAEXPAD@Z` ×1
+  + `GetEventTime@CCustomEventTime` ×1; PDB: MESSAGE_INFO_EVENTTIME ×36.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:24
+
 ## [26.10.01 19:05] E-02 kalan parça — BotAlchemist hata stringleri canlı formata çevrildi (5 çağrı)
 
 **Ne yapıldı** (aynı tur — araştırma bulgusu: bizde hatalar Vietnamese,
