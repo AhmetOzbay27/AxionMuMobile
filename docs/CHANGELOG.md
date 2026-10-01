@@ -59,7 +59,7 @@ artık bizde de canlıyla aynı hatta.
   aynı string); CustomEventTime.obj: `?Load@CCustomEventTime@@QAEXPAD@Z` ×1
   + `GetEventTime@CCustomEventTime` ×1; PDB: MESSAGE_INFO_EVENTTIME ×36.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:24
+**Commit** — `8af2a6f3a` · **Tamamlandı** — 01.10.2026 19:24
 
 ## [26.10.01 19:05] E-02 kalan parça — BotAlchemist hata stringleri canlı formata çevrildi (5 çağrı)
 
