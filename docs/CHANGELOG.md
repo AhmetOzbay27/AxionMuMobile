@@ -36,7 +36,7 @@
 hangi modülün hangi sınıfta olduğu tek tek gerekçelendirildi (tablolar).
 Kod değişikliği YOK → derleme etkilenmez (son: 10.786.304 B, 13:47).
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 14:05
+**Commit** — `5e490d79e` · **Tamamlandı** — 01.10.2026 14:05
 
 ---
 
