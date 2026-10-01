@@ -37,7 +37,7 @@ konsol çıktısında Vietnamese hata görünmemeli.
 - `BotAlchemist data load error %s` exe'de 0 / **obj'de ×1** — bilinen
   LTCG string artefaktı (2b.2-O'dan beri kayıtlı; kod sağlam).
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:05
+**Commit** — `d75ca6f2a` · **Tamamlandı** — 01.10.2026 19:05
 
 ## [26.10.01 19:03] E-04 kalan parça — ClearMasterChangeClass INI anahtarı + koşullu adım (canlı Command.ini:270)
 
