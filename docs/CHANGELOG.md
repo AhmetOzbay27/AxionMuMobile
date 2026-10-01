@@ -57,7 +57,7 @@ CustomPick'in donör sürümü bu zincire bağlı.
   GetMapAllowTradeSafe ×1, OnPickClose ×2, GetMapNonPK ×8 (SPK zinciri
   derlemede canlı).
 
-**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 07:40
+**Commit** — `4a0fb8fcb` · **Tamamlandı** — 01.10.2026 07:40 (commit 07:45)
 
 ## [26.10.01 07:00] Faz 2b.3 — 68 MUIG-özel modülün canlı envanterle çapraz kontrolü (docs/12)
 
