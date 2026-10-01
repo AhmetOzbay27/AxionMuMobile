@@ -69,7 +69,7 @@ canlıdan kanıt beklenmez, 2c.1-B2 notu).
   (beklenen davranış).
 - Geçici karşılaştırma dosyaları (`BuildLog/4GS/rc_*`) silindi (git dışı).
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 23:40
+**Commit** — `fbdee8830` · **Tamamlandı** — 01.10.2026 23:40
 
 ---
 

@@ -1,7 +1,17 @@
 {
-  "updated": "2026-10-01 23:24:00",
+  "updated": "2026-10-01 23:40:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
+    {
+      "ts": "2026-10-01 23:40",
+      "kim": "kullanıcı",
+      "text": "GameServer.rc menüsüne IDM_STARTGVG görsel girdisini ekle (resource.h 121 hazır bekliyor) ve derleyip doğrula."
+    },
+    {
+      "ts": "2026-10-01 23:40",
+      "kim": "ajan",
+      "text": "TAMAM: GameServer.rc IDR_MAINFRAME \"Events\" menüsüne satır 95 olarak MENUITEM \"Start Guild vs Guild\", IDM_STARTGVG eklendi (donor rc:92 metni birebir, hizalama kolon 50). UTF-16LE+BOM+CRLF korundu: 30.610→30.738 B (+128). Diff: 471→472 satır, GvG satırı çıkarılınca birebir eşleşiyor (tek-satır eklenti). Derleme 0 hata → exe 10.816.512 B (23:34); wide string kanıtı \"Start Guild vs Guild\" off 10.666.404 ve menü sırası rc ile aynı (Drop→BSV→GVG→Invasion). Bayt-fark analizi: \".text\" kod bölümü bayt-birebir aynı; boyut sabit çünkü +48 B .rsrc bölüm dolgusuna sığdı. Handler B2'den bağlı: menü → gGvGEvent.StartGvG() (Switch=0 inert)."
+    },
     {
       "ts": "2026-10-01 23:24",
       "kim": "kullanıcı",
@@ -66,16 +76,6 @@
       "ts": "2026-10-01 14:34",
       "kim": "kullanıcı",
       "text": "EventGvG modülünü canlı kanıttan yaz: ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle + CHANGELOG + commit (2c.1 öncesi ısınma kalemi)."
-    },
-    {
-      "ts": "2026-10-01 14:34",
-      "kim": "ajan",
-      "text": "2c.1-B2 ISINMA TAMAM: EventGvG — ServerInfo 7 anahtari (donor deseni birebir, kosulsuz default 0/0/0/0/0/2/20), EventGvG.h donor cp, EventGvG.cpp iskelet (state machine BLANK/EMPTY/STAND/START/CLEAN), kanca User.cpp MainProc + Init + vcxproj. Derleme temiz 10.789.376 B (14:31); exe 7/7 anahtar, PDB+obj kanitlari tam. Tam uygulama 2c.1-B2 (donor 1138 satir + canli kanit denetimi). Sonraki: 2c.1-A Harmony veya 2c.1-B EventMainManager."
-    },
-    {
-      "ts": "2026-10-01 14:07",
-      "kim": "kullanıcı",
-      "text": "2c.1'i başlat: docs/05 + docs/12'deki 60 modülü oyun akışı etkisine göre önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat damgalı iş emri yaz ve commit'le."
     }
   ]
 }
