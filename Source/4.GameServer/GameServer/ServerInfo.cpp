@@ -90,6 +90,7 @@
 #include "MuunSystem.h"
 #include "Notice.h"
 #include "SPK/PC_AddBuff.h"		// SPK AddBuffer (Faz 2b)
+#include "SPK/SPK_Harmony.h"		// 2c.1-A1: SPK Harmony (canli CustomHarmony.xml)
 #include "SPK/CustomJewelBank.h"	// SPK CustomJewelBank (Faz 2b)
 #include "SPK/SkillDamage.h"		// SPK SkillDamage (Faz 2b)
 #include "PacketManager.h"
@@ -341,6 +342,7 @@ void CServerInfo::ReadCommonInfo() // OK
 void CServerInfo::ReadCustomInfo() // OK
 {
 	gAddBuffer.Read(gPath.GetFullPath("SPK\\AddBuff.txt"));			// SPK AddBuffer (Faz 2b) — E-05: canli Data\SPK\AddBuff.txt yolu
+	gCustomHarmony.Load(gPath.GetFullPath("SPK\\CustomHarmony.xml"));	// 2c.1-A1: canli SPK\CustomHarmony.xml yolu
 	gCustomJewelBank.LoadConfig(gPath.GetFullPath("Custom\\HuyBeo\\CustomJewelBank.xml"));	// SPK (Faz 2b)
 	gCustomVongQuay.LoadFileXML(gPath.GetFullPath("Custom\\CustomVongQuay.xml"));
 #if (SAUDOIITEM)

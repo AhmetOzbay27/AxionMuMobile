@@ -7,6 +7,68 @@
 
 ---
 
+## [26.10.01 20:32] 2c.1-A1 — SPK_Harmony modülü canlı CustomHarmony.xml şemasından sıfırdan yazıldı
+
+**Ne yapıldı** (kullanıcı isteği: "2c.1-A dalgasını başlat: SPK_Harmony
+modülünü canlı CustomHarmony.xml şemasından sıfırdan yaz, derle + commit")
+- **Canlı kanıt (giriş):** canlı map SPK_Harmony.obj (1553-1563):
+  `Instance/Load/GetMessageA/SetStateInterface/ProcMix/SendListItemPoint/
+  SendInfoItemCache/ProcItemSend/BackItem/Save` + `SPK_HarmonyProc`
+  (SPK GUI editör WndProc — kapsam dışı) + `map<int,HM_HAMORNY>` +
+  `vector<OPTWEAPON/OPTSTAFF/OPTITEM>`; canlı XML okundu (Data\SPK\
+  CustomHarmony.xml, 2788 B): root `Harmony{Enable=0,PriceType=1,Price=5000,
+  Rate=50}` + 6 Msg + `NPC{734,0,143,140,1,"Harmony Option"}` +
+  OptWeapon(10)/OptStaff(8)/OptItem(8) Option{OptIndex,Name,Level,Rate}.
+- **Kritik teknik bulgu:** canlı XML OptIndex değerleri (16/32/48/64/86/
+  102/121/137/153/173) bizim engine harmony-byte kodlamasının birebir
+  kendisi — `(option<<4)|level` (86=0x56→opt5/lvl6, 173=0xAD→opt10/lvl13;
+  JewelOfHarmonyOption.cpp:433 kodlamasıyla aynı). Canlı modül XML
+  tablosundan kodlu byte'ı doğrudan item'a yazıyor.
+- **Dispatcher çözümü (canlı ProtocolCore 0x551984 jump-tablosu,
+  disasm 426575-426635):** `[esi+4]==0x6F` → `SetStateInterface(aIndex,0)`,
+  `==0x71` → `ProcMix(aIndex)`, `ProcItemSend(aIndex, byte[esi+6])`,
+  `[esi+4]==-1` koruması → `BackItem(aIndex,[esi+4])`. Bizim 0xD3 switch
+  aile konvansiyonuyla aynı (SauChangeItem 0x6A/6B/6C deseni — 0x6F/111
+  ThaoTac koruması bile birebir) → dallar 0xD3 altına 0x6F/0x70/0x71/0x72
+  olarak eklendi (0x70=item-send, 0x72=back; komşu alt-kodlara çakışma
+  kontrolü yapıldı).
+- **[SPK_Harmony.h/cpp](../Source/4.GameServer/GameServer/SPK/SPK_Harmony.cpp)
+  (YENİ):** canlı semantikle — Load (pugixml, şema birebir), GetMessage
+  (Msg map), SetStateInterface (Enable=0 → canlı Msg0 'Disabled'; oturum
+  aç; `m_HarmonyMap.size()>=50` → canlı string `[DaTaoHoa] Data qua dai
+  !!`), ProcItemSend (envanter-sınırı, engine kısıt seti:
+  CheckJewelOfHarmonyItemType/SetItem-switch/IsJewelOfHarmonyItem/
+  IsSocketItem — AddJewelOfHarmonyOption ile aynı korumalar), BackItem
+  (-1 koruması birebir), ProcMix (XML tablo seçimi + kademeli Rate
+  50/40/30/20/10 + global Rate yedeği; harmony taşı 14,41 kontrolü →
+  canlı Msg5; PriceType 1/2/3→WcoinC/WcoinP/GP, diğer→Zen — canlı
+  `Wcoin`+`Harmony enhancement` string ailesi; GetLargeRand rate;
+  `m_JewelOfHarmonyOption=OptIndex` + Convert +
+  CharacterMakePreviewCharSet + GCItemModifySend),
+  SendListItemPoint (`0xD3:0x24` — BCustomVIPChar 0xD3:0x24 liste
+  paketiyle aynı aile; canlı C2 `0xD3:0C00C2`+[esi+14h] çözümü notu).
+- **Kancalar:** [ServerInfo.cpp](../Source/4.GameServer/GameServer/ServerInfo.cpp)
+  ReadCustomInfo → `gCustomHarmony.Load("SPK\\CustomHarmony.xml")`
+  (canlı yolu birebir); [Protocol.cpp](../Source/4.GameServer/GameServer/
+  Protocol.cpp) 0xD3 switch'e 4 dal; vcxproj ClCompile+ClInclude.
+- **Deploy:** canlı CustomHarmony.xml (2788 B) Data\SPK\ altına birebir
+  kopyalandı (Enable=0 — canlı durumuyla kapalı gelir; açmak için 1).
+
+**Neden** — docs/13 2c.1-A dalgasının ilk işi (A1); harmony
+zenginleştirme NPC-servisi çekirdek oynanış sınıfının ilk modülü.
+
+**Doğrulama**
+- GS derlemesi temiz → **10.802.688 B (20:30)** (+7.168 B) — 2 hata
+döngüsü derlemede yakalanıp düzeltildi (PSWMSG_HEAD include +
+Instance/LPITEM).
+- Yeni exe: `SPK\CustomHarmony.xml` ×1, `Harmony enhancement` ×1,
+  `[DaTaoHoa] Data qua dai !!` ×1 (canlı string ailesi).
+- SPK_Harmony.obj: `?Load@CustomHarmony@@QAEXPAD@Z` ×1 (**canlı mangled
+  sembolle birebir**), `HM_HAMORNY` ×15; PDB: `CustomHarmony` ×25 +
+  `SPK_Harmony.cpp` ×3.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 20:32
+
 ## [26.10.01 19:40] E-01 kalan parça (1/2) — BossGuild canlı log/yol paritesi: 7 kill-notice + Start Boss + Winning + Finish + CTCMini GuildWin.ini
 
 **Ne yapıldı** (aynı tur — canlı metinler `was killed by/Start Boss/…` İngilizce,

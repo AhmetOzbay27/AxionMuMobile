@@ -307,6 +307,7 @@
     <ClInclude Include="380ItemOption.h" />
     <ClInclude Include="380ItemType.h" />
     <ClInclude Include="ArcaBattle.h" />
+    <ClInclude Include="SPK\SPK_Harmony.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="BattleGround.h" />
     <ClInclude Include="BattleSoccer.h" />
@@ -703,6 +704,7 @@
     <ClCompile Include="SPK\CustomJewelBank.cpp" />
     <ClCompile Include="SPK\SkillDamage.cpp" />
     <ClCompile Include="SPK\PC_AddBuff.cpp" />
+    <ClCompile Include="SPK\SPK_Harmony.cpp" />
     <ClCompile Include="GameMaster.cpp" />
     <ClCompile Include="GameServer.cpp" />
     <ClCompile Include="Gate.cpp" />

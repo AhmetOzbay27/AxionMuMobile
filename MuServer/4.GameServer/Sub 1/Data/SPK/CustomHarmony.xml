@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Harmony Enable="0" PriceType="1" Price="5000" Rate="50">
+	<Message>
+		<Msg Index="0" Text="Disabled" />
+		<Msg Index="1" Text="[Jewel of Harmony] Item does not meet the requirements!" />
+		<Msg Index="2" Text="[Jewel of Harmony] You need to place it in [%s]!" />
+		<Msg Index="3" Text="[Unfortunately] You have failed!" />
+		<Msg Index="4" Text="You need [%s] %s to use this feature!" />
+		<Msg Index="5" Text="You don't have a Jewel of Harmony to spin with!!" />
+	</Message>
+	<NPC NPCClass="734" NPCMap="0" NPCX="143" NPCY="140" NPCDir="1" Name="Harmony Option" />
+	<OptWeapon>
+		<Option OptIndex="16" Name="Increase minimum attack power" Level="0" Rate="50" />
+		<Option OptIndex="32" Name="Increase maximum attack power" Level="0" Rate="50" />
+		<Option OptIndex="48" Name="Decrease Strength requirement" Level="0" Rate="40" />
+		<Option OptIndex="64" Name="Decrease Agility requirement" Level="0" Rate="40" />
+		<Option OptIndex="86" Name="Increase attack power (minimum/maximum)" Level="6" Rate="30" />
+		<Option OptIndex="102" Name="Increase critical damage" Level="6" Rate="30" />
+		<Option OptIndex="121" Name="Increase skill damage" Level="9" Rate="20" />
+		<Option OptIndex="137" Name="Increase attack success rate (PVP)" Level="9" Rate="20" />
+		<Option OptIndex="153" Name="Increase SD reduction rate" Level="9" Rate="20" />
+		<Option OptIndex="173" Name="Increase SD bypass rate" Level="13" Rate="10" />
+	</OptWeapon>
+	<OptStaff>
+		<Option OptIndex="16" Name="Increase magic attack power" Level="0" Rate="50" />
+		<Option OptIndex="32" Name="Decrease Strength requirement" Level="0" Rate="40" />
+		<Option OptIndex="48" Name="Decrease Agility requirement" Level="0" Rate="40" />
+		<Option OptIndex="70" Name="Increase skill damage" Level="6" Rate="30" />
+		<Option OptIndex="86" Name="Increase critical damage" Level="6" Rate="30" />
+		<Option OptIndex="105" Name="Increase SD reduction rate" Level="9" Rate="20" />
+		<Option OptIndex="121" Name="Increase attack success rate (PVP)" Level="9" Rate="20" />
+		<Option OptIndex="141" Name="Increase SD bypass rate" Level="13" Rate="10" />
+	</OptStaff>
+	<OptItem>
+		<Option OptIndex="16" Name="Increase defense" Level="0" Rate="50" />
+		<Option OptIndex="35" Name="Increase maximum AG" Level="3" Rate="40" />
+		<Option OptIndex="51" Name="Increase maximum HP" Level="3" Rate="40" />
+		<Option OptIndex="70" Name="Automatic HP recovery" Level="6" Rate="30" />
+		<Option OptIndex="89" Name="Automatic Mana recovery" Level="9" Rate="20" />
+		<Option OptIndex="105" Name="Increase defense success rate (PVP)" Level="9" Rate="20" />
+		<Option OptIndex="121" Name="Decrease damage" Level="9" Rate="20" />
+		<Option OptIndex="141" Name="Increase SD absorption rate" Level="13" Rate="10" />
+	</OptItem>
+</Harmony>

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Protocol.h"
 #include "SPK/PC_AddBuff.h"		// SPK AddBuffer (Faz 2b)
+#include "SPK/SPK_Harmony.h"		// 2c.1-A1: SPK Harmony (canli CustomHarmony.xml)
 #include "SPK/CustomJewelBank.h"	// SPK CustomJewelBank (Faz 2b)
 #include "SPK/AUTOHP.h"		// SPK CAUTOHP (Faz 2b)
 #include "ArcaBattle.h"
@@ -1597,6 +1598,35 @@ void ProtocolCore(BYTE head,BYTE* lpMsg,int size,int aIndex,int encrypt,int seri
 			}
 			break;
 #endif
+// 2c.1-A1: SPK Harmony — canli dispatcher birebir (0x6F pencere-acilis,
+// 0x71 mix; canli ProtocolCore 0x551984 tablosu, bizim aile konvansiyonu)
+			case 0x6F: //Harmony — Open Window (canli: SetStateInterface(a,0))
+			{
+				XULY_CGPACKET* Recv = (XULY_CGPACKET*)lpMsg;
+				if (Recv->ThaoTac != 111) return;
+				gCustomHarmony.SetStateInterface(aIndex, 0);
+			}
+			break;
+			case 0x70: //Harmony — Send Item (canli: ProcItemSend(a, byte[esi+6]))
+			{
+				PMSG_MOVEITEM* Recv = (PMSG_MOVEITEM*)lpMsg;
+				gCustomHarmony.ProcItemSend(aIndex, Recv->Source);
+			}
+			break;
+			case 0x72: //Harmony — Back Item (canli: ThaoTac==-1 korumasi)
+			{
+				XULY_CGPACKET* Recv = (XULY_CGPACKET*)lpMsg;
+				if (Recv->ThaoTac == -1) return;
+				gCustomHarmony.BackItem(aIndex, (int)Recv->ThaoTac);
+			}
+			break;
+			case 0x71: //Harmony — Proc Mix (canli: ProcMix(a))
+			{
+				XULY_CGPACKET* Recv = (XULY_CGPACKET*)lpMsg;
+				if (Recv->ThaoTac != 113) return;
+				gCustomHarmony.ProcMix(aIndex);
+			}
+			break;
 #if(MOCNAP)	
 			case 0x9A: //Nhan Thuong
 			{
