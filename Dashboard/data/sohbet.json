@@ -1,7 +1,9 @@
 {
-  "updated": "2026-10-01 20:33:00",
+  "updated": "2026-10-01 20:58:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
+    { "ts": "2026-10-01 20:58", "kim": "kullanıcı", "text": "2c.1-B ilk iş: EventMainManager event iskeletini canlı kanıtlarla yaz (diğer event'lerin taşıyıcısı)." },
+    { "ts": "2026-10-01 20:58", "kim": "ajan", "text": "2c.1-B1 TAMAM: EventMainManager iskeleti (9454d5d98) — canlı SPK_EventMainManager.obj 3 katman çözüldü (SPK editor / config şema anahtarları / SkyEvent runtime); SkyEvent canlı şemalarından yazıldı (Config.xml Stage/Time/Win + Monster.ini stage bölümleri), 5-durum state machine + jokerli CheckSync, kancalar ReadEventInfo+gObjEventRunProc; 5 canlı .ini + SkyEvent deploy'a kopyalandı (şemalar bizimle birebir; .dat→.ini yol-geçişi ayrı kalem). Derleme temiz → 10.809.344 B (20:55). Sirada: B tekil event'leri veya A2." },
     { "ts": "2026-10-01 20:33", "kim": "kullanıcı", "text": "2c.1-A dalgasını başlat: SPK_Harmony modülünü canlı CustomHarmony.xml şemasından sıfırdan yaz, derle + commit et." },
     { "ts": "2026-10-01 20:33", "kim": "ajan", "text": "2c.1-A1 TAMAM: SPK_Harmony sıfırdan yazıldı (01c7d2b16) — canlı yüzey (10 metot + map<int,HM_HAMORNY>), XML şeması birebir; kritik bulgu: canlı OptIndex = engine harmony-byte kodlaması (opt<<4|level); dispatcher canlı jump-table'den çözülüp 0xD3 ailesine 4 dal olarak bağlandı (0x6F/0x70/0x71/0x72, SauChangeItem deseni); ProcMix XML tablo+kademeli Rate+taşı 14,41+coin/Zen ödeme; canlı stringler birebir. Derleme temiz → 10.802.688 B (20:30); obj'de canlı mangled sembol birebir. Sirada: A2 MonsterSkill." },
     { "ts": "2026-10-01 19:42", "kim": "kullanıcı", "text": "docs/09'daki kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) stratejilerine göre işle, her kalemde derle + CHANGELOG + commit. Bu iş bitti mi?" },

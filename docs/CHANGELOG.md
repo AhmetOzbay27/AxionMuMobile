@@ -68,7 +68,7 @@ obj'nin arkasında — bizim iskelet aynı merkezileşmeyi kuruyor.
   `[EventMainManager] SkyEvent loaded` ×1; PDB: EventMainManager ×28.
 - Deploy: 5 canlı .ini + SkyEvent\ (Config.xml + Monster.ini) kopyalandı.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 20:56
+**Commit** — `9454d5d98` · **Tamamlandı** — 01.10.2026 20:56
 
 ## [26.10.01 20:32] 2c.1-A1 — SPK_Harmony modülü canlı CustomHarmony.xml şemasından sıfırdan yazıldı
 
