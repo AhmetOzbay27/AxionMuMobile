@@ -1,7 +1,17 @@
 {
-  "updated": "2026-10-01 21:43:00",
+  "updated": "2026-10-01 23:24:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
+    {
+      "ts": "2026-10-01 23:24",
+      "kim": "kullanıcı",
+      "text": "2c.1-B dalgasında sıradaki B3 ActiveInvasions modülünü canlı kanıtla inceleyip uygulamaya al."
+    },
+    {
+      "ts": "2026-10-01 23:24",
+      "kim": "ajan",
+      "text": "2c.1-B3 TAMAM: ActiveInvasions canlı disasm paritesi — sürpriz: modül bizde ilk commit'ten beri vardı (taslak), donor'da hiç yok (MUIG-özel). Denetim: paketler taslak D3 99/98 → canlı C1 10 F3 99 / C2 F3 98'e çekildi (exe byte kanıtı), monster_del iki-sayaç birlikte azaltma + erase(count==0), monster_add(int,bool) broadcast, eksik F7 sub 0x02 → send_list_to_client(aIndex) isteği eklendi, giriş push'u tek istemciye. Derleme temiz → 10.816.512 B (23:22)."
+    },
     {
       "ts": "2026-10-01 21:43",
       "kim": "kullanıcı",
@@ -66,16 +76,6 @@
       "ts": "2026-10-01 14:07",
       "kim": "kullanıcı",
       "text": "2c.1'i başlat: docs/05 + docs/12'deki 60 modülü oyun akışı etkisine göre önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat damgalı iş emri yaz ve commit'le."
-    },
-    {
-      "ts": "2026-10-01 14:07",
-      "kim": "ajan",
-      "text": "2c.1 TAMAM: docs/13-2C1-ONCELIK-IS-EMRI.md yazildi (14:05) — A Cekirdek=24, B Event=9 (EventMainManager + EventGvG #60), C QoL=21, D Anticheat=3, E Kozmetik=3 = 60/60. Her sinif icin tablo + gerekce + kaynak (donor/2b.0 tam/sifirdan) + dalga plani §8 (A->B->C->D/E, ilk is Harmony). Kapsam disi: C grubu 19 OFF + ThuongDanhBoss. docs/05 + docs/00 + CHANGELOG guncellendi; kod degisikligi yok. Sonraki: 2c.1-A (SPK_Harmony)."
-    },
-    {
-      "ts": "2026-10-01 13:52",
-      "kim": "kullanıcı",
-      "text": "Kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) docs/09 stratejilerine göre işle."
     }
   ]
 }

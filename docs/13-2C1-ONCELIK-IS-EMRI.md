@@ -66,7 +66,7 @@
 |---:|---:|---|---|---|---|
 | B1 | 1 | SPK_EventMainManager | EventMainManager | sıfırdan | **event iskeleti** — diğer event'lerin taşıyıcısı, B grubunun ilk işi |
 | B2 | 60 | **EventGvG** (YENİ keşif) ✅ **tam uygulama** (26.10.01 21:43) | CGvGEvent | donor birebir + canlı denetim (7 anahtar) | donor 1138 satır birebir port (tek sapma: donor `gettype`→GetAsNumber + load guard); 9 kanca (Load/Init/Dialog/Attack×2/respawn/UserDie/IDM+komut, COMMAND_STARTGVG=86 pozisyonel); canlı exe'de motor sembolleri YOK → denetim: donor canlısında GvGEvent.dat deploy'suz + /startgvg yok = kapalı modül; inert GvGEvent.dat ×3 deploy; derleme 10.816.512 B (21:42) |
-| B3 | 31 | ActiveInvasions | CActiveInvasions | sıfırdan | invasion takibi |
+| B3 | 31 | ActiveInvasions ✅ **parite/tam uygulama** (26.10.01 23:24) | CActiveInvasions (canlı adı; bizde CB_ActiveInvasions) | MUIG-özel (donor YOK) — canlı disasm paritesi | canlı ActiveInvasions.obj (monster_add/update_by_monster_id/send_list_to_client + gActiveInvasions + map<int,UInvasionsData>); bizde taslak ilk commit'ten beri vardı → paketler C1 10 F3 99 / C2 F3 98'e çekildi (taslak D3 yanlıştı), monster_del iki-sayaç birlikte azaltma, monster_add(int,bool) broadcast, F7 sub 0x02 → send_list_to_client(aIndex) isteği eklendi, giriş push'u tek istemciye; derleme 10.816.512 B (23:22) |
 | B4 | 27 | SPK_CastleEvent | CastleStartGuild | sıfırdan | castle etkinliği |
 | B5 | 32 | BEventThanMa | CThanMaChien | sıfırdan | ThanMaChien |
 | B6 | 33 | SkyEvent | cSkyEvent | sıfırdan | Sky |

@@ -81,7 +81,7 @@ görünmezdi.
   SetMonster 0x4F1EBF/0x4F1EFC, MonsterDieProc 0x4F2094,
   ObjectSetStateProc 0x538687, ProtocolCore 0x54FA38.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 23:24
+**Commit** — `c7d0b464e` · **Tamamlandı** — 01.10.2026 23:24
 
 ---
 
