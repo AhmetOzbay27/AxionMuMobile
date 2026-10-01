@@ -7,6 +7,69 @@
 
 ---
 
+## [26.10.01 20:56] 2c.1-B1 — EventMainManager iskeleti: canlı SPK_EventMainManager kanıtlarıyla (SkyEvent + yol paritesi + taşıyıcı yapı)
+
+**Ne yapıldı** (kullanıcı isteği: "2c.1-B ilk iş: EventMainManager event
+iskeletini canlı kanıtlarla yaz (diğer event'lerin taşıyıcısı)")
+- **Canlı kanıt (giriş):** `SPK_EventMainManager.obj` (canlı map 3207-3293)
+  üç katman: (1) **SPK GUI editor** — DialogProc/LoadDetails/Save ailesi
+  (CC/DS/Invasion/CTCMini/SkyEvent/Item380/ItemDrop/ItemMove/ItemOption/
+  ItemStack/MocNap); (2) **config şema anahtarları** (exe string):
+  `//WarningTime/NotifyTime//Year/DoW//Level/ExperienceTable1/2/
+  MoneyTable1/2/GateNpcLife/StatueNpcLife//Enable/PKCanJoin/EnableQuest/
+  KillCount//Reward/BlowUserRate/ExpRank%d/MoneyRank%d` +
+  `BLOOD/DEVIL/CHAOS_CASTLE_START_TIME` emplace'leri (BC/CC/DS
+  yukleyicileri bu obj'de); (3) **SkyEvent runtime event**:
+  `map<int,vector<SKYEVENT_MONSTER_DATA>>` + `SKYEVENT_REWARD_DATA` +
+  `vector<INVASION_START_TIME>`.
+- **Config şema paritesi:** canlı .ini'ler okundu (BloodCastle/
+  ChaosCastle/DevilSquare/IllusionTemple/InvasionManager) — sema bizim
+  MEM-script .dat'larla BİREBİR (numaralı bölümler, aynı kolonlar); canlı
+  exe yolları `.ini` ×1 / `.dat` ×0, bizim tersi → **5 canlı .ini deploy
+  agacına kopyalandı** (kod yolları korunuyor — MemScript ayristiricisi
+  içerik zaten aynı; yol-geçişi ayrı kalemde, çift dosya geçici durum).
+- **SkyEvent şemaları canlıdan okundu:** `Event\SkyEvent\Config.xml`
+  (SkyEvent/EventStage/Stage{Enabled,StageMin0..2} + EventTime/Time{...}
+  + EventWin/Win{iLevel,LevelMin,LevelMax,ExtraExpStage0..2,ItemType,
+  ItemIndex,ItemLevel,ItemDur,ItemLuck,ItemSkill,ItemOpt,ItemExc,WcoinC,
+  WcoinP,GPoint}) + `Event\SkyEvent\Monster.ini` (bolum numarasi +
+  "Class X Y Dir" satirlari); yollar canlı exe'de ×1.
+- **[SPK/EventMainManager.h](../Source/4.GameServer/GameServer/SPK/
+  EventMainManager.h) (YENİ):** canlı struct adlarıyla
+  SKYEVENT_MONSTER_DATA/SKYEVENT_REWARD_DATA + SKYEVENT_STAGE_DATA +
+  SKYEVENT_START_TIME + eEventMainSection (canlı editor string
+  anahtarlarının enum etiketleri) + 5-durumlu state machine
+  (BLANK/EMPTY/STAND/START/CLEAN — EventGvG deseni).
+- **[SPK/EventMainManager.cpp](../Source/4.GameServer/GameServer/SPK/
+  EventMainManager.cpp) (YENİ):** Init/Clear + `LoadSkyEvent()`
+  (pugixml Config.xml + MemScript Monster.ini — canlı şema birebir) +
+  `Load()` merkez yukleyici + MainProc state machine iskeleti
+  (gObjEventRunProc kancası) + CheckSync (Year/Month/Day/DoW jokerli
+  schedule eşleşmesi; '*' = -1).
+- **Kancalar:** [ServerInfo.cpp](../Source/4.GameServer/GameServer/
+  ServerInfo.cpp) ReadEventInfo başı → `gEventMainManager.Load()`;
+  [User.cpp](../Source/4.GameServer/GameServer/User.cpp)
+  gObjEventRunProc → `gEventMainManager.MainProc()` (gGvGEvent yanına);
+  vcxproj ClCompile+ClInclude.
+- **Kapsam dışı (belgeli):** SPK GUI editor ailesi (DialogProc/Save) —
+  GameServer runtime işlevi değil; SkyEvent spawn/ödül gövdeleri ve tekil
+  event yukleyicilerinin merkezileştirilmesi sonraki 2c.1-B adımları.
+
+**Neden** — docs/13 2c.1-B'nin ilk işi: event iskeleti diğer event'
+lerin taşıyıcısı; canlıda BC/CC/DS/SkyEvent yükleyicileri zaten bu
+obj'nin arkasında — bizim iskelet aynı merkezileşmeyi kuruyor.
+
+**Doğrulama**
+- GS derlemesi temiz → **10.809.344 B (20:55)** (+6.656 B) — User.cpp
+  include eksikliği derlemede yakalanıp düzeltildi.
+- EventMainManager.obj: SKYEVENT_MONSTER_DATA ×16, SKYEVENT_REWARD_DATA
+  ×13, LoadSkyEvent ×1, gEventMainManager ×2; yeni exe:
+  `Event\SkyEvent\Config.xml` ×1 + `Event\SkyEvent\Monster.ini` ×1 +
+  `[EventMainManager] SkyEvent loaded` ×1; PDB: EventMainManager ×28.
+- Deploy: 5 canlı .ini + SkyEvent\ (Config.xml + Monster.ini) kopyalandı.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 20:56
+
 ## [26.10.01 20:32] 2c.1-A1 — SPK_Harmony modülü canlı CustomHarmony.xml şemasından sıfırdan yazıldı
 
 **Ne yapıldı** (kullanıcı isteği: "2c.1-A dalgasını başlat: SPK_Harmony

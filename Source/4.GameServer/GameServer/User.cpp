@@ -90,6 +90,7 @@
 #include "QuestWorld.h"
 #include "ReiDoMU.h"
 #include "EventGvG.h"	// 2c.1-B2: CGvGEvent iskeleti
+#include "SPK/EventMainManager.h"	// 2c.1-B1: EventMainManager iskeleti
 #include "Raklion.h"
 #include "RaklionBattleUserMng.h"
 #include "RaklionUtil.h"
@@ -151,6 +152,8 @@ void gObjEventRunProc() // OK
 	gReiDoMU.MainProc();
 
 	gGvGEvent.MainProc();	// 2c.1-B2: EventGvG iskeleti
+
+	gEventMainManager.MainProc();	// 2c.1-B1: EventMainManager iskeleti (canli SPK_EventMainManager)
 
 	gEventQuickly.MainProc();
 

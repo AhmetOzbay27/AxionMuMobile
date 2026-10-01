@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<SkyEvent>
+	<EventStage>
+		<Stage Enabled="0" StageMin0="2" StageMin1="2" StageMin2="15" />
+	</EventStage>
+	<EventTime>
+		<Time Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="20" Minute="55" Second="-1" />
+	</EventTime>
+	<EventWin>
+		<Win iLevel="0" LevelMin="50" LevelMax="99" ExtraExpStage0="100" ExtraExpStage1="200" ExtraExpStage2="300" ItemType="12" ItemIndex="15" ItemLevel="0" ItemDur="0" ItemLuck="0" ItemSkill="0" ItemOpt="0" ItemExc="0" WcoinC="0" WcoinP="0" GPoint="0" />
+		<Win iLevel="1" LevelMin="100" LevelMax="199" ExtraExpStage0="100" ExtraExpStage1="200" ExtraExpStage2="300" ItemType="12" ItemIndex="15" ItemLevel="0" ItemDur="0" ItemLuck="0" ItemSkill="0" ItemOpt="0" ItemExc="0" WcoinC="0" WcoinP="0" GPoint="0" />
+		<Win iLevel="2" LevelMin="200" LevelMax="279" ExtraExpStage0="100" ExtraExpStage1="200" ExtraExpStage2="300" ItemType="12" ItemIndex="15" ItemLevel="0" ItemDur="0" ItemLuck="0" ItemSkill="0" ItemOpt="0" ItemExc="0" WcoinC="0" WcoinP="0" GPoint="0" />
+		<Win iLevel="3" LevelMin="280" LevelMax="349" ExtraExpStage0="100" ExtraExpStage1="200" ExtraExpStage2="300" ItemType="12" ItemIndex="15" ItemLevel="0" ItemDur="0" ItemLuck="0" ItemSkill="0" ItemOpt="0" ItemExc="0" WcoinC="0" WcoinP="0" GPoint="0" />
+		<Win iLevel="4" LevelMin="350" LevelMax="400" ExtraExpStage0="100" ExtraExpStage1="200" ExtraExpStage2="300" ItemType="12" ItemIndex="15" ItemLevel="0" ItemDur="0" ItemLuck="0" ItemSkill="0" ItemOpt="0" ItemExc="0" WcoinC="0" WcoinP="0" GPoint="0" />
+	</EventWin>
+</SkyEvent>

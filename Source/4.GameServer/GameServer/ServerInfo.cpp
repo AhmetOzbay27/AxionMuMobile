@@ -91,6 +91,7 @@
 #include "Notice.h"
 #include "SPK/PC_AddBuff.h"		// SPK AddBuffer (Faz 2b)
 #include "SPK/SPK_Harmony.h"		// 2c.1-A1: SPK Harmony (canli CustomHarmony.xml)
+#include "SPK/EventMainManager.h"	// 2c.1-B1: EventMainManager iskeleti (canli SPK_EventMainManager)
 #include "SPK/CustomJewelBank.h"	// SPK CustomJewelBank (Faz 2b)
 #include "SPK/SkillDamage.h"		// SPK SkillDamage (Faz 2b)
 #include "PacketManager.h"
@@ -469,6 +470,7 @@ void CServerInfo::ReadCustomInfo() // OK
 void CServerInfo::ReadEventInfo() // OK
 {
 	this->ReadEventInfo("GameServerInfo",".\\Data\\GameServerInfo - Event.ini");
+	gEventMainManager.Load();		// 2c.1-B1: merkez event yukleyici — SkyEvent + yol paritesi (canli SPK_EventMainManager)
 	gBsVEvent.Load(gPath.GetFullPath("Event\\LoanChien.dat"));
 
 	gBloodCastle.Load(gPath.GetFullPath("Event\\BloodCastle.dat"));
