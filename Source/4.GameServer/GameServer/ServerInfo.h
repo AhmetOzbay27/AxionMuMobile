@@ -938,6 +938,7 @@ public:
 	int m_CommandChangeClassToDL;
 	int m_CommandChangeClassToSU;
 	int m_CommandChangeClassToRF;
+	int m_OnlineRewardOfflineSystems;	// E-09 (2b.2-O): canli exe'de config anahtari kanitli (donor ServerInfo:4910 deseni); kullanimi OnlineReward sistemiyle 2c
 	int m_CommandRewardMaxType;
 	int m_CommandRewardMaxValue;
 	char m_CommandRewardType1Text[128];

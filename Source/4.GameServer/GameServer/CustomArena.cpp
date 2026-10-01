@@ -268,33 +268,34 @@ void CCustomArena::MainProc() // OK
 			//	}
 			//}
 
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor CustomArena birebir)
 			if(lpInfo->State == CUSTOM_ARENA_STATE_BLANK)
 			{
-				if (gServerDisplayer.EventCustomArena[n] != -1)
+				if (gEventName.ArenaRemainTime(n) != -1)
 				{
-					gServerDisplayer.EventCustomArena[n] = -1;
+					gEventName.ArenaRemainTime(n, -1);
 				}
 			}
-			else 
+			else
 			{
 				if (lpInfo->State == CUSTOM_ARENA_STATE_EMPTY)
 				{
-					gServerDisplayer.EventCustomArena[n] = lpInfo->RemainTime;
+					gEventName.ArenaRemainTime(n, lpInfo->RemainTime);
 				}
-				else 
+				else
 				{
-					if (gServerDisplayer.EventCustomArena[n] != 0)
+					if (gEventName.ArenaRemainTime(n) != 0)
 					{
-						gServerDisplayer.EventCustomArena[n] = 0;
+						gEventName.ArenaRemainTime(n, 0);
 					}
 				}
 			}
 
-			if(gServerDisplayer.EventCustomArena[n] > 0)
+			if(gEventName.ArenaRemainTime(n) > 0)
 			{
 				if (lpInfo->State != CUSTOM_ARENA_STATE_EMPTY && lpInfo->State != CUSTOM_ARENA_STATE_BLANK)
 				{
-					gServerDisplayer.EventCustomArena[n] = 0;
+					gEventName.ArenaRemainTime(n, 0);
 				}
 			}
 

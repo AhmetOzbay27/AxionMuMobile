@@ -43,17 +43,17 @@
 
 | # | Dosya | Bizim (satır) | Donor (satır) | Bizim↔donor normalize benzerlik | Donörde var mı |
 |---|-------|--------------:|--------------:|--------------------------------:|----------------|
-| E-01 | BossGuild.cpp | 1578 | — | — | ❌ → 2c (canlı BossGuild.xml deploy'a kopyalandı) |
-| E-02 | BotAlchemist.cpp | 892 | 933 | %21 | ✅ → 2c (üçlü birleşim) |
+| E-01 | BossGuild.cpp | 1578 | — | — | ✅ **2b.2-O: canlı `Event\BossGuild.xml` yol geçişi** (exe string kanıtlı; deploy dosyası canlıyla birebir, CR hariç) + HandleBossKill/skor/ödül yeniden yazımı **2c** (§4) |
+| E-02 | BotAlchemist.cpp | 892 | 933 | %21 | ✅ **2b.2-O: donor taban alındı** + canlı `BotAlchemist data load error %s` koruması + canlı CongHuong.txt deploy; canlı exe WcoinC/WcoinP kanıtı → Coin1/Coin2 alanları (PCPoints hattı kaldırıldı) |
 | E-03 | BotBuffer.cpp | 641 | 644 | %43 | ✅ → bizim korundu (canlı BotBuffer.txt YOK; donor 5-skill format uyumsuz) |
-| E-04 | ChangeClass.cpp | 202 | — | — | ❌ → 2c (canlı XML Enable=0; bizim ini hattı aktif) |
+| E-04 | ChangeClass.cpp | 202 | — | — | ✅ **2b.2-O: canlı SPK\ChangeClass.xml okuyucu** (pugixml; ini hattı kaldırıldı — canlıda `ChangeClass.ini` YOK) + ClearMasterChangeClass adımı + XML mesajları (disabled/no-coin/invalid) + canlı `[ChangeClass] Config Saved & Reloaded` logu |
 | E-05 | CustomBuyVip.cpp | 197 | 258 | %24 | ✅ **2b.2-E'de yol geçişi: Custom\ → SPK\ (canlı yolu)** |
-| E-06 | CustomEventTime.cpp | 142 | 99 | %26 | ✅ → 2c (EventTime.xml okuyucusu iki kaynakta da yok) |
+| E-06 | CustomEventTime.cpp | 142 | 99 | %26 | ✅ **2b.2-O: donor alındı + CEventName hattı** (11 event-yazıcı dosya gEventName'e geçti; ServerDisplayer painter'ları donor hattında) |
 | E-07 | CustomJewel.cpp | 750 | 706 | %29 | ✅ (.txt hattı; deploy-config düzeltmesiyle dosya yerinde) |
 | E-08 | CustomRankUser.cpp | 227 | 206 | %52 | ✅ **bizim taban kararlı (2b.2-E)** |
-| E-09 | OfflineMode.cpp | 899 | 940 | %40 | ✅ → 2c (canlı yaptırım modeli) |
+| E-09 | OfflineMode.cpp | 899 | 940 | %40 | ✅ **2b.2-O somut:** 7 notice canlı sessizliğe çekildi (canlıda hiçbiri yok; kısıt return'leri korunur) + `OnlineRewardOfflineSystems` anahtarı eklendi (canlı exe kanıtlı); donor tabanın davranış farkları (RenderAttack distance/flagwalk, PickUP, Start close-mekanizması) **2c** (canlı reverse gerekli — IsFakeOnline/InSafeZone/UI eklerimiz donor'da yok) |
 | E-10 | Reconnect.cpp | 152 | 151 | %85 | ✅ **2b.2'de entegre (30.09.2026)** |
-| E-11 | ThuMuaDoExc.cpp | 798 | 732 | %38 | ✅ → 2c (üçlü birleşim) |
+| E-11 | ThuMuaDoExc.cpp | 798 | 732 | %38 | ✅ **2b.2-O: Read canlı TXT'ye çevrildi** (donör taban + canlı 3-bölüm şeması: 0=NPC/1=Allow/2=Reward, GP kolonu atlandı, hata stringi `ThuMuaDoExc error: Index %d out of range!` canlı birebir) + donor Alchemy alındı (TradeOk ona bağlandı; XuLyItemThuMua katmanı korundu-pasif) + 4 log sessizleştirildi + canlı ThuMuaDoExc.txt deploy |
 | E-12 | ZenDrop.cpp | 72 | — | — | ✅ config-pasifizasyonunda (kod aynı) |
 
 Not: Benzerlik = normalize (girinti/boşluk/yorum arındırılmış) satır kümelerinin

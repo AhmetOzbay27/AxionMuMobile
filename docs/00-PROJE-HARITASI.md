@@ -41,6 +41,12 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 2b.3 ✅ 29 MUIG-özel modül çapraz kontrol → [12](12-MUIG68-CAPRAZ-KONTROL.md)
 (7 parite-tamam · 3 iş-kalemi 2c'ye · 19 canlıda-yok/OFF; YENİ keşif: EventGvG canlıda VAR, bizde eksik).
 **Sıradaki: Faz 2c.1** — modül envanterini önceliğe dizecek (60 modül: 59 + EventGvG).
+
+> **26.10.01 13:50 — E-kalemleri kapatıldı** (E-01/E-02/E-04/E-06/E-09/E-11,
+> bkz. [09](09-EZILEN-12-DOSYA-KARSILASTIRMA.md)): donor taban E-02,
+> canlı config paritesi E-04 (`SPK\ChangeClass.xml`) + E-11 (canlı TXT) +
+> E-01 (`Event\BossGuild.xml` yolu), canlı sessizlik E-09 (7 notice) +
+> E-06 (CEventName hattı). Kalan 2c kalemleri docs/09 §4/§6'ta belgelendi.
 bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 
 > **2b.2-M ek dalga (01.10.2026 07:40):** MapManager zinciri donor'dan alındı

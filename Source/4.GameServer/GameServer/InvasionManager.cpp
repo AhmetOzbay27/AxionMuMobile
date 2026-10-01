@@ -224,33 +224,34 @@ void CInvasionManager::MainProc() // OK
 		}
 
 
+		// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor InvasionManager birebir)
 		if(lpInfo->State == INVASION_STATE_BLANK)
 		{
-			if (gServerDisplayer.EventInvasion[n] != -1)
+			if (gEventName.InvasionRemainTime(n) != -1)
 			{
-				gServerDisplayer.EventInvasion[n] = -1;
+				gEventName.InvasionRemainTime(n, -1);
 			}
 		}
-		else 
+		else
 		{
 			if (lpInfo->State == INVASION_STATE_EMPTY)
 			{
-				gServerDisplayer.EventInvasion[n] = lpInfo->RemainTime;
+				gEventName.InvasionRemainTime(n, lpInfo->RemainTime);
 			}
-			else 
+			else
 			{
-				if (gServerDisplayer.EventInvasion[n] != 0)
+				if (gEventName.InvasionRemainTime(n) != 0)
 				{
-					gServerDisplayer.EventInvasion[n] = 0;
+					gEventName.InvasionRemainTime(n, 0);
 				}
 			}
 		}
 
-		if(gServerDisplayer.EventInvasion[n] > 0)
+		if (gEventName.InvasionRemainTime(n) > 0)
 		{
 			if (lpInfo->State != INVASION_STATE_EMPTY && lpInfo->State != INVASION_STATE_BLANK)
 			{
-				gServerDisplayer.EventInvasion[n] = 0;
+				gEventName.InvasionRemainTime(n, 0);
 			}
 		}
 

@@ -1,7 +1,9 @@
 {
-  "updated": "2026-10-01 12:45:00",
+  "updated": "2026-10-01 13:52:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
+    { "ts": "2026-10-01 13:52", "kim": "kullanıcı", "text": "Kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) docs/09 stratejilerine göre işle." },
+    { "ts": "2026-10-01 13:52", "kim": "ajan", "text": "E-KALEMLERI KAPANDI: E-06 donor CustomEventTime + 11 yazici gEventName'e; E-02 donor BotAlchemist (canli WcoinC/WcoinP -> Coin1/Coin2, data load error korumasi, CongHuong deploy); E-04 canli SPK\\ChangeClass.xml okuyucu (ini YOK kanitiyla kaldirildi) + ClearMasterChangeClass + XML mesajlari; E-11 Read canli TXT'ye cevrildi (donor + canli 3 bolum, GP atlandi, canli hata stringi) + donor Alchemy + 4 log sessiz; E-09 7 notice canli sessizlige (kisit return korunur) + OnlineRewardOfflineSystems anahtari; E-01 Event\\BossGuild.xml yol gecisi (deploy birebir). Derleme temiz -> 10.786.304 B (13:47), 6 exe-string testi + 2 sessizlik testi gecti. Kalan 2c: E-01 yeniden yazim, E-09 donor davranis (RenderAttack/PickUP/close), OnlineReward kullanimi. Sonraki: 2c.1." },
     { "ts": "2026-10-01 12:44", "kim": "kullanıcı", "text": "Devam etmeden önce sistemde gereksiz dosyaları sil ve disk temizliği yap — boş yerimiz kalmadı." },
     { "ts": "2026-10-01 12:45", "kim": "ajan", "text": "DİSK TEMİZLİĞİ TAMAM: C: 1.6 -> 3.7 GB bos. Takipsiz/geci artiklar silindi (BuildLog ~419 MB - envanter korundu, cryptopp ciktilari ~250 MB - tracked'lar checkout, temp ~610 MB, git gc ~40 MB) + kullanici onayiyla ClientBuild_192.168.99.200 (1 GB, git rm) -> commit 15d1bdbe4. Boost takipsiz 26 MB dokunulmadi; WIP E-kalem degisiklikleri korundu. Not: GS sonraki derleme full rebuild olacak. Devam: E-kalemleri (E-04 XML gecisi asamada)." },
     { "ts": "2026-10-01 09:30", "kim": "kullanıcı", "text": "Reload desenini Gate/Move/MoveSummon/Notice/ResetTable/Skill modüllerine uygula (canlı kanıtlı 'configuration reloaded' ailesi)." },

@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "ServerDisplayer.h"
+#include "Util.h"	// E-06 (Faz 2b.2-O): WriteUnicode (donor Util.h:44)
 #include "CustomArena.h"
 #include "GameMain.h"
 #include "Log.h"
@@ -393,23 +394,23 @@ void CServerDisplayer::PaintEventTime() // OK
 #if(GAMESERVER_TYPE==0)
 	RECT rect;
 
-	GetClientRect(this->m_hwnd,&rect);
+	GetClientRect(this->m_hwnd, &rect);
 
-	int posX1 = rect.right - 140;
-	int posX2 = rect.right - 60;
+	int posX1 = rect.right - 295;
+	int posX2 = rect.right - 200;
 
-	rect.left = rect.right - 145;
-	rect.right = rect.right - 5;
-	rect.top = 0;
-	rect.bottom = rect.top + 270;
+	rect.left = rect.right - 300;
+	rect.right = rect.right - 150;
+	rect.top = 5;
+	rect.bottom = 290;
 
 	HDC hdc = GetDC(this->m_hwnd);
 
-	int OldBkMode = SetBkMode(hdc,TRANSPARENT);
+	int OldBkMode = SetBkMode(hdc, TRANSPARENT);
 
-	FillRect(hdc,&rect,this->m_brush[4]);
+	FillRect(hdc, &rect, this->m_brush[LOG_CONTAINER_BRUSH]);
 
-	HFONT OldFont = (HFONT)SelectObject(hdc,this->m_font3);
+	HFONT OldFont = (HFONT)SelectObject(hdc, this->m_font3);
 
 	char text1[20];
 	char text2[30];
@@ -419,32 +420,35 @@ void CServerDisplayer::PaintEventTime() // OK
 	int seconds;
 	int days;
 
-	SetTextColor(hdc, RGB(0, 173, 181));
-	TextOut(hdc, rect.left + 5, rect.top + 5, "EVENTS:", 7);
-	int CountTime = -1;
-	for (int i = 0; i < this->CountTimeEventS; i++)
+	SetTextColor(hdc, RGB(252, 2, 169));
+	WriteUnicode(hdc, rect.left + 5, rect.top + 2, "EVENTS:", 7);
+
+	for (int n = 0; n < 18; n++)
 	{
+		if (gEventName.IsGlobal(n) == false)
+			continue;
+
 		SetTextColor(hdc, RGB(0, 102, 204));
-		if (gCustomEventTime.DataEventTime.empty() || (i + 60) > gCustomEventTime.DataEventTime.size()) break;
-		wsprintf(text1, "%d. %s", (i + 60), gCustomEventTime.DataEventTime[i + 60].NameEvent);
-		//CountTime = this->EventBc;
-		CountTime = *gCustomEventTime.DataEventTime[i + 60].TimeEvent;
-		//=
-		if (CountTime == -1)
+
+		int RemainTime = gEventName.GlobalRemainTime(n);
+
+		wsprintf(text1, gEventName.GlobalName(n));
+
+		if (RemainTime == -1)
 		{
-			wsprintf(text2, "OFF");
+			wsprintf(text2, "Disabled");
 		}
-		else if (CountTime == 0)
+		else if (RemainTime == 0)
 		{
-			wsprintf(text2, "ON");
+			wsprintf(text2, "Online");
 		}
 		else
 		{
-			totalseconds = CountTime;
+			totalseconds = RemainTime;
 			hours = totalseconds / 3600;
 			minutes = (totalseconds / 60) % 60;
 			seconds = totalseconds % 60;
-			wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
+
 			if (hours > 23)
 			{
 				days = hours / 24;
@@ -455,40 +459,30 @@ void CServerDisplayer::PaintEventTime() // OK
 				wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
 			}
 		}
-		int sizeName = strlen(text1);
-		WCHAR text_unicodeName[100];
-		int nn = MultiByteToWideChar(CP_UTF8, 0, text1, sizeName, text_unicodeName, 100);
-		if (nn > 1)
-		{
-			TextOutW(hdc, posX1, rect.top + 2 + 15 + (15 * i), text_unicodeName, nn);
-	}
-		//TextOut(hdc, posX1, rect.top + 2 + 15 + (15 * i), text1, strlen(text1));
-		if (CountTime == -1)
+		WriteUnicode(hdc, posX1, rect.top + 20 + (15 * n), text1, strlen(text1));
+
+		if (RemainTime == -1)
 		{
 			SetTextColor(hdc, RGB(255, 0, 0));
 		}
-		else if (CountTime == 0)
+		else if (RemainTime == 0)
 		{
 			SetTextColor(hdc, RGB(0, 190, 0));
 		}
-		else if (CountTime < 300)
+		else if (RemainTime < 300)
 		{
 			SetTextColor(hdc, RGB(0, 190, 0));
 		}
 		else
 		{
-
-			SetTextColor(hdc, RGB(0, 0, 0));
+			SetTextColor(hdc, RGB(255, 255, 255));
 		}
-		TextOut(hdc, posX2, rect.top + 2 + 15 + (15 * i), text2, strlen(text2));
-		if ((rect.top + 2 + 15 + (15 * i)) >= rect.bottom - (20)) goto Exit;
-}
-Exit:
+		WriteUnicode(hdc, posX2, rect.top + 20 + (15 * n), text2, strlen(text2));
+	}
 
-	SelectObject(hdc,OldFont);
-	SetBkMode(hdc,OldBkMode);
-	ReleaseDC(this->m_hwnd,hdc);
-	
+	SelectObject(hdc, OldFont);
+	SetBkMode(hdc, OldBkMode);
+	ReleaseDC(this->m_hwnd, hdc);
 #endif
 }
 
@@ -499,24 +493,23 @@ void CServerDisplayer::PaintInvasionTime() // OK
 
 	GetClientRect(this->m_hwnd, &rect);
 
-	int posX1 = rect.right - 430;// vi tri 1
-	int posX2 = rect.right - 200;// vi tri cot 2
+	int posX1 = rect.right - 445;
+	int posX2 = rect.right - 355;
 
 	rect.left = rect.right - 450;
-	rect.right = rect.right - 150;
-
-	rect.top = 0;
-	rect.bottom = rect.top + 435;
+	rect.right = rect.right - 305;
+	rect.top = 5;
+	rect.bottom = 290;
 
 	HDC hdc = GetDC(this->m_hwnd);
 
-	int OldBkMode = SetBkMode(hdc,TRANSPARENT);
+	int OldBkMode = SetBkMode(hdc, TRANSPARENT);
 
-	FillRect(hdc,&rect,this->m_brush[4]);
+	FillRect(hdc, &rect, this->m_brush[LOG_CONTAINER_BRUSH]);
 
-	HFONT OldFont = (HFONT)SelectObject(hdc,this->m_font3);
+	HFONT OldFont = (HFONT)SelectObject(hdc, this->m_font3);
 
-	char text1[120];
+	char text1[20];
 	char text2[30];
 	int totalseconds;
 	int hours;
@@ -524,74 +517,69 @@ void CServerDisplayer::PaintInvasionTime() // OK
 	int seconds;
 	int days;
 
-	SetTextColor(hdc, RGB(30, 173, 181));
-	TextOut(hdc, rect.left + 100, rect.top + 2, "INVASION:", 9);
-	int CountTime = -1;
-	for (int i = 0; i < 30; i++)
+	SetTextColor(hdc, RGB(252, 2, 169));
+	WriteUnicode(hdc, rect.left + 5, rect.top + 2, "INVASION:", 9);
+
+	for (int n = 0; n < 18; n++)
 	{
-		if (gCustomEventTime.DataEventTime.empty() || i > gCustomEventTime.DataEventTime.size()) break;
-		if (strlen(gCustomEventTime.DataEventTime[i].NameEvent) < 1) continue;
+		if (gEventName.IsInvasion(n) == false)
+			continue;
+
 		SetTextColor(hdc, RGB(0, 102, 204));
-		wsprintf(text1, "%d. %s", i, gCustomEventTime.DataEventTime[i].NameEvent);
-		//CountTime = this->EventBc;
-		CountTime = *gCustomEventTime.DataEventTime[i].TimeEvent;
-		//=
-		if (CountTime == -1)
+
+		int RemainTime = gEventName.InvasionRemainTime(n);
+
+		wsprintf(text1, gEventName.InvasionName(n));
+
+		if (RemainTime == -1)
 		{
-			wsprintf(text2, "OFF");
+			wsprintf(text2, "Disabled");
 		}
-		else if (CountTime == 0)
+		else if (RemainTime == 0)
 		{
-			wsprintf(text2, "ON");
+			wsprintf(text2, "Online");
 		}
 		else
 		{
-			totalseconds = CountTime;
+			totalseconds = RemainTime;
 			hours = totalseconds / 3600;
 			minutes = (totalseconds / 60) % 60;
 			seconds = totalseconds % 60;
-			wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
+
 			if (hours > 23)
 			{
 				days = hours / 24;
-				wsprintf(text2, "%d day+", days);
+				wsprintf(text2, "%d day(s)+", days);
 			}
 			else
 			{
 				wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
 			}
 		}
-		int sizeName = strlen(text1);
-		WCHAR text_unicodeName[120];
-		int nn = MultiByteToWideChar(CP_UTF8, 0, text1, sizeName, text_unicodeName, 100);
-		if (nn > 1)
-		{
-			TextOutW(hdc, posX1, rect.top + 2 + 15 + (15 * i), text_unicodeName, nn);
-		}
-		if (CountTime == -1)
+
+		WriteUnicode(hdc, posX1, rect.top + 20 + (15 * n), text1, strlen(text1));
+		if (RemainTime == -1)
 		{
 			SetTextColor(hdc, RGB(255, 0, 0));
 		}
-		else if (CountTime == 0)
+		else if (RemainTime == 0)
 		{
 			SetTextColor(hdc, RGB(0, 190, 0));
 		}
-		else if (CountTime < 300)
+		else if (RemainTime < 300)
 		{
 			SetTextColor(hdc, RGB(0, 190, 0));
 		}
 		else
 		{
-
-			SetTextColor(hdc, RGB(0, 0, 0));
+			SetTextColor(hdc, RGB(255, 255, 255));
 		}
-		TextOut(hdc, posX2, rect.top + 2 + 15 + (15 * i), text2, strlen(text2));
-		if ((rect.top + 2 + 15 + (15 * i)) >= rect.bottom - (20)) goto Exit;
+		WriteUnicode(hdc, posX2, rect.top + 20 + (15 * n), text2, strlen(text2));
 	}
-Exit:
-	SelectObject(hdc,OldFont);
-	SetBkMode(hdc,OldBkMode);
-	ReleaseDC(this->m_hwnd,hdc);
+
+	SelectObject(hdc, OldFont);
+	SetBkMode(hdc, OldBkMode);
+	ReleaseDC(this->m_hwnd, hdc);
 #endif
 }
 
@@ -600,23 +588,23 @@ void CServerDisplayer::PaintCustomArenaTime() // OK
 #if(GAMESERVER_TYPE==0)
 	RECT rect;
 
-	GetClientRect(this->m_hwnd,&rect);
+	GetClientRect(this->m_hwnd, &rect);
 
 	int posX1 = rect.right - 140;
 	int posX2 = rect.right - 60;
 
 	rect.left = rect.right - 145;
 	rect.right = rect.right - 5;
-	rect.top = 300;
-	rect.bottom = rect.top + 200;
+	rect.top = 5;
+	rect.bottom = 290;
 
 	HDC hdc = GetDC(this->m_hwnd);
 
-	int OldBkMode = SetBkMode(hdc,TRANSPARENT);
+	int OldBkMode = SetBkMode(hdc, TRANSPARENT);
 
-	FillRect(hdc,&rect,this->m_brush[4]);
+	FillRect(hdc, &rect, this->m_brush[LOG_CONTAINER_BRUSH]);
 
-	HFONT OldFont = (HFONT)SelectObject(hdc,this->m_font3);
+	HFONT OldFont = (HFONT)SelectObject(hdc, this->m_font3);
 
 	char text1[20];
 	char text2[30];
@@ -626,294 +614,70 @@ void CServerDisplayer::PaintCustomArenaTime() // OK
 	int seconds;
 	int days;
 
-	SetTextColor(hdc,RGB(0, 173, 181));
-	TextOut(hdc,rect.left+5,rect.top+2,"CUSTOM ARENA:",13);
+	SetTextColor(hdc, RGB(252, 2, 169));
+	WriteUnicode(hdc, rect.left + 5, rect.top + 2, "CUSTOM ARENA:", 13);
 
-	int CountTime = -1;
-	for (int i = 0; i < 30; i++)
+	for (int n = 0; n < 18; n++)
 	{
+		if (gEventName.IsArena(n) == false)
+			continue;
 
-		if (gCustomEventTime.DataEventTime.empty() || i + 30 > gCustomEventTime.DataEventTime.size()) break;
-		if (strlen(gCustomEventTime.DataEventTime[i + 30].NameEvent) < 1) continue;
 		SetTextColor(hdc, RGB(0, 102, 204));
-		wsprintf(text1, "%d. %s", i + 30, gCustomEventTime.DataEventTime[i + 30].NameEvent);
-		//CountTime = this->EventBc;
-		CountTime = *gCustomEventTime.DataEventTime[i + 30].TimeEvent;
-		//=
-		if (CountTime == -1)
+
+		int RemainTime = gEventName.ArenaRemainTime(n);
+
+		wsprintf(text1, gEventName.ArenaName(n));
+
+		if (RemainTime == -1)
 		{
-			wsprintf(text2, "OFF");
+			wsprintf(text2, "Disabled");
 		}
-		else if (CountTime == 0)
+		else if (RemainTime == 0)
 		{
-			wsprintf(text2, "ON");
+			wsprintf(text2, "Online");
 		}
 		else
 		{
-			totalseconds = CountTime;
+			totalseconds = RemainTime;
 			hours = totalseconds / 3600;
 			minutes = (totalseconds / 60) % 60;
 			seconds = totalseconds % 60;
-			wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
+
 			if (hours > 23)
 			{
 				days = hours / 24;
-				wsprintf(text2, "%d day+", days);
+				wsprintf(text2, "%d day(s)+", days);
 			}
 			else
 			{
 				wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
 			}
 		}
-		int sizeName = strlen(text1);
-		WCHAR text_unicodeName[100];
-		int nn = MultiByteToWideChar(CP_UTF8, 0, text1, sizeName, text_unicodeName, 100);
-		if (nn > 1)
-		{
-			TextOutW(hdc, posX1, rect.top + 2 + 15 + (15 * i), text_unicodeName, nn);
-		}
-		if (CountTime == -1)
+
+		WriteUnicode(hdc, posX1, rect.top + 20 + (15 * n), text1, strlen(text1));
+		if (RemainTime == -1)
 		{
 			SetTextColor(hdc, RGB(255, 0, 0));
 		}
-		else if (CountTime == 0)
+		else if (RemainTime == 0)
 		{
 			SetTextColor(hdc, RGB(0, 190, 0));
 		}
-		else if (CountTime < 300)
+		else if (RemainTime < 300)
 		{
 			SetTextColor(hdc, RGB(0, 190, 0));
 		}
 		else
 		{
-
-			SetTextColor(hdc, RGB(0, 0, 0));
+			SetTextColor(hdc, RGB(255, 255, 255));
 		}
-		TextOut(hdc, posX2, rect.top + 2 + 15 + (15 * i), text2, strlen(text2));
-		if ((rect.top + 2 + 15 + (15 * i)) >= rect.bottom - (20)) goto Exit;
-	}
-Exit:
-	SelectObject(hdc,OldFont);
-	SetBkMode(hdc,OldBkMode);
-	ReleaseDC(this->m_hwnd,hdc);
-
-#else
-
-	RECT rect;
-
-	GetClientRect(this->m_hwnd,&rect);
-
-	int posX1 = rect.right - 140;
-	int posX2 = rect.right - 60;
-
-	rect.left = rect.right - 145;
-	rect.right = rect.right - 5;
-	rect.top = 300;
-	rect.bottom = rect.top + 200;
-
-	HDC hdc = GetDC(this->m_hwnd);
-
-	int OldBkMode = SetBkMode(hdc,TRANSPARENT);
-
-	FillRect(hdc,&rect,this->m_brush[4]);
-
-	HFONT OldFont = (HFONT)SelectObject(hdc,this->m_font3);
-
-	char text1[20];
-	char text2[30];
-	char text3[30];
-	char text4[30];
-	int totalseconds;
-	int hours;
-	int minutes;
-	int seconds;
-	int days;
-
-	SetTextColor(hdc,RGB(0, 173, 181));
-	TextOut(hdc,rect.left+5,rect.top + 2,"EVENTS:",7);
-
-	SetTextColor(hdc,RGB(0,102,204));
-	wsprintf(text1, "Loren Deep: ");
-
-	if (this->EventCastleDeep == -1)
-	{
-		wsprintf(text2, "OFF");
-	}
-	else if (this->EventCastleDeep == 0)
-	{
-		wsprintf(text2, "ON");
-	}
-	else
-	{
-		totalseconds	= this->EventCastleDeep;
-		hours			= totalseconds/3600;
-		minutes			= (totalseconds/60) % 60;  
-		seconds			= totalseconds % 60;
-
-		if (hours > 23)
-		{
-			days = hours/24;
-			wsprintf(text2, "%d day(s)+", days);
-		}
-		else
-		{
-			wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
-		}
+		WriteUnicode(hdc, posX2, rect.top + 20 + (15 * n), text2, strlen(text2));
 	}
 
-	TextOut(hdc, posX1, 30, text1, strlen(text1));
-	if (this->EventCastleDeep == -1)
-	{
-		SetTextColor(hdc,RGB(255,0,0));
-	}
-	else if (this->EventCastleDeep == 0)
-	{
-		SetTextColor(hdc,RGB(0,190,0));
-	}
-	else if (this->EventCastleDeep < 300)
-	{
-		SetTextColor(hdc,RGB(0,190,0));
-	}
-	else
-	{
-		SetTextColor(hdc,RGB(0, 0, 0));
-	}
-	TextOut(hdc, posX2, 30, text2, strlen(text2));
-
-	SetTextColor(hdc,RGB(0,102,204));
-	wsprintf(text1, "CryWolf: ");
-
-	if (this->EventCryWolf == -1)
-	{
-		wsprintf(text2, "OFF");
-	}
-	else if (this->EventCryWolf == 0)
-	{
-		wsprintf(text2, "ON");
-	}
-	else
-	{
-		totalseconds	= this->EventCryWolf;
-		hours			= totalseconds/3600;
-		minutes			= (totalseconds/60) % 60;  
-		seconds			= totalseconds % 60;
-
-		if (hours > 23)
-		{
-			days = hours/24;
-			wsprintf(text2, "%d day(s)+", days);
-		}
-		else
-		{
-			wsprintf(text2, "%02d:%02d:%02d", hours, minutes, seconds);
-		}
-	}
-
-	TextOut(hdc, posX1, 50, text1,strlen(text1));
-	if (this->EventCryWolf == -1)
-	{
-		SetTextColor(hdc,RGB(255,0,0));
-	}
-	else if (this->EventCryWolf == 0)
-	{
-		SetTextColor(hdc,RGB(0,190,0));
-	}
-	else if (this->EventCryWolf < 300)
-	{
-		SetTextColor(hdc,RGB(0,190,0));
-	}
-	else
-	{
-#if(GAMESERVER_NOMBRE == 1)
-					SetTextColor(hdc, RGB(0,0,0));
-#else
-					SetTextColor(hdc, RGB(255,255,255));
+	SelectObject(hdc, OldFont);
+	SetBkMode(hdc, OldBkMode);
+	ReleaseDC(this->m_hwnd, hdc);
 #endif
-	}
-	TextOut(hdc, posX2, 50,text2,strlen(text2));
-
-	SetTextColor(hdc,RGB(0,102,204));
-	wsprintf(text1, "Castle Siege: ");
-
-	if (this->EventCs == -1)
-	{
-		wsprintf(text2, "OFF");
-	}
-	else if (this->EventCs == 0)
-	{
-		wsprintf(text2, "Adjust Date");
-		wsprintf(text3, " ");
-		wsprintf(text4, " ");
-	}
-	else
-	{
-		totalseconds	= this->EventCs;
-		hours			= totalseconds/3600;
-		minutes			= (totalseconds/60) % 60;  
-		seconds			= totalseconds % 60;
-
-		if (hours > 23)
-		{
-			days = hours/24;
-			wsprintf(text4, "- Next Stage: %d day(s)+", days);
-		}
-		else
-		{
-			wsprintf(text4, "- Next Stage: %02d:%02d:%02d", hours, minutes, seconds);
-		}
-
-		if(this->EventCsState == -1)
-			wsprintf(text3, "- Stage %d: None", this->EventCsState);
-		if(this->EventCsState == 0)
-			wsprintf(text3, "- Stage %d: Idle 1", this->EventCsState);
-		if(this->EventCsState == 1)
-			wsprintf(text3, "- Stage %d: Guild Register", this->EventCsState);
-		if(this->EventCsState == 2)
-			wsprintf(text3, "- Stage %d: Idle 2", this->EventCsState);
-		if(this->EventCsState == 3)
-			wsprintf(text3, "- Stage %d: Mark Register", this->EventCsState);
-		if(this->EventCsState == 4)
-			wsprintf(text3, "- Stage %d: Idle 3", this->EventCsState);
-		if(this->EventCsState == 5)
-			wsprintf(text3, "- Stage %d: Notify", this->EventCsState);
-		if(this->EventCsState == 6)
-			wsprintf(text3, "- Stage %d: Ready Siege", this->EventCsState);
-		if(this->EventCsState == 7)
-			wsprintf(text3, "- Stage %d: Started Siege", this->EventCsState);
-		if(this->EventCsState == 8)
-			wsprintf(text3, "- Stage %d: Ended Siege", this->EventCsState);
-		if(this->EventCsState == 9)
-			wsprintf(text3, "- Stage %d: End All", this->EventCsState);
-			
-		if (this->EventCs)
-			wsprintf(text2, "Stage %d", this->EventCsState);
-	}
-
-	TextOut(hdc, posX1, 70, text1, strlen(text1));
-	if (this->EventCs == -1)
-	{
-		SetTextColor(hdc,RGB(255,0,0));
-	}
-	else
-	{
-#if(GAMESERVER_NOMBRE == 1)
-					SetTextColor(hdc, RGB(0,0,0));
-#else
-					SetTextColor(hdc, RGB(255,255,255));
-#endif
-	}
-	TextOut(hdc, posX2, 70, text2, strlen(text2));
-
-	TextOut(hdc,posX1+5,155,text3,strlen(text3));
-
-	TextOut(hdc,posX1+5,175,text4,strlen(text4));
-
-	SelectObject(hdc,OldFont);
-	SetBkMode(hdc,OldBkMode);
-	ReleaseDC(this->m_hwnd,hdc);
-
-#endif
-
 }
 
 void CServerDisplayer::LogTextPaint() // OK
@@ -1197,23 +961,8 @@ void CServerDisplayer::ClearTimeDisplayer()
 }
 void CServerDisplayer::InitTimeEvent()
 {
-	gCustomEventTime.DataEventTime.clear();
-	gCustomEventTime.LoadDataTime = 0;
-	gCustomEventTime.LoadData();
-	//=== add data Event time
-	gCustomEventTime.AddDataEventsTime("Blood Castle", &this->EventBc); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Devil Square ", &this->EventDs); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Chaos Castle ", &this->EventCc); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Illus Temple ", &this->EventIt); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Online Lottery ", &this->EventCustomLottery); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Custom Quiz", &this->EventCustomQuiz); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Custom Bonus", &this->EventCustomBonus); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Custom Drop", &this->EventDrop); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("King Of Mu", &this->EventKing); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Tvt Event", &this->EventTvT); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Moss Merch", &this->EventMoss); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Boss Guild", &this->EventBossGuild); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("CTC Mini", &this->EventCTCMini); this->CountTimeEventS++;
-	gCustomEventTime.AddDataEventsTime("Loan Chien", &this->EventLoanChien); this->CountTimeEventS++;
-
+	// E-06 (Faz 2b.2-O): event-saat verisi CEventName uzerinden (donor hatti);
+	// eski DataEventTime/AddDataEventsTime kaydi kaldirildi. Event* uyeleri
+	// (donorde gEventName karsiligi olmayan moduller icin) ClearTimeDisplayer'da
+	// resetleniyor.
 }

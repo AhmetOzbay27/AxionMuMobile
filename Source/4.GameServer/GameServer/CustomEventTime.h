@@ -1,7 +1,15 @@
+// CustomEventTime.h: interface for the CCustomEventTime class (Faz 2b.2-O).
+//
+// Canlı SPK hattı: event-listesi CEventName modülünden (Event/EventName.xml →
+// CEventName::OpenFile, ServerInfo) beslenir; bu sınıf yalnızca istemciye
+// sayfalı event-saat listesi gönderir (donör 99-satırlık GCReqEventTime).
+// Eski bizim InvasionManager/Arena kaynaklı LoadData/AddDataEventsTime ve
+// CustomEventTime.xml LoadFileXML hattı kaldırıldı (donör hattıyla çakışıyordu;
+// canlıda CustomEventTime.xml yok — Data/Event/EventTime.xml canlı
+// EventMain/isteme formatı, docs/09 E-06 notu).
 
 #include "Protocol.h"
 #define MAX_EVENTTIME  42
-
 
 struct CUSTOM_EVENTTIME_DATA
 {
@@ -32,24 +40,6 @@ struct PMSG_CUSTOM_EVENTTIME_RECV
 	PSBMSG_HEAD header; // C1:BF:51
 	BYTE Page;
 };
-
-struct BCUSTOM_EVENTTIME_DATA
-{
-	char NameEvent[60];
-	int* TimeEvent;
-	void Clear() // OK
-	{
-		memset(NameEvent, 0, sizeof(NameEvent));
-		TimeEvent = 0;
-	}
-};
-struct DATA_CUSTOMEVENTTIME
-{
-	int NumberEvent;
-	char NameEvent[30];
-	char DesString[90];
-	int NumberGate;
-};
 // ---
 class CCustomEventTime
 {
@@ -57,23 +47,8 @@ public:
 	CCustomEventTime();
 	virtual ~CCustomEventTime();
 	void GCReqEventTime(int Index, PMSG_CUSTOM_EVENTTIME_RECV* pMsg);
-	// ---
-	void CCustomEventTime::LoadData();
-	//int CountTime;
-	//BCUSTOM_EVENTTIME_DATA DataEventTime[255];
-	bool LoadDataTime;
-	std::vector <BCUSTOM_EVENTTIME_DATA> DataEventTime;
-	void CCustomEventTime::AddDataEventsTime(char* NameEvent, int* Time);
-
-	void LoadFileXML(char* FilePath);
-	std::vector <DATA_CUSTOMEVENTTIME> m_SendClientDataEventTime;
-	int m_Enable;
 private:
-	int m_count;
-	// ---
-	//CUSTOM_EVENTTIME_DATA r_Data[MAX_EVENTTIME];
-
-
+	CUSTOM_EVENTTIME_DATA r_Data[MAX_EVENTTIME];
 };
 extern CCustomEventTime gCustomEventTime;
 // ---

@@ -3,6 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 
 #pragma once
+#include "CEventName.h"	// E-06 (Faz 2b.2-O): painter'lar gEventName uzerinden (donor hatti)
+
+#define LOG_INACTIVE_BRUSH			0
+#define LOG_ACTIVE_BRUSH			1
+#define LOG_NAME_BRUSH				2
+#define LOG_CONTAINER_BRUSH			3
+#define LOG_MAIN_BRUSH				4
 
 #define MAX_LOG_TEXT_LINE 41
 #define MAX_LOG_TEXT_SIZE 100

@@ -838,3 +838,57 @@ void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Siz
 		delete[] Buffer;
 	}
 }
+// SPK (E-06, Faz 2b.2-O): donor Util.cpp:871-914 — ServerDisplayer painter'lari
+// (canli SPK hatti, gEventName uzerinden) WriteUnicode kullaniyor. IsCharUTF8
+// donor'da mevcut degil bizde yok -> basit UTF-8 tespiti ile MultiByteToWideChar.
+static bool Util_IsCharUTF8(LPCSTR lpString)
+{
+	if (lpString == 0)
+	{
+		return false;
+	}
+
+	int len = (int)strlen(lpString);
+
+	for (int i = 0; i < len; i++)
+	{
+		if ((lpString[i] & 0x80) != 0)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+int ConvertCharToWideStr(std::wstring& wstrDest, LPCSTR lpString) // E-06
+{
+	wstrDest = L"";
+
+	if (lpString == NULL || strlen(lpString) <= 0)
+		return 0;
+
+	int iConversionType;
+
+	iConversionType = (Util_IsCharUTF8(lpString)) ? CP_UTF8 : 1252;
+
+	int nLenOfWideCharStr = MultiByteToWideChar(iConversionType, 0, lpString, -1, NULL, 0);
+
+	wchar_t* pwszStr = new wchar_t[nLenOfWideCharStr];
+
+	MultiByteToWideChar(iConversionType, 0, lpString, -1, pwszStr, nLenOfWideCharStr);
+
+	wstrDest += pwszStr;
+
+	delete[] pwszStr;
+
+	return nLenOfWideCharStr - 1;
+}
+
+BOOL WriteUnicode(HDC hdc, int nXStart, int nYStart, LPCSTR lpString, int cbString) // E-06
+{
+	std::wstring wstrText = L"";
+	ConvertCharToWideStr(wstrText, lpString);
+
+	return TextOutW(hdc, nXStart, nYStart, wstrText.c_str(), wstrText.length());
+}

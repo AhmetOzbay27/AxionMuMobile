@@ -43,111 +43,120 @@ void BotThuMuaer::Read(char * FilePath)
 	}
 	this->m_DoiItem.clear();
 	this->m_DoiItemList.clear();
-	ZeroMemory(this->CacheSerial, sizeof(this->CacheSerial));
+	this->m_MessageInfoTM.clear();	// E-11: yeniden yuklemede eski mesajlar da temizlensin
+	ZeroMemory(this->CacheSerial, sizeof(this->CacheSerial));	memset(&this->bot, 0, sizeof(this->bot));
+	this->Enabled = 0;
 
-	int CountBot = 0;
-	int CountItem = 0;
-	pugi::xml_document file;
-	pugi::xml_parse_result res = file.load_file(FilePath);
-	memset(&this->bot, 0, sizeof(this->bot));
-	if (res.status != pugi::status_ok){
-		ErrorMessageBox("File %s load fail. Error: %s", FilePath, res.description());
+	CMemScript* lpMemScript = new CMemScript;
+
+	if (lpMemScript == 0)
+	{
+		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR, FilePath);
 		return;
 	}
 
-	pugi::xml_node BotThuMua = file.child("BotThuMua");
-	this->Enabled = BotThuMua.attribute("EnableBot").as_bool();
-
-	pugi::xml_node BCreateBot = BotThuMua.child("CreateBot");
-	for (pugi::xml_node CreateBot = BCreateBot.child("NewBot"); CreateBot; CreateBot = CreateBot.next_sibling()){
-		int BotNum = CreateBot.attribute("IndexBot").as_int();
-		if (BotNum < 0 || BotNum > MAX_BOTTHUMUA - 1){
-			ErrorMessageBox("BotThuMua error: Bot Index:%d out of range!", BotNum);
-			return;
-		}
-		this->bot[BotNum].Class = CreateBot.attribute("ClassBot").as_int();
-		this->bot[BotNum].Rate = CreateBot.attribute("SucessRateBot").as_int();
-		this->bot[BotNum].Type = CreateBot.attribute("Type").as_int(); //Loai
-		strcpy_s(this->bot[BotNum].Name, CreateBot.attribute("NameBot").as_string());
-		this->bot[BotNum].Map = CreateBot.attribute("IDMapBot").as_int();
-		this->bot[BotNum].X = CreateBot.attribute("CoordXBot").as_int();
-		this->bot[BotNum].Y = CreateBot.attribute("CoordYBot").as_int();
-		this->bot[BotNum].Dir = CreateBot.attribute("DirBot").as_int();
-		this->bot[BotNum].Enabled = true;
-		CountBot++;
-	}
-	//===
-	pugi::xml_node ItemBot = BotThuMua.child("ItemBot");
-	for (pugi::xml_node ItemsBot = ItemBot.child("ItemsBot"); ItemsBot; ItemsBot = ItemsBot.next_sibling()){
-		int BotNum = ItemsBot.attribute("IndexBot").as_int();
-		if (BotNum < 0 || BotNum > MAX_BOTTHUMUA - 1){
-			ErrorMessageBox("BotThuMua error: Bot Index:%d out of range!", BotNum);
-			return;
-		}
-		if (this->bot[BotNum].Enabled == false){
-			ErrorMessageBox("BotThuMua error: Bot Index:%d doesnt exist", BotNum);
-			return;
-		}
-		int Slot = ItemsBot.attribute("SlotItemBot").as_int();
-		if (Slot < 0 || Slot > 8){
-			ErrorMessageBox("BotThuMua error: Min Slot 0 ; Max Slot 8");
-			return;
-		}
-		int iType = ItemsBot.attribute("TypeItemBot").as_int();
-		int iIndex = ItemsBot.attribute("IndexItemBot").as_int();
-		this->bot[BotNum].body[Slot].num = GET_ITEM(iType, iIndex);
-		this->bot[BotNum].body[Slot].level = ItemsBot.attribute("LevelItemBot").as_int();
-		this->bot[BotNum].body[Slot].opt = ItemsBot.attribute("OptionItemBot").as_int();
-		this->bot[BotNum].body[Slot].Enabled = true;
-	}
-	//====
-	pugi::xml_node cDoiItem = BotThuMua.child("DoiItem");
-	for (pugi::xml_node oDoiItem = cDoiItem.child("OpBot"); oDoiItem; oDoiItem = oDoiItem.next_sibling())
+	if (lpMemScript->SetBuffer(FilePath) == 0)
 	{
-		DoiItem info;
-
-		info.IndexBot = oDoiItem.attribute("IndexBot").as_int();
-		info.OnlyVip = oDoiItem.attribute("OnlyVip").as_int();
-		info.LoaiTien = oDoiItem.attribute("LoaiTien").as_int();
-		info.MinCoin = oDoiItem.attribute("MinCoin").as_int();
-		info.MaxCoin = oDoiItem.attribute("MaxCoin").as_int();
-		info.SeriCheck = oDoiItem.attribute("SeriCheck").as_int();
-		info.ItemExc = oDoiItem.attribute("ItemExc").as_int();
-		info.ItemAnc = oDoiItem.attribute("ItemAnc").as_int();
-		info.ItemBag = oDoiItem.attribute("ItemBag").as_int();
-		this->m_DoiItem.insert(std::pair<int, DoiItem>(info.IndexBot, info));
+		ErrorMessageBox(lpMemScript->GetLastError());
+		delete lpMemScript;
+		return;
 	}
-	//====
-	pugi::xml_node cDoiItemList = BotThuMua.child("DoiItemList");
-	for (pugi::xml_node oDoiItemList = cDoiItemList.child("ListItem"); oDoiItemList; oDoiItemList = oDoiItemList.next_sibling())
+
+	try
 	{
-		DoiItemList info;
-		info.Index = CountItem;
-		info.IndexBot = oDoiItemList.attribute("IndexBot").as_int();
-		info.ItemIndex = oDoiItemList.attribute("ItemIndex").as_int();
-		info.LoaiTien = oDoiItemList.attribute("LoaiTien").as_int();
-		info.MinCoin = oDoiItemList.attribute("MinCoin").as_int();
-		info.MaxCoin = oDoiItemList.attribute("MaxCoin").as_int();
-		info.SeriCheck = oDoiItemList.attribute("SeriCheck").as_int();
-		info.ItemBag = oDoiItemList.attribute("ItemBag").as_int();
-		this->m_DoiItemList.insert(std::pair<int, DoiItemList>(info.Index, info));
-		CountItem++;
-	}
+		while (true)
+		{
+			if (lpMemScript->GetToken() == TOKEN_END)
+			{
+				break;
+			}
 
-	pugi::xml_node Message = BotThuMua.child("MessageInfo");
-	for (pugi::xml_node msg = Message.child("Message"); msg; msg = msg.next_sibling())
+			int section = lpMemScript->GetNumber();
+
+			while (true)
+			{
+				// E-11 (2b.2-O): canli ThuMuaDoExc.txt bolum yapisi: 0=NPC, 1=Allow, 2=Reward
+				if (section == 0)
+				{
+					if (strcmp("end", lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+
+					int BotNum = lpMemScript->GetNumber();
+					if (BotNum < 0 || BotNum > MAX_BOTTHUMUA - 1)
+					{
+						ErrorMessageBox("ThuMuaDoExc error: Index %d out of range!", BotNum);
+						delete lpMemScript;
+						return;
+					}
+
+					this->bot[BotNum].Class = lpMemScript->GetAsNumber();
+					this->bot[BotNum].Enabled = lpMemScript->GetAsNumber();
+					this->bot[BotNum].Rate = lpMemScript->GetAsNumber();	// canli header: BotIndex Class Enabled Rate Name Map X Y Dir (donor'daki ChangeColorName kolonu canlida YOK)
+					strncpy_s(this->bot[BotNum].Name, lpMemScript->GetAsString(), sizeof(this->bot[BotNum].Name));
+					this->bot[BotNum].Map = lpMemScript->GetAsNumber();
+					this->bot[BotNum].X = lpMemScript->GetAsNumber();
+					this->bot[BotNum].Y = lpMemScript->GetAsNumber();
+					this->bot[BotNum].Dir = lpMemScript->GetAsNumber();
+				}
+				else if (section == 1)
+				{
+					this->Enabled = 1;
+					if (strcmp("end", lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+
+					int BotNum = lpMemScript->GetNumber();
+					if (BotNum < 0 || BotNum > MAX_BOTTHUMUA - 1)
+					{
+						ErrorMessageBox("ThuMuaDoExc error: Index %d out of range!", BotNum);
+						delete lpMemScript;
+						return;
+					}
+
+					this->bot[BotNum].AllowLevel = lpMemScript->GetAsNumber();
+					this->bot[BotNum].AllowOpt = lpMemScript->GetAsNumber();
+					this->bot[BotNum].AllowLuck = lpMemScript->GetAsNumber();
+					this->bot[BotNum].AllowSkill = lpMemScript->GetAsNumber();
+					this->bot[BotNum].AllowExc = lpMemScript->GetAsNumber();
+				}
+				else if (section == 2)
+				{
+					this->Enabled = 1;
+					if (strcmp("end", lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+
+					int BotNum = lpMemScript->GetNumber();
+					if (BotNum < 0 || BotNum > MAX_BOTTHUMUA - 1)
+					{
+						ErrorMessageBox("ThuMuaDoExc error: Index %d out of range!", BotNum);
+						delete lpMemScript;
+						return;
+					}
+
+					this->bot[BotNum].OnlyVip = lpMemScript->GetAsNumber();
+					this->bot[BotNum].WCoinCMin = lpMemScript->GetAsNumber();
+					this->bot[BotNum].WCoinCMax = lpMemScript->GetAsNumber();
+					this->bot[BotNum].WCoinP = lpMemScript->GetAsNumber();
+					// E-11: canli Reward satirinda GP kolonu YOK (donor'un 5. alani atlandi)
+				}
+				else
+				{
+					break;
+				}
+			}
+		}
+	}
+	catch (...)
 	{
-		MESSAGE_INFO_TM info;
-
-		info.Index = msg.attribute("Index").as_int();
-
-		strcpy_s(info.Message, msg.attribute("Text").as_string());
-
-		this->m_MessageInfoTM.insert(std::pair<int, MESSAGE_INFO_TM>(info.Index, info));
+		ErrorMessageBox(lpMemScript->GetLastError());
 	}
 
-
-	LogAdd(LOG_BLUE, "[BotThuMua]Bot: %d DoiItem: %d  DoiItemList:%d", CountBot, this->m_DoiItem.size(), this->m_DoiItemList.size());
+	delete lpMemScript;
 }
 
 DoiItem* BotThuMuaer::GetInfoDoiItem(int Numbot) // Lay thong tin
@@ -699,6 +708,161 @@ BOOL BotThuMuaer::XuLyItemThuMua(int aIndex, int BotNum)
 }
 
 
+BYTE BotThuMuaer::Alchemy(int aIndex, int BotNum)
+{
+	// E-11 (2b.2-O): donor algoritma — canli ThuMuaDoExc.txt odul alanlariyla calisir (GP alani canlida yok → 0)
+	char sbuf[512] = { 0 };
+	int fitem = 0;
+	int sitem = 0;
+	int count = 0;
+
+	if (gObjIsConnected(aIndex) == 0)
+	{
+		return 0;
+	}
+
+	LPOBJ lpObj = &gObj[aIndex];
+
+
+	for (int n = 0; n < TRADE_SIZE; n++)
+	{
+		if (lpObj->Trade[n].IsItem() != 0)
+		{
+			if (lpObj->Trade[n].m_Index >= 6144)
+			{
+				ChatSend(&gObj[this->bot[BotNum].index], "Chỉ Thu Mua Quần Áo Và Vũ Khí !");
+				this->TradeCancel(aIndex);
+				return 0;
+			}
+			else if (lpObj->Trade[n].m_NewOption == 0)
+			{
+				ChatSend(&gObj[this->bot[BotNum].index], "Có Vật Phẩm Không Phải là đồ Exl !");
+				this->TradeCancel(aIndex);
+				return 0;
+			}
+			else if ((n >= 0 && n <= 3) || (n >= 8 && n <= 11) || (n >= 16 && n <= 19) || (n >= 24 && n <= 27))
+			{
+				fitem = n;
+			}
+			else
+			{
+				sitem = n;
+			}
+
+			count++;
+		}
+	}
+
+	srand(static_cast<int>(time(NULL)));
+	int random = rand() % 100;
+	bool failed = false;
+
+	if (random > this->bot[BotNum].Rate)
+	{
+		failed = true;
+	}
+
+	if (this->bot[BotNum].AllowLuck == 1)
+	{
+		//LogAdd(LOG_RED, "[BotThuMuaDoExc] AllowLuck");	// E-11: canli exe'de bu log YOK
+		if (lpObj->Trade[fitem].m_Option2 == 0 && lpObj->Trade[sitem].m_Option2 == 1)
+		{
+			if (!failed)
+				lpObj->Trade[fitem].m_Option2 = 1;
+			lpObj->Trade[sitem].m_Option2 = 0;
+		}
+	}
+	if (this->bot[BotNum].AllowLevel == 1)
+	{
+		//LogAdd(LOG_RED, "[BotThuMuaDoExc] AllowLevel");	// E-11: canli exe'de bu log YOK
+		int fLevel = lpObj->Trade[fitem].m_Level;
+		if (fLevel < this->bot[BotNum].MaxLevel)
+		{
+			int sLevel = lpObj->Trade[sitem].m_Level;
+			if ((fLevel + sLevel) > this->bot[BotNum].MaxLevel)
+			{
+				sLevel -= (this->bot[BotNum].MaxLevel - fLevel);
+				if (!failed)
+					fLevel = this->bot[BotNum].MaxLevel;
+			}
+			else
+			{
+				if (!failed)
+					fLevel += sLevel;
+				sLevel = 0;
+			}
+			lpObj->Trade[fitem].m_Level = fLevel;
+			lpObj->Trade[sitem].m_Level = sLevel;
+		}
+	}
+	if (this->bot[BotNum].AllowSkill == 1)
+	{
+		//LogAdd(LOG_RED, "[BotThuMuaDoExc] AllowSkill");	// E-11: canli exe'de bu log YOK
+		if (lpObj->Trade[fitem].m_Index < 3584)
+		{
+			if (lpObj->Trade[fitem].m_Option1 == 0 && lpObj->Trade[sitem].m_Option1 == 1)
+			{
+				if (!failed)
+					lpObj->Trade[fitem].m_Option1 = 1;
+				lpObj->Trade[sitem].m_Option1 = 0;
+			}
+		}
+	}
+
+	if (this->bot[BotNum].AllowOpt == 1)
+	{
+		//LogAdd(LOG_RED, "[BotThuMuaDoExc] AllowOpt [Check]");	// E-11: canli exe'de bu log YOK
+
+		if (lpObj->Trade[fitem].m_Index < 5832)
+		{
+			if (lpObj->Trade[fitem].m_Option3 >= 1 && lpObj->Trade[sitem].m_Option3 <= 63)
+			{
+				if (!failed)
+				{
+					lpObj->Trade[fitem].m_Option3 = 1;
+				}
+
+				lpObj->Trade[sitem].m_Option3 = 0;
+			}
+		}
+	}
+
+	if (failed)
+	{
+		ChatSend(&gObj[this->bot[BotNum].index], "Đổi Đồ Exc Thất Bại!");
+	}
+	else
+	{
+		ChatSend(&gObj[this->bot[BotNum].index], "Đổi Đồ Exc Thành Công!");
+
+		int RandomWC = rand() % (this->bot[BotNum].WCoinCMax - this->bot[BotNum].WCoinCMin + 1) + this->bot[BotNum].WCoinCMin; //(b-a+1) +a <--> tu a den b
+
+		GDSetCoinSend(lpObj->Index, +((RandomWC)*count), +((this->bot[BotNum].WCoinP) * count), +((this->bot[BotNum].GP) * count), "ThuMuaDoExc");
+		gCashShop.CGCashShopPointRecv(lpObj->Index);
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, gMessage.GlobalText(565), lpObj->Name, (RandomWC * count), (this->bot[BotNum].WCoinP) * count, (this->bot[BotNum].GP) * count);
+	}
+
+	gObjInventoryCommit(aIndex);
+	gObjectManager.CharacterMakePreviewCharSet(aIndex);
+	GDPetItemInfoSend(aIndex, 0);
+	lpObj->Interface.use = 0;
+	lpObj->Interface.type = INTERFACE_NONE;
+	lpObj->Interface.state = 0;
+	lpObj->TargetNumber = -1;
+	lpObj->TradeOk = 0;
+	lpObj->TradeOkTime = 0;
+	lpObj->TradeMoney = 0;
+	GCMoneySend(aIndex, lpObj->Money);
+	gTrade.GCTradeResultSend(aIndex, 1);
+	gItemManager.GCItemListSend(aIndex);
+	gTrade.ClearTrade(lpObj);
+	return 1;
+
+Cancel:
+	this->TradeCancel(aIndex);
+	return 0;
+}
+
 void BotThuMuaer::TradeOk(int aIndex)
 {
 	int MixNum=-1;
@@ -718,7 +882,9 @@ void BotThuMuaer::TradeOk(int aIndex)
 		gTrade.GCTradeResultSend(aIndex, 5);
 		return;
 	}
-	this->XuLyItemThuMua(aIndex, number);
+
+	// E-11 (2b.2-O): donor deseni — islem donor Alchemy algoritmasi (XuLyItemThuMua katmani korundu, pasif)
+	this->Alchemy(aIndex, number);
 }
 
 BOOL BotThuMuaer::TradeOpen(int index, int nindex)
@@ -742,7 +908,7 @@ BOOL BotThuMuaer::TradeOpen(int index, int nindex)
 	if(this->bot[number].OnlyVip == 1 && gObj[index].AccountLevel == 0)
 	{
 		ChatSend(&gObj[this->bot[number].index],this->GetMessage(2));
-		LogAdd(LOG_RED,"[BotThuMua][Bot:%d](%s) Account is not VIP",number,gObj[index].Account);
+		//LogAdd(LOG_RED,"[BotThuMua][Bot:%d](%s) Account is not VIP",number,gObj[index].Account);	// E-11: canli exe'de [BotThuMua] logu YOK
 		return 0;
 	}
 	
@@ -766,9 +932,9 @@ BOOL BotThuMuaer::TradeOpen(int index, int nindex)
 			lpObj->TargetNumber =lpBot->Index;
 			lpObj->Transaction = 1;
 
-			char wbuf[1024]={0};
-			wsprintf(wbuf, "[BotThuMua] (%s)(%s) OPEN Type[%d],State[%d], Use[%d]", gObj[index].Account, gObj[index].Name, lpObj->Interface.type, lpObj->Interface.state, lpObj->Interface.use);
-			LogAdd(LOG_RED,wbuf);
+			//char wbuf[1024]={0};
+			//wsprintf(wbuf, "[BotThuMua] (%s)(%s) OPEN Type[%d],State[%d], Use[%d]", gObj[index].Account, gObj[index].Name, lpObj->Interface.type, lpObj->Interface.state, lpObj->Interface.use);
+			//LogAdd(LOG_RED,wbuf);	// E-11: canli exe'de [BotThuMua] logu YOK
 			ChatSend(&gObj[this->bot[number].index],this->GetMessage(4));			
 		}
 	}

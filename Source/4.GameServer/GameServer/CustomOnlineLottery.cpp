@@ -190,26 +190,27 @@ void CCustomOnlineLottery::MainProc() // OK
 
 			lpInfo->RemainTime = (int)difftime(lpInfo->TargetTime,time(0));
 
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor CustomOnlineLottery birebir)
 			if(this->m_CustomOnlineLotterySwitch == 0)
 			{
-				if (gServerDisplayer.EventCustomLottery != -1)
+				if (gEventName.GlobalRemainTime(4) != -1)
 				{
-					gServerDisplayer.EventCustomLottery = -1;
+					gEventName.GlobalRemainTime(4, -1);
 				}
 			}
-			else 
+			else
 			{
-				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gServerDisplayer.EventCustomLottery || gServerDisplayer.EventCustomLottery <= 0))
+				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gEventName.GlobalRemainTime(4) || gEventName.GlobalRemainTime(4) <= 0))
 				{
 					if (lpInfo->State == CUSTOM_ONLINE_LOTTERY_STATE_EMPTY)
 					{
-						gServerDisplayer.EventCustomLottery = lpInfo->RemainTime;
+						gEventName.GlobalRemainTime(4, lpInfo->RemainTime);
 					}
-					else 
+					else
 					{
-						if (gServerDisplayer.EventCustomLottery != 0)
+						if (gEventName.GlobalRemainTime(4) != 0)
 						{
-							gServerDisplayer.EventCustomLottery = 0;
+							gEventName.GlobalRemainTime(4, 0);
 						}
 					}
 				}

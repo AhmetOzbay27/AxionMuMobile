@@ -47,3 +47,8 @@ void BuxConvert(BYTE* pbyBuffer, int Size);
 DWORD GenerateCheckSum2(BYTE* pbyBuffer, int dwSize, WORD Key);
 void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Size);
 void PackFileEncrypt(const char* filename, BYTE* pbyBuffer, int MaxLine, int Size, DWORD Key, bool WriteMax = true, bool CheckSum = true);
+
+// SPK (E-06, Faz 2b.2-O): donor Util.h:44 — ServerDisplayer painter'lari icin
+// (BOOL/HDC/wstring windows.h + <string> stdafx zincirinden)
+int ConvertCharToWideStr(std::wstring& wstrDest, LPCSTR lpString);
+BOOL WriteUnicode(HDC hdc, int nXStart, int nYStart, LPCSTR lpString, int cbString);

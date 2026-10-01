@@ -225,34 +225,35 @@ void CDevilSquare::MainProc() // OK
 
 		if (n==0)
 		{
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor DevilSquare birebir; eski gServerDisplayer.EventDs hatti kaldirildi)
 			if(gServerInfo.m_DevilSquareEvent == 0)
 			{
-				if (gServerDisplayer.EventDs != -1)
+				if (gEventName.GlobalRemainTime(1) != -1)
 				{
-					gServerDisplayer.EventDs = -1;
+					gEventName.GlobalRemainTime(1, -1);
 				}
 			}
-			else 
+			else
 			{
 				if (lpLevel->State == DS_STATE_EMPTY)
 				{
-					gServerDisplayer.EventDs = lpLevel->RemainTime;
+					gEventName.GlobalRemainTime(1, lpLevel->RemainTime);
 				}
-				else 
+				else
 				{
-					if (gServerDisplayer.EventDs != 0)
+					if (gEventName.GlobalRemainTime(1) != 0)
 					{
-						gServerDisplayer.EventDs = 0;
+						gEventName.GlobalRemainTime(1, 0);
 					}
 				}
 			}
 		}
 
-		if(gServerDisplayer.EventDs > 0)
+		if (gEventName.GlobalRemainTime(1) > 0)
 		{
 			if (lpLevel->State != DS_STATE_EMPTY && lpLevel->State != DS_STATE_BLANK)
 			{
-				gServerDisplayer.EventDs = 0;
+				gEventName.GlobalRemainTime(1, 0);
 			}
 		}
 

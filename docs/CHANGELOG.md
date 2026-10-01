@@ -7,6 +7,54 @@
 
 ---
 
+## [26.10.01 13:50] E-kalemleri kapatıldı — E-01/E-02/E-04/E-06/E-09/E-11 docs/09 stratejilerine göre işlendi
+
+**Ne yapıldı** (kullanıcı isteği: "Kalan E-kalemlerini docs/09 stratejilerine göre işle")
+- **E-06 CustomEventTime** (önceki dalda): donor cpp + header alındı; 11 event-yazıcı
+  dosya (ChaosCastle, DevilSquare, EventTvT, IllusionTemple, CustomQuiz,
+  CustomEventDrop, CustomOnlineLottery, CustomArena, InvasionManager, ReiDoMU,
+  BloodCastle) CEventName hattına geçti; ServerDisplayer painter'ları donor hattında.
+- **E-02 BotAlchemist:** donor taban (933 satır) + canlı `WcoinC/WcoinP` kanıtıyla
+  Coin1/Coin2 alanları (bizim PCPoints hattı kaldırıldı); canlı `BotAlchemist data
+  load error %s` koruması 3 hata yoluna eklendi; canlı CongHuong.txt deploy'a
+  kopyalandı; header donör struct'ına geçirildi + `class CItem;` ileri-bildirim.
+- **E-04 ChangeClass:** canlı exe `SPK\ChangeClass.xml` VAR / `ChangeClass.ini`
+  YOK → pugixml LoadXML (Enable/Coin + 3 Msg), ini hattı kaldırıldı;
+  ClearMasterChangeClass adımı çıkarıldı; geçersiz ClassNum koruması (Msg Index=2);
+  canlı `[ChangeClass] Config Saved & Reloaded` logu eklendi; `[CommandChangeClass]`
+  logu zaten bizdeydi (CommandManager:3228, canlı formatıyla birebir).
+- **E-09 OfflineMode (somut kısım):** canlıda hiç bulunmayan 7 notice yorumlandı
+  (`[Helper] OfflineMode Disable` + 6× `[OfflineMode] Don't...` — kısıt return'leri
+  korundu); `OnlineRewardOfflineSystems` config anahtarı eklendi (canlı exe kanıtlı,
+  donor deseni; kullanım OnlineReward sistemiyle 2c). Donor taban farkları (RenderAttack
+  distance6→8/flagwalk, PickUP 153 satır, Start close-mekanizması GCCloseClientSend)
+  **2c'ye** — gerekçe: IsFakeOnline (12×) + InSafeZone + RenderAutoPote/CG_OFFMODE
+  eklerimiz donor'da yok, donor taban bunları silerdi; davranışı canlı reverse belirler.
+- **E-11 ThuMuaDoExc:** Read XML'den **canlı TXT'ye çevrildi** (donör taban + canlı
+  3-bölüm şeması 0=NPC/1=Allow/2=Reward; donor'daki ChangeColorName/Body/GP
+  kolonları canlıda olmadığı için atlandı; hata stringi `ThuMuaDoExc error: Index %d
+  out of range!` canlı birebir); donor **Alchemy** algoritması + TradeOk bağlantısı
+  (XuLyItemThuMua katmanı korundu — pasif); `GP` alanı eklendi (0 okunur);
+  4 log sessizleştirildi (canlıda `[BotThuMua]`/`[ThuMuaEx]`/`[BotThuMuaDoExc]` YOK);
+  canlı ThuMuaDoExc.txt (554 B) deploy'a kopyalandı.
+- **E-01 BossGuild (somut kısım):** canlı exe `Event\BossGuild.xml` (duz klasor)
+  → ServerInfo yolu buna çevrildi (eski `Event\BossGuild\BossGuild.xml` canlıda YOK);
+  deploy dosyası canlıyla birebir doğrulandı (2739 B, CR hariç). HandleBossKill/skor/
+  ödül yeniden yazımı **2c'de** (docs/09 §4 zaten 2c diyor).
+- **LTCG notu:** `BotAlchemist data load error` literal'i obj'te/iobj'de/PDB'de var
+  ama exe'de görünmüyor — 2b.2-N'de Move/Skill reload loglarında görülen aynı
+  artımlı-LTCG string artefaktı (kod sağlam, exe-string kanıtı obj düzeyinde).
+
+**Doğrulama** — GS derlemesi temiz (full rebuild 12:53 + artırımlar) → son exe
+**10.786.304 B (13:47)**. Exe string testleri: `SPK\ChangeClass.xml` ✓,
+`[ChangeClass] Config Saved & Reloaded` ✓, `ThuMuaDoExc error: Index %d out of
+range!` ✓, `OnlineRewardOfflineSystems` ✓, `Event\BossGuild.xml` ✓,
+`[OfflineMode] Disable in...` → 0 ✓ (sessizlik). docs/09 matris 6 satır güncellendi.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 13:50
+
+---
+
 ## [26.10.01 12:44] Disk temizliği — C: diskinde boş alan 1.6 GB → 3.7 GB
 
 **Ne yapıldı**

@@ -212,24 +212,25 @@ void CTvTEvent::MainProc()
 
 		this->m_RemainTime = (int)difftime(this->TargetTime,time(0));
 
+	// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor EventTvT birebir)
 	if(gServerInfo.m_TvTEventSwitch == 0)
 	{
-		if (gServerDisplayer.EventTvT != -1)
+		if (gEventName.GlobalRemainTime(TVT_EVENT_TIME) != -1)
 		{
-			gServerDisplayer.EventTvT = -1;
+			gEventName.GlobalRemainTime(TVT_EVENT_TIME, -1);
 		}
 	}
-	else 
+	else
 	{
 		if (this->m_State == TVT_EVENT_STATE_EMPTY)
 		{
-			gServerDisplayer.EventTvT = this->m_RemainTime;
+			gEventName.GlobalRemainTime(TVT_EVENT_TIME, this->m_RemainTime);
 		}
-		else 
+		else
 		{
-			if (gServerDisplayer.EventTvT != 0)
+			if (gEventName.GlobalRemainTime(TVT_EVENT_TIME) != 0)
 			{
-				gServerDisplayer.EventTvT = 0;
+				gEventName.GlobalRemainTime(TVT_EVENT_TIME, 0);
 			}
 		}
 	}

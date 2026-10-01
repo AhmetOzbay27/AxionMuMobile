@@ -223,34 +223,35 @@ void CIllusionTemple::MainProc() // OK
 
 		if (n==0)
 		{
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor IllusionTemple birebir)
 			if(gServerInfo.m_IllusionTempleEvent == 0)
 			{
-				if (gServerDisplayer.EventIt != -1)
+				if (gEventName.GlobalRemainTime(3) != -1)
 				{
-					gServerDisplayer.EventIt = -1;
+					gEventName.GlobalRemainTime(3, -1);
 				}
 			}
-			else 
+			else
 			{
 				if (lpLevel->State == IT_STATE_EMPTY)
 				{
-					gServerDisplayer.EventIt = lpLevel->RemainTime;
+					gEventName.GlobalRemainTime(3, lpLevel->RemainTime);
 				}
-				else 
+				else
 				{
-					if (gServerDisplayer.EventIt != 0)
+					if (gEventName.GlobalRemainTime(3) != 0)
 					{
-						gServerDisplayer.EventIt = 0;
+						gEventName.GlobalRemainTime(3, 0);
 					}
 				}
 			}
 		}
 
-		if(gServerDisplayer.EventIt > 0)
+		if(gEventName.GlobalRemainTime(3) > 0)
 		{
 			if (lpLevel->State != IT_STATE_EMPTY && lpLevel->State != IT_STATE_BLANK)
 			{
-				gServerDisplayer.EventIt = 0;
+				gEventName.GlobalRemainTime(3, 0);
 			}
 		}
 

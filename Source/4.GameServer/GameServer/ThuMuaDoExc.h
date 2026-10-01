@@ -65,6 +65,7 @@ struct botThuMuaStruct
 	int WCoinCMin;
 	int WCoinCMax;
 	int WCoinP;
+	int GP;	// E-11 (2b.2-O): donor Alchemy odul alani — canli Reward satirinda GP kolonu okunmaz (0 kalir)
 	int ChangeColorName;
 	int index;
 	BOOL OnlySameType;
@@ -108,6 +109,7 @@ private:
 	int	getNumberOfExcOptions(int checksum);
 	bool AllowExc(BYTE BotNum, BYTE ExcOpt);
 	BOOL XuLyItemThuMua(int aIndex, int BotNum);
+	BYTE Alchemy(int aIndex, int BotNum);	// E-11 (2b.2-O): donor algoritma (TradeOk -> Alchemy)
 	botThuMuaStruct bot[MAX_BOTTHUMUA];
 
 	std::map<int, DoiItem> m_DoiItem;

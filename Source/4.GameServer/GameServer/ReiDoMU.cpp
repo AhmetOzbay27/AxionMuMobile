@@ -199,24 +199,25 @@ void CReiDoMU::MainProc() // OK
 
 	this->m_RemainTime = (int)difftime(this->m_TargetTime,time(0));
 
+	// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor ReiDoMU birebir)
 	if(gServerInfo.m_ReiDoMUEvent == 0)
 	{
-		if (gServerDisplayer.EventKing != -1)
+		if (gEventName.GlobalRemainTime(KING_EVENT_TIME) != -1)
 		{
-			gServerDisplayer.EventKing = -1;
+			gEventName.GlobalRemainTime(KING_EVENT_TIME, -1);
 		}
 	}
-	else 
+	else
 	{
 		if (this->m_State == REI_STATE_EMPTY)
 		{
-			gServerDisplayer.EventKing = this->m_RemainTime;
+			gEventName.GlobalRemainTime(KING_EVENT_TIME, this->m_RemainTime);
 		}
-		else 
+		else
 		{
-			if (gServerDisplayer.EventKing != 0)
+			if (gEventName.GlobalRemainTime(KING_EVENT_TIME) != 0)
 			{
-				gServerDisplayer.EventKing = 0;
+				gEventName.GlobalRemainTime(KING_EVENT_TIME, 0);
 			}
 		}
 	}
@@ -293,7 +294,7 @@ void CReiDoMU::MainProc() // OK
 					LPOBJ lpObj = &gObj[this->rank1];
 					gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(724),1,lpObj->Name,lpObj->GuildName);
 					//Reward
-					LogAdd(LOG_EVENT,"[KING OF MU] 1° %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
+					LogAdd(LOG_EVENT,"[KING OF MU] 1ï¿½ %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
 					GDSetCoinSend(lpObj->Index, this->CRewardValue1, this->CRewardValue2, this->CRewardValue3,"KingOfMu");
 					
 				}
@@ -305,7 +306,7 @@ void CReiDoMU::MainProc() // OK
 					LPOBJ lpObj = &gObj[this->rank2];
 					gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(724),2,lpObj->Name,lpObj->GuildName);
 					//Reward
-					LogAdd(LOG_EVENT,"[KING OF MU] 2° %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
+					LogAdd(LOG_EVENT,"[KING OF MU] 2ï¿½ %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
 					GDSetCoinSend(lpObj->Index, this->CRewardValue1, this->CRewardValue2, this->CRewardValue3,"KingOfMu");
 				}
 			}
@@ -316,7 +317,7 @@ void CReiDoMU::MainProc() // OK
 					LPOBJ lpObj = &gObj[this->rank3];
 					gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(724),3,lpObj->Name,lpObj->GuildName);
 					//Reward
-					LogAdd(LOG_EVENT,"[KING OF MU] 3° %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
+					LogAdd(LOG_EVENT,"[KING OF MU] 3ï¿½ %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
 					GDSetCoinSend(lpObj->Index, this->CRewardValue1, this->CRewardValue2, this->CRewardValue3,"KingOfMu");
 				}
 			}
@@ -327,7 +328,7 @@ void CReiDoMU::MainProc() // OK
 					LPOBJ lpObj = &gObj[this->rank4];
 					gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(724),4,lpObj->Name,lpObj->GuildName);
 					//Reward
-					LogAdd(LOG_EVENT,"[KING OF MU] 4° %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
+					LogAdd(LOG_EVENT,"[KING OF MU] 4ï¿½ %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
 					GDSetCoinSend(lpObj->Index, this->CRewardValue1, this->CRewardValue2, this->CRewardValue3,"KingOfMu");
 				}
 			}
@@ -338,7 +339,7 @@ void CReiDoMU::MainProc() // OK
 					LPOBJ lpObj = &gObj[this->rank5];
 					gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GetMessage(724),5,lpObj->Name,lpObj->GuildName);
 					//Reward
-					LogAdd(LOG_EVENT,"[KING OF MU] 5° %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
+					LogAdd(LOG_EVENT,"[KING OF MU] 5ï¿½ %s (Guild: %s)", lpObj->Name, lpObj->GuildName);
 					GDSetCoinSend(lpObj->Index, this->CRewardValue1, this->CRewardValue2, this->CRewardValue3,"KingOfMu");
 				}
 			}
@@ -541,12 +542,12 @@ void CReiDoMU::CommandReiDoMU(LPOBJ lpObj,char* arg) // OK
 
 	GUILD_INFO_STRUCT * lpGuildInfo	= lpObj->Guild;
 
-	if(gServerInfo.m_ReiDoMUEvent == 0) //Verifica se o evento está ativo
+	if(gServerInfo.m_ReiDoMUEvent == 0) //Verifica se o evento estï¿½ ativo
 	{
 		return;
 	}
 
-	if(this->m_Active == 0) //Verifica se o evento está em andamento
+	if(this->m_Active == 0) //Verifica se o evento estï¿½ em andamento
 	{
 		return;
 	}
@@ -563,7 +564,7 @@ void CReiDoMU::CommandReiDoMU(LPOBJ lpObj,char* arg) // OK
 		return;
 	}
 
-	if(strcmp(lpObj->GuildName,this->m_GuildOwner) == 0) //Verifica se a guild do personagem já é dona do castelo
+	if(strcmp(lpObj->GuildName,this->m_GuildOwner) == 0) //Verifica se a guild do personagem jï¿½ ï¿½ dona do castelo
 	{
 		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(507));
 		return;
@@ -575,7 +576,7 @@ void CReiDoMU::CommandReiDoMU(LPOBJ lpObj,char* arg) // OK
 		return;
 	}
 
-	if(lpObj->Map != gServerInfo.m_ReiDoMUMap || lpObj->X != gServerInfo.m_ReiDoMUCordX || lpObj->Y != gServerInfo.m_ReiDoMUCordY) //Verifica se o personagem está na coordenada correta
+	if(lpObj->Map != gServerInfo.m_ReiDoMUMap || lpObj->X != gServerInfo.m_ReiDoMUCordX || lpObj->Y != gServerInfo.m_ReiDoMUCordY) //Verifica se o personagem estï¿½ na coordenada correta
 	{
 		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(508));
 		return;	

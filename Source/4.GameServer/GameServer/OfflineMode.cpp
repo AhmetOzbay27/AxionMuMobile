@@ -70,7 +70,7 @@ void OfflineMode::Start(CG_OFFMODE_RESULT* aRecv, int aIndex)
 
 	if(gMapManager.GetMapCustomAttack(lpObj->Map) == 0 && lpObj->IsFakeOnline == 0)	// SPK (Faz 2b.2-M): CustAtt kolonu — canli donor adi
 	{
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,"[Helper] OfflineMode Disable");
+		//gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,"[Helper] OfflineMode Disable");	// E-09 (2b.2-O): canli exe'de mesaj YOK — kisit (return) korunur, duyuru sessiz
 		return;
 	}
 
@@ -83,22 +83,22 @@ void OfflineMode::Start(CG_OFFMODE_RESULT* aRecv, int aIndex)
 	switch(lpObj->Map)
 	{
 	case MAP_INDEX_CASTLESIEGE:
-		gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in Castle siege map");
+		//gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in Castle siege map");	// E-09 (2b.2-O): canli exe'de mesaj YOK — kisit (return) korunur, duyuru sessiz
 		return;
 	case MAP_INDEX_CRYWOLF_FIRSTZONE:
-		gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in Crywolf map");
+		//gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in Crywolf map");	// E-09: canli sessizlik
 		return;
 	case MAP_INDEX_CRYWOLF_SECONDZONE:
-		gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in Crywolf map");
+		//gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in Crywolf map");	// E-09: canli sessizlik
 		return;
 	case MAP_INDEX_CASTLEHUNTZONE:
-		gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in This Map");
+		//gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in This Map");	// E-09: canli sessizlik
 		return;
 	case MAP_INDEX_BALGASS_BARRACKS:
-		gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in This Map");
+		//gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in This Map");	// E-09: canli sessizlik
 		return;
 	case MAP_INDEX_BALGASS_REFUGEE:
-		gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in This Map");
+		//gNotice.GCNoticeSend(aIndex, 1, 0, 0, 0, 0, 0, "[OfflineMode] Disable in This Map");	// E-09: canli sessizlik
 		return;
 	}
 

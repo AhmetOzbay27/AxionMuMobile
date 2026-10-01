@@ -576,6 +576,7 @@
     <ClInclude Include="TeleportMarlon.h" />
     <ClInclude Include="ThemidaSDK.h" />
     <ClInclude Include="ThuMuaDoExc.h" />
+    <ClInclude Include="BotAlchemist.h" />
     <ClInclude Include="Trade.h" />
     <ClInclude Include="Union.h" />
     <ClInclude Include="UnionInfo.h" />
@@ -865,6 +866,7 @@
     <ClCompile Include="SummonScroll.cpp" />
     <ClCompile Include="TeleportMarlon.cpp" />
     <ClCompile Include="ThuMuaDoExc.cpp" />
+    <ClCompile Include="BotAlchemist.cpp" />
     <ClCompile Include="Trade.cpp" />
     <ClCompile Include="Union.cpp" />
     <ClCompile Include="UnionInfo.cpp" />

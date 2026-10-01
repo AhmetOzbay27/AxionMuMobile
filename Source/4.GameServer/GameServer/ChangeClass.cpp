@@ -24,6 +24,12 @@ cChangeClass::~cChangeClass()
 void cChangeClass::Init()
 {
 	this->m_WCoinC = 0;
+	// E-04 (2b.2-O): varsayilanlar — canli exe'de ChangeClass.ini YOK, tek konfig SPK\ChangeClass.xml
+	this->Enable = 0;
+	this->LevelStart = 400;
+	strcpy_s(this->m_MsgDisabled, "This function has been disabled");
+	strcpy_s(this->m_MsgNoCoin, "Not enough Coin to change class");
+	strcpy_s(this->m_MsgInvalidClass, "Invalid class");
 }
 
 void cChangeClass::Load(char* path)
@@ -31,6 +37,31 @@ void cChangeClass::Load(char* path)
 	this->Enable = GetPrivateProfileInt("Common", "Enable", 0, path);
 	this->m_WCoinC = GetPrivateProfileInt("Common", "WCoinC", 0, path);
 	this->LevelStart = GetPrivateProfileInt("Common", "LevelStart", 400, path);
+}
+
+void cChangeClass::LoadXML(char* path)
+{
+	pugi::xml_document file;
+	pugi::xml_parse_result res = file.load_file(path);
+	if (res.status != pugi::status_ok)
+	{
+		ErrorMessageBox("File %s load fail. Error: %s", path, res.description());
+		return;
+	}
+
+	pugi::xml_node root = file.child("SPK");
+	this->Enable = root.attribute("Enable").as_int(0);
+	this->m_WCoinC = root.attribute("Coin").as_int(0);
+
+	for (pugi::xml_node msg = root.child("Message").child("Msg"); msg; msg = msg.next_sibling("Msg"))
+	{
+		int index = msg.attribute("Index").as_int(-1);
+		if (index == 0) { strcpy_s(this->m_MsgDisabled, msg.attribute("Text").as_string()); }
+		else if (index == 1) { strcpy_s(this->m_MsgNoCoin, msg.attribute("Text").as_string()); }
+		else if (index == 2) { strcpy_s(this->m_MsgInvalidClass, msg.attribute("Text").as_string()); }
+	}
+
+	LogAdd(LOG_GREEN, "[ChangeClass] Config Saved & Reloaded");	// E-04 (2b.2-O): canli exe string birebir
 }
 
 void cChangeClass::SendData(int aIndex)
@@ -51,7 +82,7 @@ void cChangeClass::RecvChangeClass(CG_CHANGECLASS_RECV* Data, int aIndex)
 	}
 	if (!this->Enable)
 	{
-		gNotice.GCNoticeSend(aIndex, eMessageBox, 0, 0, 0, 0, 0, gMessage.GetMessage(45));
+		gNotice.GCNoticeSend(aIndex, eMessageBox, 0, 0, 0, 0, 0, this->m_MsgDisabled);
 		return;
 	}
 	if (gObj[aIndex].Type != OBJECT_USER || (gObj[aIndex].Connected != OBJECT_ONLINE))
@@ -80,12 +111,34 @@ void cChangeClass::ChangeClassCallback(LPOBJ lpObj, int Class, DWORD null, DWORD
 {
 	if (lpObj->Coin1 < gChangeClass.m_WCoinC)
 	{
-		gNotice.GCNoticeSend(lpObj->Index, 1, 0, 0, 0, 0, 0, gMessage.GetMessage(2021), gChangeClass.m_WCoinC);
+		gNotice.GCNoticeSend(lpObj->Index, 1, 0, 0, 0, 0, 0, gChangeClass.m_MsgNoCoin);
 		return;
 	}
 	// ----
 
 	gChangeClass.ChangeClass(lpObj, Class);
+}
+
+void cChangeClass::ClearMasterChangeClass(LPOBJ lpObj)
+{
+	// E-04 (2b.2-O): canli ClearMasterChangeClass adimi — master skill tree sifirlama bloku
+	lpObj->MasterExperience = 0;
+	lpObj->MasterNextExperience = gMasterSkillTree.GetMasterLevelExpTlbInfo(lpObj->MasterExperience + 1);
+	lpObj->MasterPoint = lpObj->MasterLevel - 1;
+
+	for (int n = 0; n < MAX_SKILL_LIST; n++)
+	{
+		lpObj->Skill[n].Clear();
+	}
+
+	for (int n = 0; n < MAX_MASTER_SKILL_LIST; n++)
+	{
+		lpObj->MasterSkill[n].Clear();
+	}
+
+	gMasterSkillTree.GCMasterSkillListSend(lpObj->Index);
+	gSkillManager.GCSkillListSend(lpObj, 0);
+	gMasterSkillTree.GCMasterInfoSend(lpObj);
 }
 
 void cChangeClass::ChangeClass(LPOBJ lpObj, int Class)
@@ -114,27 +167,16 @@ void cChangeClass::ChangeClass(LPOBJ lpObj, int Class)
 	case 96:
 		NextClass = CLASS_RF;
 		break;
+	default:
+		// E-04 (2b.2-O): gecersiz ClassNum — canli XML Msg Index=2
+		gNotice.GCNoticeSend(lpObj->Index, eMessageBox, 0, 0, 0, 0, 0, gChangeClass.m_MsgInvalidClass);
+		return;
 	}
 
 	lpObj->Level = this->LevelStart;
 	lpObj->Experience = 0;
-	lpObj->MasterExperience = 0;
-	lpObj->MasterNextExperience = gMasterSkillTree.GetMasterLevelExpTlbInfo(lpObj->MasterExperience + 1);
-	lpObj->MasterPoint = lpObj->MasterLevel - 1;
 
-	for (int n = 0; n < MAX_SKILL_LIST; n++)
-	{
-		lpObj->Skill[n].Clear();
-	}
-
-	for (int n = 0; n < MAX_MASTER_SKILL_LIST; n++)
-	{
-		lpObj->MasterSkill[n].Clear();
-	}
-
-	gMasterSkillTree.GCMasterSkillListSend(lpObj->Index);
-	gSkillManager.GCSkillListSend(lpObj, 0);
-	gMasterSkillTree.GCMasterInfoSend(lpObj);
+	this->ClearMasterChangeClass(lpObj);
 
 	gCashShop.GDCashShopSubPointSaveSend(lpObj->Index, 0, gChangeClass.m_WCoinC, 0, 0,0,"ChangeClass");
 	gCashShop.CGCashShopPointRecv(lpObj->Index);

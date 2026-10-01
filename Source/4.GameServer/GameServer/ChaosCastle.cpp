@@ -208,34 +208,35 @@ void CChaosCastle::MainProc() // OK
 
 		if (n==0)
 		{
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor ChaosCastle birebir)
 			if(gServerInfo.m_ChaosCastleEvent == 0)
 			{
-				if (gServerDisplayer.EventCc != -1)
+				if (gEventName.GlobalRemainTime(2) != -1)
 				{
-					gServerDisplayer.EventCc = -1;
+					gEventName.GlobalRemainTime(2, -1);
 				}
 			}
-			else 
+			else
 			{
 				if (lpLevel->State == CC_STATE_EMPTY)
 				{
-					gServerDisplayer.EventCc = lpLevel->RemainTime;
+					gEventName.GlobalRemainTime(2, lpLevel->RemainTime);
 				}
-				else 
+				else
 				{
-					if (gServerDisplayer.EventCc != 0)
+					if (gEventName.GlobalRemainTime(2) != 0)
 					{
-						gServerDisplayer.EventCc = 0;
+						gEventName.GlobalRemainTime(2, 0);
 					}
 				}
 			}
 		}
 
-		if(gServerDisplayer.EventCc > 0)
+		if(gEventName.GlobalRemainTime(2) > 0)
 		{
 			if (lpLevel->State != CC_STATE_EMPTY && lpLevel->State != CC_STATE_BLANK)
 			{
-				gServerDisplayer.EventCc = 0;
+				gEventName.GlobalRemainTime(2, 0);
 			}
 		}
 
@@ -1699,7 +1700,7 @@ void CChaosCastle::CGChaosCastleEnterRecv(PMSG_CHAOS_CASTLE_ENTER_RECV* lpMsg,in
 	gItemManager.InventoryDelItem(aIndex,lpMsg->slot);
 	gItemManager.GCItemDeleteSend(aIndex,lpMsg->slot,1);
 
-	gEffectManager.ClearAllEffect(lpObj); //Xóa Buff
+	gEffectManager.ClearAllEffect(lpObj); //Xï¿½a Buff
 
 	DataSend(aIndex,(BYTE*)&pMsg,pMsg.header.size);
 

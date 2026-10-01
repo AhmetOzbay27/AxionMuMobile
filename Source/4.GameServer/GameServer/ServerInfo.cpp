@@ -144,6 +144,7 @@
 #include "BossGuild.h"
 #include "CBHuyDongExc.h"
 #include "ThuMuaDoExc.h"
+#include "BotAlchemist.h"	// E-02 (2b.2-O): BotAlchemist CongHuong.txt hatti (donor ServerInfo:149,914)
 #if (CongHuongV2)
 #include "CBCongHuong.h"
 #endif
@@ -431,7 +432,7 @@ void CServerInfo::ReadCustomInfo() // OK
 
 	gCustomStartItem.Load(gPath.GetFullPath("Custom\\CustomStartItem.txt"));
 
-	gChangeClass.Load(gPath.GetFullPath("Custom\\ChangeClass.ini"));
+	gChangeClass.LoadXML(gPath.GetFullPath("SPK\\ChangeClass.xml"));	// E-04 (2b.2-O): canli exe'de ChangeClass.ini YOK, SPK\ChangeClass.xml VAR
 
 #if(DANH_HIEU_NEW)
 	//	gDanhHieu.Load();
@@ -444,10 +445,11 @@ void CServerInfo::ReadCustomInfo() // OK
 	gBCustomItemBank.Load(gPath.GetFullPath("Custom\\CustomItemBank.xml"));
 #endif
 
-#if(CB_NEWQUESTFF)
-	gCB_NewQuest.LoadData(gPath.GetFullPath("Custom\\NewQuest.txt"));
+#if(CB_NEWQUESTFF)		gCB_NewQuest.LoadData(gPath.GetFullPath("Custom\\NewQuest.txt"));
 #endif
-	gCustomEventTime.LoadFileXML(gPath.GetFullPath("Custom\\CustomEventTime.xml"));
+	// E-06 (Faz 2b.2-O): CustomEventTime.xml hatti kaldirildi — event listesi
+	// canli SPK hattinda CEventName/EventName.xml uzerinden (ServerInfo gEventName.OpenFile)
+
 
 	gCustomNoticeDrop.Load(gPath.GetFullPath("Custom\\CustomNoticeItem.txt"));
 
@@ -547,7 +549,7 @@ void CServerInfo::ReadEventInfo() // OK
 	gRaklion.SetState(RAKLION_STATE_END);
 
 #if(BOSS_GUILD == 1)
-	gBossGuild.Load(gPath.GetFullPath("Event\\BossGuild\\BossGuild.xml"));
+	gBossGuild.Load(gPath.GetFullPath("Event\\BossGuild.xml"));	// E-01 (2b.2-O): canli exe string 'Event\BossGuild.xml' (duz klasor — bizim eski Event\BossGuild\BossGuild.xml yolu canlida YOK)
 	gBossGuild.Init();
 #endif
 
@@ -844,6 +846,11 @@ void CServerInfo::ReloadBotInfo() // OK
 #if(CB_BOTTRADE)
 	gCB_BotTrader.LoadXML(gPath.GetFullPath("Custom\\BotSystem\\BotTrader.xml"));
 	gCB_BotTrader.MakeBot();
+#endif
+
+#if(BOT_ALCHEMIST == 1)
+	BotAlchemist.Read(gPath.GetFullPath("Custom\\BotSystem\\CongHuong.txt"));	// E-02 (2b.2-O): donor ServerInfo:914 — canlı BotAlchemist CongHuong.txt okur
+	BotAlchemist.MakeBot();
 #endif
 
 	LogAdd(LOG_GREEN,"[ReadBotInfo] BotSystem loaded successfully");
@@ -3007,6 +3014,8 @@ void CServerInfo::ReadCommandInfo(char* section,char* path) // OK
 	this->m_CommandOpenWareOnlySafeZone = GetPrivateProfileInt(section,"CommandOpenWareOnlySafeZone",0,path);
 
 	this->m_CommandChangeClassToDW = GetPrivateProfileInt(section,"CommandChangeClassToDW",0,path);
+
+	this->m_OnlineRewardOfflineSystems = GetPrivateProfileInt(section,"OnlineRewardOfflineSystems",0,path);	// E-09 (2b.2-O): canli exe string kaniti (donor deseni)
 
 	this->m_CommandChangeClassToDK = GetPrivateProfileInt(section,"CommandChangeClassToDK",0,path);
 

@@ -1,0 +1,21 @@
+//=======================================================
+// NPC Thu Mua Do Exc
+//=======================================================
+
+//===== Section 0: NPC Info =============================
+//BotIndex	Class	Enabled	Rate	Name		Map	X	Y	Dir
+0
+0		738	0	100	"ThuMuaExl"	0	130	129	3
+end
+
+//===== Section 1: Allow Options ========================
+//BotIndex	AllowLevel	AllowOpt	AllowLuck	AllowSkill	AllowExc
+1
+0		0		0		0		0		0
+end
+
+//===== Section 2: Reward ===============================
+//BotIndex	OnlyVip		WCoinMin	WCoinMax	WCP
+2
+0		0		0		100		0
+end

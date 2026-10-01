@@ -249,34 +249,35 @@ void CBloodCastle::MainProc() // OK
 
 		if (n==0)
 		{
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor BloodCastle birebir; eski gServerDisplayer.EventBc hatti kaldirildi)
 			if(gServerInfo.m_BloodCastleEvent == 0)
 			{
-				if (gServerDisplayer.EventBc != -1)
+				if (gEventName.GlobalRemainTime(0) != -1)
 				{
-					gServerDisplayer.EventBc = -1;
+					gEventName.GlobalRemainTime(0, -1);
 				}
 			}
-			else 
+			else
 			{
 				if (lpLevel->State == BC_STATE_EMPTY)
 				{
-					gServerDisplayer.EventBc = lpLevel->RemainTime;
+					gEventName.GlobalRemainTime(0, lpLevel->RemainTime);
 				}
-				else 
+				else
 				{
-					if (gServerDisplayer.EventBc != 0)
+					if (gEventName.GlobalRemainTime(0) != 0)
 					{
-						gServerDisplayer.EventBc = 0;
+						gEventName.GlobalRemainTime(0, 0);
 					}
 				}
 			}
 		}
 
-		if(gServerDisplayer.EventBc > 0)
+		if (gEventName.GlobalRemainTime(0) > 0)
 		{
 			if (lpLevel->State != BC_STATE_EMPTY && lpLevel->State != BC_STATE_BLANK)
 			{
-				gServerDisplayer.EventBc = 0;
+				gEventName.GlobalRemainTime(0, 0);
 			}
 		}
 

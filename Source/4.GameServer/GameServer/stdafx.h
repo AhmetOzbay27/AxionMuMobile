@@ -99,6 +99,7 @@ extern int Conectar;
 #define ACHERON_GUARDIAN	 2
 
 #define BOT_BUFFER			 1
+#define BOT_ALCHEMIST		 1	// E-02 (2b.2-O): canli map'te ObjBotAlchemist VAR (12 sembol) — CongHuong.txt hatti aktif
 
 #define ARCA_WAR			 2	// Mix nomas!!
 #define GOLDEN_ARCHER		 2	// 

@@ -202,26 +202,27 @@ void CCustomEventDrop::MainProc() // OK
 
 			lpInfo->RemainTime = (int)difftime(lpInfo->TargetTime,time(0));
 
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor CustomEventDrop birebir)
 			if(this->m_CustomEventDropSwitch == 0)
 			{
-				if (gServerDisplayer.EventDrop != -1)
+				if (gEventName.GlobalRemainTime(DROP_EVENT_TIME) != -1)
 				{
-					gServerDisplayer.EventDrop = -1;
+					gEventName.GlobalRemainTime(DROP_EVENT_TIME, -1);
 				}
 			}
-			else 
+			else
 			{
-				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gServerDisplayer.EventDrop || gServerDisplayer.EventDrop <= 0))
+				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gEventName.GlobalRemainTime(DROP_EVENT_TIME) || gEventName.GlobalRemainTime(DROP_EVENT_TIME) <= 0))
 				{
 					if (lpInfo->State == CUSTOM_EVENT_DROP_STATE_EMPTY)
 					{
-						gServerDisplayer.EventDrop = lpInfo->RemainTime;
+						gEventName.GlobalRemainTime(DROP_EVENT_TIME, lpInfo->RemainTime);
 					}
-					else 
+					else
 					{
-						if (gServerDisplayer.EventDrop != 0)
+						if (gEventName.GlobalRemainTime(DROP_EVENT_TIME) != 0)
 						{
-							gServerDisplayer.EventDrop = 0;
+							gEventName.GlobalRemainTime(DROP_EVENT_TIME, 0);
 						}
 					}
 				}

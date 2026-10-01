@@ -1,6 +1,7 @@
 
-
 #if (BOT_ALCHEMIST == 1)
+
+class CItem;	// E-02 (2b.2-O): donor user.h zinciri yerine ileri-bildirim (tanim stdafx->Item.h)
 
 #define MAX_BOTALCHEMIST	30
 
@@ -9,7 +10,6 @@ struct BotAlchemistBodyItems
 	int num;
 	int level;
 	int opt;
-	int IsMuun;
 	bool Enabled;
 };
 
@@ -17,25 +17,24 @@ struct botAlchemistStruct
 {
 	int index;
 	BYTE Class;
-	int OnlyVip;
+	BOOL OnlyVip;
+	int Coin1;
 	int Zen;
-	int PCPoints;
-	int ContributionGens;
-	int ActiveGensFamily;
+	int Coin2;
+	int GensFamily;
+	BYTE Rate;
 	BOOL OnlySameType;
 	BOOL OnlyLowerIndex;
 	BOOL AcceptAncient;
+	int ChangeColorName;
 	BYTE MaxLevel;
 	BYTE MaxExc;
-	BYTE Rate;
 	char Name[11];
 	BYTE Map;
 	BYTE X;
 	BYTE Y;
 	BYTE Dir;
-	int GensFamily;
 	bool Enabled;
-	int ChangeColorName;
 	BotAlchemistBodyItems body[9];
 	//-
 	BOOL AllowLevel;
@@ -52,15 +51,16 @@ public:
 	void Read(char * FilePath);
 	void MakeBot();
 	int GetBotIndex(int aIndex);
-	BOOL IsInTrade(int BotIndex);
+	BOOL IsInTrade(int aIndex);
 	BOOL TradeOpen(int index, int nindex);
 	void TradeOk(int aIndex);
 	void TradeCancel(int aIndex);
-
+	BYTE gObjInventoryInsertItemPos(int aIndex, CItem item, int pos, BOOL RequestCheck);
 private:
 	bool Enabled;
+	int getNumberOfExcOptions(int checksum);
 	bool AllowExc(BYTE BotNum, BYTE ExcOpt);
-	BYTE Alchemy(int aIndex,int BotNum);
+	BYTE Alchemy(int aIndex, int BotNum);
 	botAlchemistStruct bot[MAX_BOTALCHEMIST];
 };
 extern ObjBotAlchemist BotAlchemist;

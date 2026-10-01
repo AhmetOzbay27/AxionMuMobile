@@ -195,26 +195,27 @@ void CCustomQuiz::MainProc() // OK
 
 			lpInfo->RemainTime = (int)difftime(lpInfo->TargetTime,time(0)); 
 
+			// E-06 (Faz 2b.2-O): EventTime verisi CEventName uzerinden (donor CustomQuiz birebir)
 			if(gServerInfo.m_CustomQuizSwitch == 0)
 			{
-				if (gServerDisplayer.EventCustomQuiz != -1)
+				if (gEventName.GlobalRemainTime(QUIZ_EVENT_TIME) != -1)
 				{
-					gServerDisplayer.EventCustomQuiz = -1;
+					gEventName.GlobalRemainTime(QUIZ_EVENT_TIME, -1);
 				}
 			}
-			else 
+			else
 			{
-				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gServerDisplayer.EventCustomQuiz || gServerDisplayer.EventCustomQuiz <= 0))
+				if (lpInfo->RemainTime >= 0 && (lpInfo->RemainTime < gEventName.GlobalRemainTime(QUIZ_EVENT_TIME) || gEventName.GlobalRemainTime(QUIZ_EVENT_TIME) <= 0))
 				{
 					if (lpInfo->State == CUSTOM_QUIZ_STATE_EMPTY)
 					{
-						gServerDisplayer.EventCustomQuiz = lpInfo->RemainTime;
+						gEventName.GlobalRemainTime(QUIZ_EVENT_TIME, lpInfo->RemainTime);
 					}
-					else 
+					else
 					{
-						if (gServerDisplayer.EventCustomQuiz != 0)
+						if (gEventName.GlobalRemainTime(QUIZ_EVENT_TIME) != 0)
 						{
-							gServerDisplayer.EventCustomQuiz = 0;
+							gEventName.GlobalRemainTime(QUIZ_EVENT_TIME, 0);
 						}
 					}
 				}
