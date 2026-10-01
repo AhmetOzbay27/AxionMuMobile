@@ -7,6 +7,58 @@
 
 ---
 
+## [26.10.01 07:40] 2b.2-M ek dalga — MapManager zinciri donor'dan alındı, CustomPick tam donör oldu (pano önerisi)
+
+**Ne yapıldı**
+- Pano önerisi "MapManager zincirini al (CustomPick'i açar)" uygulandı — dalga 1'de
+  gerekçeli korunan MapManager bağımlılığı kapatıldı.
+- **MapManager.h:** donor birebir alındı — struct'a `CustomStore/CustomPick/
+  PkDropItem/DeathGate/AllowTradeSafe` eklendi (`DisableCustomAttack` →
+  `CustomAttack` ad değişimi), 6 getter + `CheckMap` declare. Bizim SPK
+  `GetMapNonPK(index,obj,target)` overload declare'ı korundu; donor header'da
+  LPOBJ bilinmediği için `#include "User.h"` SPK notuyla geri geldi (ilk
+  derleme C2061 yakaladı).
+- **MapManager.cpp:** donor birebir alındı — getter gövdeleri
+  (GetMapCustomAttack/Store/Pick/PkDropItem/DeathGate(default 17)/
+  AllowTradeSafe/PartyEnable) + CheckMap. İki SPK adaptasyonu:
+  1. SPK `GetMapNonPK(index,LPOBJ,LPOBJ)` gövdesi (gPKFree PK-zona zinciri,
+     Attack.cpp ×4 + GensSystem.cpp ×1 çağrıcı) HEAD'den çıkarılıp donor
+     cpp'e geri eklendi + `#include "CustomPKFree.h"`.
+  2. **Load canlı 16-kolon sırasına adapte edildi:** canlı
+     `Sub-1\Data\MapManager.txt` başlığı `… CustAtt CustStore CustPick PkDrop
+     Trade DeathGate "Name"`; donor sırası `…PkDrop DeathGate AllowTrade
+     AllowTradeSafe PartyEnable` ile desync olurdu → Load: CustAtt/Store/
+     Pick/PkDrop → AllowTrade → DeathGate; `AllowTradeSafe=0`, `PartyEnable=1`
+     sabit (canlıda kolon yok). Canlı NonPK kolonu `*` = −1
+     (MemScript.cpp:196 GetTokenNumber) → `==-1 ? gServerInfo.m_NonPK` global
+     zinciri aynen çalışır.
+- **CustomPick.cpp:** donor birebir alındı — `OnPickClose` refactor (pickup
+  sıfırlama tekrarı tek metoda), `TradeDuel` kontrolleri,
+  `GetMapCustomPick` harita gate'i. Tek SPK rename: 2× `GlobalText(36)` →
+  `GetMessage(36)` (canlı exe kanıtı; 754/753/752/659 donor haliyle —
+  Message.h:20 alias zararsız).
+- **CustomAttack.cpp:81 + OfflineMode.cpp:71:** `GetMapDisableCustomAttack` →
+  `GetMapCustomAttack` (CustAtt kolonunun canlı donor adı; ilk derlemede
+  yakalandı).
+- **Deploy config:** canlı `MapManager.txt` (16 kolon, 77 harita satırı,
+  `end` markırlı) `MuServer\4.GameServer\Data\` ağacına kopyalandı — eski
+  14 kolonlu dosya yeni Load ile desync olurdu.
+
+**Neden** — Canlı map obj kanıtı (CustomPick.obj ServerInfo-anahtarlı, 2b.3
+öncesi tarama) + canlı config kolonları (CustAtt/CustStore/CustPick/PkDrop/
+Trade/DeathGate — 2a.3) zincirin canlıda VAR olduğunu gösteriyordu;
+CustomPick'in donör sürümü bu zincire bağlı.
+
+**Doğrulama**
+- GS derlemesi temiz (Release_EX603|Win32, v143) → **10.775.552 B** (LTCG
+  aynı boyut; 2b.2-G finaliyle eşit) — 07:38.
+- PDB sembol doğrulaması: GetMapCustomPick ×2, GetMapCustomAttack ×2,
+  GetMapCustomStore / GetMapPkDropItem / GetMapDeathGate /
+  GetMapAllowTradeSafe ×1, OnPickClose ×2, GetMapNonPK ×8 (SPK zinciri
+  derlemede canlı).
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 07:40
+
 ## [26.10.01 07:00] Faz 2b.3 — 68 MUIG-özel modülün canlı envanterle çapraz kontrolü (docs/12)
 
 **Ne yapıldı**

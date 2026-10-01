@@ -4,10 +4,10 @@
 
 #include "stdafx.h"
 #include "MapManager.h"
+#include "CustomPKFree.h"	// SPK (Faz 2b.2-M): gPKFree PK-zona zinciri (bizim metodun bagimliligi)
 #include "MemScript.h"
 #include "ServerInfo.h"
 #include "Util.h"
-#include "CustomPKFree.h"
 
 CMapManager gMapManager;
 //////////////////////////////////////////////////////////////////////
@@ -97,11 +97,23 @@ void CMapManager::Load(char* path) // OK
 
 			#endif
 
-			info.DisableCustomAttack = lpMemScript->GetAsNumber();
+			info.CustomAttack = lpMemScript->GetAsNumber();
 
-			info.PartyEnable = lpMemScript->GetAsNumber();
+			info.CustomStore = lpMemScript->GetAsNumber();
+
+			info.CustomPick = lpMemScript->GetAsNumber();
+
+			info.PkDropItem = lpMemScript->GetAsNumber();
+
+			// SPK (Faz 2b.2-M) canli MapManager.txt kolon sirasi: ... CustAtt CustStore CustPick PkDrop Trade(AllowTrade) DeathGate "Name"
 			info.AllowTrade = lpMemScript->GetAsNumber();
-			
+
+			info.DeathGate = lpMemScript->GetAsNumber();
+
+			info.AllowTradeSafe = 0;	// SPK: canli dosyada kolon yok (donor sirasindaki fazlalik); getter 0 dondurur
+
+			info.PartyEnable = 1;	// SPK: canli dosyada kolon yok; parti her haritada acik (bizim onceki 12-kolon yuklemiyle ayni etki)
+
 			strcpy_s(info.Name,lpMemScript->GetAsString());
 
 			this->m_MapManagerInfo.insert(std::pair<int,MAP_MANAGER_INFO>(info.Index,info));
@@ -140,6 +152,7 @@ int CMapManager::GetMapNonPK(int index,LPOBJ lpObj,LPOBJ lpTarget) // OK
 	}
 }
 
+// SPK (Faz 2b.2-C korunudu; 2b.2-M'de geri eklendi): canli GetEngine/Axion'da gPKFree PK-zona kontrolu Attack zincirinde aktif
 int CMapManager::GetMapNonPK(int index) // OK
 {
 	std::map<int,MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
@@ -294,7 +307,7 @@ int CMapManager::GetMapGensBattle(int index) // OK
 	}
 }
 
-int CMapManager::GetMapDisableCustomAttack(int index) // OK
+int CMapManager::GetMapCustomAttack(int index) // OK
 {
 	std::map<int,MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
 
@@ -304,8 +317,108 @@ int CMapManager::GetMapDisableCustomAttack(int index) // OK
 	}
 	else
 	{
-		return ((it->second.DisableCustomAttack==-1)?0:it->second.DisableCustomAttack);
+		return ((it->second.CustomAttack==-1)?0:it->second.CustomAttack);
 	}
+}
+
+int CMapManager::GetMapCustomStore(int index) // OK
+{
+	std::map<int,MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if(it == this->m_MapManagerInfo.end())
+	{
+		return 0;
+	}
+	else
+	{
+		return ((it->second.CustomStore==-1)?0:it->second.CustomStore);
+	}
+}
+
+int CMapManager::GetMapCustomPick(int index) // OK
+{
+	std::map<int,MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if(it == this->m_MapManagerInfo.end())
+	{
+		return 0;
+	}
+	else
+	{
+		return ((it->second.CustomPick==-1)?0:it->second.CustomPick);
+	}
+}
+
+int CMapManager::GetMapPkDropItem(int index) // OK
+{
+	std::map<int,MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if(it == this->m_MapManagerInfo.end())
+	{
+		return 0;
+	}
+	else
+	{
+		return ((it->second.PkDropItem==-1)?0:it->second.PkDropItem);
+	}
+}
+
+int CMapManager::GetMapDeathGate(int index) // OK
+{
+	std::map<int,MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if(it == this->m_MapManagerInfo.end())
+	{
+		return 17;
+	}
+	else
+	{
+		return ((it->second.DeathGate==-1)?17:it->second.DeathGate);
+	}
+}
+
+
+int CMapManager::GetMapAllowTrade(int index) // OK
+{
+	std::map<int, MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if (it == this->m_MapManagerInfo.end())
+	{
+		return 0;
+	}
+	else
+	{
+		return ((it->second.AllowTrade == -1) ? 0 : it->second.AllowTrade);
+	}
+}
+
+
+int CMapManager::GetMapAllowTradeSafe(int index) // OK
+{
+	std::map<int, MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if (it == this->m_MapManagerInfo.end())
+	{
+		return 0;
+	}
+	else
+	{
+		return ((it->second.AllowTradeSafe == -1) ? 0 : it->second.AllowTradeSafe);
+	}
+}
+
+
+
+int CMapManager::GetMapPartyEnable(int index) // OK
+{
+	std::map<int, MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
+
+	if (it != this->m_MapManagerInfo.end())
+	{
+		return it->second.PartyEnable;
+	}
+
+	return 0;
 }
 
 
@@ -322,27 +435,10 @@ char* CMapManager::GetMapName(int index) // OK
 		return it->second.Name;
 	}
 }
-int CMapManager::GetMapPartyEnable(int index) // OK
+
+bool CMapManager::CheckMap(int index)
 {
 	std::map<int, MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
 
-	if (it != this->m_MapManagerInfo.end())
-	{
-		return it->second.PartyEnable;
-	}
-
-	return 0;
-}
-int CMapManager::GetMapAllowTrade(int index) // OK
-{
-	std::map<int, MAP_MANAGER_INFO>::iterator it = this->m_MapManagerInfo.find(index);
-
-	if (it == this->m_MapManagerInfo.end())
-	{
-		return 0;
-	}
-	else
-	{
-		return ((it->second.AllowTrade == -1) ? 0 : it->second.AllowTrade);
-	}
+	return (it != this->m_MapManagerInfo.end());
 }

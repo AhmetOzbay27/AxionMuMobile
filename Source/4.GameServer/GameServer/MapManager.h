@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "User.h"
+#include "User.h"	// SPK (Faz 2b.2-M): LPOBJ — bizim GetMapNonPK(obj,target) overload declare'i icin (donorde include yok)
 
 struct MAP_MANAGER_INFO
 {
@@ -17,9 +17,14 @@ struct MAP_MANAGER_INFO
 	int SocketItemDrop;
 	int HelperEnable;
 	int GensBattle;
-	int DisableCustomAttack;
-	int PartyEnable;
+	int CustomAttack;
+	int CustomStore;
+	int CustomPick;
+	int PkDropItem;
+	int DeathGate;
 	int AllowTrade;
+	int AllowTradeSafe;
+	int PartyEnable;
 	char Name[32];
 };
 
@@ -29,7 +34,7 @@ public:
 	CMapManager();
 	virtual ~CMapManager();
 	void Load(char* path);
-	int GetMapNonPK(int index,LPOBJ lpObj,LPOBJ lpTarget);
+	int GetMapNonPK(int index,LPOBJ lpObj,LPOBJ lpTarget);	// SPK (Faz 2b.2-M): gPKFree PK-zona zinciri korundu (Attack.cpp x4, GensSystem.cpp x1)
 	int GetMapNonPK(int index);
 	int GetMapNonOutlaw(int index);
 	int GetMapViewRange(int index);
@@ -41,11 +46,16 @@ public:
 	int GetMapSocketItemDrop(int index);
 	int GetMapHelperEnable(int index);
 	int GetMapGensBattle(int index);
-	int GetMapDisableCustomAttack(int index);
-	int GetMapPartyEnable(int index);
+	int GetMapCustomAttack(int index);
+	int GetMapCustomStore(int index);
+	int GetMapCustomPick(int index);
+	int GetMapPkDropItem(int index);
+	int GetMapDeathGate(int index);
 	int GetMapAllowTrade(int index);
-
+	int GetMapAllowTradeSafe(int index);
+	int GetMapPartyEnable(int index);
 	char* GetMapName(int index);
+	bool CheckMap(int index);
 public:
 	std::map<int,MAP_MANAGER_INFO> m_MapManagerInfo;
 };

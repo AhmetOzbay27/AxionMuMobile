@@ -1,5 +1,11 @@
 # 10 — 2b.1 DIFF MATRİSİ: 213 ORTAK DOSYA (SPK taban ↔ MUIG donor)
 
+> **2b.2-M ek dalga (01.10.2026 07:40):** MapManager.cpp/h G2 "korundu" kararı
+> tersine döndü — donor alındı (SPK GetMapNonPK(obj,target) zinciri + canlı
+> 16-kolon Load adaptasyonu ile), CustomPick.cpp tam donör oldu,
+> CustomAttack/OfflineMode CustAtt getter adına geçti. Detay: CHANGELOG
+> 2b.2-M kaydı.
+
 > Tarih: 30.09.2026. Kapsam: 2a.1 envanterindeki 218 ortak dosyadan 5'i
 > donorde bulunmadığı için (BossGuild, ChangeClass, CustomPet, FakeOnline,
 > ZenDrop — bunlar 09 raporunun E-kalemleri) çıkarıldı; **213 gerçek ortak

@@ -392,35 +392,25 @@ void CCustomPick::PickProc(LPOBJ lpObj) // OK
 		return;
 	}
 
-	if(gMap[lpObj->Map].CheckAttr(lpObj->X,lpObj->Y,1) != 0)
+	if (gMapManager.GetMapCustomPick(lpObj->Map) == 0)
 	{
-		lpObj->PickupEnable = 0;
-		for (int i = 0; i < MAX_CUSTOMPICK; i++)
-		{
-			lpObj->Pickup[i] = -1;
-		}
-
-		lpObj->PickupExc	= 0;
-		lpObj->PickupSocket = 0;
-		lpObj->PickupSetItem = 0;
-
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(754));
+		this->OnPickClose(lpObj);
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(754));
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(36));
 		return;
 	}
 
-	if(lpObj->Interface.use != 0 || lpObj->Teleport != 0 || lpObj->DieRegen != 0 || lpObj->PShopOpen != 0)
+	if(gMap[lpObj->Map].CheckAttr(lpObj->X,lpObj->Y,1) != 0)
 	{
-		lpObj->PickupEnable = 0;
-		for (int i = 0; i < MAX_CUSTOMPICK; i++)
-		{
-			lpObj->Pickup[i] = -1;
-		}
+		this->OnPickClose(lpObj);
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(754));
+		return;
+	}
 
-		lpObj->PickupExc	= 0;
-		lpObj->PickupSocket = 0;
-		lpObj->PickupSetItem = 0;
-
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(754));
+	if(lpObj->Interface.use != 0 || lpObj->TradeDuel != 0 || lpObj->Teleport != 0 || lpObj->DieRegen != 0 || lpObj->PShopOpen != 0)
+	{
+		this->OnPickClose(lpObj);
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(754));
 		return;
 	}
 
@@ -433,9 +423,15 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 {
 #if GAMESERVER_CLIENTE_UPDATE >= 5
 
-	if(lpObj->Interface.use != 0 || lpObj->Teleport != 0 || lpObj->DieRegen != 0 || lpObj->PShopOpen != 0)
+	if(lpObj->Interface.use != 0 ||	lpObj->TradeDuel != 0 || lpObj->Teleport != 0 || lpObj->DieRegen != 0 || lpObj->PShopOpen != 0)
 	{
-		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(659));
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(659));
+		return 0;
+	}
+
+	if (gMapManager.GetMapCustomPick(lpObj->Map) == 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(36));
 		return 0;
 	}
 
@@ -448,7 +444,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		if (lpObj->PickupExc == 1)
 		{
 			lpObj->PickupExc = 0;
-		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(753),mode);
+		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(753),mode);
 
 			gLog.Output(LOG_COMMAND,"[CustomPick][%s][%s] - (Disable: %s)",lpObj->Account,lpObj->Name,mode);
 			return 0;
@@ -456,7 +452,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		else
 		{
 			lpObj->PickupExc = 1;
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(752),mode);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(752),mode);
 
 			lpObj->PickupEnable = 1;
 
@@ -470,7 +466,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		if (lpObj->PickupSocket == 1)
 		{
 			lpObj->PickupSocket = 0;
-		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(753),mode);
+		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(753),mode);
 
 			gLog.Output(LOG_COMMAND,"[CustomPick][%s][%s] - (Disable: %s)",lpObj->Account,lpObj->Name,mode);
 			return 0;
@@ -478,7 +474,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		else
 		{
 			lpObj->PickupSocket = 1;
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(752),mode);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(752),mode);
 
 			lpObj->PickupEnable = 1;
 
@@ -492,7 +488,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		if (lpObj->PickupSetItem == 1)
 		{
 			lpObj->PickupSetItem = 0;
-		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(753),mode);
+		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(753),mode);
 
 			gLog.Output(LOG_COMMAND,"[CustomPick][%s][%s] - (Disable: %s)",lpObj->Account,lpObj->Name,mode);
 			return 0;
@@ -500,7 +496,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		else
 		{
 			lpObj->PickupSetItem = 1;
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(752),mode);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(752),mode);
 
 			lpObj->PickupEnable = 1;
 
@@ -522,7 +518,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		if (lpObj->Pickup[CustomPickInfo.Index] == ((CustomPickInfo.Cat*512)+CustomPickInfo.Item))
 		{
 			lpObj->Pickup[CustomPickInfo.Index] = -1;
-		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(753),mode);
+		    gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(753),mode);
 
 			gLog.Output(LOG_COMMAND,"[CustomPick][%s][%s] - (Disable: %s)",lpObj->Account,lpObj->Name,mode);
 			return 0;
@@ -530,7 +526,7 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 		else
 		{
 			lpObj->Pickup[CustomPickInfo.Index] = ((CustomPickInfo.Cat*512)+CustomPickInfo.Item);
-			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(752),mode);
+			gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(752),mode);
 
 			lpObj->PickupEnable = 1;
 
@@ -544,4 +540,17 @@ bool CCustomPick::CommandPick(LPOBJ lpObj,char* arg)
 	
 #endif
 
+}
+
+void CCustomPick::OnPickClose(LPOBJ lpObj) // OK
+{
+	lpObj->PickupEnable = 0;
+	lpObj->PickupExc	= 0;
+	lpObj->PickupSocket = 0;
+	lpObj->PickupSetItem = 0;
+
+	for (int i = 0; i < MAX_CUSTOMPICK; i++)
+	{
+		lpObj->Pickup[i] = -1;
+	}
 }

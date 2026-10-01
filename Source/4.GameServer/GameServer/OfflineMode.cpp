@@ -68,7 +68,7 @@ void OfflineMode::Start(CG_OFFMODE_RESULT* aRecv, int aIndex)
 
 	LPOBJ lpObj = &gObj[aIndex];
 
-	if(gMapManager.GetMapDisableCustomAttack(lpObj->Map) == 0 && lpObj->IsFakeOnline == 0)
+	if(gMapManager.GetMapCustomAttack(lpObj->Map) == 0 && lpObj->IsFakeOnline == 0)	// SPK (Faz 2b.2-M): CustAtt kolonu — canli donor adi
 	{
 		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,"[Helper] OfflineMode Disable");
 		return;

@@ -43,6 +43,11 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 **Sıradaki: Faz 2c.1** — modül envanterini önceliğe dizecek (60 modül: 59 + EventGvG).
 bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 
+> **2b.2-M ek dalga (01.10.2026 07:40):** MapManager zinciri donor'dan alındı
+> (SPK GetMapNonPK zinciri + canlı 16-kolon Load adaptasyonu korunarak),
+> CustomPick.cpp tam donör oldu, canlı MapManager.txt deploy ağacına kopyalandı.
+> GS temiz → 10.775.552 B. Detay: CHANGELOG 2b.2-M.
+
 ---
 
 ## 3. KLASÖR HARİTASI

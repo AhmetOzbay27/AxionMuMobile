@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 07:00:00",
+  "updated": "2026-10-01 07:45:00",
   "note": "Bu dosyayi ajan (Buffy) gunceller. 'prompt' sohbete gonderilecek komutun ta kendisi.",
   "suggestions": [
     {
@@ -9,22 +9,16 @@
       "prompt": "2c.1'i başlat: docs/05 + docs/12'deki 60 modülü (59 + EventGvG) oyun akışı etkisine göre önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat damgalı iş emri yaz ve commit'le."
     },
     {
-      "id": "mapmanager",
-      "label": "MapManager zincirini al (CustomPick'i açar)",
-      "desc": "Canlı MapManager.txt kanıtlı (CustPick/CustStore/CustAtt/PkDrop/DeathGate kolonları) — 7 metot + Load kolonları alınınca CustomPick tam donör olabiliyor",
-      "prompt": "MapManager zincirini donörden al (GetMapCustomPick/GetMapCustomStore/GetMapCustomAttack/GetMapPkDropItem/GetMapDeathGate/GetMapAllowTradeSafe/CheckMap + Load kolonları, canlı MapManager.txt kanıtıyla), sonra CustomPick.cpp'yi tam donörden al, derle + CHANGELOG + commit."
+      "id": "gvg",
+      "label": "EventGvG'yi erken yaz (2c'nin ilk modülü olabilir)",
+      "desc": "2b.3'ün yeni keşfi: canlı ServerInfo 7 anahtar kanıtlı, bizde eksik — küçük ve sınırı belli bir event modülü, 2c için iyi bir ısınma",
+      "prompt": "EventGvG modülünü canlı kanıttan yaz: ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle + CHANGELOG + commit (2c.1 öncesi ısınma kalemi)."
     },
     {
       "id": "ekalem",
       "label": "Kalan E-kalemleri işle",
       "desc": "E-01/E-02/E-04/E-06/E-09/E-11 — docs/09 stratejileriyle, saat damgalı commit",
       "prompt": "docs/09'daki kalan E-kalemlerini (E-01 BossGuild, E-02 BotAlchemist, E-04 ChangeClass, E-06 CustomEventTime, E-09 OfflineMode, E-11 ThuMuaDoExc) stratejilerine göre işle, her kalemde derle + CHANGELOG + commit."
-    },
-    {
-      "id": "gvg",
-      "label": "EventGvG'yi erken yaz (2c'nin ilk modülü olabilir)",
-      "desc": "2b.3'ün yeni keşfi: canlı ServerInfo 7 anahtar kanıtlı, bizde eksik — küçük ve sınırı belli bir event modülü, 2c için iyi bir ısınma",
-      "prompt": "EventGvG modülünü canlı kanıttan yaz: ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle + CHANGELOG + commit (2c.1 öncesi ısınma kalemi)."
     }
   ]
 }

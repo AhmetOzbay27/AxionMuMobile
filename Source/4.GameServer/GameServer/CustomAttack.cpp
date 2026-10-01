@@ -78,7 +78,7 @@ bool CCustomAttack::CommandCustomAttack(LPOBJ lpObj,char* arg) // OK
 		return 0;
 	}
 
-	if (gMapManager.GetMapDisableCustomAttack(lpObj->Map) == 1)
+	if (gMapManager.GetMapCustomAttack(lpObj->Map) == 1)
 	{
 		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GetMessage(791));
 		return 0;
