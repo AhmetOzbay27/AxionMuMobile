@@ -7,6 +7,72 @@
 
 ---
 
+## [26.10.01 23:40] 2c.1-B2 takip — GameServer.rc "Events" menüsüne IDM_STARTGVG görsel girdisi (Start Guild vs Guild) + derleme doğrulaması
+
+**Ne yapıldı** (kullanıcı isteği: "GameServer.rc menüsüne IDM_STARTGVG görsel
+girdisini ekle (resource.h 121 hazır bekliyor) ve derleyip doğrula")
+- **Kapanan boşluk:** 2c.1-B2 turunda `IDM_STARTGVG=121` (resource.h),
+  handler ([GameServer.cpp](../Source/4.GameServer/GameServer/GameServer.cpp)
+  `case IDM_STARTGVG: gGvGEvent.StartGvG();`) ve `/startgvg` komutu
+  bağlanmıştı ama **menüde görsel girdi yoktu** — operatör GvG'yi menüden
+  başlatamıyordu (o turda "canlı rc menü girdisi sonra eklenebilir; menu
+  handler kod tarafı hazır" notu düşülmüştü).
+- **Donor karşılığı:** `New Source Code/Source/Source/GameServer/GameServer/
+  GameServer.rc:92` → `MENUITEM "Start Guild vs Guild", IDM_STARTGVG`
+  (TVT satırının hemen ardında; donor'da Quiz/King/TVT/GVG sırası aktif).
+  Metin donor'dan **birebir** alındı.
+- **Düzenleme:** [GameServer.rc](../Source/4.GameServer/GameServer/GameServer.rc)
+  `IDR_MAINFRAME` menüsü **"Events"** bloğu — satır 94
+  (`MENUITEM "Start - Loạn ChiếnPK", IDM_STARTBSV`) sonrasına **satır 95**
+  olarak eklendi; hizalama (kolon 50, IDM_STARTDROP/BSV ile aynı) korundu →
+  `MENUITEM "Start Guild vs Guild",          IDM_STARTGVG`. Bizim .rc'de
+  Quiz/King/TVT/Castle Siege/CryWolf/Loren satırları **yorumlu** olduğundan
+  yeni girdi aktif grubun son elemanı oldu (aktif Event satırları artık
+  88-95).
+- **UTF-16 güvenliği:** dosya UTF-16LE + BOM (FF FE) + CRLF yapısında;
+  ekleme node ile UTF-16 düzeyinde yapıldı, BOM (`255 254`) ve tüm satır
+  sonları korundu → 30.610 B → 30.738 B (**+128 B** = 64 UTF-16 karakter:
+  62 karakterlik satır + CRLF).
+
+**Neden** — B2'nin kapanış boşluğu: modül derlenir ve `/startgvg` ile
+çalışır durumda ama menü girdisi olmadan görünmüyordu; tek doğruluk kaynağı
+donor .rc (canlı SPK exe'sinde menü metni **YOK** — bu araç penceresi bize ait;
+canlıdan kanıt beklenmez, 2c.1-B2 notu).
+
+**Doğrulama**
+- **rc diff birebir:** HEAD rc + çalışma ağacı rc, UTF-16LE'den UTF-8'e
+  çevrilip karşılaştırıldı (CR'ler temizlenerek — ilk denemede `grep`
+  filtresi CR baytlarını düşürdüğü için tüm satırlar farklı görünmüştü;
+  araç artefaktı, dosya değil) → **`eski 471 / yeni 472` satır**;
+  GvG satırı çıkarıldığında iki dosya **birebir eşleşiyor** (`DIFF_TEMIZ`) →
+  tek-satır eklenti, başka değişiklik yok. CR bayt sayısı 471 → 472 =
+  her satır CRLF (eklenen satır dahil).
+- **Derleme:** MSBuild Release_EX603 / Win32 / v143 → **0 hata** (rc.exe
+  GameServer.rc'yi yeniden derledi; vcxproj ResourceCompile kaydı satır 886).
+- **Wide-string kanıtı (yeni exe):** `Start Guild vs Guild` UTF-16 off
+  **10.666.404**; menü sırası okuması rc ile birebir:
+  `Start - Drop` (10.666.328) → `Start - Loạn ChiếnPK` →
+  **`Start Guild vs Guild`** → `Invasion…`.
+- **Bayt-fark analizi (HEAD exe ↔ yeni exe, `cmp -l`):** farklar yalnızca
+  (1) PE zaman damgası (off 280), (2) Resource veri dizini boyutu
+  **83.792 → 83.840 (+48 B)**, (3) `.rsrc` VirtualSize `0x14750 → 0x14780`,
+  (4) debug dizini zaman damgaları (4 × 28 B, off 1.540.116+), (5) CodeView
+  PDB GUID (off 1.559.633), (6) `.rsrc` ham verisi (10.645.520-10.728.316,
+  41.908 B). **`.text` kod bölümü (1.024-1.432.575) bayt-birebir aynı** →
+  işlevsel kod değişmedi, tek değişiklik menü kaynağı.
+- **Boyut sabit kaldı (10.816.512 B) — açıklaması:** `.rsrc`
+  `SizeOfRawData 0x14800` (84.480 B) değişmedi; +48 B büyüme bölümün
+  688 B'lik hizalama dolgusuna sığdı → tüm bölüm offsetleri ve dosya
+  boyutu aynı kaldı (beklenen ~10.816.640 B gerçekleşmedi, sapma değil).
+- **Handler bağlı (B2):** menü tıklaması `gGvGEvent.StartGvG()` çağırır;
+  `GvGEvent.dat` şablonu `Switch=0` inert olduğundan event kapalı bekler
+  (beklenen davranış).
+- Geçici karşılaştırma dosyaları (`BuildLog/4GS/rc_*`) silindi (git dışı).
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 23:40
+
+---
+
 ## [26.10.01 23:24] 2c.1-B3 — ActiveInvasions canlı disasm paritesi: paketler C1 10 F3 99 / C2 F3 98, iki-sayaç döngüsü, F7 sub 0x02 liste isteği
 
 **Ne yapıldı** (kullanıcı isteği: "2c.1-B dalgasında sıradaki B3
