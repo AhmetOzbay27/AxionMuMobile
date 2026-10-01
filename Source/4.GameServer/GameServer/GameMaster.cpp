@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "GameMaster.h"
+#include "Log.h"	// Faz 2b.2-R: Reload logları
 #include "MemScript.h"
 #include "Util.h"
 
@@ -74,6 +75,39 @@ void CGameMaster::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-R: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-R: config'i yeniden yükler (canlı log deseni: '[CGameMaster]
+// GameMaster configuration reloaded'). /reload gamemaster komutu çağırır;
+// hata durumunda mevcut veriler korunur. Load m_count'u sıfırladığı için
+// boş-dosya koruması m_count ile yapılır (E-05 deseni).
+void CGameMaster::Reload() // Faz 2b.2-R
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[CGameMaster] Reload skipped - config path not set yet");
+		return;
+	}
+
+	GAME_MASTER_INFO oldInfo[MAX_GAME_MASTER];
+	int oldCount = this->m_count;
+	memcpy(oldInfo,this->m_GameMasterInfo,sizeof(oldInfo));
+
+	this->Load(this->m_Path);
+
+	if(this->m_count == 0)
+	{
+		memcpy(this->m_GameMasterInfo,oldInfo,sizeof(oldInfo));
+		this->m_count = oldCount;
+		LogAdd(LOG_RED,"[CGameMaster] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CGameMaster] GameMaster configuration reloaded");
 }
 
 void CGameMaster::SetInfo(GAME_MASTER_INFO info) // OK

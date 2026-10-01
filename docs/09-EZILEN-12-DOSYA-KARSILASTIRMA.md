@@ -242,3 +242,32 @@ E-kalem entegrasyonlarında koda yansıtılacak.
   ortak yapı — E-01 işlenirken BonusManager canlı sembolleri de taranacak.
 - `FilterRaname.cpp` (canlı yazım hatası) bu raporun kapsamı dışında; 05 §7'de
   2b.1'e bırakıldı.
+
+## 8. RELOAD AİLESİ — KALAN PARÇA (2b.2-R, 01.10.2026 18:49)
+
+2b.2-N'de "GameMaster/ExperienceTable hariç" notuyla kapatılan dal + SPK
+alt kümesi; canlı kanıtlar exe string taramasından:
+
+| Modül | Canlı log (birebir) | Canlı config | Bizim config | Durum |
+|-------|--------------------|--------------|--------------|-------|
+| GameMaster | `[CGameMaster] GameMaster configuration reloaded` | `Util\GameMaster.xml` (XML: GameMasterList/GameMaster/Character/IP) | `Util\GameMaster.txt` (MemScript) | ✅ m_Path+Reload+`/reload gamemaster`; **format farkı kalan** (xml↔txt) |
+| ExperienceTable | `[CExperienceTable] ExperienceTable configuration reloaded` | `Util\ExperienceTable.txt` | aynı | ✅ tamam (yol da birebir) |
+| AddBuff (AddBuffer) | `[SPK] AddBuff configuration saved and reloaded` | `SPK\AddBuff.txt` | aynı (E-05 hizalı) | ✅ tamam |
+| CustomMonsterSkill | `[SPK] CustomMonsterSkill configuration saved and reloaded` | `SPK\CustomMonsterSkill.txt` | `Custom\CustomMonsterSkill.txt` | ✅ m_Path+Reload+`/reload custommonsterskill`; **yol farkı kalan** (bkz. aşağı) |
+| CustomShop | `[SPK] CustomShop configuration reloaded` (nokta yok, "saved and" yok) | `SPK\CustomShop.xml` | **modül yok** | ⛔ Reload bağlanacak sınıf bizde de donor'da da YOK — sadece `m_CustomShopMessageBox` INI anahtarı var; modül portajı ayrı iş kalemi |
+| ResetChange | `[SPK] ResetChange configuration saved and reloaded` | `SPK\ResetChange.txt` | **modül yok** | ⛔ Aynı — sınıf iki tarafta da yok (canlı-özel SPK modülü); portaj ayrı iş kalemi |
+
+Notlar:
+- Canlıda `saved and reloaded` tam 4 kez geçer: CustomMonsterSkill,
+  ResetChange, AddBuff + `[EffectManagerUI] Settings saved and reloaded!`
+  (editör; kapsam dışı). Canlıda `gamemaster`/`experiencetable` komut-adı
+  stringi YOK → canlıda bu reload'lar editör-sürüklü (dosya kaydedilince
+  otomatik); bizim `/reload` dalları aynı davranışı operatöre açar (2b.2-N
+  deseni).
+- CustomMonsterSkill yol farkı bilinçli ertelendi: kod `Custom\...`
+  okumaya devam eder (deploy'da dosya orada); `SPK\` hizalaması dosya
+  taşıması gerektirdiğinden ayrı turda. GameMaster format farkı (MemScript
+  txt ↔ canlı pugixml) aynı şekilde ayrı.
+- 2b.2-N'den kalıtsal bug bu turda düzeltildi: `CNotice::Reload` geri
+  yüklemede `m_count`'u geri koymuyordu (eski veri dönse de Notice döngüsü
+  boş kalırdı). Diğer 2b.2-N modülleri konteyner-tabanlı — etkilenmedi.

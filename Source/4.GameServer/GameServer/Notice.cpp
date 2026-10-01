@@ -118,6 +118,7 @@ void CNotice::Reload() // Faz 2b.2-N
 	if(this->GetCount() == 0)
 	{
 		memcpy(this->m_NoticeInfo,oldInfo,sizeof(oldInfo));
+		this->m_count = oldCount;	// Faz 2b.2-R: 2b.2-N'de eksikti — eski veri geri yüklense de m_count=0 kalıyordu
 		LogAdd(LOG_RED,"[Notice] Reload failed - old data restored (%s)",this->m_Path);
 		return;
 	}

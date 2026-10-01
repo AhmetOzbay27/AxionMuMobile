@@ -77,7 +77,38 @@ void AddBuffer::Read(char* FilePath)
 
 	file.close();
 
+	// Faz 2b.2-R: yolu sakla (reload icin) — sadece başarılı okumada
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,FilePath);
 }
+
+// Faz 2b.2-R: config'i yeniden yükler (canlı SPK log deseni: '[SPK] AddBuff
+// configuration saved and reloaded'). /reload addbuff komutu çağırır; hata
+// durumunda mevcut veriler korunur. Read SkillCount'u sıfırladığı için
+// boş-dosya koruması SkillCount ile yapılır (E-05 deseni).
+void AddBuffer::Reload() // Faz 2b.2-R
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[SPK] AddBuff Reload skipped - config path not set yet");
+		return;
+	}
+
+	IsReadData oldData;
+	memcpy(&oldData,&this->IsReadDataX,sizeof(oldData));
+
+	this->Read(this->m_Path);
+
+	if(this->IsReadDataX.SkillCount == 0)
+	{
+		memcpy(&this->IsReadDataX,&oldData,sizeof(oldData));
+		LogAdd(LOG_RED,"[SPK] AddBuff Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[SPK] AddBuff configuration saved and reloaded");
+}
+
 bool AddBuffer::CommandAddBuff(LPOBJ lpObj)
 {
 	int TimeClick = 5 * 1000; // 5 giây

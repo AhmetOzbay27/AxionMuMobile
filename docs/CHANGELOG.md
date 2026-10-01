@@ -7,6 +7,69 @@
 
 ---
 
+## [26.10.01 18:49] 2b.2-R — Reload ailesinin kalanı: GameMaster + ExperienceTable + SPK alt kümesi (AddBuff/CustomMonsterSkill)
+
+**Ne yapıldı** (kullanıcı isteği: "Reload ailesinin kalanını uygula:
+GameMaster ve ExperienceTable'a (/reload gamemaster, /reload
+experiencetable) + SPK alt kümesine (AddBuff, CustomMonsterSkill,
+CustomShop, ResetChange — canlı 'saved and reloaded' deseni) m_Path+Reload
+ekle")
+- **Canlı kanıt (giriş):** canlı exe'de `saved and reloaded` tam 4 kez:
+  `[SPK] CustomMonsterSkill configuration saved and reloaded`, `[SPK]
+  ResetChange configuration saved and reloaded`, `[SPK] AddBuff
+  configuration saved and reloaded` (4.'sü `[EffectManagerUI]` editörü —
+  kapsam dışı) + `[SPK] CustomShop configuration reloaded` ("saved and"
+  ve nokta YOK) + `[CGameMaster] GameMaster configuration reloaded` +
+  `[CExperienceTable] ExperienceTable configuration reloaded`. Canlıda
+  `gamemaster`/`experiencetable` komut-adı stringi YOK → canlıda reload'lar
+  editör-sürüklü; bizim `/reload` dalları aynı davranışı operatöre açar
+  (2b.2-N deseni).
+- **[GameMaster.h/cpp](../Source/4.GameServer/GameServer/GameMaster.cpp):
+  `m_Path[256]` + `Load` sonunda yol saklama + `Reload()` (boş-yol koruması
+  → array+m_count yedeği → Load → boşsa geri yükle → canlı-format log).
+- **[ExperienceTable.h/cpp](../Source/4.GameServer/GameServer/
+  ExperienceTable.cpp):** aynı desen (vector yedeği, `empty()` koruması).
+- **[CustomMonsterSkill.h/cpp](../Source/4.GameServer/GameServer/
+  CustomMonsterSkill.cpp):** aynı desen (1000-eleman array yedeği; m_count
+  public üye, geri yüklemede o da dönüyor).
+- **[SPK/PC_AddBuff.h/cpp](../Source/4.GameServer/GameServer/SPK/
+  PC_AddBuff.cpp):** `m_Path[256]` private + `Read` başarılı okuma sonunda
+  yol saklar + `Reload()` (IsReadData yedeği; Read `SkillCount`'u sıfırladığı
+  için boş-koruma `SkillCount==0` ile).
+- **[CommandManager.cpp](../Source/4.GameServer/GameServer/CommandManager.cpp):**
+  `/reload` ailesine 4 dal: `gamemaster`, `experiencetable`, `addbuff`,
+  `custommonsterskill` (include'lar: ExperienceTable.h,
+  CustomMonsterSkill.h; GameMaster.h ve PC_AddBuff.h zaten vardı).
+- **2b.2-N kalıtsal bug düzeltmesi:** `CNotice::Reload` geri yüklemede
+  `m_count`'u geri koymuyordu — eski veri dönse de `MainProc` notice döngüsü
+  `m_count==0` ile ölürdü; `this->m_count = oldCount;` eklendi. Diğer
+  2b.2-N modülleri (Gate/Move/MoveSummon/ResetTable/SkillManager)
+  konteyner-tabanlı, boyut türetdiklerinden etkilenmedi.
+- **⛔ CustomShop + ResetChange:** reload bağlanacak sınıf bizde de donor'da
+  da YOK (canlı-özel SPK modülleri; bizde sadece `m_CustomShopMessageBox`
+  INI anahtarı var) — m_Path+Reload uygulanamadı; modül portajı ayrı iş
+  kalemi (docs/09 §8 tablosuna işlendi).
+- **Kalan farklar (bilinçli ertelendi, docs/09 §8):** GameMaster formatı
+  bizde MemScript txt ↔ canlı pugixml XML (`Util\GameMaster.xml`);
+  CustomMonsterSkill yolu bizde `Custom\` ↔ canlı `SPK\` (deploy'da dosya
+  `Custom\`'ta — hizalama dosya taşıması istiyor, ayrı tur).
+
+**Neden** — 2b.2-N "GameMaster/ExperienceTable hariç" notuyla kapatılan
+reload ailesinin kalan parçası; canlı 'saved and reloaded' SPK desenine
+gerçek modülü olan her sınıf bağlandı.
+
+**Doğrulama**
+- GS derlemesi temiz → **10.791.424 B (18:48)** (+2.048 B, önceki
+  10.789.376).
+- Yeni exe string taraması: 4/4 canlı log birebir VAR (`[CGameMaster]…`,
+  `[CExperienceTable]…`, `[SPK] AddBuff…saved and reloaded`, `[SPK]
+  CustomMonsterSkill…saved and reloaded`) + 4/4 komut adı VAR
+  (`gamemaster/experiencetable/addbuff/custommonsterskill`).
+- CustomShop/ResetChange kanıtı: canlı exe'de sınıf logları VAR ama
+  bizim+donor kaynak ağacında sınıf yok (grep: 0 dosya).
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 18:49
+
 ## [26.10.01 14:31] 2c.1-B2 (ısınma) — EventGvG modülü: ServerInfo 7 anahtarı + CGvGEvent iskeleti
 
 **Ne yapıldı** (kullanıcı isteği: "EventGvG modülünü canlı kanıttan yaz:

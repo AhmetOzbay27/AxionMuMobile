@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "ExperienceTable.h"
+#include "Log.h"	// Faz 2b.2-R: Reload logları
 #include "MemScript.h"
 #include "Util.h"
 
@@ -84,6 +85,35 @@ void CExperienceTable::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-R: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-R: config'i yeniden yükler (canlı log deseni: '[CExperienceTable]
+// ExperienceTable configuration reloaded'). /reload experiencetable komutu
+// çağırır; hata durumunda mevcut veriler korunur (E-05 deseni).
+void CExperienceTable::Reload() // Faz 2b.2-R
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[CExperienceTable] Reload skipped - config path not set yet");
+		return;
+	}
+
+	std::vector<EXPERIENCE_TABLE_INFO> oldInfo = this->m_ExperienceTableInfo;
+
+	this->Load(this->m_Path);
+
+	if(this->m_ExperienceTableInfo.empty())
+	{
+		this->m_ExperienceTableInfo = oldInfo;
+		LogAdd(LOG_RED,"[CExperienceTable] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CExperienceTable] ExperienceTable configuration reloaded");
 }
 
 int CExperienceTable::GetExperienceRate(LPOBJ lpObj) // OK

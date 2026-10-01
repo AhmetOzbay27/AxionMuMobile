@@ -13,6 +13,7 @@
 #include "CustomAttack.h"
 #include "CustomBuyVip.h"	// E-05 (Faz 2b.2): /reload buyvip
 #include "CustomEventDrop.h"
+#include "CustomMonsterSkill.h"	// Faz 2b.2-R: /reload custommonsterskill
 #include "CustomPick.h"
 #include "CustomQuest.h"
 #include "CustomQuiz.h"
@@ -29,6 +30,7 @@
 #include "EventQuickly.h"
 #include "EventStart.h"
 #include "EventTvT.h"
+#include "ExperienceTable.h"	// Faz 2b.2-R: /reload experiencetable
 #include "Filter.h"
 #include "FilterRename.h"
 #include "Gate.h"	// Faz 2b.2-N: /reload gate
@@ -3465,6 +3467,22 @@ bool CCommandManager::CommandReload(LPOBJ lpObj,char* arg) // OK
     else if (strcmp(name,"resettable") == 0) // Faz 2b.2-N: '[CResetTable] ResetTable configuration reloaded.' — xml yolu yedekle-geri-yükle
     {
 		gResetTable.Reload();
+    }
+    else if (strcmp(name,"gamemaster") == 0) // Faz 2b.2-R: canlı log deseni — '[CGameMaster] GameMaster configuration reloaded'
+    {
+		gGameMaster.Reload();
+    }
+    else if (strcmp(name,"experiencetable") == 0) // Faz 2b.2-R: '[CExperienceTable] ExperienceTable configuration reloaded'
+    {
+		gExperienceTable.Reload();
+    }
+    else if (strcmp(name,"addbuff") == 0) // Faz 2b.2-R: canlı SPK deseni — '[SPK] AddBuff configuration saved and reloaded'
+    {
+		gAddBuffer.Reload();
+    }
+    else if (strcmp(name,"custommonsterskill") == 0) // Faz 2b.2-R: '[SPK] CustomMonsterSkill configuration saved and reloaded'
+    {
+		gCustomMonsterSkill.Reload();
     }
     else if (strcmp(name,"all") == 0)
     {
