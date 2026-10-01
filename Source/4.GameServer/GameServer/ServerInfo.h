@@ -932,6 +932,7 @@ public:
 	int m_CommandMarryOnlyGM;
 	int m_CommandOpenWareOnlySafeZone;
 	int m_CommandChangeClassToDW;
+	int m_CommandClearMasterChangeClass;	// E-04 (2b.2-O kalan): canli Command.ini:270 'ClearMasterChangeClass' — default 0 (off)
 	int m_CommandChangeClassToDK;
 	int m_CommandChangeClassToELF;
 	int m_CommandChangeClassToMG;

@@ -3018,6 +3018,8 @@ void CServerInfo::ReadCommandInfo(char* section,char* path) // OK
 
 	this->m_CommandChangeClassToDW = GetPrivateProfileInt(section,"CommandChangeClassToDW",0,path);
 
+	this->m_CommandClearMasterChangeClass = GetPrivateProfileInt(section,"ClearMasterChangeClass",0,path);	// E-04 (2b.2-O kalan): canli Command.ini:270, default 0
+
 	this->m_OnlineRewardOfflineSystems = GetPrivateProfileInt(section,"OnlineRewardOfflineSystems",0,path);	// E-09 (2b.2-O): canli exe string kaniti (donor deseni)
 
 	this->m_CommandChangeClassToDK = GetPrivateProfileInt(section,"CommandChangeClassToDK",0,path);

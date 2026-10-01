@@ -7,6 +7,42 @@
 
 ---
 
+## [26.10.01 19:03] E-04 kalan parça — ClearMasterChangeClass INI anahtarı + koşullu adım (canlı Command.ini:270)
+
+**Ne yapıldı** (kullanıcı isteği: "docs/09'daki kalan E-kalemlerini …
+stratejilerine göre işle" — araştırma turunda bulunan alt parçaların işlenmesi)
+- **Canlı kanıt:** `GameServerInfo - Command.ini:270 → ClearMasterChangeClass =
+  0  //Clear master points when changing class 1 On/0 Off` (canlıda VAR);
+  araştırma turunda bizim kaynakta bu anahtarın okunmadığı, ChangeClass()
+  içinde `ClearMasterChangeClass()` koşulsuz çağrıldığı tespit edilmişti →
+  canlıda master temizleme VARSAYILAN KAPALI, bizde daima açıktı.
+- **[ServerInfo.h](../Source/4.GameServer/GameServer/ServerInfo.h):**
+  `m_CommandClearMasterChangeClass` üyesi (ChangeClassTo* bloğunun başına).
+- **[ServerInfo.cpp](../Source/4.GameServer/GameServer/ServerInfo.cpp):**
+  `ReadCommandInfo` içinde `CommandChangeClassToDW` okumasının ardına
+  `GetPrivateProfileInt(section,"ClearMasterChangeClass",0,path)` (canlı
+  anahtar adı birebir; canlı bölüm düzeniyle aynı komşuluk).
+- **[ChangeClass.cpp](../Source/4.GameServer/GameServer/ChangeClass.cpp):**
+  `ChangeClass()` içindeki koşulsuz çağrı
+  `if (gServerInfo.m_CommandClearMasterChangeClass != 0)` koşuluna bağlandı
+  (default 0 → canlı davranışı: master temizleme off).
+- **Deploy config:** `GameServerInfo - Command.ini` 259. satır ardına canlı
+  satır birebir eklendi (`ClearMasterChangeClass = 0` + canlı yorumu).
+
+**Neden** — E-04'ün 2b.2-O'da kapatılan temel entegrasyonundan sonra
+araştırma turu (§4 strateji denetimi) bu alt parçayı çıkardı; davranış
+farkı gerçekti (koşulsuz master sıfırlama vs canlı koşullu).
+
+**Doğrulama**
+- GS derlemesi temiz → **10.791.424 B (19:03)** (LTCG küçük farkı absorbe
+  etti; boyut değişmedi).
+- Yeni exe string taraması: `ClearMasterChangeClass` ×1 VAR (INI anahtar
+  adı canlıyla aynı).
+- Diğer 5 E-kalem parçası ayrı kayıtlarda: E-02 (19:xx), E-09+E-11 karar
+  kaydı, E-06, E-01.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:03
+
 ## [26.10.01 18:49] 2b.2-R — Reload ailesinin kalanı: GameMaster + ExperienceTable + SPK alt kümesi (AddBuff/CustomMonsterSkill)
 
 **Ne yapıldı** (kullanıcı isteği: "Reload ailesinin kalanını uygula:

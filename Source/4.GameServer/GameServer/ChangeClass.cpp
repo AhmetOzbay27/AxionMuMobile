@@ -176,7 +176,12 @@ void cChangeClass::ChangeClass(LPOBJ lpObj, int Class)
 	lpObj->Level = this->LevelStart;
 	lpObj->Experience = 0;
 
-	this->ClearMasterChangeClass(lpObj);
+	// E-04 (2b.2-O kalan): canli Command.ini anahtarina bagli — ClearMasterChangeClass = 0 iken
+	// master skill tree sifirlanmaz (canli default: 0 → off); kosulsuz cagri canli davranisi degildi
+	if (gServerInfo.m_CommandClearMasterChangeClass != 0)
+	{
+		this->ClearMasterChangeClass(lpObj);
+	}
 
 	gCashShop.GDCashShopSubPointSaveSend(lpObj->Index, 0, gChangeClass.m_WCoinC, 0, 0,0,"ChangeClass");
 	gCashShop.CGCashShopPointRecv(lpObj->Index);
