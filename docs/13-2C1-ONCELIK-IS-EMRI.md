@@ -30,7 +30,7 @@
 
 | Sıra | # | Modül | Sınıf(map) | Canlı config | Kaynak | Not |
 |---:|---:|---|---|---|---|---|
-| A1 | 4 | SPK_Harmony | CustomHarmony | CustomHarmony.xml | sıfırdan | item güçlendirme — ✅ **2c.1-A TAMAM** (canlı CustomHarmony.xml şeması + dispatcher eşlemesi; `8af2a6f3a` sonrası ayrı commit, CHANGELOG'a bak) |
+| A1 | 4 | SPK_Harmony | CustomHarmony | CustomHarmony.xml | sıfırdan | item güçlendirme — ✅ **2c.1-A TAMAM** (canlı CustomHarmony.xml şeması + dispatcher eşlemesi; commit `01c7d2b16`) |
 | A2 | 23 | SPK_MonsterSkill | CCustomMonsterSkill | CustomMonsterSkill.txt | sıfırdan | savaş mekaniği |
 | A3 | 37 | CustomItemSetPro | CustomSetDameItem | CustomItemSetPro.xml | sıfırdan | set bonus hasarı |
 | A4 | 36 | CustomItemPro | SystemItemChanger | CustomItemPro.xml | sıfırdan | item dönüştürme |

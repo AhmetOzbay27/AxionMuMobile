@@ -67,7 +67,7 @@ Instance/LPITEM).
   sembolle birebir**), `HM_HAMORNY` ×15; PDB: `CustomHarmony` ×25 +
   `SPK_Harmony.cpp` ×3.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 20:32
+**Commit** — `01c7d2b16` · **Tamamlandı** — 01.10.2026 20:32
 
 ## [26.10.01 19:40] E-01 kalan parça (1/2) — BossGuild canlı log/yol paritesi: 7 kill-notice + Start Boss + Winning + Finish + CTCMini GuildWin.ini
 
