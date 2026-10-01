@@ -65,7 +65,7 @@ belirlenir.
 - Yalan-pozitifler tek tek elendi (SendMessage→user32, FindPath→CMapPath,
   Advance→CRT/SkyEvent, ExchangeCoin→LuckyCoin, HardwareId→ServerInfo).
 
-**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 07:00
+**Commit** — `6b509e2be` · **Tamamlandı** — 01.10.2026 07:00 (commit 07:05)
 
 ## [26.10.01 01:04] Pano otomatik başlatma — Task Scheduler görevi (AxionPano)
 

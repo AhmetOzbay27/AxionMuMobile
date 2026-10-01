@@ -169,4 +169,4 @@ değişikliği yoktur → GS derlemesi etkilenmez (son bilinen: 10.776.576 B,
 febde56b1). CSV/kanıt çıktıları `BuildLog\envanter\` altındadır (BuildLog
 klasörü repo kuralı gereği git dışıdır — bkz. docs/06).
 
-**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 07:00
+**Commit** — `6b509e2be` · **Tamamlandı** — 01.10.2026 07:00 (commit 07:05)
