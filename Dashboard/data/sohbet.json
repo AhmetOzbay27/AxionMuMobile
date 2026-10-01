@@ -1,7 +1,9 @@
 {
-  "updated": "2026-10-01 09:30:00",
+  "updated": "2026-10-01 12:45:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
+    { "ts": "2026-10-01 12:44", "kim": "kullanıcı", "text": "Devam etmeden önce sistemde gereksiz dosyaları sil ve disk temizliği yap — boş yerimiz kalmadı." },
+    { "ts": "2026-10-01 12:45", "kim": "ajan", "text": "DİSK TEMİZLİĞİ TAMAM: C: 1.6 -> 3.7 GB bos. Takipsiz/geci artiklar silindi (BuildLog ~419 MB - envanter korundu, cryptopp ciktilari ~250 MB - tracked'lar checkout, temp ~610 MB, git gc ~40 MB) + kullanici onayiyla ClientBuild_192.168.99.200 (1 GB, git rm) -> commit 15d1bdbe4. Boost takipsiz 26 MB dokunulmadi; WIP E-kalem degisiklikleri korundu. Not: GS sonraki derleme full rebuild olacak. Devam: E-kalemleri (E-04 XML gecisi asamada)." },
     { "ts": "2026-10-01 09:30", "kim": "kullanıcı", "text": "Reload desenini Gate/Move/MoveSummon/Notice/ResetTable/Skill modüllerine uygula (canlı kanıtlı 'configuration reloaded' ailesi)." },
     { "ts": "2026-10-01 09:30", "kim": "ajan", "text": "2b.2-N EK DALGA TAMAM: 6 modüle m_Path+Reload (E-05 deseni, yedek-geri-yükle), canlı birebir [CSınıf] ... reloaded. logları, /reload gate|movesummon|notice|resettable eklendi; move|skill'de mevcut ServerInfo zincirleri korundu (çoklu-config reload + m_Path). ResetTable ilk denemede #else dalına gitmişti — derleme yakaladı, aktif CB_AUTORESETINFO dalına taşındı. GS Rebuild temiz → 10.784.256 B (09:22), 5/5 canlı-birebir string exe'de. Sonraki: 2c.1." },
     { "ts": "2026-10-01 07:45", "kim": "kullanıcı", "text": "MapManager zincirini donörden al, CustomPick'i tam donör yap, derle + commit." },

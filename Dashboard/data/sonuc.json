@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 09:30:00",
+  "updated": "2026-10-01 12:45:00",
   "status": "ok",
-  "text": "2b.2-N EK DALGA TAMAM: 'configuration reloaded' ailesi 6 module uygulandi (Gate/Move/MoveSummon/Notice/ResetTable/Skill — m_Path + Reload, E-05 deseni; hata durumunda yedekten geri yukleme). Canli birebir log formati: [CSinif] Modul configuration reloaded. (E-05'in CustomBuyVip logu da canli haline yukseltildi: [SPK] ...). /reload gate|movesummon|notice|resettable dallari eklendi; move|skill'de mevcut ServerInfo zincirleri korundu (ReadMoveInfo/ReadSkillInfo coklu-config reload + artik m_Path sakliyor). Bulgu: bizim Log.h'ta LOG_BLUE/LOG_RED yok — renk sabitleri ServerDisplayer zincirinden geliyor. GS Rebuild temiz -> 10.784.256 B (09:22). 5/5 canli-birebir string yeni exe'de dogrulandi. Sonraki: 2c.1."
+  "text": "DISK TEMIZLIGI TAMAM: C: bos alan 1.6 GB -> 3.7 GB (%98 -> %94). Silinenler (tumu takipsiz/geci): BuildLog derleme objeleri ~419 MB (BuildLog/envanter kanit dosyalari korundu), cryptopp derleme ciktilari ~250 MB (tracked dll/lib git checkout ile geri alindi), sistem+gecici temp ~610 MB, git gc ~40 MB (.git 764->724 MB); kullanici onayiyla ClientBuild_192.168.99.200 (1 GB, 17458 tracked) git rm ile kaldirildi -> commit 15d1bdbe4 (12:44). Boost takipsiz 26 MB bilinclikle dokunulmadi; WIP E-kalem degisiklikleri etkilenmedi. Not: GS sonraki derlemede full rebuild olacak (BuildLog silindi). Devam: E-kalemleri — E-06/E-02 uygulandi (11:54 derleme temiz 10.790.912 B), E-02 error-log eklentisi + E-04 XML gecisi asamasinda; E-09/E-11/E-01 kaldi."
 }

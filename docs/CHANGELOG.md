@@ -7,6 +7,31 @@
 
 ---
 
+## [26.10.01 12:44] Disk temizliği — C: diskinde boş alan 1.6 GB → 3.7 GB
+
+**Ne yapıldı**
+- Kullanıcı talebi ("gereksiz dosyaları sil, disk temizliği yap"). Silinenler
+  (tümü takipsiz/geçici; tracked dosyalara dokunulmadı):
+  - `BuildLog/` derleme objeleri + logları ≈ 419 MB (`BuildLog/envanter/` kanıt
+    dosyaları korundu — 3 tracked dosya); sonraki GS derlemesi full rebuild olur.
+  - `Source/Util/cryptopp/` takipsiz derleme çıktıları (`Release/` 93 MB,
+    `DLL_Release/` 85 MB, `cryptest.sdf` 37 MB, `CTRelease/`, `dlltest___`)
+    ≈ 250 MB; tracked manifest/dll/lib `git checkout` ile geri yüklendi.
+  - `%LOCALAPPDATA%\Temp` 436→8 MB, `Windows\Temp` 35→1 MB, `/tmp` geçici
+    exe kopyaları + Cline installer ≈ 140 MB.
+  - `git gc` (loose objects) ≈ 40 MB (`.git` 764→724 MB).
+  - **`ClientBuild_192.168.99.200` (1 GB, 17.458 tracked dosya)** — kullanıcı
+    onayıyla `git rm -r` ile kaldırıldı.
+- Boost takipsiz kısmı (26 MB) bilinçli olarak dokunulmadı (kaynak ağacın
+  parçası); `docs/`, `Dashboard/`, WIP E-kalem değişiklikleri etkilenmedi.
+
+**Doğrulama** — `df -h /c`: 1.6 GB → **3.7 GB boş** (%98 → %94); `git status`
+da silme commit'i dışında WIP olduğu gibi duruyor; commit pathspec ile ayrık.
+
+**Commit** — `15d1bdbe4` · **Tamamlandı** — 01.10.2026 12:44
+
+---
+
 ## [26.10.01 09:25] 2b.2-N ek dalga — 'configuration reloaded' ailesi 6 modüle genişletildi (Gate/Move/MoveSummon/Notice/ResetTable/Skill)
 
 **Ne yapıldı**
