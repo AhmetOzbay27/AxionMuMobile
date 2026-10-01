@@ -41,6 +41,8 @@ SPK istemcisinin **birebir paritesini** kendi kaynak kodumuzla üretmek
 2b.3 ✅ 29 MUIG-özel modül çapraz kontrol → [12](12-MUIG68-CAPRAZ-KONTROL.md)
 (7 parite-tamam · 3 iş-kalemi 2c'ye · 19 canlıda-yok/OFF; YENİ keşif: EventGvG canlıda VAR, bizde eksik).
 **Sıradaki: Faz 2c.1** — modül envanterini önceliğe dizecek (60 modül: 59 + EventGvG).
+**✅ 2c.1 dizimi tamam (26.10.01 14:05):** [13-2C1-ONCELIK-IS-EMRI.md](13-2C1-ONCELIK-IS-EMRI.md) —
+A=24 çekirdek · B=9 event · C=21 QoL · D=3 anticheat · E=3 kosmetik. Sıradaki: **2c.1-A** (Harmony).
 
 > **26.10.01 13:50 — E-kalemleri kapatıldı** (E-01/E-02/E-04/E-06/E-09/E-11,
 > bkz. [09](09-EZILEN-12-DOSYA-KARSILASTIRMA.md)): donor taban E-02,

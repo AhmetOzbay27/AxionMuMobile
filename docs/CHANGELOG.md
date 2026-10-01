@@ -7,6 +7,39 @@
 
 ---
 
+## [26.10.01 14:05] 2c.1 — 60 modül oyun akışı etkisine göre önceliğe dizildi (iş emri docs/13)
+
+**Ne yapıldı**
+- Kullanıcı isteği: "docs/05 + docs/12'deki 60 modülü oyun akışı etkisine göre
+  önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat
+  damgalı iş emri yaz ve commit'le."
+- **[docs/13-2C1-ONCELIK-IS-EMRI.md](13-2C1-ONCELIK-IS-EMRI.md) yazıldı**
+  (01.10.2026 14:05): docs/05 §3'ün 59 modülü + #60 EventGvG + docs/12 §6
+  açık kalemleri yeniden sınıflandırıldı:
+  - **A Çekirdek Oyun Akışı = 24** (21 iş + 4 ✅ 2b.0: SkillDamage/AddBuff/
+    AutoHp/JewelBank; içinde Harmony → MonsterSkill → SetPro → gelişim
+    ailesi → ResetChange → MocNap+MasterReset → GuildUpgrade → Quest →
+    Socket×2)
+  - **B Event = 9** (EventMainManager iskeleti → EventGvG (#60, canlı 7
+    anahtar) → ActiveInvasions → Castle/ThanMa/Sky/GreatPK/DameBoss → ReiDoMU)
+  - **C QoL = 21** (ItemTrader/E-11 + CongHuong/E-02 fark-kapatma → shop →
+    botlar → ranking/UI → MessLang/ToolKit)
+  - **D Anticheat = 3** (ResetLimiter, PassLock, ChangePass)
+  - **E Kosmetik = 3** (CustomNameColor, LogErrorForm, GetLicenseID)
+  - **Toplam 24+9+21+3+3 = 60 ✓**
+- Kapsam dışı bırakılanlar belgelendi: C grubu 19 OFF (docs/12 §6.4),
+  ThuongDanhBoss parite-dışı. Dalga planı §8'de (A→B→C→D/E).
+- docs/05 §3'e "2c.1 yeniden dizimi" referansı + docs/00 "Sıradaki: 2c.1-A
+  (Harmony)" notu güncellendi.
+
+**Doğrulama** — Sayım60/60; P1/P2/P3 toplamı (19+28+12) + #60 korundu;
+hangi modülün hangi sınıfta olduğu tek tek gerekçelendirildi (tablolar).
+Kod değişikliği YOK → derleme etkilenmez (son: 10.786.304 B, 13:47).
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 14:05
+
+---
+
 ## [26.10.01 13:50] E-kalemleri kapatıldı — E-01/E-02/E-04/E-06/E-09/E-11 docs/09 stratejilerine göre işlendi
 
 **Ne yapıldı** (kullanıcı isteği: "Kalan E-kalemlerini docs/09 stratejilerine göre işle")

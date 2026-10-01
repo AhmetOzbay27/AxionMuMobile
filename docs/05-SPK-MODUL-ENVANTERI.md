@@ -131,6 +131,13 @@ MUIG-özel modüllerin canlı karsılıklarını sınıflandırdı ve bu listeye
   CB_AutoNapGame birleştirmesi (P1, canlı LOG_MOC_NAP aktif); MasterReset
   tablosu çözümü (canlı DGCommandMasterResetRecv). Detay: docs/12 §6.
 
+### 2c.1 yeniden dizimi (01.10.2026 14:05)
+60 modül, **oyun akışı etkisine göre** (core > event > QoL > anticheat >
+kosmetik) yeniden sıralandı: **A=24 çekirdek · B=9 event · C=21 QoL ·
+D=3 anticheat · E=3 kosmetik**. Uygulama iş emri:
+[13-2C1-ONCELIK-IS-EMRI.md](13-2C1-ONCELIK-IS-EMRI.md) (P1/P2/P3 dizimi
+içerik-temelli referans olarak korunur).
+
 ---
 
 ## 4. 12 EZİLEN DOSYA — SPK REVİZYON TAŞIMASI
