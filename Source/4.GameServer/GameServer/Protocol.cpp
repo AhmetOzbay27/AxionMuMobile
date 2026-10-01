@@ -41,6 +41,7 @@
 #include "Helper.h"
 #include "IllusionTemple.h"
 #include "ImperialGuardian.h"
+#include "CB_ActiveInvasions.h"	// 2c.1-B3: F7 sub 0x02 aktif invasyon listesi istegi (canli ProtocolCore)
 #include "InventoryEquipment.h"
 #include "ItemManager.h"
 #include "JewelMix.h"
@@ -1379,6 +1380,11 @@ void ProtocolCore(BYTE head,BYTE* lpMsg,int size,int aIndex,int encrypt,int seri
 				case 0x01:
 					#if(GAMESERVER_UPDATE>=501)
 					gImperialGuardian.CGImperialGuardianEnterRecv((PMSG_IMPERIAL_GUARDIAN_ENTER_RECV*)lpMsg,aIndex);
+					#endif
+					break;
+				case 0x02: // 2c.1-B3: canli ProtocolCore (0x54FA37) — aktif invasyon listesi istegi -> send_list_to_client(aIndex)
+					#if(CB_ActiveInvasionsD)
+					gCB_ActiveInvasions.send_list_to_client(aIndex);
 					#endif
 					break;
 			}

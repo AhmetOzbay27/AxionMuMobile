@@ -58,6 +58,7 @@
 #include "IllusionTemple.h"
 #include "ImperialGuardian.h"
 #include "InvasionManager.h"
+#include "CB_ActiveInvasions.h"	// 2c.1-B3: giris liste push (canli send_list_to_client akisi)
 #include "InventoryEquipment.h"
 #include "IpManager.h"
 #include "JewelOfHarmonyOption.h"
@@ -3479,6 +3480,9 @@ void gObjSecondProc()
 			if (lpObj->Type == OBJECT_USER && !lpObj->CacheSendOnlogin)
 			{
 				lpObj->CacheSendOnlogin = true;
+#if(CB_ActiveInvasionsD)
+				gCB_ActiveInvasions.send_list_to_client(lpObj->Index);	// 2c.1-B3: canli giris push'u tek istemciye (0x41EB20 imzasi)
+#endif
 				SendThongTinSauKhiVaoGame(lpObj->Index);
 			}
 			gObjSkillUseProc(lpObj);

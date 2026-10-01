@@ -516,7 +516,7 @@ void CInvasionManager::ClearMonster(INVASION_INFO* lpInfo) // OK
 		{
 #if(CB_ActiveInvasionsD)
 			LPOBJ lpObj = &gObj[lpInfo->MonsterIndex[n]];
-			gCB_ActiveInvasions.monster_del(lpObj->Class);
+			gCB_ActiveInvasions.monster_del(lpObj->Class);	// 2c.1-B3: canli SetState_EMPTY sayac-dusme dongusune karsilik clear-yolunda ayni etki (two-counter dec; 0x4F1C1B bloku)
 #endif
 			gObjDel(lpInfo->MonsterIndex[n]);
 			lpInfo->MonsterIndex[n] = -1;
@@ -577,7 +577,7 @@ void CInvasionManager::SetMonster(INVASION_INFO* lpInfo,INVASION_RESPWAN_INFO* l
 			continue;
 		}
 #if(CB_ActiveInvasionsD)
-		gCB_ActiveInvasions.monster_add(lpObj->Class);
+		gCB_ActiveInvasions.monster_add(lpObj->Class,false);	// 2c.1-B3: canli imza (SetMonster spawn — broadcast yok, sonda liste gider)
 #endif
 		lpObj->MaxRegenTime = ((lpMonsterInfo->RegenType==0)?(lpInfo->InvasionTime*1000):lpMonsterInfo->RegenTime);
 
@@ -644,7 +644,7 @@ void CInvasionManager::MonsterDieProc(LPOBJ lpObj,LPOBJ lpTarget) // OK
 			continue;
 		}
 #if(CB_ActiveInvasionsD)
-		gCB_ActiveInvasions.monster_del(lpObj->Class,true);
+		gCB_ActiveInvasions.monster_del(lpObj->Class,true);	// 2c.1-B3: canli MonsterDieProc (0x4F2094: broadcast'li dusme)
 #endif
 		//---
 		if(lpObj->Class == lpInfo->BossIndex)

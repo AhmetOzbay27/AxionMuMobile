@@ -7,6 +7,84 @@
 
 ---
 
+## [26.10.01 23:24] 2c.1-B3 — ActiveInvasions canlı disasm paritesi: paketler C1 10 F3 99 / C2 F3 98, iki-sayaç döngüsü, F7 sub 0x02 liste isteği
+
+**Ne yapıldı** (kullanıcı isteği: "2c.1-B dalgasında sıradaki B3
+ActiveInvasions modülünü canlı kanıtla inceleyip uygulamaya al")
+- **Sürpriz keşif (modül zaten vardı):** docs/13'te B3 "sıfırdan" etiketliydi
+  ama bizim kaynakta `CB_ActiveInvasions.cpp/.h` **ilk commit'ten beri mevcut**
+  (`CB_ActiveInvasionsD=1`, stdafx.h:165; vcxproj kayıtlı; InvasionManager ×3,
+  DSProtocol giriş-push, User.cpp login-push entegrasyonları bağlı).
+  Donor'da ise modül **hiç yok** (UInvasionsData/ActiveInvasions 0 vuruş —
+  MUIG-özel). Yani gerçek iş "yazmak" değil, **canlıya karşı denetim** oldu.
+- **Canlı kanıt:** `ActiveInvasions.obj` — `?monster_add@CActiveInvasions
+  @@QAEXH_N@Z` (0x41E950), `?update_by_monster_id@@QAEXH@Z` (0x41EA80),
+  `?send_list_to_client@@QBEXH@Z` (0x41EB20), `?gActiveInvasions@@
+  3VCActiveInvasions@@A` (0xAA31CC) + `std::map<int,UInvasionsData>` ağaç
+  kodu (hepsi aynı TU'da — tek modül). Disasm gövdeleri okundu (0x41E950-
+  0x41EBFC).
+- **Bulunan sapmalar (taslak → canlı çekildi):**
+  1. **Paket başlıkları:** taslak `C1 10 D3 99` / `C2 D3 98` idi; canlı
+     update paketi `C1 10 F3 99 {id, count, 0}` (0x41EAEC'de 99F310C1,
+     0x41EABE'de spare=0) ve liste paketi `C2 [size] F3 98 {count, N × 12 B
+     {id, count, max}}` (0x41EB56-0x41EB5D'de 0C2h + 98F3h). Yeni exe'de
+     `C1 10 F3 99` byte kanıtı (off 185789), eski `D3` varyantları yok.
+  2. **monster_del:** taslak sadece `_count--` yapıyordu; canlı iki sayacı
+     birlikte azaltıyor (0x4F1C0C bloku: dec [+14] + dec [+18]) ve erase
+     kriteri yalnız count==0 (SetState_EMPTY 0x4F1C1B + MonsterDieProc
+     0x4F2094 yolları).
+  3. **monster_add imzası:** canlı `monster_add(int,bool)` — bool 1 ise
+     update_by_monster_id broadcast (0x41E9A5). Taslaktaki tek-argüman imza
+     kaldırıldı; çağıranlar: SetMonster `false`, MonsterDieProc yolu
+     `monster_del(...,true)` broadcast.
+  4. **Eksik istek kancası EKLENDİ:** canlı ProtocolCore'da head `F7`
+     sub `0x02` → `send_list_to_client(aIndex)` (0x54FA37, IG-enter sub 1
+     ile aynı switch) — bizde hiç yoktu; Protocol.cpp 0xF7 bloğuna case
+     0x02 eklendi + `send_list_to_client(int)` tekil-gönderim overload'u
+     yazıldı.
+  5. **Giriş push'u:** taslak DSProtocol giriş-push'u herkese gidiyordu;
+     canlı login-push akışı tek istemciye — User.cpp login bloğuna tekil
+     `send_list_to_client(lpObj->Index)` eklendi (DSProtocol push'u
+     korundu).
+  6. **SetMonster/ClearMonster sonundaki toplu liste-push'ları:** canlı
+     karşılığı bulunamadı (istemci F3 40 sub2 ile çekiyor; spawn'da canlı
+     sadece bool-broadcast kullanıyor) → korundu (fonksiyonel zarar
+     vermez, ileride kanıt gelirse kaldırılır — docs/12 §4 satırında
+     notlu).
+- **Canlı `ObjectSetStateProc` yolu (0x538687):** boss regen'inde
+  `BossInfo[class] {alive,skin,count}` güncellemesi + `monster_add
+  (class,true)` — bizim ObjectManager regen yolunda BossInfo modülü yok;
+  bizim spawn-path'teki monster_add zaten takip tablosunu dolduruyor (aynı
+  kullanıcının gördüğü liste) → ayrı kanca gerekmedi (not düşüldü).
+- **Değişen dosyalar:**
+  [CB_ActiveInvasions.h](../Source/4.GameServer/GameServer/CB_ActiveInvasions.h)
+  (UInvasionsData adı + PMSG_ACTIVE_INVASIONS_UPDATE_SEND + imzalar),
+  [CB_ActiveInvasions.cpp](../Source/4.GameServer/GameServer/CB_ActiveInvasions.cpp)
+  (paket/gövde paritesi), [InvasionManager.cpp](../Source/4.GameServer/
+  GameServer/InvasionManager.cpp) (monster_add(false) + notlar),
+  [Protocol.cpp](../Source/4.GameServer/GameServer/Protocol.cpp) (F7 sub
+  0x02 kancası), [User.cpp](../Source/4.GameServer/GameServer/User.cpp)
+  (login tekil push, include).
+
+**Neden** — docs/13 B3: modül MUIG-özel, tek doğruluk kaynağı canlı
+exe; taslak paket başlıkları istemcinin dinlemediği kanallara gidiyordu
+(D3 98/99 vs F3 98/99) — parite olmadan HUD liste güncellemesi hiç
+görünmezdi.
+
+**Doğrulama**
+- GS derlemesi temiz (Release_EX603, 0 hata) → **10.816.512 B (23:22)**;
+  CB_ActiveInvasions.obj 156.710 B (obj içinde `??0UInvasionsData@@`
+  sembol kanıtı).
+- Exe byte kanıtı: `C1 10 F3 99` ×1 (off 185789); eski `C1 10 D3 99` /
+  `C2 ?D3 98` desenleri 0 (temiz geçiş).
+- Çağrı-zincir kanıtları canlı disasm'da: SetState_EMPTY 0x4F1C1B,
+  SetMonster 0x4F1EBF/0x4F1EFC, MonsterDieProc 0x4F2094,
+  ObjectSetStateProc 0x538687, ProtocolCore 0x54FA38.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 23:24
+
+---
+
 ## [26.10.01 21:43] 2c.1-B2 — EventGvG tam uygulama: donor 1138 satır birebir port + canlı kanıt denetimi (NPC Dialog/rank/StartGvG/9 kanca)
 
 **Ne yapıldı** (kullanıcı isteği: "EventGvG iskeletini tam uygulamaya taşı:
