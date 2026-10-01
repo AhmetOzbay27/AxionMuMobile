@@ -7,6 +7,50 @@
 
 ---
 
+## [26.10.01 19:40] E-01 kalan parça (1/2) — BossGuild canlı log/yol paritesi: 7 kill-notice + Start Boss + Winning + Finish + CTCMini GuildWin.ini
+
+**Ne yapıldı** (aynı tur — canlı metinler `was killed by/Start Boss/…` İngilizce,
+bizde Vietnamese idi; tam SpawnBoss/HandleBossKill yeniden-yazımı 2/2'de)
+- **Canlı kanıt (exe byte-bağlam, giriş verisi):** `Boss %s (Class:%d) was
+  killed by %s (Guild:%s)`, `Start Boss %s`, `[BossGuild] Winning guild:
+  %s`, `Winning guild member reward: %s`, `[BossGuild] Finish 1/2`,
+  `Guild [%s] Score: %d / %d (KillBoss)`, `Reward Item sent to %s
+  (Type:%d, Index:%d)`, `Spawn Boss next (Class:%d)...`,
+  `[Set Boss Guild Start] At %2d:%2d:00`, boss adları `Wizard/Knight/
+  Summoner/Rage Fighter/Magic Gladiator/Dark Lord`; kazanan-persist yolu
+  byte-bağlamda **`..\Data\Event\CTCMini\GuildWin.ini`** (hemen arkasında
+  GuildName/GuildWinOLD/[BossGuild] — modülün kendi kullanımı;
+  `Event\BossGuild\GuildWin.ini` canlıda ×0).
+- **[BossGuild.cpp](../Source/4.GameServer/GameServer/BossGuild.cpp):**
+  MonsterDie'nin 7 Vietnamese kill-notice'ı → canlı `Boss %s (Class:%d)
+  was killed by %s (Guild:%s)` (boss adları canlı BossGuild.xml
+  yorumlarıyla eşleşen Wizard/Knight/Fairy/Summoner/Rage Fighter/Magic
+  Gladiator/Dark Lord; canlı formatın %s adı + %d Class alanı birebir).
+  7 `StartBoss*` Vietnamese logu → canlı `Start Boss %s` + ad.
+  Kazanma bloğu: `[BossGuild] Winning guild: %s` + `Winning guild member
+  reward: %s`. `Finish 1` → canlı `Finish 1/2`. 4× GuildWin.ini yolu
+  `Event\BossGuild\` → `Event\CTCMini\` (canlı byte-kanıtı).
+- **Korundu:** oynatıcı-yönelimli Vietnamese işlev mesajları (cống
+  hiến/Chiến thắng/kết thúc ailesi) — canlı kanıt kapsamı log/notice
+  formatları; bunlar işlev, bu tur kapsamı dışı.
+- **Kalan (2/2, belgeli):** `Guild [%s] Score: %d / %d (KillBoss)`,
+  `Reward Item sent to…`, `Spawn Boss next (Class:%d)...` stringleri
+  canlı SpawnBoss(int,int,int,char*)@0x413010 / HandleBossKill@0x4132b0 /
+  MonsterDie@0x4135d0 mimarisine ait — tam yeniden-yazım ayrı iş kalemi
+  (canlı HandleBossKill disasm'ı henüz okunmadı). docs/09 §9.
+
+**Neden** — E-01 stratejisinin düşük-riskli katmanı: canlı log/yol
+paritesi; davranış değişikliği yok (yol farkı persist dosyası konumu).
+
+**Doğrulama**
+- GS derlemesi temiz → **10.795.520 B (19:39)**.
+- Yeni exe taraması: 5 canlı string ×1 VAR (`was killed by`, `Start Boss
+  %s`, `Winning guild:`, `member reward:`, `Finish 1/2`) +
+  `..\Data\Event\CTCMini\GuildWin.ini` ×1 VAR; `tiêu diệt` ×0 (kalıntı
+  yok). Score/Reward Item/Spawn Boss next ×0 — bilinçli (2/2 kapsamı).
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:40
+
 ## [26.10.01 19:24] E-06 kalan parça (1/2) — canlı EventTime.xml mimarisi: Load + GetEventTime + ServerInfo bağlantısı + deploy
 
 **Ne yapıldı** (araştırma turunun BÜYÜK bulgusu: canlı mimari bizden farklı —

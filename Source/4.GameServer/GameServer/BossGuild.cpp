@@ -270,7 +270,7 @@ void CBossGuild::Load(char* path) // OK
 	}
 	//===
 	//==============================
-	GetPrivateProfileString("GuildWinOLD", "GuildName", "", this->WinnerNameOLD, sizeof(this->WinnerNameOLD), "..\\Data\\Event\\BossGuild\\GuildWin.ini");
+	GetPrivateProfileString("GuildWinOLD", "GuildName", "", this->WinnerNameOLD, sizeof(this->WinnerNameOLD), "..\\Data\\Event\\CTCMini\\GuildWin.ini");
 	//LogAdd(LOG_RED, "Debug  GuildWinOLD %s", this->WinnerNameOLD);
 	//==============================
 	this->aIndexNPC = gObjAddMonster(this->Map);
@@ -357,7 +357,7 @@ void CBossGuild::MainProc() // OK
 				else
 				{
 					LogAdd(LOG_EVENT, "[BossGuild] Guild chiến thắng: %s", lpGuildInfo->Name);
-					gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild [%s] đã chiến thắng", lpGuildInfo->Name);
+					gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Winning guild: %s", lpGuildInfo->Name);	// E-01 (kalan): canli exe string birebir
 					//===============================================
 					// Phần thưởng cống hiến cho guild
 					for (int n = 0; n < MAX_OBJECT; n++)
@@ -381,7 +381,7 @@ void CBossGuild::MainProc() // OK
 						{
 							if (strcmp(gObj[n].GuildName, lpGuildInfo->Name) == 0)
 							{
-								LogAdd(LOG_EVENT, "[BossGuild] Phần thưởng thành viên Guild chiến thắng: %s", gObj[n].Name);
+								LogAdd(LOG_EVENT, "Winning guild member reward: %s", gObj[n].Name);	// E-01 (kalan): canli exe string birebir
 
 								GDSetCoinSend(gObj[n].Index, +(GuildWin.WCoin), +(GuildWin.WCoinP), +(GuildWin.GobinP), "BossGuild");
 								gCashShop.CGCashShopPointRecv(gObj[n].Index);
@@ -417,7 +417,7 @@ void CBossGuild::MainProc() // OK
 			if (this->m_RemainTimeWinner <= 0)
 			{
 				gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Đã kết thúc !");
-				LogAdd(LOG_EVENT, "[BossGuild] Finish 1");
+				LogAdd(LOG_EVENT, "[BossGuild] Finish 1/2");	// E-01 (kalan): canli exe string birebir
 				for (int n = 0; n < MAX_CHAR; n++)
 				{
 					if (this->Char[n].Index == -1)
@@ -432,7 +432,7 @@ void CBossGuild::MainProc() // OK
 				char	Stringg[20] = { 0 };
 				wsprintf(Stringg, "GuildName =");
 				ofstream myfile;
-				myfile.open("..\\Data\\Event\\BossGuild\\GuildWin.ini");
+				myfile.open("..\\Data\\Event\\CTCMini\\GuildWin.ini");
 				myfile << "[GuildWinOLD]\n";
 				myfile << Stringg;
 				myfile.close();
@@ -441,7 +441,7 @@ void CBossGuild::MainProc() // OK
 		}
 		else
 		{
-			LogAdd(LOG_EVENT, "[BossGuild] Finish 2");
+			LogAdd(LOG_EVENT, "[BossGuild] Finish 2");	// E-01 (kalan): canli exe string birebir
 			gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Đã kết thúc không có Guild chiến thắng !");
 			// set diem kill boss ve 0
 			for (int n = OBJECT_START_USER; n < MAX_OBJECT; n++)
@@ -474,7 +474,7 @@ void CBossGuild::MainProc() // OK
 			char	Stringg[20] = { 0 };
 			wsprintf(Stringg, "GuildName =");
 			ofstream myfile;
-			myfile.open("..\\Data\\Event\\BossGuild\\GuildWin.ini");
+			myfile.open("..\\Data\\Event\\CTCMini\\GuildWin.ini");
 			myfile << "[GuildWinOLD]\n";
 			myfile << Stringg;
 			myfile.close();
@@ -938,7 +938,7 @@ bool CBossGuild::GetUserRespawnLocation(LPOBJ lpObj, int* gate, int* map, int* x
 
 void CBossGuild::StartBossPhuThuy() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Pháp Sư");
+	LogAdd(LOG_RED, "Start Boss %s", "Wizard");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	for (int n = 0; n < qtd; n++)
@@ -980,7 +980,7 @@ void CBossGuild::StartBossPhuThuy() // OK
 
 void CBossGuild::StartBossChienBinh() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Chiến Binh");
+	LogAdd(LOG_RED, "Start Boss %s", "Knight");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	for (int n = 0; n < qtd; n++)
@@ -1022,7 +1022,7 @@ void CBossGuild::StartBossChienBinh() // OK
 
 void CBossGuild::StartBossTienNu() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Tiên Nữ");
+	LogAdd(LOG_RED, "Start Boss %s", "Fairy");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	for (int n = 0; n < qtd; n++)
@@ -1064,7 +1064,7 @@ void CBossGuild::StartBossTienNu() // OK
 
 void CBossGuild::StartBossThuatSi() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Thuật Sĩ");
+	LogAdd(LOG_RED, "Start Boss %s", "Summoner");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	for (int n = 0; n < qtd; n++)
@@ -1106,7 +1106,7 @@ void CBossGuild::StartBossThuatSi() // OK
 
 void CBossGuild::StartBossThietBinh() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Thiết Binh");
+	LogAdd(LOG_RED, "Start Boss %s", "Rage Fighter");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	//----------------------------------
@@ -1149,7 +1149,7 @@ void CBossGuild::StartBossThietBinh() // OK
 
 void CBossGuild::StartBossDauSi() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Đấu Sĩ ");
+	LogAdd(LOG_RED, "Start Boss %s", "Magic Gladiator");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	for (int n = 0; n < qtd; n++)
@@ -1191,7 +1191,7 @@ void CBossGuild::StartBossDauSi() // OK
 
 void CBossGuild::StartBossChuaTe() // OK
 {
-	LogAdd(LOG_RED, "[BossGuild] Start Boss Chúa Tể");
+	LogAdd(LOG_RED, "Start Boss %s", "Dark Lord");	// E-01 (kalan): canli exe string birebir
 	int qtd = 1;
 	qtd = (qtd > 0) ? qtd : 1;
 	for (int n = 0; n < qtd; n++)
@@ -1311,7 +1311,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Phù Thủy", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Wizard", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossPhuThuy.WCoin), +(BossPhuThuy.WCoinP), +(BossPhuThuy.GobinP), "BossPhuThuy");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1336,7 +1336,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Chiến Binh", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Knight", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossChienBinh.WCoin), +(BossChienBinh.WCoinP), +(BossChienBinh.GobinP), "BossChienBinh");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1361,7 +1361,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Tiên Nữ", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Fairy", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossTienNu.WCoin), +(BossTienNu.WCoinP), +(BossTienNu.GobinP), "BossTienNu");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1385,7 +1385,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Thuật Sĩ", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Summoner", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossThuatSi.WCoin), +(BossThuatSi.WCoinP), +(BossThuatSi.GobinP), "BossThuatSi");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1411,7 +1411,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Thiết Binh", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Rage Fighter", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossThietBinh.WCoin), +(BossThietBinh.WCoinP), +(BossThietBinh.GobinP), "BossThietBinh");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1437,7 +1437,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Đấu Sĩ", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Magic Gladiator", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossDauSi.WCoin), +(BossDauSi.WCoinP), +(BossDauSi.GobinP), "BossDauSi");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1463,7 +1463,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			DGGuildScoreUpdate1(lpUser->Guild->Name, lpUser->Guild->TotalScore1);
 		}
 
-		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "[BossGuild] Guild %s đã tiêu diệt Boss Chúa Tể", lpUser->GuildName, (lpUser->GuildNumber, lpUser->Index));
+		gNotice.GCNoticeSendToAll(0, 0, 0, 0, 0, 0, "Boss %s (Class:%d) was killed by %s (Guild:%s)", "Dark Lord", lpMonster->Class, lpUser->Name, lpUser->GuildName);	// E-01 (kalan): canli exe string
 
 		GDSetCoinSend(lpUser->Index, +(BossChuaTe.WCoin), +(BossChuaTe.WCoinP), +(BossChuaTe.GobinP), "BossChuaTe");
 		gCashShop.CGCashShopPointRecv(lpUser->Index);
@@ -1490,7 +1490,7 @@ bool CBossGuild::MonsterDie(int aIndexMonster, int aIndexUser)
 			{
 				this->WinnerNumber = this->Guild[n].Number;
 				memcpy(this->WinnerName, lpUser->GuildName, sizeof(this->WinnerName));
-				WritePrivateProfileStringA("GuildWinOLD", "GuildName", this->WinnerName, "..\\Data\\Event\\BossGuild\\GuildWin.ini");
+				WritePrivateProfileStringA("GuildWinOLD", "GuildName", this->WinnerName, "..\\Data\\Event\\CTCMini\\GuildWin.ini");
 			}
 		}
 	}
