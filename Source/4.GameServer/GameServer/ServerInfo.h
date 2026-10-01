@@ -1188,6 +1188,13 @@ public:
 	int m_BsVEventNPCX;
 	int m_BsVEventNPCY;
 	int m_BsVEventMaxUsers;
+	int m_GvGEventSwitch;	// 2c.1-B2: canli 7 anahtar (exe string kaniti)
+	int m_GvGEventNPC;
+	int m_GvGEventNPCMap;
+	int m_GvGEventNPCX;
+	int m_GvGEventNPCY;
+	int m_GvGEventMinUsers;
+	int m_GvGEventMaxUsers;
 	#endif
 #if(CB_GETMIXRATE)
 	int m_UseZenRateReal;

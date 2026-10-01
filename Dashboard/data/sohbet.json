@@ -1,7 +1,9 @@
 {
-  "updated": "2026-10-01 14:07:00",
+  "updated": "2026-10-01 14:34:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu.",
   "entries": [
+    { "ts": "2026-10-01 14:34", "kim": "kullanıcı", "text": "EventGvG modülünü canlı kanıttan yaz: ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle + CHANGELOG + commit (2c.1 öncesi ısınma kalemi)." },
+    { "ts": "2026-10-01 14:34", "kim": "ajan", "text": "2c.1-B2 ISINMA TAMAM: EventGvG — ServerInfo 7 anahtari (donor deseni birebir, kosulsuz default 0/0/0/0/0/2/20), EventGvG.h donor cp, EventGvG.cpp iskelet (state machine BLANK/EMPTY/STAND/START/CLEAN), kanca User.cpp MainProc + Init + vcxproj. Derleme temiz 10.789.376 B (14:31); exe 7/7 anahtar, PDB+obj kanitlari tam. Tam uygulama 2c.1-B2 (donor 1138 satir + canli kanit denetimi). Sonraki: 2c.1-A Harmony veya 2c.1-B EventMainManager." },
     { "ts": "2026-10-01 14:07", "kim": "kullanıcı", "text": "2c.1'i başlat: docs/05 + docs/12'deki 60 modülü oyun akışı etkisine göre önceliğe diz (core gameplay > event > QoL > anticheat > kosmetik), saat damgalı iş emri yaz ve commit'le." },
     { "ts": "2026-10-01 14:07", "kim": "ajan", "text": "2c.1 TAMAM: docs/13-2C1-ONCELIK-IS-EMRI.md yazildi (14:05) — A Cekirdek=24, B Event=9 (EventMainManager + EventGvG #60), C QoL=21, D Anticheat=3, E Kozmetik=3 = 60/60. Her sinif icin tablo + gerekce + kaynak (donor/2b.0 tam/sifirdan) + dalga plani §8 (A->B->C->D/E, ilk is Harmony). Kapsam disi: C grubu 19 OFF + ThuongDanhBoss. docs/05 + docs/00 + CHANGELOG guncellendi; kod degisikligi yok. Sonraki: 2c.1-A (SPK_Harmony)." },
     { "ts": "2026-10-01 13:52", "kim": "kullanıcı", "text": "Kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) docs/09 stratejilerine göre işle." },

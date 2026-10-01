@@ -319,6 +319,7 @@
     <ClInclude Include="BloodCastle.h" />
     <ClInclude Include="BonusManager.h" />
     <ClInclude Include="BossGuild.h" />
+    <ClInclude Include="EventGvG.h" />
     <ClInclude Include="BotBuffer.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_EX401CS|Win32'">true</ExcludedFromBuild>
     </ClInclude>
@@ -604,6 +605,7 @@
     <ClCompile Include="BloodCastle.cpp" />
     <ClCompile Include="BonusManager.cpp" />
     <ClCompile Include="BossGuild.cpp" />
+    <ClCompile Include="EventGvG.cpp" />
     <ClCompile Include="BotBuffer.cpp" />
     <ClCompile Include="CannonTower.cpp" />
     <ClCompile Include="CashShop.cpp" />

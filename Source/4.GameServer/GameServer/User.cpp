@@ -89,6 +89,7 @@
 #include "Quest.h"
 #include "QuestWorld.h"
 #include "ReiDoMU.h"
+#include "EventGvG.h"	// 2c.1-B2: CGvGEvent iskeleti
 #include "Raklion.h"
 #include "RaklionBattleUserMng.h"
 #include "RaklionUtil.h"
@@ -148,6 +149,8 @@ void gObjEventRunProc() // OK
 	gAUTOHP.MainProc();	// SPK CAUTOHP (Faz 2b)
 
 	gReiDoMU.MainProc();
+
+	gGvGEvent.MainProc();	// 2c.1-B2: EventGvG iskeleti
 
 	gEventQuickly.MainProc();
 

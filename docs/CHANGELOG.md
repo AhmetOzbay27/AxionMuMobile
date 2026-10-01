@@ -7,6 +7,42 @@
 
 ---
 
+## [26.10.01 14:31] 2c.1-B2 (ısınma) — EventGvG modülü: ServerInfo 7 anahtarı + CGvGEvent iskeleti
+
+**Ne yapıldı** (kullanıcı isteği: "EventGvG modülünü canlı kanıttan yaz:
+ServerInfo'da 7 EventGvG anahtarını oku, CGvGEvent iskeletini kur, derle +
+CHANGELOG + commit")
+- **Canlı kanıt (giriş):** GameServer.exe'de7 anahtar string'i tek tek doğrulandı
+  (`EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers` ×1); canlı config
+  dosyalarında GvG izi YOK → varsayılan değerlerle çalışma (default 0/0/0/0/0/2/20).
+- **[ServerInfo.h](../Source/4.GameServer/GameServer/ServerInfo.h):** 7 member
+  (`m_GvGEventSwitch/NPC/NPCMap/NPCX/NPCY/MinUsers/MaxUsers` — donor adlandırma).
+- **[ServerInfo.cpp](../Source/4.GameServer/GameServer/ServerInfo.cpp):**
+  `ReadEventInfo(section,path)` içine TvT bloğunun ardına7 okuma — donor deseni
+  birebir; donor koruması `(PROTECT_STATE==1 && GAMESERVER_CLIENTE_UPDATE>=14)`
+  bizde daima TRUE (1 ve 17) → koşulsuz yazıldı. `ReadEventInfo()` sonuna
+  `gGvGEvent.Init()` + include.
+- **[EventGvG.h](../Source/4.GameServer/GameServer/EventGvG.h):** donor'dan
+  birebir cp (struct GVG_EVENT_USER/GUILD/TIME + 5-durumlu state machine
+  yüzeyi + `extern gGvGEvent`).
+- **[EventGvG.cpp](../Source/4.GameServer/GameServer/EventGvG.cpp) (YENİ):**
+  iskelet — ctor/Init (tüm alan reset)/Clear (guild+user Reset döngisi)/
+  `MainProc` → state switch → 5 `ProcState_*` geçiş gövdesi + SetState/GetState.
+  `Load` ve geniş metot yüzeyi (Dialog/AddUser/CalcRank/StartGvG …) gövesiz
+  duruyor — tam uygulama 2c.1-B2'de donor 1138-satır kod canlı kanıtla
+  denetlenerek alınacak (docs/12 §4 "donör yanlış kaynak" uyarısı korunuyor).
+- **Kancalar:** [User.cpp](../Source/4.GameServer/GameServer/User.cpp)
+  `gObjEventRunProc()` → `gGvGEvent.MainProc()` (gReiDoMU yanına); vcxproj'e
+  ClCompile/ClInclude eklendi.
+
+**Doğrulama** — GS derlemesi temiz → **10.789.376 B (14:31)**. Exe string
+taraması: **7/7 anahtar VAR** (canlıyla aynı set); PDB: `EventGvG.cpp` kaynak
+×3 + `ProcState_START` ×74 + `gGvGEvent` ×5; User.obj'te kanca referansı ✓.
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 14:31
+
+---
+
 ## [26.10.01 14:05] 2c.1 — 60 modül oyun akışı etkisine göre önceliğe dizildi (iş emri docs/13)
 
 **Ne yapıldı**

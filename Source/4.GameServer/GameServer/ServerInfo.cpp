@@ -136,6 +136,7 @@
 #endif
 #include "BCustomItemBank.h"
 #include "CustomEventTime.h"
+#include "EventGvG.h"	// 2c.1-B2: CGvGEvent iskeleti
 #include "CEventName.h"	// 2b.2-B
 #include "ResetTableVIP.h"
 #include "BCustomVIPChar.h"
@@ -552,6 +553,8 @@ void CServerInfo::ReadEventInfo() // OK
 	gBossGuild.Load(gPath.GetFullPath("Event\\BossGuild.xml"));	// E-01 (2b.2-O): canli exe string 'Event\BossGuild.xml' (duz klasor — bizim eski Event\BossGuild\BossGuild.xml yolu canlida YOK)
 	gBossGuild.Init();
 #endif
+
+	gGvGEvent.Init();	// 2c.1-B2: EventGvG iskeleti (7 anahtar ReadEventInfo(section,path)'te okunuyor)
 
 	LogAdd(LOG_BLUE,"[ServerInfo] Event loaded successfully");
 }
@@ -4137,9 +4140,18 @@ void CServerInfo::ReadEventInfo(char* section,char* path) // OK
 	this->m_TvTEventNPC						= GetPrivateProfileInt(section,"EventTvTNpc",0,path);
 	this->m_TvTEventNPCMap					= GetPrivateProfileInt(section,"EventTvTNpcMap",0,path);
 	this->m_TvTEventNPCX					= GetPrivateProfileInt(section,"EventTvTNpcX",0,path);
-	this->m_TvTEventNPCY					= GetPrivateProfileInt(section,"EventTvTNpcY",0,path);
-	this->m_TvTEventMinUsers				= GetPrivateProfileInt(section,"EventTvtMinUsers",2,path);
-	this->m_TvTEventMaxUsers				= GetPrivateProfileInt(section,"EventTvtMaxUsers",20,path);
+	this->m_TvTEventNPCY					= GetPrivateProfileInt(section,"EventTvTNpcY",0,path);	this->m_TvTEventMinUsers					= GetPrivateProfileInt(section,"EventTvtMinUsers",2,path);
+	this->m_TvTEventMaxUsers					= GetPrivateProfileInt(section,"EventTvtMaxUsers",20,path);
+
+	// 2c.1-B2: EventGvG — canli exe'de kanitli 7 anahtar (donor ReadEventInfo deseni,
+	// donor kosulu (PROTECT_STATE==1 && GAMESERVER_CLIENTE_UPDATE>=14) bizde daima TRUE → kosulsuz)
+	this->m_GvGEventSwitch					= GetPrivateProfileInt(section,"EventGvGSwitch",0,path);
+	this->m_GvGEventNPC						= GetPrivateProfileInt(section,"EventGvGNpc",0,path);
+	this->m_GvGEventNPCMap					= GetPrivateProfileInt(section,"EventGvGNpcMap",0,path);
+	this->m_GvGEventNPCX						= GetPrivateProfileInt(section,"EventGvGNpcX",0,path);
+	this->m_GvGEventNPCY						= GetPrivateProfileInt(section,"EventGvGNpcY",0,path);
+	this->m_GvGEventMinUsers				= GetPrivateProfileInt(section,"EventGvGMinUsers",2,path);
+	this->m_GvGEventMaxUsers				= GetPrivateProfileInt(section,"EventGvGMaxUsers",20,path);
 
 	#endif
 }

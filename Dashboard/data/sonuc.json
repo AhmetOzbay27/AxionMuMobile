@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 14:07:00",
+  "updated": "2026-10-01 14:34:00",
   "status": "ok",
-  "text": "2c.1 TAMAM: 60 modul (docs/05 59 + #60 EventGvG + docs/12 acik kalemleri) oyun akisi etkisine gore yeniden dizildi -> docs/13-2C1-ONCELIK-IS-EMRI.md (01.10.2026 14:05). Sınıflar: A Cekirdek Oyun Akisi=24 (21 is + 4 tam 2b.0), B Event=9 (EventMainManager iskeleti + EventGvG), C QoL=21, D Anticheat=3, E Kozmetik=3 -> 60/60. Uygulama dalgasi §8: A->B->C->D/E; ilk is SPK_Harmony. Kapsam disi belgelendi: C grubu 19 OFF, ThuongDanhBoss parite-disi. docs/05 + docs/00 guncellendi. Kod degisikligi yok -> derleme etkilenmez (10.786.304 B). Sonraki: 2c.1-A (Harmony)."
+  "text": "2c.1-B2 ISINMA TAMAM: EventGvG modulu canli kanittan yazildi. ServerInfo.h+cpp'ye 7 anahtar (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers — donor ReadEventInfo deseni birebir, kosul daima TRUE → kosulsuz, default 0/0/0/0/0/2/20); EventGvG.h donor'dan birebir cp; EventGvG.cpp iskelet (ctor/Init/Clear + MainProc state switch + 5 ProcState gecis govdesi + SetState/GetState; Load + genis yuzey tam is icin 2c.1-B2'de). Kanca: User.cpp gObjEventRunProc -> gGvGEvent.MainProc() + ReadEventInfo sonu Init + vcxproj. Derleme temiz -> 10.789.376 B (14:31). Dogrulama: exe'de 7/7 anahtar (canliyla ayni set), PDB EventGvG.cpp x3 + ProcState_START x74, User.obj'te kanca. docs/13 B2 + CHANGELOG guncellendi. Sonraki: 2c.1-A (Harmony) veya 2c.1-B (EventMainManager)."
 }

@@ -65,7 +65,7 @@
 | Sıra | # | Modül | Sınıf(map) | Kaynak | Not |
 |---:|---:|---|---|---|---|
 | B1 | 1 | SPK_EventMainManager | EventMainManager | sıfırdan | **event iskeleti** — diğer event'lerin taşıyıcısı, B grubunun ilk işi |
-| B2 | 60 | **EventGvG** (YENİ keşif) | CGvGEvent | sıfırdan (canlı 7 anahtar) | EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers — docs/12 §4 |
+| B2 | 60 | **EventGvG** (YENİ keşif) ✅ **iskelet kuruldu** (26.10.01 14:31) | CGvGEvent | sıfırdan (canlı 7 anahtar) | ServerInfo 7 anahtar okunuyor (exe'de 7/7), donor header birebir, state machine iskeleti User.cpp MainProc'de; tam uygulama (NPC/Dialog/rank) 2c.1-B2 |
 | B3 | 31 | ActiveInvasions | CActiveInvasions | sıfırdan | invasion takibi |
 | B4 | 27 | SPK_CastleEvent | CastleStartGuild | sıfırdan | castle etkinliği |
 | B5 | 32 | BEventThanMa | CThanMaChien | sıfırdan | ThanMaChien |
