@@ -7,6 +7,66 @@
 
 ---
 
+## [26.10.01 07:00] Faz 2b.3 — 68 MUIG-özel modülün canlı envanterle çapraz kontrolü (docs/12)
+
+**Ne yapıldı**
+- Kullanıcı istği: "2b.3'ü başlat: 68 MUIG-özel modülün canlı envanterle çapraz
+  kontrolünü yap, saat damgalı rapor yaz."
+- **Sayım düzeltmesi:** "68" etiketinin kaynağı
+  `analiz\SPK-KAYNAK-ANALIZ-20260930.md:268` (MUIG 562 ↔ SPK 564 dosya).
+  Kesin sayım: donör GS kökünde **62 donor-özel dosya** (29 cpp + 33 h);
+  2b.0'da alınmış 4 modülün 8 dosyası (bizde `SPK\` altında: AUTOHP,
+  CustomJewelBank, PC_AddBuff, SkillDamage) düşülünce net inceleme
+  **29 cpp modülü / 54 dosya**. Yeni doğrulama: donör cpp 277 = canlı PDB cpp
+  277 birebir.
+- **Yöntem (6 kanıt hattı):** donor vcxproj ClCompile kaydı; donor sınıf
+  yüzeyi; canlı `GameServer.map` (sembol + 606 obj adı →
+  `canli_obj_listesi.txt`); canlı PDB cpp yolları (277); canlı exe string dump
+  (`c.s`) ↔ bizim (`b.s`); canlı `Sub-1\Data` config + `SPK\` log klasörü.
+- **Ham çıktılar:** `BuildLog\envanter\{muig68_donor_only.txt,
+  muig68_capraz_kontrol.csv, muig68_kanit_detay.txt, canli_obj_listesi.txt}`;
+  rapor: **docs/12** (tarama 06:27–06:36, rapor 06:56).
+- **A grubu — 7 modül canlıda VAR, parite tamam:** AUTOHP→`SPK_AutoHp` +
+  PC_AddBuff→`SPK_AddBuff` + CustomJewelBank→`SPK\CustomJewelBank.cpp` +
+  SkillDamage→kök `SkillDamage.cpp` (4'ü 2b.0 ✅); **B_MocNap**→canlı
+  `SPK\B_MocNap.cpp` + `LOG_MOC_NAP` aktif (bizde paralel MocNap.cpp +
+  CB_AutoNapGame.cpp/h — 2c birleştirme kalemi); **BotTrade**→canlı
+  `SPK\BotTradeMix.cpp` + `LOG_OUT_TRADEBOT` (bizde BotTrader.cpp/h +
+  ThuMuaDoExc.cpp/h kapsam); **SkillDamageConfig**→donor SkillDamage rate
+  katmanı (bizim SPK\SkillDamage.cpp satır paraleli: 25/66/68/108/112).
+- **B grubu — 3 modül canlıda işlev VAR ama donor kodu yanlış kaynak (→2c):**
+  **EventGvG — YENİ KEŞİF:** canlı ServerInfo.obj'te 7 config anahtarı
+  (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers) — bizim
+  ServerInfo.cpp'te 0 vuruş → 05 listesine sonradan gelen 60. kalem;
+  **AntiSkillDelay** — canlı işlevi `SkillManager::CheckSkillDelay` içinde
+  (bizde VAR; donor dosyası çöp); **ThuongDanhBoss** — donorde derleniyor ama
+  canlıda SIFIR iz → parite kapsamı dışı.
+- **C grubu — 19 modül canlıda YOK (OFF/taşınmaz):** APIGameGuard,
+  CGMHardwareId, CGMEarringManager, CGMFlagNatManager, CGMPetManager,
+  CMixGoblinExpansion, CharacterAdvance, ChatManager, ConsoleDebug,
+  CustomExchangeCoin, EventFindPath, GMHolyItem, LogToFile, MasterResetTable,
+  MultiLanguage, MyTimer, SendMessage, WindowsConsole, BlackList(donör
+  CBlackList). Kritik netleştirmeler: canlı `Data\BlackList.txt` kanıtı
+  `CIpManager::AddBlacklist/IsBlacklisted`'e ait (bizde VAR) — donör
+  CBlackList değil (formatı BlackList_Block.txt, farklı); CGMHardwareId'nin
+  "HardwareId" vuruşı ServerInfo.obj'teki `CustomerHardwareId` stringi (bizde
+  zaten var); canlı `DGCommandMasterResetRecv` ile donor MasterResetTable
+  bağıntısı 2c'de çözülecek.
+
+**Neden** — 2b.3, Faz 2b'nin son adımı: MUIG donor'da olup bizde olmayan
+modüllerin canlıda karşılığı kanıta bağlanmalı; canlıda olmayanların pariteye
+etkisi olmadığı belgelenir (OFF kararı), canlıda olanların gerçek kaynağı
+belirlenir.
+
+**Doğrulama**
+- Salt-okunur tarama: canlı sistemde yazma yok; kod değişikliği yok → GS
+  derlemesi etkilenmez (son: 10.776.576 B, febde56b1).
+- CSV 29 satır + kanıt dökümü üretildi; sınıflandırma 7+3+19=29 tutarlı.
+- Yalan-pozitifler tek tek elendi (SendMessage→user32, FindPath→CMapPath,
+  Advance→CRT/SkyEvent, ExchangeCoin→LuckyCoin, HardwareId→ServerInfo).
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 07:00
+
 ## [26.10.01 01:04] Pano otomatik başlatma — Task Scheduler görevi (AxionPano)
 
 **Ne yapıldı**

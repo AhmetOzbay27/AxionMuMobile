@@ -104,9 +104,22 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
     Move/Quest GetLevel-zinciri). GS temiz → 10.775.552 B.
     **2b.2 TAMAMLANDI (7 dalga): 66 dosya alındı, 147 gerekçeli korundu,
     0 belirsiz.**
-- ⬜ **2b.3** 68 MUIG-özel modülün (SkillDamage, CustomJewelBank, AUTOHP,
-  CGMHardwareId, APIGameGuard vb.) canlıda var olup olmadığının 2a.1/2a.2
-  envanteriyle çapraz kontrolü; canlıda olmayan modüller OFF bayrağıyla.
+- ✅ **2b.3** MUIG-özel modül çapraz kontrolü (01.10.2026, 06:27–07:00) →
+  [12-MUIG68-CAPRAZ-KONTROL.md](12-MUIG68-CAPRAZ-KONTROL.md): "68" etiketi
+  netleştirildi → 62 donor-özel dosya (29 cpp modülü; 2b.0'ın 4 modülü düşülünce).
+  6 kanıt hattı (vcxproj/sınıf/map+obj/PDB/exe-string/config+log) ile sınıflandırma:
+  **7 canlıda VAR-parite tamam** (AUTOHP, PC_AddBuff, CustomJewelBank, SkillDamage
+  = 2b.0 ✅; B_MocNap→bizde MocNap+CB_AutoNapGame paraleli; BotTrade→bizde
+  BotTrader+ThuMuaDoExc; SkillDamageConfig→rate katmanı), **3 iş-kalemi 2c'ye**
+  (EventGvG — YENİ KEŞİF: canlı ServerInfo 7 anahtar kanıtlı, bizde eksik;
+  AntiSkillDelay→canlı SkillManager içi, bizde VAR; ThuongDanhBoss→canlıda sıfır iz),
+  **19 canlıda YOK → OFF/taşınmaz** (APIGameGuard, CGMHardwareId, CGMEarring,
+  CGMFlagNat, CGMPet, CMixGoblinExpansion, CharacterAdvance, ChatManager,
+  ConsoleDebug, CustomExchangeCoin, EventFindPath, GMHolyItem, LogToFile,
+  MasterResetTable, MultiLanguage, MyTimer, SendMessage, WindowsConsole,
+  BlackList-donör). Kritik netleştirme: canlı BlackList.txt = IpManager
+  (bizde VAR), donör CBlackList değil. Ham veri: BuildLog\envanter\muig68_*.
+  **FAZ 2b TAMAMLANDI → sıradaki 2c.1.**
 
 ### Faz 2c — 57 eksik modülün yeniden yazımı
 - ⬜ **2c.1** 05-SPK-MODUL-ENVANTERI.md'yi öncelik sırasına diz (oyun akışı

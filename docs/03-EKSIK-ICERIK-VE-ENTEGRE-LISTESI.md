@@ -34,13 +34,14 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 | B-02 | SPK client içerik varlıkları (Btn_AutoHp.spk, Btn_AutoPK.spk, ai_newui_skill*.ozj, Config\Info\) | `Client\Data\SPK\` | istemci paketi | ⬜ 2d.0 sonrası |
 | B-03 | GetMainInfo varyant birleşimi — **tasarım tamam** ([08 dokümanı](08-GETMAININFO-TASARIM.md), D1-D9 iş planı) | SPK GetEngine benimsendi; MUIG legacy bayraklı | `Source\6.GetMainInfo\SPK\` | 🔄 2d.1 uygulaması |
 | B-04 | Gömülü IP / config okuma düzeni (H-004) | Canlı değer: 192.168.0.150 | `Source\5.Main\` | ⬜ 2e.1 |
-| B-05 | MUIG 68 özel modülünün canlı karşılığı kontrolü | MUIG donor | `Source\5.Main\` | ⬜ 2b.3 |
+| B-05 | MUIG 68 özel modülünün canlı karşılığı kontrolü — **TAMAMLANDI**: 29 modül 6 kanıt hattıyla sınıflandırıldı (7 parite-tamam / 3 iş-kalemi 2c'ye / 19 canlıda-yok OFF); rapor [12](12-MUIG68-CAPRAZ-KONTROL.md), ham veri BuildLog\envanter\muig68_* | MUIG donor | — | ✅ 2b.3 (01.10.2026) |
 
 ## C. ORTAK / ALTYAPI
 
 | # | Kalem | Kaynak | Hedef | Durum |
 |---|-------|--------|-------|-------|
-| C-01 | MUIG'in 161 daha yeni ortak dosyası | MUIG donor | `Source\` (SPK taban) | ⬜ 2b.1-2b.2 diff matrisi sonrası grup grup |
+| C-01 | MUIG'in 161 daha yeni ortak dosyası | MUIG donor | `Source\` (SPK taban) | ✅ 2b.1 matrisi + 2b.2 7 dalga (66 alındı / 147 korundu) |
+| C-01b | **YENİ (2b.3 keşfi): EventGvG modülü** — canlı ServerInfo 7 config anahtarı kanıtlı (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers), bizim ServerInfo.cpp'te yok | canlı kanıttan sıfırdan | `Source\4.GameServer\` | ⬜ 2c (05 listesine 60. kalem) |
 | C-02 | DB şeması (DB_SQL_12.bak) ile GS beklentileri uyumu | `ServerTools\DB_SQL_12.bak` | test DB | ⬜ Faz 3 öncesi |
 
 ## D. BİLİNEN KÜÇÜK SAPMALAR (parite, düşük risk)

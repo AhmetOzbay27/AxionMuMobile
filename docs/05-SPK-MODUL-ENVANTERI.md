@@ -120,6 +120,17 @@ SkillDamage.cpp map deseninde yakalanamamıştı.)
 **Toplam denetim: 19 (P1) + 28 (P2) + 12 (P3) = 59 ✓** — kesin liste
 `BuildLog\envanter\canli_ek_dosyalar.txt` ile birebir.
 
+### 2b.3 eklemesi (01.10.2026): 60. kalem — EventGvG + 2c bağlantı kalemleri
+2b.3 çapraz kontrolü ([12-MUIG68-CAPRAZ-KONTROL.md](12-MUIG68-CAPRAZ-KONTROL.md))
+MUIG-özel modüllerin canlı karsılıklarını sınıflandırdı ve bu listeye
+**dışarıdan gelen 1 yeni kalem** çıkardı:
+- **#60 — EventGvG (CGvGEvent):** canlı ServerInfo.obj'te 7 config anahtarı
+  kanıtlı (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers); bizim
+  ServerInfo.cpp'te yok. Öncelik: P2 (event). Kaynak: sıfırdan (canlı config
+  şemasından). Ayrıca 2c bağlantı kalemleri: B_MocNap ↔ bizim MocNap +
+  CB_AutoNapGame birleştirmesi (P1, canlı LOG_MOC_NAP aktif); MasterReset
+  tablosu çözümü (canlı DGCommandMasterResetRecv). Detay: docs/12 §6.
+
 ---
 
 ## 4. 12 EZİLEN DOSYA — SPK REVİZYON TAŞIMASI
