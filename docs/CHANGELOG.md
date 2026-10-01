@@ -51,7 +51,7 @@
 range!` ✓, `OnlineRewardOfflineSystems` ✓, `Event\BossGuild.xml` ✓,
 `[OfflineMode] Disable in...` → 0 ✓ (sessizlik). docs/09 matris 6 satır güncellendi.
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 13:50
+**Commit** — `acd5c642b` · **Tamamlandı** — 01.10.2026 13:50
 
 ---
 
