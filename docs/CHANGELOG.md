@@ -68,7 +68,7 @@ gerçek modülü olan her sınıf bağlandı.
 - CustomShop/ResetChange kanıtı: canlı exe'de sınıf logları VAR ama
   bizim+donor kaynak ağacında sınıf yok (grep: 0 dosya).
 
-**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 18:49
+**Commit** — `df6a136c1` · **Tamamlandı** — 01.10.2026 18:49
 
 ## [26.10.01 14:31] 2c.1-B2 (ısınma) — EventGvG modülü: ServerInfo 7 anahtarı + CGvGEvent iskeleti
 
