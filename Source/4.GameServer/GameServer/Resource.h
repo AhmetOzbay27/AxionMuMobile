@@ -26,6 +26,7 @@
 #define IDM_STARTDROP                   116
 #define IDM_STARTKING                   117
 #define IDM_STARTTVT                    118
+#define IDM_STARTGVG                    121	// 2c.1-B2: donor resource.h degeri (canli rc menude gorsel girdi sonra eklenebilir; menu handler kod tarafi hazir)
 #define IDR_MAINFRAME                   128
 #define IDD_ONLINEUSER                  129
 #define IDI_ICON1                       129

@@ -20,6 +20,7 @@
 #include "InvasionManager.h"
 #include "ItemManager.h"
 #include "EventTvT.h"
+#include "EventGvG.h"	// 2c.1-B2: Init (donor MonsterManager.cpp:441)
 #include "Map.h"
 #include "MemScript.h"
 #include "Monster.h"
@@ -402,6 +403,8 @@ void CMonsterManager::SetMonsterData() // OK
 	gCustomQuiz.Init();
 
 	gTvTEvent.Init();
+
+	gGvGEvent.Init();	// 2c.1-B2: donor MonsterManager.cpp:441 (gTvTEvent.Init sonrasi — ServerInfo ReadEventInfo'daki ilk Init ile ayni; state sync zararsiz)
 
 	gDevilSquare.Init();
 

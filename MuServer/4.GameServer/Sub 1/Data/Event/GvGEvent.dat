@@ -1,0 +1,18 @@
+0
+//AlarmTime      StandTime      EventTime      CloseTime
+2               1              1              0
+end
+
+1
+//Year   Month   Day   DoW   Hour   Minute   Second
+end
+
+2
+//ReqItemCount   ReqItemIndex   ReqItemLevel   EventMap   WaitingGate   StartGate   MinLevel   MaxLevel   MinReset   MaxReset   MinMasterReset   MaxMasterReset
+0                0               0              -1         17            18          *          *          *          *          *                *
+end
+
+3
+//Coin1   Coin2   Coin3
+0         0       0
+end

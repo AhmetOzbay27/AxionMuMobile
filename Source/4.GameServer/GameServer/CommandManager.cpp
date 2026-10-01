@@ -30,6 +30,7 @@
 #include "EventQuickly.h"
 #include "EventStart.h"
 #include "EventTvT.h"
+#include "EventGvG.h"	// 2c.1-B2: StartGvG komutu (donor CommandManager.cpp:41)
 #include "ExperienceTable.h"	// Faz 2b.2-R: /reload experiencetable
 #include "Filter.h"
 #include "FilterRename.h"
@@ -628,6 +629,9 @@ bool CCommandManager::ManagementCore(LPOBJ lpObj,char* message, int Npc) // OK
 			break;
 		case COMMAND_STARTTVT:
 			Result = CommandStartTvT(lpObj,argument);
+			break;
+		case COMMAND_STARTGVG:	// 2c.1-B2: donor CommandManager.cpp:634
+			Result = CommandStartGvG(lpObj,argument);
 			break;
 		case COMMAND_SPOT:
 			Result = CommandSpot(lpObj,argument);
@@ -4301,6 +4305,15 @@ bool CCommandManager::CommandStartTvT(LPOBJ lpObj,char* arg) // OK
 	#if (GAMESERVER_CLIENTE_UPDATE >= 9)
 	gTvTEvent.StartTvT();
 	gLog.Output(LOG_COMMAND,"[CommandStartTVT][%s][%s] - Used",lpObj->Account,lpObj->Name);
+	#endif
+	return 1;
+}
+
+bool CCommandManager::CommandStartGvG(LPOBJ lpObj,char* arg) // 2c.1-B2: donor CommandManager.cpp:4082 birebir (donor >=14, bizde 17)
+{
+	#if (GAMESERVER_CLIENTE_UPDATE >= 14)
+	gGvGEvent.StartGvG();
+	gLog.Output(LOG_COMMAND,"[CommandStartGvG][%s][%s] - Used",lpObj->Account,lpObj->Name);
 	#endif
 	return 1;
 }

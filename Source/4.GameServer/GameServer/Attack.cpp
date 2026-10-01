@@ -15,6 +15,7 @@
 #include "EventKillAll.h"
 #include "EventRunAndCatch.h"
 #include "EventTvT.h"
+#include "EventGvG.h"	// 2c.1-B2: PVP giridi (donor Attack.cpp)
 #include "EffectManager.h"
 #include "GensSystem.h"
 #include "Guild.h"
@@ -1020,6 +1021,11 @@ bool CAttack::Attack(LPOBJ lpObj, LPOBJ lpTarget, CSkill* lpSkill, bool send, BY
 			}
 
 			if (gTvTEvent.CheckPlayerTarget(lpObj) && gTvTEvent.CheckPlayerTarget(lpTarget))
+			{
+				CheckSelfDefense = 0;
+			}
+
+			if (gGvGEvent.CheckPlayerTarget(lpObj) && gGvGEvent.CheckPlayerTarget(lpTarget))	// 2c.1-B2: donor Attack.cpp:887
 			{
 				CheckSelfDefense = 0;
 			}
@@ -2145,6 +2151,26 @@ bool CAttack::CheckPlayerTarget(LPOBJ lpObj,LPOBJ lpTarget) // OK
 	}
 
 	if (gTvTEvent.CheckSelfTeam(lpObj, lpTarget))
+	{
+		return 0;
+	}
+
+	if (gGvGEvent.CheckStandTarget(lpObj) && gGvGEvent.CheckStandTarget(lpTarget))	// 2c.1-B2: donor Attack.cpp:2029
+	{
+		return 0;
+	}
+
+	if (gGvGEvent.CheckPlayerJoined(lpObj,lpObj) && !gGvGEvent.CheckPlayerJoined(lpTarget,lpTarget))	// 2c.1-B2: donor Attack.cpp:2034
+	{
+		return 0;
+	}
+
+	if (gGvGEvent.CheckPlayerJoined(lpTarget,lpTarget) && !gGvGEvent.CheckPlayerJoined(lpObj,lpObj))	// 2c.1-B2: donor Attack.cpp:2039
+	{
+		return 0;
+	}
+
+	if (gGvGEvent.CheckSelfTeam(lpObj, lpTarget))	// 2c.1-B2: donor Attack.cpp:2044
 	{
 		return 0;
 	}

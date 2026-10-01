@@ -38,6 +38,7 @@
 #include "ESProtocol.h"
 #include "ExperienceTable.h"
 #include "EventTvT.h"
+#include "EventGvG.h"	// 2c.1-B2: GvG respawn (donor ObjectManager.cpp:1014)
 #include "GameMaster.h"
 #include "Gate.h"
 #include "Guild.h"
@@ -1097,6 +1098,10 @@ bool CObjectManager::CharacterGetRespawnLocation(LPOBJ lpObj) // OK
 	else if(gTvTEvent.CheckPlayerTarget(lpObj))
 	{
 		result = gTvTEvent.GetUserRespawnLocation(lpObj,&gate,&map,&x,&y,&dir,&level);
+	}
+	else if(gGvGEvent.CheckPlayerTarget(lpObj))	// 2c.1-B2: donor ObjectManager.cpp:1014
+	{
+		result = gGvGEvent.GetUserRespawnLocation(lpObj,&gate,&map,&x,&y,&dir,&level);
 	}
 	else if(lpObj->Map == MAP_LORENCIA || lpObj->m_OfflineMode)
 	{

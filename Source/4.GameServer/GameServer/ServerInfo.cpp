@@ -489,6 +489,8 @@ void CServerInfo::ReadEventInfo() // OK
 
 	gTvTEvent.Load(gPath.GetFullPath("Event\\TvTEvent.dat"));
 
+	gGvGEvent.Load(gPath.GetFullPath("Event\\GvGEvent.dat"));	// 2c.1-B2: donor ServerInfo.cpp:466 birebir (dosya yoksa load guard BLANK'a alir — boot korunur)
+
 	gCrywolf.Load(gPath.GetFullPath("Event\\Crywolf.dat"));
 
 	gDevilSquare.Load(gPath.GetFullPath("Event\\DevilSquare.dat"));

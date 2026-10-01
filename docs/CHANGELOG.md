@@ -7,6 +7,91 @@
 
 ---
 
+## [26.10.01 21:43] 2c.1-B2 — EventGvG tam uygulama: donor 1138 satır birebir port + canlı kanıt denetimi (NPC Dialog/rank/StartGvG/9 kanca)
+
+**Ne yapıldı** (kullanıcı isteği: "EventGvG iskeletini tam uygulamaya taşı:
+donor 1138 satırı canlı kanıtla denetleyip NPC spawn/Dialog/rank/StartGvG
+işlevlerini bağla")
+- **Canlı kanıt denetimi (docs/12 §4 kuralı):** canlı map
+  (GameServer_canli.map) yeniden tarandı → **CGvGEvent/EventGvG sınıf
+  sembolleri canlıda YOK**; GvG izi yalnız 7 config anahtarı
+  (ServerInfo.obj 0x64b130-0x64b19c). Donor canlısı (4.MuServer Sub-1)
+  üzerinde doğrulama: `Event\\GvGEvent.dat` **deploy edilmemiş** ve
+  Command.txt'te `/startgvg` satırı **yok** (/starttvt var, satır 74) →
+  GvG, donor canlısında da **kapalı bekleyen modül** (donor Load'ı dosya
+  yoksa ErrorMessageBox→ExitProcess'e düşer — yani donor canlısında bu
+  yol asla tetiklenmemiş).
+- **Donor bağımlılık eşleşmesi (bizim kaynakta birebir aynı):**
+  CEventName::GlobalRemainTime + GVG_EVENT_TIME=10 (CEventName.h satır
+  bile eş), CScheduleManager+CTime deseni (CastleDeep.cpp ile aynı),
+  gGate.GetGate, GDSetCoinSend (DSProtocol.cpp:4826), GCNoticeSend/
+  GCChatTargetSend, GetInventoryItemCount/DeleteInventoryItemCount,
+  CharacterUpdateMapEffect, SearchGuild_Number, G_MASTER, LOG_EVENT
+  (ServerDisplayer.h:32 = donor LOG_EVENT=6).
+- **[EventGvG.cpp](../Source/4.GameServer/GameServer/EventGvG.cpp)
+  (137→905 satır):** donor 1138 satır **birebir port** — ctor/Init/Clear/
+  Load (MemScript 4 bölüm: süreler/GVG_TIME zaman tablosu/etkinlik alanı
+  + seviye-reset sınırları/ödül coinleri)/MainProc (1 sn tick +
+  GlobalRemainTime broadcast + 5 ProcState)/SetState 5 geçiş gövdesi
+  (STAND/START/CLEAN süre kurulumları, CLEAN→CalcRank + kazanan guild
+  coin ödülü)/CheckSync (schedule boşsa BLANK)/Dialog (7 config anahtarı
+  eşleşen NPC'de GCChatTargetSend 864 + CheckEnterEnabled 16 kontrollü
+  girit)/CheckReqItems (ChaosLock'lu item bedeli)/AddUser/AddGuild
+  (StartGate+n slot)/GetUserRespawnLocation/UserDieProc (öldüren guild
+  +1 puan, NOTICE 874)/NoticeSendToAll (varargs)/CalcRank (puan
+  sıralaması → Winner + NOTICE 876)/StartGvG (şimdi+2 dk schedule push +
+  `[Set GVG Start] At %02d:%02d:00` LOG_EVENT logu). **Tek sapma (donor
+  yazım hatası):** `GetAsNumber` yerine `gettype` çağrısı → GetAsNumber
+  (derlemeyen donor satırı); Load başına dosya-yok guard'ı eklendi
+  (SetBuffer 0 → BLANK + çıkış, ExitProcess koruması — donor canlı
+  davranışı korunur, boot bloklanmaz).
+- **Kancalar (9 nokta, donor wiring birebir):**
+  [ServerInfo.cpp](../Source/4.GameServer/GameServer/ServerInfo.cpp)
+  ReadEventInfo → `gGvGEvent.Load("Event\\GvGEvent.dat")` (donor:466);
+  [MonsterManager.cpp](../Source/4.GameServer/GameServer/MonsterManager.cpp)
+  Init → gGvGEvent.Init (donor:441, gTvTEvent.Init sonrası);
+  [NpcTalk.cpp](../Source/4.GameServer/GameServer/NpcTalk.cpp) → Dialog
+  (donor:114, gTvTEvent.Dialog sonrası);
+  [Attack.cpp](../Source/4.GameServer/GameServer/Attack.cpp) →
+  CheckPlayerTarget×2 (CheckSelfDefense kaldırma, donor:887) +
+  CheckStandTarget/CheckPlayerJoined×2/CheckSelfTeam (donor:2029-2047);
+  [ObjectManager.cpp](../Source/4.GameServer/GameServer/ObjectManager.cpp)
+  CharacterGetRespawnLocation → GetUserRespawnLocation (donor:1014);
+  [User.cpp](../Source/4.GameServer/GameServer/User.cpp) gObjUserDie →
+  UserDieProc (donor:2819);
+  [GameServer.cpp](../Source/4.GameServer/GameServer/GameServer.cpp) →
+  IDM_STARTGVG (donor:417, resource.h 121);
+  [CommandManager.cpp](../Source/4.GameServer/GameServer/CommandManager.cpp)
+  → COMMAND_STARTGVG=86 + CommandStartGvG (donor:634/4082; enum
+  renumber'sız son slota — pozisyonel bağlama korundu, /addbuff dormant
+  87'ye alındı);
+  [resource.h](../Source/4.GameServer/GameServer/resource.h) →
+  IDM_STARTGVG=121.
+- **Deploy (3 hedef — 2b.1-A2 ağaç desenleri):**
+  `Event\\GvGEvent.dat` **default-inert şablon** (554 B CRLF, MemScript
+  formatı TvTEvent.dat deseninde: bölüm 0 süreler, bölüm 1 zaman tablosu
+  **boş** → CheckSync BLANK'a kilitler = event kapalı bekler, bölüm 2
+  alan satırı, bölüm 3 coinler) → MuServer/4.GameServer/{Data/Event,
+  Sub 1/Data/Event} + 4.GameServer_real/Sub 1/Data/Event.
+
+**Neden** — docs/13 B2: donor kaynak bu modül için tek donor; canlı exe
+motor sembolleri içermediğinden disasm denetimi mümkün değil (denetim
+bugünü: canlı sadece 7 config anahtarı bilir). Parite kararı: motor
+donor'dan birebir, data tarafı donor canlı davranışı (kapalı) korunur.
+Etkinleştirme: Switch=1 + bölüm 1'e zaman satırı.
+
+**Doğrulama**
+- GS derlemesi temiz (Release_EX603, MSBuild 0 hata) → **10.816.512 B
+  (21:42)** (+7.168 B); EventGvG.obj 207.721 B (BuildLog\\4GS).
+- Yeni exe string kanıtları: `Event\\GvGEvent.dat` ×1 (canlıda YOKTU),
+  `CommandStartGvG` ×1, `Set GVG Start` ×1 (+ mevcut EventGvGSwitch).
+- GvGEvent.dat ×3 dizinde; guard yolu: dosya silinirse bile GS boot
+  devam eder (BLANK).
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 21:43
+
+---
+
 ## [26.10.01 20:56] 2c.1-B1 — EventMainManager iskeleti: canlı SPK_EventMainManager kanıtlarıyla (SkyEvent + yol paritesi + taşıyıcı yapı)
 
 **Ne yapıldı** (kullanıcı isteği: "2c.1-B ilk iş: EventMainManager event

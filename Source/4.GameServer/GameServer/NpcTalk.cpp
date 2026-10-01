@@ -35,6 +35,7 @@
 #include "ShopManager.h"
 #include "Trade.h"
 #include "EventTvT.h"
+#include "EventGvG.h"	// 2c.1-B2: GvG NPC Dialog (donor NpcTalk.cpp)
 #include "Util.h"
 #include "Warehouse.h"
 #include "Log.h"
@@ -136,6 +137,11 @@ bool CNpcTalk::NpcTalk(LPOBJ lpNpc,LPOBJ lpObj) // OK
 	}
 
 	if (gTvTEvent.Dialog(lpObj,lpNpc))
+	{
+		return 1;
+	}
+
+	if (gGvGEvent.Dialog(lpObj,lpNpc))	// 2c.1-B2: donor NpcTalk.cpp:114
 	{
 		return 1;
 	}

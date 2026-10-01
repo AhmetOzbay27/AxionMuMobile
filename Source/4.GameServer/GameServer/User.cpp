@@ -2640,6 +2640,10 @@ void gObjUserDie(LPOBJ lpObj,LPOBJ lpTarget) // OK
 	{
 		gTvTEvent.UserDieProc(lpObj,lpTarget);
 	}
+	if (gGvGEvent.CheckPlayerTarget(lpObj))	// 2c.1-B2: donor User.cpp:2819 (olduren guild +1 puan, NOTICE 874)
+	{
+		gGvGEvent.UserDieProc(lpObj, lpTarget);
+	}
 	#if	BsvEvent
 	if (gBsVEvent.CheckPlayerTarget(lpObj))
 	{

@@ -96,7 +96,8 @@ enum eCommandNumber
 	COMMAND_SETPASSPARTY	= 83,
 	COMMAND_SETLEVEL		= 84,
 	COMMAND_SETRESET		= 85,
-	COMMAND_ADDBUFF			= 86,	// SPK (Faz 2b), donor CommandManager.h:103
+	COMMAND_STARTGVG		= 86,	// 2c.1-B2: donor CommandManager.h:96 (deger 83) — bizim Command.txt sirasinda sonraki slot 86 (pozisyonel baglama: CCommandManager::Init Add(GetCommand(n),n+1)); veri satiri eklenince /startgvg kod 86'ya baglanir
+	COMMAND_ADDBUFF			= 87,	// SPK (Faz 2b), donor CommandManager.h:103 — bizim Command.txt'te /addbuff satiri yok (dormant); 86 STARTGVG'e verildi (2c.1-B2)
 };
 
 //**********************************************//
@@ -353,6 +354,7 @@ public:
 	bool CommandStartDrop(LPOBJ lpObj,char* arg);
 	bool CommandStartKing(LPOBJ lpObj,char* arg);
 	bool CommandStartTvT(LPOBJ lpObj,char* arg);
+	bool CommandStartGvG(LPOBJ lpObj,char* arg);	// 2c.1-B2: donor CommandManager.h:362
 	bool CommandStartInvasion(LPOBJ lpObj,char* arg);
 	bool CommandStartCustomArena(LPOBJ lpObj,char* arg);
 	bool CommandSetPassParty(LPOBJ lpObj, char* arg);

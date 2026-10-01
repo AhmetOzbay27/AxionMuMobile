@@ -11,6 +11,7 @@
 #include "CustomQuiz.h"
 #include "DevilSquare.h"
 #include "EventTvT.h"
+#include "EventGvG.h"	// 2c.1-B2: IDM_STARTGVG (donor GameServer.cpp:417)
 #include "GameServer.h"
 #include "GameMain.h"
 #include "IllusionTemple.h"
@@ -447,6 +448,9 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam) // 
 					break;
 				case IDM_STARTTVT:
 					gTvTEvent.StartTvT();
+					break;
+				case IDM_STARTGVG:	// 2c.1-B2: donor GameServer.cpp:417 (deger 121)
+					gGvGEvent.StartGvG();
 					break;
 #if(BOSS_GUILD == 1)
 				case IDM_EVENTS_BOSSGUILD:
