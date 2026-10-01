@@ -77,7 +77,7 @@ void ObjBotAlchemist::Read(char* FilePath)
 					int BotNum = lpMemScript->GetNumber();
 					if (BotNum < 0 || BotNum > MAX_BOTALCHEMIST - 1)
 					{
-						ErrorMessageBox("Cộng Hưởng Lỗi 1: Cộng Hưởng Index: %d Ngoài Phạm Vi!", BotNum);
+						ErrorMessageBox("BotAlchemist error: BotPetIndex:%d out of range!", BotNum);	// E-02 (kalan): canli exe string
 						return;
 					}
 
@@ -103,7 +103,7 @@ void ObjBotAlchemist::Read(char* FilePath)
 					int BotNum = lpMemScript->GetNumber();
 					if (BotNum < 0 || BotNum > MAX_BOTALCHEMIST - 1)
 					{
-						LogAdd(LOG_RED, "Cộng Hưởng Lỗi 3: Cộng Hưởng Index: %d Không Tồn Tại", BotNum);
+						LogAdd(LOG_RED, "BotAlchemist error: BotPetIndex:%d doesnt exist", BotNum);	// E-02 (kalan): canli exe string
 						return;
 					}
 
@@ -111,7 +111,7 @@ void ObjBotAlchemist::Read(char* FilePath)
 
 					if (Slot < 0 || Slot > 8)
 					{
-						ErrorMessageBox("Cộng Hưởng Lỗi: Min Slot 0 ; Max Slot 8");
+						ErrorMessageBox("BotAlchemist error: Min Slot 0 ; Max Slot 8");	// E-02 (kalan): canli exe string
 						return;
 					}
 
@@ -136,7 +136,7 @@ void ObjBotAlchemist::Read(char* FilePath)
 					int BotNum = lpMemScript->GetNumber();
 					if (BotNum < 0 || BotNum > MAX_BOTALCHEMIST - 1)
 					{
-						LogAdd(LOG_RED, "Cộng Hưởng Lỗi 4: Cộng Hưởng Index: %d Không Tồn Tại!", BotNum);
+						LogAdd(LOG_RED, "BotAlchemist error: BotPetIndex:%d doesnt exist", BotNum);	// E-02 (kalan): canli exe string
 						return;
 					}
 
@@ -159,7 +159,7 @@ void ObjBotAlchemist::Read(char* FilePath)
 					int BotNum = lpMemScript->GetNumber();
 					if (BotNum < 0 || BotNum > MAX_BOTALCHEMIST - 1)
 					{
-						LogAdd(LOG_RED, "Cộng Hưởng Lỗi 4: Cộng Hưởng Index: %d Không Tồn Tại!", BotNum);
+						LogAdd(LOG_RED, "BotAlchemist error: BotPetIndex:%d doesnt exist", BotNum);	// E-02 (kalan): canli exe string
 						return;
 					}
 

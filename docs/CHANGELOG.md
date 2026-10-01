@@ -7,6 +7,38 @@
 
 ---
 
+## [26.10.01 19:05] E-02 kalan parça — BotAlchemist hata stringleri canlı formata çevrildi (5 çağrı)
+
+**Ne yapıldı** (aynı tur — araştırma bulgusu: bizde hatalar Vietnamese,
+canlıda `BotAlchemist error:` önekli İngilizce)
+- **Canlı kanıt (exe byte-bağlam):** `BotAlchemist data load error %s`,
+  `BotAlchemist error: BotPetIndex:%d out of range!`,
+  `BotAlchemist error: BotPetIndex:%d doesnt exist`,
+  `BotAlchemist error: Min Slot 0 ; Max Slot 8`,
+  `[Using Class Error] Error UseClass %d` (son ikisi 2b.2-O'da zaten
+  birebir yakalanmıştı).
+- **[BotAlchemist.cpp](../Source/4.GameServer/GameServer/BotAlchemist.cpp):**
+  5 Vietnamese hata canlı birebir ile değiştirildi — satır 80
+  (`…out of range!`), 106/139/162 (`…doesnt exist` — canlıda ünlem YOK),
+  114 (`Min Slot 0 ; Max Slot 8`). Oynatıcı-yönelimli Vietnamese mesajlar
+  (GCNoticeSend/ChatSend: `Bạn Cần %d WcoinP…` vb.) KORUNDU — canlı kanıt
+  kapsamı hata logları; bunlar işlev, string-parite dışı.
+- Read alan şeması zaten canlı CongHuong.txt ile birebir doğrulanmıştı
+  (araştırma turu: OnlyVip/Coin1/Zen/Coin2/OnlySameType/OnlyLowerIndex/
+  AcceptAncient/MaxLevel/MaxExc ✓) — dokunulmadı.
+
+**Neden** — E-02'nin kalan alt parçası: log/parite stringleri; canlı
+konsol çıktısında Vietnamese hata görünmemeli.
+
+**Doğrulama**
+- GS derlemesi temiz → **10.791.424 B (19:05)**.
+- Yeni exe taraması: `…out of range!` ×1, `…doesnt exist` ×1, `Min Slot…`
+  ×1, `UseClass %d` ×1 VAR; `Cộng Hưởng Lỗi` ×0 (kalıntı yok).
+- `BotAlchemist data load error %s` exe'de 0 / **obj'de ×1** — bilinen
+  LTCG string artefaktı (2b.2-O'dan beri kayıtlı; kod sağlam).
+
+**Commit** — `TBD` · **Tamamlandı** — 01.10.2026 19:05
+
 ## [26.10.01 19:03] E-04 kalan parça — ClearMasterChangeClass INI anahtarı + koşullu adım (canlı Command.ini:270)
 
 **Ne yapıldı** (kullanıcı isteği: "docs/09'daki kalan E-kalemlerini …
