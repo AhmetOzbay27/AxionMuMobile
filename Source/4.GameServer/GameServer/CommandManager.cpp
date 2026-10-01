@@ -31,6 +31,7 @@
 #include "EventTvT.h"
 #include "Filter.h"
 #include "FilterRename.h"
+#include "Gate.h"	// Faz 2b.2-N: /reload gate
 #include "GameMain.h"
 #include "GameMaster.h"
 #include "Guild.h"
@@ -47,6 +48,7 @@
 #include "Message.h"
 #include "Monster.h"
 #include "Move.h"
+#include "MoveSummon.h"	// Faz 2b.2-N: /reload movesummon
 #include "SPK/PC_AddBuff.h"	// SPK (Faz 2b)
 #include "Notice.h"
 #include "ObjectManager.h"
@@ -56,6 +58,7 @@
 #include "QuestReward.h"
 #include "ResetTable.h"
 #include "ResetTableVip.h"
+#include "SkillManager.h"	// Faz 2b.2-N: /reload skill
 #include "ServerInfo.h"
 #include "Util.h"
 #include "ReiDoMU.h"
@@ -3421,7 +3424,7 @@ bool CCommandManager::CommandReload(LPOBJ lpObj,char* arg) // OK
     }
     else if (strcmp(name,"move") == 0)
     {
-		gServerInfo.ReadMoveInfo();
+		gServerInfo.ReadMoveInfo();	// Faz 2b.2-N notu: canlıda bu dal da VAR (canlı cmd obj) — gMove.Load zinciri + m_Path saklar, Reload ile aynı etki
     }
     else if (strcmp(name,"quest") == 0)
     {
@@ -3433,7 +3436,7 @@ bool CCommandManager::CommandReload(LPOBJ lpObj,char* arg) // OK
     }
     else if (strcmp(name,"skill") == 0)
     {
-		gServerInfo.ReadSkillInfo();
+		gServerInfo.ReadSkillInfo();	// Faz 2b.2-N notu: canlıda bu dal da VAR (canlı cmd obj) — gSkillManager.Load zinciri + m_Path saklar
     }
     else if (strcmp(name,"util") == 0)
     {
@@ -3446,6 +3449,22 @@ bool CCommandManager::CommandReload(LPOBJ lpObj,char* arg) // OK
     else if (strcmp(name,"buyvip") == 0) // E-05 (Faz 2b.2): canlı SPK deseni — CustomBuyVip config hot-reload
     {
 		gCustomBuyVip.Reload();
+    }
+    else if (strcmp(name,"gate") == 0) // Faz 2b.2-N: canlı log ailesi — 'Gate configuration reloaded'
+    {
+		gGate.Reload();
+    }
+    else if (strcmp(name,"movesummon") == 0) // Faz 2b.2-N: 'MoveSummon configuration reloaded'
+    {
+		gMoveSummon.Reload();
+    }
+    else if (strcmp(name,"notice") == 0) // Faz 2b.2-N: 'Notice configuration reloaded'
+    {
+		gNotice.Reload();
+    }
+    else if (strcmp(name,"resettable") == 0) // Faz 2b.2-N: '[CResetTable] ResetTable configuration reloaded.' — xml yolu yedekle-geri-yükle
+    {
+		gResetTable.Reload();
     }
     else if (strcmp(name,"all") == 0)
     {

@@ -7,6 +7,55 @@
 
 ---
 
+## [26.10.01 09:25] 2b.2-N ek dalga — 'configuration reloaded' ailesi 6 modüle genişletildi (Gate/Move/MoveSummon/Notice/ResetTable/Skill)
+
+**Ne yapıldı**
+- Kullanıcı istği: E-05'te kurulmuş reload desenini canlı kanıtlı ailenin
+  tamamına uygula. Canlı exe string ailesi (c.s): `[CGate] Gate configuration
+  reloaded.`, `[CMove]`, `[CMoveSummon]`, `[CNotice]`, `[CResetTable]`,
+  `[CSkillManager]`, `[CGameMaster]`, `[CExperienceTable]`, `[SPK] ...` —
+  canlı log deseni **`[CSınıf] Modül configuration reloaded.`** (prefix + nokta).
+- **6 modüle m_Path[256] + Reload altyapısı** (E-05 deseni: yolu Load'ta sakla;
+  Reload = boş-yol koruması → yedek → Load → boşsa geri yükle → canlı-format
+  başarı logu): Gate (map), Move (map), MoveSummon (vector), Notice (array +
+  `m_count` sıfırlandığı için boş-koruma `GetCount()` ile), SkillManager (map),
+  ResetTable (XML/pugixml — üç veri bloğu yedeği; ilk denemede txt-ReloadTxt
+  `#else` dalına gitmişti, derleme C2039 ile yakalandı ve aktif
+  `CB_AUTORESETINFO` dalına taşındı).
+- **CommandManager `/reload` dalları:** `gate`, `movesummon`, `notice`,
+  `resettable` eklendi (Gate.h include dahil). **Önemli bulgu:** `move` ve
+  `skill` adında mevcut dallar zaten vardı (ServerInfo zinciri:
+  ReadMoveInfo → Gate/Move/CustomMove/MoveSummon/RespawnLocation;
+  ReadSkillInfo → Skill.ini/MasterSkillTree/SkillHitBox/SkillManager/
+  SkillDamage). Bu dallar KORUNDU — bizim tabanın çoklu-config reload
+  davranışı (CustomMove/RespawnLocation/SkillDamage dahil) kaybolmasın; zincir
+  içi Load'lar artık m_Path sakladığı için Move/Skill de hot-reload edilmiş
+  olur. Modüllerin Reload metotları kaynakta canlı-format loglarıyla durur
+  (referanssız olduğu için linker /OPT:REF ayıklar — zararsız).
+- **Canlı string birebiri:** E-05'in sade `CustomBuyVip configuration
+  reloaded` logu canlı haliyle `[SPK] CustomBuyVip configuration reloaded."
+  olarak yükseltildi; 6 modülün başarı logları `[CSınıf] ... .` formatına
+  alındı. Not: bizim Log.h'ta LOG_BLUE/LOG_RED yok (renk sabitleri
+  ServerDisplayer.h zincirinden geliyor) — include gerektirmedi.
+- **Derleme yolunda yakalananlar:** ilk denemede 3 header düzenlemesinde
+  newString bağlam hatası (ExportXML/GetInfo/SetInfo declare'ları yanlışlıkla
+  silinmiş — C2039 ile yakalandı, geri eklendi); Notice.h m_Path eksik;
+  Gate/Move/Skill/Notice/MoveSummon/ResetTable cpp'lerine Log.h include'u.
+
+**Neden** — Canlı 'configuration reloaded' ailesi (2b.2-E'de kanıtlanmış
+reload deseni) GameMaster/ExperienceTable hariç çekirdek 6 modüle uygulandı;
+/resize komut ailesi canlı operatör akışının parçası.
+
+**Doğrulama**
+- GS Rebuild temiz → **10.784.256 B** (09:22; +8.704 B önceki 10.775.552'ye) —
+  iki tur C2039 hata döngüsü derleme aşamasında yakalanıp düzeltildi.
+- Yeni exe string taraması: `[CGate]/[CMoveSummon]/[CNotice]/[CResetTable]/
+  [SPK] CustomBuyVip ... configuration reloaded.` 5/5 canlı-birebir VAR.
+- `/reload move|skill` mevcut zincirleri korundu (davranış değişmedi; Load'lar
+  m_Path saklar).
+
+**Commit** — (bu kayıtla birlikte) · **Tamamlandı** — 01.10.2026 09:25
+
 ## [26.10.01 07:40] 2b.2-M ek dalga — MapManager zinciri donor'dan alındı, CustomPick tam donör oldu (pano önerisi)
 
 **Ne yapıldı**

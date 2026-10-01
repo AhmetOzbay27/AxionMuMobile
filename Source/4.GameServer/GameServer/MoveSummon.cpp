@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "MoveSummon.h"
+#include "Log.h"	// Faz 2b.2-N: Reload logları
 #include "CastleSiege.h"
 #include "DefaultClassInfo.h"
 #include "Gate.h"
@@ -93,6 +94,36 @@ void CMoveSummon::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-N: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-N: config'i yeniden yükler (canlı SPK log deseni: 'MoveSummon
+// configuration reloaded'). /reload movesummon komutu çağırır; hata durumunda
+// mevcut veriler korunur (E-05 deseni).
+void CMoveSummon::Reload() // Faz 2b.2-N
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[MoveSummon] Reload skipped - config path not set yet");
+		return;
+	}
+
+	std::vector<MOVE_SUMMON_INFO> oldInfo;
+	oldInfo = this->m_MoveSummonInfo;
+
+	this->Load(this->m_Path);
+
+	if(this->m_MoveSummonInfo.empty())
+	{
+		this->m_MoveSummonInfo = oldInfo;
+		LogAdd(LOG_RED,"[MoveSummon] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CMoveSummon] MoveSummon configuration reloaded.");
 }
 
 bool CMoveSummon::CheckMoveSummon(LPOBJ lpObj,int map,int x,int y) // OK

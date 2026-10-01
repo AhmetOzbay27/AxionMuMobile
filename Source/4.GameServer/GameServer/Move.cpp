@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "Move.h"
+#include "Log.h"	// Faz 2b.2-N: Reload logları
 #include "CastleSiege.h"
 #include "CustomArena.h"
 #include "DefaultClassInfo.h"
@@ -102,6 +103,36 @@ void CMove::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-N: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-N: config'i yeniden yükler (canlı SPK log deseni: 'Move
+// configuration reloaded'). /reload move komutu çağırır; hata durumunda mevcut
+// veriler korunur (E-05 deseni).
+void CMove::Reload() // Faz 2b.2-N
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[Move] Reload skipped - config path not set yet");
+		return;
+	}
+
+	std::map<int,MOVE_INFO> oldInfo;
+	oldInfo = this->m_MoveInfo;
+
+	this->Load(this->m_Path);
+
+	if(this->m_MoveInfo.empty())
+	{
+		this->m_MoveInfo = oldInfo;
+		LogAdd(LOG_RED,"[Move] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CMove] Move configuration reloaded.");
 }
 
 bool CMove::GetInfo(int index,MOVE_INFO* lpInfo) // OK

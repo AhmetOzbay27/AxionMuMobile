@@ -47,6 +47,11 @@ bkz. [02-YOL-HARITASI.md](02-YOL-HARITASI.md).
 > (SPK GetMapNonPK zinciri + canlı 16-kolon Load adaptasyonu korunarak),
 > CustomPick.cpp tam donör oldu, canlı MapManager.txt deploy ağacına kopyalandı.
 > GS temiz → 10.775.552 B. Detay: CHANGELOG 2b.2-M.
+> **2b.2-N ek dalga (01.10.2026 09:25):** 'configuration reloaded' ailesi
+> Gate/MoveSummon/Notice/ResetTable/Skill modüllerine uygulandı (m_Path +
+> Reload, E-05 deseni; canlı birebir `[CSınıf] ... reloaded.` logları);
+> `/reload move|skill` mevcut ServerInfo zincirleri korundu (zincir Load'ları
+> artık m_Path saklıyor). GS temiz → 10.784.256 B. Detay: CHANGELOG 2b.2-N.
 
 ---
 

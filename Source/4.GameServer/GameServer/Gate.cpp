@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "Gate.h"
 #include "DefaultClassInfo.h"
+#include "Log.h"	// Faz 2b.2-N: Reload logları
 #include "Map.h"
 #include "MemScript.h"
 #include "Util.h"
@@ -96,8 +97,40 @@ void CGate::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-N: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
 }
 
+// Faz 2b.2-N: config'i yeniden yükler (canlı SPK log deseni: 'Gate
+// configuration reloaded'). /reload gate komutu çağırır; hata durumunda mevcut
+// veriler korunur — parse önce yedek üzerine çalışır, Insert hata fırlatırsa
+// m_GateInfo boş kalır ve eski veri geri yüklenir (E-05 deseni).
+void CGate::Reload() // Faz 2b.2-N
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[Gate] Reload skipped - config path not set yet");
+		return;
+	}
+
+	std::map<int,GATE_INFO> oldInfo;
+	oldInfo = this->m_GateInfo;
+
+	this->m_GateInfo.clear();
+
+	this->Load(this->m_Path);
+
+	if(this->m_GateInfo.empty())
+	{
+		this->m_GateInfo = oldInfo;
+		LogAdd(LOG_RED,"[Gate] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CGate] Gate configuration reloaded.");
+}
 void CGate::ExportXML(std::string filename)
 {
 }

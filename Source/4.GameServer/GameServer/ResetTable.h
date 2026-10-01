@@ -47,6 +47,7 @@ public:
 	CResetTable();
 	virtual ~CResetTable();
 	void Load(char* path);
+	void Reload();	// Faz 2b.2-N: XML yolu hot-reload (canlı '[CResetTable] ResetTable configuration reloaded.'); yedekle-geri-yükle koruması
 	int GetResetLevel(LPOBJ lpObj);
 	int GetResetMoney(LPOBJ lpObj);
 	int GetResetPoint(LPOBJ lpObj, bool GetPointMasterReset = 0);
@@ -64,6 +65,7 @@ public:
 	AutoResetThuongInfo* GetInfoAutoReset(LPOBJ lpObj);
 	std::vector<AutoResetThuongInfo> m_AutoResetThuongInfo;
 	bool KiemTraDieuKienReset(LPOBJ lpObj, bool ClearNguyenLieu = 0);
+	char m_Path[256];	// Faz 2b.2-N: Load'ta saklanan config yolu (reload için)
 };
 
 extern CResetTable gResetTable;
@@ -83,12 +85,14 @@ public:
 	CResetTable();
 	virtual ~CResetTable();
 	void Load(char* path);
+	void ReloadTxt();	// Faz 2b.2-N: txt yolu hot-reload (canlı '[CResetTable] ResetTable configuration reloaded.'); xml yolu 2c'de
 	int GetResetLevel(LPOBJ lpObj);
 	int GetResetMoney(LPOBJ lpObj);
 	int GetResetPoint(LPOBJ lpObj);
 	int GetResetPointTable(LPOBJ lpObj);
 private:
 	std::vector<RESET_TABLE_INFO> m_ResetTableInfo;
+	char m_Path[256];	// Faz 2b.2-N: Load'ta saklanan config yolu (reload için)
 };
 
 extern CResetTable gResetTable;

@@ -404,6 +404,7 @@ public:
 	CSkillManager();
 	virtual ~CSkillManager();
 	void Load(char* path);
+	void Reload();	// Faz 2b.2-N: canlı SPK log deseni 'Skill configuration reloaded' — /reload skill
 	bool GetInfo(int index,SKILL_INFO* lpInfo);
 	int GetSkillDamage(int index);
 	int GetSkillMana(int index);
@@ -564,6 +565,7 @@ public:
 	void GCSkillListSend(LPOBJ lpObj,BYTE type);
 private:
 	std::map<int,SKILL_INFO> m_SkillInfo;
+	char m_Path[256];	// Faz 2b.2-N: Load'ta saklanan config yolu (reload için)
 };
 
 extern CSkillManager gSkillManager;

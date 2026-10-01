@@ -182,7 +182,7 @@ void CCustomBuyVip::Reload() // E-05
 
 	delete lpMemScript;
 
-	LogAdd(LOG_BLUE,"CustomBuyVip configuration reloaded");
+	LogAdd(LOG_BLUE,"[SPK] CustomBuyVip configuration reloaded.");	// Faz 2b.2-N: canlı string birebir (önceki E-05 sade hali yükseltildi)
 }
 
 void CCustomBuyVip::SetInfo(CUSTOM_BUYVIP_INFO info) // OK

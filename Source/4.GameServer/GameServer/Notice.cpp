@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "Notice.h"
+#include "Log.h"	// Faz 2b.2-N: Reload logları
 #include "MemScript.h"
 #include "Util.h"
 
@@ -90,6 +91,38 @@ void CNotice::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-N: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-N: config'i yeniden yükler (canlı SPK log deseni: 'Notice
+// configuration reloaded'). /reload notice komutu çağırır; hata durumunda
+// mevcut veriler korunur. Load m_count'u sıfırladığı için boş-dosya koruması
+// GetCount() ile yapılır (E-05 deseni).
+void CNotice::Reload() // Faz 2b.2-N
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[Notice] Reload skipped - config path not set yet");
+		return;
+	}
+
+	NOTICE_INFO oldInfo[MAX_NOTICE];
+	int oldCount = this->m_count;
+	memcpy(oldInfo,this->m_NoticeInfo,sizeof(oldInfo));
+
+	this->Load(this->m_Path);
+
+	if(this->GetCount() == 0)
+	{
+		memcpy(this->m_NoticeInfo,oldInfo,sizeof(oldInfo));
+		LogAdd(LOG_RED,"[Notice] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CNotice] Notice configuration reloaded.");
 }
 
 void CNotice::SetInfo(NOTICE_INFO info) // OK

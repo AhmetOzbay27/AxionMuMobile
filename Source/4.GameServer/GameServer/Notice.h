@@ -64,6 +64,7 @@ public:
 	CNotice();
 	virtual ~CNotice();
 	void Load(char* path);
+	void Reload();	// Faz 2b.2-N: canlı SPK log deseni 'Notice configuration reloaded' — /reload notice
 	void SetInfo(NOTICE_INFO info);
 	void MainProc();
 	void GCNoticeSend(int aIndex,BYTE type,BYTE count,BYTE opacity,WORD delay,DWORD color,BYTE speed,char* message,...);
@@ -73,6 +74,10 @@ public:
 private:
 	NOTICE_INFO m_NoticeInfo[MAX_NOTICE];
 	int m_count;
+	char m_Path[256];	// Faz 2b.2-N: Load'ta saklanan config yolu (reload için)
+public:
+	int GetCount() { return this->m_count; }	// Faz 2b.2-N: Reload boş-dosya koruması için
+private:
 	int m_NoticeValue;
 	DWORD m_NoticeTime;
 };

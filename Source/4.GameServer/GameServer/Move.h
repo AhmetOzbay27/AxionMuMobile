@@ -66,6 +66,7 @@ public:
 	CMove();
 	virtual ~CMove();
 	void Load(char* path);
+	void Reload();	// Faz 2b.2-N: canlı SPK log deseni 'Move configuration reloaded' — /reload move
 	bool GetInfo(int index,MOVE_INFO* lpInfo);
 	bool GetInfoByName(char* name,MOVE_INFO* lpInfo);
 	void Move(LPOBJ lpObj,int index);
@@ -74,6 +75,7 @@ public:
 	void GCTeleportSend(int aIndex,int gate,BYTE map,BYTE x,BYTE y,BYTE dir);
 private:
 	std::map<int,MOVE_INFO> m_MoveInfo;
+	char m_Path[256];	// Faz 2b.2-N: Load'ta saklanan config yolu (reload için)
 };
 
 extern CMove gMove;

@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "SkillManager.h"
+#include "Log.h"	// Faz 2b.2-N: Reload logları
 #include "..\\..\\Util\\Math.h"
 #include "Attack.h"
 #include "CastleSiege.h"
@@ -126,6 +127,36 @@ void CSkillManager::Load(char* path) // OK
 	}
 
 	delete lpMemScript;
+
+	// Faz 2b.2-N: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-N: config'i yeniden yükler (canlı SPK log deseni: 'Skill
+// configuration reloaded'). /reload skill komutu çağırır; hata durumunda
+// mevcut veriler korunur (E-05 deseni).
+void CSkillManager::Reload() // Faz 2b.2-N
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[SkillManager] Reload skipped - config path not set yet");
+		return;
+	}
+
+	std::map<int,SKILL_INFO> oldInfo;
+	oldInfo = this->m_SkillInfo;
+
+	this->Load(this->m_Path);
+
+	if(this->m_SkillInfo.empty())
+	{
+		this->m_SkillInfo = oldInfo;
+		LogAdd(LOG_RED,"[SkillManager] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CSkillManager] Skill configuration reloaded.");
 }
 
 bool CSkillManager::GetInfo(int index,SKILL_INFO* lpInfo) // OK

@@ -56,6 +56,7 @@ public:
 	CGate();
 	virtual ~CGate();
 	void Load(char* path);
+	void Reload();	// Faz 2b.2-N: canlı SPK log deseni 'Gate configuration reloaded' — /reload gate
 	void ExportXML(std::string filename);
 	void ExportBMD(std::string filename);
 
@@ -67,6 +68,7 @@ public:
 	bool GetGate(int index,int* gate,int* map,int* x,int* y,int* dir,int* level);
 private:
 	type_map_gate m_GateInfo;
+	char m_Path[256];	// Faz 2b.2-N: Load'ta saklanan config yolu (reload için)
 };
 
 extern CGate gGate;

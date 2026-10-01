@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include "ResetTable.h"
+#include "Log.h"	// Faz 2b.2-N: ReloadTxt logları
 
 #if(CB_AUTORESETINFO)
 
@@ -104,6 +105,46 @@ void CResetTable::Load(char* path) // OK
 
 
 	LogAdd(LOG_BLUE, "[ResetTable]Enable (%d) Load Config  %d", this->AutoResetThuongEnable, this->m_AutoResetThuongInfo.size());
+
+	// Faz 2b.2-N: yolu sakla (reload icin)
+	memset(this->m_Path,0,sizeof(this->m_Path));
+	strcpy_s(this->m_Path,path);
+}
+
+// Faz 2b.2-N: XML config'i yeniden yükler (canlı SPK log deseni:
+// '[CResetTable] ResetTable configuration reloaded.'). /reload resettable
+// komutu çağırır; hata durumunda mevcut veriler korunur — üç veri bloğunun
+// (mesajlar, otomatik-reset tablosu, bayraklar) yedeği alınır.
+void CResetTable::Reload() // Faz 2b.2-N
+{
+	if(this->m_Path[0] == 0)
+	{
+		LogAdd(LOG_RED,"[CResetTable] Reload skipped - config path not set yet");
+		return;
+	}
+
+	std::map<int, MESSAGE_INFO_RS> oldMsg;
+	std::vector<AutoResetThuongInfo> oldTable;
+	bool oldEnable = this->AutoResetThuongEnable;
+	bool oldNotice = this->AutoResetThuongNotice;
+	bool oldType = this->AutoResetThuongType;
+	oldMsg = this->m_MessageInfoBP;
+	oldTable = this->m_AutoResetThuongInfo;
+
+	this->Load(this->m_Path);
+
+	if(this->m_AutoResetThuongInfo.empty())
+	{
+		this->m_MessageInfoBP = oldMsg;
+		this->m_AutoResetThuongInfo = oldTable;
+		this->AutoResetThuongEnable = oldEnable;
+		this->AutoResetThuongNotice = oldNotice;
+		this->AutoResetThuongType = oldType;
+		LogAdd(LOG_RED,"[CResetTable] Reload failed - old data restored (%s)",this->m_Path);
+		return;
+	}
+
+	LogAdd(LOG_BLUE,"[CResetTable] ResetTable configuration reloaded.");
 }
 
 
