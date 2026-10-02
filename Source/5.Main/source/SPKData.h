@@ -96,4 +96,12 @@ private:
 	char m_Path[SPK_DATA_PATH_SIZE];	// Load'a verilen taban yol
 };
 
+// ---- 2e.4 (H-012): SPK-first varlik yolu cozumleyici (SPKAsset.cpp) ----
+// Istek "Data\Local\..." ise ve karsiligi Data\SPK\Config icinde VARSA SPK yolunu
+// dondurur; aksi halde isteği aynen dondurur. Statik tampon — sonucu hemen kullanin.
+// Kaliplar: Data\Local\<Ad> | Data\Local\<Lang>\<Ad>_<Lang> | NpcName(<Lang>) |
+// Data\Gate.bmd. Icerik/sema eslemesi (or. itemtooltip_<Lang>) kapsam disi (2e.4 ikinci yari).
+char* SPK_ResolveAssetPath(const char* requested);
+bool SPK_AssetExists(const char* path);
+
 extern CSPKData gSPKData;

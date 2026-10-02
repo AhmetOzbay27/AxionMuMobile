@@ -413,7 +413,15 @@ void SEASON3B::CNewUIMiniMap::LoadImages(const char* Filename)
 	{
 		m_bSuccess = true;
 	}
-	sprintf(Fname,"Data\\Local\\%s\\Minimap\\Minimap_%s_%s.bmd", g_strSelectedML.c_str(), Filename, g_strSelectedML.c_str());
+	const char* pMinimapWorld = strrchr(Filename, '\\');
+	pMinimapWorld = (pMinimapWorld != NULL) ? pMinimapWorld + 1 : Filename;
+
+	sprintf(Fname, "Data\\SPK\\Minimap\\Minimap_%s_%s.bmd", pMinimapWorld, g_strSelectedML.c_str());
+
+	if (fopen(Fname, "rb") == NULL)
+	{
+		sprintf(Fname, "Data\\Local\\%s\\Minimap\\Minimap_%s_%s.bmd", g_strSelectedML.c_str(), pMinimapWorld, g_strSelectedML.c_str());
+	}
 	
 	for(i = 0; i < MAX_MINI_MAP_DATA; i++)
 	{

@@ -166,11 +166,17 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   açtı** (`Axion Mu`, 0,8 s) ve kendi günlüklerini yazdı. ClientBuild klasörü artık
   diskte yok (silinmiş); test `BuildLog\2e2\deploy\` üzerinde yapıldı. Kalan: tam
   `Data` kopyası (disk %100) + SPK-first varlık katmanı (2e.4). Rapor: docs/22.
-- ⬜ **2e.4** *(2e.2 sırasında keşfedildi)* **SPK-first varlık çözümleme katmanı:**
-  `Main.exe`'nin sabitkodladığı `Data\Local\*` yolları canlı pakette yok; karşılıkları
-  `Data\SPK\Config\*` (audit: `BuildLog\2e2\asset_audit.txt`, 12 tablo + dil ekli
-  `Data\Local\<Lang>\<Ad>_<Lang>.bmd` kalıbı). Şimdilik kurulum betiğinde yol eşlemesi
-  var; kalıcı çözüm istemciye çözümleyici eklemek (H-012).
+- ✅ **2e.4** *(2e.2 sırasında keşfedildi)* **SPK-first varlık çözümleme katmanı +
+  harita/nesne yol paritesi.**
+  **Bitti (02.10.2026):** `Source\5.Main\source\SPKAsset.cpp` çözümleyicisi
+  (`Data\Local\*` → `Data\SPK\Config\*`) 20+ çağrı noktasına bağlandı; canlı Engine
+  string kanıtıyla harita/nesne yolları canlı düzene çekildi (`Map\World%d`,
+  `Data\Map\Object*`); H-011 (CSprite boş doku AV), H-014 (VIPCharRank fatal) ve
+  H-015 (harita yolu) kapandı. Kanıt: run14 + (kaynaktaki 26 bozuk EUC-KR
+  satırının bayt onarımı sonrası) run15–17 — istemci saf SPK-first pakette
+  **diyalogsuz** çalıştı ve canlı sunucuya bağlanma aşamasına ulaştı
+  (`45.87.120.29:44405` SynSent; nihai derleme md5 `6dc52f5f…`). Kalan: içerik/şema eşlemesi
+  (itemtooltip*/Minimap içeriği → docs/03 B-08). Rapor: docs/24.
 - ✅ **2e.3** Sunucu tarafı: bizim GS/CS/DS/JS çıktılarının test klasörüne
   kurulması (canlıya dokunmadan), DB restore: `ServerTools\DB_SQL_12.bak`.
 

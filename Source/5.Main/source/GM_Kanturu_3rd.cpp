@@ -75,7 +75,7 @@ void M39Kanturu3rd::CheckSuccessBattle(BYTE State, BYTE DetailState)
 
 	char FileName[64];
 	char WorldName[32];
-	sprintf ( WorldName, "World%d", gMapManager.WorldActive+1 );
+	sprintf ( WorldName, "Map\\World%d", gMapManager.WorldActive+1 );
 	
 	//
 	if(KanturuSuccessMap)

@@ -1,7 +1,42 @@
 {
-  "updated": "2026-10-02 19:50:00",
+  "updated": "2026-10-02 23:15:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-02 22:35",
+      "kim": "kullanıcı",
+      "text": "Geri kalan adımlarıda uygulamaya başla ve change log güncelleyip gereksiz dosya temizliği yap."
+    },
+    {
+      "ts": "2026-10-02 22:35",
+      "kim": "ajan",
+      "text": "2e.4 TAMAM: canlı SPK-first varlık çözümleyici (SPKAsset.cpp: Local/Config eşlemesi) 20 çağrı noktasına ve harita/nesne yol paritesine (World%d -> Map\\World%d; Object -> Map\\Object; Minimap SPK\\Minimap öncelik) uygulandı; H-011/H-014/H-015 kapandı. Derleme: run14 b386bd65c4fbdc1aec840adfcfb8af8a (12.029.952 B); kaynaktaki 26 bozuk EUC-KR satırı HEAD baytlarıyla geri konuldu ve yeniden derlendi -> nihai md5 6dc52f5fb63746cb51575ab1370f7e6c, 0 hata. Sahada run14 + run15-17: diyalogsuz/çökmesiz (run17: t=21,9 s 45.87.120.29:44405 SYN_SENT); kanıt BuildLog/2e4/{results,shots,evidence} + docs/24. Bu turda ayrıca gereksiz BuildLog kopyaları (2e2/deploy 324 MB, 5Main obj 161 MB, 2e3/deploy 25 MB, 2d1 sandbox/ourtool 35 MB) silindi. Kalan: içerik/şema eşlemesi (B-08), tam Data kopyası, SPK_CRCFILE, E2E login. Commit: 2e.4 (hash takibi sonraki commit'te)."
+    },
+    {
+      "ts": "2026-10-02 19:50",
+      "kim": "ajan",
+      "text": "2e.3 TAMAM — sunucu test klasörü: BuildLog/2e3/deploy_server_test.sh bizim Release_EX603 GS/CS/DS/JS çıktılarını (md5: CS 4c1f91bf, DS 916e9625, JS 91ee93d7, GS 43f086d9) canlı düzenini aynalayarak BuildLog/2e3/deploy'a kurdu (25 MB, MSVCP140+VCRUNTIME140 kapanışı). DB: DB_SQL_12.bak -> yerel SQLEXPRESS MuOnlineS6 (ONLINE, 55 tablo; idempotent restore). Smoke test: CS->DS->JS->GS başlatıldı; portlar 63000/63001udp/63002/63003, GS->DS/JS bağlantıları kuruldu (LOG_CONNECT kanıtı), sonra Stop_TestServer.bat ile tamamen kapatıldı (kalıntı yok). Rapor docs/23; kanıt BuildLog/2e3/results/smoke1.json + GS logları."
+    },
+    {
+      "ts": "2026-10-02 19:40",
+      "kim": "ajan",
+      "text": "2e.1 bağımsız doğrulama: PC derleme hattı EKSİKSİZ — kaynakta 45.87.120.29:44405 gömülü, exe'de (71b008ad) eski IP yok, canlı ConnectIP.bmd (8ac74a5b) 0x20/0x22 = 44405/55858 okunuyor ve MainLoad çalışma anında uyguluyor. İstisna: derleme dışı mobil dosyalarda (android_main.cpp, LauncherHelper.h yorumu) eski MOBİL fallback 171.235.182.88:63000 duruyor — hiçbir vcxproj'da yok, exe'ye girmiyor; farklı mobil dağıtımın değeri olduğu için değiştirilmedi. H-004 + docs/22 kapsam notu eklendi."
+    },
+    {
+      "ts": "2026-10-02 19:30",
+      "kim": "ajan",
+      "text": "2e.2 ek kabul koşusu (run10) TAMAM: Map/Sound/Music hariç tam görsel set (~380 MB) pakete kondu; istemci ÇÖKMEDEN açıldı (Axion Mu, t≈1 s). Tek kalan: t≈4,9 s diyaloğu Data/Local/Eng/itemtooltip_Eng.bmd - File not exist. — SPK paketinde bu adla karşılık yok; tooltip içeriği Config/Text.bmd + ToolTipText.txt + MasterSkillTooltip.bmd içinde farklı şemada → kalan boşluk içerik/şema eşlemesi (2e.4). Kanıt: BuildLog/2e2/results/run10-full-assets.json + evidence/KEN_run10.txt + 3 ekran görüntüsü. docs/22 güncellendi; docs/04'e H-013 eklendi, docs/21 H-012 atfı düzeltildi."
+    },
+    {
+      "ts": "2026-10-02 19:10",
+      "kim": "ajan",
+      "text": "2e.1 + 2e.2 tamamlandı: gömülü IP 45.87.120.29:44405 ile hizalandı; APICB.dll/FreeImage.dll importları kaldırıldı; paket DLL kapanışı (wzAudio->ogg+vorbisfile) ve Data/SPK/Config kurulumu BuildLog/2e2/deploy_spk_package.sh ile yapıldı; istemci pakette kendi penceresini açtı (kanıt: BuildLog/2e2/shots + results/run*.json + KEN.txt/STACK_ERROR). Kalan: tam Data kopyası (disk %100), 2e.4 SPK-first varlık çözümleme katmanı, CSprite::Create boş-bitmap AV (H-011). Raporlar docs/21 + docs/22; CHANGELOG + docs/02-04 güncellendi."
+    },
+    {
+      "ts": "2026-10-02 19:05",
+      "kim": "ajan",
+      "text": "2d.2 kabul testi dokümanı yazıldı (docs/21): canlı Engine.exe bizim üretim ConnectIP+ServerData ile 4 koşu; üretim koşusunda 45.87.120.29:44405 SynSent kanıtı; negatif kontrol dersi (pencere+TCP içerik kanıtı değil, birincil kanıt bayt karşılaştırması)."
+    },
     {
       "ts": "2026-10-02 13:40",
       "kim": "kullanıcı",
@@ -141,31 +176,6 @@
       "ts": "2026-10-01 18:49",
       "kim": "kullanıcı",
       "text": "Reload ailesinin kalanını uygula: GameMaster ve ExperienceTable'a (/reload gamemaster, /reload experiencetable) + SPK alt kümesine (AddBuff, CustomMonsterSkill, CustomShop, ResetChange — canlı 'saved and reloaded' deseni) m_Path+Reload ekle, derle + CHANGELOG + commit."
-    },
-    {
-      "ts": "2026-10-02 19:10",
-      "kim": "asistan",
-      "text": "2e.1 + 2e.2 tamamlandı: gömülü IP 45.87.120.29:44405 ile hizalandı; APICB.dll/FreeImage.dll importları kaldırıldı; paket DLL kapanışı (wzAudio->ogg+vorbisfile) ve Data/SPK/Config kurulumu BuildLog/2e2/deploy_spk_package.sh ile yapıldı; istemci pakette kendi penceresini açtı (kanıt: BuildLog/2e2/shots + results/run*.json + KEN.txt/STACK_ERROR). Kalan: tam Data kopyası (disk %100), 2e.4 SPK-first varlık çözümleme katmanı, CSprite::Create boş-bitmap AV (H-011). Raporlar docs/21 + docs/22; CHANGELOG + docs/02-04 güncellendi."
-    },
-    {
-      "ts": "2026-10-02 19:05",
-      "kim": "asistan",
-      "text": "2d.2 kabul testi dokümanı yazıldı (docs/21): canlı Engine.exe bizim üretim ConnectIP+ServerData ile 4 koşu; üretim koşusunda 45.87.120.29:44405 SynSent kanıtı; negatif kontrol dersi (pencere+TCP içerik kanıtı değil, birincil kanıt bayt karşılaştırması)."
-    },
-    {
-      "ts": "2026-10-02 19:30",
-      "kim": "asistan",
-      "text": "2e.2 ek kabul koşusu (run10) TAMAM: Map/Sound/Music hariç tam görsel set (~380 MB) pakete kondu; istemci ÇÖKMEDEN açıldı (Axion Mu, t≈1 s). Tek kalan: t≈4,9 s diyaloğu Data/Local/Eng/itemtooltip_Eng.bmd - File not exist. — SPK paketinde bu adla karşılık yok; tooltip içeriği Config/Text.bmd + ToolTipText.txt + MasterSkillTooltip.bmd içinde farklı şemada → kalan boşluk içerik/şema eşlemesi (2e.4). Kanıt: BuildLog/2e2/results/run10-full-assets.json + evidence/KEN_run10.txt + 3 ekran görüntüsü. docs/22 güncellendi; docs/04'e H-013 eklendi, docs/21 H-012 atfı düzeltildi."
-    },
-    {
-      "ts": "2026-10-02 19:40",
-      "kim": "asistan",
-      "text": "2e.1 bağımsız doğrulama: PC derleme hattı EKSİKSİZ — kaynakta 45.87.120.29:44405 gömülü, exe'de (71b008ad) eski IP yok, canlı ConnectIP.bmd (8ac74a5b) 0x20/0x22 = 44405/55858 okunuyor ve MainLoad çalışma anında uyguluyor. İstisna: derleme dışı mobil dosyalarda (android_main.cpp, LauncherHelper.h yorumu) eski MOBİL fallback 171.235.182.88:63000 duruyor — hiçbir vcxproj'da yok, exe'ye girmiyor; farklı mobil dağıtımın değeri olduğu için değiştirilmedi. H-004 + docs/22 kapsam notu eklendi."
-    },
-    {
-      "ts": "2026-10-02 19:50",
-      "kim": "asistan",
-      "text": "2e.3 TAMAM — sunucu test klasörü: BuildLog/2e3/deploy_server_test.sh bizim Release_EX603 GS/CS/DS/JS çıktılarını (md5: CS 4c1f91bf, DS 916e9625, JS 91ee93d7, GS 43f086d9) canlı düzenini aynalayarak BuildLog/2e3/deploy'a kurdu (25 MB, MSVCP140+VCRUNTIME140 kapanışı). DB: DB_SQL_12.bak -> yerel SQLEXPRESS MuOnlineS6 (ONLINE, 55 tablo; idempotent restore). Smoke test: CS->DS->JS->GS başlatıldı; portlar 63000/63001udp/63002/63003, GS->DS/JS bağlantıları kuruldu (LOG_CONNECT kanıtı), sonra Stop_TestServer.bat ile tamamen kapatıldı (kalıntı yok). Rapor docs/23; kanıt BuildLog/2e3/results/smoke1.json + GS logları."
     }
   ]
 }

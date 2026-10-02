@@ -31,6 +31,13 @@ void CLoadData::AccessModel(int Type, char* Dir, char* FileName, int i)
 
 	Models[Type].m_iBMDSeqID = Type;
 
+	char DirSPK[260] = { 0, };
+	if (strnicmp(Dir, "Data\\Object", 11) == 0)
+	{
+		sprintf(DirSPK, "Data\\Map\\%s", Dir + 5);
+		Dir = DirSPK;
+	}
+
 	Success = Models[Type].Open2(Dir, Name);
 
 	////g_ConsoleDebug->Write(MCD_ERROR, "AccessModel %d %s %s %d (%d)", Type, Dir, FileName, i, Success);
@@ -55,8 +62,15 @@ void CLoadData::OpenTexture(int Model, char* SubFolder, int Wrap, int Type, bool
 		Texture_t* pTexture = &pModel->Textures[i];
 
 		char szFullPath[256] = { 0, };
+		char szSubFolderSPK[64] = { 0, };
+		const char* pSubFolder = SubFolder;
+		if (strnicmp(SubFolder, "Object", 6) == 0 && SubFolder[6] >= '0' && SubFolder[6] <= '9')
+		{
+			sprintf(szSubFolderSPK, "Map\\%s", SubFolder);
+			pSubFolder = szSubFolderSPK;
+		}
 		strcpy(szFullPath, "Data\\");
-		strcat(szFullPath, SubFolder);
+		strcat(szFullPath, pSubFolder);
 		strcat(szFullPath, pTexture->FileName);
 
 		char __ext[_MAX_EXT] = { 0, };

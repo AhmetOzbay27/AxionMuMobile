@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "SPKData.h"
 #include "UIControls.h"
 #include "ZzzOpenglUtil.h"
 #include "ZzzBMD.h"
@@ -5698,36 +5699,68 @@ void OpenBasicData(HDC hDC)
 	g_ServerListManager->LoadServerListScript();
 
 	sprintf(Text, "Data\\Local\\%s\\Dialog_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	OpenDialogFile(Text);
+	OpenDialogFile(SPK_ResolveAssetPath(Text));
 
 	sprintf(Text, "Data\\Local\\%s\\Item_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	OpenItemScript(Text);
+	OpenItemScript(SPK_ResolveAssetPath(Text));
 //===Tool tip
 	sprintf(Text, "Data\\Local\\%s\\itemtooltip_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	load_item_tooltip(Text);
+	{
+		// 2e.4: SPK paketinde karsiligi yok (icerik/sema 2e.4 ikinci yari); eskiden
+		// eksik dosya MessageBox+WM_DESTROY ile istemciyi kilitliyordu (run10).
+		const char* pAsset = SPK_ResolveAssetPath(Text);
+		if (SPK_AssetExists(pAsset))
+			load_item_tooltip((char*)pAsset);
+		else
+		{
+			char szSkip[256];
+			sprintf_s(szSkip, sizeof(szSkip), "%s yok - atlandi (2e.4).", Text);
+			g_ErrorReport.Write(szSkip);
+		}
+	}
 	sprintf(Text, "Data\\Local\\%s\\itemleveltooltip_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	load_item_level_tooltip(Text);
+	{
+		const char* pAsset = SPK_ResolveAssetPath(Text);
+		if (SPK_AssetExists(pAsset))
+			load_item_level_tooltip((char*)pAsset);
+		else
+		{
+			char szSkip[256];
+			sprintf_s(szSkip, sizeof(szSkip), "%s yok - atlandi (2e.4).", Text);
+			g_ErrorReport.Write(szSkip);
+		}
+	}
 	sprintf(Text, "Data\\Local\\%s\\itemtooltiptext_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	load_item_tooltip_text(Text);
+	{
+		const char* pAsset = SPK_ResolveAssetPath(Text);
+		if (SPK_AssetExists(pAsset))
+			load_item_tooltip_text((char*)pAsset);
+		else
+		{
+			char szSkip[256];
+			sprintf_s(szSkip, sizeof(szSkip), "%s yok - atlandi (2e.4).", Text);
+			g_ErrorReport.Write(szSkip);
+		}
+	}
 
 	set_item_tooltip();
 	set_item_level_tooltip();
 	set_item_text_tooltip();
 //====
 	sprintf(Text, "Data\\Local\\%s\\movereq_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	SEASON3B::CMoveCommandData::OpenMoveReqScript(Text);
+	SEASON3B::CMoveCommandData::OpenMoveReqScript(SPK_ResolveAssetPath(Text));
 	
 	sprintf(Text, "Data\\Local\\%s\\NpcName(%s).txt", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-   	OpenMonsterScript(Text);
+   	OpenMonsterScript(SPK_ResolveAssetPath(Text));
 	
 	sprintf(Text, "Data\\Local\\%s\\Quest_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	g_csQuest.OpenQuestScript (Text);
+	g_csQuest.OpenQuestScript (SPK_ResolveAssetPath(Text));
 
 	sprintf(Text, "Data\\Local\\%s\\Skill_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	OpenSkillScript(Text);
+	OpenSkillScript(SPK_ResolveAssetPath(Text));
 
 	sprintf(Text, "Data\\Local\\%s\\SocketItem_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	g_SocketItemMgr.OpenSocketItemScript(Text);
+	g_SocketItemMgr.OpenSocketItemScript(SPK_ResolveAssetPath(Text));
 
 #ifdef __ANDROID__
 	OutputDebugStringA("OPENBASIC: OpenTextData begin");
@@ -5741,19 +5774,19 @@ void OpenBasicData(HDC hDC)
 
 	g_QuestMng.LoadQuestScript();
 
-	OpenGateScript ("Data\\Gate.bmd");
+	OpenGateScript (SPK_ResolveAssetPath("Data\\Gate.bmd"));
 
-	OpenFilterFile ("Data\\Local\\Filter.bmd");
+	OpenFilterFile (SPK_ResolveAssetPath("Data\\Local\\Filter.bmd"));
 
-	OpenNameFilterFile ("Data\\Local\\FilterName.bmd");
+	OpenNameFilterFile (SPK_ResolveAssetPath("Data\\Local\\FilterName.bmd"));
 
-	OpenMonsterSkillScript ("Data\\Local\\MonsterSkill.bmd");
+	OpenMonsterSkillScript (SPK_ResolveAssetPath("Data\\Local\\MonsterSkill.bmd"));
 
 	//g_pMasterLevelInterface->OpenMasterLevel("Data\\Local\\MasterSKillTree.bmd");
 
-	g_pMasterSkillTreeInterface->OpenMasterSkillTreeData("Data\\Local\\MasterSkillTreeData.bmd");
+	g_pMasterSkillTreeInterface->OpenMasterSkillTreeData(SPK_ResolveAssetPath("Data\\Local\\MasterSkillTreeData.bmd"));
 	sprintf(Text, "Data\\Local\\%s\\MasterSkillTooltip_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	g_pMasterSkillTreeInterface->OpenMasterSkillTooltip(Text);
+	g_pMasterSkillTreeInterface->OpenMasterSkillTooltip(SPK_ResolveAssetPath(Text));
 
 #ifdef __ANDROID__
 	OutputDebugStringA("OPENBASIC: master/gate/filter done");
@@ -5785,7 +5818,7 @@ void OpenTextData()
 	char Text[100];
 
 	sprintf(Text,"Data\\Local\\%s\\Text_%s.bmd", g_strSelectedML.c_str(), g_strSelectedML.c_str());
-	GlobalText.Load(Text, CGlobalText::LD_USA_CANADA_TEXTS|CGlobalText::LD_FOREIGN_TEXTS);
+	GlobalText.Load(SPK_ResolveAssetPath(Text), CGlobalText::LD_USA_CANADA_TEXTS|CGlobalText::LD_FOREIGN_TEXTS);
 	OpenMacro("Data\\Macro.txt");
 }
 

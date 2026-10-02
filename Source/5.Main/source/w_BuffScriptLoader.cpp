@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "SPKData.h"
 #include "ReadScript.h"
 #include "UIManager.h"
 #include "ItemAddOptioninfo.h"
@@ -70,6 +71,8 @@ BuffScriptLoaderPtr BuffScriptLoader::Make()
 BuffScriptLoader::BuffScriptLoader()
 {
 	std::string filename = "data/local/"+g_strSelectedML+"/BuffEffect_"+g_strSelectedML+".bmd";
+	// 2e.4: SPK paketinde karsilik Data\SPK\Config\BuffEffect.bmd (kucuk harf + '/' ayrac).
+	filename = SPK_ResolveAssetPath(filename.c_str());
 
 	if( !Load( filename ) )
 	{

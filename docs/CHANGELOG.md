@@ -7,6 +7,47 @@
 
 ---
 
+## [26.10.02 22:10] 2e.4 SPK-first varlık çözümleyici + harita/nesne yol paritesi (H-011/H-012/H-014/H-015)
+
+**Ne yapıldı**
+- `Source\5.Main\source\SPKAsset.cpp` (yeni) + `SPKData.h` bildirimleri:
+  `SPK_ResolveAssetPath` / `SPK_AssetExists` — `Data\Local\<Ad>.bmd` →
+  `Data\SPK\Config\<Ad>.bmd`, `Data\Local\<Lang>\<Ad>_<Lang>.<ext>` → `Config\<Ad>.<ext>`,
+  `NpcName(<Lang>)`, `Data\Gate.bmd`; küçük harf + `/` ayraç normalize; karşılık
+  bulunamazsa istek aynen döner. 20+ çağrı noktası (ZzzOpenData, QuestMng,
+  CreditWin, ItemAddOptioninfo, ServerListManager, w_PetProcess, NewUISlideWindow,
+  UIJewelHarmony, w_BuffScriptLoader, CSItemOption) çözümleyiciye bağlandı; tooltip
+  yükleyicileri `SPK_AssetExists` ile ölümcül olmayan atlama yapar.
+- H-011: `Sprite.cpp` `CSprite::Create` boş doku guard'ı (log + `m_nTexID = -1`).
+- H-014: `CBInterfaceVIPChar` PC dalında `VIPCharRank.txt` yoksa log + `return`
+  (dosya canlıda da yok — fatal diyalog kaldırıldı).
+- H-015 (yeni keşif, run13): canlı Engine string kanıtıyla (`Map\World%d`,
+  `Data\Map\Object*`) harita/nesne yol paritesi — WorldName üretimi 4 dosyada
+  düzeltildi (MapManager/GMBattleCastle/GMCrywolf1st/GM_Kanturu_3rd);
+  `AccessModel`/`OpenTexture`/`LoadBitmap` merkezi dönüşümleri; Minimap SPK-first;
+  deploy betiğine `Map\World74`+`Map\Object74` alt kümesi eklendi.
+- Ek: `Source\5.Main\source\Utilities\Log\` (ErrorReport/muConsoleDebug/
+  WindowsConsole) vcxproj'da listeliydi ama git'te izlenmiyordu — derleme
+  bütünlüğü için commit'e alındı.
+
+**Neden** — H-012/2e.4: istemciyi dağıtım betiğindeki yol eşlemesine bağımlı
+olmadan canlı SPK paket düzeniyle çalıştırmak; run13'te keşfedilen harita yolu
+uydurumsuzluğu (H-015) giriş sahnesini ölümcül diyalogla kesiyordu.
+
+**Doğrulama** — run11→run17 (`BuildLog\2e4\{results,shots,evidence}`): run14
+derlemesi `b386bd65c4fbdc1aec840adfcfb8af8a` (12.029.952 B) saf SPK-first pakette
+(`Data\Local` yok) **diyalogsuz** çalıştı; pencere 0,9 s; t=5,2 s canlı sunucuya
+**SynSent** (`45.87.120.29:44405`); kalıntı süreç yok. Düzenleme araçlarının
+kaynakta U+FFFD'ye çevirdiği 26 EUC-KR satırı `git show HEAD` baytlarıyla geri
+konuldu (`BuildLog\2e4\fix_encoding.js`), yeniden derlendi (md5
+`6dc52f5fb63746cb51575ab1370f7e6c`) ve run15–17 ile doğrulandı: run17
+diyalogsuz/çökmesiz, t=21,9 s `45.87.120.29:44405` **SynSent**. Kalan: içerik/şema
+eşlemesi (docs/24 §8, docs/03 B-08). Rapor: docs/24.
+
+**Commit** — (bu kayıt; hash takibi sonraki commit'te)
+
+---
+
 ## [26.10.02 19:50] 2e.3 Sunucu test klasörü — bizim GS/CS/DS/JS çıktıları + DB restore + smoke test
 
 **Ne yapıldı**

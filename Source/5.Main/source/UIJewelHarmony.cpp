@@ -1,6 +1,7 @@
 // UIRefinery.cpp: implementation of the UIRefinery class.
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
+#include "SPKData.h"
 #include "ZzzOpenglUtil.h"
 #include "ZzzTexture.h"
 #include "UIManager.h"
@@ -65,7 +66,7 @@ JewelHarmonyInfo* JewelHarmonyInfo::MakeInfo()
 JewelHarmonyInfo::JewelHarmonyInfo()
 {
 	bool Result = true;
-	if( !OpenJewelHarmonyInfoFile( HARMONYJEWELOPTION_DATA_FILE ) )
+	if( !OpenJewelHarmonyInfoFile( SPK_ResolveAssetPath(HARMONYJEWELOPTION_DATA_FILE) ) )
 	{
 		Result = false;
 	}

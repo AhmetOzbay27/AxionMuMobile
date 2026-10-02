@@ -1259,7 +1259,7 @@ void CMapManager::LoadWorld(int Map)
 
     battleCastle::Init ();
 
-	sprintf ( WorldName, "World%d", iMapWorld );
+	sprintf ( WorldName, "Map\\World%d", iMapWorld );
 	{
 #if defined DEVIAS_XMAS_END_LOADFIX_FOR_TESTSERVER
 		if(World == WD_2DEVIAS)

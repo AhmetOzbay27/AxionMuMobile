@@ -3,6 +3,7 @@
 //*****************************************************************************
 
 #include "stdafx.h"
+#include "SPKData.h"
 #include "QuestMng.h"
 #include "./Utilities/Log/ErrorReport.h"
 #include "wsclientinline.h"
@@ -36,7 +37,7 @@ void CQuestMng::LoadQuestScript()
 
 void CQuestMng::LoadNPCDialogueScript()
 {
-	FILE* fp = ::fopen(QM_NPCDIALOGUE_FILE, "rb");
+	FILE* fp = ::fopen(SPK_ResolveAssetPath(QM_NPCDIALOGUE_FILE), "rb");
 	if (fp == NULL)
 	{
 		char szMessage[256];
@@ -67,7 +68,7 @@ void CQuestMng::LoadNPCDialogueScript()
 
 void CQuestMng::LoadQuestProgressScript()
 {
-	FILE* fp = ::fopen(QM_QUESTPROGRESS_FILE, "rb");
+	FILE* fp = ::fopen(SPK_ResolveAssetPath(QM_QUESTPROGRESS_FILE), "rb");
 	if (fp == NULL)
 	{
 		char szMessage[256];
@@ -98,7 +99,7 @@ void CQuestMng::LoadQuestProgressScript()
 
 void CQuestMng::LoadQuestWordsScript()
 {
-	FILE* fp = ::fopen(QM_QUESTWORDS_FILE, "rb");
+	FILE* fp = ::fopen(SPK_ResolveAssetPath(QM_QUESTWORDS_FILE), "rb");
 	if (fp == NULL)
 	{
 		char szMessage[256];

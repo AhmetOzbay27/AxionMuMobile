@@ -323,6 +323,14 @@ bool LoadBitmap(const char* szFileName, GLuint uiTextureIndex, GLuint uiFilter, 
 	strcpy(szFullPath,"Data\\");
 	strcat(szFullPath, szFileName);
 #endif // KJH_ADD_INGAMESHOP_UI_SYSTEM || __ANDROID__
+
+	if (strnicmp(szFullPath, "Data\\Object", 11) == 0)
+	{
+		char szSPKPath[256] = { 0, };
+		sprintf(szSPKPath, "Data\\Map\\%s", szFullPath + 5);
+		strcpy(szFullPath, szSPKPath);
+	}
+
 	if(bCheck)
 	{	
 		if(false == Bitmaps.LoadImage(uiTextureIndex, szFullPath, uiFilter, uiWrapMode))

@@ -3,6 +3,7 @@
 //*****************************************************************************
 
 #include "stdafx.h"
+#include "SPKData.h"
 #include "CreditWin.h"
 #include "Input.h"
 #include "UIMng.h"
@@ -322,7 +323,7 @@ void BuxConvert(BYTE *Buffer, int Size);
 
 void CCreditWin::LoadText()
 {
-	FILE *fp = ::fopen(CRW_DATA_FILE, "rb");
+	FILE *fp = ::fopen(SPK_ResolveAssetPath(CRW_DATA_FILE), "rb");
 	if (fp == NULL)
 	{
 		char szMessage[256];

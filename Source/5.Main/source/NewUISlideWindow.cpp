@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "SPKData.h"
 
 #include "NewUISlideWindow.h"
 #include "NewUIManager.h"
@@ -26,7 +27,7 @@ bool SEASON3B::CNewUISlideWindow::Create(CNewUIManager* pNewUIMng)
 	m_pNewUIMng->AddUIObj(SEASON3B::INTERFACE_SLIDEWINDOW, this);
 	m_pSlideMgr = new CSlideHelpMgr;
 	std::string strFileName = "Data\\Local\\"+g_strSelectedML+"\\Slide_"+g_strSelectedML+".bmd";
-	m_pSlideMgr->OpenSlideTextFile(strFileName.c_str());
+	m_pSlideMgr->OpenSlideTextFile(SPK_ResolveAssetPath(strFileName.c_str()));
 
 	return true;
 }

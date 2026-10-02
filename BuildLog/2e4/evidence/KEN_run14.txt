@@ -1,0 +1,135 @@
+LoadBitmap Failed: Data\Local\Webzenlogo.jpg
+LoadBitmap Failed: Data\Map\Object31\Flag.tga
+LoadBitmap Failed: Data\Map\Object9\Impack03.jpg
+LoadBitmap Failed: Data\Map\Object39\k_effect_01.JPG
+LoadBitmap Failed: Data\Local\Eng\ImgsMapName\MapNameAddStrife.tga
+LoadBitmap Failed: Data\
+LoadBitmap Failed: Data\Item\black_gold_crom05.jpg
+LoadBitmap Failed: Data\Item\absolute02_swordrender.jpg
+LoadBitmap Failed: Data\Item\black_gold_crom03.jpg
+LoadBitmap Failed: Data\Item\ground_wind2.jpg
+LoadBitmap Failed: Data\Item\alicewing4db_render.jpg
+LoadBitmap Failed: Data\Item\elfwing4da_render01.jpg
+LoadBitmap Failed: Data\Item\elfwing4da_render02.jpg
+LoadBitmap Failed: Data\Item\magicianwing4da_render.jpg
+LoadBitmap Failed: Data\Item\dknightwing4db_render.jpg
+LoadBitmap Failed: Data\Item\soulknightswordB_render.jpg
+LoadBitmap Failed: Data\Item\soulknightswordA_render.jpg
+LoadBitmap Failed: Data\Item\soulmagicswordA_render.jpg
+LoadBitmap Failed: Data\Item\hs_soularcherbowA01_render.jpg
+LoadBitmap Failed: Data\Item\sd_SoulWizardStaff01_render.jpg
+LoadBitmap Failed: Data\Item\sd_soulsummonerstickA02_render.jpg
+LoadBitmap Failed: Data\Item\soulfighterclawA_render.jpg
+LoadBitmap Failed: Data\Item\hs_blueeyeknightA03r.jpg
+LoadBitmap Failed: Data\Item\hs_blueeyeknightA02_render.jpg
+LoadBitmap Failed: Data\Item\fire_15frame_mono.jpg
+LoadBitmap Failed: Data\Item\alpha_line2.jpg
+LoadBitmap Failed: Data\Item\blueeyemagicsword02r.jpg
+LoadBitmap Failed: Data\Item\blueeyemagicsword03r.jpg
+LoadBitmap Failed: Data\Item\blueeyesceptre_render.jpg
+LoadBitmap Failed: Data\Item\Blue_eyebow02r.jpg
+LoadBitmap Failed: Data\Item\blue_eye_ws02_render.jpg
+LoadBitmap Failed: Data\Item\bsummoners02_render.jpg
+LoadBitmap Failed: Data\Item\Blueeyeclaw_render.jpg
+LoadBitmap Failed: Data\Item\mace_mastr02s_render.jpg
+LoadBitmap Failed: Data\Item\Darkangel_StaffA_render.jpg
+LoadBitmap Failed: Data\Item\sd_soullance01_render.jpg
+LoadBitmap Failed: Data\Item\runewing3db_render.jpg
+LoadBitmap Failed: Data\Item\runewing4db_render.jpg
+LoadBitmap Failed: Data\Item\runewing4dc_star01.jpg
+LoadBitmap Failed: Data\Item\runewing4dc_star02.jpg
+LoadBitmap Failed: Data\Item\hs_blueeyelanceA02r.jpg
+LoadBitmap Failed: Data\Item\mace5master02_render.jpg
+LoadBitmap Failed: Data\Item\season_wing_period_render.jpg
+LoadBitmap Failed: Data\Item\firek_sq_mono.jpg
+OpenTexture Failed: Data\Map\Object31\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Map\Object31\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Skill\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Skill\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+LoadBitmap Failed: Data\Interface\partCharge1\Decor.tga
+LoadBitmap Failed: Data\Interface\newui_item_earring.tga
+LoadBitmap Failed: Data\Interface\newui_item_muunv2.tga
+LoadBitmap Failed: Data\Interface\newui_item_earring1.tga
+LoadBitmap Failed: Data\Interface\newui_item_muunv21.tga
+LoadBitmap Failed: Data\Custom\Maps\CRadar.tga
+LoadBitmap Failed: Data\Custom\Maps\map_radar.tga
+LoadBitmap Failed: Data\Custom\Maps\background-tcp.tga
+LoadBitmap Failed: Data\Interface\Menu2.tga
+LoadBitmap Failed: Data\Interface\Menu_BG.tga
+LoadBitmap Failed: Data\Custom\Interface\buttonex.tga
+LoadBitmap Failed: Data\Interface\Next.tga
+LoadBitmap Failed: Data\Interface\Previous.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\1.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\2.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\3.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\4.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\5.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\6.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\7.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\8.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\9.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\10.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\11.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\12.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\13.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\14.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\15.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\16.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\17.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\18.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\19.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\20.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\21.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\22.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\23.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\24.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\25.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\26.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\27.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\28.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\29.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\30.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\31.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\32.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\33.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\34.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\35.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\36.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\37.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\38.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\39.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\40.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\41.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\42.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\43.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\44.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\45.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\46.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\47.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\48.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\49.tga
+LoadBitmap Failed: Data\Custom\DanhHieu\50.tga
+LoadBitmap Failed: Data\Custom\Interface\Donate.tga
+LoadBitmap Failed: Data\Custom\Interface\newui_button_register.tga
+LoadBitmap Failed: Data\Custom\HPBarFrame.tga
+LoadBitmap Failed: Data\Custom\HPBarValue.jpg
+LoadBitmap Failed: Data\Custom\CTCMini\UiCtc.tga
+LoadBitmap Failed: Data\Custom\CTCMini\CTCMiniMap.tga
+LoadBitmap Failed: Data\Custom\CTCMini\StartCTC.tga
+LoadBitmap Failed: Data\Custom\CTCMini\WinCTC.tga
+LoadBitmap Failed: Data\Custom\CTCMini\LoseCTC.tga
+LoadBitmap Failed: Data\Custom\CTCMini\DialogCTC.tga
+LoadBitmap Failed: Data\Custom\CTCMini\CharPoint.tga
+LoadBitmap Failed: Data\Custom\CTCMini\OtherCharPoint.tga
+LoadBitmap Failed: Data\Interface\Minimap_positionB.tga
+LoadBitmap Failed: Data\Map\Object8\drop01.jpg
+LoadBitmap Failed: Data\Map\Object8\light01.jpg

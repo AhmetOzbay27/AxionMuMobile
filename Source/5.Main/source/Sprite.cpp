@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "Sprite.h"
+#include "./Utilities/Log/ErrorReport.h"
 
 #include "Input.h"
 
@@ -36,6 +37,17 @@ void CSprite::Create(int nOrgWidth, int nOrgHeight, int nTexID, int nMaxFrame, S
 	m_fOrgHeight = (float)nOrgHeight;
 	m_nTexID = nTexID;
 	m_pTexture = Bitmaps.FindTexture(m_nTexID);
+
+	// H-011 (2e.2 paket testi): eksik bitmap -> FindTexture NULL doner; eskiden
+	// m_pTexture->Width erisimi AV (0xC0000005) veriyordu. Guvenli cikis: log + bos
+	// sprite (m_nTexID = -1 -> asagidaki else dali temiz kurulum yapar).
+	if (m_nTexID > -1 && m_pTexture == NULL)
+	{
+		char szMsg[256];
+		sprintf_s(szMsg, sizeof(szMsg), "CSprite::Create: texture bulunamadi (TexID=%d) - bos sprite.", m_nTexID);
+		g_ErrorReport.Write(szMsg);
+		m_nTexID = -1;
+	}
 
 	m_fScrHeight = (float)WindowHeight / fScaleY;
 

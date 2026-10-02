@@ -2,6 +2,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "SPKData.h"
 #include "w_PetActionStand.h"
 #include "w_PetActionRound.h"
 #include "w_PetActionDemon.h"
@@ -189,7 +190,7 @@ bool PetProcess::LoadData()
 	int _ver;
 	int _array;
 
-	FILE *fp = fopen(FileName, "rb");
+	FILE *fp = fopen(SPK_ResolveAssetPath(FileName), "rb");
 	if(fp == NULL)
 	{
 		char Text[256];

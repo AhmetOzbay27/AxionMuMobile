@@ -11,6 +11,8 @@
 #include "ZzzInterface.h"
 #include "ZzzTexture.h"
 #include "MemScript.h"
+#include "SPKData.h"
+#include "./Utilities/Log/ErrorReport.h"
 
 
 #if(CB_VIP_CHAR)
@@ -169,6 +171,15 @@ void CBInterfaceVIPChar::LoadData()
 	ANDROID_VIP_STAGE("load done");
 	return;
 #endif
+
+	// 2e.4 (H-014): canli pakette Data\Custom\VIPCharRank.txt YOKTUR (LIVE yoktu) —
+	// eksik dosya yuzunden kalici hata kutusu (ErrorMessageBox -> ExitProcess) acilmasin;
+	// loglayip VIP rank listesini bos birak (canli Engine.exe de bu dosyayi tasimaz).
+	if (SPK_AssetExists(path) == false)
+	{
+		g_ErrorReport.Write("[VIPChar] %s bulunamadi - VIP rank listesi bos birakildi.\r\n", path);
+		return;
+	}
 
 	CMemScript* lpMemScript = new CMemScript;
 

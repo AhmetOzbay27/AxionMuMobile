@@ -1,0 +1,43 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  40,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run15-rebuild-win-0x4703F0.png"
+                    ],
+    "endTime":  "2026-10-02 23:02:18",
+    "label":  "run15-rebuild",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:680",
+                               "t":  0.9,
+                               "windows":  [
+                                               "TOP|pid=680|Axion Mu|Axion Mu|visible=1|hwnd=0x4703F0",
+                                               "TOP|pid=680|IME|Default IME|visible=0|hwnd=0xF503AC",
+                                               "TOP|pid=680|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0xC4048C"
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  680,
+    "startTime":  "2026-10-02 23:01:36",
+    "processTree":  [
+                        "Main.exe:680"
+                    ]
+}

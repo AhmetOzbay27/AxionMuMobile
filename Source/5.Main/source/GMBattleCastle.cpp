@@ -89,7 +89,7 @@ namespace battleCastle
 	        char FileName[64];
 	        char WorldName[32];
 
-	        sprintf ( WorldName, "World%d", gMapManager.WorldActive+1 );
+	        sprintf ( WorldName, "Map\\World%d", gMapManager.WorldActive+1 );
             if ( g_bBattleCastleStart )
             {
 				sprintf ( FileName, "Data\\%s\\EncTerrain%d.att", WorldName, (gMapManager.WorldActive+1)*10+2 );

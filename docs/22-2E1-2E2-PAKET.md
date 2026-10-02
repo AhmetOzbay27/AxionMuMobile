@@ -133,6 +133,12 @@ Sonuç dosyaları: `BuildLog\2e2\results\run*.json`; ekran görüntüleri
 `MasterSkillTooltip.bmd` içinde **farklı format/şema** ile durur. Yani kalan boşluk
 artık yol eşlemesi değil, **içerik/şema eşlemesidir** → 2e.4 kapsamı.
 
+**Güncelleme (02.10.2026, 2e.4):** yol eşlemesi bitti — SPK-first çözümleyici
+(`SPKAsset.cpp`) + harita/nesne yol paritesi (`Map\World%d`, `Data\Map\Object*`)
+yazıldı, run14 istemciyi diyalogsuz canlı sunucuya bağlanma aşamasına getirdi.
+Bu bölümdeki 2. maddenin **yol** kısmı kapandı; 4. maddedeki **içerik/şema** kısmı
+açık (docs/24 §8, docs/03 B-08).
+
 İstemci kendi çağrı zincirini de yazdı (STACK_ERROR):
 
 ```

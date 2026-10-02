@@ -391,6 +391,7 @@
     <ClCompile Include="source\LoginWin.cpp" />
     <ClCompile Include="source\MainLoad.cpp" />
     <ClCompile Include="source\SPKData.cpp" />
+    <ClCompile Include="source\SPKAsset.cpp" />
     <ClCompile Include="source\MapManager.cpp" />
     <ClCompile Include="source\MatchEvent.cpp" />
     <ClCompile Include="source\Math\ZzzMathLib.cpp" />

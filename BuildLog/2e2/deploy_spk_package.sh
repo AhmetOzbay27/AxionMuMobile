@@ -71,6 +71,10 @@ if [ "$WITH_ASSETS" = "--with-assets" ]; then
   for d in Interface Logo Player Monster NPC Item Skill Effect InGameShopBanner; do
     if [ -d "$LIVE/Data/$d" ]; then mkdir -p "$OUT/Data/$d"; cp -rf "$LIVE/Data/$d/." "$OUT/Data/$d/"; echo "   $d"; fi
   done
+  echo "== 7a) harita alt kumesi (giris sahnesi: Map\World74 + Map\Object74; tam Map agaci ~562 MB oldugu icin kopyalanamaz)"
+  for d in Map/World74 Map/Object74; do
+    if [ -d "$LIVE/Data/$d" ]; then mkdir -p "$OUT/Data/$d"; cp -rf "$LIVE/Data/$d/." "$OUT/Data/$d/"; echo "   $d"; fi
+  done
   echo "== 7b) Data\Custom yapilandirma dosyalari (yalniz kok, agac degil)"
   if [ -d "$LIVE/Data/Custom" ]; then mkdir -p "$OUT/Data/Custom"; find "$LIVE/Data/Custom" -maxdepth 1 -type f -exec cp -f {} "$OUT/Data/Custom/" \; ; echo "   $(ls "$OUT/Data/Custom" | wc -l) dosya"; fi
 fi

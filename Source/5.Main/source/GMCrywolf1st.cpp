@@ -151,7 +151,7 @@ void M34CryWolf1st::CheckCryWolf1stMVP(BYTE btOccupationState, BYTE btCrywolfSta
 	char FileName[64];
 	char WorldName[32];
 
-	sprintf ( WorldName, "World%d", gMapManager.WorldActive+1 );
+	sprintf ( WorldName, "Map\\World%d", gMapManager.WorldActive+1 );
 	
 	switch(m_OccupationState)
 	{

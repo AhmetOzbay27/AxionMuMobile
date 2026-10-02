@@ -2,6 +2,7 @@
 	INCLUDE.
 +++++++++++++++++++++++++++++++++++++*/
 #include "stdafx.h"
+#include "SPKData.h"
 #include "ZzzOpenglUtil.h"
 #include "zzzInfomation.h"
 #include "zzzBmd.h"
@@ -40,10 +41,9 @@ bool CSItemOption::OpenItemSetScript(bool bTestServer)
 	std::string strTest = (bTestServer) ? "Test" : "";
 
 	strFileName = "Data\\Local\\ItemSetType" + strTest + ".bmd";
-	if (!OpenItemSetType(strFileName.c_str()))		return false;
+	if (!OpenItemSetType(SPK_ResolveAssetPath(strFileName.c_str())))		return false;
 
-	strFileName = "Data\\Local\\" + g_strSelectedML + "\\ItemSetOption" + strTest + "_" + g_strSelectedML + ".bmd";
-	if (!OpenItemSetOption(strFileName.c_str()))	 	return false;
+	strFileName = "Data\\Local\\" + g_strSelectedML + "\\ItemSetOption" + strTest + "_" + g_strSelectedML + ".bmd";	if (!OpenItemSetOption(SPK_ResolveAssetPath(strFileName.c_str())))	 		return false;
 	return true;
 }
 

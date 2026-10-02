@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "stdafx.h"
+#include "SPKData.h"
 #include "ZzzOpenglUtil.h"
 #include "ZzzTexture.h"
 #include "UIManager.h"
@@ -22,7 +23,7 @@ ItemAddOptioninfo::ItemAddOptioninfo()
 {
 	bool Result = true;
 
-	Result = OpenItemAddOptionInfoFile( ITEMADDOPTION_DATA_FILE );
+	Result = OpenItemAddOptionInfoFile( SPK_ResolveAssetPath(ITEMADDOPTION_DATA_FILE) );
 
 	if( !Result )
 	{

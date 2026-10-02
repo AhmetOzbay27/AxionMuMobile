@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include "SPKData.h"
 #include "ServerListManager.h"
 #include "./Utilities/Log/ErrorReport.h"
 
@@ -46,7 +47,7 @@ void CServerListManager::BuxConvert(BYTE* pbyBuffer, int nSize)
 
 void CServerListManager::LoadServerListScript()
 {
-	FILE* fp = ::fopen("Data\\Local\\ServerList.bmd", "rb");
+	FILE* fp = ::fopen(SPK_ResolveAssetPath("Data\\Local\\ServerList.bmd"), "rb");
 
 	if (fp == NULL)
 	{

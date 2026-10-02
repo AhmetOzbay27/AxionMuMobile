@@ -1,0 +1,48 @@
+﻿{
+    "tcpConnections":  [
+                           {
+                               "state":  "SynSent",
+                               "t":  5.2,
+                               "remote":  "45.87.120.29:44405",
+                               "pid":  3468
+                           }
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  40,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run14-mappath-win-0x7B0460.png"
+                    ],
+    "endTime":  "2026-10-02 22:01:42",
+    "label":  "run14-mappath",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:3468",
+                               "t":  0.9,
+                               "windows":  [
+                                               "TOP|pid=3468|Axion Mu|Axion Mu|visible=1|hwnd=0x7B0460",
+                                               "TOP|pid=3468|IME|Default IME|visible=0|hwnd=0x2F0426",
+                                               "TOP|pid=3468|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0xD203CC"
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  3468,
+    "startTime":  "2026-10-02 22:01:00",
+    "processTree":  [
+                        "Main.exe:3468"
+                    ]
+}
