@@ -7,6 +7,14 @@
 
 ---
 
+## [26.10.02 19:20] docs/CHANGELOG hash takibi (c90258976) + pano
+
+**Ne yapıldı** — 2e.1+2e.2 kaydının Commit satırı `c90258976` ile kapatıldı (2d.2 raporu aynı commit).
+
+**Commit** — bu kayıt.
+
+---
+
 ## [26.10.02 19:10] 2e.1 + 2e.2 Gömülü IP hizalama ve derleme çıktısının SPK paketine kurulması
 
 **Ne yapıldı**
@@ -50,7 +58,7 @@ APICB.cpp,Defined_Global.h,stdafx.h,CB_AutoNapGame.cpp,Winmain.cpp,MixMgr.h,MixM
 GameConfig\GameConfigConstants.h,Scenes\SceneCore.cpp}`; `ClientFile\Main.exe`;
 `BuildLog\2e2\*`; `docs\{22,02,03,04,CHANGELOG}`.
 
-**Commit** — tek commit (2d.2 raporu + 2e.1/2e.2 uygulaması birlikte; hash bir sonraki CHANGELOG kaydında).
+**Commit** — `c90258976` (2d.2 raporu + 2e.1/2e.2 uygulaması **tek commit**).
 
 ---
 
@@ -71,7 +79,7 @@ birincil kanıt bayt karşılaştırmasıdır (docs/20).
 
 **Değişen dosyalar** — `docs\{21,02,03,04,CHANGELOG}` (yalnız doküman; kod değişmedi).
 
-**Commit** — tek commit (2e kaydıyla birlikte; hash bir sonraki CHANGELOG kaydında).
+**Commit** — `c90258976` (2e kaydıyla birlikte).
 
 ---
 
