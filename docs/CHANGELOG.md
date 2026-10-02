@@ -7,6 +7,40 @@
 
 ---
 
+
+## [26.10.03 00:30] PARİTE ÖLÇÜMÜ — 5 eksenli manifest (docs/30) + istemci ekseni iş emri (docs/31)
+
+**Ne yapıldı**
+- `docs/30-PARITE-MANIFESTI.md` (yeni): parite tanımı **5 eksene** çıkarıldı
+  (GS / CFG / CLI / PROTO / E2E). 56 özellik satırı `docs/13`'ten otomatik ayrıştırıldı,
+  her satıra canlı kanıt (canlı `Data` ağacı config varlığı, bizim GS kaynak dosyamız,
+  istemci dosya eşleşmesi) eklendi. Makine-okunur hali:
+  `BuildLog/envanter/parite_ozellik_kaniti.tsv`.
+- `docs/31-ISTEMCI-EKSENI-IS-EMI.md` (yeni): 3. eksen için iş emri. **Ana keşif:** canlı
+  istemcinin özellik listesi `GetEngine.ini` içindeki 20 slotluk `MENU_BUTTON_xx` dizisidir;
+  bizim istemci kaynağında bu anahtarların 0 referansı var.
+- İşçi / süpervizör / patron rol-ve-yetki protokolü docs/30 §4'e yazıldı (düzenleme
+  yetkisi yalnız işçide; süpervizör kanıt doğrular).
+
+**Ne ölçüldü (03.10.2026)**
+| Eksen | Yeşil | Toplam |
+|---|---|---|
+| 1 GS kaynağı | 11 | 60 |
+| 2 Config (canlı şema) | 28 | 56 |
+| 3 İstemci karşılığı | 8 | 60 |
+| 4 Protokol kaydı | 5 | 60 |
+| 5 E2E | 6 | 60 |
+
+**Neden** — 2c iş emri yalnız 1. ekseni (sunucu modülü) ölçüyordu; bu yüzden 60 kalemlik
+plan ilerlerken parite gelmiyordu. İstemci tarafında 14 özellik penceresi hiç yazılmamış
+durumdaydı ve bu hiçbir dokümanda görünmüyordu. Manifest ölçümü 5 eksene taşıyarak
+eksik işi görünür kılar.
+
+**Doğrulama** — tüm sayılar dosya sistemi taramasından üretildi (docs/13 ayrıştırma,
+canlı `4.MuServer/Sub-1/Data` recursive ad taraması, `Source/5.Main/source` dosya adı
+eşleşmesi, `GetEngine.ini` MENU_BUTTON regex'i); ham çıktı `BuildLog/envanter/*.tsv`'de.
+Kod değişikliği yok → derleme etkilenmez.
+
 ## [26.10.02 22:10] 2e.4 SPK-first varlık çözümleyici + harita/nesne yol paritesi (H-011/H-012/H-014/H-015)
 
 **Ne yapıldı**

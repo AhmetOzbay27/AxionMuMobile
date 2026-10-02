@@ -1,0 +1,56 @@
+	A1	4	SPK_Harmony	CustomHarmony	CustomHarmony.xml	UIJewelHarmony.cpp UIJewelHarmony.h	Config\JewelOfHarmonyOption.bmd ConfigAz\jewelofharmonyoption.bmd ConfigCn\jewelofharmonyoption.bmd
+	A2	23	SPK_MonsterSkill	CCustomMonsterSkill	CustomMonsterSkill.txt	YOK	Config\MonsterSkill.bmd ConfigAz\monsterskill.bmd ConfigCn\monsterskill.bmd
+	A3	37	CustomItemSetPro	CustomSetDameItem	CustomItemSetPro.xml	YOK	Config\ItemSetOption.bmd Config\ItemSetType.bmd ConfigAz\itemsetoption.bmd
+	A4	36	CustomItemPro	SystemItemChanger	CustomItemPro.xml	CB_LockItem.cpp CB_LockItem.h CB_ViewCharItem.cpp CB_ViewCharItem.h	Config\Info\CEffectItem.bmd Config\Info\CustomItemColorName.bmd Config\Info\CustomItemPosition.bmd
+	A5	38	CustomNewBuff	CustomNewBuff	CustomNewBuff.xml	YOK	YOK
+	A6	55	CustomStartItemDame	CCustomStartItemDame	CustomStartItemDame.txt	YOK	YOK
+	A7	56	CustomStartSetItemDame	CCustomStartSetItemDame	CustomStartSetItemDame.txt	YOK	YOK
+	A8	57	ItemExcellentOptionRate	CItemExOptionRate	—	YOK	YOK
+	A9	5	SPK_TuLuyen	cTuLuyen	TuLuyen.xml	YOK	YOK
+	A10	6	SPK_QuanHam	cQuanHam	QuanHam.xml	YOK	YOK
+	A11	7	SPK_HonHoan	cHonHoan	HonHoan.xml	YOK	YOK
+	A12	8	SPK_DanhHieu	cDanhHieu	DanhHieu.xml	CB_DanhHieu.cpp CB_DanhHieu.h	YOK
+	A13	9	SPK_Relife	TaiSinh	Relife.xml	YOK	YOK
+	A14	10	SPK_DungLuyen	cDungLuyen	DungLuyen.xml	YOK	YOK
+	A15	15	ResetChange	CResetChange	ResetChange.txt	YOK	YOK
+	A16	13	B_MocNap	CSystemMocNap	CustomMocNap.xml	YOK	YOK
+	A18	40	GuildUpgrade	cSystemGuildUpgrade	GuildUpgrade.txt	YOK	YOK
+	A19	50	ExWinQuestSystem	ExWinQuestSystem	CreationQuestSystem.xml + CreationQuestData_1.ini	YOK	YOK
+	A20	44	SocketConnection	CConnection	—	YOK	YOK
+	A21	45	SocketManagerModern	CSocketManager (modern)	—	YOK	YOK
+	B1	1	SPK_EventMainManager	EventMainManager	sıfırdan	YOK	YOK
+	B2	60	**EventGvG** (YENİ keşif) ✅ **tam uygulama** (26.10.01 21:43)	CGvGEvent	donor birebir + canlı denetim (7 anahtar)	YOK	YOK
+	B3	31	ActiveInvasions ✅ **parite/tam uygulama** (26.10.01 23:24)	CActiveInvasions (canlı adı; bizde CB_ActiveInvasions)	MUIG-özel (donor YOK) — canlı disasm paritesi	YOK	YOK
+	B4	27	SPK_CastleEvent	CastleStartGuild	sıfırdan	YOK	YOK
+	B5	32	BEventThanMa	CThanMaChien	sıfırdan	YOK	YOK
+	B6	33	SkyEvent	cSkyEvent	sıfırdan	YOK	YOK
+	B7	34	TEventGreatPK	CCustomGreatPK	sıfırdan	YOK	YOK
+	B8	35	CustomDameBoss	VPDameBoss	sıfırdan	YOK	YOK
+	B9	17	ReiDoMu	CReiDoMU	sıfırdan	YOK	YOK
+	C1	22	SPK_ItemTrader	BotThuMua(er)	sıfırdan	YOK	YOK
+	C2	47	CongHuong	CongHuong (bot)	sıfırdan	CB_CongHuong.cpp CB_CongHuong.h	YOK
+	C3	20	SPK_ExtendShop	CExtendShop	sıfırdan	YOK	YOK
+	C4	21	SPK_NewXShop	NewCashShop	sıfırdan	YOK	YOK
+	C5	28	BotOnline	ObjBotOnline	sıfırdan	YOK	YOK
+	C6	29	BotTradeMix	BotTradeMixCore	sıfırdan	YOK	YOK
+	C7	30	CBotMixSystem	CBotMixSystem	sıfırdan	YOK	YOK
+	C8	41	RankingServer	cRanking	sıfırdan	CustomRanking.cpp CustomRanking.h NewUIGensRanking.cpp NewUIGensRanking.h	YOK
+	C9	24	SPK_CmdSocket	CCommandUI	sıfırdan	YOK	YOK
+	C10	26	SPK_StatsInfo	CSGetInfoCharacter	CharOption.xml (paylaşımlı)	YOK	YOK
+	C11	46	ViewInfoItem	ViewItemPlayer	sıfırdan	YOK	YOK
+	C12	14	CharOption	CCustomCharOption	CharOption.xml	YOK	YOK
+	C13	39	CustomLuckySpin	CCustomLuckySpin	CustomVongQuay.xml	YOK	YOK
+	C14	48	PartySetPass	CPartySetPass	sıfırdan	YOK	YOK
+	C15	49	ChecklevelVip	CheckItemVip	sıfırdan	YOK	YOK
+	C16	51	CustomRenameChar	CCustomRenameChar	sıfırdan	YOK	YOK
+	C17	52	CustomReadGuildServer	(guild veri)	sıfırdan	YOK	YOK
+	C18	53	EventItemBagUI	CEventItemBagUI	EventItemBagManager.txt	YOK	YOK
+	C19	54	ShopManagerUI	CShopManagerUI	ShopManager.txt	YOK	YOK
+	C20	11	SPK_MessLang	cMessageNew	Message.xml (yeni bloklar)	YOK	YOK
+	C21	12	ZzzToolKit	SPK_ToolKitMain	— (SPK\ log)	YOK	YOK
+	D1	16	ResetLimiter	ResetLitmitLock	sıfırdan	YOK	YOK
+	D2	43	PassLock	ItemPassLocker	sıfırdan	YOK	YOK
+	D3	42	ChangePass	ChangePassOption	sıfırdan	YOK	YOK
+	E1	25	SPK_CustomNameColor	cCustomNameColor	sıfırdan	YOK	YOK
+	E2	58	LogErrorForm	CLogErrorForm	sıfırdan	YOK	YOK
+	E3	59	GetLicenseID	(lisans)	sıfırdan	YOK	YOK

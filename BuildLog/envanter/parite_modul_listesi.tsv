@@ -1,0 +1,56 @@
+	A1	4	SPK_Harmony	CustomHarmony	CustomHarmony.xml
+	A2	23	SPK_MonsterSkill	CCustomMonsterSkill	CustomMonsterSkill.txt
+	A3	37	CustomItemSetPro	CustomSetDameItem	CustomItemSetPro.xml
+	A4	36	CustomItemPro	SystemItemChanger	CustomItemPro.xml
+	A5	38	CustomNewBuff	CustomNewBuff	CustomNewBuff.xml
+	A6	55	CustomStartItemDame	CCustomStartItemDame	CustomStartItemDame.txt
+	A7	56	CustomStartSetItemDame	CCustomStartSetItemDame	CustomStartSetItemDame.txt
+	A8	57	ItemExcellentOptionRate	CItemExOptionRate	—
+	A9	5	SPK_TuLuyen	cTuLuyen	TuLuyen.xml
+	A10	6	SPK_QuanHam	cQuanHam	QuanHam.xml
+	A11	7	SPK_HonHoan	cHonHoan	HonHoan.xml
+	A12	8	SPK_DanhHieu	cDanhHieu	DanhHieu.xml
+	A13	9	SPK_Relife	TaiSinh	Relife.xml
+	A14	10	SPK_DungLuyen	cDungLuyen	DungLuyen.xml
+	A15	15	ResetChange	CResetChange	ResetChange.txt
+	A16	13	B_MocNap	CSystemMocNap	CustomMocNap.xml
+	A18	40	GuildUpgrade	cSystemGuildUpgrade	GuildUpgrade.txt
+	A19	50	ExWinQuestSystem	ExWinQuestSystem	CreationQuestSystem.xml + CreationQuestData_1.ini
+	A20	44	SocketConnection	CConnection	—
+	A21	45	SocketManagerModern	CSocketManager (modern)	—
+	B1	1	SPK_EventMainManager	EventMainManager	sıfırdan
+	B2	60	**EventGvG** (YENİ keşif) ✅ **tam uygulama** (26.10.01 21:43)	CGvGEvent	donor birebir + canlı denetim (7 anahtar)
+	B3	31	ActiveInvasions ✅ **parite/tam uygulama** (26.10.01 23:24)	CActiveInvasions (canlı adı; bizde CB_ActiveInvasions)	MUIG-özel (donor YOK) — canlı disasm paritesi
+	B4	27	SPK_CastleEvent	CastleStartGuild	sıfırdan
+	B5	32	BEventThanMa	CThanMaChien	sıfırdan
+	B6	33	SkyEvent	cSkyEvent	sıfırdan
+	B7	34	TEventGreatPK	CCustomGreatPK	sıfırdan
+	B8	35	CustomDameBoss	VPDameBoss	sıfırdan
+	B9	17	ReiDoMu	CReiDoMU	sıfırdan
+	C1	22	SPK_ItemTrader	BotThuMua(er)	sıfırdan
+	C2	47	CongHuong	CongHuong (bot)	sıfırdan
+	C3	20	SPK_ExtendShop	CExtendShop	sıfırdan
+	C4	21	SPK_NewXShop	NewCashShop	sıfırdan
+	C5	28	BotOnline	ObjBotOnline	sıfırdan
+	C6	29	BotTradeMix	BotTradeMixCore	sıfırdan
+	C7	30	CBotMixSystem	CBotMixSystem	sıfırdan
+	C8	41	RankingServer	cRanking	sıfırdan
+	C9	24	SPK_CmdSocket	CCommandUI	sıfırdan
+	C10	26	SPK_StatsInfo	CSGetInfoCharacter	CharOption.xml (paylaşımlı)
+	C11	46	ViewInfoItem	ViewItemPlayer	sıfırdan
+	C12	14	CharOption	CCustomCharOption	CharOption.xml
+	C13	39	CustomLuckySpin	CCustomLuckySpin	CustomVongQuay.xml
+	C14	48	PartySetPass	CPartySetPass	sıfırdan
+	C15	49	ChecklevelVip	CheckItemVip	sıfırdan
+	C16	51	CustomRenameChar	CCustomRenameChar	sıfırdan
+	C17	52	CustomReadGuildServer	(guild veri)	sıfırdan
+	C18	53	EventItemBagUI	CEventItemBagUI	EventItemBagManager.txt
+	C19	54	ShopManagerUI	CShopManagerUI	ShopManager.txt
+	C20	11	SPK_MessLang	cMessageNew	Message.xml (yeni bloklar)
+	C21	12	ZzzToolKit	SPK_ToolKitMain	— (SPK\ log)
+	D1	16	ResetLimiter	ResetLitmitLock	sıfırdan
+	D2	43	PassLock	ItemPassLocker	sıfırdan
+	D3	42	ChangePass	ChangePassOption	sıfırdan
+	E1	25	SPK_CustomNameColor	cCustomNameColor	sıfırdan
+	E2	58	LogErrorForm	CLogErrorForm	sıfırdan
+	E3	59	GetLicenseID	(lisans)	sıfırdan

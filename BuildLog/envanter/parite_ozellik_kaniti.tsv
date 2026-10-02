@@ -1,0 +1,56 @@
+A	4	SPK_Harmony	CustomHarmony.xml + CustomHarmony.xml	CANLI	SPK/SPK_Harmony	YOK (core MU: UIJewelHarmony)
+A	23	SPK_MonsterSkill	CustomMonsterSkill.txt + CustomMonsterSkill.txt	CANLI	MonsterSkillElement, MonsterSkillElement	YOK
+A	37	CustomItemSetPro	CustomItemSetPro.xml	CANLI	CustomItemSetPro, CustomItemSetPro	YOK
+A	36	CustomItemPro	CustomItemPro.xml	CANLI	—	YOK (core MU: CB_LockItem)
+A	38	CustomNewBuff	CustomNewBuff.xml	CANLI	—	YOK
+A	55	CustomStartItemDame	CustomStartItemDame.txt	CANLI	—	YOK
+A	56	CustomStartSetItemDame	CustomStartSetItemDame.txt	CANLI	—	YOK
+A	57	ItemExcellentOptionRate	—	—	—	YOK
+A	5	SPK_TuLuyen	TuLuyen.xml	CANLI	—	YOK
+A	6	SPK_QuanHam	QuanHam.xml	CANLI	—	YOK
+A	7	SPK_HonHoan	HonHoan.xml	CANLI	—	YOK
+A	8	SPK_DanhHieu	DanhHieu.xml	CANLI	DanhHieu, DanhHieu	CB_DanhHieu
+A	9	SPK_Relife	Relife.xml	CANLI	—	YOK
+A	10	SPK_DungLuyen	DungLuyen.xml	CANLI	—	YOK
+A	15	ResetChange	ResetChange.txt	CANLI	—	YOK
+A	13	B_MocNap	CustomMocNap.xml	CANLI	—	YOK
+A	40	GuildUpgrade	GuildUpgrade.txt	CANLI	—	YOK
+A	50	ExWinQuestSystem	CreationQuestSystem.xml + CreationQuestData_1.ini	CANLI	—	YOK
+A	44	SocketConnection	—	—	—	YOK
+A	45	SocketManagerModern	—	—	—	YOK
+B	1	SPK_EventMainManager	—	—	EventMainManager, EventMainManager	YOK
+B	60	EventGvG	Monster.ini	CANLI	EventGvG, EventGvG	YOK
+B	31	ActiveInvasions	—	—	CB_ActiveInvasions, CB_ActiveInvasions	CB_ActiveInvasions
+B	27	SPK_CastleEvent	—	—	—	YOK
+B	32	BEventThanMa	—	—	—	YOK
+B	33	SkyEvent	—	—	—	YOK
+B	34	TEventGreatPK	—	—	—	YOK
+B	35	CustomDameBoss	—	—	—	YOK
+B	17	ReiDoMu	—	—	ReiDoMU, ReiDoMU	YOK
+C	22	SPK_ItemTrader	—	—	—	YOK
+C	47	CongHuong	CongHuong.txt	CANLI	CBCongHuong, CBCongHuong	CB_CongHuong
+C	20	SPK_ExtendShop	—	—	—	YOK
+C	21	SPK_NewXShop	CustomShop.xml	CANLI	—	YOK
+C	28	BotOnline	—	—	—	YOK
+C	29	BotTradeMix	BotTradeMix.txt	CANLI	—	YOK
+C	30	CBotMixSystem	—	—	—	YOK
+C	41	RankingServer	—	—	CustomRanking, CustomRanking	CustomRanking, NewUIGensRanking
+C	24	SPK_CmdSocket	—	—	—	YOK
+C	26	SPK_StatsInfo	CharOption.xml	CANLI	—	YOK
+C	46	ViewInfoItem	—	—	—	YOK
+C	14	CharOption	CharOption.xml	CANLI	—	YOK
+C	39	CustomLuckySpin	CustomVongQuay.xml	CANLI	—	VongQuay
+C	48	PartySetPass	—	—	—	YOK
+C	49	ChecklevelVip	—	—	—	CBInterfaceVIPChar
+C	51	CustomRenameChar	—	—	—	YOK
+C	52	CustomReadGuildServer	—	—	—	YOK
+C	53	EventItemBagUI	EventItemBagManager.txt	CANLI	—	YOK
+C	54	ShopManagerUI	ShopManager.txt	CANLI	—	YOK
+C	11	SPK_MessLang	Message.xml	CANLI	—	YOK
+C	12	ZzzToolKit	—	—	—	YOK
+D	16	ResetLimiter	—	—	—	YOK
+D	43	PassLock	—	—	—	YOK
+D	42	ChangePass	—	—	—	YOK
+E	25	SPK_CustomNameColor	CustomNameColor.ini	CANLI	—	YOK
+E	58	LogErrorForm	—	—	—	YOK
+E	59	GetLicenseID	—	—	—	YOK
