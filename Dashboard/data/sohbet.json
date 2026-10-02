@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02 19:40:00",
+  "updated": "2026-10-02 19:50:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
     {
@@ -161,6 +161,11 @@
       "ts": "2026-10-02 19:40",
       "kim": "asistan",
       "text": "2e.1 bağımsız doğrulama: PC derleme hattı EKSİKSİZ — kaynakta 45.87.120.29:44405 gömülü, exe'de (71b008ad) eski IP yok, canlı ConnectIP.bmd (8ac74a5b) 0x20/0x22 = 44405/55858 okunuyor ve MainLoad çalışma anında uyguluyor. İstisna: derleme dışı mobil dosyalarda (android_main.cpp, LauncherHelper.h yorumu) eski MOBİL fallback 171.235.182.88:63000 duruyor — hiçbir vcxproj'da yok, exe'ye girmiyor; farklı mobil dağıtımın değeri olduğu için değiştirilmedi. H-004 + docs/22 kapsam notu eklendi."
+    },
+    {
+      "ts": "2026-10-02 19:50",
+      "kim": "asistan",
+      "text": "2e.3 TAMAM — sunucu test klasörü: BuildLog/2e3/deploy_server_test.sh bizim Release_EX603 GS/CS/DS/JS çıktılarını (md5: CS 4c1f91bf, DS 916e9625, JS 91ee93d7, GS 43f086d9) canlı düzenini aynalayarak BuildLog/2e3/deploy'a kurdu (25 MB, MSVCP140+VCRUNTIME140 kapanışı). DB: DB_SQL_12.bak -> yerel SQLEXPRESS MuOnlineS6 (ONLINE, 55 tablo; idempotent restore). Smoke test: CS->DS->JS->GS başlatıldı; portlar 63000/63001udp/63002/63003, GS->DS/JS bağlantıları kuruldu (LOG_CONNECT kanıtı), sonra Stop_TestServer.bat ile tamamen kapatıldı (kalıntı yok). Rapor docs/23; kanıt BuildLog/2e3/results/smoke1.json + GS logları."
     }
   ]
 }

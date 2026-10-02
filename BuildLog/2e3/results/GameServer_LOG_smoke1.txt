@@ -1,0 +1,201 @@
+19:36:27 [ServerInfo] CashShop loaded successfully
+19:36:27 [ServerInfo] ChaosMix loaded successfully
+19:36:28 [ServerInfo] Character loaded successfully
+19:36:28 Đã vượt quá giới hạn Buffshop.
+19:36:28 [VongQuay] [1] Size 1 
+19:36:28 [DoiItem] Load OK Enable = 0, Size 37
+19:36:28 [CustomMonterPoint] Data Size 28
+19:36:28 [HuyExc] On: 1 TypeMixCount : 6
+19:36:28 [VIPChar] Enable 1, Date ItemPoint 17, Data LevelVip 20
+19:36:28 [ChangeClass] Config Saved & Reloaded
+19:36:28 [CustomChoTroi] Load VAT 11, Load ItemBlock 2
+19:36:28 [CustomItemBank] (1) Load 26 Item In List
+19:36:28 [LoadMocNap] [1] Size 3 
+19:36:28 [ServerInfo] Custom loaded successfully
+19:36:28 [ServerInfo] Command loaded successfully
+19:36:28 [ServerInfo] Common loaded successfully
+19:36:28 [EventMainManager] SkyEvent loaded (Stage:0, Win:5, Monster-groups:5)
+19:36:28 [ Crywolf ] State (0) -> NONE
+19:36:28 [ Crywolf ] SetState - StateInfo : Occupation/0, State/0
+19:36:28 [ServerInfo] Event loaded successfully
+19:36:28 [ServerInfo] EventItemBag loaded successfully
+19:36:28 [ServerInfo] Hack loaded successfully
+19:36:28 [ServerInfo] Item loaded successfully
+19:36:28 [ServerInfo] Monster loaded successfully
+19:36:28 [ServerInfo] Move loaded successfully
+19:36:28 [ServerInfo] Quest loaded successfully
+19:36:28 [ServerInfo] Shop loaded successfully
+19:36:28 [ServerInfo] Skill loaded successfully
+19:36:28 [ResetTable]Enable (1) Load Config  1
+19:36:28 [ResetTableVIP]Enable (1) Load Config  1
+19:36:28 [ServerInfo] Util loaded successfully
+19:36:28 [BotTrade] Load COnffig OK Enable 1
+19:36:28 [ReadBotInfo] BotSystem loaded successfully
+19:36:29 [BossGuild] Ko tao duoc NPC
+19:36:30 [BossGuild] Ko tao duoc NPC
+19:36:31 [BossGuild] Ko tao duoc NPC
+19:36:32 [BossGuild] Ko tao duoc NPC
+19:36:33 [BossGuild] Ko tao duoc NPC
+19:36:34 [BossGuild] Ko tao duoc NPC
+19:36:35 [BossGuild] Ko tao duoc NPC
+19:36:36 [BossGuild] Ko tao duoc NPC
+19:36:37 [BossGuild] Ko tao duoc NPC
+19:36:38 [BossGuild] Ko tao duoc NPC
+19:36:39 [BossGuild] Ko tao duoc NPC
+19:36:40 [BossGuild] Ko tao duoc NPC
+19:36:41 [BossGuild] Ko tao duoc NPC
+19:36:42 [BossGuild] Ko tao duoc NPC
+19:36:43 [BossGuild] Ko tao duoc NPC
+19:36:44 [BossGuild] Ko tao duoc NPC
+19:36:45 [BossGuild] Ko tao duoc NPC
+19:36:46 [BossGuild] Ko tao duoc NPC
+19:36:47 [BossGuild] Ko tao duoc NPC
+19:36:48 [BossGuild] Ko tao duoc NPC
+19:36:49 [BossGuild] Ko tao duoc NPC
+19:36:50 [BossGuild] Ko tao duoc NPC
+19:36:51 [BossGuild] Ko tao duoc NPC
+19:36:52 [BossGuild] Ko tao duoc NPC
+19:36:53 [BossGuild] Ko tao duoc NPC
+19:36:54 [BossGuild] Ko tao duoc NPC
+19:36:55 [BossGuild] Ko tao duoc NPC
+19:36:56 [BossGuild] Ko tao duoc NPC
+19:36:57 [BossGuild] Ko tao duoc NPC
+19:36:58 [BossGuild] Ko tao duoc NPC
+19:36:59 [BossGuild] Ko tao duoc NPC
+19:37:00 [BossGuild] Ko tao duoc NPC
+19:37:01 [BossGuild] Ko tao duoc NPC
+19:37:03 [BossGuild] Ko tao duoc NPC
+19:37:04 [BossGuild] Ko tao duoc NPC
+19:37:05 [BossGuild] Ko tao duoc NPC
+19:37:06 [BossGuild] Ko tao duoc NPC
+19:37:07 [BossGuild] Ko tao duoc NPC
+19:37:08 [BossGuild] Ko tao duoc NPC
+19:37:09 [BossGuild] Ko tao duoc NPC
+19:37:11 [BossGuild] Ko tao duoc NPC
+19:37:11 [BossGuild] Ko tao duoc NPC
+19:37:13 [BossGuild] Ko tao duoc NPC
+19:37:14 [BossGuild] Ko tao duoc NPC
+19:37:15 [BossGuild] Ko tao duoc NPC
+19:37:16 [BossGuild] Ko tao duoc NPC
+19:37:17 [BossGuild] Ko tao duoc NPC
+19:37:18 [BossGuild] Ko tao duoc NPC
+19:37:19 [BossGuild] Ko tao duoc NPC
+19:37:20 [BossGuild] Ko tao duoc NPC
+19:37:21 [BossGuild] Ko tao duoc NPC
+19:37:22 [BossGuild] Ko tao duoc NPC
+19:37:23 [BossGuild] Ko tao duoc NPC
+19:37:24 [BossGuild] Ko tao duoc NPC
+19:37:25 [BossGuild] Ko tao duoc NPC
+19:37:26 [BossGuild] Ko tao duoc NPC
+19:37:27 [BossGuild] Ko tao duoc NPC
+19:37:28 [BossGuild] Ko tao duoc NPC
+19:37:29 [BossGuild] Ko tao duoc NPC
+19:37:30 [BossGuild] Ko tao duoc NPC
+19:37:31 [BossGuild] Ko tao duoc NPC
+19:37:32 [BossGuild] Ko tao duoc NPC
+19:37:33 [BossGuild] Ko tao duoc NPC
+19:37:34 [BossGuild] Ko tao duoc NPC
+19:37:35 [BossGuild] Ko tao duoc NPC
+19:37:36 [BossGuild] Ko tao duoc NPC
+19:37:37 [BossGuild] Ko tao duoc NPC
+19:37:38 [BossGuild] Ko tao duoc NPC
+19:37:39 [BossGuild] Ko tao duoc NPC
+19:37:40 [BossGuild] Ko tao duoc NPC
+19:37:41 [BossGuild] Ko tao duoc NPC
+19:37:42 [BossGuild] Ko tao duoc NPC
+19:37:43 [BossGuild] Ko tao duoc NPC
+19:37:44 [BossGuild] Ko tao duoc NPC
+19:37:45 [BossGuild] Ko tao duoc NPC
+19:37:46 [BossGuild] Ko tao duoc NPC
+19:37:47 [BossGuild] Ko tao duoc NPC
+19:37:48 [BossGuild] Ko tao duoc NPC
+19:37:49 [BossGuild] Ko tao duoc NPC
+19:37:50 [BossGuild] Ko tao duoc NPC
+19:37:51 [BossGuild] Ko tao duoc NPC
+19:37:52 [BossGuild] Ko tao duoc NPC
+19:37:53 [BossGuild] Ko tao duoc NPC
+19:37:54 [BossGuild] Ko tao duoc NPC
+19:37:55 [BossGuild] Ko tao duoc NPC
+19:37:56 [BossGuild] Ko tao duoc NPC
+19:37:57 [BossGuild] Ko tao duoc NPC
+19:37:58 [BossGuild] Ko tao duoc NPC
+19:37:59 [BossGuild] Ko tao duoc NPC
+19:38:00 [BossGuild] Ko tao duoc NPC
+19:38:01 [BossGuild] Ko tao duoc NPC
+19:38:02 [BossGuild] Ko tao duoc NPC
+19:38:03 [BossGuild] Ko tao duoc NPC
+19:38:04 [BossGuild] Ko tao duoc NPC
+19:38:05 [BossGuild] Ko tao duoc NPC
+19:38:06 [BossGuild] Ko tao duoc NPC
+19:38:07 [BossGuild] Ko tao duoc NPC
+19:38:08 [BossGuild] Ko tao duoc NPC
+19:38:09 [BossGuild] Ko tao duoc NPC
+19:38:10 [BossGuild] Ko tao duoc NPC
+19:38:11 [BossGuild] Ko tao duoc NPC
+19:38:12 [BossGuild] Ko tao duoc NPC
+19:38:13 [BossGuild] Ko tao duoc NPC
+19:38:14 [BossGuild] Ko tao duoc NPC
+19:38:15 [BossGuild] Ko tao duoc NPC
+19:38:16 [BossGuild] Ko tao duoc NPC
+19:38:17 [BossGuild] Ko tao duoc NPC
+19:38:18 [BossGuild] Ko tao duoc NPC
+19:38:19 [BossGuild] Ko tao duoc NPC
+19:38:21 [BossGuild] Ko tao duoc NPC
+19:38:22 [BossGuild] Ko tao duoc NPC
+19:38:23 [BossGuild] Ko tao duoc NPC
+19:38:24 [BossGuild] Ko tao duoc NPC
+19:38:25 [BossGuild] Ko tao duoc NPC
+19:38:26 [BossGuild] Ko tao duoc NPC
+19:38:27 [BossGuild] Ko tao duoc NPC
+19:38:28 [BossGuild] Ko tao duoc NPC
+19:38:29 [BossGuild] Ko tao duoc NPC
+19:38:30 [BossGuild] Ko tao duoc NPC
+19:38:31 [BossGuild] Ko tao duoc NPC
+19:38:32 [BossGuild] Ko tao duoc NPC
+19:38:33 [BossGuild] Ko tao duoc NPC
+19:38:34 [BossGuild] Ko tao duoc NPC
+19:38:35 [BossGuild] Ko tao duoc NPC
+19:38:36 [BossGuild] Ko tao duoc NPC
+19:38:37 [BossGuild] Ko tao duoc NPC
+19:38:38 [BossGuild] Ko tao duoc NPC
+19:38:39 [BossGuild] Ko tao duoc NPC
+19:38:40 [BossGuild] Ko tao duoc NPC
+19:38:42 [BossGuild] Ko tao duoc NPC
+19:38:43 [BossGuild] Ko tao duoc NPC
+19:38:44 [BossGuild] Ko tao duoc NPC
+19:38:45 [BossGuild] Ko tao duoc NPC
+19:38:46 [BossGuild] Ko tao duoc NPC
+19:38:47 [BossGuild] Ko tao duoc NPC
+19:38:48 [BossGuild] Ko tao duoc NPC
+19:38:49 [BossGuild] Ko tao duoc NPC
+19:38:50 [BossGuild] Ko tao duoc NPC
+19:38:51 [BossGuild] Ko tao duoc NPC
+19:38:52 [BossGuild] Ko tao duoc NPC
+19:38:53 [BossGuild] Ko tao duoc NPC
+19:38:54 [BossGuild] Ko tao duoc NPC
+19:38:55 [BossGuild] Ko tao duoc NPC
+19:38:56 [BossGuild] Ko tao duoc NPC
+19:38:57 [BossGuild] Ko tao duoc NPC
+19:38:58 [BossGuild] Ko tao duoc NPC
+19:38:59 [BossGuild] Ko tao duoc NPC
+19:39:00 [BossGuild] Ko tao duoc NPC
+19:39:01 [BossGuild] Ko tao duoc NPC
+19:39:02 [BossGuild] Ko tao duoc NPC
+19:39:03 [BossGuild] Ko tao duoc NPC
+19:39:04 [BossGuild] Ko tao duoc NPC
+19:39:05 [BossGuild] Ko tao duoc NPC
+19:39:06 [BossGuild] Ko tao duoc NPC
+19:39:07 [BossGuild] Ko tao duoc NPC
+19:39:08 [BossGuild] Ko tao duoc NPC
+19:39:09 [BossGuild] Ko tao duoc NPC
+19:39:11 [BossGuild] Ko tao duoc NPC
+19:39:12 [BossGuild] Ko tao duoc NPC
+19:39:13 [BossGuild] Ko tao duoc NPC
+19:39:14 [BossGuild] Ko tao duoc NPC
+19:39:15 [BossGuild] Ko tao duoc NPC
+19:39:16 [BossGuild] Ko tao duoc NPC
+19:39:17 [BossGuild] Ko tao duoc NPC
+19:39:18 [BossGuild] Ko tao duoc NPC
+19:39:19 [BossGuild] Ko tao duoc NPC
+19:39:20 [BossGuild] Ko tao duoc NPC
+19:39:21 [BossGuild] Ko tao duoc NPC

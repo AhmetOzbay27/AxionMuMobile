@@ -7,6 +7,33 @@
 
 ---
 
+## [26.10.02 19:50] 2e.3 Sunucu test klasörü — bizim GS/CS/DS/JS çıktıları + DB restore + smoke test
+
+**Ne yapıldı**
+- `BuildLog\2e3\deploy_server_test.sh`: repo `MuServer\` ağacındaki bizim
+  `Release_EX603|Win32` çıktılarını (CS `4c1f91bf…`, DS `916e9625…`, JS `91ee93d7…`,
+  GS `43f086d9…`) `BuildLog\2e3\deploy\` altına canlı düzenini aynalayarak kurar
+  (25 MB; MSVCP140+VCRUNTIME140 kapanışı; pdb/dmp/LOG/msvcp100 hariç); `--rebuild`
+  bayrağı dört projeyi MSBuild ile yeniden derler.
+- `restore_test_db.sh`: `ServerTools\MuServer_S6_2020\DB\DB_SQL_12.bak` → yerel
+  SQLEXPRESS `MuOnlineS6` (ONLINE, 55 tablo; idempotent — varsa üzerine yazmaz) +
+  DSN kontrolü.
+- Smoke test: `Start_TestServer.bat` ile CS→DS→JS→GS başlatıldı; dört süreç ayakta,
+  portlar 63000/63001udp/63002/63003, GS→DS/JS bağlantıları kuruldu (`LOG_CONNECT`);
+  `Stop_TestServer.bat` ile kapatıldı, kalıntı süreç yok.
+
+**Neden** — Faz 2e'nin sunucu ayağı: parite ancak bizim yığın test klasöründen
+ayağa kalkınca doğrulanabilir; canlı ağaca hiç dokunulmadı.
+
+**Doğrulama** — `BuildLog\2e3\results\smoke1.json` (yol+pid+port),
+`GameServer_LOG_smoke1.txt` (201 satır, çökme yok),
+`GameServer_LOG_CONNECT_smoke1.txt`. DB: `sys.databases` durum + tablo sayısı.
+Rapor: docs/23.
+
+**Commit** — bu kayıt.
+
+---
+
 ## [26.10.02 19:40] 2e.1 bağımsız doğrulama — PC hattı teyit edildi; mobil kalıntılar belgelendi
 
 **Ne yapıldı** — 2e.1 "eksiksiz mi" sorusu üzerine üçlü doğrulama:

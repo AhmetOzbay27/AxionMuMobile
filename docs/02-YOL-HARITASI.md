@@ -171,8 +171,13 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   `Data\SPK\Config\*` (audit: `BuildLog\2e2\asset_audit.txt`, 12 tablo + dil ekli
   `Data\Local\<Lang>\<Ad>_<Lang>.bmd` kalıbı). Şimdilik kurulum betiğinde yol eşlemesi
   var; kalıcı çözüm istemciye çözümleyici eklemek (H-012).
-- ⬜ **2e.3** Sunucu tarafı: bizim GS/CS/DS/JS çıktılarının test klasörüne
+- ✅ **2e.3** Sunucu tarafı: bizim GS/CS/DS/JS çıktılarının test klasörüne
   kurulması (canlıya dokunmadan), DB restore: `ServerTools\DB_SQL_12.bak`.
+
+  **Bitti (02.10.2026):** `BuildLog\2e3\deploy_server_test.sh` test klasörünü kurar
+  (25 MB: bizim `Release_EX603` exe'leri + DLL kapanışı + Data + start/stop betikleri);
+  `restore_test_db.sh` `DB_SQL_12.bak`'ı yerel `MuOnlineS6`'ya restore eder (idempotent).
+  Smoke test: CS→DS→JS→GS ayakta; GS→DS/JS bağlantıları kuruldu; sonra kapatıldı. Rapor: docs/23.
 
 ### ÇIKIŞ KRİTERİ (Faz 2 → 3 geçişi)
 Tüm 2a-2e adımları ✅ + GS/Main/CS/DS/JS derlemeleri hatasız + modül

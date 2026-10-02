@@ -1,0 +1,40 @@
+﻿{
+    "label":  "smoke1",
+    "time":  "2026-10-02 19:39:20",
+    "processes":  [
+                      {
+                          "name":  "ConnectServer",
+                          "pid":  4168,
+                          "path":  "C:\\Axion Mu Source\\BuildLog\\2e3\\deploy\\1.ConnectServer\\ConnectServer.exe",
+                          "started":  "10/02/2026 19:36:27"
+                      },
+                      {
+                          "name":  "DataServer",
+                          "pid":  5812,
+                          "path":  "C:\\Axion Mu Source\\BuildLog\\2e3\\deploy\\2.DataServer\\DataServer.exe",
+                          "started":  "10/02/2026 19:36:27"
+                      },
+                      {
+                          "name":  "JoinServer",
+                          "pid":  2024,
+                          "path":  "C:\\Axion Mu Source\\BuildLog\\2e3\\deploy\\3.JoinServer\\JoinServer.exe",
+                          "started":  "10/02/2026 19:36:27"
+                      },
+                      {
+                          "name":  "GameServer",
+                          "pid":  1476,
+                          "path":  "C:\\Axion Mu Source\\BuildLog\\2e3\\deploy\\4.GameServer\\Sub 1\\GameServer\\GameServer.exe",
+                          "started":  "10/02/2026 19:36:27"
+                      }
+                  ],
+    "ports":  [
+                  "TCP    0.0.0.0:63000          0.0.0.0:0              LISTENING       4168",
+                  "TCP    0.0.0.0:63002          0.0.0.0:0              LISTENING       5812",
+                  "TCP    0.0.0.0:63003          0.0.0.0:0              LISTENING       2024",
+                  "TCP    127.0.0.1:55006        127.0.0.1:63003        ESTABLISHED     1476",
+                  "TCP    127.0.0.1:55007        127.0.0.1:63002        ESTABLISHED     1476",
+                  "TCP    127.0.0.1:63002        127.0.0.1:55007        ESTABLISHED     5812",
+                  "TCP    127.0.0.1:63003        127.0.0.1:55006        ESTABLISHED     2024",
+                  "UDP    0.0.0.0:63001          *:*                                    4168"
+              ]
+}

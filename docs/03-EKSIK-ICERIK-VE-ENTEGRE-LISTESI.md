@@ -44,7 +44,7 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 |---|-------|--------|-------|-------|
 | C-01 | MUIG'in 161 daha yeni ortak dosyası | MUIG donor | `Source\` (SPK taban) | ✅ 2b.1 matrisi + 2b.2 7 dalga (66 alındı / 147 korundu) |
 | C-01b | **YENİ (2b.3 keşfi): EventGvG modülü** — canlı ServerInfo 7 config anahtarı kanıtlı (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers), bizim ServerInfo.cpp'te yok | canlı kanıttan sıfırdan | `Source\4.GameServer\` | ⬜ 2c (05 listesine 60. kalem) |
-| C-02 | DB şeması (DB_SQL_12.bak) ile GS beklentileri uyumu | `ServerTools\DB_SQL_12.bak` | test DB | ⬜ Faz 3 öncesi |
+| C-02 | DB şeması (DB_SQL_12.bak) ile GS beklentileri uyumu | `ServerTools\DB_SQL_12.bak` | test DB | 🟡 2e.3 (02.10.2026): yerel `MuOnlineS6`'ya restore edildi (55 tablo); tam şema uyumu kontrolü Faz 3.1'de |
 
 ## D. BİLİNEN KÜÇÜK SAPMALAR (parite, düşük risk)
 
