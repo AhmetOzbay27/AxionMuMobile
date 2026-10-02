@@ -8,6 +8,20 @@
 ---
 
 
+## [26.10.03 00:40] PROTOKOL KAYDI (docs/32) — 16 özelliğe opcode tahsisi
+
+**Ne yapıldı**
+- GS `Protocol.cpp` opcode envanteri tarandı: 166 kullanılı / 90 boş.
+- `PBMSG_HEAD3` konvansiyonu (0xC1 + boyut + head + sub) ve istemci `ProtocolSend.h` kabuğu belgelendi.
+- 16 SPK özelliğine C→S + S→C opcode çiftleri tahsis edildi; iki tarafı kayıt kuralı (GS case + veri yapısı + istemci alıcı + istemci gönderici) kabul ölçütü tanımlandı.
+- H-007 (0x35 çift tanım) bu kuralın gerekçesi olarak tabloya not edildi.
+
+**Neden** — İstemci tarafı yazılırken opcode tahsisi sözlü kararla yapılırsa çakışma ve "yarım özellik" riski var; tek kayıt belgesi bu riski kapatır.
+
+**Doğrulama** — opcode listesi `Protocol.cpp` üzerinden regex ile üretildi (166/90); tahsis edilen değerlerin hiçbiri kullanılan listede değil. Kod değişikliği yok.
+
+
+
 ## [26.10.03 00:30] PARİTE ÖLÇÜMÜ — 5 eksenli manifest (docs/30) + istemci ekseni iş emri (docs/31)
 
 **Ne yapıldı**
