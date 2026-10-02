@@ -6,7 +6,7 @@
 
 ## 1. Özet
 
-- **2e.1 tamam:** kaynakta gömülü `171.235.182.88` kaldırıldı; derleme varsayılanı
+- **2e.1 tamam:** derlenen PC hattında gömülü `171.235.182.88` kaldırıldı; derleme varsayılanı
   canlı SPK paketiyle aynı (**`45.87.120.29:44405`**), çalışma anında **ConnectIP.bmd
   ezer** (IP + IP portu + AntiPort).
 - **2e.2 tamam (asgari varlık setiyle):** `Main.exe` + DLL kapanışı (`wzAudio.dll` →
@@ -43,6 +43,11 @@
 
 Çalışma-anı önceliği: `Data\SPK\ConnectIP.bmd` → (yoksa) derleme varsayılanı.
 Komut satırı IP:port override'ı (`GetConnectServerInfo`) aynen korunur.
+
+> **Kapsam notu (02.10.2026 doğrulaması):** `android_main.cpp` (mobil/donör; hiçbir vcxproj'da
+> kayıtlı değil) ve `LauncherHelper.h` örnek yorumundaki eski **mobil** fallback
+> (`171.235.182.88:63000`) kapsam dışı bırakıldı — bunlar farklı mobil dağıtımın değerleri;
+> PC exe'sine girmiyor (exe string taramasında yok).
 
 ## 3. 2e.2 — Paket kurulumu
 

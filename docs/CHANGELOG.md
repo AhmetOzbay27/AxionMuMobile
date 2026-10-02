@@ -7,6 +7,24 @@
 
 ---
 
+## [26.10.02 19:40] 2e.1 bağımsız doğrulama — PC hattı teyit edildi; mobil kalıntılar belgelendi
+
+**Ne yapıldı** — 2e.1 "eksiksiz mi" sorusu üzerine üçlü doğrulama:
+(1) kaynak `Source\5.Main` → Winmain/GameConfigConstants/SceneCore `45.87.120.29` + 44405,
+`171.235.182.88` yok; (2) `ClientFile\Main.exe` (md5 `71b008ad…`) string taraması →
+`45.87.120.29` var; `171.235.182.88`, nvapi, apicb, freeimage yok; (3) canlı
+`ConnectIP.bmd` (md5 `8ac74a5b…`) 0x20/0x22 = 44405/55858; `MainLoad` bunları çalışma
+anında uyguluyor. İstisna: `android_main.cpp` (3 kod) + `LauncherHelper.h` (örnek yorum)
+kalıntıları **mobil** fallback değerleri (`171.235.182.88:63000`); hiçbir vcxproj'da kayıtlı
+değiller, PC exe'sine girmiyor → kod değiştirilmedi; H-004 ve docs/22'ye kapsam notu işlendi.
+
+**Neden** — H-004'teki "kaynakta 0" ifadesi tüm ağaç için fazla iddialıydı; parite kapsamının
+derlenen PC hattı olduğu netleştirildi.
+
+**Commit** — bu kayıt.
+
+---
+
 ## [26.10.02 19:30] 2e.2 ek kabul koşusu — run10 tam varlık seti + docs/22 güncellemesi
 
 **Ne yapıldı**
