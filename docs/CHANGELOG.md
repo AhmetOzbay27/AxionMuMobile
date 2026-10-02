@@ -28,7 +28,7 @@
 `BuildLog\2e2\evidence\KEN_run10.txt`. Paket md5'leri: ConnectIP `8ac74a5b…` (canlıyla aynı),
 ServerData `e3617db7…` (2d.2 üretimi), SPK.ini `763ee112…`.
 
-**Commit** — bu kayıt.
+**Commit** — `1674fa006` (run10 ek kabul turu).
 
 ---
 
