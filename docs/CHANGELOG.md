@@ -7,6 +7,31 @@
 
 ---
 
+## [26.10.02 19:30] 2e.2 ek kabul koşusu — run10 tam varlık seti + docs/22 güncellemesi
+
+**Ne yapıldı**
+- `deploy_spk_package.sh` `--with-assets` kapsamı genişletildi: Map/Sound/Music hariç tam görsel
+  set (`Interface Logo Player Monster NPC Item Skill Effect InGameShopBanner`, ~380 MB);
+  eski "asgari set" notu kaldırıldı.
+- Paket **10. kez** koşuldu (`run10-full-assets`): istemci penceresi `Axion Mu` (t≈1,0 s);
+  **çökme yok**; tek engel t≈4,9 s diyaloğu `Data\Local\Eng\itemtooltip_Eng.bmd - File not
+  exist.` — SPK paketinde bu adla karşılık yok (tooltip içeriği `Config\Text.bmd` /
+  `ToolTipText.txt` / `MasterSkillTooltip.bmd`). Yol eşlemesi bitti; kalan boşluk
+  **içerik/şema eşlemesi** → 2e.4.
+- docs/22: §3.6 tabloya run10 satırı, run10 Frontier paragrafı, §4'e içerik/şema maddesi eklendi.
+- docs/04 tutarlılık düzeltmesi: negatif-kontrol dersi (pencere+TCP tek başına içerik kanıtı
+  değil) eksik kayıttı → **H-013** olarak çözülen arşive işlendi; docs/21'deki yanlış `H-012`
+  atfı `H-013` yapıldı.
+
+**Kanıt** — `BuildLog\2e2\results\run10-full-assets.json`;
+`BuildLog\2e2\shots\run10-full-assets-*.png` (3); istemcinin kendi günlüğü
+`BuildLog\2e2\evidence\KEN_run10.txt`. Paket md5'leri: ConnectIP `8ac74a5b…` (canlıyla aynı),
+ServerData `e3617db7…` (2d.2 üretimi), SPK.ini `763ee112…`.
+
+**Commit** — bu kayıt.
+
+---
+
 ## [26.10.02 19:20] docs/CHANGELOG hash takibi (c90258976) + pano
 
 **Ne yapıldı** — 2e.1+2e.2 kaydının Commit satırı `c90258976` ile kapatıldı (2d.2 raporu aynı commit).

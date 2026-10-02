@@ -1,0 +1,56 @@
+LoadBitmap Failed: Data\Object31\Flag.tga
+LoadBitmap Failed: Data\Object9\Impack03.jpg
+LoadBitmap Failed: Data\Object39\k_effect_01.JPG
+LoadBitmap Failed: Data\Local\Eng\ImgsMapName\MapNameAddStrife.tga
+LoadBitmap Failed: Data\
+LoadBitmap Failed: Data\Item\black_gold_crom05.jpg
+LoadBitmap Failed: Data\Item\absolute02_swordrender.jpg
+LoadBitmap Failed: Data\Item\black_gold_crom03.jpg
+LoadBitmap Failed: Data\Item\ground_wind2.jpg
+LoadBitmap Failed: Data\Item\alicewing4db_render.jpg
+LoadBitmap Failed: Data\Item\elfwing4da_render01.jpg
+LoadBitmap Failed: Data\Item\elfwing4da_render02.jpg
+LoadBitmap Failed: Data\Item\magicianwing4da_render.jpg
+LoadBitmap Failed: Data\Item\dknightwing4db_render.jpg
+LoadBitmap Failed: Data\Item\soulknightswordB_render.jpg
+LoadBitmap Failed: Data\Item\soulknightswordA_render.jpg
+LoadBitmap Failed: Data\Item\soulmagicswordA_render.jpg
+LoadBitmap Failed: Data\Item\hs_soularcherbowA01_render.jpg
+LoadBitmap Failed: Data\Item\sd_SoulWizardStaff01_render.jpg
+LoadBitmap Failed: Data\Item\sd_soulsummonerstickA02_render.jpg
+LoadBitmap Failed: Data\Item\soulfighterclawA_render.jpg
+LoadBitmap Failed: Data\Item\hs_blueeyeknightA03r.jpg
+LoadBitmap Failed: Data\Item\hs_blueeyeknightA02_render.jpg
+LoadBitmap Failed: Data\Item\fire_15frame_mono.jpg
+LoadBitmap Failed: Data\Item\alpha_line2.jpg
+LoadBitmap Failed: Data\Item\blueeyemagicsword02r.jpg
+LoadBitmap Failed: Data\Item\blueeyemagicsword03r.jpg
+LoadBitmap Failed: Data\Item\blueeyesceptre_render.jpg
+LoadBitmap Failed: Data\Item\Blue_eyebow02r.jpg
+LoadBitmap Failed: Data\Item\blue_eye_ws02_render.jpg
+LoadBitmap Failed: Data\Item\bsummoners02_render.jpg
+LoadBitmap Failed: Data\Item\Blueeyeclaw_render.jpg
+LoadBitmap Failed: Data\Item\mace_mastr02s_render.jpg
+LoadBitmap Failed: Data\Item\Darkangel_StaffA_render.jpg
+LoadBitmap Failed: Data\Item\sd_soullance01_render.jpg
+LoadBitmap Failed: Data\Item\runewing3db_render.jpg
+LoadBitmap Failed: Data\Item\runewing4db_render.jpg
+LoadBitmap Failed: Data\Item\runewing4dc_star01.jpg
+LoadBitmap Failed: Data\Item\runewing4dc_star02.jpg
+LoadBitmap Failed: Data\Item\hs_blueeyelanceA02r.jpg
+LoadBitmap Failed: Data\Item\mace5master02_render.jpg
+LoadBitmap Failed: Data\Item\season_wing_period_render.jpg
+LoadBitmap Failed: Data\Item\firek_sq_mono.jpg
+OpenTexture Failed: Data\Object31\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Object31\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Skill\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Skill\castlegate02.jpg of H:\GameData\@0 공성전\Data2\Skil
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou
+OpenTexture Failed: Data\Skill\class15_effect_main.JPG of C:\Documents and Settings\insou

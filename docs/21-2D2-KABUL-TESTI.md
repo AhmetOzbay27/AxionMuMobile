@@ -47,7 +47,7 @@ Ekran görüntüsü kanıtı: `BuildLog\2d2\shots\run2-ours-accept-win-0x3103AC.
 5. **İçerik doğrulaması zayıf çıktı (negatif kontrol dersi):** bozuk ServerData ile
    (run3) canlı istemci yine pencere açtı ve bağlandı — yani "pencere + TCP" tek
    başına *içerik* doğrulaması değildir; dosya-seviyesi bayt karşılaştırması
-   (2d.1, docs/20) bu yüzden birincil kanıttır. 04-HATA-GUNLUGU'na işlendi (H-012).
+   (2d.1, docs/20) bu yüzden birincil kanıttır. 04-HATA-GUNLUGU'na işlendi (H-013).
 
 ## 4. Sınırlar / sonraki adımlar
 

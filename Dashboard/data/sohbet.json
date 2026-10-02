@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02 19:10:00",
+  "updated": "2026-10-02 19:30:00",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
     {
@@ -151,6 +151,11 @@
       "ts": "2026-10-02 19:05",
       "kim": "asistan",
       "text": "2d.2 kabul testi dokümanı yazıldı (docs/21): canlı Engine.exe bizim üretim ConnectIP+ServerData ile 4 koşu; üretim koşusunda 45.87.120.29:44405 SynSent kanıtı; negatif kontrol dersi (pencere+TCP içerik kanıtı değil, birincil kanıt bayt karşılaştırması)."
+    },
+    {
+      "ts": "2026-10-02 19:30",
+      "kim": "asistan",
+      "text": "2e.2 ek kabul koşusu (run10) TAMAM: Map/Sound/Music hariç tam görsel set (~380 MB) pakete kondu; istemci ÇÖKMEDEN açıldı (Axion Mu, t≈1 s). Tek kalan: t≈4,9 s diyaloğu Data/Local/Eng/itemtooltip_Eng.bmd - File not exist. — SPK paketinde bu adla karşılık yok; tooltip içeriği Config/Text.bmd + ToolTipText.txt + MasterSkillTooltip.bmd içinde farklı şemada → kalan boşluk içerik/şema eşlemesi (2e.4). Kanıt: BuildLog/2e2/results/run10-full-assets.json + evidence/KEN_run10.txt + 3 ekran görüntüsü. docs/22 güncellendi; docs/04'e H-013 eklendi, docs/21 H-012 atfı düzeltildi."
     }
   ]
 }

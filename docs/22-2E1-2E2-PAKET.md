@@ -116,10 +116,17 @@ kutusu bulundu. Betikler: `BuildLog\2e2\{ps_walk.ps1, ps_stackwalk.ps1, ps_code_
 | run7 | +genel eşleme (31 dosya) | `Axion Mu` (t≈1.5-2.7 s) | diyalog yok; `Data\Interface\*` eksik → **`CSprite::Create` AV (0xC0000005)** |
 | **run8** | +`Interface`+`Logo` | **`Axion Mu`** | `Player.bmd file does not exist.` |
 | **run9** | +`Player` | **`Axion Mu`** (t≈0.8-2.9 s) | diyalog yok; `Data\Effect\Skill\Monster\Item\NPC` eksik → AV (aynı aile) |
+| **run10** | **Map/Sound/Music hariç tam varlık seti (~380 MB)** | **`Axion Mu`** (t≈1.0 s; pencere diyalog boyunca açık kaldı, **çökme yok**) | `Data\Local\Eng\itemtooltip_Eng.bmd - File not exist.` — SPK paketinde bu isimde karşılık **yok** (SPK tooltip verisi `Config\Text.bmd` / `ToolTipText.txt` / `MasterSkillTooltip.bmd`) |
 
 Sonuç dosyaları: `BuildLog\2e2\results\run*.json`; ekran görüntüleri
 `BuildLog\2e2\shots\`; istemcinin **kendi** günlükleri
-`BuildLog\2e2\evidence\{KEN_run9.txt, STACK_ERROR\stack_20261002_1846.log}`.
+`BuildLog\2e2\evidence\{KEN_run9.txt, KEN_run10.txt, STACK_ERROR\stack_20261002_1846.log}`.
+
+**Frontier (run10):** görsel varlıklar tamamlanınca (Map/Sound/Music hariç) istemci
+**çökmüyor**; sıradaki engel `Data\Local\Eng\itemtooltip_Eng.bmd`. Bu dosya SPK paketinde
+*aynı adla* yok — SPK tooltip içeriği `Config\Text.bmd` / `ToolTipText.txt` /
+`MasterSkillTooltip.bmd` içinde **farklı format/şema** ile durur. Yani kalan boşluk
+artık yol eşlemesi değil, **içerik/şema eşlemesidir** → 2e.4 kapsamı.
 
 İstemci kendi çağrı zincirini de yazdı (STACK_ERROR):
 
@@ -145,7 +152,10 @@ boş sprite üretmesinden geliyor (H-011).
    **SPK-first yol çözümleyici** eklemektir (audit: `BuildLog\2e2\asset_audit.txt`).
 3. `JewelOfHarmonySmelt*.bmd` canlı pakette **hiçbir biçimde yok** → bu tabloyu isteyen
    UI canlı istemcide ya kapalı ya da farklı kaynaktan besleniyor (araştırma kalemi).
-4. `SPK_CRCFILE.ini` içindeki `SPK_MEXE` (exe CRC) hâlâ **Engine.exe**'yi işaret ediyor;
+4. **İçerik/şema eşlemesi (2e.4'ün ikinci yarısı):** `itemtooltip_Eng.bmd`, `Text*`, tooltip
+   tabloları gibi içerikler SPK paketinde **farklı dosya + farklı biçimde** durur; yol
+   eşlemesi yetmez, okuyucu kod gerektirir. run10 bu sınırı kanıtlar.
+5. `SPK_CRCFILE.ini` içindeki `SPK_MEXE` (exe CRC) hâlâ **Engine.exe**'yi işaret ediyor;
    `Main.exe` pakete girerse D6 raporunun yeniden üretilmesi gerekir (tek satır: GetMainInfo
    `--report`).
 

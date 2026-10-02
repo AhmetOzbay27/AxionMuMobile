@@ -65,11 +65,10 @@ done
 echo "   (genel esleme: $(ls "$C" | wc -l) dosya -> Data\Local + Data\Local\Eng)"
 
 if [ "$WITH_ASSETS" = "--with-assets" ]; then
-  # NOT: Disk dolu (C: ~%100); baslik/login sahnesi icin gerekli asgari set kopyalanir.
-  # Buyuk agaclar (Map 562M, Sound 210M, Music 120M, Custom 80M, Monster 87M, Player 56M,
-  # Item 31M, NPC 24M) ileride junction ya da tam kopya ile eklenir (bkz. docs/22 § sinirlar).
-  echo "== 7) gorsel varliklar (asgari set: Interface + Logo)"
-  for d in Interface Logo Player; do
+  # NOT: Map/Sound/Music haric tam set kopyalanir (~380 MB). Disk dolu ise yalniz
+  # "Interface Logo Player" setiyle de pencere acilir (bkz. docs/22 §4 sinirlar).
+  echo "== 7) gorsel varliklar (Map/Sound/Music haric tam set)"
+  for d in Interface Logo Player Monster NPC Item Skill Effect InGameShopBanner; do
     if [ -d "$LIVE/Data/$d" ]; then mkdir -p "$OUT/Data/$d"; cp -rf "$LIVE/Data/$d/." "$OUT/Data/$d/"; echo "   $d"; fi
   done
   echo "== 7b) Data\Custom yapilandirma dosyalari (yalniz kok, agac degil)"
