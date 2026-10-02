@@ -21,7 +21,7 @@ değiller, PC exe'sine girmiyor → kod değiştirilmedi; H-004 ve docs/22'ye ka
 **Neden** — H-004'teki "kaynakta 0" ifadesi tüm ağaç için fazla iddialıydı; parite kapsamının
 derlenen PC hattı olduğu netleştirildi.
 
-**Commit** — bu kayıt.
+**Commit** — `a6b96cfc3` (2e.1 bağımsız doğrulama).
 
 ---
 
