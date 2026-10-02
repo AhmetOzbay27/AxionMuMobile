@@ -1,0 +1,59 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  30,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run9-with-player-win-0x340104.png"
+                    ],
+    "endTime":  "2026-10-02 18:46:15",
+    "label":  "run9-with-player",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:5768",
+                               "t":  0.8,
+                               "windows":  [
+                                               "TOP|pid=5768|Axion Mu|Axion Mu|visible=1|hwnd=0x340104",
+                                               "TOP|pid=5768|IME|Default IME|visible=0|hwnd=0x1303E0",
+                                               "TOP|pid=5768|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0xC4033C"
+                                           ]
+                           },
+                           {
+                               "tree":  "Main.exe:5768,Main.exe:4572,WerFault.exe:9484",
+                               "t":  2.9,
+                               "windows":  [
+                                               "TOP|pid=5768|Axion Mu|Axion Mu|visible=1|hwnd=0x340104",
+                                               "TOP|pid=5768|IME|Default IME|visible=0|hwnd=0x1303E0",
+                                               "TOP|pid=5768|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0xC4033C"
+                                           ]
+                           },
+                           {
+                               "tree":  "unknown:5768",
+                               "t":  4.7,
+                               "windows":  [
+
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  5768,
+    "startTime":  "2026-10-02 18:46:09",
+    "processTree":  [
+                        "unknown:5768"
+                    ]
+}

@@ -1,0 +1,41 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  20,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+
+                    ],
+    "endTime":  "2026-10-02 17:51:17",
+    "label":  "run1-deploy-nodata",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:5484",
+                               "t":  1.1,
+                               "windows":  [
+
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  5484,
+    "startTime":  "2026-10-02 17:50:55",
+    "processTree":  [
+                        "Main.exe:5484"
+                    ]
+}

@@ -1,0 +1,459 @@
+kök : ClientFile/Main.exe
+  IMM32.dll                SISTEM C:\Windows\SysWOW64\IMM32.dll
+  DSOUND.dll               SISTEM C:\Windows\SysWOW64\DSOUND.dll
+  OPENGL32.dll             PAKET:C:/Axion Mu Mobile/Client and Tools/Client C:\Axion Mu Mobile\Client and Tools\Client\OPENGL32.dll
+  GLU32.dll                SISTEM C:\Windows\SysWOW64\GLU32.dll
+  WINMM.dll                SISTEM C:\Windows\SysWOW64\WINMM.dll
+  WS2_32.dll               SISTEM C:\Windows\SysWOW64\WS2_32.dll
+  VERSION.dll              SISTEM C:\Windows\SysWOW64\VERSION.dll
+  wzAudio.dll              PAKET:BuildLog/2e2/deploy BuildLog\2e2\deploy\wzAudio.dll
+  KERNEL32.dll             SISTEM C:\Windows\SysWOW64\KERNEL32.dll
+  USER32.dll               SISTEM C:\Windows\SysWOW64\USER32.dll
+  GDI32.dll                SISTEM C:\Windows\SysWOW64\GDI32.dll
+  ADVAPI32.dll             SISTEM C:\Windows\SysWOW64\ADVAPI32.dll
+  SHELL32.dll              SISTEM C:\Windows\SysWOW64\SHELL32.dll
+  ole32.dll                SISTEM C:\Windows\SysWOW64\ole32.dll
+  CRYPT32.dll              SISTEM C:\Windows\SysWOW64\CRYPT32.dll
+  WLDAP32.dll              SISTEM C:\Windows\SysWOW64\WLDAP32.dll
+  Normaliz.dll             SISTEM C:\Windows\SysWOW64\Normaliz.dll
+  gdiplus.dll              SISTEM C:\Windows\SysWOW64\gdiplus.dll
+  WININET.dll              SISTEM C:\Windows\SysWOW64\WININET.dll
+  urlmon.dll               SISTEM C:\Windows\SysWOW64\urlmon.dll
+  SHLWAPI.dll              SISTEM C:\Windows\SysWOW64\SHLWAPI.dll
+  PSAPI.DLL                SISTEM C:\Windows\SysWOW64\PSAPI.DLL
+  dbghelp.dll              SISTEM C:\Windows\SysWOW64\dbghelp.dll
+  api-ms-win-core-registry-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-base-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-base-l1-2-0.dll BULUNAMADI 
+  win32u.dll               SISTEM C:\Windows\SysWOW64\win32u.dll
+  ntdll.dll                PAKET:C:/Axion Mu Mobile/Client and Tools/Client C:\Axion Mu Mobile\Client and Tools\Client\ntdll.dll
+  msvcrt.dll               SISTEM C:\Windows\SysWOW64\msvcrt.dll
+  api-ms-win-core-file-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-libraryloader-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-handle-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-string-obsolete-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-string-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-heap-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-processthreads-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-string-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-errorhandling-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-libraryloader-l1-2-1.dll BULUNAMADI 
+  api-ms-win-core-registry-l2-1-0.dll BULUNAMADI 
+  api-ms-win-eventing-classicprovider-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-synch-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-profile-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-kernel32-legacy-l1-1-0.dll BULUNAMADI 
+  api-ms-win-power-setting-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-heap-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-localization-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-debug-l1-1-0.dll BULUNAMADI 
+  api-ms-win-eventing-provider-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-synch-l1-2-0.dll BULUNAMADI 
+  api-ms-win-mm-time-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-com-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-processthreads-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-synch-l1-2-1.dll BULUNAMADI 
+  api-ms-win-core-memory-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-largeinteger-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-sysinfo-l1-1-0.dll BULUNAMADI 
+  api-ms-win-power-base-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-delayload-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-delayload-l1-1-0.dll BULUNAMADI 
+  WINMMBASE.dll            SISTEM C:\Windows\SysWOW64\WINMMBASE.dll
+  api-ms-win-mm-mme-l1-1-0.dll BULUNAMADI 
+  api-ms-win-mm-misc-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-stringansi-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-processenvironment-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-privateprofile-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-path-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-util-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-kernel32-private-l1-1-2.dll BULUNAMADI 
+  api-ms-win-core-kernel32-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-crt-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-crt-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-threadpool-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-wow64-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-io-l1-1-0.dll BULUNAMADI 
+  RPCRT4.dll               SISTEM C:\Windows\SysWOW64\RPCRT4.dll
+  api-ms-win-core-apiquery-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-version-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-version-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-versionansi-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-versionansi-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-version-private-l1-1-0.dll BULUNAMADI 
+  KERNELBASE.dll           SISTEM C:\Windows\SysWOW64\KERNELBASE.dll
+  comdlg32.dll             SISTEM C:\Windows\SysWOW64\comdlg32.dll
+  vorbisfile.dll           PAKET:C:/Axion Mu Mobile/Client and Tools/Client C:\Axion Mu Mobile\Client and Tools\Client\vorbisfile.dll
+  api-ms-win-core-rtlsupport-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-rtlsupport-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-processthreads-l1-1-3.dll BULUNAMADI 
+  api-ms-win-core-processthreads-l1-1-2.dll BULUNAMADI 
+  api-ms-win-core-memory-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-memory-l1-1-2.dll BULUNAMADI 
+  api-ms-win-core-file-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-file-l1-2-2.dll BULUNAMADI 
+  api-ms-win-core-file-l1-2-1.dll BULUNAMADI 
+  api-ms-win-core-io-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-job-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-threadpool-legacy-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-threadpool-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-libraryloader-l1-2-2.dll BULUNAMADI 
+  api-ms-win-core-libraryloader-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-namedpipe-l1-2-2.dll BULUNAMADI 
+  api-ms-win-core-namedpipe-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-namedpipe-l1-2-1.dll BULUNAMADI 
+  api-ms-win-core-datetime-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-datetime-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-datetime-l1-1-2.dll BULUNAMADI 
+  api-ms-win-core-sysinfo-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-sysinfo-l1-2-3.dll BULUNAMADI 
+  api-ms-win-core-sysinfo-l1-2-1.dll BULUNAMADI 
+  api-ms-win-core-timezone-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-localization-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-processsnapshot-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-processenvironment-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-debug-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-errorhandling-l1-1-3.dll BULUNAMADI 
+  api-ms-win-core-fibers-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-comm-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-wow64-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-realtime-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-systemtopology-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-systemtopology-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-processtopology-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-namespace-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-file-l2-1-2.dll BULUNAMADI 
+  api-ms-win-core-file-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-file-l2-1-3.dll BULUNAMADI 
+  api-ms-win-core-file-l2-1-1.dll BULUNAMADI 
+  api-ms-win-core-xstate-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-xstate-l2-1-1.dll BULUNAMADI 
+  api-ms-win-core-localization-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-normalization-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-fibers-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-fibers-l2-1-1.dll BULUNAMADI 
+  api-ms-win-core-sidebyside-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-appcompat-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-appcompat-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-windowserrorreporting-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-windowserrorreporting-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-windowserrorreporting-l1-1-2.dll BULUNAMADI 
+  api-ms-win-core-console-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-console-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-console-l1-2-1.dll BULUNAMADI 
+  api-ms-win-core-console-l2-1-0.dll BULUNAMADI 
+  api-ms-win-core-console-l2-2-0.dll BULUNAMADI 
+  api-ms-win-core-console-l3-2-0.dll BULUNAMADI 
+  api-ms-win-core-psapi-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-psapi-ansi-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-appcontainer-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-memory-l1-1-3.dll BULUNAMADI 
+  api-ms-win-core-atoms-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-heap-obsolete-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-localization-obsolete-l1-2-0.dll BULUNAMADI 
+  api-ms-win-core-appinit-l1-1-0.dll BULUNAMADI 
+  api-ms-win-gdi-internal-uap-l1-1-0.dll BULUNAMADI 
+  api-ms-win-eventing-controller-l1-1-0.dll BULUNAMADI 
+  api-ms-win-eventing-consumer-l1-1-0.dll BULUNAMADI 
+  api-ms-win-eventing-consumer-l1-1-1.dll BULUNAMADI 
+  SECHOST.dll              SISTEM C:\Windows\SysWOW64\SECHOST.dll
+  api-ms-win-service-core-l1-1-0.dll BULUNAMADI 
+  api-ms-win-service-core-l1-1-1.dll BULUNAMADI 
+  api-ms-win-service-core-l1-1-2.dll BULUNAMADI 
+  api-ms-win-service-management-l1-1-0.dll BULUNAMADI 
+  api-ms-win-service-management-l2-1-0.dll BULUNAMADI 
+  api-ms-win-service-private-l1-1-4.dll BULUNAMADI 
+  api-ms-win-service-private-l1-1-2.dll BULUNAMADI 
+  api-ms-win-service-private-l1-1-3.dll BULUNAMADI 
+  api-ms-win-service-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-service-winsvc-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-base-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-registry-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-registry-l1-1-2.dll BULUNAMADI 
+  api-ms-win-security-audit-l1-1-1.dll BULUNAMADI 
+  api-ms-win-security-audit-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-perfcounters-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-string-l2-1-1.dll BULUNAMADI 
+  api-ms-win-core-localization-l1-2-2.dll BULUNAMADI 
+  api-ms-win-devices-config-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-interlocked-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-shlwapi-obsolete-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-shlwapi-legacy-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-kernel32-legacy-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-kernel32-legacy-l1-1-2.dll BULUNAMADI 
+  api-ms-win-core-url-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-registryuserspecific-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shcore-path-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shcore-taskpool-l1-1-0.dll BULUNAMADI 
+  api-ms-win-storage-exports-internal-l1-1-0.dll BULUNAMADI 
+  api-ms-win-storage-exports-external-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shell-shellcom-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shell-shellfolders-l1-1-0.dll BULUNAMADI 
+  api-ms-win-stateseparation-helpers-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-capability-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-job-l2-1-0.dll BULUNAMADI 
+  api-ms-win-security-cryptoapi-l1-1-0.dll BULUNAMADI 
+  api-ms-win-crt-string-l1-1-0.dll BULUNAMADI 
+  api-ms-win-crt-runtime-l1-1-0.dll BULUNAMADI 
+  api-ms-win-crt-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-com-midlproxystub-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-winrt-string-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-winrt-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-winrt-error-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-com-private-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-com-private-l1-1-1.dll BULUNAMADI 
+  api-ms-win-eventlog-legacy-l1-1-0.dll BULUNAMADI 
+  combase.dll              SISTEM C:\Windows\SysWOW64\combase.dll
+  api-ms-win-core-psm-key-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-quirks-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-com-private-l1-2-0.dll BULUNAMADI 
+  api-ms-win-security-grouppolicy-l1-1-0.dll BULUNAMADI 
+  MSASN1.dll               SISTEM C:\Windows\SysWOW64\MSASN1.dll
+  api-ms-win-core-errorhandling-l1-1-2.dll BULUNAMADI 
+  iertutil.dll             SISTEM C:\Windows\SysWOW64\iertutil.dll
+  api-ms-win-shcore-stream-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shell-changenotify-l1-1-0.dll BULUNAMADI 
+  api-ms-win-http-time-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shlwapi-winrt-storage-l1-1-1.dll BULUNAMADI 
+  api-ms-win-shcore-registry-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shcore-comhelpers-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-systemfunctions-l1-1-0.dll BULUNAMADI 
+  srvcli.dll               SISTEM C:\Windows\SysWOW64\srvcli.dll
+  netutils.dll             SISTEM C:\Windows\SysWOW64\netutils.dll
+  api-ms-win-shell-namespace-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shcore-unicodeansi-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-lsapolicy-l1-1-0.dll BULUNAMADI 
+  api-ms-win-security-isolatedcontainer-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-psapi-obsolete-l1-1-0.dll BULUNAMADI 
+  api-ms-win-crt-time-l1-1-0.dll BULUNAMADI 
+  api-ms-win-crt-locale-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-misc-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-libraryloader-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-localregistry-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-localization-l1-1-0.dll BULUNAMADI 
+  SspiCli.dll              SISTEM C:\Windows\SysWOW64\SspiCli.dll
+  api-ms-win-core-com-l1-1-1.dll BULUNAMADI 
+  api-ms-win-core-winrt-error-l1-1-1.dll BULUNAMADI 
+  api-ms-win-shcore-scaling-l1-1-1.dll BULUNAMADI 
+  COMCTL32.dll             SISTEM C:\Windows\SysWOW64\COMCTL32.dll
+  ogg.dll                  PAKET:C:/Axion Mu Mobile/Client and Tools/Client C:\Axion Mu Mobile\Client and Tools\Client\ogg.dll
+  bcrypt.dll               SISTEM C:\Windows\SysWOW64\bcrypt.dll
+  api-ms-win-core-fibers-l1-1-1.dll BULUNAMADI 
+  bcryptPrimitives.dll     SISTEM C:\Windows\SysWOW64\bcryptPrimitives.dll
+  api-ms-win-security-sddl-l1-1-0.dll BULUNAMADI 
+  api-ms-win-core-toolhelp-l1-1-0.dll BULUNAMADI 
+  api-ms-win-shcore-obsolete-l1-1-0.dll BULUNAMADI 
+  CRYPTBASE.dll            SISTEM C:\Windows\SysWOW64\CRYPTBASE.dll
+  api-ms-win-security-lsalookup-l1-1-0.dll BULUNAMADI 
+
+=== PAKETLE TASINMASI GEREKENLER (5) ===
+  opengl32.dll   <- PAKET:C:/Axion Mu Mobile/Client and Tools/Client
+  wzaudio.dll   <- PAKET:BuildLog/2e2/deploy
+  ntdll.dll   <- PAKET:C:/Axion Mu Mobile/Client and Tools/Client
+  vorbisfile.dll   <- PAKET:C:/Axion Mu Mobile/Client and Tools/Client
+  ogg.dll   <- PAKET:C:/Axion Mu Mobile/Client and Tools/Client
+
+=== BULUNAMADI (203) ===
+  api-ms-win-core-registry-l1-1-0.dll
+  api-ms-win-security-base-l1-1-0.dll
+  api-ms-win-security-base-l1-2-0.dll
+  api-ms-win-core-file-l1-1-0.dll
+  api-ms-win-core-libraryloader-l1-2-0.dll
+  api-ms-win-core-handle-l1-1-0.dll
+  api-ms-win-core-string-obsolete-l1-1-0.dll
+  api-ms-win-core-string-l2-1-0.dll
+  api-ms-win-core-heap-l1-1-0.dll
+  api-ms-win-core-processthreads-l1-1-0.dll
+  api-ms-win-core-string-l1-1-0.dll
+  api-ms-win-core-errorhandling-l1-1-0.dll
+  api-ms-win-core-libraryloader-l1-2-1.dll
+  api-ms-win-core-registry-l2-1-0.dll
+  api-ms-win-eventing-classicprovider-l1-1-0.dll
+  api-ms-win-core-synch-l1-1-0.dll
+  api-ms-win-core-profile-l1-1-0.dll
+  api-ms-win-core-kernel32-legacy-l1-1-0.dll
+  api-ms-win-power-setting-l1-1-0.dll
+  api-ms-win-core-heap-l2-1-0.dll
+  api-ms-win-core-localization-l1-2-0.dll
+  api-ms-win-core-debug-l1-1-0.dll
+  api-ms-win-eventing-provider-l1-1-0.dll
+  api-ms-win-core-synch-l1-2-0.dll
+  api-ms-win-mm-time-l1-1-0.dll
+  api-ms-win-core-com-l1-1-0.dll
+  api-ms-win-core-processthreads-l1-1-1.dll
+  api-ms-win-core-synch-l1-2-1.dll
+  api-ms-win-core-memory-l1-1-0.dll
+  api-ms-win-core-largeinteger-l1-1-0.dll
+  api-ms-win-core-sysinfo-l1-1-0.dll
+  api-ms-win-power-base-l1-1-0.dll
+  api-ms-win-core-delayload-l1-1-1.dll
+  api-ms-win-core-delayload-l1-1-0.dll
+  api-ms-win-mm-mme-l1-1-0.dll
+  api-ms-win-mm-misc-l1-1-0.dll
+  api-ms-win-core-stringansi-l1-1-0.dll
+  api-ms-win-core-processenvironment-l1-1-0.dll
+  api-ms-win-core-privateprofile-l1-1-0.dll
+  api-ms-win-core-path-l1-1-0.dll
+  api-ms-win-core-util-l1-1-0.dll
+  api-ms-win-core-kernel32-private-l1-1-2.dll
+  api-ms-win-core-kernel32-private-l1-1-0.dll
+  api-ms-win-core-crt-l1-1-0.dll
+  api-ms-win-core-crt-l2-1-0.dll
+  api-ms-win-core-threadpool-l1-2-0.dll
+  api-ms-win-core-wow64-l1-1-0.dll
+  api-ms-win-core-io-l1-1-0.dll
+  api-ms-win-core-apiquery-l1-1-0.dll
+  api-ms-win-core-version-l1-1-0.dll
+  api-ms-win-core-version-l1-1-1.dll
+  api-ms-win-core-versionansi-l1-1-0.dll
+  api-ms-win-core-versionansi-l1-1-1.dll
+  api-ms-win-core-version-private-l1-1-0.dll
+  api-ms-win-core-rtlsupport-l1-1-0.dll
+  api-ms-win-core-rtlsupport-l1-2-0.dll
+  api-ms-win-core-processthreads-l1-1-3.dll
+  api-ms-win-core-processthreads-l1-1-2.dll
+  api-ms-win-core-memory-l1-1-1.dll
+  api-ms-win-core-memory-l1-1-2.dll
+  api-ms-win-core-file-l1-2-0.dll
+  api-ms-win-core-file-l1-2-2.dll
+  api-ms-win-core-file-l1-2-1.dll
+  api-ms-win-core-io-l1-1-1.dll
+  api-ms-win-core-job-l1-1-0.dll
+  api-ms-win-core-threadpool-legacy-l1-1-0.dll
+  api-ms-win-core-threadpool-private-l1-1-0.dll
+  api-ms-win-core-libraryloader-l1-2-2.dll
+  api-ms-win-core-libraryloader-l2-1-0.dll
+  api-ms-win-core-namedpipe-l1-2-2.dll
+  api-ms-win-core-namedpipe-l1-1-0.dll
+  api-ms-win-core-namedpipe-l1-2-1.dll
+  api-ms-win-core-datetime-l1-1-0.dll
+  api-ms-win-core-datetime-l1-1-1.dll
+  api-ms-win-core-datetime-l1-1-2.dll
+  api-ms-win-core-sysinfo-l1-2-0.dll
+  api-ms-win-core-sysinfo-l1-2-3.dll
+  api-ms-win-core-sysinfo-l1-2-1.dll
+  api-ms-win-core-timezone-l1-1-0.dll
+  api-ms-win-core-localization-private-l1-1-0.dll
+  api-ms-win-core-processsnapshot-l1-1-0.dll
+  api-ms-win-core-processenvironment-l1-2-0.dll
+  api-ms-win-core-debug-l1-1-1.dll
+  api-ms-win-core-errorhandling-l1-1-3.dll
+  api-ms-win-core-fibers-l1-1-0.dll
+  api-ms-win-core-comm-l1-1-0.dll
+  api-ms-win-core-wow64-l1-1-1.dll
+  api-ms-win-core-realtime-l1-1-0.dll
+  api-ms-win-core-systemtopology-l1-1-1.dll
+  api-ms-win-core-systemtopology-l1-1-0.dll
+  api-ms-win-core-processtopology-l1-1-0.dll
+  api-ms-win-core-namespace-l1-1-0.dll
+  api-ms-win-core-file-l2-1-2.dll
+  api-ms-win-core-file-l2-1-0.dll
+  api-ms-win-core-file-l2-1-3.dll
+  api-ms-win-core-file-l2-1-1.dll
+  api-ms-win-core-xstate-l2-1-0.dll
+  api-ms-win-core-xstate-l2-1-1.dll
+  api-ms-win-core-localization-l2-1-0.dll
+  api-ms-win-core-normalization-l1-1-0.dll
+  api-ms-win-core-fibers-l2-1-0.dll
+  api-ms-win-core-fibers-l2-1-1.dll
+  api-ms-win-core-sidebyside-l1-1-0.dll
+  api-ms-win-core-appcompat-l1-1-0.dll
+  api-ms-win-core-appcompat-l1-1-1.dll
+  api-ms-win-core-windowserrorreporting-l1-1-0.dll
+  api-ms-win-core-windowserrorreporting-l1-1-1.dll
+  api-ms-win-core-windowserrorreporting-l1-1-2.dll
+  api-ms-win-core-console-l1-1-0.dll
+  api-ms-win-core-console-l1-2-0.dll
+  api-ms-win-core-console-l1-2-1.dll
+  api-ms-win-core-console-l2-1-0.dll
+  api-ms-win-core-console-l2-2-0.dll
+  api-ms-win-core-console-l3-2-0.dll
+  api-ms-win-core-psapi-l1-1-0.dll
+  api-ms-win-core-psapi-ansi-l1-1-0.dll
+  api-ms-win-security-appcontainer-l1-1-0.dll
+  api-ms-win-core-memory-l1-1-3.dll
+  api-ms-win-core-atoms-l1-1-0.dll
+  api-ms-win-core-heap-obsolete-l1-1-0.dll
+  api-ms-win-core-localization-obsolete-l1-2-0.dll
+  api-ms-win-core-appinit-l1-1-0.dll
+  api-ms-win-gdi-internal-uap-l1-1-0.dll
+  api-ms-win-eventing-controller-l1-1-0.dll
+  api-ms-win-eventing-consumer-l1-1-0.dll
+  api-ms-win-eventing-consumer-l1-1-1.dll
+  api-ms-win-service-core-l1-1-0.dll
+  api-ms-win-service-core-l1-1-1.dll
+  api-ms-win-service-core-l1-1-2.dll
+  api-ms-win-service-management-l1-1-0.dll
+  api-ms-win-service-management-l2-1-0.dll
+  api-ms-win-service-private-l1-1-4.dll
+  api-ms-win-service-private-l1-1-2.dll
+  api-ms-win-service-private-l1-1-3.dll
+  api-ms-win-service-private-l1-1-0.dll
+  api-ms-win-service-winsvc-l1-1-0.dll
+  api-ms-win-security-base-private-l1-1-0.dll
+  api-ms-win-core-registry-l1-1-1.dll
+  api-ms-win-core-registry-l1-1-2.dll
+  api-ms-win-security-audit-l1-1-1.dll
+  api-ms-win-security-audit-l1-1-0.dll
+  api-ms-win-core-perfcounters-l1-1-0.dll
+  api-ms-win-core-string-l2-1-1.dll
+  api-ms-win-core-localization-l1-2-2.dll
+  api-ms-win-devices-config-l1-1-1.dll
+  api-ms-win-core-interlocked-l1-1-0.dll
+  api-ms-win-core-shlwapi-obsolete-l1-1-0.dll
+  api-ms-win-core-shlwapi-legacy-l1-1-0.dll
+  api-ms-win-core-kernel32-legacy-l1-1-1.dll
+  api-ms-win-core-kernel32-legacy-l1-1-2.dll
+  api-ms-win-core-url-l1-1-0.dll
+  api-ms-win-core-registryuserspecific-l1-1-0.dll
+  api-ms-win-shcore-path-l1-1-0.dll
+  api-ms-win-shcore-taskpool-l1-1-0.dll
+  api-ms-win-storage-exports-internal-l1-1-0.dll
+  api-ms-win-storage-exports-external-l1-1-0.dll
+  api-ms-win-shell-shellcom-l1-1-0.dll
+  api-ms-win-shell-shellfolders-l1-1-0.dll
+  api-ms-win-stateseparation-helpers-l1-1-0.dll
+  api-ms-win-security-capability-l1-1-0.dll
+  api-ms-win-core-job-l2-1-0.dll
+  api-ms-win-security-cryptoapi-l1-1-0.dll
+  api-ms-win-crt-string-l1-1-0.dll
+  api-ms-win-crt-runtime-l1-1-0.dll
+  api-ms-win-crt-private-l1-1-0.dll
+  api-ms-win-core-com-midlproxystub-l1-1-0.dll
+  api-ms-win-core-winrt-string-l1-1-0.dll
+  api-ms-win-core-winrt-l1-1-0.dll
+  api-ms-win-core-winrt-error-l1-1-0.dll
+  api-ms-win-core-com-private-l1-1-0.dll
+  api-ms-win-core-com-private-l1-1-1.dll
+  api-ms-win-eventlog-legacy-l1-1-0.dll
+  api-ms-win-core-psm-key-l1-1-0.dll
+  api-ms-win-core-quirks-l1-1-0.dll
+  api-ms-win-core-com-private-l1-2-0.dll
+  api-ms-win-security-grouppolicy-l1-1-0.dll
+  api-ms-win-core-errorhandling-l1-1-2.dll
+  api-ms-win-shcore-stream-l1-1-0.dll
+  api-ms-win-shell-changenotify-l1-1-0.dll
+  api-ms-win-http-time-l1-1-0.dll
+  api-ms-win-shlwapi-winrt-storage-l1-1-1.dll
+  api-ms-win-shcore-registry-l1-1-0.dll
+  api-ms-win-shcore-comhelpers-l1-1-0.dll
+  api-ms-win-security-systemfunctions-l1-1-0.dll
+  api-ms-win-shell-namespace-l1-1-0.dll
+  api-ms-win-shcore-unicodeansi-l1-1-0.dll
+  api-ms-win-security-lsapolicy-l1-1-0.dll
+  api-ms-win-security-isolatedcontainer-l1-1-0.dll
+  api-ms-win-core-psapi-obsolete-l1-1-0.dll
+  api-ms-win-crt-time-l1-1-0.dll
+  api-ms-win-crt-locale-l1-1-0.dll
+  api-ms-win-core-misc-l1-1-0.dll
+  api-ms-win-core-libraryloader-l1-1-0.dll
+  api-ms-win-core-localregistry-l1-1-0.dll
+  api-ms-win-core-localization-l1-1-0.dll
+  api-ms-win-core-com-l1-1-1.dll
+  api-ms-win-core-winrt-error-l1-1-1.dll
+  api-ms-win-shcore-scaling-l1-1-1.dll
+  api-ms-win-core-fibers-l1-1-1.dll
+  api-ms-win-security-sddl-l1-1-0.dll
+  api-ms-win-core-toolhelp-l1-1-0.dll
+  api-ms-win-shcore-obsolete-l1-1-0.dll
+  api-ms-win-security-lsalookup-l1-1-0.dll

@@ -129,19 +129,48 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   (Her modül kendi satırını alacak; plan onayından sonra buraya açılır.)
 
 ### Faz 2d — GetMainInfo birleşimi
-- ⬜ **2d.0** (2a.4'te açıldı) **SPK istemci format katmanı:** 5.Main'e
+- ✅ **2d.0** (2a.4'te açıldı) **SPK istemci format katmanı:** 5.Main'e
   ConnectIP.bmd/ServerData.bmd/SPK.ini/Data\SPK okuma desteği eklenmesi;
   referans binary `Client (eski adı 1Client)\Engine.exe` (9,2 MB) + `Data\SPK\Config\*.bmd`.
   Bu çalışma 2d.1'den önce yapılır — istemci, SPK sunucuyla aynı veri hattını
   konuşmadan parite testi mümkün değil.
-- ⬜ **2d.1** Seçilen varyanta göre kaynağı düzenle (2a.5 kararı doğrultusunda).
-- ⬜ **2d.2** Üretilen veri dosyalarının canlı istemciyle uyum testi.
+  **Bitti (02.10.2026):** `Source\5.Main\source\SPKData.{h,cpp}` (XOR 0x20 çözümü;
+  IP/liste/kimlik/hız/kamera/FPS + SPK.ini), `MainLoad` entegrasyonu ve istemci
+  derlemesi (Main.exe 13:30, 12.027.904 B, md5 `39f2af32f35114241c7feb586cdd92ad`).
+  Rapor: docs/19; ofset düzeltmesi docs/07 Rev. 02.10.2026. Engine.exe kabul testi 2d.2'de.
+- 🔄 **2d.1** Seçilen varyanta göre kaynağı düzenle (2a.5 kararı doğrultusunda).
+  **İlk dalga bitti (02.10.2026):** `Source\6.GetMainInfo\GetMainInfo\SPK\*` —
+  D1, D2, D3 (başlık), D6, D7 tamam; canlı `GetMainInfo.exe` ile 3 senaryoda
+  (baseline + sayısal/metin sentinel) ConnectIP + ServerData + rapor **bayt-birebir**.
+  Derleme: `GetMain\GetMainInfo.exe` 3.723.776 B, md5 `c480e0ba…`; SPK modu varsayılan,
+  eski MUIG akışı `--mode:muig`. Kalan: **D4/D5** (kanat/item/LEVEL tam jeneratör —
+  şablon bağımlılığı) + RenderEffect.bmd üretimi. Rapor: docs/20.
+- ✅ **2d.2** Üretilen veri dosyalarının canlı istemciyle uyum testi.
+  **Bitti (02.10.2026):** canlı `Engine.exe` bizim üretimimizle 4 koşuda çalıştırıldı
+  (kontrol / üretim / bozuk-negatif); üretim koşusunda pencere **0,8 s**'de açıldı ve
+  **t≈12 s `45.87.120.29:44405` SynSent** görüldü. Negatif kontrol dersi: pencere+TCP
+  tek başına içerik kanıtı değil → birincil kanıt bayt karşılaştırması (docs/20).
+  Rapor: docs/21; kanıt `BuildLog\2d2\{results,shots}\`.
 
 ### Faz 2e — Hizalama ve paketleme
-- ⬜ **2e.1** Gömülü IP/config hizalama (kaynakta `171.235.182.88` vs canlı
+- ✅ **2e.1** Gömülü IP/config hizalama (kaynakta `171.235.182.88` vs canlı
   `192.168.0.150`) — hangi config'den okunacağı netleştirilip tek noktaya bağlanır.
-- ⬜ **2e.2** Derleme çıktılarının canlı paket yapısına göre kurulması
+  **Bitti (02.10.2026):** canlı değer ölçüldü: `ConnectIP.bmd` ilk 12 bayt =
+  **`45.87.120.29`**, port 44405 (AntiPort 55858); kaynakta üç yerde gömülü değer
+  hizalandı, çalışma anında ConnectIP ezer. (B-04/H-004 kapanışı; docs/22 §2.)
+- ✅ **2e.2** Derleme çıktılarının canlı paket yapısına göre kurulması
   (Main.exe + DLL'ler + Data) — ClientBuild kopyası üzerinde test.
+  **Bitti (02.10.2026, asgari varlık setiyle):** `BuildLog\2e2\deploy_spk_package.sh`
+  canlı paket düzenini kurar (Main.exe + wzAudio/ogg/vorbisfile + SPK.ini +
+  `Data\SPK\*` + Config + MUIG→SPK yol eşlemesi); istemci pakette **kendi penceresini
+  açtı** (`Axion Mu`, 0,8 s) ve kendi günlüklerini yazdı. ClientBuild klasörü artık
+  diskte yok (silinmiş); test `BuildLog\2e2\deploy\` üzerinde yapıldı. Kalan: tam
+  `Data` kopyası (disk %100) + SPK-first varlık katmanı (2e.4). Rapor: docs/22.
+- ⬜ **2e.4** *(2e.2 sırasında keşfedildi)* **SPK-first varlık çözümleme katmanı:**
+  `Main.exe`'nin sabitkodladığı `Data\Local\*` yolları canlı pakette yok; karşılıkları
+  `Data\SPK\Config\*` (audit: `BuildLog\2e2\asset_audit.txt`, 12 tablo + dil ekli
+  `Data\Local\<Lang>\<Ad>_<Lang>.bmd` kalıbı). Şimdilik kurulum betiğinde yol eşlemesi
+  var; kalıcı çözüm istemciye çözümleyici eklemek (H-012).
 - ⬜ **2e.3** Sunucu tarafı: bizim GS/CS/DS/JS çıktılarının test klasörüne
   kurulması (canlıya dokunmadan), DB restore: `ServerTools\DB_SQL_12.bak`.
 

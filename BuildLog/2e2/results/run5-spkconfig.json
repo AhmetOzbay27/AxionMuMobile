@@ -1,0 +1,48 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  25,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run5-spkconfig-win-0x3C0180.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run5-spkconfig-win-0x2B0424.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run5-spkconfig-dialog-0x3C0180.png"
+                    ],
+    "endTime":  "2026-10-02 18:38:26",
+    "label":  "run5-spkconfig",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:5924",
+                               "t":  0.8,
+                               "windows":  [
+                                               "TOP|pid=5924|#32770|Hata|visible=1|hwnd=0x3C0180",
+                                               "CHILD|Button|Tamam",
+                                               "CHILD|Static|Data\\Local\\Eng\\Slide_Eng.bmd - File not exist.",
+                                               "TOP|pid=5924|Axion Mu|Axion Mu|visible=1|hwnd=0x2B0424",
+                                               "TOP|pid=5924|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x290162",
+                                               "TOP|pid=5924|IME|Default IME|visible=0|hwnd=0xA9033C"
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  true,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  5924,
+    "startTime":  "2026-10-02 18:38:21",
+    "processTree":  [
+                        "Main.exe:5924"
+                    ]
+}

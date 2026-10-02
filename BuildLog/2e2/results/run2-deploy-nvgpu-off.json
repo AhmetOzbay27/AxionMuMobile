@@ -1,0 +1,41 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  25,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+
+                    ],
+    "endTime":  "2026-10-02 18:09:52",
+    "label":  "run2-deploy-nvgpu-off",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:5700",
+                               "t":  0.9,
+                               "windows":  [
+
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  5700,
+    "startTime":  "2026-10-02 18:09:25",
+    "processTree":  [
+                        "Main.exe:5700"
+                    ]
+}

@@ -1,0 +1,58 @@
+SymInit: Symbol-SearchPath: '.;C:\Axion Mu Source\BuildLog\2e2\deploy;C:\Axion Mu Source\BuildLog\2e2\deploy;C:\Windows;C:\Windows\system32;SRV*C:\websymbols*https://msdl.microsoft.com/download/symbols;', symOptions: 530, UserName: 'Administrator'
+
+OS-Version: 6.2.9200 () 0x110-0x3
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 00C375FD)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 00C375FD)
+
+00C375FD (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 00C2BA5F)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 00C2BA5F)
+
+00C2BA5F (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 00C53B8A)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 00C53B8A)
+
+00C53B8A (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 00C528D8)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 00C528D8)
+
+00C528D8 (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 008182E7)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 008182E7)
+
+008182E7 (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 00814F28)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 00814F28)
+
+00814F28 (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetSymFromAddr64, GetLastError: 487 (Address: 00D0C82C)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 00D0C82C)
+
+00D0C82C (Main): (filename not available): (function-name not available)
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 767C05C9)
+
+767C05C9 (KERNEL32): (filename not available): BaseThreadInitThunk
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 773A7D2D)
+
+773A7D2D (ntdll): (filename not available): RtlGetAppContainerNamedObjectPath
+
+ERROR: SymGetLineFromAddr64, GetLastError: 487 (Address: 773A7CFD)
+
+773A7CFD (ntdll): (filename not available): RtlGetAppContainerNamedObjectPath
+

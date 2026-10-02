@@ -1,0 +1,33 @@
+dosya : ClientFile/Main.exe
+boyut : 12026880 b
+md5   : d2cd7084c72cd2b341358c94d5cd4d32
+machine: 0x14c (PE32)
+--- IMPORT (RVA 0xa58d48, 23) ---
+    IMM32.dll
+    DSOUND.dll
+    OPENGL32.dll
+    GLU32.dll
+    WINMM.dll
+    WS2_32.dll
+    VERSION.dll
+    wzAudio.dll
+    KERNEL32.dll
+    USER32.dll
+    GDI32.dll
+    ADVAPI32.dll
+    SHELL32.dll
+    ole32.dll
+    CRYPT32.dll
+    WLDAP32.dll
+    Normaliz.dll
+    gdiplus.dll
+    WININET.dll
+    urlmon.dll
+    SHLWAPI.dll
+    PSAPI.DLL
+    dbghelp.dll
+--- DELAY IMPORT (RVA 0x0, 0) ---
+--- kontrol ---
+    apicb.dll : yok
+    freeimage.dll : yok
+    gdiplus.dll : VAR !!!

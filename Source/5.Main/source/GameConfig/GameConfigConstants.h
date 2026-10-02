@@ -55,6 +55,7 @@ namespace CfgDefaults
     inline constexpr wchar_t CfgDefaultEncryptedUsername[] = L"";
     inline constexpr wchar_t CfgDefaultEncryptedPassword[] = L"";
 
-    inline constexpr wchar_t CfgDefaultServerIP[] = L"171.235.182.88";
-    inline constexpr int CfgDefaultServerPort = 63000;
+    // 2e.1: canli SPK degerleri (ConnectIP.bmd 45.87.120.29:44405)
+    inline constexpr wchar_t CfgDefaultServerIP[] = L"45.87.120.29";
+    inline constexpr int CfgDefaultServerPort = 44405;
 }

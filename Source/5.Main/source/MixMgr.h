@@ -210,14 +210,14 @@ namespace SEASON3A
 		void SetRealMixZen(int Zen) { this->m_dwRequiredZen = Zen; };
 #endif
 	protected:
-		bool IsOptionItem(MIX_RECIPE_ITEM & rItem) { return (rItem.m_iCountMin == 0); }	// ¿É¼Ç(¾È³Ö¾îµµ µÇ´Â) ¾ÆÀÌÅÛÀÎ°¡
+		bool IsOptionItem(MIX_RECIPE_ITEM & rItem) { return (rItem.m_iCountMin == 0); }	// ï¿½É¼ï¿½(ï¿½È³Ö¾îµµ ï¿½Ç´ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½
 		BOOL CheckRecipeSub(std::vector<MIX_RECIPE *>::iterator iter, int iNumMixItems, CMixItem * pMixItems);
-		int CheckRecipeSimilaritySub(std::vector<MIX_RECIPE *>::iterator iter, int iNumMixItems, CMixItem * pMixItems);	// À¯»çµµ ºñ±³
-		bool CheckItem(MIX_RECIPE_ITEM & rItem, CMixItem & rSource);	// °°Àº ¾ÆÀÌÅÛÀÎÁö ºñ±³
+		int CheckRecipeSimilaritySub(std::vector<MIX_RECIPE *>::iterator iter, int iNumMixItems, CMixItem * pMixItems);	// ï¿½ï¿½ï¿½çµµ ï¿½ï¿½
+		bool CheckItem(MIX_RECIPE_ITEM & rItem, CMixItem & rSource);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		void EvaluateMixItems(int iNumMixItems, CMixItem * pMixItems);
 		void CalcMixRate(int iNumMixItems, CMixItem * pMixItems);
 		void CalcMixReqZen(int iNumMixItems, CMixItem * pMixItems);
-		BOOL GetRecipeName(MIX_RECIPE * pRecipe, unicode::t_char * pszNameOut, int iNameLine, BOOL bSimilarRecipe);	// ÁÖ¾îÁø Á¶ÇÕ¹ýÀÇ ÀÌ¸§ ¾ò±â
+		BOOL GetRecipeName(MIX_RECIPE * pRecipe, unicode::t_char * pszNameOut, int iNameLine, BOOL bSimilarRecipe);	// ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½
 		BOOL IsChaosItem(CMixItem & rSource);
 		BOOL IsChaosJewel(CMixItem & rSource);
 		BOOL Is380AddedItem(CMixItem & rSource);
@@ -266,7 +266,10 @@ namespace SEASON3A
 		{
 			m_iMixSubType = 0;
 			m_btPlusChaosRate = 0;
-			OpenRecipeFile("Data\\Local\\Mix.bmd");
+			// 2e.2: recete dosyasi SPK paketinde Data\SPK\Config\Mix.bmd'dir
+			// (canli Engine.exe yolu: "Data\SPK\Config%s\Mix.bmd"); Data\Local\Mix.bmd
+			// yalnizca MUIG duzeninde var. Cozumleme/uyum kurali MixMgr.cpp'de.
+			OpenRecipeFileSpkFirst();
 		}
 		virtual ~CMixRecipeMgr() {}
 
@@ -374,6 +377,7 @@ namespace SEASON3A
 
 	protected:
 		void OpenRecipeFile(const unicode::t_char * szFileName);	// mix.bmd
+		void OpenRecipeFileSpkFirst(void);	// 2e.2: SPK/Config -> Local -> (SPK paketinde fatal degil)
 
 	protected:
 		CMixRecipes m_MixRecipe[MAX_MIX_TYPES];

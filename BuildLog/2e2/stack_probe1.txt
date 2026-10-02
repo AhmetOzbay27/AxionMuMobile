@@ -1,0 +1,134 @@
+PID=8556
+modul sayisi=52 ana modul={"base":4194304,"size":166383616,"name":"Main.exe","path":"C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe"}
+--- tid=3900 eip=0x773B310C esp=0x0A60FBA0 ebp=0x0A60FD20 ---
+  okunabilen yigin bayti=8192
+  [0] off=0x0A60DE78 addr=0x7737F5F9 ntdll.dll+0x3F5F9  
+  [1] off=0x0A60DEA4 addr=0x04000004 Main.exe+0x3C00004  MeshGroup+0x298c0f4
+  [2] off=0x0A60DEBC addr=0x02000002 Main.exe+0x1C00002  MeshGroup+0x98c0f2
+  [3] off=0x0A60DFC8 addr=0x01000100 Main.exe+0xC00100  BufferName+0x1a00
+  [4] off=0x0A60E000 addr=0x04000004 Main.exe+0x3C00004  MeshGroup+0x298c0f4
+  [5] off=0x0A60E030 addr=0x773B9D40 ntdll.dll+0x79D40  
+  [6] off=0x0A60E040 addr=0x7737EA40 ntdll.dll+0x3EA40  
+  [7] off=0x0A60E064 addr=0x7738065F ntdll.dll+0x4065F  
+  [8] off=0x0A60E074 addr=0x77380679 ntdll.dll+0x40679  
+  [9] off=0x0A60E0C4 addr=0x01000000 Main.exe+0xC00000  BufferName+0x1900
+  [10] off=0x0A60E0DC addr=0x7737D7AE ntdll.dll+0x3D7AE  
+  [11] off=0x0A60E0E4 addr=0x7737D7AE ntdll.dll+0x3D7AE  
+  [12] off=0x0A60E100 addr=0x7737D4F2 ntdll.dll+0x3D4F2  
+  [13] off=0x0A60E118 addr=0x7737D583 ntdll.dll+0x3D583  
+  [14] off=0x0A60E128 addr=0x77341098 ntdll.dll+0x1098  
+  [15] off=0x0A60E130 addr=0x773400DC ntdll.dll+0xDC  
+  [16] off=0x0A60E138 addr=0x020800DC Main.exe+0x1C800DC  MeshGroup+0xa0c1cc
+  [17] off=0x0A60E15C addr=0x0057005C Main.exe+0x17005C  GMEmpireGuardian4::MoveObject+0x1ec
+  [18] off=0x0A60E160 addr=0x006E0069 Main.exe+0x2E0069  SEASON3B::CNewUIMuHelper::InitText+0x3f9
+  [19] off=0x0A60E164 addr=0x006F0064 Main.exe+0x2F0064  SEASON3B::CNewUIMyInventory::RenderSocketOption+0x104
+  [20] off=0x0A60E168 addr=0x00730077 Main.exe+0x330077  CPacketManager::Shift+0xf7
+  [21] off=0x0A60E16C addr=0x0057005C Main.exe+0x17005C  GMEmpireGuardian4::MoveObject+0x1ec
+  [22] off=0x0A60E170 addr=0x006E0069 Main.exe+0x2E0069  SEASON3B::CNewUIMuHelper::InitText+0x3f9
+  [23] off=0x0A60E174 addr=0x00780053 Main.exe+0x380053  CUIPackCheckBuyingListBox::AddText+0x23
+  [24] off=0x0A60E178 addr=0x005C0053 Main.exe+0x1C0053  SEASON4A::CGM_Raklion::MoveMonsterVisual+0xc93
+  [25] off=0x0A60E180 addr=0x005F0036 Main.exe+0x1F0036  MocDonate::DrawXemMocNap+0x86
+  [26] off=0x0A60E184 addr=0x0069006D Main.exe+0x29006D  SEASON3B::CNewUIGuardWindow::UpdateRegisterInfoTab+0x26d
+  [27] off=0x0A60E188 addr=0x00720063 Main.exe+0x320063  SEASON3B::CNewUISystem::LoadMainSceneInterface+0x22c3
+  [28] off=0x0A60E18C addr=0x0073006F Main.exe+0x33006F  CPacketManager::Shift+0xef
+  [29] off=0x0A60E190 addr=0x0066006F Main.exe+0x26006F  SEASON3B::CChaosCastleResultMsgBox::RenderFrame+0x1af
+  [30] off=0x0A60E198 addr=0x00690077 Main.exe+0x290077  SEASON3B::CNewUIGuardWindow::UpdateRegisterInfoTab+0x277
+  [31] off=0x0A60E19C addr=0x0064006E Main.exe+0x24006E  SEASON3B::CQuestGiveUpMsgBoxLayout::CancelBtnDown+0x1e
+  [32] off=0x0A60E1A0 addr=0x0077006F Main.exe+0x37006F  CUISocketListBox::DoLineMouseAction+0x10f
+  [33] off=0x0A60E1A8 addr=0x006F0063 Main.exe+0x2F0063  SEASON3B::CNewUIMyInventory::RenderSocketOption+0x103
+  [34] off=0x0A60E1AC addr=0x006D006D Main.exe+0x2D006D  std::_Tree<std::_Tmap_traits<unsigned long,enum SEASON3B::CALLBACK_RESULT (__cdecl*)(SEASON3B::CNewUIMessageBoxBase *,leaf::xstreambuf const &),std::less<unsigned long>,std::allocator<std::pair<unsigned long const ,enum SEASON3B::CALLBACK_RESULT (__cdecl*)(SEASON3B::CNewUIMessageBoxBase *,leaf::xstreambuf const &)> >,0> >::end+0xd
+  [35] off=0x0A60E1B0 addr=0x006E006F Main.exe+0x2E006F  SEASON3B::CNewUIMuHelper::InitText+0x3ff
+  [36] off=0x0A60E1B4 addr=0x0063002D Main.exe+0x23002D  SEASON3B::CNewUIChatLogWindow::ProcessAddText+0x19d
+  [37] off=0x0A60E1B8 addr=0x006E006F Main.exe+0x2E006F  SEASON3B::CNewUIMuHelper::InitText+0x3ff
+  [38] off=0x0A60E1BC addr=0x00720074 Main.exe+0x320074  SEASON3B::CNewUISystem::LoadMainSceneInterface+0x22d4
+  [39] off=0x0A60E1C0 addr=0x006C006F Main.exe+0x2C006F  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2f
+  ... toplam 200 adres
+--- tid=7112 eip=0x773B37CC esp=0x0A88FDB4 ebp=0x0A88FF70 ---
+  okunabilen yigin bayti=0
+  yigin okunamadi
+--- tid=8304 eip=0x773B37CC esp=0x0A74FDB4 ebp=0x0A74FF70 ---
+  okunabilen yigin bayti=4096
+  [0] off=0x0A74EDB4 addr=0x75E02D08 combase.dll+0x232D08  
+  [1] off=0x0A74EDBC addr=0x7737A6B3 ntdll.dll+0x3A6B3  
+  [2] off=0x0A74EDD0 addr=0x7736EF13 ntdll.dll+0x2EF13  
+  [3] off=0x0A74EE60 addr=0x77379965 ntdll.dll+0x39965  
+  [4] off=0x0A74EE64 addr=0x7737AA92 ntdll.dll+0x3AA92  
+  [5] off=0x0A74EE68 addr=0x02140026 Main.exe+0x1D40026  MeshGroup+0xacc116
+  [6] off=0x0A74EE74 addr=0x77344D64 ntdll.dll+0x4D64  
+  [7] off=0x0A74EE78 addr=0x01000048 Main.exe+0xC00048  BufferName+0x1948
+  [8] off=0x0A74EEAC addr=0x00420040 Main.exe+0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+  [9] off=0x0A74EEB0 addr=0x773449F8 ntdll.dll+0x49F8  
+  [10] off=0x0A74EEC4 addr=0x0103DAD1 Main.exe+0xC3DAD1  m_stMasterSkillTooltip+0x20729
+  [11] off=0x0A74EEF4 addr=0x01000000 Main.exe+0xC00000  BufferName+0x1900
+  [12] off=0x0A74EEF8 addr=0x01010101 Main.exe+0xC10101  g_lpPropertySet+0x359
+  [13] off=0x0A74EF04 addr=0x0101F3A0 Main.exe+0xC1F3A0  m_stMasterSkillTooltip+0x1ff8
+  [14] off=0x0A74EF1C addr=0x01BD0000 Main.exe+0x17D0000  MeshGroup+0x55c0f0
+  [15] off=0x0A74EF24 addr=0x004A0048 Main.exe+0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+  [16] off=0x0A74EF28 addr=0x77344A88 ntdll.dll+0x4A88  
+  [17] off=0x0A74EF50 addr=0x75E08000 combase.dll+0x238000  
+  [18] off=0x0A74EF58 addr=0x75BD00F8 combase.dll+0xF8  
+  [19] off=0x0A74EF6C addr=0x004C004A Main.exe+0xC004A  cCustomCloak::RenderCEffect+0x465a
+  [20] off=0x0A74EF70 addr=0x01000000 Main.exe+0xC00000  BufferName+0x1900
+  [21] off=0x0A74EF78 addr=0x00700000 Main.exe+0x300000  SEASON3B::CNewUINPCDialogue::ProcessSelTextResult+0x70
+  [22] off=0x0A74EF80 addr=0x0073006D Main.exe+0x33006D  CPacketManager::Shift+0xed
+  [23] off=0x0A74EF84 addr=0x0077002D Main.exe+0x37002D  CUISocketListBox::DoLineMouseAction+0xcd
+  [24] off=0x0A74EF88 addr=0x006E0069 Main.exe+0x2E0069  SEASON3B::CNewUIMuHelper::InitText+0x3f9
+  [25] off=0x0A74EF8C addr=0x0063002D Main.exe+0x23002D  SEASON3B::CNewUIChatLogWindow::ProcessAddText+0x19d
+  [26] off=0x0A74EF90 addr=0x0072006F Main.exe+0x32006F  SEASON3B::CNewUISystem::LoadMainSceneInterface+0x22cf
+  [27] off=0x0A74EF98 addr=0x00650064 Main.exe+0x250064  SEASON3B::CNewUICursedTempleSystem::RenderSkill+0x4c4
+  [28] off=0x0A74EF9C addr=0x0061006C Main.exe+0x21006C  SEASON3B::CNewUIBloodCastle::Render+0x38c
+  [29] off=0x0A74EFA0 addr=0x006C0079 Main.exe+0x2C0079  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x39
+  [30] off=0x0A74EFA4 addr=0x0061006F Main.exe+0x21006F  SEASON3B::CNewUIBloodCastle::Render+0x38f
+  [31] off=0x0A74EFB8 addr=0x0064002E Main.exe+0x24002E  SEASON3B::CQuestGiveUpMsgBoxLayout::OkBtnDown+0xce
+  [32] off=0x0A74EFBC addr=0x006C006C Main.exe+0x2C006C  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2c
+  [33] off=0x0A74EFC4 addr=0x0064002E Main.exe+0x24002E  SEASON3B::CQuestGiveUpMsgBoxLayout::OkBtnDown+0xce
+  [34] off=0x0A74EFC8 addr=0x006C006C Main.exe+0x2C006C  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2c
+  [35] off=0x0A74EFD0 addr=0x0064002E Main.exe+0x24002E  SEASON3B::CQuestGiveUpMsgBoxLayout::OkBtnDown+0xce
+  [36] off=0x0A74EFD4 addr=0x006C006C Main.exe+0x2C006C  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2c
+  [37] off=0x0A74F078 addr=0x01000044 Main.exe+0xC00044  BufferName+0x1944
+  [38] off=0x0A74F084 addr=0x0057005C Main.exe+0x17005C  GMEmpireGuardian4::MoveObject+0x1ec
+  [39] off=0x0A74F088 addr=0x006E0069 Main.exe+0x2E0069  SEASON3B::CNewUIMuHelper::InitText+0x3f9
+  ... toplam 200 adres
+--- tid=9924 eip=0x773B1B2C esp=0x0019FA30 ebp=0x0019FA50 ---
+  okunabilen yigin bayti=24576
+  [0] off=0x0019DA30 addr=0x00650075 Main.exe+0x250075  SEASON3B::CNewUICursedTempleSystem::RenderSkill+0x4d5
+  [1] off=0x0019DA34 addr=0x00790072 Main.exe+0x390072  std::_Default_allocator_traits<std::allocator<LETTER_TEXT> >::destroy<LETTER_TEXT>+0x2
+  [2] off=0x0019DA38 addr=0x006C002D Main.exe+0x2C002D  std::_Sort_heap_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2d
+  [3] off=0x0019DA48 addr=0x006C0064 Main.exe+0x2C0064  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x24
+  [4] off=0x0019DA50 addr=0x00640000 Main.exe+0x240000  SEASON3B::CQuestGiveUpMsgBoxLayout::OkBtnDown+0xa0
+  [5] off=0x0019DA54 addr=0x006C006C Main.exe+0x2C006C  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2c
+  [6] off=0x0019DA60 addr=0x006C0064 Main.exe+0x2C0064  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x24
+  [7] off=0x0019DB08 addr=0x0100003A Main.exe+0xC0003A  BufferName+0x193a
+  [8] off=0x0019DB14 addr=0x0057005C Main.exe+0x17005C  GMEmpireGuardian4::MoveObject+0x1ec
+  [9] off=0x0019DB18 addr=0x006E0069 Main.exe+0x2E0069  SEASON3B::CNewUIMuHelper::InitText+0x3f9
+  [10] off=0x0019DB1C addr=0x006F0064 Main.exe+0x2F0064  SEASON3B::CNewUIMyInventory::RenderSocketOption+0x104
+  [11] off=0x0019DB20 addr=0x00730077 Main.exe+0x330077  CPacketManager::Shift+0xf7
+  [12] off=0x0019DB24 addr=0x0053005C Main.exe+0x13005C  M33Aida::RenderAidaMonsterVisual+0x49c
+  [13] off=0x0019DB28 addr=0x00530059 Main.exe+0x130059  M33Aida::RenderAidaMonsterVisual+0x499
+  [14] off=0x0019DB2C addr=0x00450054 Main.exe+0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+  [15] off=0x0019DB34 addr=0x005C0032 Main.exe+0x1C0032  SEASON4A::CGM_Raklion::MoveMonsterVisual+0xc72
+  [16] off=0x0019DB38 addr=0x0074006E Main.exe+0x34006E  std::_Uninitialized_backout_al<std::allocator<USER_BANK_DATA> >::~_Uninitialized_backout_al<std::allocator<USER_BANK_DATA> >+0xe
+  [17] off=0x0019DB3C addr=0x006C0064 Main.exe+0x2C0064  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x24
+  [18] off=0x0019DB44 addr=0x006C0064 Main.exe+0x2C0064  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x24
+  [19] off=0x0019DB4C addr=0x0064002E Main.exe+0x24002E  SEASON3B::CQuestGiveUpMsgBoxLayout::OkBtnDown+0xce
+  [20] off=0x0019DB50 addr=0x006C006C Main.exe+0x2C006C  std::_Sort_unchecked<SEASON3B::CNewUIObj * *,bool (__cdecl*)(SEASON3B::INewUIBase *,SEASON3B::INewUIBase *)>+0x2c
+  [21] off=0x0019DB88 addr=0x7737F5F9 ntdll.dll+0x3F5F9  
+  [22] off=0x0019DB98 addr=0x00800000 Main.exe+0x400000  std::reverse_iterator<std::_List_iterator<std::_List_val<std::_List_simple_types<unsigned long> > > >::reverse_iterator<std::_List_iterator<std::_List_val<std::_List_simple_types<unsigned long> > > >+0x10
+  [23] off=0x0019DBB4 addr=0x7738B4A9 ntdll.dll+0x4B4A9  
+  [24] off=0x0019DBBC addr=0x7737F6F8 ntdll.dll+0x3F6F8  
+  [25] off=0x0019DBC8 addr=0x7737F5F9 ntdll.dll+0x3F5F9  
+  [26] off=0x0019DBE0 addr=0x773B72D0 ntdll.dll+0x772D0  
+  [27] off=0x0019DC08 addr=0x77381FBC ntdll.dll+0x41FBC  
+  [28] off=0x0019DC28 addr=0x77381D01 ntdll.dll+0x41D01  
+  [29] off=0x0019DC38 addr=0x0100017C Main.exe+0xC0017C  BufferName+0x1a7c
+  [30] off=0x0019DC5C addr=0x773819EA ntdll.dll+0x419EA  
+  [31] off=0x0019DCC8 addr=0x77381515 ntdll.dll+0x41515  
+  [32] off=0x0019DCE8 addr=0x77381573 ntdll.dll+0x41573  
+  [33] off=0x0019DD44 addr=0x01000014 Main.exe+0xC00014  BufferName+0x1914
+  [34] off=0x0019DD80 addr=0x773B0000 ntdll.dll+0x70000  
+  [35] off=0x0019DD90 addr=0x7738127A ntdll.dll+0x4127A  
+  [36] off=0x0019DDA8 addr=0x773812F5 ntdll.dll+0x412F5  
+  [37] off=0x0019DDB0 addr=0x006EE9D5 Main.exe+0x2EE9D5  SEASON3B::CNewUIMyInventory::HandleInventoryActions+0x875
+  [38] off=0x0019DDB4 addr=0x01000014 Main.exe+0xC00014  BufferName+0x1914
+  [39] off=0x0019DDBC addr=0x74A90000 sechost.dll+0x0  
+  ... toplam 200 adres

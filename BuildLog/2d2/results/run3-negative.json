@@ -1,0 +1,64 @@
+﻿{
+    "startTime":  "2026-10-02 14:47:51",
+    "clientDir":  "C:\\Axion Mu Mobile\\Client and Tools\\Client",
+    "dialogSeen":  false,
+    "tcpConnections":  [
+                           {
+                               "state":  "SynSent",
+                               "t":  12.7,
+                               "remote":  "45.87.120.29:44405",
+                               "pid":  5600
+                           },
+                           {
+                               "state":  "SynSent",
+                               "t":  12.7,
+                               "remote":  "45.87.120.29:55858",
+                               "pid":  5600
+                           }
+                       ],
+    "arguments":  "SPKLaunch",
+    "errors":  [
+
+               ],
+    "leftoverProcesses":  [
+
+                          ],
+    "endTime":  "2026-10-02 14:48:18",
+    "errorTextSeen":  false,
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2d2\\shots\\run3-negative-win-0x12036C.png"
+                    ],
+    "processTree":  [
+                        "Engine.exe:5600"
+                    ],
+    "label":  "run3-negative",
+    "observeSeconds":  25,
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "72319e7b0fd0c55388b88b1d4872b749",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "windowsHistory":  [
+                           {
+                               "tree":  "Engine.exe:5600",
+                               "t":  0.8,
+                               "windows":  [
+                                               "TOP|pid=5600|Axion Mu|Axion Mu|visible=1|hwnd=0x12036C",
+                                               "TOP|pid=5600|IME|Default IME|visible=0|hwnd=0x3403AC",
+                                               "TOP|pid=5600|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x31045E"
+                                           ]
+                           },
+                           {
+                               "tree":  "Engine.exe:5600",
+                               "t":  1.6,
+                               "windows":  [
+                                               "TOP|pid=5600|GDI+ Hook Window Class|G|visible=0|hwnd=0x22034C",
+                                               "TOP|pid=5600|Axion Mu|Axion Mu|visible=1|hwnd=0x12036C",
+                                               "TOP|pid=5600|IME|Default IME|visible=0|hwnd=0xD0344",
+                                               "TOP|pid=5600|IME|Default IME|visible=0|hwnd=0x3403AC",
+                                               "TOP|pid=5600|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x31045E"
+                                           ]
+                           }
+                       ],
+    "rootPid":  5600
+}

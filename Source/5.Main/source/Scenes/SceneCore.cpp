@@ -53,8 +53,10 @@ short   g_shCameraLevel = 0;
 
 int g_iLengthAuthorityCode = 20;
 
-const wchar_t* szServerIpAddress = L"171.235.182.88";
-WORD g_ServerPort = 63000;
+// 2e.1: canli SPK degerleri (ConnectIP.bmd). NOT: bu dosya Main.vcxproj'da kayitli
+// DEGILDIR (derlenmez) - yalniz kaynak tutarliligi icin hizalandi.
+const wchar_t* szServerIpAddress = L"45.87.120.29";
+WORD g_ServerPort = 44405;
 
 EGameScene  SceneFlag = WEBZEN_SCENE;
 

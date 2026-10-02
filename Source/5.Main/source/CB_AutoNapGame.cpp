@@ -11,6 +11,13 @@
 #include "ExternalObject/curl/curl.h"
 #include "MocDonate.h"
 
+#if (!CB_USE_FREEIMAGE)
+// 2e.2: JPEG kodlama GDI+ ile (FreeImage.dll yok). WIN32_LEAN_AND_MEAN objidl.h'yi
+// disarida biraktigi icin acikca eklenir; gdiplus.h bunu gerektirir.
+#include <objidl.h>
+#include <gdiplus.h>
+#endif
+
 CUITextInputBox* InputGiaTriNap = NULL;
 CUITextInputBox* CInputCaptCha = NULL;
 char GetTextGiaTriNap[9];
@@ -131,6 +138,7 @@ bool Convert_Format(const std::string & filename)
 	return false;
 }
 
+#if (CB_USE_FREEIMAGE)
 bool ConvertToJPEG(const std::string & inputFilePath, const std::string & outputFilePath) {
 
 	FREE_IMAGE_FORMAT inputFormat = FreeImage_GetFileType(inputFilePath.c_str(), 0);
@@ -154,6 +162,98 @@ bool ConvertToJPEG(const std::string & inputFilePath, const std::string & output
 	}
 
 }
+#else // (!CB_USE_FREEIMAGE) - 2e.2: GDI+ (FreeImage.dll bagimliligi yok)
+
+// JPEG kodlayici CLSID'i (GDI+ codec listesi; MIME image/jpeg).
+static int CB_GetEncoderClsid(const WCHAR* mimeType, CLSID* clsid)
+{
+	UINT num = 0;
+	UINT size = 0;
+
+	Gdiplus::GetImageEncodersSize(&num, &size);
+
+	if (size == 0)
+	{
+		return -1;
+	}
+
+	Gdiplus::ImageCodecInfo* info = (Gdiplus::ImageCodecInfo*)malloc(size);
+
+	if (info == 0)
+	{
+		return -1;
+	}
+
+	Gdiplus::GetImageEncoders(num, size, info);
+
+	int found = -1;
+
+	for (UINT i = 0; i < num; i++)
+	{
+		if (wcscmp(info[i].MimeType, mimeType) == 0)
+		{
+			*clsid = info[i].Clsid;
+			found = (int)i;
+			break;
+		}
+	}
+
+	free(info);
+
+	return found;
+}
+
+// FreeImage hattinin esdegeri: PNG'yi yukler, kalite 80 ile JPEG yazar.
+bool ConvertToJPEG(const std::string & inputFilePath, const std::string & outputFilePath)
+{
+	Gdiplus::GdiplusStartupInput startupInput;
+	ULONG_PTR token = 0;
+
+	if (Gdiplus::GdiplusStartup(&token, &startupInput, 0) != Gdiplus::Ok)
+	{
+		return false;
+	}
+
+	WCHAR input[MAX_PATH] = { 0 };
+	WCHAR output[MAX_PATH] = { 0 };
+
+	MultiByteToWideChar(CP_ACP, 0, inputFilePath.c_str(), -1, input, MAX_PATH);
+	MultiByteToWideChar(CP_ACP, 0, outputFilePath.c_str(), -1, output, MAX_PATH);
+
+	bool result = false;
+	Gdiplus::Bitmap* bitmap = Gdiplus::Bitmap::FromFile(input);
+
+	if (bitmap != 0 && bitmap->GetLastStatus() == Gdiplus::Ok)
+	{
+		CLSID clsid;
+
+		if (CB_GetEncoderClsid(L"image/jpeg", &clsid) >= 0)
+		{
+			ULONG quality = 80;
+			Gdiplus::EncoderParameters params;
+
+			params.Count = 1;
+			params.Parameter[0].Guid = Gdiplus::EncoderQuality;
+			params.Parameter[0].Type = Gdiplus::EncoderParameterValueTypeLong;
+			params.Parameter[0].NumberOfValues = 1;
+			params.Parameter[0].Value = &quality;
+
+			result = (bitmap->Save(output, &clsid, &params) == Gdiplus::Ok);
+		}
+	}
+
+	if (bitmap != 0)
+	{
+		delete bitmap;
+	}
+
+	Gdiplus::GdiplusShutdown(token);
+
+	return result;
+}
+
+#endif // (CB_USE_FREEIMAGE)
+
 void GetQRCodeSePay(LPVOID lpThreadParameter)
 {
 	if (GetQRCode) return;

@@ -1,0 +1,80 @@
+=== tid=4704 eip=0x773B310C esp=0x0A8BFBA0
+  kod araligindaki adres sayisi=0
+=== tid=5800 eip=0x773B37CC esp=0x0A6BFDB4
+  kod araligindaki adres sayisi=9
+    stk=0x0A6BEEAC (esp,-3848) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0A6BEF24 (esp,-3728) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0A6BF09C (esp,-3352) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0A6BF490 (esp,-2340) 0x00461524 rva=0x61524  std::vector<CBInterfaceVIPChar::DATA_ITEMVIPPOINT,std::allocator<CBInterfaceVIPChar::DATA_ITEMVIPPOINT> >::_Emplace_reallocate<CBInterfaceVIPChar::DATA_ITEMVIPPOINT const &>+0x134
+    stk=0x0A6BF59C (esp,-2072) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0A6BF614 (esp,-1952) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0A6BFBD4 (esp,-480) 0x0041005C rva=0x1005C  jinit_forward_dct+0x3c
+    stk=0x0A6BFBF4 (esp,-448) 0x0042005C rva=0x2005C  wcsrchr+0xc
+    stk=0x0A6BFC20 (esp,-404) 0x0041007A rva=0x1007A  jinit_forward_dct+0x5a
+=== tid=6768 eip=0x773B37CC esp=0x0A7BFDB4
+  kod araligindaki adres sayisi=11
+    stk=0x0A7BEEAC (esp,-3848) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0A7BEF24 (esp,-3728) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0A7BF09C (esp,-3352) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0A7BF548 (esp,-2156) 0x00480000 rva=0x80000  CB_DoiMK::DrawWindow+0x9c0
+    stk=0x0A7BF78C (esp,-1576) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0A7BF7E8 (esp,-1484) 0x00480000 rva=0x80000  CB_DoiMK::DrawWindow+0x9c0
+    stk=0x0A7BF7F0 (esp,-1476) 0x00450052 rva=0x50052  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x22
+    stk=0x0A7BF8F0 (esp,-1220) 0x00480053 rva=0x80053  CB_DoiMK::DrawWindow+0xa13
+    stk=0x0A7BF8F8 (esp,-1212) 0x00450052 rva=0x50052  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x22
+    stk=0x0A7BF8FC (esp,-1208) 0x0044002E rva=0x4002E  CBoneManager::GetInstance+0x6e
+    stk=0x0A7BF90C (esp,-1192) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+=== tid=9524 eip=0x773B1B2C esp=0x0019FA30
+  kod araligindaki adres sayisi=52
+    stk=0x0019CB5C (esp,-11988) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0019CBD4 (esp,-11868) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0019CD4C (esp,-11492) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0019D24C (esp,-10212) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0019D2C4 (esp,-10092) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0019D43C (esp,-9716) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0019D93C (esp,-8436) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0019D9B4 (esp,-8316) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0019DB2C (esp,-7940) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0019E02C (esp,-6660) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0019E0A4 (esp,-6540) 0x004A0048 rva=0xA0048  CKanturuDirection::KanturuAllDirection+0x18
+    stk=0x0019E21C (esp,-6164) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0019EE0C (esp,-3108) 0x00420040 rva=0x20040  std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >+0x30
+    stk=0x0019F454 (esp,-1500) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x0019F4B8 (esp,-1400) 0x00420054 rva=0x20054  wcsrchr+0x4
+    stk=0x0019F5C0 (esp,-1136) 0x00420054 rva=0x20054  wcsrchr+0x4
+    stk=0x0019F5D4 (esp,-1116) 0x00450054 rva=0x50054  std::_Construct_in_place<std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> *,std::_List_node<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,void *> * &>+0x24
+    stk=0x001A0464 (esp,+2612) 0x00440020 rva=0x40020  CBoneManager::GetInstance+0x60
+    stk=0x001A0474 (esp,+2628) 0x00430020 rva=0x30020  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0x0
+    stk=0x001A0574 (esp,+2884) 0x0041006E rva=0x1006E  jinit_forward_dct+0x4e
+    stk=0x001A062C (esp,+3068) 0x0041006E rva=0x1006E  jinit_forward_dct+0x4e
+    stk=0x001A0654 (esp,+3108) 0x00410072 rva=0x10072  jinit_forward_dct+0x52
+    stk=0x001A0708 (esp,+3288) 0x00430022 rva=0x30022  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0x2
+    stk=0x001A09B8 (esp,+3976) 0x00410072 rva=0x10072  jinit_forward_dct+0x52
+    stk=0x001A0A6C (esp,+4156) 0x00430022 rva=0x30022  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0x2
+    stk=0x001A0C38 (esp,+4616) 0x0043002D rva=0x3002D  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0xd
+    stk=0x001A0CE8 (esp,+4792) 0x0043002D rva=0x3002D  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0xd
+    stk=0x001A0D0C (esp,+4828) 0x00410072 rva=0x10072  jinit_forward_dct+0x52
+    stk=0x001A0FB8 (esp,+5512) 0x0041006E rva=0x1006E  jinit_forward_dct+0x4e
+    stk=0x001A1084 (esp,+5716) 0x0041006E rva=0x1006E  jinit_forward_dct+0x4e
+    stk=0x001A10C0 (esp,+5776) 0x00410072 rva=0x10072  jinit_forward_dct+0x52
+    stk=0x001A1174 (esp,+5956) 0x00430022 rva=0x30022  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0x2
+    stk=0x001A137C (esp,+6476) 0x0043002D rva=0x3002D  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0xd
+    stk=0x001A1440 (esp,+6672) 0x0043002D rva=0x3002D  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0xd
+    stk=0x001A1550 (esp,+6944) 0x00430022 rva=0x30022  std::_Vector_iterator<std::_Vector_val<std::_Simple_types<CBGAMEGUARD::BRWDS_LIST_INFO> > >::operator+++0x2
+    stk=0x001A2244 (esp,+10260) 0x0042006F rva=0x2006F  CBGAMEGUARD::CAntiKill::CAntiKill+0xf
+    stk=0x001A2278 (esp,+10312) 0x0042006F rva=0x2006F  CBGAMEGUARD::CAntiKill::CAntiKill+0xf
+    stk=0x001A2508 (esp,+10968) 0x00480073 rva=0x80073  CB_DoiMK::DrawWindow+0xa33
+    stk=0x001A2538 (esp,+11016) 0x00480073 rva=0x80073  CB_DoiMK::DrawWindow+0xa33
+    stk=0x001A26B8 (esp,+11400) 0x00490073 rva=0x90073  std::_Tree_val<std::_Tree_simple_types<int> >::_Insert_node+0x1a3
+    stk=0x001A26BC (esp,+11404) 0x00410050 rva=0x10050  jinit_forward_dct+0x30
+    stk=0x001A26F0 (esp,+11456) 0x00490073 rva=0x90073  std::_Tree_val<std::_Tree_simple_types<int> >::_Insert_node+0x1a3
+    stk=0x001A26F4 (esp,+11460) 0x00410050 rva=0x10050  jinit_forward_dct+0x30
+    stk=0x001A2A20 (esp,+12272) 0x00410073 rva=0x10073  jinit_forward_dct+0x53
+    stk=0x001A2A54 (esp,+12324) 0x00410073 rva=0x10073  jinit_forward_dct+0x53
+    stk=0x001A2AF4 (esp,+12484) 0x00440073 rva=0x40073  CBoneManager::CBoneManager+0x13
+    stk=0x001A2B30 (esp,+12544) 0x00440073 rva=0x40073  CBoneManager::CBoneManager+0x13
+    stk=0x001A2F7C (esp,+13644) 0x00430074 rva=0x30074  std::vector<CBGAMEGUARD::BRWDS_LIST_INFO,std::allocator<CBGAMEGUARD::BRWDS_LIST_INFO> >::begin+0x4
+    stk=0x001A302C (esp,+13820) 0x00430074 rva=0x30074  std::vector<CBGAMEGUARD::BRWDS_LIST_INFO,std::allocator<CBGAMEGUARD::BRWDS_LIST_INFO> >::begin+0x4
+    stk=0x001A313C (esp,+14092) 0x00410049 rva=0x10049  jinit_forward_dct+0x29
+    stk=0x001A32AC (esp,+14460) 0x00430074 rva=0x30074  std::vector<CBGAMEGUARD::BRWDS_LIST_INFO,std::allocator<CBGAMEGUARD::BRWDS_LIST_INFO> >::begin+0x4
+    stk=0x001A32F0 (esp,+14528) 0x00430074 rva=0x30074  std::vector<CBGAMEGUARD::BRWDS_LIST_INFO,std::allocator<CBGAMEGUARD::BRWDS_LIST_INFO> >::begin+0x4

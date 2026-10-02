@@ -1270,6 +1270,9 @@
     <ClCompile Include="source\MainLoad.cpp">
       <Filter>MU\Client\BCustomLoad</Filter>
     </ClCompile>
+    <ClCompile Include="source\SPKData.cpp">
+      <Filter>MU\Client\BCustomLoad</Filter>
+    </ClCompile>
     <ClCompile Include="source\CustomNpcName.cpp">
       <Filter>MU\Client\BCustomLoad</Filter>
     </ClCompile>
@@ -2605,6 +2608,9 @@
       <Filter>MU\Client\BCustomLoad</Filter>
     </ClInclude>
     <ClInclude Include="source\MainLoad.h">
+      <Filter>MU\Client\BCustomLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SPKData.h">
       <Filter>MU\Client\BCustomLoad</Filter>
     </ClInclude>
     <ClInclude Include="source\CustomNpcName.h">

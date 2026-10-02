@@ -1,0 +1,66 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  30,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run7-mapped-all-win-0x4302AC.png"
+                    ],
+    "endTime":  "2026-10-02 18:42:48",
+    "label":  "run7-mapped-all",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:8988",
+                               "t":  1.5,
+                               "windows":  [
+                                               "TOP|pid=8988|Axion Mu|Axion Mu|visible=1|hwnd=0x4302AC",
+                                               "TOP|pid=8988|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x4B0180",
+                                               "TOP|pid=8988|IME|Default IME|visible=0|hwnd=0x7E0208"
+                                           ]
+                           },
+                           {
+                               "tree":  "Main.exe:8988,Main.exe:5372,WerFault.exe:6152",
+                               "t":  2.7,
+                               "windows":  [
+                                               "TOP|pid=8988|Axion Mu|Axion Mu|visible=1|hwnd=0x4302AC",
+                                               "TOP|pid=8988|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x4B0180",
+                                               "TOP|pid=8988|IME|Default IME|visible=0|hwnd=0x7E0208"
+                                           ]
+                           },
+                           {
+                               "tree":  "Main.exe:8988,Main.exe:5372,WerFault.exe:6152",
+                               "t":  5.8,
+                               "windows":  [
+
+                                           ]
+                           },
+                           {
+                               "tree":  "unknown:8988",
+                               "t":  8.3,
+                               "windows":  [
+
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  8988,
+    "startTime":  "2026-10-02 18:42:39",
+    "processTree":  [
+                        "unknown:8988"
+                    ]
+}

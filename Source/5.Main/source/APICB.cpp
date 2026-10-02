@@ -4,7 +4,11 @@
 //#include "HackCheck.h"
 #include "Protocol.h"
 
-#define TYPE_MAINSS		0  //1 Là SS6 1.04E, 0 là SRC Main
+//=== 2e.2: SPK istemci duzeninde APICB.dll yok -> CB_ANTIHACKGGNEW=0 iken yerel no-op
+// uygulama derlenir (dosya sonundaki #else dali); donÃ¶r hatti #if icinde aynen durur.
+#if (CB_ANTIHACKGGNEW)
+
+#define TYPE_MAINSS		0  //1 Lï¿½ SS6 1.04E, 0 lï¿½ SRC Main
 #if(TYPE_MAINSS==1)
 extern DWORD FrameValue;
 extern DWORD SpeedValue;
@@ -167,9 +171,40 @@ void APICB::Init()
 void APICB::Recv(BYTE* Recv)
 {
 	CBAnihack_Recv(Recv);
+}void APICB::Attack()
+{
+	CBAnihack_Attack();
+}
+
+#else // (CB_ANTIHACKGGNEW) â€” yerel no-op (APICB.dll bagimliligi YOK)
+
+// SPK paketinde anti-hack katmani yok; API_* degiskenleri de olmadigi icin arayuz
+// yalniz cagrilari yutar. Davranis: CB_ANTIHACKGGNEW=0'in zaten kapattigi ozellikler.
+APICB gAPICB;
+
+APICB::APICB()
+{
+}
+
+APICB::~APICB()
+{
+}
+
+void APICB::Work()
+{
+}
+
+void APICB::Init()
+{
+}
+
+void APICB::Recv(BYTE* Recv)
+{
+	(void)Recv;
 }
 
 void APICB::Attack()
 {
-	CBAnihack_Attack();
 }
+
+#endif // (CB_ANTIHACKGGNEW)

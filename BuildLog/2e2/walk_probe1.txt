@@ -1,0 +1,25 @@
+modul=Main.exe base=0x400000 size=0x9EAD000
+=== tid=3116 eip=0x773B1B2C [ntdll.dll+0x71B2C]  esp=0x0019FA30 ebp=0x0019FA50
+   esp+0x38 -> 0x0060005E Main.exe+0x20005E CMsgWin::Show+0x1e
+   frame[0] ebp=0x0019FA50 ret=0x773E923E ntdll.dll+0xA923E  
+   frame[1] ebp=0x0019FCAC ret=0x7739D147 ntdll.dll+0x5D147  
+   frame[2] ebp=0x0019FD04 ret=0x7739D041 ntdll.dll+0x5D041  
+=== tid=6476 eip=0x773B37CC [ntdll.dll+0x737CC]  esp=0x0A88FDB4 ebp=0x0A88FF70
+   frame[0] ebp=0x0A88FF70 ret=0x767C05C9 KERNEL32.DLL+0x205C9  
+   frame[1] ebp=0x0A88FF80 ret=0x773A7D2D ntdll.dll+0x67D2D  
+   frame[2] ebp=0x0A88FFDC ret=0x773A7CFD ntdll.dll+0x67CFD  
+=== tid=9552 eip=0x773B310C [ntdll.dll+0x7310C]  esp=0x0A74FBA0 ebp=0x0A74FD20
+   esp+0x2C -> 0x005C003F Main.exe+0x1C003F SEASON4A::CGM_Raklion::MoveMonsterVisual+0xc7f
+   esp+0x34 -> 0x0055005C Main.exe+0x15005C CGMDoppelGanger2::MoveMonsterVisual+0x9dc
+   esp+0x38 -> 0x00650073 Main.exe+0x250073 SEASON3B::CNewUICursedTempleSystem::RenderSkill+0x4d3
+   esp+0x3C -> 0x00730072 Main.exe+0x330072 CPacketManager::Shift+0xf2
+   frame[0] ebp=0x0A74FD20 ret=0x773CDCA2 ntdll.dll+0x8DCA2  
+   frame[1] ebp=0x0A74FD74 ret=0x7738AE49 ntdll.dll+0x4AE49  
+   frame[2] ebp=0x0A74FDBC ret=0x77389D30 ntdll.dll+0x49D30  
+   frame[3] ebp=0x0A74FF70 ret=0x767C05C9 KERNEL32.DLL+0x205C9  
+   frame[4] ebp=0x0A74FF80 ret=0x773A7D2D ntdll.dll+0x67D2D  
+   frame[5] ebp=0x0A74FFDC ret=0x773A7CFD ntdll.dll+0x67CFD  
+=== tid=9948 eip=0x773B37CC [ntdll.dll+0x737CC]  esp=0x0A64FDB4 ebp=0x0A64FF70
+   frame[0] ebp=0x0A64FF70 ret=0x767C05C9 KERNEL32.DLL+0x205C9  
+   frame[1] ebp=0x0A64FF80 ret=0x773A7D2D ntdll.dll+0x67D2D  
+   frame[2] ebp=0x0A64FFDC ret=0x773A7CFD ntdll.dll+0x67CFD  

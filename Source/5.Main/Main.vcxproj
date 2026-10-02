@@ -390,6 +390,7 @@
     <ClCompile Include="source\LoginMainWin.cpp" />
     <ClCompile Include="source\LoginWin.cpp" />
     <ClCompile Include="source\MainLoad.cpp" />
+    <ClCompile Include="source\SPKData.cpp" />
     <ClCompile Include="source\MapManager.cpp" />
     <ClCompile Include="source\MatchEvent.cpp" />
     <ClCompile Include="source\Math\ZzzMathLib.cpp" />
@@ -860,6 +861,7 @@
     <ClInclude Include="source\LoginMainWin.h" />
     <ClInclude Include="source\LoginWin.h" />
     <ClInclude Include="source\MainLoad.h" />
+    <ClInclude Include="source\SPKData.h" />
     <ClInclude Include="source\MapManager.h" />
     <ClInclude Include="source\MatchEvent.h" />
     <ClInclude Include="source\Math\ZzzMathLib.h" />

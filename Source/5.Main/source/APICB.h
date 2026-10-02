@@ -1,13 +1,30 @@
 #pragma once
 
+//=== 2e.2 (SPK istemci duzeni): canli SPK paketinde APICB.dll YOKTUR (istemci kokunde
+// 17 dosya; APICB/FreeImage yok). CB_ANTIHACKGGNEW=0 iken anti-hack katmani zaten kapali
+// oldugu icin dllimport/lib bagimliligi kaldirilir, ayni arayuz yerel no-op ile derlenir
+// (APICB.cpp yerel govde; davranis degismez). CB_ANTIHACKGGNEW=1 ise donor hatti
+// (APICB.dll + APICB.lib) aynen geri gelir.
+//
+// Not: makro Defined_Global.h'de tanimlidir; tum ceviri birimleri stdafx.h uzerinden
+// alir, tanimsizsa guvenli taraf secilir (yerel no-op).
+
 #if defined(__ANDROID__) || defined(MU_IOS)
 #define APICB_API
 #else
+
+#if (CB_ANTIHACKGGNEW)
 #pragma comment(lib, "APICB.lib")
 #define APICB_API __declspec(dllimport)
+#else
+#define APICB_API
+#endif
+
 #endif
 //==Callback
 typedef void (*DATA_SEND)(BYTE* lpMsg, DWORD size);
+
+#if (CB_ANTIHACKGGNEW)
 APICB_API void SetAPIDATA_SEND(DATA_SEND callback);
 
 APICB_API void CBAnihack_Work();
@@ -56,6 +73,7 @@ extern APICB_API DWORD* API_ViewAddEnergy;
 extern APICB_API DWORD* API_ViewAddLeadership;
 extern APICB_API DWORD* API_ViewPhysiSpeed;
 extern APICB_API DWORD* API_ViewMagicSpeed;
+#endif // (CB_ANTIHACKGGNEW)
 
 class APICB
 {

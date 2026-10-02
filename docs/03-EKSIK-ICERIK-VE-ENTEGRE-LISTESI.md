@@ -30,10 +30,12 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 
 | # | Modül / Özellik | Kaynak | Hedef | Durum |
 |---|-----------------|--------|-------|-------|
-| B-01 | **SPK istemci format katmanı**: ConnectIP.bmd, ServerData.bmd, SPK.ini, Data\SPK okuma | `Client\Engine.exe` + `Data\SPK\Config\*.bmd` analizi (yeni adım **2d.0**) | `Source\5.Main\` | ⬜ |
+| B-01 | **SPK istemci format katmanı**: ConnectIP.bmd, ServerData.bmd, SPK.ini, Data\SPK okuma | `Client\Engine.exe` + `Data\SPK\Config\*.bmd` analizi (yeni adım **2d.0**) | `Source\5.Main\` | ✅ 2d.0 (02.10.2026; tablo docs/19 — Engine.exe kabul testi 2d.2'de) |
 | B-02 | SPK client içerik varlıkları (Btn_AutoHp.spk, Btn_AutoPK.spk, ai_newui_skill*.ozj, Config\Info\) | `Client\Data\SPK\` | istemci paketi | ⬜ 2d.0 sonrası |
-| B-03 | GetMainInfo varyant birleşimi — **tasarım tamam** ([08 dokümanı](08-GETMAININFO-TASARIM.md), D1-D9 iş planı) | SPK GetEngine benimsendi; MUIG legacy bayraklı | `Source\6.GetMainInfo\SPK\` | 🔄 2d.1 uygulaması |
-| B-04 | Gömülü IP / config okuma düzeni (H-004) | Canlı değer: 192.168.0.150 | `Source\5.Main\` | ⬜ 2e.1 |
+| B-03 | GetMainInfo varyant birleşimi — **tasarım tamam** ([08 dokümanı](08-GETMAININFO-TASARIM.md), D1-D9 iş planı) | SPK GetEngine benimsendi; MUIG legacy bayraklı | `Source\6.GetMainInfo\GetMainInfo\SPK\` | 🔄 2d.1 (1/2): D1-D3/D6/D7 ✅ canlı araçla bayt-birebir (docs/20); D4/D5 tam jeneratör kaldı |
+| B-04 | Gömülü IP / config okuma düzeni (H-004) | Canlı değer: **45.87.120.29:44405** (ConnectIP.bmd; `192.168.0.150` varsayımı yanlıştı) | `Source\5.Main\` | ✅ 2e.1 (02.10.2026): gömülü değer hizalandı + ConnectIP 0x20/0x22 çalışma anında uygulanıyor (docs/22 §2) |
+| B-06 | **Paket/dağıtım içeriği:** DLL kapanışı (`wzAudio.dll`→`ogg.dll`+`vorbisfile.dll`), APICB/FreeImage importlarının kaldırılması, `Data\SPK\Config` kurulumu | Canlı `Client\` kökü + `Data\SPK\` | istemci paketi | ✅ 2e.2 (02.10.2026): `BuildLog\2e2\deploy_spk_package.sh`; istemci pakette pencere açtı (docs/22 §3) |
+| B-07 | **SPK-first varlık çözümleme katmanı** — istemcinin `Data\Local\*` sabitleri ↔ paketin `Data\SPK\Config\*` tabloları (12 tablo; dil ekli `_<Lang>` kalıbı; `JewelOfHarmonySmelt` canlıda hiç yok) | Kanlı paket (`Data\SPK\Config`) + audit `BuildLog\2e2\asset_audit.txt` | `Source\5.Main\` | ⬜ **2e.4** (2e.2 keşfi; şimdilik kurulum betiğinde yol eşlemesi var — H-012) |
 | B-05 | MUIG 68 özel modülünün canlı karşılığı kontrolü — **TAMAMLANDI**: 29 modül 6 kanıt hattıyla sınıflandırıldı (7 parite-tamam / 3 iş-kalemi 2c'ye / 19 canlıda-yok OFF); rapor [12](12-MUIG68-CAPRAZ-KONTROL.md), ham veri BuildLog\envanter\muig68_* | MUIG donor | — | ✅ 2b.3 (01.10.2026) |
 
 ## C. ORTAK / ALTYAPI

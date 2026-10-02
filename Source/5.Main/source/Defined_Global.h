@@ -53,7 +53,9 @@
 //===
 
 //======
-#define GetGPUUse								1 //Test GPU
+#define GetGPUUse								0 //2e.2: canli SPK paketinde nvapi.dll YOK; 1 iken GPU'suz/VM makinede
+												//      "Couldn't find nvapi.dll" MessageBox'i istemciyi acilista kilitliyordu
+												//      (canli Engine.exe'de nvapi bagimliligi yok).
 #define BTYPECUSTOMSS							6  //Phien Ban Season
 #define NEW_MASTER_SKILL_TREE					1	//Su Dung Master Skill
 
@@ -81,6 +83,7 @@
 #define BOSS_GUILD								1
 #define CTCMINI									1
 #define CB_ANTIHACKGGNEW						0
+#define CB_USE_FREEIMAGE						0 //2e.2: 0 = JPEG icin GDI+ (SPK paketinde FreeImage.dll yok); 1 = donör FreeImage hatti
 #define JEWELBANKVER2							1	
 #define CUSTOM_BRANKINGNEW						1
 #define CB_DANGKYINGAME							1

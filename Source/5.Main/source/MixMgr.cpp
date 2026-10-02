@@ -1122,6 +1122,49 @@ BOOL CMixRecipes::IsJewelItem(CMixItem & rSource)
 	return rSource.m_bIsJewelItem;
 }
 
+// 2e.2: SPK paketinde Mix.bmd Data\Local\Mix.bmd yolunda DEGIL,
+// "Data\\SPK\\Config\\Mix.bmd" yolundadir (canli Engine.exe: "Data\\SPK\\Config%s\\Mix.bmd");
+// ör. canli dosya 87.960 B = 14*4 bayt baslik + 134 kayit * 656 B. Iki yoldan hicbiri
+// yoksa: SPK paketinde ACILISTA OLMEMELI (canli Engine.exe dosyasiz acilir), MUIG
+// duzeninde ise eski fatal davranis aynen korunur.
+static bool CMixRecipeFileExists(const char * szPath)
+{
+	FILE * fp = fopen(szPath, "rb");
+	if (fp == NULL)
+	{
+		return false;
+	}
+	fclose(fp);
+	return true;
+}
+
+void CMixRecipeMgr::OpenRecipeFileSpkFirst(void)
+{
+	static const char * szSpkFile  = "Data\\SPK\\Config\\Mix.bmd";	// SPK paket duzeni
+	static const char * szLocalFile = "Data\\Local\\Mix.bmd";		// MUIG/klasik duzen
+	static const char * szSpkMark  = "Data\\SPK\\ServerData.bmd";	// SPK paket isareti
+
+	if (CMixRecipeFileExists(szSpkFile) != false)
+	{
+		OpenRecipeFile(szSpkFile);
+		return;
+	}
+
+	if (CMixRecipeFileExists(szLocalFile) != false)
+	{
+		OpenRecipeFile(szLocalFile);
+		return;
+	}
+
+	if (CMixRecipeFileExists(szSpkMark) == false)
+	{
+		OpenRecipeFile(szLocalFile);	// MUIG: eski fatal davranis (dosya yok -> MessageBox + exit)
+		return;
+	}
+
+	g_ErrorReport.Write("[SPK] Mix.bmd yok (Data\\SPK\\Config, Data\\Local) - bos recete listesi (2e.2).\r\n");
+}
+
 void CMixRecipeMgr::OpenRecipeFile(const unicode::t_char * szFileName)
 {
 	int i, j;

@@ -1561,8 +1561,11 @@ bool ExceptionCallback(_EXCEPTION_POINTERS* pExceptionInfo )
 	return true;
 }
 #endif
-char* szServerIpAddress = "171.235.182.88";
-WORD g_ServerPort = 63000;
+// 2e.1: gomulu varsayilanlar = canli SPK istemcisinin ConnectIP.bmd degerleri
+// (45.87.120.29 = 2d.2 kaniti TCP hedefi; 44405 = ConnectIP 0x20 IpAddressPort).
+// Calisma aninda bu varsayilanlar SPK okumasiyla ezilir (MainLoad.cpp: LoadConnectIP).
+char* szServerIpAddress = "45.87.120.29";
+WORD g_ServerPort = 44405;
 BYTE Version[SIZE_PROTOCOLVERSION] = { '1' + 1, '0' + 2, '4' + 3, '0' + 4, '5' + 5 };
 BYTE Serial[SIZE_PROTOCOLSERIAL + 1] = { "TbYehR2hFUPBKgZj" };
 #if (GetGPUUse)

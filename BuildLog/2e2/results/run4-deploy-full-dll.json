@@ -1,0 +1,46 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  25,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run4-deploy-full-dll-win-0x270460.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run4-deploy-full-dll-dialog-0x270460.png"
+                    ],
+    "endTime":  "2026-10-02 18:32:26",
+    "label":  "run4-deploy-full-dll",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:1876",
+                               "t":  0.8,
+                               "windows":  [
+                                               "TOP|pid=1876|#32770|Hata|visible=1|hwnd=0x270460",
+                                               "CHILD|Button|Tamam",
+                                               "CHILD|Static|Data\\Local\\Mix.bmd - File not exist.",
+                                               "TOP|pid=1876|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x260104",
+                                               "TOP|pid=1876|IME|Default IME|visible=0|hwnd=0x290424"
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  true,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  1876,
+    "startTime":  "2026-10-02 18:32:20",
+    "processTree":  [
+                        "Main.exe:1876"
+                    ]
+}

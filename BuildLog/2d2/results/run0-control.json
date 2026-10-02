@@ -1,0 +1,28 @@
+﻿{
+    "screenshots":  [
+
+                    ],
+    "windowsHistory":  [
+
+                       ],
+    "process":  {
+                    "exited":  true,
+                    "pid":  2788,
+                    "exitCode":  0
+                },
+    "clientDir":  "C:\\Axion Mu Mobile\\Client and Tools\\Client",
+    "label":  "run0-control",
+    "observeSeconds":  25,
+    "errorTextSeen":  false,
+    "dialogSeen":  false,
+    "startTime":  "2026-10-02 14:25:42",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "53982bf8423f731cef2df6de714e78ff",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "endTime":  "2026-10-02 14:25:42",
+    "errors":  [
+
+               ]
+}

@@ -1,0 +1,4 @@
+DBWIN monitor aktif.
+baslatiliyor: C:\Axion Mu Source\BuildLog\2e2\deploy\Main.exe
+pid=7896
+toplam 0 satir

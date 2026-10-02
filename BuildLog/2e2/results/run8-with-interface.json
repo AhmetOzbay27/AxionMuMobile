@@ -1,0 +1,57 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "8ac74a5b79244943ab5607d408049353"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  30,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run8-with-interface-win-0xC3033C.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run8-with-interface-win-0x28039C.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e2\\shots\\run8-with-interface-dialog-0x28039C.png"
+                    ],
+    "endTime":  "2026-10-02 18:45:34",
+    "label":  "run8-with-interface",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:3652",
+                               "t":  0.9,
+                               "windows":  [
+                                               "TOP|pid=3652|Axion Mu|Axion Mu|visible=1|hwnd=0xC3033C",
+                                               "TOP|pid=3652|IME|Default IME|visible=0|hwnd=0x5803C0",
+                                               "TOP|pid=3652|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x120164"
+                                           ]
+                           },
+                           {
+                               "tree":  "Main.exe:3652",
+                               "t":  1.9,
+                               "windows":  [
+                                               "TOP|pid=3652|#32770|Hata|visible=1|hwnd=0x28039C",
+                                               "CHILD|Button|Tamam",
+                                               "CHILD|Static|Player.bmd file does not exist.",
+                                               "TOP|pid=3652|Axion Mu|Axion Mu|visible=1|hwnd=0xC3033C",
+                                               "TOP|pid=3652|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x120164",
+                                               "TOP|pid=3652|IME|Default IME|visible=0|hwnd=0x5803C0"
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  true,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  3652,
+    "startTime":  "2026-10-02 18:45:27",
+    "processTree":  [
+                        "Main.exe:3652"
+                    ]
+}

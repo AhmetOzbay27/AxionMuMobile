@@ -1,0 +1,9 @@
+"45.87.120.29" ascii: 0x9c2b8c
+"171.235.182.88" ascii: -
+"SPK.ini" ascii: 0x9afcd3,0x9afcde
+"Data\\SPK" ascii: 0x9afb5a,0x9afc18,0x9afd8a,0x9afd9e
+"CBGetMain" ascii: 0x9afb71,0x9afbf6
+"GSPortMin" ascii: 0x9afd68
+"GSPortMax" ascii: 0x9afd78
+"LoadEncDec" ascii: -
+"Main.exe" ascii: 0xa57830

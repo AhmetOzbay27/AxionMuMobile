@@ -142,8 +142,16 @@ typedef unsigned long long Uint64;
 #pragma comment(lib,"..\\ExternalObject\\curl\\libcurl_a.lib")
 
 #endif
+#if (CB_USE_FREEIMAGE)
 #include "ExternalObject\\FreeImage.h"
 #pragma comment(lib, "..\\ExternalObject\\FreeImage.lib")
+#else
+// 2e.2: SPK istemci paketinde FreeImage.dll yok - PNG->JPEG donusumu GDI+ ile yapilir
+// (Windows bileseni; istemci paketine ek DLL tasinmaz - canli pakete parite).
+// gdiplus.h yalnizca ihtiyaci olan ceviri biriminde include edilir (CB_AutoNapGame.cpp;
+// WIN32_LEAN_AND_MEAN nedeniyle objidl.h elle eklenir).
+#pragma comment(lib, "gdiplus.lib")
+#endif // (CB_USE_FREEIMAGE)
 
 
 #include "ExternalObject\\detours.h"
