@@ -30,7 +30,7 @@ ayağa kalkınca doğrulanabilir; canlı ağaca hiç dokunulmadı.
 `GameServer_LOG_CONNECT_smoke1.txt`. DB: `sys.databases` durum + tablo sayısı.
 Rapor: docs/23.
 
-**Commit** — bu kayıt.
+**Commit** — `eea0b584a` (2e.3 sunucu test klasörü).
 
 ---
 
