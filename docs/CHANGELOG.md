@@ -44,7 +44,7 @@ konuldu (`BuildLog\2e4\fix_encoding.js`), yeniden derlendi (md5
 diyalogsuz/çökmesiz, t=21,9 s `45.87.120.29:44405` **SynSent**. Kalan: içerik/şema
 eşlemesi (docs/24 §8, docs/03 B-08). Rapor: docs/24.
 
-**Commit** — (bu kayıt; hash takibi sonraki commit'te)
+**Commit** — `8daa52f38` (2e.4 SPK-first varlık çözümleyici + harita/nesne yol paritesi).
 
 ---
 
