@@ -150,32 +150,42 @@ void CServerDisplayer::SetWindowName() // OK
 
 	char text[256];
 
-	SendMessage(hWndStatusBar, SB_SETPARTS, 6, (LPARAM)iStatusWidths);
+	// SB_SETPARTS basarisinda 0 doner; sifir disi deger hata anlamina gelir.
+	if(SendMessage(hWndStatusBar, SB_SETPARTS, 6, (LPARAM)iStatusWidths) != 0)
+	{
+		gLog.Output(LOG_GENERAL,"[ServerDisplayer] SB_SETPARTS basarisiz (hWnd=%d)",(int)hWndStatusBar);
+	}
 
 
 	gServerInfo.ProcCheckGHRS();
 
 	wsprintf(text, "%02d/%02d/%04d %02d:%02d:%02d [GHRS %d]", TimeServer->tm_mday, TimeServer->tm_mon, TimeServer->tm_year+1900, TimeServer->tm_hour, TimeServer->tm_min, TimeServer->tm_sec , gServerInfo.GHRSMax);
 
-	SendMessage(hWndStatusBar, SB_SETTEXT, 0,(LPARAM)text);
+	// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+	(void)SendMessage(hWndStatusBar, SB_SETTEXT, 0,(LPARAM)text);
 
 	wsprintf(text, "OffStore: %d", gObjOffStore);
 
-	SendMessage(hWndStatusBar, SB_SETTEXT, 1,(LPARAM)text);
+	// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+	(void)SendMessage(hWndStatusBar, SB_SETTEXT, 1,(LPARAM)text);
 
 	wsprintf(text, "OffAttack: %d", gObjOffAttack);
 
-	SendMessage(hWndStatusBar, SB_SETTEXT, 2,(LPARAM)text);
+	// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+	(void)SendMessage(hWndStatusBar, SB_SETTEXT, 2,(LPARAM)text);
 
 	wsprintf(text, "Bots Buffer: %d", gObjTotalBot);
 
-	SendMessage(hWndStatusBar, SB_SETTEXT, 3,(LPARAM)text);
+	// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+	(void)SendMessage(hWndStatusBar, SB_SETTEXT, 3,(LPARAM)text);
 
 	wsprintf(text, "Monsters: %d/%d", gObjTotalMonster,MAX_OBJECT_MONSTER);
 
-	SendMessage(hWndStatusBar, SB_SETTEXT, 4,(LPARAM)text);
+	// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+	(void)SendMessage(hWndStatusBar, SB_SETTEXT, 4,(LPARAM)text);
 
-	SendMessage(hWndStatusBar, SB_SETTEXT, 5,(LPARAM)NULL);
+	// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+	(void)SendMessage(hWndStatusBar, SB_SETTEXT, 5,(LPARAM)NULL);
 
 	ShowWindow(hWndStatusBar, SW_SHOW);
 

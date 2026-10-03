@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "PacketManager.h"
+#include "Log.h"
 
 CPacketManager gPacketManager;
 //////////////////////////////////////////////////////////////////////
@@ -144,6 +145,27 @@ bool CPacketManager::LoadDecryptionKey(char* name) // OK
 	#endif
 }
 
+bool CPacketManager::ReadExact(HANDLE file,void* lpBuffer,DWORD dwSize,DWORD* lpRead,char* name)
+{
+	// Donus degerinin yaninda OKUNAN BAYT SAYISI da denetlenir: kirpik
+	// dosyada ReadFile TRUE donebilir ama istenen baytlarin tamami
+	// okunmamis olur; bu durumda asagidaki tablolar yarim birakilir ve
+	// paket sifreleme sessizce bozulur.
+	if(ReadFile(file,lpBuffer,dwSize,lpRead,0) == 0)
+	{
+		gLog.Output(LOG_GENERAL,"[PacketManager] ReadFile basarisiz [%s] GetLastError=%d istenen=%lu",name,GetLastError(),(unsigned long)dwSize);
+		return false;
+	}
+
+	if(lpRead != NULL && *lpRead != dwSize)
+	{
+		gLog.Output(LOG_GENERAL,"[PacketManager] Eksik okuma [%s] okunan=%lu istenen=%lu",name,(unsigned long)*lpRead,(unsigned long)dwSize);
+		return false;
+	}
+
+	return true;
+}
+
 bool CPacketManager::LoadKey(char* name,WORD header,bool type) // OK
 {
 	#if(GAMESERVER_UPDATE>=701)
@@ -163,7 +185,11 @@ bool CPacketManager::LoadKey(char* name,WORD header,bool type) // OK
 
 	DWORD size;
 
-	ReadFile(file,&HeaderInfo,sizeof(HeaderInfo),&size,0);
+	if(this->ReadExact(file,&HeaderInfo,sizeof(HeaderInfo),&size,name) == false)
+	{
+		CloseHandle(file);
+		return 0;
+	}
 
 	if(HeaderInfo.header != header || HeaderInfo.size != (sizeof(HeaderInfo)+sizeof(ENCDEC_DATA)))
 	{
@@ -184,21 +210,33 @@ bool CPacketManager::LoadKey(char* name,WORD header,bool type) // OK
 
 	DWORD table[4];
 
-	ReadFile(file,table,sizeof(table),&size,0);
+	if(this->ReadExact(file,table,sizeof(table),&size,name) == false)
+	{
+		CloseHandle(file);
+		return 0;
+	}
 
 	for(int n=0;n < 4;n++)
 	{
 		lpData->Modulus[n] = this->m_SaveLoadXor[n]^table[n];
 	}
 
-	ReadFile(file,table,sizeof(table),&size,0);
+	if(this->ReadExact(file,table,sizeof(table),&size,name) == false)
+	{
+		CloseHandle(file);
+		return 0;
+	}
 
 	for(int n=0;n < 4;n++)
 	{
 		lpData->Key[n] = this->m_SaveLoadXor[n]^table[n];
 	}
 
-	ReadFile(file,table,sizeof(table),&size,0);
+	if(this->ReadExact(file,table,sizeof(table),&size,name) == false)
+	{
+		CloseHandle(file);
+		return 0;
+	}
 
 	for(int n=0;n < 4;n++)
 	{

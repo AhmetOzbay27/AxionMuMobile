@@ -1,0 +1,40 @@
+===== GameServer =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  GameServer.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/GameServer.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/GameServer.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/GameServer.cpp' kaynak dosyasç derleniyor)
+  
+  PacketManager.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/PacketManager.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  Kod Åretiliyor
+  5 of 20025 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    293 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
+EXIT_GameServer=0
+===== DataServer =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  DataServer.vcxproj -> C:\Axion Mu Source\Source\2.DataServer\DataServer\Release\DataServer.exe
+EXIT_DataServer=0
+===== JoinServer =====
+
+  JoinServer.vcxproj -> C:\Axion Mu Source\Source\3.JoinServer\JoinServer\Release\JoinServer_EX803\JoinServer.exe
+EXIT_JoinServer=0
+===== ConnectServer =====
+
+  ConnectServer.vcxproj -> C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\Release\ConnectServer_EX803\ConnectServer.exe
+EXIT_ConnectServer=0
+ALL_DONE

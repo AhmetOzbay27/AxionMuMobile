@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 20:55",
+  "updated": "2026-10-03 21:40",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-03 21:40",
+      "kim": "ajan",
+      "text": "Sunucu kaynaklarında OKUMA ve MESAJ hataları tarandı, yok sayılan dönüş değerleri düzeltildi. (istek: \"sunucu kaynaklarındaki tüm mesaj hatalarını ve okuma hatalarını tara, yok sayılan dönüş değerlerini düzelt\")\n\nTARAMA\n • BuildLog/2e8/scan_ignored_returns.js — 4 sunucu ağacı, 121 yok sayılan çağrı\n   (ReadFile/ReadProcessMemory/recv/fread · SendMessage/TranslateMessage/FindWindow\n    · WriteFile/closesocket/CreateDirectory yardımcı sınıf dahil).\n • İlk envanter: OKUMA 4 · MESAJ 19 · yardımcı 98.\n\nGERÇEK KUSUR 1 — okuma: CPacketManager::LoadKey'de 4 ReadFile dönüşü denetlenmiyordu.\n Kırpık anahtar dosyasında tablolar stack artığıyla dolup LoadEncryptionKey yine 1\n dönüyor; sunucu sessizce yanlış şifreleme tablosuyla çalışıyordu.\n → ReadExact yardımcısı: dönüş değeri VE okunan bayt sayısı denetleniyor\n   (kırpık dosyada ReadFile TRUE dönebilir), hata halinde log + CloseHandle + 0.\n\nGERÇEK KUSUR 2 — mesaj: LB_ADDSTRING LB_ERR(-1) döndüğünde bu değer olduğu gibi\n LB_SETITEMDATA'ya geçiyor, onun dönüşü de yok sayılıyordu.\n → LB_ERR denetimi; LB_SETITEMDATA hatasında LB_DELETESTRING ile geri alınıyor;\n   geri alma da hata dönerse loglanıyor.\n\nGERÇEK HATA SİNYALİ OLAN → SB_SETPARTS başarıda 0 döner, sıfır dışı hata: kontrol+log eklendi.\n\nHATA SİNYALİ OLMAYAN → SB_SETTEXT (önceki metin uzunluğu) ve TranslateMessage\n (yalnız karakter mesajlarında TRUE) için uydurma kontrol YAZILMADI; (void) cast'i\n ile bilinçli yok sayma görünür hâle getirildi ve gerekçesi yorumda.\n\nDOĞRULAMA\n • Tarayıcı tekrar: OKUMA 0 · MESAJ 0 (yardımcı 98, kapsam dışı — docs/28 §6)\n • GameServer / DataServer / JoinServer / ConnectServer: dördü de EXIT=0\n • GameServer.exe 11.294.720 B · DataServer.exe 1.059.328 B\n   JoinServer.exe · ConnectServer.exe 103.936 B\n • gLog için PacketManager.cpp ve GameServer.cpp'ye #include \"Log.h\" (stdafx.h içermiyor)\n\nKAPSAM DIŞI (docs/28 §6): closesocket 63 · fclose/fseek 14 · CreateDirectory 12 ·\n fwrite/WriteFile 8 · CreateThread 1 — okuma/mesaj sınıfında değil, ayrı kalem.\n\nKanıt: docs/28-OKUMA-MESAJ-HATASI-TARAMASI.md · BuildLog/2e8/"
+    },
     {
       "ts": "2026-10-03 20:55",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-02 19:10",
       "kim": "ajan",
       "text": "2e.1 + 2e.2 tamamlandı: gömülü IP 45.87.120.29:44405 ile hizalandı; APICB.dll/FreeImage.dll importları kaldırıldı; paket DLL kapanışı (wzAudio->ogg+vorbisfile) ve Data/SPK/Config kurulumu BuildLog/2e2/deploy_spk_package.sh ile yapıldı; istemci pakette kendi penceresini açtı (kanıt: BuildLog/2e2/shots + results/run*.json + KEN.txt/STACK_ERROR). Kalan: tam Data kopyası (disk %100), 2e.4 SPK-first varlık çözümleme katmanı, CSprite::Create boş-bitmap AV (H-011). Raporlar docs/21 + docs/22; CHANGELOG + docs/02-04 güncellendi."
-    },
-    {
-      "ts": "2026-10-02 19:05",
-      "kim": "ajan",
-      "text": "2d.2 kabul testi dokümanı yazıldı (docs/21): canlı Engine.exe bizim üretim ConnectIP+ServerData ile 4 koşu; üretim koşusunda 45.87.120.29:44405 SynSent kanıtı; negatif kontrol dersi (pencere+TCP içerik kanıtı değil, birincil kanıt bayt karşılaştırması)."
     }
   ]
 }

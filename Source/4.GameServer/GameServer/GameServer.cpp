@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Resource.h"
+#include "Log.h"
 #include "BloodCastle.h"
 #include "CastleDeep.h"
 #include "CastleSiege.h"
@@ -158,7 +159,9 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 	{
 		if(TranslateAccelerator(msg.hwnd,hAccelTable,&msg) == 0)
 		{
-			TranslateMessage(&msg);
+			// Donus degeri yalnizca karakter mesajlari icin TRUE'dur; hata sinyali
+			// tasimaz, bu yuzden bilerek yok sayiliyor.
+			(void)TranslateMessage(&msg);
 			DispatchMessageA(&msg);
 		}
 	}
@@ -251,29 +254,39 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam) // 
 
             char text[256];
 
-            SendMessage(hWndStatusBar, SB_SETPARTS, 6, (LPARAM)iStatusWidths);
+            // SB_SETPARTS basarisinda 0 doner; sifir disi deger hata anlamina gelir.
+            if(SendMessage(hWndStatusBar, SB_SETPARTS, 6, (LPARAM)iStatusWidths) != 0)
+            {
+                gLog.Output(LOG_GENERAL,"[GameServer] SB_SETPARTS basarisiz (hWnd=%d)",(int)hWndStatusBar);
+            }
 
 			wsprintf(text, "Gameserver %s - Update %d ", GAMESERVER_NAME, UPDATE_GAMING);
 
-            SendMessage(hWndStatusBar, SB_SETTEXT, 0,(LPARAM)text);
+            // SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+            (void)SendMessage(hWndStatusBar, SB_SETTEXT, 0,(LPARAM)text);
 
 			wsprintf(text, "OffStore: %d", gObjOffStore);
 
-            SendMessage(hWndStatusBar, SB_SETTEXT, 1,(LPARAM)text);
+            // SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+            (void)SendMessage(hWndStatusBar, SB_SETTEXT, 1,(LPARAM)text);
 
 			wsprintf(text, "OffAttack: %d", gObjOffAttack);
 
-            SendMessage(hWndStatusBar, SB_SETTEXT, 2,(LPARAM)text);
+            // SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+            (void)SendMessage(hWndStatusBar, SB_SETTEXT, 2,(LPARAM)text);
 
 			wsprintf(text, "Bots Buffer: %d", gObjTotalBot);
 
-            SendMessage(hWndStatusBar, SB_SETTEXT, 3,(LPARAM)text);
+            // SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+            (void)SendMessage(hWndStatusBar, SB_SETTEXT, 3,(LPARAM)text);
 
 			wsprintf(text, "Monsters: %d/%d", gObjTotalMonster,MAX_OBJECT_MONSTER);
 
-            SendMessage(hWndStatusBar, SB_SETTEXT, 4,(LPARAM)text);
+            // SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+            (void)SendMessage(hWndStatusBar, SB_SETTEXT, 4,(LPARAM)text);
 
-			SendMessage(hWndStatusBar, SB_SETTEXT, 5,(LPARAM)NULL);
+			// SB_SETTEXT'in donusu onceki metnin uzunlugudur; hata sinyali tasimaz.
+			(void)SendMessage(hWndStatusBar, SB_SETTEXT, 5,(LPARAM)NULL);
 
             ShowWindow(hWndStatusBar, SW_SHOW);
 
@@ -672,8 +685,23 @@ LRESULT CALLBACK UserOnline(HWND hDlg,UINT message,WPARAM wParam,LPARAM lParam) 
 					    char fulltext[30]; 
 						wsprintf(fulltext,"%s (%s)",gObj[n].Account,gObj[n].Name);
 
-						int pos = SendMessage(hWndComboBox, LB_ADDSTRING, 0, reinterpret_cast<LPARAM>((LPCTSTR)fulltext));
-						SendMessage(hWndComboBox, LB_SETITEMDATA, pos, (LPARAM) gObj[n].Account);
+						int pos = (int)SendMessage(hWndComboBox, LB_ADDSTRING, 0, reinterpret_cast<LPARAM>((LPCTSTR)fulltext));
+
+						if(pos == LB_ERR || pos < 0)
+						{
+							// LB_ADDSTRING basarisiz oldu; LB_SETITEMDATA -1 ile
+							// cagrilirsa sessizce yanlis yere veri yazilir.
+							continue;
+						}
+
+						if(SendMessage(hWndComboBox, LB_SETITEMDATA, (WPARAM)pos, (LPARAM)gObj[n].Account) == LB_ERR)
+						{
+							// Oge eklendi ama hesap bilgisi baglanamadi -> ogeyi geri al.
+							if(SendMessage(hWndComboBox, LB_DELETESTRING, (WPARAM)pos, 0) == LB_ERR)
+							{
+								gLog.Output(LOG_GENERAL,"[GameServer] LB_DELETESTRING basarisiz (idx=%d)",pos);
+							}
+						}
 				}
 			}
 

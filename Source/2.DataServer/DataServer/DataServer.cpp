@@ -136,7 +136,9 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 	{
 		if(TranslateAccelerator(msg.hwnd,hAccelTable,&msg) == 0)
 		{
-			TranslateMessage(&msg);
+			// Donus degeri yalnizca karakter mesajlari icin TRUE'dur; hata sinyali
+			// tasimaz, bu yuzden bilerek yok sayiliyor.
+			(void)TranslateMessage(&msg);
 			DispatchMessageA(&msg);
 		}
 	}

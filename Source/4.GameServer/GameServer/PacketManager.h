@@ -49,6 +49,8 @@ public:
 	bool ExtractPacket(BYTE* lpBuff);
 	void XorData(int start,int end);
 private:
+	bool ReadExact(HANDLE file,void* lpBuffer,DWORD dwSize,DWORD* lpRead,char* name);
+
 	#if(GAMESERVER_UPDATE>=701)
 	ECB_Mode<DES_XEX3>::Encryption m_Encryption;
 	ECB_Mode<DES_XEX3>::Decryption m_Decryption;

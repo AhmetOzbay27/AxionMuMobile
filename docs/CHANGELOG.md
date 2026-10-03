@@ -8,6 +8,51 @@
 
 
 
+
+## [26.10.03 21:40] Sunucu kaynaklarında okuma + mesaj hatası taraması — yok sayılan dönüş değerleri düzeltildi
+
+**Ne yapıldı**
+
+Tarama tahminle değil ölçümle yapıldı: `BuildLog/2e8/scan_ignored_returns.js`
+ConnectServer/DataServer/JoinServer/GameServer kaynak ağaçlarını tarar ve
+dönüş değeri yakalanmamış API çağrılarını listeler. İlk envanter: **121**
+(kapsama `ReadFile`, `ReadProcessMemory`, `recv`, `fread`, `SendMessage`,
+`TranslateMessage`, `FindWindow`, `closesocket`, `WriteFile` vb. aileler alındı).
+
+**GERÇEK KUSUR 1 — `CPacketManager::LoadKey` (okuma hatası)**
+Dört `ReadFile` dönüşü **hiç denetlenmiyordu**. Kırpık anahtar dosyasında
+`HeaderInfo`/`table[]` stack artığıyla dolup `LoadEncryptionKey` yine de
+`1` dönüyor; sunucu sessizce yanlış şifreleme tablosuyla çalışıyordu.
+→ `CPacketManager::ReadExact` yardımcısı: dönüş değeri **ve** okunan bayt
+sayısı denetleniyor (kırpık dosyada `ReadFile` TRUE dönebilir), hata halinde
+log + `CloseHandle` + `return 0`.
+
+**GERÇEK KUSUR 2 — combo kutusu (mesaj hatası)**
+`LB_ADDSTRING` başarısız olduğunda `LB_ERR` (-1) dönüyor, ama bu değer
+`LB_SETITEMDATA`'ya olduğu gibi geçiriliyor ve onun dönüşü de yok sayılıyordu.
+→ `LB_ERR` denetimi, `LB_SETITEMDATA` hatasında `LB_DELETESTRING` ile geri alma,
+geri alma da `LB_ERR` dönerse loglama.
+
+**Gerçek hata sinyali olanlar kontrol edildi**
+- `SB_SETPARTS`: başarıda 0 döner, sıfır dışı hatadır → kontrol + log eklendi
+  (GameServer.cpp, ServerDisplayer.cpp).
+
+**Hata sinyali olmayanlarda uydurma kontrol yazılmadı**
+- `SB_SETTEXT` önceki metnin uzunluğunu döndürür (`0` = "önceki metin yok"),
+  `TranslateMessage` yalnız karakter mesajlarında TRUE döner. Bunlarda
+  `(void)` cast'i ile "bilinçli yok sayma" kodda görünür hâle getirildi ve
+  gerekçesi yorumda yazıldı.
+
+**Nasıl doğrulandı**
+- `node BuildLog/2e8/scan_ignored_returns.js` → **OKUMA 0, MESAJ 0**
+  (yardımcı sınıf 98; okuma/mesaj değil, §6'da gerekçesiyle listelendi).
+- Dört sunucu da temiz derlendi: GameServer / DataServer / JoinServer /
+  ConnectServer **EXIT=0** (`BuildLog/2e8/build_all_2e8.log`).
+- `gLog` için `PacketManager.cpp` ve `GameServer.cpp`'ye `#include "Log.h"`
+  eklendi (stdafx.h içermiyor; proje düzeni: `Connection.cpp` böyle yapıyor).
+
+**Kanıt:** docs/28-OKUMA-MESAJ-HATASI-TARAMASI.md · BuildLog/2e8/
+
 ## [26.10.03 20:50] H-018 KAPANDI — viewport paketleri sunucu↔istemci arasında bayt-bayt hizalandı
 
 **Ne yapıldı**
