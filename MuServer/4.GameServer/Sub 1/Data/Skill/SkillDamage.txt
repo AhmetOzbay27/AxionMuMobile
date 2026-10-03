@@ -1,0 +1,4 @@
+//Configuration Increase Decrease dame for Each skill.
+//	#Skill		#DamageRateUser		#DamageRateMonster
+
+end

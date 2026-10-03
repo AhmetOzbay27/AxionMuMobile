@@ -1,0 +1,88 @@
+07:18:07 [SocketManager] Server started at port [55901]
+07:26:16 [SocketManager] Server started at port [55901]
+07:30:03 [SocketManager] Server started at port [55901]
+07:30:49 [SocketManager] Server started at port [55901]
+07:37:25 [SocketManager] Server started at port [55901]
+07:41:43 [SocketManager] Server started at port [55901]
+07:45:09 [SocketManager] Server started at port [55901]
+07:54:44 [SocketManager] Server started at port [55901]
+07:58:27 [SocketManager] Server started at port [55901]
+08:01:04 [SocketManager] Server started at port [55901]
+08:03:42 [SocketManager] Server started at port [55901]
+08:06:20 [SocketManager] Server started at port [55901]
+08:06:20 [JoinServer] connecting to 127.0.0.1:63003
+08:06:20 [JoinServer] connected to 127.0.0.1:63003
+08:06:20 [DataServer] connecting to 127.0.0.1:63002
+08:06:20 [DataServer] connected to 127.0.0.1:63002
+08:11:10 [SocketManager] Server started at port [55901]
+08:11:10 [JoinServer] connecting to 127.0.0.1:63003
+08:11:10 [JoinServer] connected to 127.0.0.1:63003
+08:11:10 [DataServer] connecting to 127.0.0.1:63002
+08:11:10 [DataServer] connected to 127.0.0.1:63002
+08:12:42 [SocketManager] Server started at port [55901]
+08:12:43 [JoinServer] connecting to 127.0.0.1:63003
+08:12:43 [JoinServer] connected to 127.0.0.1:63003
+08:12:43 [DataServer] connecting to 127.0.0.1:63002
+08:12:43 [DataServer] connected to 127.0.0.1:63002
+08:17:18 [SocketManager] Server started at port [55901]
+08:17:19 [JoinServer] connecting to 127.0.0.1:63003
+08:17:19 [JoinServer] connected to 127.0.0.1:63003
+08:17:19 [DataServer] connecting to 127.0.0.1:63002
+08:17:19 [DataServer] connected to 127.0.0.1:63002
+08:27:21 [SocketManager] Server started at port [55901]
+08:27:22 [JoinServer] connecting to 127.0.0.1:63003
+08:27:22 [JoinServer] connected to 127.0.0.1:63003
+08:27:22 [DataServer] connecting to 127.0.0.1:63002
+08:27:22 [DataServer] connected to 127.0.0.1:63002
+08:36:44 [SocketManager] Server started at port [55901]
+08:36:45 [JoinServer] connecting to 127.0.0.1:63003
+08:36:45 [JoinServer] connected to 127.0.0.1:63003
+08:36:45 [DataServer] connecting to 127.0.0.1:63002
+08:36:45 [DataServer] connected to 127.0.0.1:63002
+09:37:12 [SocketManager] Server started at port [55901]
+09:37:13 [JoinServer] connecting to 127.0.0.1:63003
+09:37:13 [JoinServer] connected to 127.0.0.1:63003
+09:37:13 [DataServer] connecting to 127.0.0.1:63002
+09:37:13 [DataServer] connected to 127.0.0.1:63002
+09:48:20 [SocketManager] Server started at port [55901]
+09:48:20 [JoinServer] connecting to 127.0.0.1:63003
+09:48:20 [JoinServer] connected to 127.0.0.1:63003
+09:48:20 [DataServer] connecting to 127.0.0.1:63002
+09:48:20 [DataServer] connected to 127.0.0.1:63002
+09:52:27 [SocketManager] Server started at port [55901]
+09:52:27 [JoinServer] connecting to 127.0.0.1:63003
+09:52:27 [JoinServer] connected to 127.0.0.1:63003
+09:52:27 [DataServer] connecting to 127.0.0.1:63002
+09:52:27 [DataServer] connected to 127.0.0.1:63002
+10:16:18 [SocketManager] Server started at port [55901]
+10:16:19 [JoinServer] connecting to 127.0.0.1:63003
+10:16:19 [JoinServer] connected to 127.0.0.1:63003
+10:16:19 [DataServer] connecting to 127.0.0.1:63002
+10:16:19 [DataServer] connected to 127.0.0.1:63002
+11:21:06 [SocketManager] Server started at port [55901]
+11:21:07 [JoinServer] connecting to 127.0.0.1:63003
+11:21:07 [JoinServer] connected to 127.0.0.1:63003
+11:21:07 [DataServer] connecting to 127.0.0.1:63002
+11:21:07 [DataServer] connected to 127.0.0.1:63002
+11:31:56 [SocketManager] Server started at port [55901]
+11:31:56 [JoinServer] connecting to 127.0.0.1:63003
+11:31:56 [JoinServer] connected to 127.0.0.1:63003
+11:31:56 [DataServer] connecting to 127.0.0.1:63002
+11:31:56 [DataServer] connected to 127.0.0.1:63002
+11:41:29 [SocketManager] Server started at port [55901]
+11:41:30 [JoinServer] connecting to 127.0.0.1:63003
+11:41:30 [JoinServer] connected to 127.0.0.1:63003
+11:41:30 [DataServer] connecting to 127.0.0.1:63002
+11:41:30 [DataServer] connected to 127.0.0.1:63002
+11:55:20 [SocketManager] Server started at port [55901]
+11:55:20 [JoinServer] connecting to 127.0.0.1:63003
+11:55:20 [JoinServer] connected to 127.0.0.1:63003
+11:55:20 [DataServer] connecting to 127.0.0.1:63002
+11:55:20 [DataServer] connected to 127.0.0.1:63002
+23:07:56 [SocketManager] Server started at port [55901]
+23:07:56 [JoinServer] connecting to 127.0.0.1:63003
+23:07:57 [Connection] connect() failed with error: 10061
+23:07:57 [JoinServer] connection failed to 127.0.0.1:63003
+23:07:57 [DataServer] connecting to 127.0.0.1:63002
+23:07:59 [Connection] connect() failed with error: 10061
+23:07:59 [DataServer] connection failed to 127.0.0.1:63002

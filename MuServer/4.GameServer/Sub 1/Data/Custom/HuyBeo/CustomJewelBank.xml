@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<SPK Enable="0" MaxPages="3" MaxCount="32">
+	<Item>
+		<SlotItem0  Type="14" Index="13"  Level="0" Return="0"  BundleType="12" BundleIndex="30" />
+		<SlotItem1  Type="14" Index="14"  Level="0" Return="1"  BundleType="12" BundleIndex="31" />
+		<SlotItem2  Type="14" Index="16"  Level="0" Return="2"  BundleType="12" BundleIndex="136" />
+		<SlotItem3  Type="14" Index="22"  Level="0" Return="3"  BundleType="12" BundleIndex="137" />
+		<SlotItem4  Type="14" Index="31"  Level="0" Return="4"  BundleType="12" BundleIndex="138" />
+		<SlotItem5  Type="14" Index="41"  Level="0" Return="5"  BundleType="12" BundleIndex="139" />
+		<SlotItem6  Type="14" Index="42"  Level="0" Return="6"  BundleType="12" BundleIndex="140" />
+		<SlotItem7  Type="12" Index="15"  Level="0" Return="7"  BundleType="12" BundleIndex="141" />
+		<SlotItem8  Type="14" Index="43"  Level="0" Return="8"  BundleType="12" BundleIndex="142" />
+		<SlotItem9  Type="14" Index="44"  Level="0" Return="9"  BundleType="12" BundleIndex="143" />
+		<SlotItem10 Type="12" Index="30"  Level="0" Return="10" />
+		<SlotItem11 Type="12" Index="31"  Level="0" Return="11" />
+		<SlotItem12 Type="12" Index="136" Level="0" Return="12" />
+		<SlotItem13 Type="12" Index="137" Level="0" Return="13" />
+		<SlotItem14 Type="12" Index="138" Level="0" Return="14" />
+		<SlotItem15 Type="12" Index="139" Level="0" Return="15" />
+		<SlotItem16 Type="12" Index="140" Level="0" Return="16" />
+		<SlotItem17 Type="12" Index="141" Level="0" Return="17" />
+		<SlotItem18 Type="12" Index="142" Level="0" Return="18" />
+		<SlotItem19 Type="12" Index="143" Level="0" Return="19" />
+		<SlotItem20 Type="14" Index="244" Level="0" Return="20" />
+		<SlotItem21 Type="14" Index="245" Level="0" Return="21" />
+		<SlotItem22 Type="14" Index="246" Level="0" Return="22" />
+		<SlotItem23 Type="14" Index="247" Level="0" Return="23" />
+		<SlotItem24 Type="14" Index="248" Level="0" Return="24" />
+		<SlotItem25 Type="14" Index="249" Level="0" Return="25" />
+		<SlotItem26 Type="14" Index="250" Level="0" Return="26" />
+		<SlotItem27 Type="14" Index="251" Level="0" Return="27" />
+		<SlotItem28 Type="14" Index="252" Level="0" Return="28" />
+		<SlotItem29 Type="14" Index="259" Level="0" Return="29" />
+		<SlotItem30 Type="14" Index="220" Level="0" Return="30" />
+		<SlotItem31 Type="14" Index="221" Level="0" Return="31" />
+		<SlotItem32 Type="14" Index="222" Level="0" Return="32" />
+		<SlotItem33 Type="14" Index="223" Level="0" Return="33" />
+		<SlotItem34 Type="14" Index="224" Level="0" Return="34" />
+		<SlotItem35 Type="14" Index="225" Level="0" Return="35" />
+		<SlotItem36 Type="14" Index="236" Level="0" Return="36" />
+		<SlotItem37 Type="14" Index="237" Level="0" Return="37" />
+		<SlotItem38 Type="14" Index="238" Level="0" Return="38" />
+		<SlotItem39 Type="14" Index="239" Level="0" Return="39" />
+		
+	</Item>
+	<Message>
+	<Msg Index="0" Text="This function has been disabled" />
+	<Msg Index="1" Text="Your inventory is full" />
+	<Msg Index="2" Text="You have %d %s remaining!" />
+	<Msg Index="3" Text="You don't have enough %s to withdraw!" />
+	</Message>
+</SPK>
