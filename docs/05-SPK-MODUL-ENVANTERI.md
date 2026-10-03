@@ -75,7 +75,7 @@ SkillDamage.cpp map deseninde yakalanamamıştı.)
 | 20 | SPK_ExtendShop.cpp (SPK\) | CExtendShop | ExtendShop.xml | sıfırdan |
 | 21 | SPK_NewXShop.cpp (SPK\) | NewCashShop | CustomShop.xml | sıfırdan |
 | 22 | SPK_ItemTrader.cpp (SPK\) | BotThuMua(er) | ThuMuaDoExc.txt | sıfırdan |
-| 23 | SPK_MonsterSkill.cpp (SPK\) | CCustomMonsterSkill | CustomMonsterSkill.txt | sıfırdan |
+| 23 | SPK_MonsterSkill.cpp (SPK\) | CCustomMonsterSkill | CustomMonsterSkill.txt | sıfırdan ✅ **2c.1-A2 TAMAM** (canlı singleton+vector; veri `Data\SPK\CustomMonsterSkill.txt` byte-birebir — docs/16) |
 | 24 | SPK_CmdSocket.cpp (SPK\) | CCommandUI | CustomCommandSocket.xml | sıfırdan |
 | 25 | SPK_CustomNameColor.cpp (SPK\) | cCustomNameColor | CustomNameColor.ini | sıfırdan |
 | 26 | SPK_StatsInfo.cpp (SPK\) | CSGetInfoCharacter | CharOption.xml (paylaşımlı) | sıfırdan |
@@ -83,13 +83,13 @@ SkillDamage.cpp map deseninde yakalanamamıştı.)
 | 28 | BotOnline.cpp (SPK\) | ObjBotOnline | BotOnline.txt | sıfırdan |
 | 29 | BotTradeMix.cpp (SPK\) | BotTradeMixCore | BotTradeMix.txt | sıfırdan |
 | 30 | CBotMixSystem.cpp (SPK\) | CBotMixSystem | BotTradeMix.txt (paylaşımlı) | sıfırdan |
-| 31 | ActiveInvasions.cpp (SPK\) | CActiveInvasions | — | sıfırdan |
+| 31 | ActiveInvasions.cpp (SPK\) | CActiveInvasions | — | sıfırdan; **02.10 E2E ✅** (docs/17) — 4 zincir bayt-birebir; 4 parite farkı: void `send_list_to_client()` + giriş push'u + `SendThongTinSauKhiVaoGame` canlıda YOK (canlı = F7 pull), `ObjectSetStateProc` respawn `monster_add(true)` bizde EKSİK |
 | 32 | BEventThanMa.cpp (SPK\) | CThanMaChien | — | sıfırdan |
 | 33 | SkyEvent.cpp (SPK\) | cSkyEvent | — | sıfırdan |
 | 34 | TEventGreatPK.cpp (SPK\) | CCustomGreatPK | — | sıfırdan |
 | 35 | CustomDameBoss.cpp (SPK\) | VPDameBoss | — | sıfırdan |
 | 36 | CustomItemPro.cpp (SPK\) | SystemItemChanger | CustomItemPro.xml | sıfırdan |
-| 37 | CustomItemSetPro.cpp (SPK\) | CustomSetDameItem | CustomItemSetPro.xml | sıfırdan |
+| 37 | CustomItemSetPro.cpp (SPK\) | CustomSetDameItem | CustomItemSetPro.xml | sıfırdan; **02.10 A3 ✅** (docs/18) — `SPK\CustomItemSetPro.{cpp,h}`; Load @0x476640 (pugixml `Item[]`+`ItemSet[]`), Save @0x477360, CalcCharacter @0x478BF0 (ItemSet → Section 7..11 varyantı; flag != 0 no-op), CalcSlot wear 2..11; config canlıdan bayt-birebir (50858 B, md5 9b2d6ef9); E2E bekliyor |
 | 38 | CustomNewBuff.cpp (SPK\) | CustomNewBuff | CustomNewBuff.xml | sıfırdan |
 | 39 | CustomLuckySpin.cpp (SPK\) | CCustomLuckySpin | CustomVongQuay.xml | sıfırdan |
 | 40 | GuildUpgrade.cpp (SPK\) | cSystemGuildUpgrade | GuildUpgrade.txt | sıfırdan |

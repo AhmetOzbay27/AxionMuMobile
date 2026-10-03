@@ -4,6 +4,12 @@
 > GetMainInfo tasarımını kesinleştirir. Format detayları:
 > [07-SPK-BMD-FORMAT.md](07-SPK-BMD-FORMAT.md) · Canlı kanıtlar:
 > [06](06-CANLI-SISTEM-ENVANTERI.md) · İş emri: [05](05-SPK-MODUL-ENVANTERI.md).
+>
+> **Durum (02.10.2026):** 2d.1 ilk dalgası uygulandı — **D1, D2, D3 (başlık), D6, D7**
+> tamam; canlı `GetMainInfo.exe` ile 3 senaryoda (baseline + 2 sentinel) ConnectIP,
+> ServerData ve rapor **bayt-birebir**. Şablon stratejisi (§3.4) artık yalnız
+> katalog bölgeleri için geçerli. Kalan: **D4/D5** (kanat/item/LEVEL tam jeneratör) +
+> RenderEffect.bmd üretimi. Rapor: [20-2D1-SPK-GETMAININFO.md](20-2D1-SPK-GETMAININFO.md).
 
 ---
 

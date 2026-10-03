@@ -135,6 +135,25 @@ kayıtlar; güncel bilgi bu docs setidir).
 - MSYS2 bash'te MSBuild çağrıları için `export MSYS2_ARG_CONV_EXCL='*'` şart.
 - Disk ~5 GB boş: büyük temizlik yapmadan yeni workload açma.
 - Git: stale `index.lock` görülürse `rm -f .git/index.lock` (timeout sonrası).
+- **Test bitince sunucuları KAPAT (kural — 02.10.2026, kullanıcı talebi):** doğrulama/test
+  işi biter bitmez `GameServer.exe` + `DataServer.exe` + `JoinServer.exe` +
+  `ConnectServer.exe` (varsa `AntiServer.exe`) **kapatılır** — açık bırakılmaz.
+  Gerekçe: sistem performansı + tur hızı; sunucu yapım aşamasında, oyuncu yok.
+  İhtiyaç anında §5.1 ile yeniden açılır; kurallar ajanın **varsayılan** davranışıdır.
+
+### 5.1 Sunucu yığınını açma / kapatma (test için)
+
+Açma (sırayla, kendi klasörlerinde):
+```powershell
+Start-Process -FilePath 'C:\Axion Mu Source\MuServer\1.ConnectServer\ConnectServer.exe' -WorkingDirectory 'C:\Axion Mu Source\MuServer\1.ConnectServer'
+Start-Process -FilePath 'C:\Axion Mu Source\MuServer\2.DataServer\DataServer.exe'         -WorkingDirectory 'C:\Axion Mu Source\MuServer\2.DataServer'
+Start-Process -FilePath 'C:\Axion Mu Source\MuServer\3.JoinServer\JoinServer.exe'         -WorkingDirectory 'C:\Axion Mu Source\MuServer\3.JoinServer'
+Start-Process -FilePath 'C:\Axion Mu Source\MuServer\4.GameServer\Sub 1\GameServer\GameServer.exe' -WorkingDirectory 'C:\Axion Mu Source\MuServer\4.GameServer\Sub 1\GameServer'
+```
+Kapatma (test bitince zorunlu):
+```bash
+for p in GameServer DataServer JoinServer ConnectServer; do taskkill //IM "$p.exe" //F; done
+```
 
 ---
 
