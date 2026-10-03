@@ -308,6 +308,7 @@
     <ClInclude Include="380ItemType.h" />
     <ClInclude Include="ArcaBattle.h" />
     <ClInclude Include="SPK\SPK_Harmony.h" />
+    <ClInclude Include="SPK\CustomItemSetPro.h" />
     <ClInclude Include="SPK\EventMainManager.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="BattleGround.h" />
@@ -368,7 +369,7 @@
     <ClInclude Include="CustomJewel.h" />
     <ClInclude Include="CustomMix.h" />
     <ClInclude Include="CustomMonster.h" />
-    <ClInclude Include="CustomMonsterSkill.h" />
+    <ClInclude Include="SPK\SPK_MonsterSkill.h" />
     <ClInclude Include="CustomMonterPoint.h" />
     <ClInclude Include="CustomMove.h" />
     <ClInclude Include="CustomNoticeDrop.h" />
@@ -652,7 +653,8 @@
     <ClCompile Include="CustomJewel.cpp" />
     <ClCompile Include="CustomMix.cpp" />
     <ClCompile Include="CustomMonster.cpp" />
-    <ClCompile Include="CustomMonsterSkill.cpp" />
+    <ClCompile Include="SPK\SPK_MonsterSkill.cpp" />
+    <ClCompile Include="SPK\CustomItemSetPro.cpp" />
     <ClCompile Include="CustomMonterPoint.cpp" />
     <ClCompile Include="CustomMove.cpp" />
     <ClCompile Include="CustomNoticeDrop.cpp" />

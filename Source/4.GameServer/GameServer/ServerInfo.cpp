@@ -91,6 +91,7 @@
 #include "Notice.h"
 #include "SPK/PC_AddBuff.h"		// SPK AddBuffer (Faz 2b)
 #include "SPK/SPK_Harmony.h"		// 2c.1-A1: SPK Harmony (canli CustomHarmony.xml)
+#include "SPK/CustomItemSetPro.h"	// 2c.1-A3: SPK CustomItemSetPro (canli CustomItemSetPro.xml)
 #include "SPK/EventMainManager.h"	// 2c.1-B1: EventMainManager iskeleti (canli SPK_EventMainManager)
 #include "SPK/CustomJewelBank.h"	// SPK CustomJewelBank (Faz 2b)
 #include "SPK/SkillDamage.h"		// SPK SkillDamage (Faz 2b)
@@ -122,7 +123,7 @@
 #include "CustomMix.h"
 #include "BotBuffer.h"
 #include "StatsAdvance.h"
-#include "CustomMonsterSkill.h"
+#include "SPK/SPK_MonsterSkill.h"	// 2c.1-A2: SPK MonsterSkill (canli SPK_MonsterSkill.obj)
 #include "CustomPKFree.h"
 #include "TeleportMarlon.h"
 #include "CustomStartItem.h"
@@ -344,6 +345,7 @@ void CServerInfo::ReadCustomInfo() // OK
 {
 	gAddBuffer.Read(gPath.GetFullPath("SPK\\AddBuff.txt"));			// SPK AddBuffer (Faz 2b) — E-05: canli Data\SPK\AddBuff.txt yolu
 	gCustomHarmony.Load(gPath.GetFullPath("SPK\\CustomHarmony.xml"));	// 2c.1-A1: canli SPK\CustomHarmony.xml yolu
+	gCustomSetDameItem.Load(gPath.GetFullPath("SPK\\CustomItemSetPro.xml"));	// 2c.1-A3: canli SPK\CustomItemSetPro.xml yolu (yukleyici 0x569B78 Instance / 0x569BAE Load)
 	gCustomJewelBank.LoadConfig(gPath.GetFullPath("Custom\\HuyBeo\\CustomJewelBank.xml"));	// SPK (Faz 2b)
 	gCustomVongQuay.LoadFileXML(gPath.GetFullPath("Custom\\CustomVongQuay.xml"));
 #if (SAUDOIITEM)
@@ -420,7 +422,7 @@ void CServerInfo::ReadCustomInfo() // OK
 
 	gCustomMonster.Load(gPath.GetFullPath("Custom\\CustomMonster.txt"));
 
-	gCustomMonsterSkill.Load(gPath.GetFullPath("Custom\\CustomMonsterSkill.txt"));
+	gCustomMonsterSkill.Load(gPath.GetFullPath("SPK\\CustomMonsterSkill.txt"));	// 2c.1-A2: canli SPK\CustomMonsterSkill.txt yolu (yukleyici 0x5697C0, yol literali 0x63DCB4)
 
 	gCustomWing.Load(gPath.GetFullPath("Custom\\CustomWing.txt"));
 

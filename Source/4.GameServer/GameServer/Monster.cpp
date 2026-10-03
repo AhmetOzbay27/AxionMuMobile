@@ -45,7 +45,7 @@
 #include "SocketItemType.h"
 #include "Util.h"
 #include "Viewport.h"
-#include "CustomMonsterSkill.h"
+#include "SPK/SPK_MonsterSkill.h"	// 2c.1-A2: SPK MonsterSkill (SPK/ dosya konumu)
 #include "BossGuild.h"
 #include "CustomMonterPoint.h"
 #include "CTCMini.h"
@@ -550,7 +550,10 @@ bool gObjSetMonster(int aIndex,int MonsterClass) // OK
 			gSkillManager.AddSkill(lpObj,SKILL_BIRDS,0);
 		}
 
-		CUSTOM_MONSTER_SKILL* MonsterAttackSkill = gCustomMonsterSkill.GetSkillMonster(MonsterClass);	//<- aquí custommonsterskill
+		// 2c.1-A2: canli gObjSetMonster @0x51FD62 - GetSkillMonster(MonsterClass) -> AddSkill(m_Skill1,0)
+		// + AddSkill(m_Skill2,0). Canlida gorunen CheckSkillRequire*/slot arama cagrilari
+		// AddSkill govdesinin LTCG inline'idir (SkillManager.cpp:798, yalniz OBJECT_USER gated).
+		CUSTOM_MONSTER_SKILL* MonsterAttackSkill = gCustomMonsterSkill.GetSkillMonster(MonsterClass);	//<- aquï¿½ custommonsterskill
 
 		if(MonsterAttackSkill){
 			gSkillManager.AddSkill(lpObj,MonsterAttackSkill->m_Skill1,0);
@@ -729,7 +732,7 @@ void gObjMonsterSetHitDamage(LPOBJ lpObj,int aIndex, QWORD damage) // OK
 	}
 #if(CB_BXHDMG)
 NextHitDmgTop:
-	//==Get Top và Send
+	//==Get Top vï¿½ Send
 	if(gCustomMonster.GetShowBXHDmg(lpObj->Class,lpObj->Map)) gObjMonsterUpdateTop5HitDamage(lpObj);
 #endif
 }
@@ -1664,7 +1667,9 @@ void gObjMonsterAttack(LPOBJ lpObj,LPOBJ lpTarget) // OK
 
 		gSkillManager.CGDurationSkillAttackRecv(&pMsg,lpObj->Index);
 	}
-	else if(lpObj->Class == 561 || gCustomMonsterSkill.GetSkillMonster(lpObj->Class))	//<- aquí custommonsterskill
+	// 2c.1-A2: canli gObjMonsterAttack @0x521571 - Class zincirinin sonunda 0x231 (561) ile ayni hedefe (005215DB)
+	// dallanir: PMSG_DURATION_SKILL_ATTACK_RECV, skillL = (GetLargeRand()%100 >= 25).
+	else if(lpObj->Class == 561 || gCustomMonsterSkill.GetSkillMonster(lpObj->Class))	//<- aquï¿½ custommonsterskill
 	{
 		PMSG_DURATION_SKILL_ATTACK_RECV pMsg;
 

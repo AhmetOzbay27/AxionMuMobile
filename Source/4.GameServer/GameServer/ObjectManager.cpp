@@ -21,6 +21,7 @@
 #include "CustomAttack.h"
 #include "CustomDeathMessage.h"  
 #include "SPK/CustomJewelBank.h"	// SPK (Faz 2b)
+#include "SPK/CustomItemSetPro.h"	// 2c.1-A3: SPK CustomItemSetPro (canli 0x5424D5 karakter zinciri)
 #include "CustomJewel.h"
 #include "CustomMonster.h"
 #include "CustomNpcQuest.h"
@@ -4397,6 +4398,7 @@ void CObjectManager::CharacterCalcAttribute(int aIndex) // OK
 	g380ItemOption.Calc380ItemOption(lpObj, 0);
 	gSocketItemOption.CalcSocketItemOption(lpObj, 0);
 	gMasterSkillTree.CalcMasterSkillTreeOption(lpObj, 0);
+	gCustomSetDameItem.CalcCharacter(lpObj, 0);	// 2c.1-A3: canli 0x5424D5 sirasi (SocketItemOption -> MasterSkillTree -> [bu modul] -> CustomPet)
 #if(CB_VIP_CHAR)
 	gBCustomVIPChar.ActiveBonus(lpObj, 0);
 #endif

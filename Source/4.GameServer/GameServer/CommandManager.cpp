@@ -13,7 +13,7 @@
 #include "CustomAttack.h"
 #include "CustomBuyVip.h"	// E-05 (Faz 2b.2): /reload buyvip
 #include "CustomEventDrop.h"
-#include "CustomMonsterSkill.h"	// Faz 2b.2-R: /reload custommonsterskill
+#include "SPK/SPK_MonsterSkill.h"	// Faz 2b.2-R: /reload custommonsterskill (2c.1-A2: SPK/ yolu)
 #include "CustomPick.h"
 #include "CustomQuest.h"
 #include "CustomQuiz.h"
@@ -3484,7 +3484,7 @@ bool CCommandManager::CommandReload(LPOBJ lpObj,char* arg) // OK
     {
 		gAddBuffer.Reload();
     }
-    else if (strcmp(name,"custommonsterskill") == 0) // Faz 2b.2-R: '[SPK] CustomMonsterSkill configuration saved and reloaded'
+    else if (strcmp(name,"custommonsterskill") == 0) // Faz 2b.2-R: canli string birebir '[SPK] CustomMonsterSkill configuration saved and reloaded.' (nokta dahil, exe 2344740)
     {
 		gCustomMonsterSkill.Reload();
     }

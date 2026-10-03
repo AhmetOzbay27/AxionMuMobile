@@ -24,6 +24,10 @@ struct CUSTOM_JEWEL_UPDATE_INFO
 	int Index;
 	int ItemOld;
 	int ItemNew;
+	// Canli kanit (2c.1 E-07b): canli GameServer.exe'de bolum 3 kayitlari 16 baytlik
+	// CUSTOM_JEWEL_UPGRADE_INFO (Index/ItemIndex/CreateItemIndex/Type) yapisina okunur
+	// (std::vector<CUSTOM_JEWEL_UPGRADE_INFO> 0B4605Ch). Bizim .txt okuyucusu da 4. alani okur.
+	int Type;
 };
 struct CUSTOM_JEWEL_FAILURE_INFO
 {

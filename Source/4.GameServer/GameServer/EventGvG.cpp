@@ -1070,7 +1070,9 @@ void CGvGEvent::UserDieProc(LPOBJ lpObj,LPOBJ lpTarget) // donor birebir (oldure
 
 	//GUILD_INFO_STRUCT* lpGuildInfo = gGuildClass.SearchGuild_Number(lpUserB->Guild);
 
-	this->NoticeSendToAll(0,gMessage.GlobalText(874),lpGuild->Point,lpTarget->GuildName);
+	// 2c.1-B2 takip: canli metni (Message.xml 574) "[GvGEvent] Guild %s scored %d points!"
+	// -> arguman sirasi (guild adi, puan) olarak duzeltildi (donor ters gonderiyordu).
+	this->NoticeSendToAll(0,gMessage.GlobalText(874),lpTarget->GuildName,lpGuild->Point);
 }
 
 void CGvGEvent::NoticeSendToAll(int type,char* message,...) // donor birebir

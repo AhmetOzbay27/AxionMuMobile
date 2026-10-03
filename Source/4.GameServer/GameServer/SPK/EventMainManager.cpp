@@ -164,7 +164,8 @@ void EventMainManager::LoadSkyEvent()
 				break;
 			}
 
-			int stage = lpMemScript->GetNumber();
+			// Bolum (grup) numarasi yalnizca yapisal ayiricidir; her satir kendi Stage kolonunu tasir.
+			lpMemScript->GetNumber();
 
 			while (true)
 			{
@@ -175,15 +176,17 @@ void EventMainManager::LoadSkyEvent()
 
 				SKYEVENT_MONSTER_DATA info;
 				memset(&info, 0, sizeof(info));
-				info.Stage = stage;
-				info.MonsterClass = lpMemScript->GetNumber();
+				// Canli sema (Data\Event\SkyEvent\Monster.ini): satir = Stage Class X Y Dir (5 kolon).
+				// Ilk kolon, end-kontrolunun okudugu token'dir; kalan 4 kolon GetAsNumber ile okunur.
+				info.Stage = lpMemScript->GetNumber();
+				info.MonsterClass = lpMemScript->GetAsNumber();
 				info.Map = 0;
 				info.X = lpMemScript->GetAsNumber();
 				info.Y = lpMemScript->GetAsNumber();
 				info.Dir = lpMemScript->GetAsNumber();
 				info.RespawnTime = 0;
 
-				this->m_SkyEventMonster[stage].push_back(info);
+				this->m_SkyEventMonster[info.Stage].push_back(info);
 			}
 		}
 	}

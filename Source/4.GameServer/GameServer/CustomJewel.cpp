@@ -185,7 +185,13 @@ void CCustomJewel::Load(char* path) // OK
 
 					CUSTOM_JEWEL_INFO info;
 
-					memset(&info,0,sizeof(info));
+					// Canli kanit (2c.1 E-07b): CUSTOM_JEWEL_INFO icinde std::map UpdateInfo vardir.
+					// Tum struct'i memset etmek map'in ic isaretcisini (Myhead) NULL yapar; SetInfo'ya
+					// degerle geciste map kopya kurucusu [eax+4] uzerinden AV (0xC0000005) verir.
+					// Bu yuzden sadece POD alt alanlar sifirlanir, map varsayilan kurucuyla kalir.
+					memset(&info.SuccessInfo,0,sizeof(info.SuccessInfo));
+
+					memset(&info.FailureInfo,0,sizeof(info.FailureInfo));
 
 					info.Index = lpMemScript->GetNumber();
 
@@ -218,8 +224,14 @@ void CCustomJewel::Load(char* path) // OK
 					info.EnableSlotArmor = lpMemScript->GetAsNumber();
 
 					info.EnableSlotWing = lpMemScript->GetAsNumber();
-					
-					info.EnableSlotRing = lpMemScript->GetAsNumber();
+
+					// Canli kanit (2c.1 E-07b): canli GameServer.exe'de CUSTOM_JEWEL_INFO eleman boyu 0xD4=212,
+					// ModelName ofseti 0x54=84'tur -> canli struct 16 sayisal alan + SuccessRate[4] + SalePrice +
+					// ModelName[64] + SuccessInfo + FailureInfo'dir; canlida EnableSlotRing alani YOKTUR.
+					// Canli Data\Custom\CustomJewel.txt satirlari da 12 joker tasir (21 sayi + ModelName).
+					// Bu yuzden .txt yolunda EnableSlotRing OKUNMAZ; alan -1 (kapi kapali = canli davranisi)
+					// olarak birakilir. XML yolunda (LoadXML) alan okunmaya devam eder.
+					info.EnableSlotRing = -1;
 
 					info.SuccessRate[0] = lpMemScript->GetAsNumber();
 
@@ -292,6 +304,32 @@ void CCustomJewel::Load(char* path) // OK
 					info.SocketOption = lpMemScript->GetAsNumber();
 
 					this->SetFailureInfo(info);
+				}
+				else if(section == 3)
+				{
+					// Canli kanit (2c.1 E-07b): canli Load() bolum 3'u de okur (0047AA60 cmp eax,3) ve
+					// satiri 4 sayi olarak okur (Index/ItemIndex/CreateItemIndex/Type). Canli Data\Custom\
+					// CustomJewel.txt de 4 kolonludur; bu dal olmadan ayristirici dosya sonunda bos
+					// token okumaya calisip 1 sn token zaman asimina takilir ("The file were not
+					// configured correctly").
+					if(strcmp("end",lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+
+					CUSTOM_JEWEL_UPDATE_INFO info;
+
+					memset(&info,0,sizeof(info));
+
+					info.Index = lpMemScript->GetNumber();
+
+					info.ItemOld = lpMemScript->GetAsNumber();
+
+					info.ItemNew = lpMemScript->GetAsNumber();
+
+					info.Type = lpMemScript->GetAsNumber();
+
+					this->SetUpdateInfo(info);
 				}
 				else
 				{
