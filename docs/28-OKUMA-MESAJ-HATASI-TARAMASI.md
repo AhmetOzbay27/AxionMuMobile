@@ -164,3 +164,24 @@ ayrı bir turda ele alınabilir.
 | `Source/1.ConnectServer/ConnectServer/ConnectServer.cpp` | `TranslateMessage` |
 | `Source/2.DataServer/DataServer/DataServer.cpp` | `TranslateMessage` |
 | `Source/3.JoinServer/JoinServer/JoinServer.cpp` | `TranslateMessage` |
+## 8. KAPSAM SINIRI — "OKUMA 0" İDDİASININ TAM OLMAYAN YAN
+
+Tarayıcının `READ_APIS`/`MSG_APIS` listeleri **tanımlı API aileleri** için
+geçerlidir; kod tabanındaki *her* okuma çağrısını kapsamaz. Bunu ölçerek
+sabit etmek için `BuildLog/2e8/read_gap_probe.js` yazıldı: aynı "dönüş
+değeri yok sayılmış" kuralı, **listelerde olmayan** okuma ailesi API'lere
+uygulandı.
+
+**Ölçüm sonucu: 102 çağrı** (tanımlı ailelerin dışında)
+
+| API | Adet | Gerçek kusur mu? |
+|---|---|---|
+| `GetPrivateProfileString` | 88 | **Sistematik** — INI/ayar okuması. Dönüş 0 ise anahtar bulunamadı; çağıranın verdiği varsayılan sessizce kullanılır. `ReadFile` kusuruyla **aynı hata sınıfı** (sessiz yapılandırma hatası). 88 çağrı noktası → merkezî yardımcı kararı gerektirir, bu turun kapsamı dışında bırakıldı. |
+| `UuidCreateSequential` | 4 | **Evet, gerçek kusur.** `UUID uuid;` başlatılmadan çağrılıyor; hata halinde `uuid` stack artığı kalıyor ve `ComputerHardwareId2/3` bu artıktan türetiliyor → sessizce yanlış donanım kimliği. Düzeltilmedi: `RPC_S_UUID_LOCAL_ONLY` bu SDK'da tanımsız (`rpcstatus.h` yok) ve yanlış ele alınması donanım kimliğini değiştirirdi. |
+| `localtime` | 4 | **Hayır.** Dönüş atılıyor ama **hiç kullanılmıyor da** — kod `t`'yi doğrudan okuyor. Ölü çağrı; bellek hatası riski yok. |
+| `localtime_s` | 2 | **Hayır.** `errno_t` döner, `struct tm` yine de doldurulur. |
+| `ungetc` | 4 | **Hayır.** Geri itilen karakter bilgilendiricidir. |
+
+Sonuç: **"OKUMA 0 · MESAJ 0" ifadesi tanımlı API aileleri için doğrudur**,
+tüm okuma çağrıları için değildir. Yukarıdaki 102 kalem ayrı iş kalemi olarak
+açıktır; 88'lik `GetPrivateProfileString` grubu bir sonraki turun adayıdır.

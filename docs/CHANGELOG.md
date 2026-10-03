@@ -51,6 +51,20 @@ geri alma da `LB_ERR` dönerse loglama.
 - `gLog` için `PacketManager.cpp` ve `GameServer.cpp`'ye `#include "Log.h"`
   eklendi (stdafx.h içermiyor; proje düzeni: `Connection.cpp` böyle yapıyor).
 
+**Tarayıcının kendisi de sınandı (negatif kontrol)**
+`BuildLog/2e8/scanner_selfcheck.js` bilerek kaçak bir `ReadFile` ve bir
+`SendMessage` yerleştirip sayımın her birini +1 arttırdığını, buna karşılık
+atama / `(void)` / `if` biçimlerini atladığını (toplam +2, +5 değil)
+doğruluyor → **EXIT=0**. "0/0" sonucunun bozuk bir tarayıcıdan gelmediği kanıtı.
+
+**"OKUMA 0 · MESAJ 0" ifadesinin ölçülmüş sınırı**
+Bu sonuç tarayıcının tanımlı API aileleri içindir. Aynı kural, listelerde
+olmayan okuma ailesine uygulandığında (`read_gap_probe.js`) **102** çağrı
+daha çıkıyor: `GetPrivateProfileString` 88 (sistematik sessiz ayar hatası —
+`ReadFile` kusuruyla aynı sınıf), `UuidCreateSequential` 4 (gerçek kusur:
+`UUID` başlatılmıyor, donanım kimliği stack artığından türetiliyor),
+`localtime` 4 / `localtime_s` 2 / `ungetc` 4 (kusur değil). Ayrıntı docs/28 §8.
+
 **Kanıt:** docs/28-OKUMA-MESAJ-HATASI-TARAMASI.md · BuildLog/2e8/
 
 ## [26.10.03 20:50] H-018 KAPANDI — viewport paketleri sunucu↔istemci arasında bayt-bayt hizalandı
