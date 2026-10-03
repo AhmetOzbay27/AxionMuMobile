@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 00:35",
+  "updated": "2026-10-03 01:20",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-03 01:20",
+      "kim": "ajan",
+      "text": "2e.5 TAMAM — B-08 (SPK ToolTipText) + FAZ 3 E2E BAĞLANTI KANITI (docs/25).\n\nB-08: canlı pakette itemtooltiptext_*.bmd yok; tablo düz metin Data\\SPK\\Config\\ToolTipText.txt (19 kayıt) içinde.\nYeni yükleyici load_item_tooltip_text_spk() (ZzzInfomation.cpp) tabloyu tooltip_text_data[] üyesine aktarıyor\n(markup <f c=...></f> temizliği, type=-1), ZzzOpenData itemtooltiptext çözümlenemezse çözümleyici üzerinden çağırıyor.\nRuntime kanıt (Release): KEN.txt → \"[SPK] ToolTipText: 19 kayit\". Derleme md5 c49383bf62c412bf53adf1ec62c67f77 (12.031.488 B).\n\nFAZ 3.1: CS/DS/JS/GS + MuOnlineS6 DB + MuOnlineS6ODBC DSN; GS ServerVersion=1.03.34/ServerSerial=!571Axion@Mobile;\nCS ServerList → 45.87.120.29:55901; e2etest hesabı; istemci ConnectIP = 45.87.120.29:63000 (make_connectip.js).\nFAZ 3.2 (kısmi): istemci ConnectServer'a TCP ESTABLISHED (t≈4,4 s; 100 ms örnekleme) + SUNUCU SEÇİM EKRANI görüntülendi;\ndiyalog/çökme/kalıntı süreç yok (run21/22/26).\n\nYENİ BULGULAR: (H-016) istemci 127.0.0.1 hedefini kasten reddediyor (WSctlc.cpp:230 → hiç SYN yok + MESSAGE_SERVER_LOST)\n→ E2E hedefi makinenin gerçek IPv4'ü olmalı; (H-017) ajan oturumu disconnected (GetForegroundWindow()==0) → UI tıklaması\notomatikleştirilemiyor; sunucu seç → GS/login adımı etkileşimli masaüstü oturumunda elle koşulacak (run22-25 denemeleri, docs/25 §4.3).\n\nKAPANIŞ: H-005/H-006/H-007 kapatıldı (docs/04); B-08 → docs/03 ✅; Faz 3 durumu docs/02; test yığını KAPATILDI (§5.1);\ngeçici kopyalar silindi (2e2\\deploy, 2e3\\deploy, 5Main → ~513 MB kazanç).\n\nGITHUB: remote tanımlı değil, gh CLI ve kimlik bilgisi yok → repo URL + erişim bilgisi gerekli (patron onayı bekleniyor)."
+    },
     {
       "ts": "2026-10-03 00:35",
       "kim": "supervisor",

@@ -177,6 +177,17 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   **diyalogsuz** çalıştı ve canlı sunucuya bağlanma aşamasına ulaştı
   (`45.87.120.29:44405` SynSent; nihai derleme md5 `6dc52f5f…`). Kalan: içerik/şema eşlemesi
   (itemtooltip*/Minimap içeriği → docs/03 B-08). Rapor: docs/24.
+- ✅ **2e.5** **B-08 kapanışı (SPK metin/tooltip şeması)** + **Faz 3 E2E bağlantı kanıtı.**
+  **Bitti (03.10.2026):** canlı paketin `Data\SPK\Config\ToolTipText.txt` tablosu
+  (19 kayıt, düz metin) yeni `load_item_tooltip_text_spk()` yükleyicisiyle istemci
+  tooltip tablosuna aktarıldı (markup temizliği; `type=-1`); çağrı noktası
+  `ZzzOpenData` (itemtooltiptext yoksa çözümleyici üzerinden). Derleme `c49383bf…`
+  (12.031.488 B). E2E: test yığını (CS/DS/JS/GS + `MuOnlineS6` + `MuOnlineS6ODBC`)
+  ayakta; istemci **ConnectServer'a TCP ESTABLISHED** (t≈4,4 s) ve **sunucu seçim
+  ekranı** görüntülendi; sunucu yığını sonra kapatıldı. Yeni bulgu: istemci
+  `127.0.0.1` hedefini kasten reddediyor (WSctlc.cpp:230) → test hedefi makinenin
+  gerçek IPv4'ü olmalı. Kalan: sunucu seç → GS/login adımı etkileşimli oturum
+  gerektiriyor (bağlantısı kesilmiş oturumda fare girdisi işlenmiyor). Rapor: docs/25.
 - ✅ **2e.3** Sunucu tarafı: bizim GS/CS/DS/JS çıktılarının test klasörüne
   kurulması (canlıya dokunmadan), DB restore: `ServerTools\DB_SQL_12.bak`.
 
@@ -192,10 +203,21 @@ envanterinde açık kalem kalmamış.
 ---
 
 ## FAZ 3 — UÇTAN UCA TEST
-- ⬜ 3.1 Test sunucusunu ayağa kaldır (CS/DS/JS/GS bizim derlemeler, test DB).
-- ⬜ 3.2 ClientBuild kopyasıyla bağlantı, login, karakter yaratma, kısa oyun akışı.
+- ✅ 3.1 Test sunucusunu ayağa kaldır (CS/DS/JS/GS bizim derlemeler, test DB).
+  **Bitti (03.10.2026):** yığın kuruldu, yamalar uygulandı (GS ServerVersion 1.03.34 /
+  ServerSerial `!571Axion@Mobile`, DS/JS `MuOnlineS6ODBC` DSN, CS `ServerList.ini` →
+  gerçek IPv4:55901), `e2etest` hesabı eklendi; CS→DS/JS ve GS→DS/JS bağlantıları
+  ESTABLISHED. Test sonrası yığın kapatıldı (docs/25 §5).
+- 🟡 3.2 ClientBuild kopyasıyla bağlantı, login, karakter yaratma, kısa oyun akışı.
+  **Kısmen bitti (03.10.2026):** bağlantı + sunucu listesi ✅ (istemci ConnectServer'a
+  TCP ESTABLISHED, sunucu seçim ekranı render edildi, diyalog/çökme yok — docs/25 §4);
+  **kalan:** sunucu seç → GameServer/login → karakter akışı, etkileşimli masaüstü
+  oturumunda elle koşulmalı (bağlantısı kesilmiş oturumda UI girdisi işlenmiyor —
+  H-017).
 - ⬜ 3.3 Canlı ile davranış karşılaştırma listesi (event, drop, skill vb.).
-- ⬜ 3.4 Sorunları 04-HATA-GUNLUGU.md'ye işle → düzelt → yeniden test.
+- 🟡 3.4 Sorunları 04-HATA-GUNLUGU.md'ye işle → düzelt → yeniden test.
+  **Bu turda:** H-016 (127.0.0.1 reddi → test hedefi kuralı) ve H-017 (disconnected
+  oturum → UI otomasyonu sınırı) kaydedildi; H-005/H-006/H-007 kapatıldı.
 
 ## FAZ 4 — ANDROID PORT DOĞRULAMASI
 - ⬜ 4.1 android\ katmanının güncel kaynakla derleme kontrolü.

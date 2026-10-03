@@ -38,6 +38,9 @@ extern std::map<int, _ITEM_TOOLTIP_TEXT> m_ItemToolTipTextData;
 extern void load_item_tooltip(char* path);
 extern void load_item_level_tooltip(char* path);
 extern void load_item_tooltip_text(char* path);
+// 2e.5 (B-08): SPK modunda itemtooltiptext_<Lang>.bmd yerine Data\SPK\Config\ToolTipText.txt
+// (duz metin) tablosunu yukler.
+extern void load_item_tooltip_text_spk(const char* path);
 extern void set_item_tooltip();
 extern void set_item_level_tooltip();
 extern void set_item_text_tooltip();

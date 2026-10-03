@@ -12,9 +12,20 @@ Durum: 🔴 AÇIK · 🟢 ÇÖZÜLDÜ · 🟡 ERTELENDİ
 
 | ID | Tarih | Bileşen | Hata | Durum |
 |----|-------|---------|------|-------|
-| H-005 | 30.09.2026 | GetMainInfo | Bizim derleme (3,69 MB) canlı istemci akışıyla ilişkisiz varyant; 369 KB SPK GetEngine referansıyla format farkı | 🟡 karar alındı (2a.5): SPK GetEngine hattı benimsendi; uygulama 2d.0/2d.1, kapanış orada |
-| H-006 | 30.09.2026 | GameServer (parite) | Faz 1'de GS "canlıyla birebir" sanıldı — yanlış: eşleşme MuServer'daki ESKİ referansla (10.689.536 B, 28.04.2026); CANLI GS 6.979.072 B ve v100 toolset (msvcp100/msvcr100 kanıtı) | 🔴 → anlayış düzeltildi; parite hedefi işlevsel olacak, boyut değil (bkz. 06 envanter §1) |
-| H-007 | 30.09.2026 | GameServer (Faz 2b) | 0x35 opcode çakışması: yeni AUTOHP kancası mevcut HAISLOTRING `case 0x35` (CGItemEquipRepairRecv) ile C2196 verdi | Canlı SPK çiftinde 0x35 çift tanımlıydı; donörde AUTOHP kazanıyor; bizim SPK istemcisi 0x35'i hiç göndermiyor (AutoHP istemcide yerel, Protect.m_MainInfo.DelayAutoHP) | Donör paritesi: AUTOHP case kaldı, HAISLOTRING tamircisi Protocol.cpp'de `#if(0)` ile kapatıldı (ölü kod, kanıt notuyla) | GS derlemesi temiz; CAUTOHP/gAUTOHP PDB'de doğrulandı |
+| — | — | — | *(Açık hata yok — 03.10.2026 itibarıyla liste boş; H-005/H-006/H-007 kapatıldı)* | — |
+
+**Kapanış notları (03.10.2026, 2e.5 turu):**
+- **H-005** 🟢 → uygulama tamamlandı: SPK `GetEngine` hattı benimsendi ve **2d.0/2d.1**
+  ile bitti (SPKData katmanı + canlı üreticiyle bayt-birebir ConnectIP/ServerData üretimi,
+  docs/19/20); 2e.5'te doğrulama kanıtı aynı hat üzerinden alındı (ConnectIP 36 B, port
+  0x20, canlı 44405/55858 eşleşmesi, `make_connectip.js`).
+- **H-006** 🟢 → anlayış düzeltmesi kalıcı: parite hedefi **işlevsel**, boyut değil; GS
+  tarafında canlı çift (6.979.072 B, v100 toolset) referans alınarak 2c/2e modülleri
+  işlendi; docs/30 parite manifesti ekseni tanımına bu kural yazıldı.
+- **H-007** 🟢 → kapandı: AUTOHP `case 0x35` donör paritesiyle korundu, HAISLOTRING
+  tamircisi `Protocol.cpp` `#if(0)` (ölü kod, kanıt notuyla); docs/32 opcode tahsis
+  tablosunda 0x35 çakışması gerekçe olarak kayıtlı ve yeni tahsisler kullanılan
+  opcode'lardan kaçınılarak yapıldı.
 
 ## ÇÖZÜLEN HATALAR (arşiv)
 
@@ -28,6 +39,8 @@ Durum: 🔴 AÇIK · 🟢 ÇÖZÜLDÜ · 🟡 ERTELENDİ
 | H-011 | 02.10.2026 | Main (Client) | **Eksik bitmap → erişim ihlali:** pakette olmayan bir bitmap (`Data\Interface\gamecensorship_*.tga`, `Data\Effect\*`, `Data\Skill\*` vb.) yüklenemeyince `CSprite::Create` (Sprite.cpp:55) boş sprite ile AV (0xC0000005) veriyordu | Boş doku denetimi yoktu; `FindTexture` başarısız olsa da geçerli `m_nTexID` ile sprite kurulmaya çalışılıyordu | `Sprite.cpp` `CSprite::Create`: doku yoksa log + `m_nTexID = -1` (temiz kurulum dalı işler) | run12/13/14: onlarca `LoadBitmap Failed` satırına rağmen AV/çökme yok (run9'daki AV'nin tersi) |
 | H-012 | 02.10.2026 | Main (Client) | **MUIG ↔ SPK varlık düzeni farkı:** istemci `Data\Local\*` (ve `Data\Local\<Lang>\<Ad>_<Lang>.bmd`) bekliyordu; canlı SPK paketi aynı tabloları `Data\SPK\Config\*` altında taşıyor | İstemci sabitleri canlı paket düzeninden önce yazılmıştı; kalıcı çözümleyici yoktu (geçici: deploy betiğinde yol eşlemesi) | `SPKAsset.cpp` (`SPK_ResolveAssetPath`/`SPK_AssetExists`) 20+ çağrı noktasına bağlandı; deploy eşlemesi artık yalnız yedek | run11→run14: tooltip/quest/pet/slide/… yükleyicileri SPK'dan çözüyor; run14 diyalogsuz (docs/24) |
 | H-014 | 02.10.2026 | Main (Client) | **VIPCharRank fatal diyalogu:** `Data\Custom\VIPCharRank.txt` yoksa `CBInterfaceVIPChar` PC dalı MemScript hatası + `ErrorMessageBox` → `ExitProcess` | Dosya canlı pakette de yok (audit `LIVE-`); Android dalı zaten loglayıp dönüyordu, PC dalı fatal'dı | PC dalında dosya varlığı guard'ı: yoksa log + `return` (fatal değil) | run13/14: diyalog yok (run12'de `[Data\Custom\VIPCharRank.txt] Could not open file` görülmüştü) |
+| H-016 | 03.10.2026 | Test düzeneği (Faz 3) | **İstemci `127.0.0.1` hedefini kasten reddediyor:** `CWsctlc::Connect` (WSctlc.cpp:230-234) loopback adresinde hiç SYN göndermeden `FALSE` döner; `CreateSocket` `MESSAGE_SERVER_LOST` popup'ı açar. ConnectIP `127.0.0.1` yapılan run18/19/20'de ne TCP izleyici ne 63000'deki trap dinleyici **tek paket** görmedi | Canlı istemcinin kendi koruması (parite gereği korunur); test düzeneği adresi yanlıştı | Test hedefi makinenin gerçek IPv4'ü yapıldı (`45.87.120.29:63000`); `BuildLog\2e4\make_connectip.js` üreticisi kullanıldı | run21/22/26: bağlantı t≈4,4 s'de **ESTABLISHED** ve sunucu seçim ekranı; kural docs/25 §4.2 |
+| H-017 | 03.10.2026 | Test düzeneği (Faz 3) | **Bağlantısı kesilmiş oturumda UI otomasyonu imkânsız:** ajan süreci `qwinsta` session 2 `Disc`; `GetForegroundWindow() == 0`. İstemci girdisi `g_bWndActive` koşuluna bağlı (Input.cpp) ve pencere aktif hale getirilemiyor → `PostMessage` (run22), gerçek fare (`mouse_event`, run23), ALT+`SetForegroundWindow` + `WM_ACTIVATE`/`WM_ACTIVATEAPP` (run24), `SetWindowPos(TOPMOST)` + diyagnostik (run25) hiçbiri sunucu butonunu işletmedi | Oturumda etkin pencere kavramı yok (disconnected RDP oturumu) | Sınır kabul edildi: sunucu seç → GS/login adımı **etkileşimli masaüstü oturumunda** koşulacak; otomasyon betikleri (`run22_e2e.ps1`) hazır bırakıldı | run22-25: `foreground=false`, GS'e bağlantı yok, ekran değişmedi (docs/25 §4.3) |
 | H-015 | 02.10.2026 | Main (Client) | **Harita/nesne yol uyumsuzluğu:** kaynak `Data\World%d` + `Data\Object*` istiyordu; canlı paket `Data\Map\World%d` + `Data\Map\Object*` taşıyor → `EncTerrain74.map file corrupted1 (74/-1)` ölümcül diyalogu | Canlı Engine stringleri `Map\World%d` + `Data\Map\Object%d\` düzeninde üretilmiş; bizim literaller MUIG düzeninde kalmıştı | WorldName üretimi 4 dosyada `Map\World%d`; `AccessModel`/`OpenTexture`/`LoadBitmap` merkezi dönüşümleri; Minimap SPK-first | run14: harita yüklendi, diyalog yok, istemci canlı sunucuya bağlanma aşamasına ulaştı (docs/24 §6-7) |
 | H-001 | 30.09.2026 | GameServer | `Resource.h` UTF-16 hasarlı; `IDM_INVASION12+` tanımları yok → C2051 | Bozuk kodlama kaybı | UTF-8 dönüşümü + 101 orijinal tanım kurtarıldı, eksik IDM_/ID_FAKEONLINE_ tanımları eklendi | GS `Release_EX603\|Win32` derlendi, boyut 10.689.536 B (canlı PDB ile birebir) |
 | H-002 | 30.09.2026 | Main | C2535 `GetMessageA` redefinition (CustomMessage.h) | windows.h `#define GetMessage GetMessageA` makrosu sınıf üyesini genişletiyor | Sınıftan ÖNCE `#undef GetMessage` + sınıfta `GetMessageA` alias; `Winmain.cpp` mesaj döngüsünde açık `GetMessageA` | Main derlemesi bu hatasız geçti |

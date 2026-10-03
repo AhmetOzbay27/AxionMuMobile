@@ -8,6 +8,43 @@
 ---
 
 
+## [26.10.03 01:20] 2e.5 — B-08 (SPK ToolTipText yükleyicisi) + Faz 3 E2E bağlantı kanıtı (docs/25)
+
+**Ne yapıldı**
+- **B-08 uygulaması:** canlı pakette `itemtooltiptext_<Lang>.bmd` yok; aynı tablo düz metin
+  olarak `Data\SPK\Config\ToolTipText.txt` (19 kayıt) içinde. Yeni yükleyici
+  `load_item_tooltip_text_spk()` (`Source\5.Main\source\ZzzInfomation.cpp`) bu tabloyu
+  `tooltip_text_data[]`'ya aktarır (markup `<f c='#RRGGBB'>…</f>` temizliği, `type=-1`),
+  ardından gelen `set_item_text_tooltip()` map'i kurar. Çağrı noktası: `ZzzOpenData.cpp`
+  — `itemtooltiptext` çözümlemesi başarısızsa `ToolTipText_<Lang>.txt` çözümleyiciyle
+  (`SPK_ResolveAssetPath` → `Data\SPK\Config\ToolTipText.txt`) yüklenir. Runtime kanıtı
+  KEN.txt'ye yazılır (Release'te `g_ErrorReport` dosyaya yazmaz).
+- **Faz 3.1 test yığını:** CS/DS/JS/GS (bizim derlemeler) + `MuOnlineS6` DB +
+  `MuOnlineS6ODBC` DSN; GS `ServerVersion=1.03.34`/`ServerSerial=!571Axion@Mobile`;
+  CS `ServerList.ini` gerçek IPv4:55901; `e2etest` hesabı; istemci paketinde
+  `ConnectIP.bmd` = 45.87.120.29:63000 (`make_connectip.js` üreticisi).
+- **Faz 3.2 (kısmi):** istemci ConnectServer'a **TCP ESTABLISHED** (t≈4,4 s, 100 ms
+  örnekleme + PID bazlı netstat) ve **sunucu seçim ekranı** render edildi; diyalog/çökme yok.
+- **Yeni bulgular:** (H-016) istemci `127.0.0.1` hedefini kasten reddediyor
+  (`WSctlc.cpp:230` → `MESSAGE_SERVER_LOST`, hiç SYN yok) → E2E hedefi makinenin gerçek
+  IPv4'ü olmalı; (H-017) ajan oturumu `disconnected` (`GetForegroundWindow()==0`) →
+  UI tıklaması otomatikleştirilemiyor, sunucu seç → GS/login adımı etkileşimli oturum ister.
+- **Kapanış:** H-005/H-006/H-007 kapatıldı (docs/04); B-08 durumu docs/03'te güncellendi;
+  Faz 3 durumu docs/02'de işlendi. Test yığını kapatıldı (§5.1) ve geçici kopyalar
+  silindi (`2e2\deploy`, `2e3\deploy`, `5Main` → ~513 MB).
+
+**Neden** — B-08, canlı paketin tooltip metin katmanını bizim istemci şemasına bağlayan
+son içerik kalemiydi; E2E turu da istemcinin gerçek sunucu yığınına bağlanabildiğini
+kanıtlamak için yapıldı (Faz 3 çıkış kriteri).
+
+**Doğrulama** — Derleme: `BuildLog\2e4\build_2e5.log` + `build_2e5b.log` (hata yok,
+LNK4099 hariç), exe md5 `c49383bf62c412bf53adf1ec62c67f77` (12.031.488 B).
+Runtime: run26 KEN.txt → `[SPK] ToolTipText: 19 kayit`; `run21/22/26` TCP kanıtı
+(ESTABLISHED 45.87.120.29:63000) + sunucu seçim ekranı ekran görüntüsü; negatif kanıt
+run19/run20 (127.0.0.1 → trap'e hiç bağlantı yok + popup). Rapor: **docs/25**;
+kanıt: `BuildLog\2e4\{results,shots,evidence}`.
+
+
 ## [26.10.03 00:40] PROTOKOL KAYDI (docs/32) — 16 özelliğe opcode tahsisi
 
 **Ne yapıldı**

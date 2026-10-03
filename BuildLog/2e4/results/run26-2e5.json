@@ -1,0 +1,284 @@
+﻿{
+    "label":  "run26-2e5",
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "observeSeconds":  70,
+    "rootPid":  6304,
+    "exitedEarly":  true,
+    "tcpEvents":  [
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59050",
+                          "remote":  "127.0.0.1:63003",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59051",
+                          "remote":  "127.0.0.1:63002",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "from-local-server",
+                          "local":  "127.0.0.1:63002",
+                          "remote":  "127.0.0.1:59051",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "from-local-server",
+                          "local":  "127.0.0.1:63003",
+                          "remote":  "127.0.0.1:59050",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  4.36,
+                          "tag":  "to-local-server",
+                          "local":  "45.87.120.29:59771",
+                          "remote":  "45.87.120.29:63000",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  4.36,
+                          "tag":  "from-local-server",
+                          "local":  "45.87.120.29:63000",
+                          "remote":  "45.87.120.29:59771",
+                          "state":  "Established"
+                      }
+                  ],
+    "pidConnections":  [
+                           {
+                               "t":  5.16,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  6.4,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  7.63,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  8.95,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  10.18,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  11.42,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  12.72,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  13.98,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  15.19,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  16.39,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  17.55,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  18.84,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  20.07,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  21.28,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  22.53,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  23.77,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  24.94,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  26.17,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  27.37,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  28.8,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  30.03,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  31.22,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  32.43,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  33.7,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  34.94,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  36.2,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  37.44,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  38.71,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  39.89,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  41.51,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  42.7,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  43.86,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  45.09,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  46.3,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  47.49,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  48.71,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  49.92,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  51.21,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  52.38,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  53.55,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  54.81,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  56.03,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  57.27,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  58.45,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  59.67,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  60.87,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  62.13,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  63.37,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  64.7,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  66.09,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  67.28,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  68.48,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           },
+                           {
+                               "t":  69.7,
+                               "line":  "TCP 45.87.120.29:59771 45.87.120.29:63000 ESTABLISHED 6304"
+                           }
+                       ],
+    "windowLog":  [
+                      {
+                          "t":  0.18,
+                          "windows":  [
+                                          "Axion Mu|Axion Mu|vis=0|0xED03CC",
+                                          "IME|Default IME|vis=0|0x4D0406"
+                                      ]
+                      }
+                  ],
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t4s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t8s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t12s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t18s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t25s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t35s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t50s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run26-2e5-t65s.png"
+                    ]
+}

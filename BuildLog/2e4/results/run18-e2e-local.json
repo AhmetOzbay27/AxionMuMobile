@@ -1,0 +1,51 @@
+﻿{
+    "tcpConnections":  [
+
+                       ],
+    "arguments":  "",
+    "md5":  {
+                "Data\\SPK\\ServerData.bmd":  "e3617db760d4b0ceedb2bcd961b3fe55",
+                "SPK.ini":  "763ee1123dc19f6b8a6ed5a46e584b68",
+                "Data\\SPK\\ConnectIP.bmd":  "9087780d8919d9841751fb37190e7890"
+            },
+    "errorTextSeen":  false,
+    "observeSeconds":  75,
+    "clientDir":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy",
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run18-e2e-local-win-0x8E0304.png"
+                    ],
+    "endTime":  "2026-10-03 00:12:56",
+    "label":  "run18-e2e-local",
+    "errors":  [
+
+               ],
+    "windowsHistory":  [
+                           {
+                               "tree":  "Main.exe:8500",
+                               "t":  0.8,
+                               "windows":  [
+                                               "TOP|pid=8500|Axion Mu|Axion Mu|visible=0|hwnd=0x8E0304",
+                                               "TOP|pid=8500|IME|Default IME|visible=0|hwnd=0x3203D4"
+                                           ]
+                           },
+                           {
+                               "tree":  "Main.exe:8500",
+                               "t":  1.5,
+                               "windows":  [
+                                               "TOP|pid=8500|Axion Mu|Axion Mu|visible=1|hwnd=0x8E0304",
+                                               "TOP|pid=8500|IME|Default IME|visible=0|hwnd=0x3203D4",
+                                               "TOP|pid=8500|MSCTFIME UI|MSCTFIME UI|visible=0|hwnd=0x6603F0"
+                                           ]
+                           }
+                       ],
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "dialogSeen":  false,
+    "leftoverProcesses":  [
+
+                          ],
+    "rootPid":  8500,
+    "startTime":  "2026-10-03 00:11:39",
+    "processTree":  [
+                        "Main.exe:8500"
+                    ]
+}

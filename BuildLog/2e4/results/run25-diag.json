@@ -1,0 +1,92 @@
+﻿{
+    "label":  "run25-diag",
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "observeSeconds":  70,
+    "rootPid":  10096,
+    "exitedEarly":  false,
+    "clickConfig":  "0.36,0.39;0.36,0.39;0.05,0.95",
+    "clicks":  [
+                   {
+                       "t":  14.12,
+                       "clientX":  461,
+                       "clientY":  312,
+                       "screenX":  552,
+                       "screenY":  380,
+                       "frac":  "0.36,0.39;0.36,0.39;0.05,0.95",
+                       "mode":  "realInput",
+                       "foreground":  false,
+                       "windowAtPoint":  "Axion Mu|Axion Mu|0xEB03CC",
+                       "cursorAfter":  "CabinetWClass|GameServer|0x8802C0"
+                   },
+                   {
+                       "t":  18.07,
+                       "clientX":  461,
+                       "clientY":  312,
+                       "screenX":  552,
+                       "screenY":  380,
+                       "frac":  "0.36,0.39;0.36,0.39;0.05,0.95",
+                       "mode":  "realInput",
+                       "foreground":  false,
+                       "windowAtPoint":  "Axion Mu|Axion Mu|0xEB03CC",
+                       "cursorAfter":  "CabinetWClass|GameServer|0x8802C0"
+                   },
+                   {
+                       "t":  22.16,
+                       "clientX":  64,
+                       "clientY":  760,
+                       "screenX":  155,
+                       "screenY":  828,
+                       "frac":  "0.36,0.39;0.36,0.39;0.05,0.95",
+                       "mode":  "realInput",
+                       "foreground":  false,
+                       "windowAtPoint":  "Axion Mu|Axion Mu|0xEB03CC",
+                       "cursorAfter":  "CabinetWClass|GameServer|0x8802C0"
+                   }
+               ],
+    "tcpEvents":  [
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59050",
+                          "remote":  "127.0.0.1:63003",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59051",
+                          "remote":  "127.0.0.1:63002",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  4.37,
+                          "tag":  "to-local-server",
+                          "local":  "45.87.120.29:59621",
+                          "remote":  "45.87.120.29:63000",
+                          "state":  "Established"
+                      }
+                  ],
+    "windowLog":  [
+                      {
+                          "t":  0.18,
+                          "windows":  [
+                                          "Axion Mu|Axion Mu|0xEB03CC|83,37,1379,876",
+                                          "IME|Default IME|0x280336|0,0,0,0"
+                                      ],
+                          "clientOffset":  "8,31",
+                          "clientSize":  "1280x800"
+                      }
+                  ],
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t4s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t8s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t12s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t16s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t20s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t24s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t28s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t34s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t45s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run25-diag-t60s.png"
+                    ]
+}

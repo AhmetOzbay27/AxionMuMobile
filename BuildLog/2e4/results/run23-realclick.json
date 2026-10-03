@@ -1,0 +1,73 @@
+﻿{
+    "label":  "run23-realclick",
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "observeSeconds":  80,
+    "rootPid":  8772,
+    "exitedEarly":  false,
+    "clickConfig":  "0.36,0.39",
+    "clicks":  [
+                   {
+                       "t":  14.09,
+                       "clientX":  461,
+                       "clientY":  312,
+                       "screenX":  552,
+                       "screenY":  380,
+                       "frac":  "0.36,0.39",
+                       "mode":  "realInput"
+                   },
+                   {
+                       "t":  19.1,
+                       "clientX":  461,
+                       "clientY":  312,
+                       "screenX":  552,
+                       "screenY":  380,
+                       "frac":  "0.36,0.39",
+                       "mode":  "realInput"
+                   }
+               ],
+    "tcpEvents":  [
+                      {
+                          "t":  0.17,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59050",
+                          "remote":  "127.0.0.1:63003",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.17,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59051",
+                          "remote":  "127.0.0.1:63002",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  3.93,
+                          "tag":  "to-local-server",
+                          "local":  "45.87.120.29:59547",
+                          "remote":  "45.87.120.29:63000",
+                          "state":  "Established"
+                      }
+                  ],
+    "windowLog":  [
+                      {
+                          "t":  0.17,
+                          "windows":  [
+                                          "Axion Mu|Axion Mu|0x85012A|83,37,1379,876",
+                                          "IME|Default IME|0x3603D4|0,0,0,0"
+                                      ],
+                          "clientOffset":  "8,31",
+                          "clientSize":  "1280x800"
+                      }
+                  ],
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t4s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t8s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t12s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t16s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t21s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t26s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t32s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t45s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run23-realclick-t60s.png"
+                    ]
+}

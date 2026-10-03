@@ -1,0 +1,60 @@
+﻿{
+    "label":  "run20-trap",
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "observeSeconds":  65,
+    "rootPid":  5932,
+    "exitedEarly":  true,
+    "tcpEvents":  [
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59050",
+                          "remote":  "127.0.0.1:63003",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59051",
+                          "remote":  "127.0.0.1:63002",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "from-local-server",
+                          "local":  "127.0.0.1:63002",
+                          "remote":  "127.0.0.1:59051",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "from-local-server",
+                          "local":  "127.0.0.1:63003",
+                          "remote":  "127.0.0.1:59050",
+                          "state":  "Established"
+                      }
+                  ],
+    "pidConnections":  [
+
+                       ],
+    "windowLog":  [
+                      {
+                          "t":  0.18,
+                          "windows":  [
+                                          "Axion Mu|Axion Mu|vis=0|0xAD0340",
+                                          "IME|Default IME|vis=0|0x5E040A"
+                                      ]
+                      }
+                  ],
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t3s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t6s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t10s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t14s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t18s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t22s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t30s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t45s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run20-trap-t60s.png"
+                    ]
+}

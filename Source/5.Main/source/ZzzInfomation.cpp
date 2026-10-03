@@ -538,6 +538,103 @@ void load_item_level_tooltip(char* path)
 	}
 }
 
+// 2e.5 (B-08): SPK paketinde itemtooltiptext_<Lang>.bmd YOKTUR; canli paket ayni rolu
+// Data\SPK\Config\ToolTipText.txt ile tasir (duz metin, satir bicimi: <index> "<metin>").
+// Bu yukleyici metin tablosunu tooltip_text_data[]'ya aktarir; hemen ardindan cagrilan
+// set_item_text_tooltip() ayni tabloyu m_ItemToolTipTextData map'ine cevirir.
+// Markup (<f c='#RRGGBB'>...</f>) temizlenir; type = -1 (duz metin) — cagri yerinde
+// (ZzzInventory) type == -1 disindaki degerler islenir, duz metin oldugu gibi basilir.
+void load_item_tooltip_text_spk(const char* path)
+{
+	memset(tooltip_text_data, 0, sizeof(_ITEM_TOOLTIP_TEXT) * TOOLTIP_TEXT_SIZE);
+
+	FILE* fp = fopen(path, "rb");
+	if (fp == NULL)
+	{
+		char Text[256];
+		sprintf(Text, "%s - File not exist (SPK tooltip text).", path);
+		g_ErrorReport.Write(Text);
+		return;
+	}
+
+	char line[1024];
+	int count = 0;
+
+	while (count < TOOLTIP_TEXT_SIZE && fgets(line, sizeof(line), fp) != NULL)
+	{
+		const char* p = line;
+
+		// UTF-8 BOM + bosluk temizligi
+		if ((unsigned char)p[0] == 0xEF && (unsigned char)p[1] == 0xBB && (unsigned char)p[2] == 0xBF)
+			p += 3;
+
+		while (*p == ' ' || *p == '\t')
+			p++;
+
+		if (*p == 0 || *p == '\r' || *p == '\n' || *p == '/')
+			continue;
+
+		if (_strnicmp(p, "end", 3) == 0)
+			break;
+
+		if (*p < '0' || *p > '9')
+			continue;
+
+		int index = atoi(p);
+
+		while (*p != 0 && *p != ' ' && *p != '\t')
+			p++;
+
+		const char* open = strchr(p, '"');
+		if (open == NULL)
+			continue;
+
+		const char* close = strrchr(open + 1, '"');
+		if (close == NULL || close <= open + 1)
+			continue;
+
+		char clean[256];
+		size_t out = 0;
+
+		for (const char* q = open + 1; q < close && out < sizeof(clean) - 1; q++)
+		{
+			if (*q == '<')
+			{
+				const char* gt = strchr(q, '>');
+				if (gt != NULL && gt < close)
+				{
+					q = gt;
+					continue;
+				}
+			}
+
+			clean[out++] = *q;
+		}
+
+		clean[out] = 0;
+
+		tooltip_text_data[count].index = (WORD)index;
+		strncpy_s(tooltip_text_data[count].text, sizeof(tooltip_text_data[count].text), clean, _TRUNCATE);
+		tooltip_text_data[count].type = -1;
+		count++;
+	}
+
+	fclose(fp);
+
+	char Text[256];
+	sprintf(Text, "[SPK] ToolTipText yuklendi: %d kayit (%s).", count, path);
+	g_ErrorReport.Write(Text);
+
+	// Kanit kanali: Release derlemesinde g_ErrorReport dosyaya yazmaz (yalniz DEBUG'da
+	// MuError.log olusur); test kosucusu KEN.txt'yi okur (docs/25 \u00a72).
+	std::ofstream outFile("KEN.txt", std::ios::app);
+	if (outFile.is_open())
+	{
+		outFile << "[SPK] ToolTipText: " << count << " kayit" << std::endl;
+		outFile.close();
+	}
+}
+
 void load_item_tooltip_text(char* path)
 {
 	//sBlockSize = 260;

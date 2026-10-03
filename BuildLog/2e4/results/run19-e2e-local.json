@@ -1,0 +1,56 @@
+﻿{
+    "label":  "run19-e2e-local",
+    "exe":  "C:\\Axion Mu Source\\BuildLog\\2e2\\deploy\\Main.exe",
+    "observeSeconds":  80,
+    "rootPid":  1540,
+    "exitedEarly":  true,
+    "tcpEvents":  [
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59050",
+                          "remote":  "127.0.0.1:63003",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "to-local-server",
+                          "local":  "127.0.0.1:59051",
+                          "remote":  "127.0.0.1:63002",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "from-local-server",
+                          "local":  "127.0.0.1:63002",
+                          "remote":  "127.0.0.1:59051",
+                          "state":  "Established"
+                      },
+                      {
+                          "t":  0.18,
+                          "tag":  "from-local-server",
+                          "local":  "127.0.0.1:63003",
+                          "remote":  "127.0.0.1:59050",
+                          "state":  "Established"
+                      }
+                  ],
+    "pidConnections":  [
+
+                       ],
+    "windowLog":  [
+                      {
+                          "t":  0.18,
+                          "windows":  [
+                                          "Axion Mu|Axion Mu|vis=0|0x2A0444",
+                                          "IME|Default IME|vis=0|0x460406"
+                                      ]
+                      }
+                  ],
+    "screenshots":  [
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run19-e2e-local-t20s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run19-e2e-local-t30s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run19-e2e-local-t45s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run19-e2e-local-t60s.png",
+                        "C:\\Axion Mu Source\\BuildLog\\2e4\\shots\\run19-e2e-local-t75s.png"
+                    ]
+}

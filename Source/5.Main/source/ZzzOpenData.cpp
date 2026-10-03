@@ -5740,6 +5740,13 @@ void OpenBasicData(HDC hDC)
 			char szSkip[256];
 			sprintf_s(szSkip, sizeof(szSkip), "%s yok - atlandi (2e.4).", Text);
 			g_ErrorReport.Write(szSkip);
+
+			// 2e.5 (B-08): SPK paketi ayni tabloyu duz metin olarak tasir
+			// (Data\SPK\Config\ToolTipText.txt). Resolver uzerinden cozulur.
+			sprintf(Text, "Data\\Local\\%s\\ToolTipText_%s.txt", g_strSelectedML.c_str(), g_strSelectedML.c_str());
+			const char* pTooltipText = SPK_ResolveAssetPath(Text);
+			if (SPK_AssetExists(pTooltipText))
+				load_item_tooltip_text_spk(pTooltipText);
 		}
 	}
 
