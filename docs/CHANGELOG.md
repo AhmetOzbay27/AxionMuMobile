@@ -87,9 +87,14 @@
 `ServerTools/MuServer_S6_2020/DB/SQL/Update 12 - C02 Missing Tables.sql` (yeni) ·
 `Source/2.DataServer/DataServer/ChoTroi.cpp`, `GuildMatching.cpp`, `PartyMatching.cpp` ·
 `Source/4.GameServer/GameServer/GameServer.vcxproj`, `Viewport.h`, `Viewport.cpp`,
-`BotAlchemist.cpp` · `BuildLog/2e4/{c02_schema_audit.js,c02_smoke.sql,db_tables.txt,
-c02_schema_report.txt,c02_smoke_output.txt,c02_dataserver_build*.log,build_mapm.bat}` ·
-`BuildLog/2e6/*` · `docs/03`, `docs/04` (H-018), `docs/30`, `Dashboard/data/*`
+`BotAlchemist.cpp` · `Source/Util/mapm/mapm.lib` (yeniden üretildi) ·
+`BuildLog/2e4/{c02_schema_audit.js,c02_need_columns.js,c02_bindcol.js,c02_smoke.sql,
+c02_smoke_output.txt,db_tables.txt,c02_schema_report.txt,c02_missing_columns.txt,
+c02_dataserver_build*.log,build_mapm.bat}` ·
+`BuildLog/2e6/{build_evidence.txt,*.log,dashboard_patch.js}` ·
+`docs/03`, `docs/04` (H-018), `docs/30`, `Dashboard/data/{sohbet,sonuc}.json`
+
+**Commit:** `c74b2343f`
 
 ---
 
