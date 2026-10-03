@@ -12,7 +12,29 @@ Durum: 🔴 AÇIK · 🟢 ÇÖZÜLDÜ · 🟡 ERTELENDİ
 
 | ID | Tarih | Bileşen | Hata | Durum |
 |----|-------|---------|------|-------|
-| — | — | — | *(Açık hata yok — 03.10.2026 itibarıyla liste boş; H-005/H-006/H-007 kapatıldı)* | — |
+| H-018 | 03.10.2026 | GameServer ↔ Main (protokol) | **Viewport paket düzeni uyuşmazlığı:** GS `PMSG_VIEWPORT_PLAYER` / `PMSG_VIEWPORT_CHANGE` (`Viewport.h`) `MuunItem[2]` alanını `attribute`'tan SONRA (upstream 8.03 bloğu) koyar; istemcinin karşılığı olan `PCREATE_CHARACTER` (`WSclient.h:564`) ise `Path`'ten SONRA, `s_BuffCount`'tan ÖNCE konumlandırır ve `Equipment[]`/`attribute`/`level`/`MaxHP`/`CurHP` alanlarını **içermez**. İki yazıcı da `info.MuunItem`'a yazıyor ama **farklı veri** koyuyor: HAISLOTRING bloğu `EquipInventory[EQUIPMENT_PET_1]` (pet ekipmanı), 803 bloğu `MuunInventory[0]` (muun envanteri). İstemci okuduğu alanı `m_dwPetType = Type + 1171` olarak **pet modeli** için kullanıyor | 🔴 **AÇIK — doğrulama gerekiyor** |
+
+### H-018 hakkında bilinenler ve bu turdaki karar
+
+Bu turda **derleme kırılması** giderildi (aşağıda), ancak **protokol doğruluğu
+derinlemesine doğrulanmadı** — çünkü doğrulamanın tek güvenilir yolu canlı pakette
+izleme (Faz 3.3).
+
+| Konu | Durum |
+|---|---|
+| Derleme | ✅ Çözüldü — `Viewport.h`'te iki blok da `HAISLOTRING && GAMESERVER_UPDATE<701` / `GAMESERVER_UPDATE>=803` ile karşılıklı dışlandı. **Paket boyutu her konfigürasyonda aynı (tek 2 bayt alan)** |
+| Yazıcı tutarlılığı | ✅ `Viewport.cpp` 4 yazıcı bloğu da aynı koşulla eşitlendi; `>=701`'de `MuunInventory[0]`, daha eski sürümlerde pet ekipmanı gönderilir |
+| GS ↔ istemci düzen eşleşmesi | ❌ **Doğrulanmadı** — yukarıdaki tablo |
+| Pet ekipmanı **ve** muun envanteri ayrı ayrı gönderilmeli mi? | ❓ Bilinmiyor. İstemci tek alan okuyor; ikinci alanı okuyorsa doğru yerleşim başka olmalı |
+| Karar verilecek yer | **Faz 3.3** — canlı GS ile paket yakalama (aynı karakter için `PMSG_VIEWPORT_PLAYER` baytları canlıyla karşılaştırılacak) |
+
+> **Neden "tahminle çözülmedi":** iki seçenek de tel üzerinde farklı sonuç verir.
+> Alanı teke indirmek (yapılan) paketi derlenebilir ve boyut sabit tutar; ama
+> pet ekipmanı bilgisi ile muun envanteri bilgisinden hangisinin canlıda
+> gönderildiği ancak canlı izleme ile kesinleşir. Bu yüzden risk **gizlenmedi**,
+> `docs/04` açık hata listesine alındı.
+
+
 
 **Kapanış notları (03.10.2026, 2e.5 turu):**
 - **H-005** 🟢 → uygulama tamamlandı: SPK `GetEngine` hattı benimsendi ve **2d.0/2d.1**

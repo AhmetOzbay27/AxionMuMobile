@@ -1,0 +1,64 @@
+Test karakteri: Cont5
+--- 1) ItemMarketData : ChoTroi.cpp:290 GDReqItemSell INSERT (birebir) ---
+test|ok
+----|--
+1a eklenen satir|1
+ID|Account|PriceType|PriceValue
+--|-------|---------|----------
+2|c02test|1|100
+Item
+----
+NULL
+test|Status
+----|------
+1b Status UPDATE|1
+--- 2) CustomItemBank : DataServerProtocol.cpp ---
+test|ItemCount|AutoPick
+----|---------|--------
+2 CustomItemBank|4|1
+--- 3) CustomNpcQuest : DataServerProtocol.cpp (+ Character FK) ---
+test|Quest|Count|MonsterCount
+----|-----|-----|------------
+3 CustomNpcQuest|987654|2|99999
+--- 4/5/6) Envanter blob tablolari (256 / 512 / 992 bayt dolu) ---
+test|bayt
+----|----
+4 EquipInventory|256
+test|bayt
+----|----
+5 EventInventory|512
+test|bayt
+----|----
+6 MuunInventory|992
+--- 7/8) MuRummy ---
+test|Color|Number|Slot|Status|Sequence
+----|-----|------|----|------|--------
+7 MuRummyCard|1|2|1|1|1
+test|TotalScore
+----|----------
+8 MuRummyData|55
+--- 9) PcPointData ---
+test|PcPoint
+----|-------
+9 PcPointData|12
+--- 10) PentagramJewel : 17 sutunlu INSERT ---
+test|Attribute|ItemSection|ItemType|ItemLevel|OptionLevelRank5
+----|---------|-----------|--------|---------|----------------
+10 PentagramJewel|30|31|32|33|16
+--- 11) PShopItemValue ---
+test|Slot|Serial|Value|JoBValue|JoSValue|JoCValue
+----|----|------|-----|--------|--------|--------
+11 PShopItemValue|0|2|101|201|301|401
+--- 12) SNSData ---
+test|bayt
+----|----
+12 SNSData|16
+--- 13) CardPhone ---
+acc|name|card_type|menhgia|card_num|card_num_md5|card_serial|timenap|addvpoint|status|stt|timeduyet
+---|----|---------|-------|--------|------------|-----------|-------|---------|------|---|---------
+c02test|c02test|VIP|7|12345|d41d8cd98f00b204e9800998ecf8427e|SERIAL1|5|8|1|NULL|6
+--- 14) DataNapGame ---
+Account|Name|TienNap|Checking|Status
+-------|----|-------|--------|------
+c02test|c02test|11|20|1
+C-02 DUMAN TESTI TAMAM - 14/14 tablo hatasiz, test satirlari silindi.

@@ -762,7 +762,7 @@ void CViewport::GCViewportPlayerSend(int aIndex) // OK
 		info.ty = (BYTE)lpTarget->TY;
 
 		info.DirAndPkLevel = (lpTarget->Dir*16) | (((this->CheckCustomEventPkViewport(lpTarget,lpObj)==0)?lpTarget->PKLevel:6) & 0x0F);
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (GAMESERVER_UPDATE<701)
 		info.MuunItem[0] = SET_NUMBERHB(lpTarget->EquipInventory[EQUIPMENT_PET_1].m_Index);
 		info.MuunItem[1] = SET_NUMBERLB(lpTarget->EquipInventory[EQUIPMENT_PET_1].m_Index);
 #endif
@@ -1231,7 +1231,7 @@ void CViewport::GCViewportChangeSend(int aIndex) // OK
 		lpTarget->CharSet[0] |= lpTarget->ViewState & 7;
 
 		memcpy(info.CharSet,lpTarget->CharSet,sizeof(info.CharSet));
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (GAMESERVER_UPDATE<701)
 		info.MuunItem[0] = SET_NUMBERHB(lpTarget->EquipInventory[EQUIPMENT_PET_1].m_Index);
 		info.MuunItem[1] = SET_NUMBERLB(lpTarget->EquipInventory[EQUIPMENT_PET_1].m_Index);
 #endif
@@ -1772,7 +1772,7 @@ void CViewport::GCViewportSimplePlayerSend(LPOBJ lpObj) // OK
 	info.ty = (BYTE)lpObj->TY;
 
 	info.DirAndPkLevel = (lpObj->Dir*16) | (((this->CheckCustomEventPkViewport(lpObj,lpObj)==0)?lpObj->PKLevel:6) & 0x0F);
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (GAMESERVER_UPDATE<701)
 	info.MuunItem[0] = SET_NUMBERHB(lpObj->EquipInventory[EQUIPMENT_PET_1].m_Index);
 	info.MuunItem[1] = SET_NUMBERLB(lpObj->EquipInventory[EQUIPMENT_PET_1].m_Index);
 #endif
@@ -2028,7 +2028,7 @@ void CViewport::GCViewportSimpleChangeSend(LPOBJ lpObj) // OK
 	lpObj->CharSet[0] |= lpObj->ViewState & 7;
 
 	memcpy(info.CharSet,lpObj->CharSet,sizeof(info.CharSet));
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (GAMESERVER_UPDATE<701)
 	info.MuunItem[0] = SET_NUMBERHB(lpObj->EquipInventory[EQUIPMENT_PET_1].m_Index);
 	info.MuunItem[1] = SET_NUMBERLB(lpObj->EquipInventory[EQUIPMENT_PET_1].m_Index);
 #endif

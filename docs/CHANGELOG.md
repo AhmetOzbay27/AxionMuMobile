@@ -3,9 +3,96 @@
 > **Kural:** Projede yapılan HER değişiklik buraya kaydedilir — ne, neden,
 > nasıl doğrulandı. Amaç: kalan yerin başka bir yapay zeka / geliştirici
 > tarafından sohbet bağlamı olmadan anlaşılması.
-> Format: [YY.AA.GG] Başlık → Değişen dosyalar → Neden → Doğrulama → Commit.
+> Format: [YY.AA.GG] Başlık → Değişen dosyalar → Neden → Doğrulama → Commit.---
+
+
+
+## [26.10.03 15:30] C-02 KAPANDI — DB şema denetimi + sunucu hattı **tamamen derlenebilir** hale getirildi
+
+**Ne yapıldı**
+
+**(A) C-02 — DB şema uyumu denetimi (sessizce düşmüş görev)**
+- docs/03, C-02'ye *"tam şema uyumu kontrolü Faz 3.1'de yapılacak"* notu koymuştu;
+  Faz 3.1 kapandı ama kontrol **hiç yapılmamıştı**. Bu turda kapatıldı.
+- Denetim gerçek SQL'e karşı yapıldı: 743 kaynak dosyası / 308 SQL dize literal'i tarandı
+  (`BuildLog\2e4\c02_schema_audit.js`), canlı `MuOnlineS6`'daki 55 tabloyla karşılaştırıldı.
+- **Bulgu:** kaynak kodun kullandığı **15 tablodan 14'ü DB'de yoktu** (1'i `dbo` şema
+  önekinin yanlış okunmasıydı). Bu tablolar kullanıldığında "Invalid object name" verir.
+- **Yama:** `ServerTools\MuServer_S6_2020\DB\SQL\Update 12 - C02 Missing Tables.sql`
+  (13 tablo, `IF OBJECT_ID(...) IS NULL` korumalı). `CustomNpcQuest` için resmi
+  `Update13` betiğindeki tanım birebir kullanıldı (varsayılanlar + `Character(Name)` FK).
+- **Kaynakta 2 gerçek hata düzeltildi:**
+  1. `ChoTroi.cpp` — `ItemMarketData` çalışma anında oluşturuluyor ama
+     **eksik ve kırıktı**: `TypeItem`/`Time`/`Pass` sütunları hiç oluşturulmuyordu
+     (`GDReqItemSell` INSERT'i bunları yazıyor → `Invalid column name`), ve `CREATE TABLE`
+     koşulsuz olduğu için DataServer ikinci kez açıldığında tüm `ALTER`'lar da
+     başarısız oluyordu. Tüm ifadeler `IF OBJECT_ID` / `IF COL_LENGTH` korumalı yapıldı.
+  2. `c02_schema_audit.js` — `INSERT INTO dbo.MEMB_INFO(...)` yazımında tablo adı `dbo`
+     sanılıyordu; üç regex'e şema öneki desteği eklendi.
+
+**(B) Sunucu hattı hiç derlenmiyordu (94 hata, 4 ayrı kırılma)**
+- `DataServer`: **24 hata** — `std::transform` bulunamıyordu; `GuildMatching.cpp` ve
+  `PartyMatching.cpp` `<algorithm>` include etmiyordu (aynı projede `CharacterManager.cpp`
+  doğru yapıyor). İkisi tarandı: `<algorithm>` içermeyen tek bu iki dosyaydı.
+- `GameServer`: **68 derleme hatası**
+  - 8 × C1083 — `SPK\` altındaki 8 yeni modül kök dizindeki `stdafx.h`/`Protocol.h`/`User.h`
+    dosyalarını bulamadı; `AdditionalIncludeDirectories` yalnız `Release_EX603` ve
+    `Debug_EX603`'te tanımlıydı. `GameServer.vcxproj`'a koşulsuz `$(ProjectDir)` eklendi.
+  - 56 × C2086 — `Viewport.h`'te `MuunItem[2]` **iki kez** tanımlıydı (`HAISLOTRING` bloğu +
+    `GAMESERVER_UPDATE>=803` bloğu). İki blok karşılıklı dışlandı; paket boyutu her
+    konfigürasyonda **tek 2 bayt alan** olarak aynı kaldı. `Viewport.cpp`'deki 4 yazıcı
+    bloğu da aynı koşulla eşitlendi.
+  - 4 × C2065 — `BotAlchemist.cpp` `MUUN_INVENTORY_SIZE` kullanıyor, `MuunSystem.h`
+    include edilmemiş → include eklendi.
+- `GameServer`: **2 link hatası**
+  - LNK1104 `cryptlib.lib` yok → `cryptlib.vcxproj` v100 istiyor, makinede yok;
+    `-p:PlatformToolset=v143` ile yeniden derlendi (30.742.380 B).
+  - LNK2001 `_fprintf` / `___iob_func` — `mapm.lib` 2015'te VC6 ile üretilmiş
+    (`MKALLMSC.BAT`: `cl /c /O2 /W3 /Zl map*.c`); `mapmutil.c` `fprintf`/`stderr`
+    kullandığı için v100 adlarıyla derlenmiş. `BuildLog\2e4\build_mapm.bat` ile aynı
+    bayraklarla yeniden üretildi. Orijinal `mapm.lib.v100.bak` olarak korundu.
+- `ConnectServer` ve `JoinServer` **aynen temiz** derlendi (dokunulmadı).
+
+**Doğrulama**
+- SQL: `sqlcmd -S 'WIN-4TMUUQ42DNH\SQLEXPRESS' -d MuOnlineS6 -E -i "...\Update 12 - C02 Missing Tables.sql"`
+  → `EXIT=0`. Tablo sayısı **55 → 69**. Betik **iki kez** çalıştırıldı → ikisinde de
+  `EXIT=0`, sayı 69'da kaldı (**idempotency kanıtı**).
+- Yeniden denetim: `node BuildLog\2e4\c02_schema_audit.js .` →
+  `taranan=743 literal=308 db=69 kullanilan=49 **eksik=0** tam=49 fazla=20`.
+- Fonksiyonel duman testi (`BuildLog\2e4\c02_smoke.sql`, `EXIT=0`): 14 tabloya kaynak
+  kodun **birebir** gönderdiği INSERT/UPDATE/SELECT cümleleri koşuldu — hepsi geçti
+  (envanter blob'ları tam boyut: 256/512/992 bayt; `CustomNpcQuest` FK üzerinden;
+  `PentagramJewel` 17 sütun). Test satırlarının hepsi silindi (8 tabloda 0 satır doğrulandı).
+- Derleme kanıtı: `BuildLog\2e6\build_evidence.txt`
+
+| Bileşen | Yapılandırma | Boyut | md5 |
+|---|---|---|---|
+| GameServer.exe | Release_EX803 | 11.294.208 | `3f8f5723c8ae3be1ea645dcce3fc68a4` |
+| DataServer.exe | Release_EX803 | 1.059.328 | `b1e4e23fbcb94f85d97455d913ef64cb` |
+| JoinServer.exe | Release_EX803 | 943.616 | `2c7f74bbb9a9d541bb988bf28eabddcd` |
+| ConnectServer.exe | Release_EX803 | 103.936 | `8f6e6a78d5fa8fdadfd6fce933aa4fcb` |
+| GetMainInfo.exe | Release | 3.723.776 | `1991c037ead6b59129f77e51c0774ae7` |
+
+**Neden önemli**
+- C-02 açık kalemi kapandı; 14 özellik "Invalid object name" hatasıyla çalışmıyordu.
+- Kaynağın **hiçbir** sunucu konfigürasyonu daha önce derlenmemişti. Bu, 2c fazında
+  yazılan 8 SPK modülünün de derleme kanıtı olmadığı anlamına geliyordu.
+- **Açık risk kayda geçti:** `docs/04` **H-018** — GS `PMSG_VIEWPORT_PLAYER` paket düzeni
+  ile istemcinin `PCREATE_CHARACTER` düzeni aynı değil (`MuunItem` konumu, `attribute`/
+  `level`/`MaxHP`/`CurHP` alanlarının yokluğu; pet ekipmanı vs muun envanteri semantiği).
+  Derleme kırılması giderildi ama protokol doğruluğu **tahminle çözülmedi**; canlı paket
+  yakalama ile Faz 3.3'te doğrulanacak.
+
+**Değişen dosyalar** — `docs/26-C02-DB-SEMA-UYUMU.md` (yeni) ·
+`ServerTools/MuServer_S6_2020/DB/SQL/Update 12 - C02 Missing Tables.sql` (yeni) ·
+`Source/2.DataServer/DataServer/ChoTroi.cpp`, `GuildMatching.cpp`, `PartyMatching.cpp` ·
+`Source/4.GameServer/GameServer/GameServer.vcxproj`, `Viewport.h`, `Viewport.cpp`,
+`BotAlchemist.cpp` · `BuildLog/2e4/{c02_schema_audit.js,c02_smoke.sql,db_tables.txt,
+c02_schema_report.txt,c02_smoke_output.txt,c02_dataserver_build*.log,build_mapm.bat}` ·
+`BuildLog/2e6/*` · `docs/03`, `docs/04` (H-018), `docs/30`, `Dashboard/data/*`
 
 ---
+
 
 
 ## [26.10.03 06:30] GITHUB — kaynak GitHub'a yüklendi (remote `origin`)

@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <algorithm>
 #include "GuildMatching.h"
 #include "CharacterManager.h"
 #include "SocketManager.h"

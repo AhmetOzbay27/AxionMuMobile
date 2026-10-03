@@ -1,0 +1,16 @@
+.NET Framework i‡in MSBuild srm 17.14.60+43b635718
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  AllowableIpList.cpp
+  GuildMatching.cpp
+  Helper.cpp
+  LuckyCoin.cpp
+  PartyMatching.cpp
+  PcPoint.cpp
+  Kod retiliyor
+  Previous IPDB not found, fall back to full compilation.
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(329): warning C4172: yerel de§iŸkenin veya ge‡ici : buffer'nin adresini d”ndryor [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  All 1634 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun retilmesi tamamland
+  DataServer.vcxproj -> C:\Axion Mu Source\Source\2.DataServer\DataServer\Release\DataServer.exe
+EXIT=0

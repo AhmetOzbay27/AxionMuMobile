@@ -1,0 +1,7 @@
+===== ConnectServer =====
+  ConnectServer.vcxproj -> C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\Release\ConnectServer_EX803\ConnectServer.exe
+MSBUILD_EXIT=0
+===== JoinServer =====
+  JoinServer.vcxproj -> C:\Axion Mu Source\Source\3.JoinServer\JoinServer\Release\JoinServer_EX803\JoinServer.exe
+MSBUILD_EXIT=0
+ALLDONE

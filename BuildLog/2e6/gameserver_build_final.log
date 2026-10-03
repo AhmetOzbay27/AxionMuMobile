@@ -1,0 +1,26 @@
+.NET Framework i‡in MSBuild srm 17.14.60+43b635718
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  Kod retiliyor
+  Previous IPDB not found, fall back to full compilation.
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SauChangeItem.cpp(136): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(182): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ResetTableVIP.cpp(118): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ResetTable.cpp(159): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(133): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBCongHuong.cpp(674): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\CustomJewelBank.cpp(51): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(128): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CB_BotTrader.cpp(44): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(87): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(106): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(498): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomChoTroi.cpp(124): warning C4172: yerel de§iŸkenin veya ge‡ici : Error'nin adresini d”ndryor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BattleSurvivor.cpp(871): warning C4700: baŸlatlmamŸ yerel de§iŸken 'pMsg' kullanld [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(4682): warning C4715: 'CCommandManager::CommandSetReset': tm denetim yollar de§er d”ndrmez [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BossGuild.cpp(1483): warning C4700: baŸlatlmamŸ yerel de§iŸken 'GuildNumber' kullanld [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(4657): warning C4715: 'CCommandManager::CommandSetLevel': tm denetim yollar de§er d”ndrmez [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  All 20025 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun retilmesi tamamland
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
+EXIT=0

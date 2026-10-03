@@ -1,0 +1,70 @@
+C-02 / derleme kanitlari — 03.10.2026
+=========================================
+
+Bu dosya, 2e.6 turunda DERLENEN tum sunucu/arac binerlerini ve bunlari
+elde etmek icin cozulen derleme kiriklarini ozetler.
+
+KOMUT SATIRI (hepsi icin ortak)
+  "/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe" <proje> -p:Configuration=<cfg> -p:Platform=Win32 -m -v:minimal
+
+SONUC
+--------------------------
+  Bilesen           Yapilandirma      Boyut (B)   md5                                Durum
+  -----------------------------------------------------------------------------------------------
+  GameServer.exe    Release_EX803      11.294.208  3f8f5723c8ae3be1ea645dcce3fc68a4   EXIT=0  (bu turda onarildi)
+  DataServer.exe    Release_EX803       1.059.328  b1e4e23fbcb94f85d97455d913ef64cb   EXIT=0  (bu turda onarildi)
+  JoinServer.exe    Release_EX803         943.616  2c7f74bbb9a9d541bb988bf28eabddcd   EXIT=0  (dokunulmadi)
+  ConnectServer.exe Release_EX803         103.936  8f6e6a78d5fa8fdadfd6fce933aa4fcb   EXIT=0  (dokunulmadi)
+  GetMainInfo.exe   Release            3.723.776  1991c037ead6b59129f77e51c0774ae7   EXIT=0  (dokunulmadi)
+  Main.exe          Global Release     12.031.488  c49383bf62c412bf53adf1ec62c67f77   EXIT=0  (2e.5'te uretilmis)
+
+  Cikti dizinleri:
+    GameServer.exe  -> "MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe"   (+ .pdb 19.181.568 B)
+    DataServer.exe  -> Source\2.DataServer\DataServer\Release\DataServer.exe
+    JoinServer.exe  -> Source\3.JoinServer\JoinServer\Release\JoinServer_EX803\JoinServer.exe
+    ConnectServer.exe -> Source\1.ConnectServer\ConnectServer\Release\ConnectServer_EX803\ConnectServer.exe
+    GetMainInfo.exe -> GetMain\GetMainInfo.exe
+
+COZULEN DERLEME KIRIKLARI (4 ayri hata sinifi, 94 hata)
+---------------------------------------------------------
+1) DataServer — 24 hata: std::transform bulunamadi
+   GuildMatching.cpp / PartyMatching.cpp -> #include <algorithm> eksikti.
+   Kanit: c02_dataserver_build_baseline.log (build/2e4), c02_dataserver_build.log
+
+2) GameServer — 8 hata C1083 (include bulunamadi)
+   SPK/ alt klasorundeki 8 yeni modul kok dizindeki stdafx.h / Protocol.h /
+   User.h / CommandManager.h dosyalarini tirnakli include ile bulamadi.
+   Sebep: AdditionalIncludeDirectories yalniz Release_EX603 ve Debug_EX603
+   konfigurasyonlarinda tanimliydi.
+   Cozum: GameServer.vcxproj'a kosulsuz bir ItemDefinitionGroup ile
+   $(ProjectDir) eklendi -> 8 konfigurasyonun tamaminda gecerli.
+   Kanit: gameserver_build_baseline.log
+
+3) GameServer — 56 hata C2086 + 4 hata C2065
+   C2086: Viewport.h'te MuunItem[2] iki kez tanimliydi
+          (HAISLOTRING blogu + GAMESERVER_UPDATE>=803 blogu).
+          -> iki blok da birbirini dislayacak sekilde kosullandirildi;
+             paket boyutu HER konfigurasyonda tek 2 bayt alan olarak ayni kaldi.
+             ACIK RISK: docs/04 H-018 (protokol dogrulamasi Faz 3.3'te).
+   C2065: BotAlchemist.cpp MUUN_INVENTORY_SIZE kullaniyor, MuunSystem.h
+          include edilmemiş -> #include "MuunSystem.h" eklendi.
+
+4) GameServer — 2 hata LNK2001 (link)
+   a) LNK1104: ..\..\Util\cryptopp\Release\cryptlib.lib yok.
+      cryptlib.vcxproj v100 (VS2010) toolset istiyor, makinede yok.
+      Cozum: -p:PlatformToolset=v143 ile yeniden derlendi (30.742.380 B).
+   b) LNK2001 _fprintf / ___iob_func: mapm.lib 2015'te VC6 ile uretilmis
+      (MKALLMSC.BAT: "cl /c /O2 /W3 /Zl map*.c"). mapmutl1.obj icindeki
+      mapmutil.c fprintf/stderr kullaniyor; v100'de bunlar _fprintf ve
+      ___iob_func adlarini aliyor, modern UCRT'de yok.
+      Cozum: BuildLog\2e4\build_mapm.bat ile ayni bayraklarla yeniden derlendi.
+      Orijinal korundu: Source\Util\mapm\mapm.lib.v100.bak
+      Kanit: cryptlib_build.log, mapm_build.log
+
+BULGULAR
+--------
+* Kaynagin hicbir konfigurasyonu daha once derlenmemisti (68 derleme + 2 link
+  hatasi). Bu, 2c fazinda yazilan 8 SPK modulunun derleme kaniti olmadigi
+  anlamina geliyordu.
+* Bu turda 5 binerin tamami derlendi; sunucu hatti uctan uca derlenebilir
+  durumda.

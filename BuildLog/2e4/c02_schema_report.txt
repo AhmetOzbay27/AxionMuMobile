@@ -1,0 +1,112 @@
+C-02 — DB SEMA UYUMU DENETIMI (kaynak kodu vs canli MuOnlineS6)
+Tarih: 03.10.2026 · Bekleyen gorev: docs/03 C-02 "tam sema uyumu kontrolu Faz 3.1'de"
+
+Taranan kaynak dosyasi : 743
+SQL dize literal sayisi : 308
+Canli DB tablo sayisi    : 69
+Kaynakta kullanilan tablo: 49
+
+=== A) KULLANILAN VE DB'DE OLAN (49) ===
+  OK   accountcharacter  (1 dosya)
+  OK   cardphone  (1 dosya)
+  OK   cashshopdata  (1 dosya)
+  OK   cashshopinventory  (1 dosya)
+  OK   cashshopperiodicitem  (1 dosya)
+  OK   character  (3 dosya)
+  OK   customattack  (1 dosya)
+  OK   customgift  (1 dosya)
+  OK   customitembank  (1 dosya)
+  OK   customnpcquest  (1 dosya)
+  OK   customquest  (1 dosya)
+  OK   datanapgame  (2 dosya)
+  OK   equipinventory  (1 dosya)
+  OK   eventinventory  (1 dosya)
+  OK   eventleothehelper  (1 dosya)
+  OK   eventsantaclaus  (1 dosya)
+  OK   extwarehouse  (1 dosya)
+  OK   gameserverinfo  (1 dosya)
+  OK   gens_rank  (1 dosya)
+  OK   gens_reward  (1 dosya)
+  OK   guild  (2 dosya)
+  OK   guildmember  (2 dosya)
+  OK   helperdata  (1 dosya)
+  OK   itemmarketdata  (1 dosya)
+  OK   log_creditos  (1 dosya)
+  OK   luckycoin  (1 dosya)
+  OK   luckyitem  (1 dosya)
+  OK   masterskilltree  (2 dosya)
+  OK   memb_info  (4 dosya)
+  OK   murummycard  (1 dosya)
+  OK   murummydata  (1 dosya)
+  OK   muuninventory  (1 dosya)
+  OK   optiondata  (1 dosya)
+  OK   pcpointdata  (1 dosya)
+  OK   pentagramjewel  (1 dosya)
+  OK   pshopitemvalue  (1 dosya)
+  OK   questkillcount  (1 dosya)
+  OK   questworld  (1 dosya)
+  OK   rankingduel  (1 dosya)
+  OK   rankingkingguild  (1 dosya)
+  OK   rankingkingplayer  (1 dosya)
+  OK   snsdata  (1 dosya)
+  OK   t_friendlist  (1 dosya)
+  OK   t_friendmail  (1 dosya)
+  OK   t_friendmain  (1 dosya)
+  OK   t_petitem_info  (1 dosya)
+  OK   t_waitfriend  (1 dosya)
+  OK   warehouse  (1 dosya)
+  OK   warehouseguild  (2 dosya)
+
+=== B) KULLANILAN AMA DB'DE OLMAYAN — EKSIK TABLO (0) ===
+  (yok)
+
+=== C) DB'DE OLUP KAYNAKTA KULLANILMAYAN (20) ===
+  cashlog, defaultclasstype, gens_duprian, gens_varnert, itemlog, marry, memb_stat, mk_server, mucastle_data, mucastle_money_statistics, mucastle_npc, mucastle_reg_siege, mucastle_siege_guildlist, rankingbloodcastle, rankingchaoscastle, rankingdevilsquare, rankingillusiontemple, rankingtvt, t_cguid, wz_cw_info
+
+=== D) INSERT/UPDATE ile yazilan sutunlar (kapsam dogrulamasi icin) ===
+  accountcharacter: id, gameidc, extwarehouse, extclass
+  cardphone: acc, name, card_type, menhgia, card_num, card_num_md5, card_serial, timenap, status, timeduyet, addvpoint
+  cashshopdata: accountid, wcoinc, wcoinp, goblinpoint, ruud
+  cashshopinventory: mainitemcode, accountid, inventorytype, packagemainindex, productbaseindex, productmainindex, coinvalue, producttype, giftname, gifttext
+  cashshopperiodicitem: itemserial, time
+  character: ctlcode, bloc_expire, thegift, clevel, class, leveluppoint, experience, strength, dexterity, vitality, energy, leadership, inventory, magiclist, money, life, maxlife, mana, maxmana, bp, maxbp, shield, maxshield, mapnumber, mapposx, mapposy, mapdir, pkcount, pklevel, pktime, quest, effectlist, fruitaddpoint, fruitsubpoint, extinventory, kills, deads, danhhieu, mlvvipchar, mpointvipchar, nquest_status, nquest_lv, nquest_c1, nquest_c2, nquest_c3, nquest_c4, nquest_c5
+  customattack: name, active, skill, map, posx, posy, autobuff, offpvp, autoreset, autoaddstr, autoaddagi, autoaddvit, autoaddene, autoaddcmd
+  customgift: accountid, quantity
+  customitembank: accountid, itemindex, itemlevel, itemcount, autopick
+  customnpcquest: name, quest, count, monstercount
+  customquest: name, quest
+  datanapgame: account, name, tiennap, checking, status
+  equipinventory: charname, items
+  eventinventory: name, items
+  eventleothehelper: name, status
+  eventsantaclaus: name, status
+  extwarehouse: accountid, money, number, items
+  gameserverinfo: number, itemcount, zencount, aceitemcount
+  gens_rank: name, family, contribution
+  gens_reward: name, rank, status
+  guild: g_mark, g_type, g_union, g_rival, g_score, g_notice
+  guildmember: g_status, name, g_name, g_level
+  helperdata: name, data
+  itemmarketdata: account, pricetype, pricevalue, date, typeitem, name, time, pass, item, status
+  log_creditos: login, valor, tipo
+  luckycoin: accountid, luckycoin
+  luckyitem: itemserial, durabilitysmall
+  masterskilltree: name, masterlevel, masterpoint, masterexperience, masterskill
+  memb_info: gcoin, bloc_code, bloc_expire, nhanmocnap, memb__pwd, lock, memb___id, memb_name, sno__numb, tel__numb, mail_chek, ctl1_code, memb__pwdmd5
+  murummycard: name, color, number, slot, status, sequence
+  murummydata: name, totalscore
+  muuninventory: name, items
+  optiondata: name, skillkey, gameoption, qkey, wkey, ekey, chatwindow, rkey, qwerlevel, changeskin
+  pcpointdata: accountid, pcpoint
+  pentagramjewel: name, type, index, attribute, itemsection, itemtype, itemlevel, optionindexrank1, optionlevelrank1, optionindexrank2, optionlevelrank2, optionindexrank3, optionlevelrank3, optionindexrank4, optionlevelrank4, optionindexrank5, optionlevelrank5
+  pshopitemvalue: name, slot, serial, value, jobvalue, josvalue, jocvalue
+  questkillcount: name, questindex, monsterclass1, killcount1, monsterclass2, killcount2, monsterclass3, killcount3, monsterclass4, killcount4, monsterclass5, killcount5
+  questworld: name, questworldlist
+  rankingduel: name, winscore, losescore, winscore_semanal
+  rankingkingguild: name, score, score_semanal
+  rankingkingplayer: name, score, score_semanal
+  snsdata: name, data
+  t_friendmail: memo, photo, bread
+  t_petitem_info: itemserial, pet_level, pet_exp
+  warehouse: accountid, money, endusedate, dbversion, items, pw
+  warehouseguild: statusrender, guild, money, endusedate, dbversion, items, pw

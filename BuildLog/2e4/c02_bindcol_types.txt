@@ -1,0 +1,43 @@
+C-02 — BINDCOL TİP/BOYUT ÇIKARIMI (kesin veri tipleri)
+
+### CARDPHONE
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### CUSTOMITEMBANK
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### CUSTOMNPCQUEST
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### DATANAPGAME
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### EQUIPINVENTORY
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### EVENTINVENTORY
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### ITEMMARKETDATA
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### MURUMMYCARD
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### MURUMMYDATA
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### MUUNINVENTORY
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### PCPOINTDATA
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### PENTAGRAMJEWEL
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### PSHOPITEMVALUE
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)
+
+### SNSDATA
+  (BindCol bulunamadi — SELECT * kullaniliyor, tip koddan anlasilir)

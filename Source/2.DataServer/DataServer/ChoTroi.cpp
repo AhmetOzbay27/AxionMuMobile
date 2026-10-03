@@ -33,63 +33,91 @@ bool CChoTroi::Connect()
 
 void CChoTroi::CreateTable()
 {
-	gQueryManager.ExecQuery("CREATE TABLE [dbo].[ItemMarketData]( [ID] [int] IDENTITY(1,1) NOT NULL) ON [PRIMARY]");
+	// C-02 sema denetimi (03.10.2026)
+	// Bu blok onceki surumde her ACILISTA dogrudan
+	//   CREATE TABLE ... / ALTER TABLE ... ADD ...
+	// calistiriyordu. Iki gercek hatayi kaldiriyor:
+	//  1) DataServer ikinci kez acildiginda CREATE TABLE basarisiz oluyor ve
+	//     arkasindaki tum ALTER'lar da basarisiz oluyordu -> tablo hicbir
+	//     zaman kendini tamamlamiyordu.
+	//  2) GDReqItemSell (asagida ~satir 290) INSERT'i
+	//     (Account,PriceType,PriceValue,Date,TypeItem,Name,Time,Pass)
+	//     sutunlarini kullaniyor ama TypeItem/Time/Pass HIC olusturulmuyordu
+	//     -> "Invalid column name 'TypeItem'" hatasi.
+	// IF OBJECT_ID / IF COL_LENGTH korumalari sayesinde blok tekrar
+	// calistirilabilir (idempotent) ve eksik sutunlari tamamlar.
+
+	gQueryManager.ExecQuery("IF OBJECT_ID('dbo.ItemMarketData','U') IS NULL CREATE TABLE [dbo].[ItemMarketData]( [ID] [int] IDENTITY(1,1) NOT NULL) ON [PRIMARY]");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [Account] [varchar](10) NULL");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Account') IS NULL ALTER TABLE [ItemMarketData] ADD [Account] [varchar](10) NULL");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
 #if(MARKET_NAME_DEV)
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [Name][varchar](10) NULL");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Name') IS NULL ALTER TABLE [ItemMarketData] ADD [Name][varchar](10) NULL");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
 #endif
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [PriceType] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','PriceType') IS NULL ALTER TABLE [ItemMarketData] ADD [PriceType] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [PriceValue] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','PriceValue') IS NULL ALTER TABLE [ItemMarketData] ADD [PriceValue] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [Status] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Status') IS NULL ALTER TABLE [ItemMarketData] ADD [Status] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
 #if(MARKET_FILTER_DEV)
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [FilterType] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','FilterType') IS NULL ALTER TABLE [ItemMarketData] ADD [FilterType] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [FilterLevel] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','FilterLevel') IS NULL ALTER TABLE [ItemMarketData] ADD [FilterLevel] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [FilterLuck] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','FilterLuck') IS NULL ALTER TABLE [ItemMarketData] ADD [FilterLuck] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [FilterExl] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','FilterExl') IS NULL ALTER TABLE [ItemMarketData] ADD [FilterExl] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [FilterAnc] INT not null default(0)");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','FilterAnc') IS NULL ALTER TABLE [ItemMarketData] ADD [FilterAnc] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
 #endif
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [Date] [varchar](20) NULL");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Date') IS NULL ALTER TABLE [ItemMarketData] ADD [Date] [varchar](20) NULL");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 
-	gQueryManager.ExecQuery("ALTER TABLE [ItemMarketData] ADD [Item] [varbinary](16) NULL");
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Item') IS NULL ALTER TABLE [ItemMarketData] ADD [Item] [varbinary](16) NULL");
+	gQueryManager.Fetch();
+	gQueryManager.Close();
+
+	// GDReqItemSell INSERT'inin kullandigi ama onceki surumde hic
+	// olusturulmayan sutunlar. Tipler kaynaktaki %d bicimleyicilere gore int.
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','TypeItem') IS NULL ALTER TABLE [ItemMarketData] ADD [TypeItem] INT not null default(0)");
+	gQueryManager.Fetch();
+	gQueryManager.Close();
+
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Time') IS NULL ALTER TABLE [ItemMarketData] ADD [Time] INT not null default(0)");
+	gQueryManager.Fetch();
+	gQueryManager.Close();
+
+	gQueryManager.ExecQuery("IF COL_LENGTH('dbo.ItemMarketData','Pass') IS NULL ALTER TABLE [ItemMarketData] ADD [Pass] INT not null default(0)");
 	gQueryManager.Fetch();
 	gQueryManager.Close();
 }

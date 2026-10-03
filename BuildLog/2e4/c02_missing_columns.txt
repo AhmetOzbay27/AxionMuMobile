@@ -1,0 +1,155 @@
+C-02 — EKSİK TABLOLARIN GEREKEN SÜTUN KÜMELERİ (kaynak koddan çıkarıldı)
+
+### CARDPHONE  — 12 sütun
+  INSERT : acc, name, card_type, menhgia, card_num, card_num_md5, card_serial, timenap
+  UPDATE : status, timeduyet, menhgia, addvpoint
+  SELECT : -
+  WHERE  : acc, status, stt
+  TÜMÜ   : acc, addvpoint, card_num, card_num_md5, card_serial, card_type, menhgia, name, status, stt, timeduyet, timenap
+  DOSYA  : Source/2.DataServer/DataServer/CB_AutoNapGame.cpp
+    > INSERT INTO CardPhone(acc, name, card_type, menhgia, card_num, card_num_md5, card_serial, timenap) VALUES('%s', '%s', '%s', '%d', '%s', '%s', '%s', '%
+    > Select Top 8 * From CardPhone Where acc='%s' ORDER BY timenap DESC
+    > Select * From CardPhone Where Status = 0
+
+### CUSTOMITEMBANK  — 5 sütun
+  INSERT : accountid, itemindex, itemlevel, itemcount, autopick
+  UPDATE : itemcount, autopick
+  SELECT : itemcount, autopick
+  WHERE  : accountid, itemindex, itemlevel
+  TÜMÜ   : accountid, autopick, itemcount, itemindex, itemlevel
+  DOSYA  : Source/2.DataServer/DataServer/DataServerProtocol.cpp
+    > SELECT ItemCount,AutoPick FROM CustomItemBank WHERE AccountID='%s' AND ItemIndex='%d' AND ItemLevel='%d'
+    > INSERT INTO CustomItemBank (AccountID,ItemIndex,ItemLevel,ItemCount,AutoPick) VALUES ('%s',%d,%d,%d,0)
+    > Update CustomItemBank SET ItemCount = '%d', AutoPick='%d' WHERE AccountID = '%s' And ItemIndex = '%d' And ItemLevel='%d'
+
+### CUSTOMNPCQUEST  — 4 sütun
+  INSERT : name, quest, count, monstercount
+  UPDATE : count, monstercount
+  SELECT : -
+  WHERE  : name, quest
+  TÜMÜ   : count, monstercount, name, quest
+  DOSYA  : Source/2.DataServer/DataServer/DataServerProtocol.cpp
+    > SELECT * FROM CustomNpcQuest WHERE Name='%s' and Quest = %d
+    > INSERT INTO CustomNpcQuest (Name,quest,count,MonsterCount) VALUES ('%s',%d,1,99999)
+    > Update CustomNpcQuest SET Count = Count+1,MonsterCount=99999 WHERE Name = '%s' and Quest = %d
+
+### DATANAPGAME  — 5 sütun
+  INSERT : account, name, tiennap, checking
+  UPDATE : status, tiennap
+  SELECT : -
+  WHERE  : account, status, name, checking
+  TÜMÜ   : account, checking, name, status, tiennap
+  DOSYA  : Source/2.DataServer/DataServer/CB_AutoNapGame.cpp, Source/2.DataServer/DataServer/DataServerProtocol.cpp
+    > INSERT INTO DataNapGame (Account, Name, TienNap, Checking) VALUES ('%s', '%s', %d, %d)
+    > Select Top 8 * From DataNapGame Where Account='%s' ORDER BY Checking DESC
+    > Select * From DataNapGame Where Status = 0
+
+### EQUIPINVENTORY  — 2 sütun
+  INSERT : charname, items
+  UPDATE : items
+  SELECT : items, charname
+  WHERE  : charname
+  TÜMÜ   : charname, items
+  DOSYA  : Source/2.DataServer/DataServer/NewUIMyInventory.cpp
+    > SELECT Items FROM EquipInventory WHERE CharName='%s'
+    > SELECT CharName FROM EquipInventory WHERE CharName='%s'
+    > INSERT INTO EquipInventory (CharName, Items) VALUES ('%s',?)
+
+### EVENTINVENTORY  — 2 sütun
+  INSERT : name, items
+  UPDATE : items
+  SELECT : items, name
+  WHERE  : name
+  TÜMÜ   : items, name
+  DOSYA  : Source/2.DataServer/DataServer/EventInventory.cpp
+    > SELECT Items FROM EventInventory WHERE Name='%s'
+    > SELECT Name FROM EventInventory WHERE Name='%s'
+    > INSERT INTO EventInventory (Name,Items) VALUES ('%s',?)
+
+### ITEMMARKETDATA  — 11 sütun
+  INSERT : account, pricetype, pricevalue, date, typeitem, name, time, pass
+  UPDATE : item, status
+  SELECT : account, name, pricetype, pricevalue, item, status, typeitem, time, pass
+  WHERE  : status, id, account, time
+  TÜMÜ   : account, date, id, item, name, pass, pricetype, pricevalue, status, time, typeitem
+  DOSYA  : Source/2.DataServer/DataServer/ChoTroi.cpp
+    > SELECT TOP %d ID, Account, Name, PriceType, PriceValue FROM ItemMarketData WHERE Status = 0 %s %s ORDER BY ID DESC
+    > SELECT TOP %d ID, Account, PriceType, PriceValue FROM ItemMarketData WHERE Status = 0 ORDER BY ID DESC
+    > SELECT Item FROM ItemMarketData WHERE ID = %d
+
+### MURUMMYCARD  — 6 sütun
+  INSERT : name, color, number, slot, status, sequence
+  UPDATE : slot, status
+  SELECT : color, number, slot, status, sequence
+  WHERE  : name, sequence
+  TÜMÜ   : color, name, number, sequence, slot, status
+  DOSYA  : Source/2.DataServer/DataServer/MuRummy.cpp
+    > SELECT Color,Number,Slot,Status,Sequence FROM MuRummyCard WHERE Name='%s'
+    > INSERT INTO MuRummyCard (Name,Color,Number,Slot,Status,Sequence) VALUES ('%s',%d,%d,%d,%d,%d)
+    > UPDATE MuRummyCard SET Slot=%d,Status=%d WHERE Name='%s' AND Sequence=%d
+
+### MURUMMYDATA  — 2 sütun
+  INSERT : name, totalscore
+  UPDATE : totalscore
+  SELECT : totalscore, name
+  WHERE  : name
+  TÜMÜ   : name, totalscore
+  DOSYA  : Source/2.DataServer/DataServer/MuRummy.cpp
+    > SELECT TotalScore FROM MuRummyData WHERE Name='%s'
+    > SELECT Name FROM MuRummyData WHERE Name='%s'
+    > INSERT INTO MuRummyData (Name,TotalScore) VALUES ('%s',%d)
+
+### MUUNINVENTORY  — 2 sütun
+  INSERT : name, items
+  UPDATE : items
+  SELECT : items, name
+  WHERE  : name
+  TÜMÜ   : items, name
+  DOSYA  : Source/2.DataServer/DataServer/MuunSystem.cpp
+    > SELECT Items FROM MuunInventory WHERE Name='%s'
+    > SELECT Name FROM MuunInventory WHERE Name='%s'
+    > INSERT INTO MuunInventory (Name,Items) VALUES ('%s',?)
+
+### PCPOINTDATA  — 2 sütun
+  INSERT : accountid, pcpoint
+  UPDATE : pcpoint
+  SELECT : pcpoint
+  WHERE  : accountid
+  TÜMÜ   : accountid, pcpoint
+  DOSYA  : Source/2.DataServer/DataServer/PcPoint.cpp
+    > SELECT * FROM PcPointData WHERE AccountID='%s'
+    > INSERT INTO PcPointData (AccountID,PcPoint) VALUES ('%s',0)
+    > SELECT * FROM PcPointData WHERE AccountID='%s'
+
+### PENTAGRAMJEWEL  — 17 sütun
+  INSERT : name, type, index, attribute, itemsection, itemtype, itemlevel, optionindexrank1, optionlevelrank1, optionindexrank2, optionlevelrank2, optionindexrank3, optionlevelrank3, optionindexrank4, optionlevelrank4, optionindexrank5, optionlevelrank5
+  UPDATE : attribute, itemsection, itemtype, itemlevel, optionindexrank1, optionlevelrank1, optionindexrank2, optionlevelrank2, optionindexrank3, optionlevelrank3, optionindexrank4, optionlevelrank4, optionindexrank5, optionlevelrank5
+  SELECT : name
+  WHERE  : name, type, index
+  TÜMÜ   : attribute, index, itemlevel, itemsection, itemtype, name, optionindexrank1, optionindexrank2, optionindexrank3, optionindexrank4, optionindexrank5, optionlevelrank1, optionlevelrank2, optionlevelrank3, optionlevelrank4, optionlevelrank5, type
+  DOSYA  : Source/2.DataServer/DataServer/PentagramSystem.cpp
+    > SELECT * FROM PentagramJewel WHERE Name='%s' AND Type=%d
+    > SELECT Name FROM PentagramJewel WHERE Name='%s' AND Type=%d AND [Index]=%d
+    > INSERT INTO PentagramJewel (Name,Type,[Index],Attribute,ItemSection,ItemType,ItemLevel,OptionIndexRank1,OptionLevelRank1,OptionIndexRank2,OptionLevelR
+
+### PSHOPITEMVALUE  — 7 sütun
+  INSERT : name, slot, serial, value, jobvalue, josvalue, jocvalue
+  UPDATE : serial, value, jobvalue, josvalue, jocvalue
+  SELECT : name
+  WHERE  : name, slot
+  TÜMÜ   : jobvalue, jocvalue, josvalue, name, serial, slot, value
+  DOSYA  : Source/2.DataServer/DataServer/PersonalShop.cpp
+    > SELECT * FROM PShopItemValue WHERE Name='%s'
+    > SELECT Name FROM PShopItemValue WHERE Name='%s' AND Slot=%d
+    > INSERT INTO PShopItemValue (Name,Slot,Serial,Value,JoBValue,JoSValue,JoCValue) VALUES ('%s',%d,%d,%d,%d,%d,%d)
+
+### SNSDATA  — 2 sütun
+  INSERT : name, data
+  UPDATE : data
+  SELECT : data, name
+  WHERE  : name
+  TÜMÜ   : data, name
+  DOSYA  : Source/2.DataServer/DataServer/DataServerProtocol.cpp
+    > SELECT Data FROM SNSData WHERE Name='%s'
+    > SELECT Name FROM SNSData WHERE Name='%s'
+    > INSERT INTO SNSData (Name,Data) VALUES ('%s',?)

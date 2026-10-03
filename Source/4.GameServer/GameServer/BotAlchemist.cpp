@@ -2,6 +2,7 @@
 #include "BotAlchemist.h"
 #include "Monster.h"
 #include "ItemManager.h"
+#include "MuunSystem.h"
 #include "ObjectManager.h"
 #include "SkillManager.h"
 #include "EffectManager.h"

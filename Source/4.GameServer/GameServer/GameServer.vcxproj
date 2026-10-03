@@ -164,6 +164,17 @@
     <IntDir>Release\GameServer_EX401CS\</IntDir>
     <OutDir>..\..\..\MuServe Classic 5.2 Lorencia\GameServer</OutDir>
   </PropertyGroup>
+  <!-- Alt klasordeki kaynaklar (SPK/*.cpp) kok dizindeki stdafx.h / Protocol.h /
+       User.h ... dosyalarini "tirnakli" include ile bulmali. Tirnakli include
+       once dosyanin kendi klasorunu arar; kok dizin ancak include yolunda
+       bulunursa gorunur. Asagidaki kosulsuz tanim tum konfigurasyonlara
+       $(ProjectDir)'i ekler; onceden tanimli olan Release_EX603 / Debug_EX603
+       bloklari da %(AdditionalIncludeDirectories) ile ayni degeri zincirler. -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>

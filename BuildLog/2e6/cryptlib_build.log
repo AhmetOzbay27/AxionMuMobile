@@ -1,0 +1,612 @@
+.NET Framework iáin MSBuild sÅrÅm 17.14.60+43b635718
+
+  Performing Custom Build Tools
+  pch.cpp
+  3way.cpp
+  adler32.cpp
+  algebra.cpp
+  algparam.cpp
+  arc4.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/algparam.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  asn.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/asn.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  authenc.cpp
+  base32.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/base32.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  base64.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/base64.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  basecode.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/basecode.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  bfinit.cpp
+  blowfish.cpp
+  blumshub.cpp
+  camellia.cpp
+  cast.cpp
+  casts.cpp
+  cbcmac.cpp
+  ccm.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/ccm.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  channels.cpp
+  cmac.cpp
+  Kod öretiliyor...
+  Derleniyor...
+  cpu.cpp
+  crc.cpp
+  cryptlib.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/cryptlib.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  default.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/default.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  des.cpp
+  dessp.cpp
+  dh.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/dh.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  dh2.cpp
+  dsa.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/dsa.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  eax.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/eax.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  ec2n.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/ec2n.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  eccrypto.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/eccrypto.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  ecp.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/ecp.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  elgamal.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/elgamal.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  emsa2.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/emsa2.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  eprecomp.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/eprecomp.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  esign.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/esign.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  files.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/files.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  filters.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/filters.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  fips140.cpp
+  Kod öretiliyor...
+  Derleniyor...
+  fipstest.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/fipstest.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  gcm.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/gcm.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  gf256.cpp
+  gf2_32.cpp
+  gf2n.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/gf2n.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  gfpcrypt.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/gfpcrypt.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  gost.cpp
+  gzip.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/gzip.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  hex.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/hex.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  hmac.cpp
+  hrtimer.cpp
+  ida.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/ida.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  idea.cpp
+  integer.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/integer.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  luc.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/luc.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  mars.cpp
+  marss.cpp
+  md2.cpp
+  md4.cpp
+  md5.cpp
+  Kod öretiliyor...
+  Derleniyor...
+  misc.cpp
+  modes.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/modes.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  mqueue.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/mqueue.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  mqv.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/mqv.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  nbtheory.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/nbtheory.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  network.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/network.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  oaep.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/oaep.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  osrng.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/osrng.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  panama.cpp
+  pkcspad.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/pkcspad.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  polynomi.cpp
+  pssr.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/pssr.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  pubkey.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/pubkey.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  queue.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/queue.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  rabin.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/rabin.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  randpool.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/randpool.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  rc2.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/rc2.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  rc5.cpp
+  rc6.cpp
+  rdtables.cpp
+  Kod öretiliyor...
+  Derleniyor...
+  rijndael.cpp
+  ripemd.cpp
+  rng.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/rng.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  rsa.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/rsa.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  rw.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/rw.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  safer.cpp
+  salsa.cpp
+  seal.cpp
+  seed.cpp
+  serpent.cpp
+  sha.cpp
+  sha3.cpp
+  shacal2.cpp
+  shark.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/shark.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  sharkbox.cpp
+  simple.cpp
+  skipjack.cpp
+  socketft.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/socketft.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+C:\Axion Mu Source\Source\Util\cryptopp\socketft.cpp(102,26): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/socketft.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\Util\cryptopp\socketft.cpp(136,23): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/socketft.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\Util\cryptopp\socketft.cpp(140,21): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/socketft.cpp' kaynak dosyasç derleniyor)
+  
+  sosemanuk.cpp
+  square.cpp
+  Kod öretiliyor...
+  Derleniyor...
+  squaretb.cpp
+  strciphr.cpp
+  tea.cpp
+  tftables.cpp
+  tiger.cpp
+  tigertab.cpp
+  trdlocal.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\trdlocal.cpp(38,3): warning C4297: 'CryptoPP::ThreadLocalStorage::~ThreadLocalStorage': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/trdlocal.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\trdlocal.cpp(38,3):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  ttmac.cpp
+  twofish.cpp
+  vmac.cpp
+  wait.cpp
+  wake.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\wake.cpp(28,3): warning C4838: 'unsigned int ile 'int arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/wake.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\Util\cryptopp\wake.cpp(29,3): warning C4838: 'unsigned int ile 'int arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/wake.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\Util\cryptopp\wake.cpp(30,3): warning C4838: 'unsigned int ile 'int arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/wake.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\Util\cryptopp\wake.cpp(34,3): warning C4838: 'unsigned int ile 'int arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/wake.cpp' kaynak dosyasç derleniyor)
+  
+  whrlpool.cpp
+  winpipes.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/winpipes.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  xtr.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/xtr.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  xtrcrypt.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/xtrcrypt.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  zdeflate.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+C:\Axion Mu Source\Source\Util\cryptopp\zdeflate.cpp(400,155): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::operator -': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1341,31): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1341,31):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Axion Mu Source\Source\Util\cryptopp\zdeflate.cpp(397,10):
+          derlenen üablon iülevi 'std::pair<stdext::unchecked_array_iterator<const byte *>,stdext::unchecked_array_iterator<const byte *>> std::mismatch<stdext::unchecked_array_iterator<const byte *>,stdext::unchecked_array_iterator<const byte *>>(const _InIt1,const _InIt1,const _InIt2)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt1=stdext::unchecked_array_iterator<const byte *>,
+              _InIt2=stdext::unchecked_array_iterator<const byte *>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(740,17):
+          derlenen üablon iülevi 'std::pair<stdext::unchecked_array_iterator<const byte *>,stdext::unchecked_array_iterator<const byte *>> std::mismatch<_InIt1,_InIt2,std::equal_to<void>>(_InIt1,const _InIt1,_InIt2,_Pr)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt1=stdext::unchecked_array_iterator<const byte *>,
+              _InIt2=stdext::unchecked_array_iterator<const byte *>,
+              _Pr=std::equal_to<void>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(701,31):
+          derlenen üablon iülevi 'decltype(auto) std::_Get_unwrapped<_InIt1&>(_Iter) noexcept(<expr>)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt1=stdext::unchecked_array_iterator<const byte *>,
+              _Iter=stdext::unchecked_array_iterator<const byte *> &
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1379,15):
+          derlenen 'const bool _Unwrappable_v<stdext::unchecked_array_iterator<unsigned char const *> &,void>' deßiüken üablonuna baüvuruya bakçn
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1369,5):
+          derlenen 'const bool _Allow_inheriting_unwrap_v<stdext::unchecked_array_iterator<unsigned char const *>,void>' deßiüken üablonuna baüvuruya bakçn
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1341,22): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::_Prevent_inheriting_unwrap': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1384,42): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::_Unwrapped': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1384,42):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(701,31):
+          derlenen üablon iülevi '_Ptr std::_Get_unwrapped<_InIt1&>(_Iter) noexcept' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _Ptr=const byte *,
+              _InIt1=stdext::unchecked_array_iterator<const byte *>,
+              _Iter=stdext::unchecked_array_iterator<const byte *> &
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1384,52): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::_Unwrapped': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(702,45):
+      'std::_Get_unwrapped' constexpr iülevi deßerlendirilirken
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(476,40): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(476,40):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(703,62):
+          derlenen üablon iülevi 'auto std::_Idl_distance<_InIt1,_Ptr>(const _Iter &,const _Iter &)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt1=stdext::unchecked_array_iterator<const byte *>,
+              _Ptr=const byte *,
+              _Iter=const byte *
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1555,28):
+          derlenen takma ad üablon îrneßi oluüturma 'std::_Iter_diff_t<_Checked>' baüvurusuna bakçn
+          with
+          [
+              _Checked=stdext::unchecked_array_iterator<const byte *>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1245,55):
+          derlenen sçnçf üablon îrneßi oluüturma 'std::iterator_traits<_Checked>' baüvurusuna bakçn
+          with
+          [
+              _Checked=stdext::unchecked_array_iterator<const byte *>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(496,26):
+          derlenen sçnçf üablon îrneßi oluüturma 'std::_Iterator_traits_base<_Iter,void>' baüvurusuna bakçn
+          with
+          [
+              _Iter=stdext::unchecked_array_iterator<const byte *>
+          ]
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(476,31): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::iterator_category': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(477,40): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(477,31): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::value_type': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(478,40): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(478,31): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::difference_type': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(479,40): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(479,31): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::pointer': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(480,40): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_iter_core.hpp(480,31): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::reference': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1398,23): warning C4996: 'stdext::unchecked_array_iterator<const byte *>': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\iterator(1697,35):
+      'stdext::unchecked_array_iterator' bildirimine bakçn
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1398,23):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(703,31):
+          derlenen üablon iülevi 'decltype(auto) std::_Get_unwrapped_n<_InIt2&,int>(_Iter,const _Diff)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt2=stdext::unchecked_array_iterator<const byte *>,
+              _Iter=stdext::unchecked_array_iterator<const byte *> &,
+              _Diff=int
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1459,26):
+          derlenen 'const bool _Unwrappable_for_unverified_v<stdext::unchecked_array_iterator<unsigned char const *> &>' deßiüken üablonuna baüvuruya bakçn
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1402,30):
+          derlenen 'const bool _Do_unwrap_when_unverified_v<stdext::unchecked_array_iterator<unsigned char const *>,bool>' deßiüken üablonuna baüvuruya bakçn
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1398,30): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::_Unwrap_when_unverified': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1461,42): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::_Unwrapped': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1479,13): warning C4996: 'stdext::unchecked_array_iterator<const byte *>::_Seek_to': warning STL4043: stdext::checked_array_iterator, stdext::unchecked_array_iterator, and related factory functions are non-Standard extensions and will be removed in the future. std::span (since C++20) and gsl::span can be used instead. You can define _SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING or _SILENCE_ALL_MS_EXT_DEPRECATION_WARNINGS to suppress this warning. [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zdeflate.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(1479,13):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(740,17):
+          derlenen üablon iülevi 'std::pair<stdext::unchecked_array_iterator<const byte *>,stdext::unchecked_array_iterator<const byte *>> std::mismatch<_InIt1,_InIt2,std::equal_to<void>>(_InIt1,const _InIt1,_InIt2,_Pr)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt1=stdext::unchecked_array_iterator<const byte *>,
+              _InIt2=stdext::unchecked_array_iterator<const byte *>,
+              _Pr=std::equal_to<void>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(715,18):
+          derlenen üablon iülevi 'void std::_Seek_wrapped<_InIt2,_Ptr&>(_Iter &,_UIter)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _InIt2=stdext::unchecked_array_iterator<const byte *>,
+              _Ptr=const byte *,
+              _Iter=stdext::unchecked_array_iterator<const byte *>,
+              _UIter=const unsigned char *&
+          ]
+  
+  zinflate.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zinflate.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  zlib.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('/zlib.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  Kod öretiliyor...
+  dll.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\Util\cryptopp\cryptlib.vcxproj]
+  ('dll.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  iterhash.cpp
+  Kod öretiliyor...
+  cryptlib.vcxproj -> C:\Axion Mu Source\Source\Util\cryptopp\Release\cryptlib.lib
+EXIT=0

@@ -42,6 +42,21 @@ struct PMSG_VIEWPORT_SEND
 	BYTE count;
 };
 
+// C-2c derleme duzeltmesi (03.10.2026)
+// HAISLOTRING blogu ile GAMESERVER_UPDATE>=803 blogu AYNI adli MuunItem[2]
+// alanini iki kez tanimliyordu -> error C2086 "yeniden tanimlama".
+// Bu kaynagin hicbir konfigurasyonu daha once derlenmemisti, yani bu bir
+// ezber bozulmasi degil, derlenmemis bir kaynak hatasiydi.
+//
+// Cozum: alan sayisi HER konfigurasyonda tam 1 (paket boyutu degismiyor).
+// GAMESERVER_UPDATE>=701 icin upstream 8.03 blogu esas alinir ve Viewport.cpp
+// MuunInventory[0] gonderir; HAISLOTRING'in pet-ekipman blogu yalnizca
+// daha eski surumlerde devreye girer. Bkz. Viewport.cpp yazici bloklari.
+//
+// ACIK RISK (docs/04 H-018): Bu paket duzeni ile istemcinin PCREATE_CHARACTER
+// duzeni (MuunItem'in Path'ten SONRA, s_BuffCount'tan ONCE olmasi) ayni degil.
+// Iki alanin (pet ekipmani / muun envanteri) semantik ayrimi canli paket
+// yakalama ile dogrulanmali -> Faz 3.3.
 struct PMSG_VIEWPORT_PLAYER
 {
 	BYTE index[2];
@@ -52,7 +67,7 @@ struct PMSG_VIEWPORT_PLAYER
 	BYTE tx;
 	BYTE ty;
 	BYTE DirAndPkLevel;
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (GAMESERVER_UPDATE<701)
 	BYTE MuunItem[2];
 #endif
 	#if(GAMESERVER_UPDATE>=701)
@@ -123,7 +138,7 @@ struct PMSG_VIEWPORT_CHANGE
 	BYTE ty;
 	BYTE DirAndPkLevel;
 	BYTE CharSet[18];
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (GAMESERVER_UPDATE<701)
 	BYTE MuunItem[2];
 #endif
 	#if(GAMESERVER_UPDATE>=701)
