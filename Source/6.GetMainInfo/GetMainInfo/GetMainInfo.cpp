@@ -23,6 +23,7 @@
 #include "MonsterEffect.h"
 #include "CustomCommandInfo.h"
 #include "CustomDmgColor.h"
+#include "SPK\\main_spk.h"	// Faz 2d.1 (D7): SPK modu giriş noktası
 
 struct MAIN_FILE_INFO
 {
@@ -525,6 +526,22 @@ void GetAntiInfo()
 
 int _tmain(int argc, _TCHAR* argv[]) // OK
 {
+	//=== Faz 2d.1: SPK modu VARSAYILAN; eski MUIG akisi --mode:muig ile korunur.
+	bool muigMode = false;
+
+	for (int i = 1; i < argc; i++)
+	{
+		if (_tcsicmp(argv[i], _T("--mode:muig")) == 0)
+		{
+			muigMode = true;
+		}
+	}
+
+	if (muigMode == false)
+	{
+		return SPKMain(argc, (char**)argv);
+	}
+
 	CLEAR_START
 
 	ENCODE_START

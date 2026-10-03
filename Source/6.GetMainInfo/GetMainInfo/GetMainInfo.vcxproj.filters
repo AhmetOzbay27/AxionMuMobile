@@ -102,6 +102,24 @@
     <ClInclude Include="..\..\5.Main\source\Utilities\CCRC32.H">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SPK\CrcFileReport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\ConnectIPWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\GetEngineConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\ServerDataWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\SpkUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SPK\main_spk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="CustomDmgColor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -183,6 +201,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\5.Main\source\Utilities\CCRC32.Cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\ConnectIPWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\CrcFileReport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\GetEngineConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\ServerDataWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\SpkUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SPK\main_spk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CustomDmgColor.cpp">

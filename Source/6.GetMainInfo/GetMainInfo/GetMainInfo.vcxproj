@@ -54,6 +54,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
@@ -67,6 +68,7 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -87,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\5.Main\source\Utilities\CCRC32.H" />
+    <ClInclude Include="SPK\CrcFileReport.h" />
+    <ClInclude Include="SPK\ConnectIPWriter.h" />
+    <ClInclude Include="SPK\GetEngineConfig.h" />
+    <ClInclude Include="SPK\ServerDataWriter.h" />
+    <ClInclude Include="SPK\SpkUtil.h" />
+    <ClInclude Include="SPK\main_spk.h" />
     <ClInclude Include="CustomBuyVip.h" />
     <ClInclude Include="CustomCloak.h" />
     <ClInclude Include="CustomCommandInfo.h" />
@@ -117,6 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\5.Main\source\Utilities\CCRC32.Cpp" />
+    <ClCompile Include="SPK\ConnectIPWriter.cpp" />
+    <ClCompile Include="SPK\CrcFileReport.cpp" />
+    <ClCompile Include="SPK\GetEngineConfig.cpp" />
+    <ClCompile Include="SPK\ServerDataWriter.cpp" />
+    <ClCompile Include="SPK\SpkUtil.cpp" />
+    <ClCompile Include="SPK\main_spk.cpp" />
     <ClCompile Include="CustomBuyVip.cpp" />
     <ClCompile Include="CustomCloak.cpp" />
     <ClCompile Include="CustomCommandInfo.cpp" />
