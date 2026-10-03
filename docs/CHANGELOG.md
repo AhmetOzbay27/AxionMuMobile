@@ -34,7 +34,7 @@ yerel HEAD; GitHub tree API 50.474+ blob döndürdü (üst sınır nedeniyle kı
 dosya boyutuyla birebir. Paralel ajanların 7 commit'i de GitHub'da; son durum
 `main == origin/main == 564a69c69` (0 ileri / 0 geri).
 
-**Commit** — (bu kayıt; hash takibi sonraki commit'te)
+**Commit** — `8de544f8d` (GitHub push kaydı: remote origin + pano + CHANGELOG).
 
 
 ## [26.10.03 01:20] 2e.5 — B-08 (SPK ToolTipText yükleyicisi) + Faz 3 E2E bağlantı kanıtı (docs/25)
