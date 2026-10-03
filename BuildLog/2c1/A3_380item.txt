@@ -1,0 +1,141 @@
+  00404A01: CC                 int         3
+  00404A02: CC                 int         3
+  00404A03: CC CC CC CC CC CC CC CC CC CC CC CC CC           ооооооооооооо
+?Calc380ItemOption@C380ItemOption@@QAEXPAUOBJECTSTRUCT@@_N@Z:
+  00404A10: 55                 push        ebp
+  00404A11: 8B EC              mov         ebp,esp
+  00404A13: 83 EC 24           sub         esp,24h
+  00404A16: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404A19: BA 0C 00 00 00     mov         edx,0Ch
+  00404A1E: 53                 push        ebx
+  00404A1F: 56                 push        esi
+  00404A20: 57                 push        edi
+  00404A21: 8B 98 A8 03 00 00  mov         ebx,dword ptr [eax+3A8h]
+  00404A27: BE 00 20 00 00     mov         esi,2000h
+  00404A2C: 81 C3 B8 00 00 00  add         ebx,0B8h
+  00404A32: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00404A35: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00404A38: 0F 1F 84 00 00 00  nop         dword ptr [eax+eax]
+            00 00
+  00404A40: 0F B7 83 4C FF FF  movzx       eax,word ptr [ebx-0B4h]
+            FF
+  00404A47: 8B C8              mov         ecx,eax
+  00404A49: 66 85 C0           test        ax,ax
+  00404A4C: 0F 88 4A 01 00 00  js          00404B9C
+  00404A52: 66 3B CE           cmp         cx,si
+  00404A55: 0F 8D 41 01 00 00  jge         00404B9C
+  00404A5B: 80 3B 00           cmp         byte ptr [ebx],0
+  00404A5E: 0F 84 38 01 00 00  je          00404B9C
+  00404A64: 80 7B 1A 00        cmp         byte ptr [ebx+1Ah],0
+  00404A68: 0F 8D 2E 01 00 00  jge         00404B9C
+  00404A6E: BF 20 00 00 00     mov         edi,20h
+  00404A73: 0F BF B3 4C FF FF  movsx       esi,word ptr [ebx-0B4h]
+            FF
+  00404A7A: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00404A7D: 50                 push        eax
+  00404A7E: 8D 45 E8           lea         eax,[ebp-18h]
+  00404A81: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00404A84: 50                 push        eax
+  00404A85: E8 96 07 00 00     call        ??$_Find_lower_bound@H@?$_Tree@V?$_Tmap_traits@HUITEM_380_TYPE_INFO@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUITEM_380_TYPE_INFO@@@std@@@3@$0A@@std@@@std@@IBE?AU?$_Tree_find_result@PAU?$_Tree_node@U?$pair@$$CBHUITEM_380_TYPE_INFO@@@std@@PAX@std@@@1@ABH@Z
+  00404A8A: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  00404A8D: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00404A91: 75 05              jne         00404A98
+  00404A93: 3B 70 10           cmp         esi,dword ptr [eax+10h]
+  00404A96: 7D 05              jge         00404A9D
+  00404A98: A1 B0 31 AA 00     mov         eax,dword ptr [?g380ItemType@@3VC380ItemType@@A]
+  00404A9D: 3B 05 B0 31 AA 00  cmp         eax,dword ptr [?g380ItemType@@3VC380ItemType@@A]
+  00404AA3: 0F 84 DF 00 00 00  je          00404B88
+  00404AA9: 8B 44 38 F8        mov         eax,dword ptr [eax+edi-8]
+  00404AAD: 85 C0              test        eax,eax
+  00404AAF: 0F 84 D3 00 00 00  je          00404B88
+  00404AB5: 83 F8 09           cmp         eax,9
+  00404AB8: 0F 87 CA 00 00 00  ja          00404B88
+  00404ABE: 8D 0C 80           lea         ecx,[eax+eax*4]
+  00404AC1: 39 04 CD 70 1B 66  cmp         dword ptr ?g380ItemOption@@3VC380ItemOption@@A[ecx*8],eax
+            00
+  00404AC8: 8D 34 CD 70 1B 66  lea         esi,?g380ItemOption@@3VC380ItemOption@@A[ecx*8]
+            00
+  00404ACF: 0F 85 B3 00 00 00  jne         00404B88
+  00404AD5: 85 F6              test        esi,esi
+  00404AD7: 0F 84 AB 00 00 00  je          00404B88
+  00404ADD: 0F BF 9B 4C FF FF  movsx       ebx,word ptr [ebx-0B4h]
+            FF
+  00404AE4: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00404AE7: 50                 push        eax
+  00404AE8: 8D 45 DC           lea         eax,[ebp-24h]
+  00404AEB: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00404AEE: 50                 push        eax
+  00404AEF: E8 2C 07 00 00     call        ??$_Find_lower_bound@H@?$_Tree@V?$_Tmap_traits@HUITEM_380_TYPE_INFO@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUITEM_380_TYPE_INFO@@@std@@@3@$0A@@std@@@std@@IBE?AU?$_Tree_find_result@PAU?$_Tree_node@U?$pair@$$CBHUITEM_380_TYPE_INFO@@@std@@PAX@std@@@1@ABH@Z
+  00404AF4: 8B 45 E4           mov         eax,dword ptr [ebp-1Ch]
+  00404AF7: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00404AFB: 75 05              jne         00404B02
+  00404AFD: 3B 58 10           cmp         ebx,dword ptr [eax+10h]
+  00404B00: 7D 05              jge         00404B07
+  00404B02: A1 B0 31 AA 00     mov         eax,dword ptr [?g380ItemType@@3VC380ItemType@@A]
+  00404B07: 3B 05 B0 31 AA 00  cmp         eax,dword ptr [?g380ItemType@@3VC380ItemType@@A]
+  00404B0D: 74 08              je          00404B17
+  00404B0F: 8B 0C 07           mov         ecx,dword ptr [edi+eax]
+  00404B12: 83 F9 FF           cmp         ecx,0FFFFFFFFh
+  00404B15: 75 03              jne         00404B1A
+  00404B17: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  00404B1A: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  00404B1E: 75 65              jne         00404B85
+  00404B20: 8B 06              mov         eax,dword ptr [esi]
+  00404B22: 48                 dec         eax
+  00404B23: 83 F8 07           cmp         eax,7
+  00404B26: 77 5D              ja          00404B85
+  00404B28: FF 24 85 BC 4B 40  jmp         dword ptr [eax*4+404BBCh]
+            00
+  00404B2F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B32: 01 88 60 09 00 00  add         dword ptr [eax+960h],ecx
+  00404B38: EB 4B              jmp         00404B85
+  00404B3A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B3D: 01 88 58 09 00 00  add         dword ptr [eax+958h],ecx
+  00404B43: EB 40              jmp         00404B85
+  00404B45: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B48: 01 88 64 09 00 00  add         dword ptr [eax+964h],ecx
+  00404B4E: EB 35              jmp         00404B85
+  00404B50: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B53: 01 88 5C 09 00 00  add         dword ptr [eax+95Ch],ecx
+  00404B59: EB 2A              jmp         00404B85
+  00404B5B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B5E: 01 88 24 01 00 00  add         dword ptr [eax+124h],ecx
+  00404B64: EB 1F              jmp         00404B85
+  00404B66: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B69: 01 88 34 01 00 00  add         dword ptr [eax+134h],ecx
+  00404B6F: EB 14              jmp         00404B85
+  00404B71: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B74: 89 88 34 09 00 00  mov         dword ptr [eax+934h],ecx
+  00404B7A: EB 09              jmp         00404B85
+  00404B7C: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00404B7F: 01 88 30 09 00 00  add         dword ptr [eax+930h],ecx
+  00404B85: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00404B88: 83 C7 04           add         edi,4
+  00404B8B: 83 FF 28           cmp         edi,28h
+  00404B8E: 0F 8C DF FE FF FF  jl          00404A73
+  00404B94: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00404B97: BE 00 20 00 00     mov         esi,2000h
+  00404B9C: 81 C3 FC 00 00 00  add         ebx,0FCh
+  00404BA2: 83 EA 01           sub         edx,1
+  00404BA5: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00404BA8: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00404BAB: 0F 85 8F FE FF FF  jne         00404A40
+  00404BB1: 5F                 pop         edi
+  00404BB2: 5E                 pop         esi
+  00404BB3: 5B                 pop         ebx
+  00404BB4: 8B E5              mov         esp,ebp
+  00404BB6: 5D                 pop         ebp
+  00404BB7: C2 08 00           ret         8
+  00404BBA: 66 90              nop
+  00404BBC: 2F                 das
+  00404BBD: 4B                 dec         ebx
+  00404BBE: 40                 inc         eax
+  00404BBF: 00 3A              add         byte ptr [edx],bh
+  00404BC1: 4B                 dec         ebx
+  00404BC2: 40                 inc         eax
+  00404BC3: 00 45 4B           add         byte ptr [ebp+4Bh],al
+  00404BC6: 40                 inc         eax
+  00404BC7: 00 50 4B           add         byte ptr [eax+4Bh],dl
+  00404BCA: 40                 inc         eax
+  00404BCB: 00 5B 4B           add         byte ptr [ebx+4Bh],bl
+  00404BCE: 40                 inc         eax

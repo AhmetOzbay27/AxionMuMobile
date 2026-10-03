@@ -1,0 +1,158 @@
+--- Source/4.GameServer/GameServer/SPK/SPK_MonsterSkill.cpp	2026-10-02 09:51:14.222479200 +0300
++++ BuildLog/2c1/A2_SPK_MonsterSkill_E2E_driver_snapshot.cpp	2026-10-02 09:50:06.795921000 +0300
+@@ -10,11 +10,6 @@
+ //             komut karsiligi (/reload custommonsterskill) ve canli log stringi birebir:
+ //             '[SPK] CustomMonsterSkill configuration saved and reloaded.'
+ //             (exe 2344740, nokta dahil).
+-//
+-// 2c.1-A2 E2E (2026-10-02 09:48, LOG/2026-10-02.txt 4523-4543): kayit=16, loader yolu
+-// ..\Data\SPK\CustomMonsterSkill.txt, GetSkillMonster satirlari OK, mukerrer 719 ilk-eslesme
+-// = 232, gObjSetMonster(704) -> GetSkill(42)/(264) mevcut, gObjMonsterAttack DURATION dali
+-// class=704 icin secildi, Reload canli log stringini yazdi. Detay: docs/16.
+ 
+ #include "stdafx.h"
+ #include "SPK_MonsterSkill.h"
+@@ -22,6 +17,10 @@
+ #include "Util.h"
+ #include "Log.h"
+ #include "Path.h"
++#include "User.h"		// 2c.1-A2 TEST (GECICI)
++#include "ObjectManager.h"	// 2c.1-A2 TEST (GECICI)
++#include "Monster.h"		// 2c.1-A2 TEST (GECICI)
++#include "SkillManager.h"	// 2c.1-A2 TEST (GECICI)
+ 
+ CCustomMonsterSkill gCustomMonsterSkill;
+ 
+@@ -133,3 +132,132 @@
+ 
+ 	return 0;
+ }
++
++// ========================= 2c.1-A2 TEST (GECICI) =========================
++// Tetik: ..\Data\SPK\MonsterSkill_selftest.flag (EventMainManager 1 sn tick gorup siler).
++// Tur sonunda kaldirilir; snapshot + patch BuildLog/2c1 altinda arsivlenir.
++
++void CustomMonsterSkillSelfTest()
++{
++	CCustomMonsterSkill* lpSkill = CCustomMonsterSkill::Instance();
++
++	LogAdd(LOG_RED,"[MSTEST] ===== SELFTEST BASLADI =====");
++	LogAdd(LOG_RED,"[MSTEST] Instance()=%p gCustomMonsterSkill=%p ayni=%d | kayit=%d (canli SPK\\CustomMonsterSkill.txt = 16 satir)",
++		(void*)lpSkill,(void*)&gCustomMonsterSkill,(lpSkill == &gCustomMonsterSkill),(int)lpSkill->m_Monster_Skill.size());
++	LogAdd(LOG_RED,"[MSTEST] loader yolu: %s",gPath.GetFullPath("SPK\\CustomMonsterSkill.txt"));
++
++	// 1) veri dogrulugu (canli dosya satirlari birebir)
++	int testRows[6][3] = {{750,41,232},{704,42,264},{706,38,0},{561,38,0},{754,78,0},{722,13,0}};
++
++	for(int n=0;n < 6;n++)
++	{
++		CUSTOM_MONSTER_SKILL* lpInfo = lpSkill->GetSkillMonster(testRows[n][0]);
++
++		if(lpInfo != 0)
++		{
++			LogAdd(LOG_RED,"[MSTEST] GetSkillMonster(%d) -> {class=%d,skill1=%d,skill2=%d} beklenen {%d,%d,%d} %s",
++				testRows[n][0],lpInfo->m_MonsterClass,lpInfo->m_Skill1,lpInfo->m_Skill2,
++				testRows[n][0],testRows[n][1],testRows[n][2],
++				((lpInfo->m_MonsterClass==testRows[n][0] && lpInfo->m_Skill1==testRows[n][1] && lpInfo->m_Skill2==testRows[n][2])?"OK":"FARKLI"));
++		}
++		else
++		{
++			LogAdd(LOG_RED,"[MSTEST] GetSkillMonster(%d) -> NULL (BEKLENMEYEN)",testRows[n][0]);
++		}
++	}
++
++	// canli dosyada 719 iki kez: satir 8 (232) / satir 16 (4) -> canli GetSkillMonster ilk bulani doner
++	CUSTOM_MONSTER_SKILL* lpDup = lpSkill->GetSkillMonster(719);
++	LogAdd(LOG_RED,"[MSTEST] 719 mukerrer kayit ilk-eslesme kurali -> skill1=%d skill2=%d (beklenen ilk kayit 232/0)",
++		(lpDup!=0)?lpDup->m_Skill1:-1,(lpDup!=0)?lpDup->m_Skill2:-1);
++	LogAdd(LOG_RED,"[MSTEST] GetSkillMonster(99999)=%p (beklenen 0)",(void*)lpSkill->GetSkillMonster(99999));
++
++	// 2) TUKETICI 1: gObjSetMonster (canli 0x51FD62) -> gercek spawn + AddSkill zinciri
++	int idxA = gObjAddMonster(0);	// class 704 {704,42,264}
++	int idxB = gObjAddMonster(0);	// class 706 {706,38,0}
++	int idxC = gObjAddMonster(0);	// class 700 - kontrol (canli listede yok)
++
++	if(OBJECT_RANGE(idxA) == 0 || OBJECT_RANGE(idxB) == 0 || OBJECT_RANGE(idxC) == 0)
++	{
++		LogAdd(LOG_RED,"[MSTEST] spawn slotu alinamadi idxA=%d idxB=%d idxC=%d",idxA,idxB,idxC);
++		return;
++	}
++
++	int testIndex[3] = {idxA,idxB,idxC};
++	int testClass[3] = {704,706,700};
++
++	for(int n=0;n < 3;n++)
++	{
++		LPOBJ lpObj = &gObj[testIndex[n]];
++
++		lpObj->PosNum = -1;
++		lpObj->X = 130; lpObj->Y = 133; lpObj->TX = 130; lpObj->TY = 133;
++		lpObj->OldX = 130; lpObj->OldY = 133; lpObj->StartX = 130; lpObj->StartY = 133;
++		lpObj->Dir = 0; lpObj->Map = 0;
++
++		if(gObjSetMonster(testIndex[n],testClass[n]) == 0)
++		{
++			LogAdd(LOG_RED,"[MSTEST] gObjSetMonster(%d,%d)=0 (Monster.txt kaydi yok?)",testIndex[n],testClass[n]);
++			continue;
++		}
++
++		LogAdd(LOG_RED,"[MSTEST] spawn idx=%d class=%d AttackType=%d Type=%d | GetSkill(42)=%d GetSkill(38)=%d GetSkill(264)=%d",
++			testIndex[n],lpObj->Class,lpObj->AttackType,lpObj->Type,
++			(gSkillManager.GetSkill(lpObj,42)!=0),(gSkillManager.GetSkill(lpObj,38)!=0),(gSkillManager.GetSkill(lpObj,264)!=0));
++	}
++
++	// 3) TUKETICI 2: gObjMonsterAttack (canli 0x521571) - custom dal secimi
++	gObj[idxA].TargetNumber = idxB;
++	gObjMonsterAttack(&gObj[idxA],&gObj[idxB]);
++	LogAdd(LOG_RED,"[MSTEST] gObjMonsterAttack cagrildi: attacker idx=%d class=%d -> target idx=%d class=%d",
++		idxA,gObj[idxA].Class,idxB,gObj[idxB].Class);
++
++	// 4) Reload yolu + canli log stringi
++	int before = (int)lpSkill->m_Monster_Skill.size();
++	lpSkill->Reload();
++	LogAdd(LOG_RED,"[MSTEST] Reload sonrasi kayit=%d (once=%d)",(int)lpSkill->m_Monster_Skill.size(),before);
++
++	// 5) temizlik
++	gObjDel(idxA);
++	gObjDel(idxB);
++	gObjDel(idxC);
++	LogAdd(LOG_RED,"[MSTEST] ===== SELFTEST BITTI (spawn edilen 3 obje silindi) =====");
++}
++
++// 2c.1-A2 TEST (GECICI): gObjMonsterAttack 561/custom dal secimi — canli kosulun aynisi + log.
++bool CustomMonsterSkillAttackBranchTest(int MonsterClass)
++{
++	bool l_Result = (MonsterClass == 561 || gCustomMonsterSkill.GetSkillMonster(MonsterClass) != 0);
++
++	LogAdd(LOG_RED,"[MSTEST] gObjMonsterAttack DURATION dal secildi: class=%d custom=%d (561 mi=%d)",
++		MonsterClass,(gCustomMonsterSkill.GetSkillMonster(MonsterClass)!=0),(MonsterClass==561));
++
++	return l_Result;
++}
++
++bool CustomMonsterSkillTestTick()
++{
++	static DWORD l_TickCount = 0;
++
++	if((GetTickCount()-l_TickCount) < 1000)
++	{
++		return 0;
++	}
++
++	l_TickCount = GetTickCount();
++
++	char* l_TestFlag = gPath.GetFullPath("SPK\\MonsterSkill_selftest.flag");
++
++	if(GetFileAttributes(l_TestFlag) == INVALID_FILE_ATTRIBUTES)
++	{
++		return 0;
++	}
++
++	DeleteFile(l_TestFlag);
++
++	CustomMonsterSkillSelfTest();
++
++	return 1;
++}
++
++// ======================= /2c.1-A2 TEST (GECICI) =======================

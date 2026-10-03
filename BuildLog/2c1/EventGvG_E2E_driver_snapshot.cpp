@@ -1,0 +1,1347 @@
+#include "stdafx.h"
+#include "EventGvG.h"
+#include "Guild.h"
+#include "GuildClass.h"
+#include "EffectManager.h"
+#include "Notice.h"
+#include "ObjectManager.h"
+#include "CashShop.h"
+#include "Gate.h"
+#include "ScheduleManager.h"
+#include "MemScript.h"
+#include "DSProtocol.h"
+#include "ItemManager.h"
+#include "Message.h"
+#include "ServerInfo.h"
+#include "Util.h"
+#include "Path.h"	// 2c.1-TEST (GECICI): gPath.GetFullPath — test tetik dosyasi
+
+// =============================================================================
+// 2c.1-B2 (01.10.2026) — CGvGEvent TAM UYGULAMA
+// Donor: New Source Code/Source/Source/GameServer/GameServer/EventGvG.cpp
+// (1138 satir) birebir port (tek sapma: donor "gettype" yazim hatasi ->
+// GetAsNumber; docs/12 §4 denetimi asagida).
+//
+// CANLI KANIT DENETIMI (docs/12 §4 — donor tek basina yanlis kaynak):
+//  1) Canli map (GameServer_canli.map): CGvGEvent/EventGvG sinif sembolleri
+//     YOK — canli SPK exe'sinde GvG motoru derlenmemis; sadece 7 config
+//     anahtari kanitli (ServerInfo.obj 0x64b130-0x64b19c:
+//     EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers).
+//  2) Donor canlisi (4.MuServer Sub-1) GvG motoru ILE derlenmis olmasina
+//     ragmen Event\GvGEvent.dat dosyasi DEPLOY EDILMEMIS -> event BLANK'ta
+//     bekleyen, kapali bir modul (donor davranisi: Load'da SetBuffer 0 ->
+//     ErrorMessageBox -> ExitProcess; yani donor canlisinda acilirsa GS
+//     coker — bu yol bizde guard'li).
+//  3) Donor canli Command.txt'te /startgvg satiri YOK (/starttvt var) ->
+//     admin start komutu canlida etkin degil.
+//  4) PARITE KARARI: motor kodu donor'dan birebir (canli exe kaniti motor
+//     sembolleri icermedigi icin disasm denetimi mumkun degil; donor kaynak
+//     tek donoru). Data tarafinda donor canli davranisi korunur:
+//     GvGEvent.dat default-inert sablon olarak deploy edilir (Switch=0,
+//     zaman tablosu bos -> CheckSync BLANK'a kilitler, event kapanik
+//     bekler). Etkinlestirme: Switch=1 + section1 zaman satiri.
+//  5) Donor bagimlilik eslesmesi (bizim kaynakta birebir ayni):
+//     CEventName::GlobalRemainTime (CEventName.h:66/74, GVG_EVENT_TIME=10
+//     satir 14), CScheduleManager (ScheduleManager.h:15-16, CTime deseni
+//     CastleDeep.cpp:360-388 ile ayni), gGate.GetGate (Gate.h:68),
+//     GDSetCoinSend (DSProtocol.h:809), GCNoticeSend/ToAll (Notice.h:70-71),
+//     GCChatTargetSend (Protocol.h:1225), GetInventoryItemCount/
+//     DeleteInventoryItemCount (ItemManager.h:312/357),
+//     CharacterUpdateMapEffect (ObjectManager.h:26), SearchGuild_Number
+//     (GuildClass.h:100), G_MASTER (GuildClass.h:52), LOG_EVENT
+//     (ServerDisplayer.h:32), gObjMoveGate/gObjIsConnected (User.h).
+//
+// KANCA NOKTALARI (donor wiring'i ile ayni):
+//   ServerInfo.cpp ReadEventInfo:  gGvGEvent.Load("Event\\GvGEvent.dat")
+//   ServerInfo.cpp ReadEventInfo:  gGvGEvent.Init()                          (B1 iskeletinden mevcut)
+//   MonsterManager.cpp Init:       gGvGEvent.Init()                          (donor MonsterManager.cpp:441)
+//   NpcTalk.cpp NpcTalk:           gGvGEvent.Dialog(lpObj,lpNpc)             (donor NpcTalk.cpp:114)
+//   Attack.cpp Attack:             CheckPlayerTarget -> CheckSelfDefense=0   (donor Attack.cpp:887)
+//   Attack.cpp CheckPlayerTarget:  CheckStandTarget/CheckPlayerJoined/
+//                                  CheckSelfTeam                             (donor Attack.cpp:2029-2047)
+//   ObjectManager.cpp CharacterGetRespawnLocation: GetUserRespawnLocation    (donor ObjectManager.cpp:1014)
+//   User.cpp gObjUserDie:          UserDieProc                               (donor User.cpp:2821)
+//   GameServer.cpp IDM menusu:     IDM_STARTGVG -> StartGvG()                (donor GameServer.cpp:417)
+//   CommandManager.cpp:            COMMAND_STARTGVG -> CommandStartGvG()     (donor CommandManager.cpp:634/4082)
+// =============================================================================
+
+CGvGEvent gGvGEvent;
+
+CGvGEvent::CGvGEvent() // donor birebir
+{
+	this->m_TickCount = GetTickCount();
+	this->m_State = 0;
+	this->m_RemainTime = 0;
+	this->m_StandTime = 0;
+	this->m_CloseTime = 0;
+	this->m_TickCount = 0;
+	this->m_WarningTime = 0;
+	this->m_EventTime = 0;
+
+	this->TotalPlayer = 0;
+
+	this->Coin1 = 0;
+	this->Coin2 = 0;
+	this->Coin3 = 0;
+
+	this->Winner = -1;
+
+	this->CleanUser();
+	this->CleanGuild();
+}
+
+CGvGEvent::~CGvGEvent()
+{
+
+}
+
+void CGvGEvent::Init() // donor birebir
+{
+	if(gServerInfo.m_GvGEventSwitch == 0)
+	{
+		this->SetState(GVG_EVENT_STATE_BLANK);
+	}
+	else
+	{
+		this->SetState(GVG_EVENT_STATE_EMPTY);
+	}
+}
+
+void CGvGEvent::Clear() // donor birebir
+{
+	this->TotalPlayer = 0;
+
+	this->CleanUser();
+	this->CleanGuild();
+
+	this->Winner = -1;
+}
+
+void CGvGEvent::Load(char* path) // donor birebir (2c.1-B2 guard: dosya yoksa sessiz cikis — ExitProcess korumasi)
+{
+
+	CMemScript* lpMemScript = new CMemScript;
+
+	if(lpMemScript == 0)
+	{
+		ErrorMessageBox(MEM_SCRIPT_ALLOC_ERROR,path);
+		return;
+	}
+
+	if(lpMemScript->SetBuffer(path) == 0)
+	{
+		// 2c.1-B2 parite guard: donor canlisinda Event\GvGEvent.dat yok
+		// (donor orada ExitProcess'e dusuyor). Bizde dosya opsiyonel:
+		// yoksa varsayilanlar korunur, event BLANK'ta kalir (Init karar
+		// verir), GS boot'u bloklanmaz. Cikis oncesi m_GVGStartTime
+		// temizlenir (BLANK garantisi).
+		delete lpMemScript;
+		this->m_GVGStartTime.clear();
+		this->SetState(GVG_EVENT_STATE_BLANK);
+		return;
+	}
+
+	this->m_GVGStartTime.clear();
+
+	this->Clear();
+
+	try
+	{
+		while(true)
+		{
+			if(lpMemScript->GetToken() == TOKEN_END)
+			{
+				break;
+			}
+
+			int section = lpMemScript->GetNumber();
+
+			while(true)
+			{
+				if(section == 0)
+				{
+					if(strcmp("end",lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+					this->m_WarningTime = lpMemScript->GetNumber();
+
+					this->m_StandTime = lpMemScript->GetAsNumber();
+
+					this->m_EventTime = lpMemScript->GetAsNumber();
+
+					this->m_CloseTime = lpMemScript->GetAsNumber();
+
+				}
+				else if(section == 1)
+				{
+					if(strcmp("end",lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+
+					GVG_TIME info;
+
+					info.Year = lpMemScript->GetNumber();
+
+					info.Month = lpMemScript->GetAsNumber();
+
+					info.Day = lpMemScript->GetAsNumber();
+
+					info.DayOfWeek = lpMemScript->GetAsNumber();
+
+					info.Hour = lpMemScript->GetAsNumber();
+
+					info.Minute = lpMemScript->GetAsNumber();
+
+					info.Second = lpMemScript->GetAsNumber();
+
+					this->m_GVGStartTime.push_back(info);
+
+				}
+				else if(section == 2)
+				{
+					if(strcmp("end",lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+					this->ReqItemCount = lpMemScript->GetNumber();
+
+					this->ReqItemIndex = lpMemScript->GetAsNumber();
+
+					this->ReqItemLevel = lpMemScript->GetAsNumber();
+
+					this->EventMap = lpMemScript->GetAsNumber();
+
+					this->WaitingGate = lpMemScript->GetAsNumber();
+
+					this->StartGate = lpMemScript->GetAsNumber();
+
+					this->MinLevel = lpMemScript->GetAsNumber();
+
+					this->MaxLevel = lpMemScript->GetAsNumber();
+
+					this->MinReset = lpMemScript->GetAsNumber();
+
+					this->MaxReset = lpMemScript->GetAsNumber();
+
+					this->MinMasterReset = lpMemScript->GetAsNumber();
+
+					this->MaxMasterReset = lpMemScript->GetAsNumber();
+
+				}
+				else if(section == 3)
+				{
+					if(strcmp("end",lpMemScript->GetAsString()) == 0)
+					{
+						break;
+					}
+					this->Coin1 = lpMemScript->GetNumber();
+
+					this->Coin2 = lpMemScript->GetAsNumber();
+
+					this->Coin3 = lpMemScript->GetAsNumber();
+				}
+				else
+				{
+					break;
+				}
+			}
+		}
+	}
+	catch(...)
+	{
+		ErrorMessageBox(lpMemScript->GetLastError());
+	}
+
+	delete lpMemScript;
+}
+
+void CGvGEvent::MainProc() // donor birebir
+{
+	if((GetTickCount()-this->m_TickCount) >= 1000)
+	{
+		this->m_TickCount = GetTickCount();
+
+		// ===== 2c.1-TEST (GECICI — test sonrasi kaldirilir) =====
+		{
+			static int l_TestLastState = -1;
+			static int l_TestLastRemain = -1;
+
+			if(this->m_State != l_TestLastState || this->m_RemainTime != l_TestLastRemain)
+			{
+				l_TestLastState = this->m_State;
+				l_TestLastRemain = this->m_RemainTime;
+				LogAdd(LOG_EVENT,"[GVGTEST] state=%d remain=%d users=%d guilds=%d enter=%d switch=%d",this->m_State,this->m_RemainTime,this->GetUserCount(),this->GetGuildCount(),this->EnterEnabled,gServerInfo.m_GvGEventSwitch);
+			}
+
+			char* l_TestFlag = gPath.GetFullPath("Event\\GvG_selftest.flag");
+
+			if(GetFileAttributes(l_TestFlag) != INVALID_FILE_ATTRIBUTES)
+			{
+				DeleteFile(l_TestFlag);
+				this->GvGSelfTest();
+			}
+
+			// 2c.1-TEST: zaman tablosu E2E icin 2 test guild'i kaydeder (STAND gecisi GetGuildCount()>=2 ister).
+			char* l_GuildTestFlag = gPath.GetFullPath("Event\\GvG_testguilds.flag");
+
+			if(GetFileAttributes(l_GuildTestFlag) != INVALID_FILE_ATTRIBUTES)
+			{
+				DeleteFile(l_GuildTestFlag);
+
+				int l_AddA = (this->AddGuild(1) != 0) ? 1 : 0;
+				int l_AddB = (this->AddGuild(2) != 0) ? 1 : 0;
+
+				LogAdd(LOG_EVENT,"[GVGTEST] TEST GUILD KAYDI: AddGuild(1)=%d AddGuild(2)=%d guildCount=%d state=%d",l_AddA,l_AddB,this->GetGuildCount(),this->m_State);
+			}
+		}
+		// ===== /2c.1-TEST =====
+
+		this->m_RemainTime = (int)difftime(this->TargetTime,time(0));
+
+	if(gServerInfo.m_GvGEventSwitch == 0)
+	{
+		if (gEventName.GlobalRemainTime(GVG_EVENT_TIME) != -1)
+		{
+			gEventName.GlobalRemainTime(GVG_EVENT_TIME, -1);
+		}
+	}
+	else
+	{
+		if (this->m_State == GVG_EVENT_STATE_EMPTY)
+		{
+			gEventName.GlobalRemainTime(GVG_EVENT_TIME, this->m_RemainTime);
+		}
+		else
+		{
+			if (gEventName.GlobalRemainTime(GVG_EVENT_TIME) != 0)
+			{
+				gEventName.GlobalRemainTime(GVG_EVENT_TIME, 0);
+			}
+		}
+	}
+
+		switch(this->m_State)
+		{
+			case GVG_EVENT_STATE_BLANK:
+				this->ProcState_BLANK();
+				break;
+			case GVG_EVENT_STATE_EMPTY:
+				this->ProcState_EMPTY();
+				break;
+			case GVG_EVENT_STATE_STAND:
+				this->ProcState_STAND();
+				break;
+			case GVG_EVENT_STATE_START:
+				this->ProcState_START();
+				break;
+			case GVG_EVENT_STATE_CLEAN:
+				this->ProcState_CLEAN();
+				break;
+		}
+	}
+}
+
+void CGvGEvent::ProcState_BLANK() // donor birebir
+{
+
+}
+
+void CGvGEvent::ProcState_EMPTY() // donor birebir
+{
+	if(this->m_RemainTime > 0 && this->m_RemainTime <= (this->m_WarningTime*60))
+	{
+		this->CheckUser();
+
+		this->EnterEnabled = 1;
+
+		if((this->AlarmMinSave=(((this->m_RemainTime%60)==0)?((this->m_RemainTime/60)-1):(this->m_RemainTime/60))) != this->AlarmMinLeft)
+		{
+			this->AlarmMinLeft = this->AlarmMinSave;
+
+			gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(863),(this->AlarmMinLeft+1));
+		}
+	}
+
+	if(this->m_RemainTime <= 0)
+	{
+		gNotice.GCNoticeSendToAll(0,0,0,0,0,0,gMessage.GlobalText(865));
+		this->NoticeSendToAll(1,gMessage.GlobalText(866),this->m_StandTime);
+		this->SetState(GVG_EVENT_STATE_STAND);
+	}
+}
+
+void CGvGEvent::ProcState_STAND() // donor birebir
+{
+	this->CheckUser();
+
+	if(this->GetUserCount() < gServerInfo.m_GvGEventMinUsers)
+	{
+		this->NoticeSendToAll(0,gMessage.GlobalText(875));
+		this->SetState(GVG_EVENT_STATE_EMPTY);
+		return;
+	}
+
+	if(this->GetGuildCount() < 2)
+	{
+		this->NoticeSendToAll(0,gMessage.GlobalText(875));
+		this->SetState(GVG_EVENT_STATE_EMPTY);
+		return;
+	}
+
+	if(this->m_RemainTime <= 0)
+	{
+		if (this->TotalPlayer >= gServerInfo.m_GvGEventMinUsers)
+		{
+			for(int n=0;n<MAX_GVGEVENT_USER;n++)
+			{
+				gObjMoveGate(this->User[n].Index, this->User[n].Gate);
+			}
+			this->NoticeSendToAll(0,gMessage.GlobalText(867));
+			this->SetState(GVG_EVENT_STATE_START);
+		}
+		else
+		{
+			this->NoticeSendToAll(0,gMessage.GlobalText(868));
+			this->SetState(GVG_EVENT_STATE_EMPTY);
+		}
+	}
+}
+
+void CGvGEvent::ProcState_START() // donor birebir
+{
+	this->CheckUser();
+
+	if(this->GetUserCount() == 0)
+	{
+		this->SetState(GVG_EVENT_STATE_EMPTY);
+		this->NoticeSendToAll(0,gMessage.GlobalText(875));
+		return;
+	}
+
+	if(this->GetUserCount() == 1)
+	{
+		this->NoticeSendToAll(0,gMessage.GlobalText(875));
+		this->SetState(GVG_EVENT_STATE_CLEAN);
+		return;
+	}
+
+	if(this->m_RemainTime <= 0)
+	{
+		this->NoticeSendToAll(0,gMessage.GlobalText(868));
+		this->SetState(GVG_EVENT_STATE_CLEAN);
+	}
+}
+
+void CGvGEvent::ProcState_CLEAN() // donor birebir
+{
+	this->CheckUser();
+
+	if(this->m_RemainTime <= 0)
+	{
+		this->SetState(GVG_EVENT_STATE_EMPTY);
+	}
+}
+
+void CGvGEvent::SetState(int state) // donor birebir
+{
+	switch((this->m_State=state))
+	{
+		case GVG_EVENT_STATE_BLANK:
+			this->SetState_BLANK();
+			break;
+		case GVG_EVENT_STATE_EMPTY:
+			this->SetState_EMPTY();
+			break;
+		case GVG_EVENT_STATE_STAND:
+			this->SetState_STAND();
+			break;
+		case GVG_EVENT_STATE_START:
+			this->SetState_START();
+			break;
+		case GVG_EVENT_STATE_CLEAN:
+			this->SetState_CLEAN();
+			break;
+	}
+}
+
+void CGvGEvent::SetState_BLANK() // donor birebir
+{
+
+}
+
+void CGvGEvent::SetState_EMPTY() // donor birebir
+{
+	this->EnterEnabled = 0;
+	this->AlarmMinSave = -1;
+	this->AlarmMinLeft = -1;
+
+	this->ClearUser();
+	this->ClearGuild();
+
+	this->Winner = -1;
+
+	this->CheckSync();
+}
+
+void CGvGEvent::SetState_STAND() // donor birebir
+{
+	this->EnterEnabled = 0;
+	this->AlarmMinSave = -1;
+	this->AlarmMinLeft = -1;
+
+	this->m_RemainTime = this->m_StandTime*60;
+
+	this->TargetTime = (int)(time(0)+this->m_RemainTime);
+}
+
+void CGvGEvent::SetState_START() // donor birebir
+{
+	this->EnterEnabled = 0;
+	this->AlarmMinSave = -1;
+	this->AlarmMinLeft = -1;
+
+	this->m_RemainTime = this->m_EventTime*60;
+
+	this->TargetTime = (int)(time(0)+this->m_RemainTime);
+}
+
+void CGvGEvent::SetState_CLEAN() // donor birebir
+{
+	this->EnterEnabled = 0;
+	this->AlarmMinSave = -1;
+	this->AlarmMinLeft = -1;
+
+	this->CalcRank();
+
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(OBJECT_RANGE(this->User[n].Index) != 0)
+		{
+			//gObjViewportListProtocolCreate(&gObj[this->User[n].Index]);
+			gObjectManager.CharacterUpdateMapEffect(&gObj[this->User[n].Index]);
+
+			if(this->User[n].Guild == this->Winner)
+			{
+				LPOBJ lpObj = &gObj[this->User[n].Index];
+
+				if (this->Coin1 > 0 || this->Coin2 > 0 || this->Coin3 > 0)
+				{
+					GDSetCoinSend(lpObj->Index, this->Coin1, this->Coin2, this->Coin3,"GvGEvent");
+				}
+
+				//GDRankingTvTEventSaveSend(lpObj->Index, this->User[n].Kills, this->User[n].Deaths);
+			}
+		}
+	}
+
+	this->m_RemainTime = this->m_CloseTime*60;
+
+	this->TargetTime = (int)(time(0)+this->m_RemainTime);
+}
+
+void CGvGEvent::CheckSync() // donor birebir
+{
+	if(this->m_GVGStartTime.empty() != 0)
+	{
+		this->SetState(GVG_EVENT_STATE_BLANK);
+		return;
+	}
+
+	CTime ScheduleTime;
+
+	CScheduleManager ScheduleManager;
+
+	for(std::vector<GVG_TIME>::iterator it=this->m_GVGStartTime.begin();it != this->m_GVGStartTime.end();it++)
+	{
+		ScheduleManager.AddSchedule(it->Year,it->Month,it->Day,it->Hour,it->Minute,it->Second,it->DayOfWeek);
+	}
+
+	if(ScheduleManager.GetSchedule(&ScheduleTime) == 0)
+	{
+		this->SetState(GVG_EVENT_STATE_BLANK);
+		return;
+	}
+
+	this->m_RemainTime = (int)difftime(ScheduleTime.GetTime(),time(0));
+
+	this->TargetTime = (int)ScheduleTime.GetTime();
+}
+
+int CGvGEvent::GetState() // donor birebir
+{
+	return this->m_State;
+}
+
+bool CGvGEvent::Dialog(LPOBJ lpObj, LPOBJ lpNpc) // donor birebir (NPC konusma girisi — 7 config anahtari eslestirme)
+{
+	if (!gServerInfo.m_GvGEventSwitch) return false;
+
+	if (lpNpc->Class == gServerInfo.m_GvGEventNPC &&
+		lpNpc->Map == gServerInfo.m_GvGEventNPCMap &&
+		lpNpc->X == gServerInfo.m_GvGEventNPCX &&
+		lpNpc->Y == gServerInfo.m_GvGEventNPCY)
+	{
+		GCChatTargetSend(lpObj, lpNpc->Index, gMessage.GlobalText(864));
+		this->CheckEnterEnabled(lpObj);
+		return true;
+	}
+
+	return false;
+}
+
+bool CGvGEvent::CheckEnterEnabled(LPOBJ lpObj) // donor birebir (16 kontrol giridi)
+{
+	if(OBJECT_RANGE(lpObj->PartyNumber) != 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(869));
+		return 0;
+	}
+
+	if(lpObj->Guild != 0 && lpObj->Guild->WarState == 1)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(869));
+		return 0;
+	}
+
+	if(lpObj->Guild == 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(872));
+		return 0;
+	}
+
+	if(OBJECT_RANGE(lpObj->DuelUser) != 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(869));
+		return 0;
+	}
+
+	if(lpObj->PShopOpen != 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(872));
+		return 0;
+	}
+
+
+	if(this->GetEnterEnabled() == 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(870));
+		return 0;
+	}
+
+	if (lpObj->GuildStatus == G_MASTER && this->CheckReqItems(lpObj) == 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(871));
+		return 0;
+	}
+
+	if (this->GetUserCount() >= gServerInfo.m_GvGEventMaxUsers)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(869));
+		return 0;
+	}
+
+	if (this->GetGuildCount() >= MAX_GVGEVENT_GUILD)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(869));
+		return 0;
+	}
+
+	if(this->MinLevel != -1 && this->MinLevel > lpObj->Level)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(224),this->MinLevel);
+		return 0;
+	}
+
+	if(this->MaxLevel != -1 && this->MaxLevel < lpObj->Level)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(230),this->MaxLevel);
+		return 0;
+	}
+
+	if(this->MinReset != -1 && this->MinReset > lpObj->Reset)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(231),this->MinReset);
+		return 0;
+	}
+
+	if(this->MaxReset != -1 && this->MaxReset < lpObj->Reset)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(232),this->MaxReset);
+		return 0;
+	}
+
+	if(this->MinMasterReset != -1 && this->MinMasterReset > lpObj->MasterReset)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(818),this->MinMasterReset);
+		return 0;
+	}
+
+	if(this->MaxMasterReset != -1 && this->MaxMasterReset < lpObj->MasterReset)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(819),this->MaxMasterReset);
+		return 0;
+	}
+
+	if(lpObj->GuildStatus != G_MASTER && this->CheckGuildMaster(lpObj->GuildNumber) == 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(873),this->MaxMasterReset);
+		return 0;
+	}
+
+	if (lpObj->GuildStatus == G_MASTER && this->AddGuild(lpObj->GuildNumber) == 0)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(869),this->MaxMasterReset);
+		return 0;
+	}
+
+	gEffectManager.ClearAllEffect(lpObj);
+
+	return this->AddUser(lpObj->Index);
+}
+
+bool CGvGEvent::CheckReqItems(LPOBJ lpObj) // donor birebir (GirisMaster gate item'i — ChaosLock ile)
+{
+	lpObj->ChaosLock = 1;
+	int count = gItemManager.GetInventoryItemCount(lpObj,this->ReqItemIndex, this->ReqItemLevel);
+
+	if (count < this->ReqItemCount)
+	{
+		gNotice.GCNoticeSend(lpObj->Index,1,0,0,0,0,0,gMessage.GlobalText(833));
+		return false;
+	}
+
+	gItemManager.DeleteInventoryItemCount(lpObj,this->ReqItemIndex,this->ReqItemLevel,this->ReqItemCount);
+
+	lpObj->ChaosLock = 0;
+	return true;
+}
+
+int CGvGEvent::GetEnterEnabled() // donor birebir
+{
+	return this->EnterEnabled;
+}
+
+int CGvGEvent::GetEnteredUserCount() // donor birebir
+{
+	return this->GetUserCount();
+}
+
+bool CGvGEvent::CheckEnteredUser(int aIndex) // donor birebir
+{
+	return ((this->GetUser(aIndex)==0)?0:1);
+}
+
+bool CGvGEvent::CheckPlayerTarget(LPOBJ lpObj) // donor birebir
+{
+	if(this->GetState() == GVG_EVENT_STATE_START)
+	{
+		if (this->EventMap == lpObj->Map)
+		{
+			if(this->CheckEnteredUser(lpObj->Index) != 0)
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+bool CGvGEvent::CheckStandTarget(LPOBJ lpObj) // donor birebir
+{
+	if(this->GetState() == GVG_EVENT_STATE_STAND || this->EnterEnabled == 1)
+	{
+		if (this->EventMap == lpObj->Map)
+		{
+			if(this->CheckEnteredUser(lpObj->Index) != 0)
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+bool CGvGEvent::CheckPlayerJoined(LPOBJ lpObj,LPOBJ lpTarget) // donor birebir
+{
+	if(this->GetState() != GVG_EVENT_STATE_BLANK)
+	{
+		if (this->EventMap == lpObj->Map)
+		{
+			if(this->CheckEnteredUser(lpObj->Index) != 0)
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+bool CGvGEvent::CheckSelfTeam(LPOBJ lpObj,LPOBJ lpTarget) // donor birebir
+{
+	if(this->GetState() == GVG_EVENT_STATE_START)
+	{
+		GVG_EVENT_USER* lpUserA = this->GetUser(lpObj->Index);
+		GVG_EVENT_USER* lpUserB = this->GetUser(lpTarget->Index);
+
+		if (lpUserA == 0 || lpUserB == 0)
+		{
+			return 1;
+		}
+
+		if (lpUserA->Guild == lpUserB->Guild)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+bool CGvGEvent::AddUser(int aIndex) // donor birebir
+{
+	if(OBJECT_RANGE(aIndex) == 0)
+	{
+		return 0;
+	}
+
+	if(this->GetUser(aIndex) != 0)
+	{
+		return 0;
+	}
+
+	GVG_EVENT_GUILD* lpGuild = this->GetGuild(gObj[aIndex].GuildNumber);
+
+	if(lpGuild == 0)
+	{
+		return 0;
+	}
+
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(OBJECT_RANGE(this->User[n].Index) != 0)
+		{
+			continue;
+		}
+
+		this->User[n].Index = aIndex;
+		this->User[n].Gate = lpGuild->Gate;
+		this->User[n].Guild = lpGuild->Guild;
+		this->TotalPlayer++;
+		gObjMoveGate(aIndex, this->WaitingGate);
+		return 1;
+	}
+	return 0;
+}
+
+bool CGvGEvent::AddGuild(int index) // donor birebir (guild -> StartGate+n slot atama)
+{
+	if(index <= 0)
+	{
+		return 0;
+	}
+
+	if(this->GetGuild(index) != 0)
+	{
+		return 0;
+	}
+
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if(this->Guild[n].Guild != -1)
+		{
+			continue;
+		}
+
+		this->Guild[n].Guild = index;
+		this->Guild[n].Gate = this->StartGate+n;
+		return 1;
+	}
+	return 0;
+}
+
+bool CGvGEvent::DelUser(int aIndex) // donor birebir
+{
+	if(OBJECT_RANGE(aIndex) == 0)
+	{
+		return 0;
+	}
+
+	GVG_EVENT_USER* lpUser = this->GetUser(aIndex);
+
+	if(lpUser == 0)
+	{
+		return 0;
+	}
+
+	lpUser->Reset();
+	this->TotalPlayer--;
+	return 1;
+}
+
+GVG_EVENT_USER* CGvGEvent::GetUser(int aIndex) // donor birebir
+{
+	if(OBJECT_RANGE(aIndex) == 0)
+	{
+		return 0;
+	}
+
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(this->User[n].Index == aIndex)
+		{
+			return &this->User[n];
+		}
+	}
+	return 0;
+}
+
+GVG_EVENT_GUILD* CGvGEvent::GetGuild(int aIndex) // donor birebir
+{
+	if(OBJECT_RANGE(aIndex) == 0)
+	{
+		return 0;
+	}
+
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if(this->Guild[n].Guild == aIndex)
+		{
+			return &this->Guild[n];
+		}
+	}
+	return 0;
+}
+
+bool CGvGEvent::CheckGuildMaster(int index) // donor birebir
+{
+	if(index <= 0)
+	{
+		return 0;
+	}
+
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if(this->Guild[n].Guild == index)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void CGvGEvent::CleanUser() // donor birebir
+{
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		this->User[n].Reset();
+		this->TotalPlayer = 0;
+	}
+}
+
+void CGvGEvent::CleanGuild() // donor birebir
+{
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		this->Guild[n].Reset();
+	}
+}
+
+void CGvGEvent::ClearUser() // donor birebir (gate 17 = Lorencia donus — donor)
+{
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(OBJECT_RANGE(this->User[n].Index) == 0)
+		{
+			continue;
+		}
+
+		gObjMoveGate(this->User[n].Index,17);
+
+		//gObjViewportListProtocolCreate(&gObj[this->User[n].Index]);
+		gObjectManager.CharacterUpdateMapEffect(&gObj[this->User[n].Index]);
+
+		this->User[n].Reset();
+
+		this->TotalPlayer--;
+	}
+}
+
+void CGvGEvent::ClearGuild() // donor birebir
+{
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if(this->Guild[n].Guild == -1)
+		{
+			continue;
+		}
+		this->Guild[n].Reset();
+	}
+}
+
+void CGvGEvent::CheckUser() // donor birebir (baglanti/harita cikani temizle)
+{
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(OBJECT_RANGE(this->User[n].Index) == 0)
+		{
+			continue;
+		}
+
+		if(gObjIsConnected(this->User[n].Index) == 0)
+		{
+			this->DelUser(this->User[n].Index);
+			continue;
+		}
+
+		if (gObj[this->User[n].Index].Map != this->EventMap)
+		{
+			this->DelUser(this->User[n].Index);
+			continue;
+		}
+	}
+}
+
+int CGvGEvent::GetUserCount() // donor birebir
+{
+	int count = 0;
+
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(OBJECT_RANGE(this->User[n].Index) != 0)
+		{
+			count++;
+		}
+	}
+
+	return count;
+}
+
+int CGvGEvent::GetGuildCount() // donor birebir
+{
+	int count = 0;
+
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if(this->Guild[n].Guild != -1)
+		{
+			count++;
+		}
+	}
+
+	return count;
+}
+
+bool CGvGEvent::GetUserRespawnLocation(LPOBJ lpObj,int* gate,int* map,int* x,int* y,int* dir,int* level) // donor birebir
+{
+	if(gServerInfo.m_GvGEventSwitch == 0)
+	{
+		return 0;
+	}
+
+	if(this->GetState() != GVG_EVENT_STATE_START)
+	{
+		return 0;
+	}
+
+	GVG_EVENT_USER* lpUser = this->GetUser(lpObj->Index);
+
+	if(lpUser == 0)
+	{
+		return 0;
+	}
+
+	if (lpUser->Gate != -1)
+	{
+		if(gGate.GetGate(lpUser->Gate,gate,map,x,y,dir,level) != 0)
+		{
+			return 1;
+		}
+	}
+	else
+	{
+		if(gGate.GetGate(this->WaitingGate,gate,map,x,y,dir,level) != 0)
+		{
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+void CGvGEvent::UserDieProc(LPOBJ lpObj,LPOBJ lpTarget) // donor birebir (olduren guild +1 puan)
+{
+	if (gServerInfo.m_GvGEventSwitch == 0)
+	{
+		return;
+	}
+
+	if(this->GetState() != GVG_EVENT_STATE_START)
+	{
+		return;
+	}
+
+	GVG_EVENT_USER* lpUserA = this->GetUser(lpObj->Index);
+
+	if(lpUserA == 0)
+	{
+		return;
+	}
+
+	GVG_EVENT_USER* lpUserB = this->GetUser(lpTarget->Index);
+
+	if(lpUserB == 0)
+	{
+		return;
+	}
+
+	GVG_EVENT_GUILD* lpGuild = this->GetGuild(lpUserB->Guild);
+
+	if(lpGuild == 0)
+	{
+		return;
+	}
+
+	lpGuild->Point++;
+
+	//GUILD_INFO_STRUCT* lpGuildInfo = gGuildClass.SearchGuild_Number(lpUserB->Guild);
+
+	// 2c.1-B2 takip: canli metni (Message.xml 574) "[GvGEvent] Guild %s scored %d points!"
+	// → arguman sirasi (guild adi, puan) olarak duzeltildi (donor ters gonderiyordu).
+	this->NoticeSendToAll(0,gMessage.GlobalText(874),lpTarget->GuildName,lpGuild->Point);
+}
+
+void CGvGEvent::NoticeSendToAll(int type,char* message,...) // donor birebir
+{
+	char buff[256];
+
+	va_list arg;
+	va_start(arg,message);
+	vsprintf_s(buff,message,arg);
+	va_end(arg);
+
+	for(int n=0;n < MAX_GVGEVENT_USER;n++)
+	{
+		if(OBJECT_RANGE(this->User[n].Index) != 0)
+		{
+			gNotice.GCNoticeSend(this->User[n].Index,type,0,0,0,0,0,buff);
+		}
+	}
+}
+
+void CGvGEvent::CalcRank() // donor birebir (puan siralamasi -> Winner)
+{
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if(this->Guild[n].Guild < 0)
+		{
+			continue;
+		}
+
+		int rank = MAX_GVGEVENT_GUILD;
+
+		for(int i=0;i < MAX_GVGEVENT_GUILD;i++)
+		{
+			if(this->Guild[i].Guild < 0)
+			{
+				rank--;
+				continue;
+			}
+
+			if(this->Guild[n].Guild == this->Guild[i].Guild)
+			{
+				rank--;
+				continue;
+			}
+
+			if(this->Guild[n].Point > this->Guild[i].Point)
+			{
+				rank--;
+				continue;
+			}
+
+			if(this->Guild[n].Point == this->Guild[i].Point && n < i)
+			{
+				rank--;
+				continue;
+			}
+		}
+
+		this->Guild[n].Rank = rank;
+	}
+
+	for(int n=0;n < MAX_GVGEVENT_GUILD;n++)
+	{
+		if (this->Guild[n].Guild >= 0 )
+		{
+			this->Guild[n].Rank++;
+
+			if (this->Guild[n].Rank == 1)
+			{
+				this->Winner = this->Guild[n].Guild;
+
+				GUILD_INFO_STRUCT* lpGuildInfo = gGuildClass.SearchGuild_Number(this->Winner);
+
+				if (lpGuildInfo != NULL)
+				{
+					this->NoticeSendToAll(0,gMessage.GlobalText(876),lpGuildInfo->Name);
+				}
+				//GDRankingKingPlayerSaveSend(this->Char[n].Index,this->Char[n].Times);
+			}
+		}
+	}
+}
+
+void CGvGEvent::StartGvG() // donor birebir (admin menu/komut start'i: simdi+2dk)
+{
+	CTime CurrentTime = CTime::GetTickCount();
+
+	int hour	= (int)CurrentTime.GetHour();
+	int minute	= (int)CurrentTime.GetMinute()+2;
+
+	if (minute >= 60)
+	{
+		hour++;
+		minute = minute-60;
+	}
+
+	GVG_TIME info;
+
+	info.Year = (int)CurrentTime.GetYear();
+
+	info.Month = (int)CurrentTime.GetMonth();
+
+	info.Day = (int)CurrentTime.GetDay();
+
+	info.DayOfWeek = -1;
+
+	info.Hour = hour;
+
+	info.Minute = minute;
+
+	info.Second = 0;
+
+	this->m_GVGStartTime.push_back(info);
+
+	LogAdd(LOG_EVENT,"[Set GVG Start] At %02d:%02d:00",hour,minute);
+
+	this->Init();
+}
+
+// =============================================================================
+// 2c.1-TEST (GECICI — test sonrasi KALDIRILIR; pariteye girmez)
+// Amac: client olmadan EventGvG akisinin sunucu tarafi dogrulamasi.
+// Tetik: ..\Data\Event\GvG_selftest.flag (MainProc 1sn tick dosyayi gorup siler).
+// Kapsam: (1) Dialog gate'i icin NPC spawn eslesmesi (Class/Map/X/Y tam esitlik),
+//         (2) guild kaydi (AddGuild + StartGate+n), (3) kill puanlama
+//         (UserDieProc), (4) kazanan/rank (CalcRank — CLEAN gecisi).
+// Sentetik user indeksleri 9001/9002 (OBJECT_START_USER=9000 uzeri, BAGLANTISIZ
+// → DataSend socket guard'i no-op yapar; gObj[] dizisine ASLA yazilmaz).
+// =============================================================================
+void CGvGEvent::GvGSelfTest()
+{
+	LogAdd(LOG_EVENT,"[GVGTEST] ===== SELFTEST BASLADI ===== switch=%d state=%d minUsers=%d maxUsers=%d",gServerInfo.m_GvGEventSwitch,this->m_State,gServerInfo.m_GvGEventMinUsers,gServerInfo.m_GvGEventMaxUsers);
+
+	// (1) NPC eslesmesi — Dialog() gate'i: Class/Map/X/Y tam esitlik arar
+	int TestNpcMatch = 0;
+	int TestNpcIndex = -1;
+
+	for(int n=0;n < MAX_OBJECT;n++)
+	{
+		if(gObj[n].Class != gServerInfo.m_GvGEventNPC || gObj[n].Class == 0)
+		{
+			continue;
+		}
+
+		if(gObj[n].Map == gServerInfo.m_GvGEventNPCMap && gObj[n].X == gServerInfo.m_GvGEventNPCX && gObj[n].Y == gServerInfo.m_GvGEventNPCY)
+		{
+			TestNpcMatch++;
+			TestNpcIndex = n;
+			LogAdd(LOG_EVENT,"[GVGTEST] NPC MATCH idx=%d class=%d map=%d x=%d y=%d type=%d connected=%d",n,gObj[n].Class,gObj[n].Map,gObj[n].X,gObj[n].Y,gObj[n].Type,gObjIsConnected(n));
+		}
+	}
+
+	LogAdd(LOG_EVENT,"[GVGTEST] NPC eslesme=%d (config: class=%d map=%d x=%d y=%d) -> %s",TestNpcMatch,gServerInfo.m_GvGEventNPC,gServerInfo.m_GvGEventNPCMap,gServerInfo.m_GvGEventNPCX,gServerInfo.m_GvGEventNPCY,(TestNpcMatch>0)?"DIALOG GATE HAZIR":"NPC BULUNAMADI");
+
+	// (1b) Dialog() cagrisi — NPC konusma girisi: gercek NPC (gObj[TestNpcIndex]) + sentetik oyuncu.
+	// Sentetik oyuncuda Guild=0 → CheckEnterEnabled "guild yok" (mesaj 872) yolundan doner;
+	// AddUser/gObjMoveGate cagrilmaz (yan etkisiz dogrulama).
+	if(TestNpcIndex >= 0)
+	{
+		OBJECTSTRUCT TestDlgPlayer;
+
+		memset(&TestDlgPlayer,0,sizeof(TestDlgPlayer));
+
+		TestDlgPlayer.Index = 9001;
+		TestDlgPlayer.PartyNumber = -1;
+		TestDlgPlayer.DuelUser = -1;
+		TestDlgPlayer.Guild = 0;
+		TestDlgPlayer.GuildStatus = 0;
+		TestDlgPlayer.GuildNumber = 0;
+		TestDlgPlayer.Level = 1;
+
+		int TestDialog = (this->Dialog(&TestDlgPlayer,&gObj[TestNpcIndex]) != false) ? 1 : 0;
+
+		LogAdd(LOG_EVENT,"[GVGTEST] Dialog() cagrisi=%d (NPC idx=%d class=%d) -> guildsiz user yolu (mesaj 872), AddUser cagrilmadi",TestDialog,TestNpcIndex,gObj[TestNpcIndex].Class);
+	}
+
+	// (2) Guild kaydi — AddGuild + StartGate+n slot atamasi
+	this->CleanGuild();
+
+	int TestGuildA = 1;
+	int TestGuildB = 2;
+
+	int TestAddA = (this->AddGuild(TestGuildA) != 0) ? 1 : 0;
+	int TestAddB = (this->AddGuild(TestGuildB) != 0) ? 1 : 0;
+
+	LogAdd(LOG_EVENT,"[GVGTEST] AddGuild(%d)=%d AddGuild(%d)=%d guildCount=%d gateA=%d gateB=%d (StartGate=%d)",TestGuildA,TestAddA,TestGuildB,TestAddB,this->GetGuildCount(),this->Guild[0].Gate,this->Guild[1].Gate,this->StartGate);
+
+	// (3) Kill puanlama — UserDieProc: olduren (lpTarget) guild +1 puan
+	OBJECTSTRUCT TestVictim;
+	OBJECTSTRUCT TestKiller;
+
+	memset(&TestVictim,0,sizeof(TestVictim));
+	memset(&TestKiller,0,sizeof(TestKiller));
+
+	TestVictim.Index = 9002;	// oldu (guild A)
+	strcpy_s(TestVictim.GuildName,"GVGA");	// OBJECTSTRUCT::GuildName[11] — en fazla 10 karakter (tasma strcpy_s fast-fail verir)
+	TestVictim.GuildNumber = TestGuildA;
+
+	TestKiller.Index = 9001;	// olduren (guild B)
+	strcpy_s(TestKiller.GuildName,"GVGB");	// OBJECTSTRUCT::GuildName[11] siniri
+	TestKiller.GuildNumber = TestGuildB;
+
+	this->CleanUser();
+
+	this->User[0].Index = TestVictim.Index;
+	this->User[0].Guild = TestGuildA;
+	this->User[0].Gate = this->StartGate+0;
+
+	this->User[1].Index = TestKiller.Index;
+	this->User[1].Guild = TestGuildB;
+	this->User[1].Gate = this->StartGate+1;
+
+	this->SetState(GVG_EVENT_STATE_START);	// UserDieProc yalniz START'ta puanlar
+
+	this->UserDieProc(&TestVictim,&TestKiller);
+	this->UserDieProc(&TestVictim,&TestKiller);
+
+	LogAdd(LOG_EVENT,"[GVGTEST] UserDieProc x2 -> guildA(%d).Point=%d guildB(%d).Point=%d (beklenen: A=0 B=2)",TestGuildA,this->Guild[0].Point,TestGuildB,this->Guild[1].Point);
+
+	this->CleanUser();	// sentetik kayitlar silinir (gObj dokunulmaz)
+
+	// (4) CalcRank — CLEAN gecisi uzerinden kazanan/rank hesabi
+	this->SetState(GVG_EVENT_STATE_CLEAN);
+
+	GUILD_INFO_STRUCT* lpTestInfo = gGuildClass.SearchGuild_Number(this->Winner);
+
+	LogAdd(LOG_EVENT,"[GVGTEST] CalcRank -> Winner=%d (beklenen B=%d) | A rank=%d point=%d | B rank=%d point=%d | isim=%s",this->Winner,TestGuildB,this->Guild[0].Rank,this->Guild[0].Point,this->Guild[1].Rank,this->Guild[1].Point,(lpTestInfo!=NULL)?lpTestInfo->Name:"(DB'de guild yok -> isim sorgusu NULL)");
+
+	LogAdd(LOG_EVENT,"[GVGTEST] odul coinleri: Coin1=%d Coin2=%d Coin3=%d | CLEAN'da user yok -> GDSetCoinSend tetiklenmez",this->Coin1,this->Coin2,this->Coin3);
+
+	// (5) Gercek akisa donus: guild kayitlari KORUNUR (planli EMPTY->STAND->START
+	// zincirinin gercek zamanlamayla kosmasi icin), user listesi temiz kalir.
+	this->Init();
+
+	LogAdd(LOG_EVENT,"[GVGTEST] ===== SELFTEST BITTI ===== state=%d guilds=%d users=%d (guild kayitlari korundu)",this->m_State,this->GetGuildCount(),this->GetUserCount());
+}

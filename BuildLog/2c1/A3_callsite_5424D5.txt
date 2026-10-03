@@ -1,0 +1,101 @@
+  005423F6: 53                 push        ebx
+  005423F7: E8 E4 82 04 00     call        ?CalcSocketItemOption@CSocketItemOption@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  005423FC: 6A 00              push        0
+  005423FE: 53                 push        ebx
+  005423FF: E8 EC 87 FD FF     call        ?CalcMasterSkillTreeOption@CMasterSkillTree@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  00542404: 8B 7C 24 68        mov         edi,dword ptr [esp+68h]
+  00542408: A1 E8 C1 13 02     mov         eax,dword ptr ds:[0213C1E8h]
+  0054240D: 8B 3F              mov         edi,dword ptr [edi]
+  0054240F: 3B 87 04 00 00 00  cmp         eax,dword ptr [edi+4]
+  00542415: 7E 4E              jle         00542465
+  00542417: 68 E8 C1 13 02     push        213C1E8h
+  0054241C: E8 8B 18 0B 00     call        __Init_thread_header
+  00542421: 83 C4 04           add         esp,4
+  00542424: 83 3D E8 C1 13 02  cmp         dword ptr ds:[213C1E8h],0FFFFFFFFh
+            FF
+  0054242B: 75 38              jne         00542465
+  0054242D: 68 B0 C1 62 00     push        62C1B0h
+  00542432: C7 05 EC C1 13 02  mov         dword ptr ds:[213C1ECh],0
+            00 00 00 00
+  0054243C: C7 05 F0 C1 13 02  mov         dword ptr ds:[213C1F0h],0
+            00 00 00 00
+  00542446: C7 05 F4 C1 13 02  mov         dword ptr ds:[213C1F4h],0
+            00 00 00 00
+  00542450: E8 C3 15 0B 00     call        _atexit
+  00542455: 83 C4 04           add         esp,4
+  00542458: 68 E8 C1 13 02     push        213C1E8h
+  0054245D: E8 F9 17 0B 00     call        __Init_thread_footer
+  00542462: 83 C4 04           add         esp,4
+  00542465: 6A 00              push        0
+  00542467: 53                 push        ebx
+  00542468: B9 EC C1 13 02     mov         ecx,213C1ECh
+  0054246D: E8 BE 30 F3 FF     call        ?CalcCharacter@CustomDameItem@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  00542472: A1 F8 C1 13 02     mov         eax,dword ptr ds:[0213C1F8h]
+  00542477: 3B 87 04 00 00 00  cmp         eax,dword ptr [edi+4]
+  0054247D: 7E 4E              jle         005424CD
+  0054247F: 68 F8 C1 13 02     push        213C1F8h
+  00542484: E8 23 18 0B 00     call        __Init_thread_header
+  00542489: 83 C4 04           add         esp,4
+  0054248C: 83 3D F8 C1 13 02  cmp         dword ptr ds:[213C1F8h],0FFFFFFFFh
+            FF
+  00542493: 75 38              jne         005424CD
+  00542495: 0F 57 C0           xorps       xmm0,xmm0
+  00542498: C7 05 0C C2 13 02  mov         dword ptr ds:[213C20Ch],0
+            00 00 00 00
+  005424A2: 68 C0 C1 62 00     push        62C1C0h
+  005424A7: 0F 11 05 FC C1 13  movups      xmmword ptr ds:[213C1FCh],xmm0
+            02
+  005424AE: C7 05 10 C2 13 02  mov         dword ptr ds:[213C210h],0
+            00 00 00 00
+  005424B8: E8 5B 15 0B 00     call        _atexit
+  005424BD: 83 C4 04           add         esp,4
+  005424C0: 68 F8 C1 13 02     push        213C1F8h
+  005424C5: E8 91 17 0B 00     call        __Init_thread_footer
+  005424CA: 83 C4 04           add         esp,4
+  005424CD: 6A 00              push        0
+  005424CF: 53                 push        ebx
+  005424D0: B9 FC C1 13 02     mov         ecx,213C1FCh
+  005424D5: E8 16 67 F3 FF     call        ?CalcCharacter@CustomSetDameItem@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  005424DA: 6A 00              push        0
+  005424DC: 53                 push        ebx
+  005424DD: E8 3E 6E F6 FF     call        ?CalcCustomPetOption@CCustomPet@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  005424E2: 6A 00              push        0
+  005424E4: 53                 push        ebx
+  005424E5: B9 98 62 B4 00     mov         ecx,offset ?gCustomStartItemDame@@3VCCustomStartItemDame@@A
+  005424EA: E8 11 D3 F6 FF     call        ?CaclCharacter@CCustomStartItemDame@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  005424EF: 6A 00              push        0
+  005424F1: 53                 push        ebx
+  005424F2: B9 08 63 B4 00     mov         ecx,offset ?gCustomStartSetItemDame@@3VCCustomStartSetItemDame@@A
+  005424F7: E8 44 DD F6 FF     call        ?CalcCustomSetItemOption@CCustomStartSetItemDame@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  005424FC: E8 0F 40 05 00     call        ?Instance@cDanhHieu@@SAPAV1@XZ
+  00542501: 6A 00              push        0
+  00542503: 53                 push        ebx
+  00542504: 8B C8              mov         ecx,eax
+  00542506: E8 05 6F 05 00     call        ?AddOption@cDanhHieu@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  0054250B: E8 30 12 06 00     call        ?Instance@cQuanHam@@SAPAV1@XZ
+  00542510: 6A 00              push        0
+  00542512: 53                 push        ebx
+  00542513: 8B C8              mov         ecx,eax
+  00542515: E8 06 41 06 00     call        ?AddOption@cQuanHam@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  0054251A: E8 51 76 09 00     call        ?Instance@cTuLuyen@@SAPAV1@XZ
+  0054251F: 6A 00              push        0
+  00542521: 53                 push        ebx
+  00542522: 8B C8              mov         ecx,eax
+  00542524: E8 37 A5 09 00     call        ?AddOption@cTuLuyen@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  00542529: E8 52 78 05 00     call        ?Instance@cHonHoan@@SAPAV1@XZ
+  0054252E: 6A 00              push        0
+  00542530: 53                 push        ebx
+  00542531: 8B C8              mov         ecx,eax
+  00542533: E8 C8 90 05 00     call        ?AddOption@cHonHoan@@QAEXPAUOBJECTSTRUCT@@_N@Z
+  00542538: E8 D3 8A ED FF     call        ?Instance@CCustomCharOption@@SAPAV1@XZ
+  0054253D: 8B F8              mov         edi,eax
+  0054253F: 83 7F 14 00        cmp         dword ptr [edi+14h],0
+  00542543: 74 6C              je          005425B1
+  00542545: 83 7F 04 00        cmp         dword ptr [edi+4],0
+  00542549: 74 66              je          005425B1
+  0054254B: 8B 83 70 0F 00 00  mov         eax,dword ptr [ebx+0F70h]
+  00542551: 85 C0              test        eax,eax
+  00542553: 74 5C              je          005425B1
+  00542555: 89 44 24 6C        mov         dword ptr [esp+6Ch],eax
+  00542559: 8B CF              mov         ecx,edi
+  0054255B: 8D 44 24 6C        lea         eax,[esp+6Ch]

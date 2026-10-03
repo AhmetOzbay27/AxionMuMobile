@@ -1,0 +1,758 @@
+?DamageSprite@CAttack@@QAEXPAUOBJECTSTRUCT@@_J@Z
+  C1 size=6 head=2A sub=08  [00409C83: C7 44 24 0C C1 06  mov         dword ptr [esp+0Ch],82A06C1h ; 00409DEA: C7 44 24 0C C1 06  mov         dword p]
+  C1 size=16 head=A9 sub=01  [00409CCC: C7 44 24 18 C1 10  mov         dword ptr [esp+18h],1A910C1h ; 00409F6E: C7 44 24 18 C1 10  mov         dword p]
+?ProcState_STAND@CBsVEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [0040DFB4: C7 44 24 18 C1 06  mov         dword ptr [esp+18h],11D106C1h]
+?SetState_EMPTY@CBsVEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [0040E296: C7 45 EC C1 06 D1  mov         dword ptr [ebp-14h],11D106C1h]
+?SetState_CLEAN@CBsVEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [0040E473: C7 45 E8 C1 06 D1  mov         dword ptr [ebp-18h],11D106C1h]
+?SendInfoKillUser@CBsVEvent@@QAEXH@Z
+  C2 size=28 head=D3 sub=1E  [0040F02A: C7 44 24 10 C2 00  mov         dword ptr [esp+10h],0D31C00C2h ; 0040F032: C6 44 24 14 1E     mov         byte ]
+?ClientSendItemRaoBan@BCustomChoTroi@@QAEXHPAUPMSG_MOVEITEM@@@Z
+  C1 size=8 head=D3 sub=01  [004109FB: C7 44 24 10 C1 08  mov         dword ptr [esp+10h],1D308C1h ; 004109DC: 66 C7 44 24 14 C1  mov         word pt]
+?CGReqItemSell@BCustomChoTroi@@QAEXPAUPMSG_REQ_MARKET_SELL@@H@Z
+  C1 size=76 head=EC sub=01  [00410E70: C7 44 24 28 C1 4C  mov         dword ptr [esp+28h],1EC4CC1h]
+?CGReqItemBuy@BCustomChoTroi@@QAEXPAUPMSG_REQ_MARKET_BUY@@H@Z
+  C1 size=16 head=EC sub=02  [00411CED: C7 85 E8 FD FF FF  mov         dword ptr [ebp-218h],2EC10C1h]
+?DGAnsItemBuy@BCustomChoTroi@@QAEXPAUSDHP_ANS_MARKET_BUY@@@Z
+  C1 size=17 head=F3 sub=14  [004125E3: C7 84 24 20 01 00  mov         dword ptr [esp+120h],14F311C1h]
+?GuiThuThongBao@BCustomChoTroi@@QAAXPAUOBJECTSTRUCT@@PAD1ZZ
+  C2 size=1088 head=70 sub=?  [00412D00: C7 84 24 50 04 00  mov         dword ptr [esp+450h],704004C2h]
+?UserSendClientInfo@BCustomItemBank@@QAEXH@Z
+  C2 size=0 head=FA sub=19  [00414BF2: C7 44 24 14 C2 00  mov         dword ptr [esp+14h],0FA0000C2h ; 00414BFF: 66 C7 44 24 18 19  mov         word ]
+?UpLevelVIPChar@BCustomVIPChar@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=7 head=F3 sub=40  [00418245: C7 85 EC FC FF FF  mov         dword ptr [ebp-314h],40F307C1h ; 0041822A: C6 85 F0 FC FF FF  mov         byte ]
+?MainProc@CBloodCastle@@QAEXXZ
+  C1 size=4 head=92 sub=04  [004191EB: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],49204C1h ; 004192AA: C7 44 24 14 C1 04  mov         dword p]
+?ProcState_EMPTY@CBloodCastle@@QAEXPAUBLOOD_CASTLE_LEVEL@@@Z
+  C1 size=4 head=92 sub=03  [00419483: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],39204C1h]
+?ProcState_START@CBloodCastle@@QAEXPAUBLOOD_CASTLE_LEVEL@@@Z
+  C1 size=14 head=9B sub=04  [00419769: C7 44 24 10 C1 0E  mov         dword ptr [esp+10h],49B0EC1h ; 00419776: C7 44 24 10 C1 0E  mov         dword p]
+  C1 size=14 head=9B sub=03  [00419667: 66 C7 44 24 1C C1  mov         word ptr [esp+1Ch],0EC1h ; 0041966E: C7 44 24 1E 9B 03  mov         dword ptr []
+?SetState_EMPTY@CBloodCastle@@QAEXPAUBLOOD_CASTLE_LEVEL@@@Z
+  C1 size=14 head=9B sub=02  [004199E2: 66 C7 45 D8 C1 0E  mov         word ptr [ebp-28h],0EC1h ; 004199E8: C7 45 DA 9B 02 00  mov         dword ptr []
+?GiveUserRewardExperience@CBloodCastle@@QAEXPAUBLOOD_CASTLE_LEVEL@@H@Z
+  C1 size=39952 head=9C sub=FF  [0041ABC8: C7 44 24 10 C3 10  mov         dword ptr [esp+10h],0FF9C10C3h ; 0041ABD7: C6 44 24 14 FF     mov         byte ]
+?SearchUserDropEventItem@CBloodCastle@@QAEXH@Z
+  C1 size=5 head=23 sub=00  [0041B083: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],2305C1h]
+?NpcAngelMessenger@CBloodCastle@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=7 head=F3 sub=40  [0041B54F: C7 44 24 0C C1 07  mov         dword ptr [esp+0Ch],40F307C1h ; 0041B589: C7 44 24 0C C1 07  mov         dword ]
+?UserDieProc@CBloodCastle@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=29 head=93 sub=00  [0041B7FD: C7 45 E0 C1 1D 93  mov         dword ptr [ebp-20h],931DC1h ; 0041B804: C6 45 E4 FF        mov         byte ptr]
+?CGBloodCastleEnterRecv@CBloodCastle@@QAEXPAUPMSG_BLOOD_CASTLE_ENTER_RECV@@H@Z
+  C1 size=4 head=9A sub=00  [0041BE2D: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],9A04C1h]
+?MainProc@CBossGuild@@QAEXXZ
+  C1 size=16 head=C1 sub=10  [0041F37B: 66 C7 45 DC C1 10  mov         word ptr [ebp-24h],10C1h ; 0041F546: 66 C7 45 DC C1 10  mov         word ptr [e]
+?MonsterDie@CBossGuild@@QAE_NHH@Z
+  C1 size=16 head=C1 sub=10  [00420303: 66 C7 44 24 18 C1  mov         word ptr [esp+18h],10C1h ; 00420625: 66 C7 44 24 18 C1  mov         word ptr [e]
+  C1 size=44 head=C1 sub=2C  [004203C6: 66 C7 44 24 48 C1  mov         word ptr [esp+48h],2CC1h ; 004206E8: 66 C7 44 24 48 C1  mov         word ptr [e]
+?SetState@CGvGEvent@@QAEXH@Z
+  C1 size=6 head=D1 sub=11  [004238C0: C7 44 24 14 C1 06  mov         dword ptr [esp+14h],11D106C1h]
+?SetState_EMPTY@CGvGEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [004239F3: C7 45 EC C1 06 D1  mov         dword ptr [ebp-14h],11D106C1h]
+?MakeBot@ObjBotBuffer@@QAEXXZ
+  C1 size=5 head=F3 sub=20  [00425A53: C7 85 E0 FD FF FF  mov         dword ptr [ebp-220h],20F305C1h]
+?CGCashShopPointRecv@CCashShop@@QAEXH@Z
+  C1 size=18 head=18 sub=00  [00426D83: C7 45 E4 C1 12 18  mov         dword ptr [ebp-1Ch],1812C1h]
+?CGCashShopOpenRecv@CCashShop@@QAEXPAUPMSG_CASH_SHOP_OPEN_RECV@@H@Z
+  C1 size=5 head=D2 sub=02  [00426DF3: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],2D205C1h]
+?DGCashShopPointRecv@CCashShop@@QAEXPAUSDHP_CASH_SHOP_POINT_RECV@@@Z
+  C1 size=20 head=F3 sub=EA  [004270F1: C7 44 24 0C C1 14  mov         dword ptr [esp+0Ch],0EAF314C1h]
+  C1 size=45 head=D2 sub=01  [00427005: C7 44 24 20 C1 2D  mov         dword ptr [esp+20h],1D22DC1h]
+?DGCashShopItemBuyRecv@CCashShop@@QAEXPAUSDHP_CASH_SHOP_ITEM_BUY_RECV@@@Z
+  C1 size=5 head=D2 sub=03  [0042718C: C7 44 24 60 C1 05  mov         dword ptr [esp+60h],3D205C1h]
+?DGCashShopItemGifRecv@CCashShop@@QAEXPAUSDHP_CASH_SHOP_ITEM_GIF_RECV@@@Z
+  C1 size=5 head=D2 sub=04  [0042774C: C7 44 24 2C C1 05  mov         dword ptr [esp+2Ch],4D205C1h]
+?DGCashShopItemNumRecv@CCashShop@@QAEXPAUSDHP_CASH_SHOP_ITEM_NUM_RECV@@@Z
+  C1 size=12 head=D2 sub=06  [00427E10: C7 44 24 10 C1 0C  mov         dword ptr [esp+10h],6D20CC1h ; 00427F6D: C7 44 24 10 C1 0C  mov         dword p]
+  C1 size=33 head=D2 sub=0D  [00427F9D: C7 44 24 24 C1 21  mov         dword ptr [esp+24h],0DD221C1h]
+  C1 size=244 head=D2 sub=0E  [00427E4C: C7 44 24 48 C1 F4  mov         dword ptr [esp+48h],0ED2F4C1h]
+?DGCashShopItemUseRecv@CCashShop@@QAEXPAUSDHP_CASH_SHOP_ITEM_USE_RECV@@@Z
+  C1 size=5 head=D2 sub=0B  [004280BD: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],0BD205C1h]
+  C1 size=24 head=C1 sub=12  [0042835C: 66 C7 84 24 28 01  mov         word ptr [esp+128h],18C1h ; 004283CF: 66 C7 84 24 28 01  mov         word ptr []
+?GDCashShopRecievePointSend@CCashShop@@QAEXHKKK@Z
+  C1 size=32 head=18 sub=06  [004286B2: C7 45 DC C1 20 18  mov         dword ptr [ebp-24h],61820C1h]
+?GDCashShopAddPointSaveSend@CCashShop@@QAEXHPADKKKK0@Z
+  C1 size=44 head=18 sub=30  [0042878D: C7 45 CC C1 2C 18  mov         dword ptr [ebp-34h],30182CC1h]
+?GDCashShopSubPointSaveSend@CCashShop@@QAEXHPADKKKK0@Z
+  C1 size=44 head=18 sub=31  [004288CD: C7 45 CC C1 2C 18  mov         dword ptr [ebp-34h],31182CC1h]
+?GDCashShopInsertItemSaveSend@CCashShop@@QAEXHPADEKKKNE00@Z
+  C2 size=272 head=18 sub=32  [004289B0: C7 85 E4 FE FF FF  mov         dword ptr [ebp-11Ch],181001C2h ; 004289C1: C6 85 E8 FE FF FF  mov         byte ]
+?CGCastleSiegeWeaponUseRecv@CCastleSiegeWeapon@@QAEXPAUPMSG_CASTLE_SIEGE_WEAPON_USE_RECV@@H@Z
+  C1 size=7 head=B7 sub=02  [00429F42: C7 44 24 18 C1 07  mov         dword ptr [esp+18h],2B707C1h]
+  C1 size=10 head=B7 sub=01  [00429DEC: C7 44 24 24 C1 0A  mov         dword ptr [esp+24h],1B70AC1h]
+?CH_ClearDB@CBCongHuong@@QAEXHH_N@Z
+  C1 size=17 head=F3 sub=14  [0042B5EA: C7 85 E0 FE FF FF  mov         dword ptr [ebp-120h],14F311C1h ; 0042B773: C7 85 E0 FE FF FF  mov         dword]
+?CH_GSSendInfoClient@CBCongHuong@@QAEXH@Z
+  C1 size=80 head=FA sub=15  [0042B8DA: C7 44 24 18 C1 50  mov         dword ptr [esp+18h],15FA50C1h]
+?CH_ClientSetItemGS@CBCongHuong@@QAEXHPAUPMSG_MOVEITEM@@@Z
+  C1 size=5 head=C1 sub=05  [0042BCC7: 66 C7 85 EC FE FF  mov         word ptr [ebp-114h],5C1h ; 0042BF7B: 66 C7 85 EC FE FF  mov         word ptr [e]
+?CH_MixItemGS@CBCongHuong@@QAEXHPAUXULY_CGPACKET@@@Z
+  C1 size=17 head=F3 sub=14  [0042C801: C7 85 DC FE FF FF  mov         dword ptr [ebp-124h],14F311C1h ; 0042C8B0: C7 85 DC FE FF FF  mov         dword]
+?HuyExc_ClientSetItemGS@CBHuyDongExc@@QAEXHPAUPMSG_HDCLIENTSENDGS@@@Z
+  C1 size=104 head=FA sub=16  [0042DF52: C7 44 24 28 C1 68  mov         dword ptr [esp+28h],16FA68C1h]
+?ActionHuyExc@CBHuyDongExc@@QAEXHPAUXULY_CGPACKET@@@Z
+  C1 size=17 head=F3 sub=14  [0042E64B: C7 85 E4 FE FF FF  mov         dword ptr [ebp-11Ch],14F311C1h]
+?ClearCache@CBHuyDongExc@@QAEXHH@Z
+  C1 size=17 head=F3 sub=14  [0042E785: C7 45 E8 C1 11 F3  mov         dword ptr [ebp-18h],14F311C1h]
+?monster_del@CB_ActiveInvasions@@QAEXH_N@Z
+  C1 size=16 head=F3 sub=99  [0042E90A: C7 45 F0 C1 10 F3  mov         dword ptr [ebp-10h],99F310C1h]
+?MakeBot@CB_BotTrader@@QAEXXZ
+  C1 size=5 head=F3 sub=20  [00431650: C7 85 E8 FD FF FF  mov         dword ptr [ebp-218h],20F305C1h]
+?XuLyItemTrade@CB_BotTrader@@QAEHHH@Z
+  C1 size=4 head=3D sub=01  [00432A19: C7 85 98 FC FF FF  mov         dword ptr [ebp-368h],13D04C1h]
+  C1 size=32 head=C1 sub=18  [00431E14: 66 C7 85 A0 FC FF  mov         word ptr [ebp-360h],20C1h ; 00431F06: 66 C7 85 A0 FC FF  mov         word ptr []
+?TradeOpen@CB_BotTrader@@QAEHHH@Z
+  C1 size=4 head=3C sub=01  [00432DA6: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],13C04C1h]
+  C1 size=20 head=37 sub=01  [00432D59: C7 44 24 1C C1 14  mov         dword ptr [esp+1Ch],13714C1h]
+?SendDataIsTrade@CB_BotTrader@@QAEXHHHH@Z
+  C2 size=0 head=D3 sub=2E  [0043307B: C7 44 24 30 C2 00  mov         dword ptr [esp+30h],0D30000C2h ; 00433083: C6 44 24 34 2E     mov         byte ]
+?ChaosItemMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [00435065: C7 45 CC C1 10 86  mov         dword ptr [ebp-34h],78610C1h ; 004350F1: C7 45 CC C1 10 86  mov         dword p]
+?DevilSquareMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=08  [00435554: C7 44 24 0C C1 10  mov         dword ptr [esp+0Ch],88610C1h ; 004355F6: C7 44 24 0C C1 10  mov         dword p]
+?DinorantMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=F0  [004363AD: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],0F08610C1h ; 004363B7: C7 44 24 10 C1 10  mov         dword]
+?FruitMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [004367D0: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],78610C1h ; 0043684B: C7 44 24 10 C1 10  mov         dword p]
+?Wing2Mix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@H@Z
+  C1 size=16 head=86 sub=07  [00436C5C: C7 45 E0 C1 10 86  mov         dword ptr [ebp-20h],78610C1h ; 00436CFD: C7 45 E0 C1 10 86  mov         dword p]
+?BloodCastleMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=08  [00437A63: C7 44 24 0C C1 10  mov         dword ptr [esp+0Ch],88610C1h ; 00437A6D: C7 44 24 0C C1 10  mov         dword p]
+?PetMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@H@Z
+  C1 size=16 head=86 sub=07  [00438873: C7 44 24 1C C1 10  mov         dword ptr [esp+1Ch],78610C1h ; 004388F2: C7 44 24 1C C1 10  mov         dword p]
+?SiegePotionMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@H@Z
+  C1 size=16 head=86 sub=07  [00438CFF: C7 45 EC C1 10 86  mov         dword ptr [ebp-14h],78610C1h ; 00438D8B: C7 45 EC C1 10 86  mov         dword p]
+?PieceOfHornMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043949B: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],78610C1h ; 0043951F: C7 44 24 10 C1 10  mov         dword p]
+?HornOfFenrirMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [00439B55: C7 44 24 0C C1 10  mov         dword ptr [esp+0Ch],78610C1h ; 00439BD0: C7 44 24 0C C1 10  mov         dword p]
+?HornOfFenrirGoldMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043A77C: C7 44 24 0C C1 10  mov         dword ptr [esp+0Ch],78610C1h ; 0043A7F7: C7 44 24 0C C1 10  mov         dword p]
+?ShieldPotionMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@H@Z
+  C1 size=16 head=86 sub=F0  [0043ABD4: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],0F08610C1h ; 0043AC36: C7 44 24 10 C1 10  mov         dword]
+?JewelOfHarmonyItemPurityMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043AFBE: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],78610C1h ; 0043B149: C7 44 24 10 C1 10  mov         dword p]
+?JewelOfHarmonyItemSmeltMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043B2E7: C7 44 24 18 C1 10  mov         dword ptr [esp+18h],78610C1h ; 0043B5F9: C7 44 24 18 C1 10  mov         dword p]
+?JewelOfHarmonyItemRestoreMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043B7F7: C7 45 E4 C1 10 86  mov         dword ptr [ebp-1Ch],78610C1h ; 0043B8D3: C7 45 E4 C1 10 86  mov         dword p]
+?Item380Mix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043BBD0: C7 45 E8 C1 10 86  mov         dword ptr [ebp-18h],78610C1h ; 0043BC60: C7 45 E8 C1 10 86  mov         dword p]
+?IllusionTempleMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=08  [0043C113: C7 44 24 0C C1 10  mov         dword ptr [esp+0Ch],88610C1h ; 0043C11D: C7 44 24 0C C1 10  mov         dword p]
+?FeatherOfCondorMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043C569: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],78610C1h ; 0043C6B8: C7 44 24 10 C1 10  mov         dword p]
+?Wing3Mix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043CC47: C7 45 DC C1 10 86  mov         dword ptr [ebp-24h],78610C1h ; 0043CD8E: C7 45 DC C1 10 86  mov         dword p]
+?CustomItemMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@H@Z
+  C1 size=16 head=86 sub=07  [0043D87A: C7 85 00 FE FF FF  mov         dword ptr [ebp-200h],78610C1h ; 0043D8E1: C7 85 00 FE FF FF  mov         dword ]
+?SocketItemCreateSeedMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043E817: C7 45 A8 C1 10 86  mov         dword ptr [ebp-58h],78610C1h ; 0043E999: C7 45 A8 C1 10 86  mov         dword p]
+?SocketItemMountSeedSphereMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@E@Z
+  C1 size=16 head=86 sub=00  [0043F352: C7 85 E4 FE FF FF  mov         dword ptr [ebp-11Ch],8610C1h ; 0043F41C: C7 85 E4 FE FF FF  mov         dword p]
+?SocketItemUnMountSeedSphereMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@E@Z
+  C1 size=16 head=86 sub=00  [0043F80C: C7 85 E4 FE FF FF  mov         dword ptr [ebp-11Ch],8610C1h ; 0043F8DE: C7 85 E4 FE FF FF  mov         dword p]
+?ImperialGuardianMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [0043FC72: C7 44 24 18 C1 10  mov         dword ptr [esp+18h],78610C1h ; 0043FD31: C7 44 24 18 C1 10  mov         dword p]
+?LuckyItemCreateMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [00440265: C7 44 24 38 C1 10  mov         dword ptr [esp+38h],78610C1h ; 00440329: C7 44 24 38 C1 10  mov         dword p]
+?LuckyItemRefineMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [00440920: C7 44 24 14 C1 10  mov         dword ptr [esp+14h],78610C1h ; 00440AD9: C7 44 24 14 C1 10  mov         dword p]
+?MonsterWingMix@CChaosBox@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=86 sub=07  [00440CD8: C7 44 24 24 C1 10  mov         dword ptr [esp+24h],78610C1h ; 00440D74: C7 44 24 24 C1 10  mov         dword p]
+?MainProc@CChaosCastle@@QAEXXZ
+  C1 size=4 head=92 sub=0B  [00442A18: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],0B9204C1h ; 00442AD7: C7 44 24 14 C1 04  mov         dword ]
+?GiveUserRewardExperience@CChaosCastle@@QAEXPAUCHAOS_CASTLE_LEVEL@@H@Z
+  C1 size=39952 head=9C sub=FF  [00443F99: C7 44 24 10 C3 10  mov         dword ptr [esp+10h],0FF9C10C3h ; 00443FA8: C6 44 24 14 FF     mov         byte ]
+?CGChaosCastleEnterRecv@CChaosCastle@@QAEXPAUPMSG_CHAOS_CASTLE_ENTER_RECV@@H@Z
+  C1 size=5 head=C1 sub=05  [00444DAB: 66 C7 44 24 18 C1  mov         word ptr [esp+18h],5C1h ; 00444E09: C7 44 24 18 C1 05  mov         dword ptr [e]
+?GCChaosCastleDelayScoreSend@CChaosCastle@@QAEXPAUCHAOS_CASTLE_LEVEL@@HH@Z
+  C1 size=29 head=93 sub=00  [004450A8: C7 45 DC C1 1D 93  mov         dword ptr [ebp-24h],931DC1h ; 004450AF: C6 45 E0 FE        mov         byte ptr]
+?ManagementCore@CCommandManager@@QAE_NPAUOBJECTSTRUCT@@PADH@Z
+  C1 size=4 head=D9 sub=20  [00445CD9: C7 85 5C FE FF FF  mov         dword ptr [ebp-1A4h],20D904C1h]
+  C1 size=20 head=0F sub=07  [004478E0: C7 85 6C FE FF FF  mov         dword ptr [ebp-194h],70F14C1h ; 00447A44: C7 85 6C FE FF FF  mov         dword ]
+  C1 size=18 head=C1 sub=12  [004476AC: 66 C7 85 80 FE FF  mov         word ptr [ebp-180h],12C1h ; 004480B2: C7 85 80 FE FF FF  mov         dword ptr ]
+  C1 size=6 head=14 sub=01  [00447548: C7 85 94 FE FF FF  mov         dword ptr [ebp-16Ch],11406C1h]
+  C1 size=6 head=D1 sub=11  [004471DC: C7 45 F0 C1 06 D1  mov         dword ptr [ebp-10h],11D106C1h]
+?CommandFireworks@CCommandManager@@QAE_NPAUOBJECTSTRUCT@@PAD@Z
+  C1 size=7 head=F3 sub=40  [00449F2E: C7 45 E4 C1 07 F3  mov         dword ptr [ebp-1Ch],40F307C1h]
+?CommandResetAutoProc@CCommandManager@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=28 head=0F sub=00  [0044B5F4: C7 44 24 18 C1 1C  mov         dword ptr [esp+18h],0F1CC1h]
+?CommandReward@CCommandManager@@QAE_NPAUOBJECTSTRUCT@@PAD@Z
+  C1 size=60 head=0F sub=03  [00450414: C7 45 B4 C1 3C 0F  mov         dword ptr [ebp-4Ch],30F3CC1h]
+?CommandTop@CCommandManager@@QAE_NPAUOBJECTSTRUCT@@PAD@Z
+  C1 size=10 head=0F sub=09  [00452074: C7 45 E4 C1 0A 0F  mov         dword ptr [ebp-1Ch],90F0AC1h]
+?SetState@CCrywolf@@QAEXH@Z
+  C1 size=6 head=BD sub=00  [00455015: C7 44 24 14 C1 06  mov         dword ptr [esp+14h],0BD06C1h]
+?NotifyCrywolfPersonalRank@CCrywolf@@QAEXXZ
+  C1 size=12 head=BD sub=07  [004558F2: C7 44 24 24 C1 0C  mov         dword ptr [esp+24h],7BD0CC1h]
+  C1 size=39952 head=9C sub=FF  [00455A8F: C7 44 24 30 C3 10  mov         dword ptr [esp+30h],0FF9C10C3h ; 00455AB0: C6 44 24 34 FF     mov         byte ]
+?ChatServerProtocolCore@@YAXEPAEH@Z
+  C1 size=13 head=C1 sub=0E  [004583AB: 66 C7 85 14 F8 FF  mov         word ptr [ebp-7ECh],0DC1h ; 00458419: 66 C7 85 14 F8 FF  mov         word ptr []
+?SendKillCTCMini@CCTCmini@@QAEXHH@Z
+  C1 size=44 head=F3 sub=33  [0045A971: C7 44 24 14 C1 2C  mov         dword ptr [esp+14h],33F32CC1h ; 0045AB76: C7 44 24 14 28 23  mov         dword ]
+?OnAttackMonsterAndMsgProc@CCustomAttack@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=8 head=C1 sub=08  [0045E7B3: 66 C7 44 24 2C C1  mov         word ptr [esp+2Ch],8C1h ; 0045E826: 66 C7 44 24 2C C1  mov         word ptr [es]
+?ProcState_START@CCustomEventDrop@@QAEXPAUCUSTOM_EVENT_DROP_INFO@@@Z
+  C1 size=7 head=F3 sub=40  [00461814: C7 44 24 24 C1 07  mov         dword ptr [esp+24h],40F307C1h]
+?NpcTalk@CCustomNpcCollector@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=7 head=F3 sub=40  [00467928: C7 45 F0 C1 07 F3  mov         dword ptr [ebp-10h],40F307C1h ; 00467A09: 66 C7 45 F0 C1 05  mov         word p]
+?DGCustomNpcQuestRecv@CCustomNpcQuest@@QAEXPAUSDHP_CUSTOMNPCQUEST_RECV@@@Z
+  C1 size=20 head=F7 sub=01  [0046AB90: C7 44 24 38 C1 14  mov         dword ptr [esp+38h],1F714C1h]
+?MainProc@CCustomOnlineLottery@@QAEXXZ
+  C1 size=7 head=F3 sub=40  [0046B80D: C7 45 EC C1 07 F3  mov         dword ptr [ebp-14h],40F307C1h]
+?ItemGet@CCustomPick@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=8720 head=22 sub=FE  [0046CDA5: 66 C7 44 24 38 C3  mov         word ptr [esp+38h],10C3h ; 0046CDB0: C6 44 24 3A 22     mov         byte ptr [e]
+?QuestCommand@CCustomQuest@@QAEXPAUOBJECTSTRUCT@@PADH@Z
+  C1 size=39952 head=9C sub=FF  [0046F4FC: C7 44 24 10 C3 10  mov         dword ptr [esp+10h],0FF9C10C3h ; 0046F57C: C7 44 24 10 C1 07  mov         dword]
+?GCReqRankLevelUser@CCustomRankUser@@QAEXHH@Z
+  C2 size=116 head=F3 sub=E5  [00470E6B: C7 84 24 88 00 00  mov         dword ptr [esp+88h],0F37400C2h ; 00470E76: C6 84 24 8C 00 00  mov         byte ]
+?GiftItem@CCustomStartItem@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=18 head=D9 sub=07  [00471A52: C7 45 E4 C1 12 D9  mov         dword ptr [ebp-1Ch],7D912C1h]
+?OnPShopBuyItemRecv@CCustomStore@@QAE_NPAUPMSG_PSHOP_BUY_ITEM_RECV@@H@Z
+  C1 size=15 head=3F sub=08  [00473798: C7 44 24 78 C1 0F  mov         dword ptr [esp+78h],83F0FC1h]
+  C1 size=20 head=3F sub=06  [00472A9B: C7 84 24 0C 01 00  mov         dword ptr [esp+10Ch],63F14C1h ; 00473934: C7 84 24 0C 01 00  mov         dword ]
+?OnPShopBuyItemCallbackRecv@CCustomStore@@SAXPAUOBJECTSTRUCT@@0KKKK@Z
+  C1 size=15 head=3F sub=08  [00473D96: C7 44 24 2C C1 0F  mov         dword ptr [esp+2Ch],83F0FC1h]
+  C1 size=20 head=3F sub=06  [00473D1A: C7 84 24 2C 01 00  mov         dword ptr [esp+12Ch],63F14C1h ; 00473EF1: C7 84 24 2C 01 00  mov         dword ]
+?MakeItem@CCustomVongQuay@@QAEXHH@Z
+  C1 size=12 head=D3 sub=8C  [00475D52: C7 85 E4 FC FF FF  mov         dword ptr [ebp-31Ch],8CD30CC1h ; 00475BFF: C7 85 E8 FC FF FF  mov         dword]
+?ActionVongQuay@CCustomVongQuay@@QAEXHHH@Z
+  C1 size=12 head=D3 sub=8C  [00476316: C7 44 24 14 C1 0C  mov         dword ptr [esp+14h],8CD30CC1h]
+?RegDataSend@@YAXH@Z
+  C2 size=52 head=D3 sub=?  [00478116: C7 44 24 10 C2 00  mov         dword ptr [esp+10h],0D33400C2h]
+?ModeAttackRandom@CDarkSpirit@@QAEXXZ
+  C1 size=9 head=A8 sub=00  [00478757: C7 44 24 24 C1 09  mov         dword ptr [esp+24h],0A809C1h]
+?ModeAttackWithMaster@CDarkSpirit@@QAEXXZ
+  C1 size=9 head=A8 sub=00  [0047892B: C7 44 24 10 C1 09  mov         dword ptr [esp+10h],0A809C1h]
+?RangeAttack@CDarkSpirit@@QAEXHH@Z
+  C1 size=9 head=A8 sub=00  [00478A3B: C7 44 24 20 C1 09  mov         dword ptr [esp+20h],0A809C1h]
+?ResetTarget@CDarkSpirit@@QAEXH@Z
+  C1 size=7 head=A7 sub=00  [00478C54: C7 45 F4 C1 07 A7  mov         dword ptr [ebp-0Ch],0A707C1h]
+?ChangeCommand@CDarkSpirit@@QAEXHH@Z
+  C1 size=7 head=A7 sub=00  [00478DB0: C7 45 F4 C1 07 A7  mov         dword ptr [ebp-0Ch],0A707C1h]
+?Attack@CDarkSpirit@@QAE_NPAUOBJECTSTRUCT@@0PAVCSkill@@_NEE@Z
+  C1 size=6 head=2A sub=01  [004797E0: C7 44 24 20 C1 06  mov         dword ptr [esp+20h],12A06C1h]
+  C1 size=16 head=A9 sub=00  [00479829: C7 44 24 2C C1 10  mov         dword ptr [esp+2Ch],0A910C1h ; 00479F4F: C7 44 24 2C C1 14  mov         dword p]
+?MainProc@CDevilSquare@@QAEXXZ
+  C1 size=4 head=92 sub=01  [0047ACCA: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],19204C1h ; 0047ACEE: C7 44 24 10 93 00  mov         dword p]
+?ProcState_START@CDevilSquare@@QAEXPAUDEVIL_SQUARE_LEVEL@@@Z
+  C1 size=4 head=92 sub=02  [0047B273: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],29204C1h ; 0047B2C9: C7 44 24 10 94 00  mov         dword p]
+?SetState_CLEAN@CDevilSquare@@QAEXPAUDEVIL_SQUARE_LEVEL@@@Z
+  C1 size=39952 head=9C sub=FF  [0047B8EC: C7 44 24 20 C3 10  mov         dword ptr [esp+20h],0FF9C10C3h ; 0047B8FB: C6 44 24 24 FF     mov         byte ]
+?GiveUserRewardMoney@CDevilSquare@@QAEXPAUDEVIL_SQUARE_LEVEL@@@Z
+  C1 size=7 head=F3 sub=40  [0047BE2A: C7 44 24 0C C1 07  mov         dword ptr [esp+0Ch],40F307C1h]
+?NpcCharon@CDevilSquare@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=7 head=F3 sub=40  [0047BFEF: C7 44 24 0C C1 07  mov         dword ptr [esp+0Ch],40F307C1h ; 0047C029: C7 44 24 0C C1 07  mov         dword ]
+?CGDevilSquareEnterRecv@CDevilSquare@@QAEXPAUPMSG_DEVIL_SQUARE_ENTER_RECV@@H@Z
+  C1 size=4 head=90 sub=00  [0047C4BD: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],9004C1h]
+?ProcState_START@CDoubleGoer@@QAEXXZ
+  C1 size=5 head=BF sub=0F  [0047D0F9: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],0FBF05C1h ; 0047D384: C7 44 24 10 C1 06  mov         dword ]
+?SetState@CDoubleGoer@@QAEXH@Z
+  C1 size=5 head=BF sub=10  [0047D591: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],10BF05C1h ; 0047D619: C7 44 24 0C C1 05  mov         dword ]
+?SetState_EMPTY@CDoubleGoer@@QAEXXZ
+  C1 size=5 head=BF sub=10  [0047D71F: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],10BF05C1h]
+?SetState_CLEAN@CDoubleGoer@@QAEXXZ
+  C1 size=5 head=BF sub=13  [0047D8AE: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],13BF05C1h ; 0047DA8B: C7 44 24 14 C1 05  mov         dword ]
+?DropRewardByItemIndex@cDropReward@@QAE_NHPAUOBJECTSTRUCT@@@Z
+  C1 size=7 head=F3 sub=40  [00480013: C7 45 EC C1 07 F3  mov         dword ptr [ebp-14h],40F307C1h]
+?DataServerProtocolCore@@YAXEPAEH@Z
+  C1 size=12 head=81 sub=01  [00480634: C7 85 EC ED FF FF  mov         dword ptr [ebp-1214h],1810CC1h ; 004808C4: C7 85 EC ED FF FF  mov         dword]
+  C1 size=44 head=F3 sub=01  [00480243: C7 85 20 EE FF FF  mov         dword ptr [ebp-11E0h],1F32CC1h]
+  C1 size=34 head=F3 sub=30  [00480840: C7 85 2C EE FF FF  mov         dword ptr [ebp-11D4h],30F322C1h ; 00480C2C: C7 85 30 EE FF FF  mov         dwor]
+  C2 size=0 head=D3 sub=01  [004824EA: C7 85 E0 FE FF FF  mov         dword ptr [ebp-120h],0D30000C2h ; 004825D9: 66 C7 85 E1 FE FF  mov         word]
+  C2 size=261 head=AE sub=?  [004813EB: C7 85 E8 FE FF FF  mov         dword ptr [ebp-118h],0AE0501C2h]
+?DGCharacterListRecv@@YAXPAUSDHP_CHARACTER_LIST_RECV@@@Z
+  C1 size=5 head=DE sub=00  [004835D2: C7 44 24 64 C1 05  mov         dword ptr [esp+64h],0DE05C1h]
+  C1 size=62208 head=F3 sub=00  [004835A8: C7 84 24 C8 00 00  mov         dword ptr [esp+0C8h],0F300C3h]
+?DGCharacterInfoRecv@@YAXPAUSDHP_CHARACTER_INFO_RECV@@@Z
+  C1 size=10 head=D2 sub=0C  [00484455: C7 44 24 38 C1 0A  mov         dword ptr [esp+38h],0CD20AC1h ; 004844A0: C7 44 24 38 C1 0A  mov         dword ]
+  C1 size=4 head=D2 sub=00  [00484403: C7 44 24 4C C1 04  mov         dword ptr [esp+4Ch],0D204C1h]
+  C1 size=28 head=27 sub=01  [00483D9F: C7 44 24 5C C1 1C  mov         dword ptr [esp+5Ch],1271CC1h ; 00483DF6: 66 C7 44 24 5C C1  mov         word pt]
+  C1 size=16 head=BF sub=51  [004844C6: C7 44 24 60 C1 10  mov         dword ptr [esp+60h],51BF10C1h]
+  C1 size=62344 head=F3 sub=03  [0048378C: C7 44 24 78 C3 88  mov         dword ptr [esp+78h],3F388C3h ; 00484374: C6 44 24 78 C2     mov         byte pt]
+?DGCreateItemRecv@@YAXPAUSDHP_CREATE_ITEM_RECV@@@Z
+  C1 size=12 head=D2 sub=12  [00484E65: C7 44 24 18 C1 0C  mov         dword ptr [esp+18h],12D20CC1h ; 004853F4: 66 C7 44 24 18 C1  mov         word p]
+  C1 size=17 head=F3 sub=14  [00484E01: C7 84 24 14 01 00  mov         dword ptr [esp+114h],14F311C1h]
+?GDCharacterInfoSaveSend@@YAXH@Z
+  C1 size=72 head=0C sub=30  [00486171: C7 44 24 38 C1 48  mov         dword ptr [esp+38h],300C48C1h]
+  C2 size=4564 head=30 sub=?  [00485D81: C7 84 24 80 00 00  mov         dword ptr [esp+80h],30D411C2h]
+  C2 size=408 head=0D sub=C2  [00486269: C7 84 24 58 12 00  mov         dword ptr [esp+1258h],0D9801C2h ; 00486367: C7 84 24 58 12 00  mov         dwor]
+?CheckDuelArenaGladiator@CDuel@@QAEXPAUDUEL_ARENA_INFO@@@Z
+  C1 size=5 head=AA sub=03  [0048802E: C7 45 F0 C1 05 AA  mov         dword ptr [ebp-10h],3AA05C1h]
+?CheckDuelArenaSpectator@CDuel@@QAEXPAUDUEL_ARENA_INFO@@@Z
+  C1 size=5 head=AA sub=09  [0048816F: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],9AA05C1h]
+?CheckDuelScore@CDuel@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=7 head=F3 sub=40  [0048844B: C7 44 24 18 C1 07  mov         dword ptr [esp+18h],40F307C1h ; 0048837D: C7 44 24 1C C1 05  mov         dword ]
+?CheckDuelUser@CDuel@@QAEXXZ
+  C1 size=5 head=AA sub=03  [004888E8: C7 45 D8 C1 05 AA  mov         dword ptr [ebp-28h],3AA05C1h]
+  C1 size=5 head=AA sub=03  [00488888: C7 45 E0 C1 05 AA  mov         dword ptr [ebp-20h],3AA05C1h]
+  C1 size=17 head=AA sub=01  [0048867A: C7 45 E8 C1 11 AA  mov         dword ptr [ebp-18h],1AA11C1h ; 0048878B: C7 45 E8 C1 11 AA  mov         dword p]
+?RespawnDuelUser@CDuel@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=5 head=AA sub=0D  [00488AA8: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],0DAA05C1h]
+?CGDuelStartRecv@CDuel@@QAEXPAUPMSG_DUEL_START_RECV@@H@Z
+  C1 size=16 head=AA sub=02  [00488FF0: C7 44 24 20 C1 10  mov         dword ptr [esp+20h],2AA10C1h]
+?CGDuelOkRecv@CDuel@@QAEXPAUPMSG_DUEL_OK_RECV@@H@Z
+  C1 size=17 head=AA sub=01  [004897D3: C7 45 EC C1 11 AA  mov         dword ptr [ebp-14h],1AA11C1h ; 004897FD: C7 45 EC C1 11 AA  mov         dword p]
+?CGDuelWatchRecv@CDuel@@QAEXPAUPMSG_DUEL_WATCH_RECV@@H@Z
+  C1 size=5 head=F3 sub=20  [00489B38: C7 44 24 1C C1 05  mov         dword ptr [esp+1Ch],20F305C1h ; 00489C69: C7 44 24 20 C1 0E  mov         dword ]
+  C1 size=30 head=AA sub=07  [00489B99: C7 44 24 30 C1 1E  mov         dword ptr [esp+30h],7AA1EC1h]
+?GCDuelScoreSend@CDuel@@QAEXPAUDUEL_ARENA_INFO@@@Z
+  C1 size=10 head=AA sub=04  [00489DA1: C7 44 24 0C C1 0A  mov         dword ptr [esp+0Ch],4AA0AC1h]
+?GCDuelInterfaceSend@CDuel@@QAEXPAUDUEL_ARENA_INFO@@@Z
+  C1 size=12 head=AA sub=05  [00489E4F: C7 44 24 0C C1 0C  mov         dword ptr [esp+0Ch],5AA0CC1h]
+?GCDuelSpectatorDelSend@CDuel@@QAEXHPAUDUEL_ARENA_INFO@@@Z
+  C1 size=14 head=AA sub=0A  [00489F7E: C7 44 24 10 C1 0E  mov         dword ptr [esp+10h],0AAA0EC1h]
+?GCDuelWinSend@CDuel@@QAEXHPAD0@Z
+  C1 size=24 head=AA sub=0C  [0048A24F: C7 04 24 C1 18 AA  mov         dword ptr [esp],0CAA18C1h]
+?RemoveEffect@CEffectManager@@QAEXPAUOBJECTSTRUCT@@PAVCEffect@@@Z
+  C1 size=8 head=BF sub=07  [0048B9D4: C7 45 F4 C1 08 BF  mov         dword ptr [ebp-0Ch],7BF08C1h]
+?GC_BuffInfo@CEffectManager@@QAEXHH@Z
+  C1 size=52 head=F3 sub=13  [0048C347: C7 45 C8 C1 34 F3  mov         dword ptr [ebp-38h],13F334C1h]
+?GDGuildCreateRecv@@YAXPAUSDHP_GUILDCREATE_RESULT@@@Z
+  C1 size=5 head=56 sub=00  [0048CF7F: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],5605C1h ; 0048D063: 66 C7 44 24 0C C1  mov         word ptr]
+?GDGuildDestroyRecv@@YAXPAUSDHP_GUILDDESTROY_RESULT@@@Z
+  C1 size=5 head=C1 sub=04  [0048D255: 66 C7 44 24 14 C1  mov         word ptr [esp+14h],5C1h ; 0048D3CE: C7 44 24 14 C1 04  mov         dword ptr [e]
+?GDGuildMemberDelResult@@YAXPAUSDHP_GUILDMEMBERDEL_RESULT@@@Z
+  C1 size=4 head=C1 sub=04  [0048D5EC: 66 C7 44 24 10 C1  mov         word ptr [esp+10h],4C1h ; 0048D5FE: C7 44 24 10 C1 04  mov         dword ptr [e]
+?DGGuildMemberInfo@@YAXPAUSDHP_GUILDMEMBER_INFO@@@Z
+  C2 size=17 head=65 sub=?  [0048DB92: C7 44 24 38 C2 00  mov         dword ptr [esp+38h],651100C2h]
+?DGRelationShipAnsJoin@@YAXPAUEXSDHP_RELATIONSHIP_JOIN_RESULT@@@Z
+  C1 size=8 head=B4 sub=01  [0048E5DD: 66 C7 44 24 1C C1  mov         word ptr [esp+1Ch],8C1h ; 0048E733: C7 44 24 1C B4 01  mov         dword ptr [e]
+?DGUnionBreakOff@@YAXPAUEXSDHP_RELATIONSHIP_BREAKOFF_RESULT@@@Z
+  C1 size=8 head=E6 sub=01  [0048EA3E: C7 44 24 10 C1 08  mov         dword ptr [esp+10h],1E608C1h ; 0048EAD8: C7 44 24 10 B7 01  mov         dword p]
+?DGRelationShipAnsBreakOff@@YAXPAUEXSDHP_RELATIONSHIP_BREAKOFF_RESULT@@@Z
+  C1 size=8 head=B9 sub=01  [0048ED21: 66 C7 44 24 14 C1  mov         word ptr [esp+14h],8C1h ; 0048EE03: C7 44 24 14 B9 01  mov         dword ptr [e]
+?MainProc@CEventPvP@@QAEXXZ
+  C1 size=9 head=C1 sub=09  [00490048: 66 C7 45 F0 C1 09  mov         word ptr [ebp-10h],9C1h ; 00490098: 66 C7 45 F0 C1 09  mov         word ptr [eb]
+?MainProc@CEventRussianRoulette@@QAEXXZ
+  C1 size=9 head=C1 sub=07  [00491753: 66 C7 45 F0 C1 09  mov         word ptr [ebp-10h],9C1h ; 00491A0F: C7 45 F0 C1 07 F3  mov         dword ptr [e]
+  C1 size=2 head=00 sub=00  [004912BF: C7 45 F4 C3 02 00  mov         dword ptr [ebp-0Ch],2C3h ; 00491337: C7 45 F4 C0 02 00  mov         dword ptr []
+?SetState_EMPTY@CTvTEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [00492BD2: C7 45 EC C1 06 D1  mov         dword ptr [ebp-14h],11D106C1h]
+?SetState_CLEAN@CTvTEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [00492DF1: C7 45 C8 C1 06 D1  mov         dword ptr [ebp-38h],11D106C1h]
+?DivisionTeam@CTvTEvent@@QAEXXZ
+  C1 size=6 head=D1 sub=11  [00493892: C7 45 F0 C1 06 D1  mov         dword ptr [ebp-10h],11D106C1h]
+?TuDongDanhSkill@CFakeOnline@@QAEXH@Z
+  C1 size=13 head=C1 sub=0D  [00497826: 66 C7 44 24 30 C1  mov         word ptr [esp+30h],0DC1h ; 00497D82: 66 C7 44 24 30 C1  mov         word ptr [e]
+  C1 size=6 head=26 sub=FF  [004976D3: C7 44 24 34 C1 06  mov         dword ptr [esp+34h],0FF2606C1h ; 00497C28: C7 44 24 34 C1 06  mov         dword]
+?UseFruitAddPoint@CFruit@@QAE_NPAUOBJECTSTRUCT@@H@Z
+  C1 size=36 head=2C sub=10  [0049900F: 66 C7 44 24 1C C1  mov         word ptr [esp+1Ch],24C1h ; 00499016: C6 44 24 1E 2C     mov         byte ptr [e]
+?UseFruitSubPoint@CFruit@@QAE_NPAUOBJECTSTRUCT@@H@Z
+  C1 size=36 head=2C sub=10  [004995AF: 66 C7 44 24 24 C1  mov         word ptr [esp+24h],24C1h ; 004995B6: C6 44 24 26 2C     mov         byte ptr [e]
+?UseFruitResetPoint@CFruit@@QAE_NPAUOBJECTSTRUCT@@HH@Z
+  C1 size=36 head=2C sub=10  [00499AEF: 66 C7 44 24 14 C1  mov         word ptr [esp+14h],24C1h ; 00499AF6: C6 44 24 16 2C     mov         byte ptr [e]
+?JoinServerConnect@@YA_NK@Z
+  C1 size=58 head=00 sub=01  [0049A260: C7 45 C0 C1 3A 00  mov         dword ptr [ebp-40h],1003AC1h]
+?DataServerConnect@@YA_NK@Z
+  C1 size=58 head=00 sub=01  [0049A350: C7 45 C0 C1 3A 00  mov         dword ptr [ebp-40h],1003AC1h]
+?GCCustomJewelBankInfoSend@CCustomJewelBank@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=48 head=F3 sub=F5  [0049AEF8: C7 44 24 10 C1 30  mov         dword ptr [esp+10h],0F5F330C1h]
+?JewelBankRecv@CCustomJewelBank@@QAEXPAUPSBMSG_JEWELBANK_RECV@@H@Z
+  C1 size=24 head=F7 sub=04  [0049B2AF: C7 45 E4 C1 18 F7  mov         dword ptr [ebp-1Ch],4F718C1h]
+?GuiNgocAll@CCustomJewelBank@@QAEXPAUJEWELFOX_GUI_REQ@@H@Z
+  C1 size=24 head=F7 sub=04  [0049B746: C7 45 E4 C1 18 F7  mov         dword ptr [ebp-1Ch],4F718C1h]
+?JewelBankWithDrawRecv@CCustomJewelBank@@QAEXPAUPSBMSG_JEWELBANKWITHDRAW_RECV@@H@Z
+  C1 size=24 head=F7 sub=04  [0049BE53: C7 44 24 34 C1 18  mov         dword ptr [esp+34h],4F718C1h]
+?ProcMix@CustomHarmony@@QAEXH@Z
+  C1 size=17 head=F3 sub=14  [0049E67F: C7 85 40 FF FF FF  mov         dword ptr [ebp-0C0h],14F311C1h]
+?SendListItemPoint@CustomHarmony@@QAEXHH@Z
+  C2 size=12 head=D3 sub=24  [0049E767: C7 44 24 0C C2 00  mov         dword ptr [esp+0Ch],0D30C00C2h ; 0049E778: C6 44 24 10 24     mov         byte ]
+?CGGensSystemInsertRecv@CGensSystem@@QAEXPAUPMSG_GENS_SYSTEM_INSERT_RECV@@H@Z
+  C1 size=6 head=F8 sub=02  [004A269A: C7 44 24 0C C1 06  mov         dword ptr [esp+0Ch],2F806C1h ; 004A26E6: C7 44 24 0C C1 06  mov         dword p]
+  C1 size=30 head=11 sub=00  [004A283B: C7 44 24 14 C1 1E  mov         dword ptr [esp+14h],111EC1h]
+?CGGensSystemDeleteRecv@CGensSystem@@QAEXPAUPMSG_GENS_SYSTEM_DELETE_RECV@@H@Z
+  C1 size=5 head=F8 sub=04  [004A2954: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],4F805C1h ; 004A29A2: C7 44 24 10 C1 05  mov         dword p]
+  C1 size=36 head=11 sub=01  [004A2A80: C7 44 24 18 C1 24  mov         dword ptr [esp+18h],11124C1h]
+?CGGensSystemRewardRecv@CGensSystem@@QAEXPAUPMSG_GENS_SYSTEM_REWARD_RECV@@H@Z
+  C1 size=5 head=F8 sub=0A  [004A2CFD: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],0AF805C1h]
+  C1 size=30 head=11 sub=04  [004A2C58: C7 44 24 14 C1 1E  mov         dword ptr [esp+14h],4111EC1h]
+?DGGensSystemRewardRecv@CGensSystem@@QAEXPAUSDHP_GENS_SYSTEM_REWARD_RECV@@@Z
+  C1 size=5 head=F8 sub=0A  [004A2DBC: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],0AF805C1h ; 004A2E06: C7 44 24 10 C1 05  mov         dword ]
+  C1 size=44 head=C1 sub=28  [004A2F1E: 66 C7 44 24 20 C1  mov         word ptr [esp+20h],2CC1h ; 004A3009: C7 44 24 20 C1 28  mov         dword ptr []
+?GDGensSystemUpdateSend@CGensSystem@@QAEXH@Z
+  C1 size=40 head=11 sub=03  [004A30C4: C7 45 D0 C1 28 11  mov         dword ptr [ebp-30h],31128C1h]
+?CGGuildRequestRecv@CGuild@@QAEXPAUPMSG_GUILD_REQUEST_RECV@@H@Z
+  C1 size=4 head=51 sub=00  [004A32D4: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],5104C1h ; 004A32EA: C7 44 24 10 C1 04  mov         dword pt]
+?CGGuildResultRecv@CGuild@@QAEXPAUPMSG_GUILD_RESULT_RECV@@H@Z
+  C1 size=4 head=51 sub=00  [004A35CB: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],5104C1h ; 004A3604: C7 44 24 10 C1 04  mov         dword pt]
+?CGGuildDeleteRecv@CGuild@@QAEXPAUPMSG_GUILD_DELETE_RECV@@H@Z
+  C1 size=4 head=53 sub=00  [004A3AC2: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],5304C1h]
+  C1 size=25 head=C1 sub=19  [004A3C3E: 66 C7 44 24 18 C1  mov         word ptr [esp+18h],19C1h ; 004A3D10: 66 C7 44 24 18 C1  mov         word ptr [e]
+?GCGuildWarRequestResult@@YAXPADHH@Z
+  C1 size=4 head=60 sub=03  [004A428E: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],36004C1h]
+?GCGuildWarRequestSendRecv@@YAXPAUPMSG_GUILDWARSEND_RESULT@@H@Z
+  C1 size=13 head=60 sub=00  [004A4616: C7 44 24 0C C1 0D  mov         dword ptr [esp+0Ch],600DC1h ; 004A46C7: C7 44 24 0C C1 04  mov         dword pt]
+?CGRelationShipReqJoinBreakOff@@YAXPAUPMSG_RELATIONSHIP_JOIN_BREAKOFF_REQ@@H@Z
+  C1 size=4 head=51 sub=04  [004A4E97: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],45104C1h ; 004A4EAD: C7 44 24 10 C1 04  mov         dword p]
+?CGRelationShipAnsJoinBreakOff@@YAXPAUPMSG_RELATIONSHIP_JOIN_BREAKOFF_ANS@@H@Z
+  C1 size=8 head=C1 sub=04  [004A554C: 66 C7 44 24 0C C1  mov         word ptr [esp+0Ch],8C1h ; 004A55DB: C7 44 24 0C C1 04  mov         dword ptr [e]
+?MainProc@CHelper@@QAEXXZ
+  C1 size=16 head=BF sub=51  [004A7A16: C7 44 24 24 C1 10  mov         dword ptr [esp+24h],51BF10C1h]
+  C1 size=16 head=BF sub=51  [004A7A6A: C7 44 24 34 C1 10  mov         dword ptr [esp+34h],51BF10C1h]
+  C1 size=16 head=BF sub=51  [004A7AD5: C7 44 24 44 C1 10  mov         dword ptr [esp+44h],51BF10C1h]
+  C1 size=16 head=BF sub=51  [004A7B4A: C7 44 24 54 C1 10  mov         dword ptr [esp+54h],51BF10C1h]
+  C1 size=16 head=BF sub=51  [004A7B79: C7 44 24 64 C1 10  mov         dword ptr [esp+64h],51BF10C1h]
+?ProcState_STAND@CIllusionTemple@@QAEXPAUILLUSION_TEMPLE_LEVEL@@@Z
+  C1 size=4 head=92 sub=0F  [004A86C0: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],0F9204C1h ; 004A8719: C7 44 24 10 B3 00  mov         dword ]
+?SetState@CIllusionTemple@@QAEXPAUILLUSION_TEMPLE_LEVEL@@H@Z
+  C1 size=6 head=BF sub=09  [004A8BB3: C7 44 24 1C C1 06  mov         dword ptr [esp+1Ch],9BF06C1h]
+?SetState_EMPTY@CIllusionTemple@@QAEXPAUILLUSION_TEMPLE_LEVEL@@@Z
+  C1 size=6 head=BF sub=09  [004A8CFE: C7 45 E0 C1 06 BF  mov         dword ptr [ebp-20h],9BF06C1h]
+?SetState_START@CIllusionTemple@@QAEXPAUILLUSION_TEMPLE_LEVEL@@@Z
+  C1 size=6 head=BF sub=09  [004A8FF0: C7 44 24 14 C1 06  mov         dword ptr [esp+14h],9BF06C1h]
+?SetState_CLEAN@CIllusionTemple@@QAEXPAUILLUSION_TEMPLE_LEVEL@@@Z
+  C1 size=6 head=BF sub=09  [004A9230: C7 44 24 1C C1 06  mov         dword ptr [esp+1Ch],9BF06C1h]
+  C1 size=39952 head=9C sub=FF  [004A9502: C7 44 24 30 C3 10  mov         dword ptr [esp+30h],0FF9C10C3h ; 004A9511: C6 44 24 34 FF     mov         byte ]
+?NpcMirageTheMummy@CIllusionTemple@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=12299 head=30 sub=14  [004AA056: C7 44 24 0C C3 0B  mov         dword ptr [esp+0Ch],14300BC3h]
+?CGIllusionTempleEnterRecv@CIllusionTemple@@QAEXPAUPMSG_ILLUSION_TEMPLE_ENTER_RECV@@H@Z
+  C1 size=5 head=BF sub=70  [004AA45B: C7 44 24 20 C1 05  mov         dword ptr [esp+20h],70BF05C1h]
+?CGIllusionTempleSkillRecv@CIllusionTemple@@QAEXPAUPMSG_ILLUSION_TEMPLE_SKILL_RECV@@H@Z
+  C1 size=5 head=BF sub=06  [004AAE4C: C7 44 24 1C C1 05  mov         dword ptr [esp+1Ch],6BF05C1h]
+  C1 size=12 head=BF sub=02  [004AAA82: C7 84 24 B0 00 00  mov         dword ptr [esp+0B0h],2BF0CC1h ; 004AAB1A: C7 84 24 B0 00 00  mov         dword ]
+?GCIllusionTempleChangeScenarioSend@CIllusionTemple@@QAEXPAUILLUSION_TEMPLE_LEVEL@@HH@Z
+  C1 size=6 head=BF sub=09  [004AB66C: C7 04 24 C1 06 BF  mov         dword ptr [esp],9BF06C1h]
+?SetState_CLEAN@CImperialGuardian@@QAEXXZ
+  C1 size=12 head=F7 sub=06  [004AC7DC: C7 44 24 1C C1 0C  mov         dword ptr [esp+1Ch],6F70CC1h]
+  C1 size=12 head=F7 sub=06  [004AC81D: C7 44 24 28 C1 0C  mov         dword ptr [esp+28h],6F70CC1h]
+  C1 size=12 head=F7 sub=06  [004AC84D: C7 44 24 34 C1 0C  mov         dword ptr [esp+34h],6F70CC1h]
+?GiveUserRewardExperience@CImperialGuardian@@QAEXH@Z
+  C1 size=39952 head=9C sub=FF  [004ACC69: C7 44 24 10 C3 10  mov         dword ptr [esp+10h],0FF9C10C3h ; 004ACC78: C6 44 24 14 FF     mov         byte ]
+?CGImperialGuardianEnterRecv@CImperialGuardian@@QAEXPAUPMSG_IMPERIAL_GUARDIAN_ENTER_RECV@@H@Z
+  C1 size=12 head=F7 sub=02  [004AF6EB: C7 44 24 10 C1 0C  mov         dword ptr [esp+10h],2F70CC1h]
+?GCImperialGuardianInterfaceSend@CImperialGuardian@@QAEXXZ
+  C1 size=16 head=F7 sub=04  [004AF73B: C7 45 F0 C1 10 F7  mov         dword ptr [ebp-10h],4F710C1h]
+?CGInventoryEquipmentRecv@CInventoryEquipment@@QAEXPAUPMSG_INVENTORY_EQUIPMENT_RECV@@H@Z
+  C1 size=6 head=BF sub=20  [004B0D30: C7 44 24 18 C1 06  mov         dword ptr [esp+18h],20BF06C1h]
+?DropItem@CItemBag@@QAE_NPAUOBJECTSTRUCT@@HHH@Z
+  C1 size=7 head=F3 sub=40  [004B582F: C7 85 F0 FE FF FF  mov         dword ptr [ebp-110h],40F307C1h]
+?UpdateInventoryViewport@CItemManager@@QAEXHH@Z
+  C1 size=6 head=D1 sub=11  [004BCA9B: C7 44 24 0C C1 06  mov         dword ptr [esp+0Ch],11D106C1h]
+?RepairItem@CItemManager@@QAEHPAUOBJECTSTRUCT@@PAVCItem@@HH@Z
+  C1 size=16 head=A9 sub=01  [004BD00C: C7 44 24 20 C1 10  mov         dword ptr [esp+20h],1A910C1h ; 004BD06B: C7 44 24 20 C1 10  mov         dword p]
+?MoveItemToInventoryFromTrade@CItemManager@@QAEEPAUOBJECTSTRUCT@@EEE@Z
+  C1 size=4 head=3C sub=00  [004BD3FE: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],3C04C1h ; 004BD45B: C7 44 24 10 C1 04  mov         dword pt]
+?MoveItemToInventoryFromWarehouse@CItemManager@@QAEEPAUOBJECTSTRUCT@@EEE@Z
+  C1 size=12 head=81 sub=01  [004BD67B: C7 44 24 1C C1 0C  mov         dword ptr [esp+1Ch],1810CC1h]
+?CGItemGetRecv@CItemManager@@QAEXPAUPMSG_ITEM_GET_RECV@@H@Z
+  C1 size=12 head=D2 sub=12  [004BE43E: C7 44 24 30 C1 0C  mov         dword ptr [esp+30h],12D20CC1h]
+?CGItemDropRecv@CItemManager@@QAEXPAUPMSG_ITEM_DROP_RECV@@H@Z
+  C1 size=5 head=23 sub=00  [004BE787: C7 44 24 2C C1 05  mov         dword ptr [esp+2Ch],2305C1h]
+?CGPkDrop@CItemManager@@QAE_NPAUPMSG_ITEM_DROP_RECV@@H@Z
+  C1 size=5 head=23 sub=01  [004BF189: C7 44 24 14 C1 05  mov         dword ptr [esp+14h],12305C1h]
+?CGItemMoveRecv@CItemManager@@QAEXPAUPMSG_ITEM_MOVE_RECV@@H@Z
+  C1 size=6 head=C1 sub=0C  [004BF70D: 66 C7 44 24 34 C1  mov         word ptr [esp+34h],6C1h ; 004C04EE: C7 44 24 34 C1 0C  mov         dword ptr [e]
+?CGItemUseRecv@CItemManager@@QAEXPAUPMSG_ITEM_USE_RECV@@H@Z
+  C1 size=10502 head=29 sub=01  [004C0A2B: 66 C7 44 24 1C C3  mov         word ptr [esp+1Ch],6C3h ; 004C0A32: C7 44 24 1E 29 01  mov         dword ptr [e]
+  C1 size=17 head=F3 sub=14  [004C077C: C7 84 24 20 01 00  mov         dword ptr [esp+120h],14F311C1h]
+?CGItemBuyRecv@CItemManager@@QAEXPAUPMSG_ITEM_BUY_RECV@@HH@Z
+  C1 size=16 head=32 sub=FF  [004C0E38: C7 44 24 20 C1 10  mov         dword ptr [esp+20h],0FF3210C1h]
+?GCItemModifySend@CItemManager@@QAEXHE@Z
+  C1 size=17 head=F3 sub=14  [004C1F85: C7 45 E8 C1 11 F3  mov         dword ptr [ebp-18h],14F311C1h]
+?CGMoveItemProc@CItemManager@@QAEXPAUPMSG_MOVEITEM@@F@Z
+  C1 size=5 head=F3 sub=EE  [004C2595: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],0EEF305C1h ; 004C2BE0: 66 C7 44 24 14 C1  mov         word ]
+?MoveItemToEquipFromTrade@CItemManager@@QAEEPAUOBJECTSTRUCT@@EEE@Z
+  C1 size=4 head=3C sub=00  [004C30B6: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],3C04C1h ; 004C310D: C7 44 24 0C C1 04  mov         dword pt]
+?CGJewelMixRecv@CJewelMix@@QAEXPAUPMSG_JEWEL_MIX_RECV@@H@Z
+  C1 size=5 head=BC sub=00  [004C826D: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],0BC05C1h ; 004C82C1: C7 44 24 10 C1 05  mov         dword p]
+?CGJewelUnMixRecv@CJewelMix@@QAEXPAUPMSG_JEWEL_UNMIX_RECV@@H@Z
+  C1 size=5 head=BC sub=01  [004C8627: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],1BC05C1h ; 004C869A: C7 44 24 0C C1 05  mov         dword p]
+?CommandJewelMix@CJewelMix@@QAE_NPAUOBJECTSTRUCT@@PAD@Z
+  C1 size=5 head=BC sub=00  [004C8757: C7 44 24 14 C1 05  mov         dword ptr [esp+14h],0BC05C1h]
+?CommandJewelUnMix@CJewelMix@@QAE_NPAUOBJECTSTRUCT@@PAD@Z
+  C1 size=5 head=BC sub=01  [004C8AEB: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],1BC05C1h ; 004C8D56: 66 C7 44 24 10 C1  mov         word pt]
+?JGConnectAccountRecv@@YAXPAUSDHP_CONNECT_ACCOUNT_RECV@@@Z
+  C1 size=5 head=F1 sub=01  [004CA1E4: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],1F105C1h ; 004CA270: C7 44 24 0C C1 05  mov         dword p]
+  C1 size=34 head=C1 sub=22  [004CA1A0: 66 C7 44 24 24 C1  mov         word ptr [esp+24h],22C1h ; 004CA250: 66 C7 44 24 24 C1  mov         word ptr [e]
+?JGMapServerMoveRecv@@YAXPAUSDHP_MAP_SERVER_MOVE_RECV@@@Z
+  C1 size=45352 head=B1 sub=00  [004CA69C: C7 44 24 24 C3 28  mov         dword ptr [esp+24h],0B128C3h]
+?JGMapServerMoveAuthRecv@@YAXPAUSDHP_MAP_SERVER_MOVE_AUTH_RECV@@@Z
+  C1 size=5 head=B1 sub=01  [004CAA76: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],1B105C1h ; 004CAB02: C7 44 24 10 C1 05  mov         dword p]
+  C1 size=34 head=C1 sub=22  [004CAA32: 66 C7 44 24 1C C1  mov         word ptr [esp+1Ch],22C1h ; 004CAAE2: 66 C7 44 24 1C C1  mov         word ptr [e]
+?CheckEnterKanturu@CKanturu@@QAE_NH@Z
+  C1 size=5 head=D1 sub=01  [004CCBBE: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],1D105C1h ; 004CCBFE: C7 44 24 10 C1 05  mov         dword p]
+?SetState@CKanturuBattleOfMaya@@QAEXH@Z
+  C1 size=8 head=D1 sub=05  [004CD92E: C7 45 EC C1 08 D1  mov         dword ptr [ebp-14h],5D108C1h ; 004CDA33: C7 45 EC C1 05 D1  mov         dword p]
+?SetState@CKanturuBattleOfNightmare@@QAEXH@Z
+  C1 size=8 head=D1 sub=05  [004CE5DD: C7 45 F4 C1 08 D1  mov         dword ptr [ebp-0Ch],5D108C1h ; 004CE66A: C7 45 F4 C1 05 D1  mov         dword p]
+?KanturuMayaAct_Hands@CKanturuMaya@@QAEXXZ
+  C1 size=7 head=D1 sub=06  [004CF21A: C7 44 24 10 C1 07  mov         dword ptr [esp+10h],6D107C1h]
+?DGLuckyCoinExchangeRecv@CLuckyCoin@@QAEXPAUSDHP_LUCKY_COIN_EXCHANGE_RECV@@@Z
+  C1 size=5 head=BF sub=0D  [004D0539: C7 44 24 10 C1 05  mov         dword ptr [esp+10h],0DBF05C1h]
+  C1 size=24 head=1A sub=31  [004D0632: C7 44 24 18 C1 18  mov         dword ptr [esp+18h],311A18C1h]
+?CGMasterSkillRecv@CMasterSkillTree@@QAEXPAUPMSG_MASTER_SKILL_RECV@@H@Z
+  C1 size=8 head=F3 sub=52  [004D6686: C7 44 24 14 C1 08  mov         dword ptr [esp+14h],52F308C1h]
+?GCMasterInfoSend@CMasterSkillTree@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=48 head=F3 sub=50  [004D67A4: C7 44 24 18 C1 30  mov         dword ptr [esp+18h],50F330C1h]
+?NhanThuongMocNap@gBMocNap@@QAEXHH@Z
+  C1 size=7 head=F3 sub=40  [004DA536: C7 85 F0 FC FF FF  mov         dword ptr [ebp-310h],40F307C1h ; 004DA51B: C6 85 F4 FC FF FF  mov         byte ]
+?gObjMonsterAttack@@YAXPAUOBJECTSTRUCT@@0@Z
+  C1 size=8 head=19 sub=00  [004DEEC0: C7 44 24 10 C1 08  mov         dword ptr [esp+10h],1908C1h ; 004DEF0E: C7 44 24 10 C1 08  mov         dword pt]
+  C1 size=13 head=1E sub=00  [004DEE2B: C7 44 24 1C C1 0D  mov         dword ptr [esp+1Ch],1E0DC1h ; 004DED1A: C6 44 24 1D 78     mov         byte ptr]
+?ApplyElementAttackArea@CMonsterAIElementInfo@@QAEXHHPAVCMonsterAIState@@@Z
+  C1 size=10 head=BD sub=0C  [004E4883: C7 44 24 24 C1 0A  mov         dword ptr [esp+24h],0CBD0AC1h]
+?CGTeleportRecv@CMove@@QAEXPAUPMSG_TELEPORT_RECV@@H@Z
+  C1 size=49930 head=C3 sub=0A  [004EBFC4: 66 C7 45 F4 C3 0A  mov         word ptr [ebp-0Ch],0AC3h ; 004EC3DD: 66 C7 45 F4 C3 0A  mov         word ptr [e]
+?GCPetItemChangeSend@CNewUIMyInventory@@QAEXHE@Z
+  C1 size=18 head=4E sub=0D  [004ECE33: C7 84 24 14 01 00  mov         dword ptr [esp+114h],0D4E12C1h]
+?CGItemSellRecv@CNewUIMyInventory@@QAEXPAUPMSG_EQUIP_ITEM_SELL_RECV@@H@Z
+  C1 size=8 head=33 sub=00  [004ED093: C7 44 24 14 C1 08  mov         dword ptr [esp+14h],3308C1h]
+?NpcTalk@CNpcTalk@@QAE_NPAUOBJECTSTRUCT@@0@Z
+  C1 size=8 head=D3 sub=6A  [004EDCE5: C7 44 24 0C C1 08  mov         dword ptr [esp+0Ch],6AD308C1h ; 004EDDB6: C7 44 24 0C C1 08  mov         dword ]
+  C1 size=22 head=F7 sub=00  [004EE026: C7 44 24 20 C1 16  mov         dword ptr [esp+20h],0F716C1h]
+  C1 size=30 head=C1 sub=34  [004EDC3E: 66 C7 44 24 40 C1  mov         word ptr [esp+40h],1EC1h ; 004EDFD0: C7 44 24 40 C1 34  mov         dword ptr []
+  C1 size=92 head=AA sub=06  [004EEFCC: C7 84 24 A8 00 00  mov         dword ptr [esp+0A8h],6AA5CC1h]
+?NpcTrainer@CNpcTalk@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=12299 head=30 sub=07  [004EF7DD: C7 44 24 0C C3 0B  mov         dword ptr [esp+0Ch],7300BC3h ; 004EF828: C7 44 24 0C C1 06  mov         dword p]
+?NpcChaosGoblin@CNpcTalk@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=12299 head=30 sub=03  [004EF89D: C7 44 24 0C C3 0B  mov         dword ptr [esp+0Ch],3300BC3h ; 004EF8E8: C7 44 24 0C C1 06  mov         dword p]
+?NpcGuildMaster@CNpcTalk@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=16 head=05 sub=76  [004EF9D3: C7 44 24 0C C1 10  mov         dword ptr [esp+0Ch],760510C1h]
+?NpcShopRuud@CNpcTalk@@QAEXPAUOBJECTSTRUCT@@0@Z
+  C1 size=60939 head=EE sub=64  [004EFD7F: C7 44 24 0C C3 0B  mov         dword ptr [esp+0Ch],64EE0BC3h]
+?CGNpcTalkRecv@CNpcTalk@@QAEXPAUPMSG_NPC_TALK_RECV@@H@Z
+  C1 size=12299 head=30 sub=00  [004F006C: C7 44 24 18 C3 0B  mov         dword ptr [esp+18h],300BC3h ; 004F010F: C7 44 24 18 C1 06  mov         dword pt]
+?ObjectSetStateCreate@CObjectManager@@QAEXH@Z
+  C1 size=6 head=D1 sub=11  [004F078E: C7 45 E8 C1 06 D1  mov         dword ptr [ebp-18h],11D106C1h]
+  C1 size=6 head=D1 sub=11  [004F0583: C7 45 F4 C1 06 D1  mov         dword ptr [ebp-0Ch],11D106C1h]
+?ObjectSetStateProc@CObjectManager@@QAEXXZ
+  C1 size=16 head=BF sub=51  [004F0B4E: C7 45 D0 C1 10 BF  mov         dword ptr [ebp-30h],51BF10C1h]
+  C1 size=7 head=A7 sub=00  [004F0BBB: C7 45 E8 C1 07 A7  mov         dword ptr [ebp-18h],0A707C1h ; 004F0BC2: 66 C7 45 EC 00 FF  mov         word pt]
+  C1 size=6 head=D1 sub=11  [004F0DCC: C7 45 F0 C1 06 D1  mov         dword ptr [ebp-10h],11D106C1h]
+?CharacterGameClose@CObjectManager@@QAE_NH@Z
+  C1 size=4 head=3D sub=00  [004F1D5B: C7 45 CC C1 04 3D  mov         dword ptr [ebp-34h],3D04C1h]
+  C1 size=17 head=F3 sub=14  [004F1C89: C7 45 DC C1 11 F3  mov         dword ptr [ebp-24h],14F311C1h ; 004F1DF4: C7 45 DC C1 11 AA  mov         dword ]
+?CharacterLevelUp@CObjectManager@@QAE_NPAUOBJECTSTRUCT@@KHH@Z
+  C1 size=56 head=F3 sub=51  [004F5105: C7 44 24 18 C1 38  mov         dword ptr [esp+18h],51F338C1h]
+?CharacterPetLevelUp@CObjectManager@@QAEXPAUOBJECTSTRUCT@@K@Z
+  C1 size=16 head=A9 sub=01  [004F5682: C7 44 24 10 C1 10  mov         dword ptr [esp+10h],1A910C1h ; 004F5715: C7 44 24 10 C1 10  mov         dword p]
+?CharacterUseTalismanOfResurrection@CObjectManager@@QAE_NPAUOBJECTSTRUCT@@H@Z
+  C1 size=7 head=F3 sub=40  [004F7A0E: C7 44 24 10 C1 07  mov         dword ptr [esp+10h],40F307C1h ; 004F7A16: 66 C7 44 24 14 3C  mov         word p]
+?CharacterUseTalismanOfMobility@CObjectManager@@QAE_NPAUOBJECTSTRUCT@@H@Z
+  C1 size=6 head=E2 sub=00  [004F7A9B: 66 C7 44 24 0C C1  mov         word ptr [esp+0Ch],6C1h ; 004F7B16: C7 44 24 0C E2 00  mov         dword ptr [e]
+  C1 size=7 head=F3 sub=40  [004F7BD9: C7 44 24 18 C1 07  mov         dword ptr [esp+18h],40F307C1h ; 004F7BE1: 66 C7 44 24 1C 3D  mov         word p]
+?CharacterItemDurationDown@CObjectManager@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=6 head=D1 sub=11  [004F87F4: C7 44 24 24 C1 06  mov         dword ptr [esp+24h],11D106C1h ; 004F8340: C7 44 24 28 00 20  mov         dword ]
+?CharacterCalcAttribute@CObjectManager@@QAEXH@Z
+  C1 size=7 head=A7 sub=00  [004FAA77: C7 44 24 5C C1 07  mov         dword ptr [esp+5Ch],0A707C1h ; 004FAA7F: 66 C7 44 24 60 00  mov         word pt]
+?CharacterInfoSet@CObjectManager@@QAE_NPAEH@Z
+  C1 size=7 head=A7 sub=00  [004FCA1B: C7 45 C4 C1 07 A7  mov         dword ptr [ebp-3Ch],0A707C1h ; 004FC7C7: C7 45 C8 00 20 00  mov         dword p]
+  C1 size=18 head=C1 sub=12  [004FC950: 66 C7 45 D8 C1 12  mov         word ptr [ebp-28h],12C1h ; 004FC9A2: 66 C7 45 D8 C1 12  mov         word ptr [e]
+?CharacterLifeCheck@CObjectManager@@QAEXPAUOBJECTSTRUCT@@0_KHHHHH@Z
+  C1 size=24 head=F3 sub=07  [004FDE30: C7 45 C4 C1 18 F3  mov         dword ptr [ebp-3Ch],7F318C1h ; 004FDE3F: C6 45 C8 FD        mov         byte pt]
+  C1 size=6 head=D1 sub=15  [004FD813: C7 45 DC C1 06 D1  mov         dword ptr [ebp-24h],15D106C1h ; 004FDAC0: 66 C7 45 DC C1 09  mov         word p]
+  C1 size=5 head=F3 sub=20  [004FCD9E: C7 45 E0 C1 05 F3  mov         dword ptr [ebp-20h],20F305C1h ; 004FCF6A: C7 45 E0 C1 05 B8  mov         dword ]
+?RenderAttack@OfflineMode@@QAEXH@Z
+  C1 size=6 head=26 sub=FF  [004FF065: C7 44 24 2C C1 06  mov         dword ptr [esp+2Ch],0FF2606C1h]
+?AutoAcceptPartyRequest@CParty@@QAE_NPAUOBJECTSTRUCT@@0@Z
+  C1 size=4 head=41 sub=02  [005004DA: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],24104C1h ; 005004FA: C7 44 24 0C C1 04  mov         dword p]
+?CGPartyRequestRecv@CParty@@QAEXPAUPMSG_PARTY_REQUEST_RECV@@H@Z
+  C1 size=4 head=41 sub=06  [00500A07: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],64104C1h ; 00500A57: C7 44 24 10 C1 04  mov         dword p]
+?CGPartyRequestResultRecv@CParty@@QAEXPAUPMSG_PARTY_REQUEST_RESULT_RECV@@H@Z
+  C1 size=4 head=41 sub=01  [00500D76: C7 44 24 14 C1 04  mov         dword ptr [esp+14h],14104C1h ; 00500DB6: C7 44 24 14 C1 04  mov         dword p]
+?CGPEquipShopSetItemPriceRecv@CPersonalShop@@QAEXPAUPMSG_PSHOP_SET_ITEM_PRICE_RECV@@H@Z
+  C1 size=6 head=3F sub=01  [00501D0B: C7 44 24 10 C1 06  mov         dword ptr [esp+10h],13F06C1h]
+?SetPaymentJewelCount@CPersonalShop@@QAEXPAUOBJECTSTRUCT@@PAHH@Z
+  C1 size=44 head=C1 sub=2C  [00501D9E: 66 C7 44 24 10 C1  mov         word ptr [esp+10h],2CC1h ; 00501DFF: 66 C7 44 24 10 C1  mov         word ptr [e]
+?CGPShopSetItemPriceRecv@CPersonalShop@@QAEXPAUPMSG_PSHOP_SET_ITEM_PRICE_RECV@@H@Z
+  C1 size=6 head=3F sub=01  [0050255B: C7 44 24 10 C1 06  mov         dword ptr [esp+10h],13F06C1h]
+?CGPShopOpenRecv@CPersonalShop@@QAEXPAUPMSG_PSHOP_OPEN_RECV@@H@Z
+  C1 size=52 head=3F sub=10  [0050269E: C7 45 C8 C1 34 3F  mov         dword ptr [ebp-38h],103F34C1h]
+?CGPShopItemListRecv@CPersonalShop@@QAEXPAUPMSG_PSHOP_ITEM_LIST_RECV@@H@Z
+  C1 size=8 head=F3 sub=EB  [00502875: C7 44 24 0C C1 08  mov         dword ptr [esp+0Ch],0EBF308C1h ; 0050287D: C7 44 24 10 FF FF  mov         dword]
+?CGPShopBuyItemRecv@CPersonalShop@@QAEXPAUPMSG_PSHOP_BUY_ITEM_RECV@@H@Z
+  C1 size=15 head=3F sub=08  [00502D15: C7 44 24 34 C1 0F  mov         dword ptr [esp+34h],83F0FC1h]
+  C1 size=20 head=3F sub=06  [00502E5E: C7 84 24 30 01 00  mov         dword ptr [esp+130h],63F14C1h ; 00502C8E: C7 84 24 34 01 00  mov         dword ]
+?GCPShopViewportSend@CPersonalShop@@QAEXH@Z
+  C1 size=6 head=3F sub=12  [005032AA: C7 44 24 24 C1 06  mov         dword ptr [esp+24h],123F06C1h]
+?GCPShopOpenSend@CPersonalShop@@QAEXHE@Z
+  C1 size=12 head=F3 sub=EC  [00503330: C7 44 24 0C C1 0C  mov         dword ptr [esp+0Ch],0ECF30CC1h]
+?ProtocolCore@@YAXEPAEHHHH@Z
+  C1 size=4 head=51 sub=03  [00506436: C7 85 10 EF FF FF  mov         dword ptr [ebp-10F0h],35104C1h ; 00506DCF: 66 C7 85 10 EF FF  mov         word ]
+  C1 size=36 head=D3 sub=7C  [00508913: C7 85 70 EF FF FF  mov         dword ptr [ebp-1090h],7CD324C1h]
+  C1 size=58 head=C1 sub=3C  [0050443C: 66 C7 85 94 EF FF  mov         word ptr [ebp-106Ch],3AC1h ; 0050461C: 66 C7 85 94 EF FF  mov         word ptr ]
+  C1 size=44 head=18 sub=01  [00505EC3: C7 85 A4 EF FF FF  mov         dword ptr [ebp-105Ch],1182CC1h ; 00507736: C7 85 A4 EF FF FF  mov         dword]
+  C1 size=36 head=B9 sub=02  [00504D24: C7 85 AC EF FF FF  mov         dword ptr [ebp-1054h],2B924C1h ; 00505A23: 66 C7 85 AC EF FF  mov         word ]
+  C1 size=32 head=18 sub=04  [005061AE: C7 85 B0 EF FF FF  mov         dword ptr [ebp-1050h],41820C1h ; 00505494: 66 C7 85 B4 EF FF  mov         word ]
+  C1 size=24 head=1A sub=02  [00505266: C7 85 D0 EF FF FF  mov         dword ptr [ebp-1030h],21A18C1h ; 0050741D: C7 85 D0 EF FF FF  mov         dword]
+  C1 size=15 head=C1 sub=05  [00505501: C7 85 D8 EF FF FF  mov         dword ptr [ebp-1028h],5C10FC1h ; 00506350: 66 C7 85 D8 EF FF  mov         word ]
+  C1 size=9 head=C1 sub=0C  [00503D87: 66 C7 85 DC EF FF  mov         word ptr [ebp-1024h],9C1h ; 00506487: 66 C7 85 DC EF FF  mov         word ptr []
+  C1 size=61701 head=F1 sub=02  [00503C1A: C7 85 E0 EF FF FF  mov         dword ptr [ebp-1020h],2F105C3h ; 005040AF: C7 85 E0 EF FF FF  mov         dword]
+  C2 size=49665 head=44 sub=D3  [00507B58: C6 85 E8 EF FF FF  mov         byte ptr [ebp-1018h],0C2h ; 00507F23: C7 85 E8 EF FF FF  mov         dword ptr ]
+  C2 size=2565 head=FA sub=11  [00506C86: C7 85 E0 F5 FF FF  mov         dword ptr [ebp-0A20h],0FA050AC2h ; 00506C90: C6 85 E4 F5 FF FF  mov         byt]
+  C2 size=286 head=17 sub=30  [00504ABA: C7 85 C8 FE FF FF  mov         dword ptr [ebp-138h],171E01C2h ; 00504ACA: C6 85 CC FE FF FF  mov         byte ]
+  C2 size=256 head=18 sub=C1  [00505FBB: C7 85 E8 FE FF FF  mov         dword ptr [ebp-118h],180001C2h ; 0050720B: C6 85 E8 FE FF FF  mov         byte ]
+?CGChatRecv@@YAXPAUPMSG_CHAT_RECV@@H@Z
+  C1 size=72 head=C1 sub=50  [005096E4: 66 C7 44 24 20 C1  mov         word ptr [esp+20h],48C1h ; 005097A5: 66 C7 44 24 20 C1  mov         word ptr [e]
+?CGLiveClientRecv@@YAXPAUPMSG_LIVE_CLIENT_RECV@@H@Z
+  C1 size=61701 head=F1 sub=02  [00509EAC: C7 44 24 18 C3 05  mov         dword ptr [esp+18h],2F105C3h]
+?CGMapServerMoveAuthRecv@@YAXPAUPMSG_MAP_SERVER_MOVE_AUTH_RECV@@H@Z
+  C1 size=5 head=B1 sub=01  [0050A971: C7 44 24 18 C1 05  mov         dword ptr [esp+18h],1B105C1h]
+?CGConnectAccountRecv@@YAXPAUPMSG_CONNECT_ACCOUNT_RECV@@H@Z
+  C1 size=5 head=F1 sub=01  [0050B400: C7 44 24 0C C1 05  mov         dword ptr [esp+0Ch],1F105C1h]
+  C1 size=6 head=14 sub=01  [0050B2E3: C7 44 24 64 C1 06  mov         dword ptr [esp+64h],11406C1h]
+?CGCharacterCreateRecv@@YAXPAUPMSG_CHARACTER_CREATE_RECV@@H@Z
+  C1 size=44 head=F3 sub=01  [0050B4F4: C7 44 24 20 C1 2C  mov         dword ptr [esp+20h],1F32CC1h ; 0050B607: 66 C7 44 24 20 C1  mov         word pt]
+?CGCharacterDeleteRecv@@YAXPAUPMSG_CHARACTER_DELETE_RECV@@H@Z
+  C1 size=5 head=F3 sub=02  [0050B727: C7 44 24 14 C1 05  mov         dword ptr [esp+14h],2F305C1h]
+?CGLevelUpPointRecv@@YAXPAUPMSG_LEVEL_UP_POINT_RECV@@H@Z
+  C1 size=52 head=F3 sub=06  [0050B976: C7 44 24 20 C1 34  mov         dword ptr [esp+20h],6F334C1h]
+?GCMoneySend@@YAXHK@Z
+  C1 size=8720 head=22 sub=FE  [0050BE38: C7 44 24 0C C3 10  mov         dword ptr [esp+0Ch],0FE2210C3h]
+?GCManaSend@@YAXHEHH@Z
+  C1 size=16 head=27 sub=FF  [0050BF4C: C7 04 24 C1 10 27  mov         dword ptr [esp],0FF2710C1h]
+?GCCharacterRegenSend@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=62252 head=F3 sub=04  [0050C365: C7 44 24 18 C3 2C  mov         dword ptr [esp+18h],4F32CC3h]
+?GCLevelUpSend@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=52 head=F3 sub=05  [0050C520: C7 44 24 0C C1 34  mov         dword ptr [esp+0Ch],5F334C1h]
+?GCNewCharacterInfoSend@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=116 head=F3 sub=E0  [0050C800: C7 44 24 0C C1 74  mov         dword ptr [esp+0Ch],0E0F374C1h]
+?GCNewGensBattleInfoSend@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=246 head=F3 sub=E3  [0050D42E: C7 44 24 70 C1 F6  mov         dword ptr [esp+70h],0E3F3F6C1h]
+?SendLockUnLock@@YAXPAUCGPACKET_LOCKWINDOW@@H@Z
+  C1 size=12 head=D3 sub=1A  [0050DAC7: C7 44 24 0C C1 0C  mov         dword ptr [esp+0Ch],1AD30CC1h ; 0050D850: C7 44 24 10 06 03  mov         dword ]
+  C1 size=24 head=C1 sub=18  [0050D8F5: 66 C7 44 24 30 C1  mov         word ptr [esp+30h],18C1h ; 0050DA49: 66 C7 44 24 30 C1  mov         word ptr [e]
+?SendHidenPetIsAttack@@YAXPAUOBJECTSTRUCT@@H@Z
+  C1 size=8 head=D3 sub=06  [0050DB9A: C7 44 24 10 C1 08  mov         dword ptr [esp+10h],6D308C1h]
+?SendHidenWingIsAttack@@YAXPAUOBJECTSTRUCT@@H@Z
+  C1 size=8 head=D3 sub=07  [0050DC75: C7 44 24 10 C1 08  mov         dword ptr [esp+10h],7D308C1h]
+?NpcTalk@CQuest@@QAE_NPAUOBJECTSTRUCT@@0@Z
+  C1 size=48 head=A4 sub=01  [005102D7: C7 44 24 20 C1 30  mov         dword ptr [esp+20h],1A430C1h]
+?CGQuestStateRecv@CQuest@@QAEXPAUPMSG_QUEST_STATE_RECV@@H@Z
+  C1 size=6 head=C1 sub=06  [005104A3: 66 C7 44 24 10 C1  mov         word ptr [esp+10h],6C1h ; 005105C8: 66 C7 44 24 10 C1  mov         word ptr [es]
+?MarlonTeleport@CQuest@@QAEXH@Z
+  C1 size=6 head=14 sub=01  [005107D5: C7 44 24 20 C1 06  mov         dword ptr [esp+20h],11406C1h]
+?CGQuestWorldDialogRecv@CQuestWorld@@QAEXPAUPMSG_QUEST_WORLD_DIALOG_RECV@@H@Z
+  C1 size=9 head=F6 sub=0B  [0051231F: C7 44 24 10 C1 09  mov         dword ptr [esp+10h],0BF609C1h ; 00512547: C7 44 24 10 C1 09  mov         dword ]
+?CGQuestWorldAcceptRecv@CQuestWorld@@QAEXPAUPMSG_QUEST_WORLD_ACCEPT_RECV@@H@Z
+  C1 size=9 head=F6 sub=0B  [00512A9A: C7 44 24 18 C1 09  mov         dword ptr [esp+18h],0BF609C1h]
+?CGQuestWorldFinishRecv@CQuestWorld@@QAEXPAUPMSG_QUEST_WORLD_FINISH_RECV@@H@Z
+  C1 size=9 head=F6 sub=0D  [00512E99: C7 44 24 10 C1 09  mov         dword ptr [esp+10h],0DF609C1h]
+?CGQuestWorldCancelRecv@CQuestWorld@@QAEXPAUPMSG_QUEST_WORLD_CANCEL_RECV@@H@Z
+  C1 size=9 head=F6 sub=0F  [0051314D: C7 44 24 10 C1 09  mov         dword ptr [esp+10h],0FF609C1h]
+?CGQuestWorldDetailRecv@CQuestWorld@@QAEXPAUPMSG_QUEST_WORLD_DETAIL_RECV@@H@Z
+  C1 size=251 head=F6 sub=1B  [00513260: C7 44 24 18 C1 FB  mov         dword ptr [esp+18h],1BF6FBC1h]
+?GCQuestWorldButtonSend@CQuestWorld@@QAEXPAUOBJECTSTRUCT@@HHH@Z
+  C1 size=12 head=F6 sub=03  [00513355: C7 44 24 0C C1 0C  mov         dword ptr [esp+0Ch],3F60CC1h]
+?GCQuestWorldDetailSend@CQuestWorld@@QAEXPAUOBJECTSTRUCT@@HHH@Z
+  C1 size=251 head=F6 sub=0C  [00513418: C7 44 24 10 C1 FB  mov         dword ptr [esp+10h],0CF6FBC1h]
+?AddQuestWorldObjectiveKillCount@CQuestWorldObjective@@QAEXPAUOBJECTSTRUCT@@PAUQUEST_WORLD_OBJECTIVE_INFO@@@Z
+  C1 size=251 head=F6 sub=1B  [00513B15: C7 44 24 18 C1 FB  mov         dword ptr [esp+18h],1BF6FBC1h]
+?InsertQuestWorldReward@CQuestWorldReward@@QAEXPAUOBJECTSTRUCT@@HH@Z
+  C1 size=39952 head=9C sub=FF  [00514408: C7 44 24 10 C3 10  mov         dword ptr [esp+10h],0FF9C10C3h ; 00514410: C6 44 24 14 FF     mov         byte ]
+?SendInfoReset@CResetTable@@QAEXPAUOBJECTSTRUCT@@@Z
+  C2 size=0 head=D3 sub=36  [0051A5A4: C7 44 24 50 C2 00  mov         dword ptr [esp+50h],0D30000C2h ; 0051A5E3: C6 44 24 54 36     mov         byte ]
+?SendInfoReset@CResetTableVIP@@QAEXPAUOBJECTSTRUCT@@@Z
+  C2 size=0 head=D3 sub=36  [0051C6B4: C7 44 24 50 C2 00  mov         dword ptr [esp+50h],0D30000C2h ; 0051C6F3: C6 44 24 54 36     mov         byte ]
+?SetStateInterface@SauChangeItem@@QAEXHH@Z
+  C1 size=24 head=F3 sub=13  [0051F26B: C7 45 E4 C1 18 F3  mov         dword ptr [ebp-1Ch],13F318C1h]
+?SendInfoItemCache@SauChangeItem@@QAEXH@Z
+  C2 size=0 head=D3 sub=00  [0051F3B8: C7 85 38 DF FF FF  mov         dword ptr [ebp-20C8h],0D30000C2h ; 0051F45A: 66 C7 85 39 DF FF  mov         wor]
+?BackItem@SauChangeItem@@QAEXHH@Z
+  C1 size=17 head=F3 sub=14  [0052046C: C7 85 E4 FD FF FF  mov         dword ptr [ebp-21Ch],14F311C1h]
+?ReadShopInfo@CServerInfo@@QAEXXZ
+  C1 size=6 head=B2 sub=1A  [005266C8: C7 44 24 10 C1 06  mov         dword ptr [esp+10h],1AB206C1h]
+  C1 size=12299 head=30 sub=00  [0052662E: C7 44 24 18 C3 0B  mov         dword ptr [esp+18h],300BC3h]
+?RunningSkill@CSkillManager@@QAE_NHHPAVCSkill@@EEE_N@Z
+  C1 size=5 head=B8 sub=01  [005350EC: C7 44 24 40 C1 05  mov         dword ptr [esp+40h],1B805C1h ; 0053526E: C7 44 24 40 C1 05  mov         dword p]
+?SkillStern@CSkillManager@@QAE_NHHPAVCSkill@@E@Z
+  C1 size=5 head=B8 sub=01  [0053A0B9: C7 44 24 18 C1 05  mov         dword ptr [esp+18h],1B805C1h]
+?SkillGreaterMana@CSkillManager@@QAE_NHHPAVCSkill@@@Z
+  C1 size=5 head=B8 sub=01  [0053A311: C7 44 24 40 C1 05  mov         dword ptr [esp+40h],1B805C1h]
+?GCSkillAddSend@CSkillManager@@QAEXHEHEE@Z
+  C1 size=10 head=F3 sub=11  [0054254F: C7 85 FC FE FF FF  mov         dword ptr [ebp-104h],11F30AC1h ; 0054255C: 66 C7 85 00 FF FF  mov         word ]
+?ServerAcceptThread@CSocketManager@@SGKPAV1@@Z
+  C1 size=12 head=F1 sub=00  [005446D0: C7 45 DC C1 0C F1  mov         dword ptr [ebp-24h],0F10CC1h]
+?MakeBot@BotThuMuaer@@QAEXXZ
+  C1 size=5 head=F3 sub=20  [00545F43: C7 85 E0 FD FF FF  mov         dword ptr [ebp-220h],20F305C1h]
+?Alchemy@BotThuMuaer@@AAEEHH@Z
+  C1 size=4 head=3D sub=01  [00546656: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],13D04C1h]
+  C1 size=8720 head=22 sub=FE  [0054660B: C7 44 24 40 C3 10  mov         dword ptr [esp+40h],0FE2210C3h]
+  C1 size=40 head=C1 sub=25  [00546249: 66 C7 44 24 50 C1  mov         word ptr [esp+50h],28C1h ; 005462CE: 66 C7 44 24 50 C1  mov         word ptr [e]
+  C1 size=26 head=C1 sub=1C  [00546475: 66 C7 44 24 54 C1  mov         word ptr [esp+54h],1AC1h ; 005464AF: 66 C7 44 24 54 C1  mov         word ptr [e]
+?TradeOpen@BotThuMuaer@@QAEHHH@Z
+  C1 size=4 head=3C sub=01  [00546872: C7 44 24 10 C1 04  mov         dword ptr [esp+10h],13C04C1h ; 00546844: C7 44 24 14 C1 14  mov         dword p]
+?MakeBot@ObjBotAlchemist@@QAEXXZ
+  C1 size=5 head=F3 sub=20  [00547643: C7 85 E0 FD FF FF  mov         dword ptr [ebp-220h],20F305C1h]
+?ResetTrade@CTrade@@QAEXH@Z
+  C1 size=24 head=F3 sub=13  [005477CA: C7 44 24 0C C1 18  mov         dword ptr [esp+0Ch],13F318C1h]
+?CGTradeRequestRecv@CTrade@@QAEXPAUPMSG_TRADE_REQUEST_RECV@@H@Z
+  C1 size=7 head=F3 sub=40  [00547CB3: C7 44 24 14 C1 07  mov         dword ptr [esp+14h],40F307C1h ; 00547DF9: C7 44 24 14 C1 14  mov         dword ]
+?CGTradeResponseRecv@CTrade@@QAEXPAUPMSG_TRADE_RESPONSE_RECV@@H@Z
+  C1 size=20 head=37 sub=01  [005481BB: C7 44 24 14 C1 14  mov         dword ptr [esp+14h],13714C1h ; 00548252: C7 44 24 14 C1 14  mov         dword p]
+?CGTradeMoneyRecv@CTrade@@QAEXPAUPMSG_TRADE_MONEY_RECV@@H@Z
+  C1 size=4 head=3A sub=01  [005484C5: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],13A04C1h ; 005484FD: C7 44 24 0C C1 04  mov         dword p]
+?CGTradeOkButtonRecv@CTrade@@QAEXPAUPMSG_TRADE_OK_BUTTON_RECV@@H@Z
+  C1 size=4 head=3D sub=05  [00548693: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],53D04C1h ; 00548858: 66 C7 44 24 10 C1  mov         word pt]
+  C1 size=4 head=3D sub=02  [00548932: C7 44 24 14 C1 04  mov         dword ptr [esp+14h],23D04C1h ; 00548A45: C7 44 24 14 C1 04  mov         dword p]
+?gObjEventRunProc@@YAXXZ
+  C1 size=6 head=26 sub=FF  [005491BA: C7 44 24 1C C1 06  mov         dword ptr [esp+1Ch],0FF2606C1h]
+?gObjFirstProc@@YAXXZ
+  C1 size=6 head=4E sub=0C  [00549E8D: C7 44 24 20 C1 06  mov         dword ptr [esp+20h],0C4E06C1h]
+  C1 size=12 head=80 sub=18  [0054A28F: C7 44 24 38 C1 0C  mov         dword ptr [esp+38h],18800CC1h]
+?gObjAllLogOut@@YAXXZ
+  C1 size=6 head=14 sub=01  [0054A647: C7 85 F8 FE FF FF  mov         dword ptr [ebp-108h],11406C1h]
+?gObjAllDisconnect@@YAXXZ
+  C1 size=6 head=14 sub=01  [0054A7A7: C7 85 F8 FE FF FF  mov         dword ptr [ebp-108h],11406C1h]
+?gObjViewportListProtocolDestroy@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=6 head=14 sub=01  [0054D25C: C7 85 FC FE FF FF  mov         dword ptr [ebp-104h],11406C1h]
+?gObjViewportListProtocolCreate@@YAXPAUOBJECTSTRUCT@@@Z
+  C2 size=49858 head=00 sub=1A  [0054D3C0: C6 44 24 3C C2     mov         byte ptr [esp+3Ch],0C2h ; 0054D4E7: C6 44 24 3C C2     mov         byte ptr [es]
+?gObjTeleportMagicUse@@YAXHHH@Z
+  C1 size=6 head=14 sub=01  [0054E3ED: C7 85 FC FE FF FF  mov         dword ptr [ebp-104h],11406C1h]
+?gObjInterfaceCheckTime@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=4 head=41 sub=00  [0054E556: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],4104C1h ; 0054E60E: C7 44 24 0C C1 04  mov         dword pt]
+?gObjUserDie@@YAXPAUOBJECTSTRUCT@@0@Z
+  C1 size=12 head=F7 sub=06  [0054E9FE: C7 44 24 24 C1 0C  mov         dword ptr [esp+24h],6F70CC1h]
+?gObjMoveGate@@YAHHH@Z
+  C1 size=49930 head=C3 sub=0A  [00550054: 66 C7 44 24 5C C3  mov         word ptr [esp+5Ch],0AC3h ; 00550194: 66 C7 44 24 5C C3  mov         word ptr [e]
+  C1 size=7 head=A7 sub=00  [0054F7B1: C7 44 24 60 C1 07  mov         dword ptr [esp+60h],0A707C1h ; 0054FA5D: 66 C7 44 24 60 C3  mov         word pt]
+?gObjTeleport@@YAXHHHH@Z
+  C1 size=16 head=BF sub=51  [00550349: C7 45 F0 C1 10 BF  mov         dword ptr [ebp-10h],51BF10C1h ; 00550376: 66 C7 45 F4 C3 0A  mov         word p]
+?gObjSkillUseProc@@YAXPAUOBJECTSTRUCT@@@Z
+  C1 size=16 head=BF sub=51  [005505D1: C7 45 E0 C1 10 BF  mov         dword ptr [ebp-20h],51BF10C1h]
+?gObjSecondProc@@YAXXZ
+  C1 size=61701 head=F1 sub=02  [00551149: C7 44 24 28 C3 05  mov         dword ptr [esp+28h],2F105C3h]
+  C1 size=61701 head=F1 sub=02  [00551195: C7 44 24 30 C3 05  mov         dword ptr [esp+30h],2F105C3h]
+  C1 size=61701 head=F1 sub=02  [005511CD: C7 44 24 38 C3 05  mov         dword ptr [esp+38h],2F105C3h]
+  C1 size=61701 head=F1 sub=02  [00551209: C7 44 24 40 C3 05  mov         dword ptr [esp+40h],2F105C3h]
+  C1 size=61701 head=F1 sub=02  [005513D1: C7 44 24 48 C3 05  mov         dword ptr [esp+48h],2F105C3h]
+  C1 size=6 head=F3 sub=22  [00551041: 66 C7 44 24 50 C1  mov         word ptr [esp+50h],6C1h ; 00551048: C7 44 24 52 F3 22  mov         dword ptr [e]
+  C1 size=8 head=D3 sub=36  [00550CA3: C7 44 24 58 C1 08  mov         dword ptr [esp+58h],36D308C1h]
+?gObjGuildWarEndSend@@YAXPAUOBJECTSTRUCT@@EE@Z
+  C1 size=12 head=C1 sub=0C  [00551E2F: 66 C7 45 F0 C1 0C  mov         word ptr [ebp-10h],0CC1h ; 00551EA6: 66 C7 45 F0 C1 0C  mov         word ptr [e]
+?gObjGuildWarEndSend@@YAXPAUGUILD_INFO_STRUCT@@0EE@Z
+  C1 size=12 head=63 sub=01  [00551F75: C7 45 F0 C1 0C 63  mov         dword ptr [ebp-10h],1630CC1h ; 00551FD8: C7 45 F0 C1 0C 63  mov         dword p]
+?gObjGuildWarProc@@YAHPAUGUILD_INFO_STRUCT@@0H@Z
+  C1 size=6 head=C1 sub=06  [005521E0: 66 C7 44 24 10 C1  mov         word ptr [esp+10h],6C1h ; 0055227B: 66 C7 44 24 10 C1  mov         word ptr [es]
+  C1 size=16 head=C1 sub=10  [00552141: 66 C7 44 24 20 C1  mov         word ptr [esp+20h],10C1h ; 00552178: 66 C7 44 24 20 C1  mov         word ptr [e]
+?GCViewportSimpleGuildSend@CViewport@@QAEXPAUOBJECTSTRUCT@@@Z
+  C2 size=17 head=65 sub=?  [00555EEA: C7 85 FC FE FF FF  mov         dword ptr [ebp-104h],651100C2h]
+?GCViewportSimpleGensSystemSend@CViewport@@QAEXPAUOBJECTSTRUCT@@@Z
+  C2 size=22 head=F8 sub=05  [00555FFB: C7 85 F4 FE FF FF  mov         dword ptr [ebp-10Ch],0F81600C2h ; 0055600C: 66 C7 85 F8 FE FF  mov         word]
+?CGWarehouseMoneyRecv@CWarehouse@@QAEXPAUPMSG_WAREHOUSE_MONEY_RECV@@H@Z
+  C1 size=12 head=81 sub=01  [005563AA: C7 44 24 14 C1 0C  mov         dword ptr [esp+14h],1810CC1h ; 005563C2: C7 44 24 14 C1 0C  mov         dword p]
+?CGWarehouseClose@CWarehouse@@QAEXH@Z
+  C1 size=20 head=05 sub=77  [005565EE: C7 44 24 1C C1 14  mov         dword ptr [esp+1Ch],770514C1h]
+  C2 size=3804 head=31 sub=?  [005564A8: C7 44 24 28 C2 0E  mov         dword ptr [esp+28h],31DC0EC2h]
+?CGWarehousePasswordRecv@CWarehouse@@QAEXPAUPMSG_WAREHOUSE_PASSWORD_RECV@@H@Z
+  C1 size=4 head=83 sub=0C  [00556701: C7 44 24 0C C1 04  mov         dword ptr [esp+0Ch],0C8304C1h ; 00556715: C7 44 24 0C C1 04  mov         dword ]
+?GCWarehouseListSend@CWarehouse@@QAEXPAUOBJECTSTRUCT@@@Z
+  C1 size=12 head=81 sub=01  [00556935: C7 44 24 18 C1 0C  mov         dword ptr [esp+18h],1810CC1h]
+?DGWarehouseItemRecv@CWarehouse@@QAEXPAUSDHP_WAREHOUSE_ITEM_RECV@@@Z
+  C1 size=12299 head=30 sub=02  [00556AD1: C7 44 24 2C C3 0B  mov         dword ptr [esp+2Ch],2300BC3h]
+?GDWarehouseItemSend@CWarehouse@@QAEXHPAD@Z
+  C1 size=24 head=05 sub=00  [00556D64: C7 44 24 0C C1 18  mov         dword ptr [esp+0Ch],518C1h]
+?GDWarehouseItemSaveSend@CWarehouse@@QAEXH@Z
+  C2 size=3872 head=05 sub=30  [00556DE6: C7 85 D4 F0 FF FF  mov         dword ptr [ebp-0F2Ch],5200FC2h ; 00556DF0: C6 85 D8 F0 FF FF  mov         byte ]
+?DGWarehouseGuildItemRecv@CWarehouse@@QAEXPAUSDHP_WAREHOUSE_ITEM_RECV@@@Z
+  C1 size=12299 head=30 sub=02  [00557122: C7 44 24 1C C3 0B  mov         dword ptr [esp+1Ch],2300BC3h]
+?GDWarehouseGuildItemSend@CWarehouse@@QAEXHPAD@Z
+  C1 size=24 head=05 sub=70  [00557304: C7 45 D0 C1 18 05  mov         dword ptr [ebp-30h],700518C1h]
+  C1 size=20 head=05 sub=77  [005572B3: C7 45 E8 C1 14 05  mov         dword ptr [ebp-18h],770514C1h]
+?GDWarehouseGuildItemSaveSend@CWarehouse@@QAEXH@Z
+  C2 size=3872 head=05 sub=75  [005573F3: C7 85 D4 F0 FF FF  mov         dword ptr [ebp-0F2Ch],5200FC2h ; 00557403: C6 85 D8 F0 FF FF  mov         byte ]

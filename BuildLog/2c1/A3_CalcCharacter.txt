@@ -1,0 +1,827 @@
+?CalcCharacter@CustomSetDameItem@@QAEXPAUOBJECTSTRUCT@@_N@Z:
+  00478BF0: 55                 push        ebp
+  00478BF1: 8B EC              mov         ebp,esp
+  00478BF3: 83 EC 64           sub         esp,64h
+  00478BF6: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  00478BFA: 53                 push        ebx
+  00478BFB: 56                 push        esi
+  00478BFC: 57                 push        edi
+  00478BFD: 8B D9              mov         ebx,ecx
+  00478BFF: 0F 85 7D 00 00 00  jne         00478C82
+  00478C05: 8B 7B 04           mov         edi,dword ptr [ebx+4]
+  00478C08: 8D 45 08           lea         eax,[ebp+8]
+  00478C0B: 8B 33              mov         esi,dword ptr [ebx]
+  00478C0D: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00478C10: 3B F7              cmp         esi,edi
+  00478C12: 74 10              je          00478C24
+  00478C14: 56                 push        esi
+  00478C15: 8D 4D 0C           lea         ecx,[ebp+0Ch]
+  00478C18: E8 73 00 00 00     call        00478C90
+  00478C1D: 83 C6 58           add         esi,58h
+  00478C20: 3B F7              cmp         esi,edi
+  00478C22: 75 F0              jne         00478C14
+  00478C24: 8B 73 0C           mov         esi,dword ptr [ebx+0Ch]
+  00478C27: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  00478C2A: 8B D8              mov         ebx,eax
+  00478C2C: 3B F3              cmp         esi,ebx
+  00478C2E: 74 52              je          00478C82
+  00478C30: BF 07 00 00 00     mov         edi,7
+  00478C35: 0F 10 06           movups      xmm0,xmmword ptr [esi]
+  00478C38: 8D 45 A0           lea         eax,[ebp-60h]
+  00478C3B: 50                 push        eax
+  00478C3C: 0F 11 45 A0        movups      xmmword ptr [ebp-60h],xmm0
+  00478C40: 8D 4D 0C           lea         ecx,[ebp+0Ch]
+  00478C43: 89 7D A0           mov         dword ptr [ebp-60h],edi
+  00478C46: 0F 10 46 10        movups      xmm0,xmmword ptr [esi+10h]
+  00478C4A: 0F 11 45 B0        movups      xmmword ptr [ebp-50h],xmm0
+  00478C4E: 0F 10 46 20        movups      xmm0,xmmword ptr [esi+20h]
+  00478C52: 0F 11 45 C0        movups      xmmword ptr [ebp-40h],xmm0
+  00478C56: 0F 10 46 30        movups      xmm0,xmmword ptr [esi+30h]
+  00478C5A: 0F 11 45 D0        movups      xmmword ptr [ebp-30h],xmm0
+  00478C5E: 0F 10 46 40        movups      xmm0,xmmword ptr [esi+40h]
+  00478C62: 0F 11 45 E0        movups      xmmword ptr [ebp-20h],xmm0
+  00478C66: F3 0F 7E 46 50     movq        xmm0,mmword ptr [esi+50h]
+  00478C6B: 66 0F D6 45 F0     movq        mmword ptr [ebp-10h],xmm0
+  00478C70: E8 1B 00 00 00     call        00478C90
+  00478C75: 47                 inc         edi
+  00478C76: 83 FF 0B           cmp         edi,0Bh
+  00478C79: 7E BA              jle         00478C35
+  00478C7B: 83 C6 58           add         esi,58h
+  00478C7E: 3B F3              cmp         esi,ebx
+  00478C80: 75 AE              jne         00478C30
+  00478C82: 5F                 pop         edi
+  00478C83: 5E                 pop         esi
+  00478C84: 5B                 pop         ebx
+  00478C85: 8B E5              mov         esp,ebp
+  00478C87: 5D                 pop         ebp
+  00478C88: C2 08 00           ret         8
+  00478C8B: CC CC CC CC CC                                   ооооо
+<lambda_6046ec4d4e02a1909969826463a3f0cc>::operator():
+  00478C90: 55                 push        ebp
+  00478C91: 8B EC              mov         ebp,esp
+  00478C93: 51                 push        ecx
+  00478C94: 53                 push        ebx
+  00478C95: 56                 push        esi
+  00478C96: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00478C99: 8B D9              mov         ebx,ecx
+  00478C9B: 57                 push        edi
+  00478C9C: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00478C9F: BF F8 01 00 00     mov         edi,1F8h
+  00478CA4: 8B 03              mov         eax,dword ptr [ebx]
+  00478CA6: 8B 16              mov         edx,dword ptr [esi]
+  00478CA8: C1 E2 09           shl         edx,9
+  00478CAB: 03 56 04           add         edx,dword ptr [esi+4]
+  00478CAE: 8B 18              mov         ebx,dword ptr [eax]
+  00478CB0: 8B 83 A8 03 00 00  mov         eax,dword ptr [ebx+3A8h]
+  00478CB6: 03 C7              add         eax,edi
+  00478CB8: 0F BF 48 04        movsx       ecx,word ptr [eax+4]
+  00478CBC: 3B CA              cmp         ecx,edx
+  00478CBE: 0F 85 5C 01 00 00  jne         00478E20
+  00478CC4: 0F BF 48 06        movsx       ecx,word ptr [eax+6]
+  00478CC8: 3B 4E 0C           cmp         ecx,dword ptr [esi+0Ch]
+  00478CCB: 0F 8C 4F 01 00 00  jl          00478E20
+  00478CD1: 0F B6 88 9F 00 00  movzx       ecx,byte ptr [eax+9Fh]
+            00
+  00478CD8: 3B 4E 10           cmp         ecx,dword ptr [esi+10h]
+  00478CDB: 0F 8C 3F 01 00 00  jl          00478E20
+  00478CE1: 0F B6 80 B6 00 00  movzx       eax,byte ptr [eax+0B6h]
+            00
+  00478CE8: 3B 46 54           cmp         eax,dword ptr [esi+54h]
+  00478CEB: 0F 85 2F 01 00 00  jne         00478E20
+  00478CF1: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00478CF4: 99                 cdq
+  00478CF5: 01 83 D0 02 00 00  add         dword ptr [ebx+2D0h],eax
+  00478CFB: 11 93 D4 02 00 00  adc         dword ptr [ebx+2D4h],edx
+  00478D01: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00478D04: 8B 03              mov         eax,dword ptr [ebx]
+  00478D06: 8B 08              mov         ecx,dword ptr [eax]
+  00478D08: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00478D0B: 99                 cdq
+  00478D0C: 01 81 E0 02 00 00  add         dword ptr [ecx+2E0h],eax
+  00478D12: 11 91 E4 02 00 00  adc         dword ptr [ecx+2E4h],edx
+  00478D18: 8B 03              mov         eax,dword ptr [ebx]
+  00478D1A: 8B 08              mov         ecx,dword ptr [eax]
+  00478D1C: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00478D1F: 99                 cdq
+  00478D20: 01 81 C8 02 00 00  add         dword ptr [ecx+2C8h],eax
+  00478D26: 11 91 CC 02 00 00  adc         dword ptr [ecx+2CCh],edx
+  00478D2C: 8B 03              mov         eax,dword ptr [ebx]
+  00478D2E: 8B 08              mov         ecx,dword ptr [eax]
+  00478D30: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00478D33: 99                 cdq
+  00478D34: 01 81 D8 02 00 00  add         dword ptr [ecx+2D8h],eax
+  00478D3A: 11 91 DC 02 00 00  adc         dword ptr [ecx+2DCh],edx
+  00478D40: 8B 03              mov         eax,dword ptr [ebx]
+  00478D42: 8B 08              mov         ecx,dword ptr [eax]
+  00478D44: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00478D47: 99                 cdq
+  00478D48: 01 81 B0 02 00 00  add         dword ptr [ecx+2B0h],eax
+  00478D4E: 11 91 B4 02 00 00  adc         dword ptr [ecx+2B4h],edx
+  00478D54: 8B 03              mov         eax,dword ptr [ebx]
+  00478D56: 8B 08              mov         ecx,dword ptr [eax]
+  00478D58: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00478D5B: 99                 cdq
+  00478D5C: 01 81 A8 02 00 00  add         dword ptr [ecx+2A8h],eax
+  00478D62: 11 91 AC 02 00 00  adc         dword ptr [ecx+2ACh],edx
+  00478D68: 8B 03              mov         eax,dword ptr [ebx]
+  00478D6A: 8B 08              mov         ecx,dword ptr [eax]
+  00478D6C: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00478D6F: 01 81 34 01 00 00  add         dword ptr [ecx+134h],eax
+  00478D75: 8B 03              mov         eax,dword ptr [ebx]
+  00478D77: 8B 08              mov         ecx,dword ptr [eax]
+  00478D79: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  00478D7C: 01 81 24 01 00 00  add         dword ptr [ecx+124h],eax
+  00478D82: 8B 03              mov         eax,dword ptr [ebx]
+  00478D84: 8B 08              mov         ecx,dword ptr [eax]
+  00478D86: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00478D89: 01 81 28 01 00 00  add         dword ptr [ecx+128h],eax
+  00478D8F: 8B 03              mov         eax,dword ptr [ebx]
+  00478D91: 8B 08              mov         ecx,dword ptr [eax]
+  00478D93: 8B 46 24           mov         eax,dword ptr [esi+24h]
+  00478D96: 01 81 1C 03 00 00  add         dword ptr [ecx+31Ch],eax
+  00478D9C: 8B 03              mov         eax,dword ptr [ebx]
+  00478D9E: 8B 08              mov         ecx,dword ptr [eax]
+  00478DA0: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00478DA3: 01 81 E4 08 00 00  add         dword ptr [ecx+8E4h],eax
+  00478DA9: 8B 03              mov         eax,dword ptr [ebx]
+  00478DAB: 8B 08              mov         ecx,dword ptr [eax]
+  00478DAD: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  00478DB0: 01 81 DC 08 00 00  add         dword ptr [ecx+8DCh],eax
+  00478DB6: 8B 03              mov         eax,dword ptr [ebx]
+  00478DB8: 8B 08              mov         ecx,dword ptr [eax]
+  00478DBA: 8B 46 30           mov         eax,dword ptr [esi+30h]
+  00478DBD: 01 81 CC 08 00 00  add         dword ptr [ecx+8CCh],eax
+  00478DC3: 8B 03              mov         eax,dword ptr [ebx]
+  00478DC5: 8B 08              mov         ecx,dword ptr [eax]
+  00478DC7: 8B 46 34           mov         eax,dword ptr [esi+34h]
+  00478DCA: 01 81 EC 08 00 00  add         dword ptr [ecx+8ECh],eax
+  00478DD0: 8B 03              mov         eax,dword ptr [ebx]
+  00478DD2: 8B 08              mov         ecx,dword ptr [eax]
+  00478DD4: 8B 46 38           mov         eax,dword ptr [esi+38h]
+  00478DD7: 01 81 F0 08 00 00  add         dword ptr [ecx+8F0h],eax
+  00478DDD: 8B 03              mov         eax,dword ptr [ebx]
+  00478DDF: 8B 08              mov         ecx,dword ptr [eax]
+  00478DE1: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  00478DE4: 01 81 F4 08 00 00  add         dword ptr [ecx+8F4h],eax
+  00478DEA: 8B 03              mov         eax,dword ptr [ebx]
+  00478DEC: 8B 08              mov         ecx,dword ptr [eax]
+  00478DEE: 8B 46 40           mov         eax,dword ptr [esi+40h]
+  00478DF1: 01 81 F8 08 00 00  add         dword ptr [ecx+8F8h],eax
+  00478DF7: 8B 03              mov         eax,dword ptr [ebx]
+  00478DF9: 8B 08              mov         ecx,dword ptr [eax]
+  00478DFB: 8B 46 44           mov         eax,dword ptr [esi+44h]
+  00478DFE: 01 81 FC 08 00 00  add         dword ptr [ecx+8FCh],eax
+  00478E04: 8B 03              mov         eax,dword ptr [ebx]
+  00478E06: 8B 08              mov         ecx,dword ptr [eax]
+  00478E08: 8B 46 48           mov         eax,dword ptr [esi+48h]
+  00478E0B: 01 81 00 09 00 00  add         dword ptr [ecx+900h],eax
+  00478E11: 8B 03              mov         eax,dword ptr [ebx]
+  00478E13: 8B 08              mov         ecx,dword ptr [eax]
+  00478E15: 8B 46 4C           mov         eax,dword ptr [esi+4Ch]
+  00478E18: 01 81 88 09 00 00  add         dword ptr [ecx+988h],eax
+  00478E1E: EB 03              jmp         00478E23
+  00478E20: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00478E23: 81 C7 FC 00 00 00  add         edi,0FCh
+  00478E29: 81 FF D4 0A 00 00  cmp         edi,0AD4h
+  00478E2F: 0F 8E 6F FE FF FF  jle         00478CA4
+  00478E35: 5F                 pop         edi
+  00478E36: 5E                 pop         esi
+  00478E37: 5B                 pop         ebx
+  00478E38: 8B E5              mov         esp,ebp
+  00478E3A: 5D                 pop         ebp
+  00478E3B: C2 04 00           ret         4
+  00478E3E: CC CC                                            оо
+ISP_EditSubclass:
+  00478E40: 55                 push        ebp
+  00478E41: 8B EC              mov         ebp,esp
+  00478E43: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00478E46: 8B C1              mov         eax,ecx
+  00478E48: 2D 87 00 00 00     sub         eax,87h
+  00478E4D: 74 63              je          00478EB2
+  00478E4F: 83 E8 79           sub         eax,79h
+  00478E52: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00478E55: 75 49              jne         00478EA0
+  00478E57: 83 F8 0D           cmp         eax,0Dh
+  00478E5A: 75 22              jne         00478E7E
+  00478E5C: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00478E5F: 50                 push        eax
+  00478E60: 68 E1 1E 00 02     push        2001EE1h
+  00478E65: 68 11 01 00 00     push        111h
+  00478E6A: 50                 push        eax
+  00478E6B: FF 15 80 E3 62 00  call        dword ptr [__imp__GetParent@4]
+  00478E71: 50                 push        eax
+  00478E72: FF 15 60 E2 62 00  call        dword ptr [__imp__SendMessageW@16]
+  00478E78: 33 C0              xor         eax,eax
+  00478E7A: 5D                 pop         ebp
+  00478E7B: C2 18 00           ret         18h
+  00478E7E: 83 F8 1B           cmp         eax,1Bh
+  00478E81: 75 1D              jne         00478EA0
+  00478E83: 6A 00              push        0
+  00478E85: FF 75 08           push        dword ptr [ebp+8]
+  00478E88: FF 15 94 E2 62 00  call        dword ptr [__imp__ShowWindow@8]
+  00478E8E: FF 35 30 E3 12 02  push        dword ptr ds:[212E330h]
+  00478E94: FF 15 A0 E2 62 00  call        dword ptr [__imp__SetFocus@4]
+  00478E9A: 33 C0              xor         eax,eax
+  00478E9C: 5D                 pop         ebp
+  00478E9D: C2 18 00           ret         18h
+  00478EA0: FF 75 14           push        dword ptr [ebp+14h]
+  00478EA3: 50                 push        eax
+  00478EA4: 51                 push        ecx
+  00478EA5: FF 75 08           push        dword ptr [ebp+8]
+  00478EA8: FF 15 04 E0 62 00  call        dword ptr [__imp__DefSubclassProc@16]
+  00478EAE: 5D                 pop         ebp
+  00478EAF: C2 18 00           ret         18h
+  00478EB2: B8 04 00 00 00     mov         eax,4
+  00478EB7: 5D                 pop         ebp
+  00478EB8: C2 18 00           ret         18h
+  00478EBB: CC CC CC CC CC                                   ооооо
+ISP_LoadList:
+  00478EC0: 55                 push        ebp
+  00478EC1: 8B EC              mov         ebp,esp
+  00478EC3: 81 EC B8 00 00 00  sub         esp,0B8h
+  00478EC9: A1 80 10 66 00     mov         eax,dword ptr [___security_cookie]
+  00478ECE: 33 C5              xor         eax,ebp
+  00478ED0: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00478ED3: 53                 push        ebx
+  00478ED4: 8B 1D 60 E2 62 00  mov         ebx,dword ptr [__imp__SendMessageW@16]
+  00478EDA: 56                 push        esi
+  00478EDB: 57                 push        edi
+  00478EDC: 6A 00              push        0
+  00478EDE: 6A 00              push        0
+  00478EE0: 8B F9              mov         edi,ecx
+  00478EE2: 8B F2              mov         esi,edx
+  00478EE4: 68 09 10 00 00     push        1009h
+  00478EE9: 57                 push        edi
+  00478EEA: FF D3              call        ebx
+  00478EEC: E8 DF D6 FF FF     call        ?Instance@CustomSetDameItem@@SAPAV1@XZ
+  00478EF1: 85 F6              test        esi,esi
+  00478EF3: 74 03              je          00478EF8
+  00478EF5: 83 C0 0C           add         eax,0Ch
+  00478EF8: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00478EFB: 33 D2              xor         edx,edx
+  00478EFD: 8B 30              mov         esi,dword ptr [eax]
+  00478EFF: 89 55 80           mov         dword ptr [ebp-80h],edx
+  00478F02: 89 8D 7C FF FF FF  mov         dword ptr [ebp-84h],ecx
+  00478F08: 3B F1              cmp         esi,ecx
+  00478F0A: 0F 84 67 07 00 00  je          00479677
+  00478F10: 89 55 B8           mov         dword ptr [ebp-48h],edx
+  00478F13: 0F 1F 40 00        nop         dword ptr [eax]
+  00478F17: 66 0F 1F 84 00 00  nop         word ptr [eax+eax]
+            00 00 00
+  00478F20: FF 36              push        dword ptr [esi]
+  00478F22: 0F 57 C0           xorps       xmm0,xmm0
+  00478F25: C7 85 48 FF FF FF  mov         dword ptr [ebp-0B8h],5
+            05 00 00 00
+  00478F2F: 8D 45 BC           lea         eax,[ebp-44h]
+  00478F32: 66 0F 13 85 50 FF  movlpd      qword ptr [ebp-0B0h],xmm0
+            FF FF
+  00478F3A: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00478F3F: 50                 push        eax
+  00478F40: 66 0F 13 85 58 FF  movlpd      qword ptr [ebp-0A8h],xmm0
+            FF FF
+  00478F48: 66 0F 13 85 60 FF  movlpd      qword ptr [ebp-0A0h],xmm0
+            FF FF
+  00478F50: 66 0F 13 85 6C FF  movlpd      qword ptr [ebp-94h],xmm0
+            FF FF
+  00478F58: 66 0F 13 85 74 FF  movlpd      qword ptr [ebp-8Ch],xmm0
+            FF FF
+  00478F60: 89 95 4C FF FF FF  mov         dword ptr [ebp-0B4h],edx
+  00478F66: 89 95 68 FF FF FF  mov         dword ptr [ebp-98h],edx
+  00478F6C: E8 3F AA FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00478F71: 83 C4 0C           add         esp,0Ch
+  00478F74: 8D 45 BC           lea         eax,[ebp-44h]
+  00478F77: 89 85 5C FF FF FF  mov         dword ptr [ebp-0A4h],eax
+  00478F7D: 8D 85 48 FF FF FF  lea         eax,[ebp-0B8h]
+  00478F83: 50                 push        eax
+  00478F84: FF 75 80           push        dword ptr [ebp-80h]
+  00478F87: 68 4D 10 00 00     push        104Dh
+  00478F8C: 57                 push        edi
+  00478F8D: FF D3              call        ebx
+  00478F8F: FF 76 04           push        dword ptr [esi+4]
+  00478F92: 8D 45 BC           lea         eax,[ebp-44h]
+  00478F95: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00478F9A: 50                 push        eax
+  00478F9B: E8 10 AA FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00478FA0: 83 C4 0C           add         esp,0Ch
+  00478FA3: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00478FAA: 8D 45 BC           lea         eax,[ebp-44h]
+  00478FAD: C7 45 8C 01 00 00  mov         dword ptr [ebp-74h],1
+            00
+  00478FB4: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00478FB7: 0F 57 C0           xorps       xmm0,xmm0
+  00478FBA: 8D 45 84           lea         eax,[ebp-7Ch]
+  00478FBD: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00478FC2: 50                 push        eax
+  00478FC3: FF 75 B8           push        dword ptr [ebp-48h]
+  00478FC6: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00478FCB: 68 74 10 00 00     push        1074h
+  00478FD0: 57                 push        edi
+  00478FD1: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00478FD6: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00478FDB: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00478FE0: FF D3              call        ebx
+  00478FE2: FF 76 08           push        dword ptr [esi+8]
+  00478FE5: 8D 45 BC           lea         eax,[ebp-44h]
+  00478FE8: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00478FED: 50                 push        eax
+  00478FEE: E8 BD A9 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00478FF3: 83 C4 0C           add         esp,0Ch
+  00478FF6: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00478FFD: 8D 45 BC           lea         eax,[ebp-44h]
+  00479000: C7 45 8C 02 00 00  mov         dword ptr [ebp-74h],2
+            00
+  00479007: 89 45 98           mov         dword ptr [ebp-68h],eax
+  0047900A: 0F 57 C0           xorps       xmm0,xmm0
+  0047900D: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479010: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479015: 50                 push        eax
+  00479016: FF 75 B8           push        dword ptr [ebp-48h]
+  00479019: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  0047901E: 68 74 10 00 00     push        1074h
+  00479023: 57                 push        edi
+  00479024: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479029: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  0047902E: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479033: FF D3              call        ebx
+  00479035: FF 76 0C           push        dword ptr [esi+0Ch]
+  00479038: 8D 45 BC           lea         eax,[ebp-44h]
+  0047903B: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479040: 50                 push        eax
+  00479041: E8 6A A9 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479046: 0F 57 C0           xorps       xmm0,xmm0
+  00479049: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479050: 83 C4 0C           add         esp,0Ch
+  00479053: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479058: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  0047905D: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479062: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479067: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  0047906C: C7 45 8C 03 00 00  mov         dword ptr [ebp-74h],3
+            00
+  00479073: 8D 45 BC           lea         eax,[ebp-44h]
+  00479076: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479079: 8D 45 84           lea         eax,[ebp-7Ch]
+  0047907C: 50                 push        eax
+  0047907D: FF 75 B8           push        dword ptr [ebp-48h]
+  00479080: 68 74 10 00 00     push        1074h
+  00479085: 57                 push        edi
+  00479086: FF D3              call        ebx
+  00479088: FF 76 10           push        dword ptr [esi+10h]
+  0047908B: 8D 45 BC           lea         eax,[ebp-44h]
+  0047908E: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479093: 50                 push        eax
+  00479094: E8 17 A9 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479099: 83 C4 0C           add         esp,0Ch
+  0047909C: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004790A3: 8D 45 BC           lea         eax,[ebp-44h]
+  004790A6: C7 45 8C 04 00 00  mov         dword ptr [ebp-74h],4
+            00
+  004790AD: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004790B0: 0F 57 C0           xorps       xmm0,xmm0
+  004790B3: 8D 45 84           lea         eax,[ebp-7Ch]
+  004790B6: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004790BB: 50                 push        eax
+  004790BC: FF 75 B8           push        dword ptr [ebp-48h]
+  004790BF: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004790C4: 68 74 10 00 00     push        1074h
+  004790C9: 57                 push        edi
+  004790CA: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004790CF: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004790D4: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  004790D9: FF D3              call        ebx
+  004790DB: FF 76 14           push        dword ptr [esi+14h]
+  004790DE: 8D 45 BC           lea         eax,[ebp-44h]
+  004790E1: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  004790E6: 50                 push        eax
+  004790E7: E8 C4 A8 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  004790EC: 83 C4 0C           add         esp,0Ch
+  004790EF: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004790F6: 8D 45 BC           lea         eax,[ebp-44h]
+  004790F9: C7 45 8C 05 00 00  mov         dword ptr [ebp-74h],5
+            00
+  00479100: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479103: 0F 57 C0           xorps       xmm0,xmm0
+  00479106: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479109: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  0047910E: 50                 push        eax
+  0047910F: FF 75 B8           push        dword ptr [ebp-48h]
+  00479112: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479117: 68 74 10 00 00     push        1074h
+  0047911C: 57                 push        edi
+  0047911D: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479122: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479127: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  0047912C: FF D3              call        ebx
+  0047912E: FF 76 18           push        dword ptr [esi+18h]
+  00479131: 8D 45 BC           lea         eax,[ebp-44h]
+  00479134: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479139: 50                 push        eax
+  0047913A: E8 71 A8 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  0047913F: 83 C4 0C           add         esp,0Ch
+  00479142: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479149: 8D 45 BC           lea         eax,[ebp-44h]
+  0047914C: C7 45 8C 06 00 00  mov         dword ptr [ebp-74h],6
+            00
+  00479153: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479156: 0F 57 C0           xorps       xmm0,xmm0
+  00479159: 8D 45 84           lea         eax,[ebp-7Ch]
+  0047915C: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479161: 50                 push        eax
+  00479162: FF 75 B8           push        dword ptr [ebp-48h]
+  00479165: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  0047916A: 68 74 10 00 00     push        1074h
+  0047916F: 57                 push        edi
+  00479170: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479175: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  0047917A: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  0047917F: FF D3              call        ebx
+  00479181: FF 76 1C           push        dword ptr [esi+1Ch]
+  00479184: 8D 45 BC           lea         eax,[ebp-44h]
+  00479187: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  0047918C: 50                 push        eax
+  0047918D: E8 1E A8 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479192: 83 C4 0C           add         esp,0Ch
+  00479195: 0F 57 C0           xorps       xmm0,xmm0
+  00479198: 8D 45 BC           lea         eax,[ebp-44h]
+  0047919B: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004791A0: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004791A3: 8D 45 84           lea         eax,[ebp-7Ch]
+  004791A6: 50                 push        eax
+  004791A7: FF 75 B8           push        dword ptr [ebp-48h]
+  004791AA: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004791AF: 68 74 10 00 00     push        1074h
+  004791B4: 57                 push        edi
+  004791B5: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004791BA: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004791BF: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  004791C4: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004791CB: C7 45 8C 07 00 00  mov         dword ptr [ebp-74h],7
+            00
+  004791D2: FF D3              call        ebx
+  004791D4: FF 76 20           push        dword ptr [esi+20h]
+  004791D7: 8D 45 BC           lea         eax,[ebp-44h]
+  004791DA: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  004791DF: 50                 push        eax
+  004791E0: E8 CB A7 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  004791E5: 83 C4 0C           add         esp,0Ch
+  004791E8: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004791EF: 8D 45 BC           lea         eax,[ebp-44h]
+  004791F2: C7 45 8C 08 00 00  mov         dword ptr [ebp-74h],8
+            00
+  004791F9: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004791FC: 0F 57 C0           xorps       xmm0,xmm0
+  004791FF: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479202: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479207: 50                 push        eax
+  00479208: FF 75 B8           push        dword ptr [ebp-48h]
+  0047920B: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479210: 68 74 10 00 00     push        1074h
+  00479215: 57                 push        edi
+  00479216: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  0047921B: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479220: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479225: FF D3              call        ebx
+  00479227: FF 76 24           push        dword ptr [esi+24h]
+  0047922A: 8D 45 BC           lea         eax,[ebp-44h]
+  0047922D: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479232: 50                 push        eax
+  00479233: E8 78 A7 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479238: 83 C4 0C           add         esp,0Ch
+  0047923B: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479242: 8D 45 BC           lea         eax,[ebp-44h]
+  00479245: C7 45 8C 09 00 00  mov         dword ptr [ebp-74h],9
+            00
+  0047924C: 89 45 98           mov         dword ptr [ebp-68h],eax
+  0047924F: 0F 57 C0           xorps       xmm0,xmm0
+  00479252: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479255: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  0047925A: 50                 push        eax
+  0047925B: FF 75 B8           push        dword ptr [ebp-48h]
+  0047925E: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479263: 68 74 10 00 00     push        1074h
+  00479268: 57                 push        edi
+  00479269: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  0047926E: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479273: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479278: FF D3              call        ebx
+  0047927A: FF 76 28           push        dword ptr [esi+28h]
+  0047927D: 8D 45 BC           lea         eax,[ebp-44h]
+  00479280: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479285: 50                 push        eax
+  00479286: E8 25 A7 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  0047928B: 83 C4 0C           add         esp,0Ch
+  0047928E: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479295: 8D 45 BC           lea         eax,[ebp-44h]
+  00479298: C7 45 8C 0A 00 00  mov         dword ptr [ebp-74h],0Ah
+            00
+  0047929F: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004792A2: 0F 57 C0           xorps       xmm0,xmm0
+  004792A5: 8D 45 84           lea         eax,[ebp-7Ch]
+  004792A8: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004792AD: 50                 push        eax
+  004792AE: FF 75 B8           push        dword ptr [ebp-48h]
+  004792B1: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004792B6: 68 74 10 00 00     push        1074h
+  004792BB: 57                 push        edi
+  004792BC: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004792C1: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004792C6: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  004792CB: FF D3              call        ebx
+  004792CD: FF 76 2C           push        dword ptr [esi+2Ch]
+  004792D0: 8D 45 BC           lea         eax,[ebp-44h]
+  004792D3: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  004792D8: 50                 push        eax
+  004792D9: E8 D2 A6 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  004792DE: 83 C4 0C           add         esp,0Ch
+  004792E1: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004792E8: 8D 45 BC           lea         eax,[ebp-44h]
+  004792EB: C7 45 8C 0B 00 00  mov         dword ptr [ebp-74h],0Bh
+            00
+  004792F2: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004792F5: 0F 57 C0           xorps       xmm0,xmm0
+  004792F8: 8D 45 84           lea         eax,[ebp-7Ch]
+  004792FB: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479300: 50                 push        eax
+  00479301: FF 75 B8           push        dword ptr [ebp-48h]
+  00479304: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479309: 68 74 10 00 00     push        1074h
+  0047930E: 57                 push        edi
+  0047930F: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479314: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479319: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  0047931E: FF D3              call        ebx
+  00479320: FF 76 30           push        dword ptr [esi+30h]
+  00479323: 8D 45 BC           lea         eax,[ebp-44h]
+  00479326: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  0047932B: 50                 push        eax
+  0047932C: E8 7F A6 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479331: 83 C4 0C           add         esp,0Ch
+  00479334: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  0047933B: 8D 45 BC           lea         eax,[ebp-44h]
+  0047933E: C7 45 8C 0C 00 00  mov         dword ptr [ebp-74h],0Ch
+            00
+  00479345: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479348: 0F 57 C0           xorps       xmm0,xmm0
+  0047934B: 8D 45 84           lea         eax,[ebp-7Ch]
+  0047934E: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479353: 50                 push        eax
+  00479354: FF 75 B8           push        dword ptr [ebp-48h]
+  00479357: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  0047935C: 68 74 10 00 00     push        1074h
+  00479361: 57                 push        edi
+  00479362: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479367: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  0047936C: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479371: FF D3              call        ebx
+  00479373: FF 76 34           push        dword ptr [esi+34h]
+  00479376: 8D 45 BC           lea         eax,[ebp-44h]
+  00479379: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  0047937E: 50                 push        eax
+  0047937F: E8 2C A6 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479384: 83 C4 0C           add         esp,0Ch
+  00479387: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  0047938E: 8D 45 BC           lea         eax,[ebp-44h]
+  00479391: C7 45 8C 0D 00 00  mov         dword ptr [ebp-74h],0Dh
+            00
+  00479398: 89 45 98           mov         dword ptr [ebp-68h],eax
+  0047939B: 0F 57 C0           xorps       xmm0,xmm0
+  0047939E: 8D 45 84           lea         eax,[ebp-7Ch]
+  004793A1: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004793A6: 50                 push        eax
+  004793A7: FF 75 B8           push        dword ptr [ebp-48h]
+  004793AA: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004793AF: 68 74 10 00 00     push        1074h
+  004793B4: 57                 push        edi
+  004793B5: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004793BA: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004793BF: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  004793C4: FF D3              call        ebx
+  004793C6: FF 76 38           push        dword ptr [esi+38h]
+  004793C9: 8D 45 BC           lea         eax,[ebp-44h]
+  004793CC: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  004793D1: 50                 push        eax
+  004793D2: E8 D9 A5 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  004793D7: 0F 57 C0           xorps       xmm0,xmm0
+  004793DA: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004793E1: 83 C4 0C           add         esp,0Ch
+  004793E4: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004793E9: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004793EE: 8D 45 BC           lea         eax,[ebp-44h]
+  004793F1: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004793F6: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004793FB: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479400: C7 45 8C 0E 00 00  mov         dword ptr [ebp-74h],0Eh
+            00
+  00479407: 89 45 98           mov         dword ptr [ebp-68h],eax
+  0047940A: 8D 45 84           lea         eax,[ebp-7Ch]
+  0047940D: 50                 push        eax
+  0047940E: FF 75 B8           push        dword ptr [ebp-48h]
+  00479411: 68 74 10 00 00     push        1074h
+  00479416: 57                 push        edi
+  00479417: FF D3              call        ebx
+  00479419: FF 76 3C           push        dword ptr [esi+3Ch]
+  0047941C: 8D 45 BC           lea         eax,[ebp-44h]
+  0047941F: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479424: 50                 push        eax
+  00479425: E8 86 A5 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  0047942A: 83 C4 0C           add         esp,0Ch
+  0047942D: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479434: 8D 45 BC           lea         eax,[ebp-44h]
+  00479437: C7 45 8C 0F 00 00  mov         dword ptr [ebp-74h],0Fh
+            00
+  0047943E: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479441: 0F 57 C0           xorps       xmm0,xmm0
+  00479444: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479447: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  0047944C: 50                 push        eax
+  0047944D: FF 75 B8           push        dword ptr [ebp-48h]
+  00479450: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479455: 68 74 10 00 00     push        1074h
+  0047945A: 57                 push        edi
+  0047945B: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479460: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479465: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  0047946A: FF D3              call        ebx
+  0047946C: FF 76 40           push        dword ptr [esi+40h]
+  0047946F: 8D 45 BC           lea         eax,[ebp-44h]
+  00479472: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479477: 50                 push        eax
+  00479478: E8 33 A5 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  0047947D: 83 C4 0C           add         esp,0Ch
+  00479480: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479487: 8D 45 BC           lea         eax,[ebp-44h]
+  0047948A: C7 45 8C 10 00 00  mov         dword ptr [ebp-74h],10h
+            00
+  00479491: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479494: 0F 57 C0           xorps       xmm0,xmm0
+  00479497: 8D 45 84           lea         eax,[ebp-7Ch]
+  0047949A: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  0047949F: 50                 push        eax
+  004794A0: FF 75 B8           push        dword ptr [ebp-48h]
+  004794A3: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004794A8: 68 74 10 00 00     push        1074h
+  004794AD: 57                 push        edi
+  004794AE: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004794B3: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004794B8: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  004794BD: FF D3              call        ebx
+  004794BF: FF 76 44           push        dword ptr [esi+44h]
+  004794C2: 8D 45 BC           lea         eax,[ebp-44h]
+  004794C5: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  004794CA: 50                 push        eax
+  004794CB: E8 E0 A4 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  004794D0: 83 C4 0C           add         esp,0Ch
+  004794D3: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004794DA: 8D 45 BC           lea         eax,[ebp-44h]
+  004794DD: C7 45 8C 11 00 00  mov         dword ptr [ebp-74h],11h
+            00
+  004794E4: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004794E7: 0F 57 C0           xorps       xmm0,xmm0
+  004794EA: 8D 45 84           lea         eax,[ebp-7Ch]
+  004794ED: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004794F2: 50                 push        eax
+  004794F3: FF 75 B8           push        dword ptr [ebp-48h]
+  004794F6: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004794FB: 68 74 10 00 00     push        1074h
+  00479500: 57                 push        edi
+  00479501: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479506: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  0047950B: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479510: FF D3              call        ebx
+  00479512: FF 76 48           push        dword ptr [esi+48h]
+  00479515: 8D 45 BC           lea         eax,[ebp-44h]
+  00479518: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  0047951D: 50                 push        eax
+  0047951E: E8 8D A4 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479523: 0F 57 C0           xorps       xmm0,xmm0
+  00479526: 83 C4 0C           add         esp,0Ch
+  00479529: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  0047952E: 8D 45 BC           lea         eax,[ebp-44h]
+  00479531: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479536: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479539: 8D 45 84           lea         eax,[ebp-7Ch]
+  0047953C: 50                 push        eax
+  0047953D: FF 75 B8           push        dword ptr [ebp-48h]
+  00479540: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479545: 68 74 10 00 00     push        1074h
+  0047954A: 57                 push        edi
+  0047954B: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479550: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479555: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  0047955C: C7 45 8C 12 00 00  mov         dword ptr [ebp-74h],12h
+            00
+  00479563: FF D3              call        ebx
+  00479565: FF 76 4C           push        dword ptr [esi+4Ch]
+  00479568: 8D 45 BC           lea         eax,[ebp-44h]
+  0047956B: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479570: 50                 push        eax
+  00479571: E8 3A A4 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  00479576: 83 C4 0C           add         esp,0Ch
+  00479579: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479580: 8D 45 BC           lea         eax,[ebp-44h]
+  00479583: C7 45 8C 13 00 00  mov         dword ptr [ebp-74h],13h
+            00
+  0047958A: 89 45 98           mov         dword ptr [ebp-68h],eax
+  0047958D: 0F 57 C0           xorps       xmm0,xmm0
+  00479590: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479593: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  00479598: 50                 push        eax
+  00479599: FF 75 B8           push        dword ptr [ebp-48h]
+  0047959C: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004795A1: 68 74 10 00 00     push        1074h
+  004795A6: 57                 push        edi
+  004795A7: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004795AC: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  004795B1: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  004795B6: FF D3              call        ebx
+  004795B8: FF 76 50           push        dword ptr [esi+50h]
+  004795BB: 8D 45 BC           lea         eax,[ebp-44h]
+  004795BE: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  004795C3: 50                 push        eax
+  004795C4: E8 E7 A3 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  004795C9: 83 C4 0C           add         esp,0Ch
+  004795CC: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  004795D3: 8D 45 BC           lea         eax,[ebp-44h]
+  004795D6: C7 45 8C 14 00 00  mov         dword ptr [ebp-74h],14h
+            00
+  004795DD: 89 45 98           mov         dword ptr [ebp-68h],eax
+  004795E0: 0F 57 C0           xorps       xmm0,xmm0
+  004795E3: 8D 45 84           lea         eax,[ebp-7Ch]
+  004795E6: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  004795EB: 50                 push        eax
+  004795EC: FF 75 B8           push        dword ptr [ebp-48h]
+  004795EF: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  004795F4: 68 74 10 00 00     push        1074h
+  004795F9: 57                 push        edi
+  004795FA: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  004795FF: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479604: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  00479609: FF D3              call        ebx
+  0047960B: FF 76 54           push        dword ptr [esi+54h]
+  0047960E: 8D 45 BC           lea         eax,[ebp-44h]
+  00479611: 68 F0 95 63 00     push        offset ??_C@_15KNBIKKIN@?$AA?$CF?$AAd@
+  00479616: 50                 push        eax
+  00479617: E8 94 A3 FB FF     call        ??$swprintf_s@$0CA@@@YAHAAY0CA@_WPB_WZZ
+  0047961C: 83 C4 0C           add         esp,0Ch
+  0047961F: C7 45 B4 00 00 00  mov         dword ptr [ebp-4Ch],0
+            00
+  00479626: 8D 45 BC           lea         eax,[ebp-44h]
+  00479629: C7 45 8C 15 00 00  mov         dword ptr [ebp-74h],15h
+            00
+  00479630: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00479633: 0F 57 C0           xorps       xmm0,xmm0
+  00479636: 8D 45 84           lea         eax,[ebp-7Ch]
+  00479639: 66 0F 13 45 84     movlpd      qword ptr [ebp-7Ch],xmm0
+  0047963E: 50                 push        eax
+  0047963F: FF 75 B8           push        dword ptr [ebp-48h]
+  00479642: 66 0F 13 45 90     movlpd      qword ptr [ebp-70h],xmm0
+  00479647: 68 74 10 00 00     push        1074h
+  0047964C: 57                 push        edi
+  0047964D: 66 0F 13 45 9C     movlpd      qword ptr [ebp-64h],xmm0
+  00479652: 66 0F 13 45 A4     movlpd      qword ptr [ebp-5Ch],xmm0
+  00479657: 66 0F 13 45 AC     movlpd      qword ptr [ebp-54h],xmm0
+  0047965C: FF D3              call        ebx
+  0047965E: 8B 55 B8           mov         edx,dword ptr [ebp-48h]
+  00479661: 42                 inc         edx
+  00479662: 83 C6 58           add         esi,58h
+  00479665: 89 55 80           mov         dword ptr [ebp-80h],edx
+  00479668: 89 55 B8           mov         dword ptr [ebp-48h],edx
+  0047966B: 3B B5 7C FF FF FF  cmp         esi,dword ptr [ebp-84h]
+  00479671: 0F 85 A9 F8 FF FF  jne         00478F20
+  00479677: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0047967A: 5F                 pop         edi
+  0047967B: 5E                 pop         esi
+  0047967C: 33 CD              xor         ecx,ebp
+  0047967E: 5B                 pop         ebx
+  0047967F: E8 E7 A0 17 00     call        @__security_check_cookie@4
+  00479684: 8B E5              mov         esp,ebp
+  00479686: 5D                 pop         ebp
+  00479687: C3                 ret
+  00479688: CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC  оооооооооооооооо
+  00479698: CC CC CC CC CC CC CC CC                          оооооооо
+?SPK_CustomItemSetProProc@@YGHPAUHWND__@@IIJ@Z:
+  004796A0: 55                 push        ebp
+  004796A1: 8B EC              mov         ebp,esp
+  004796A3: 83 E4 F0           and         esp,0FFFFFFF0h
+  004796A6: 81 EC 58 05 00 00  sub         esp,558h
+  004796AC: A1 80 10 66 00     mov         eax,dword ptr [___security_cookie]

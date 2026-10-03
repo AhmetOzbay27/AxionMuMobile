@@ -1,0 +1,2754 @@
+%-10d %-6d %-6d
+%-16s  (con %02d:%02d)
+%-35s =   %d
+%.8s %s
+%02d: %s
+%02d:%02d:%02d
+%02d:%02d:%02d %s
+%H:%M:%S %d/%m/%Y
+%d %d %d %d %d
+%d %s %s %s %s
+%d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s
+%d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s
+%d days
+%d seconds until moving to Devias
+%d.%d.%d.%d
+%s          %s           %s                 %s             %s          %s              %s                %s                %s
+%s          %s           %s         %s         %s         %s         %s         %s         %s         %s         %s         %s         %s         %s
+%s %d/%d
+%s %s %d
+%s %s %s
+%s ( %d ) VS %s ( %d )
+%s - %s: received milestone:%d with value %s
+%s - [%s]
+%s Map %s: %d/%d NoDrop %s, Serial: %08X, level: %d, Skill: %d, Luck %d, Option3: %d, NewOption: %d, SetOption: %d, JOH: %d, OptionEx: %d, SocketOption:%d,%d,%d,%d,%d
+%s: %d
+'''''''
+'''''''''''
+'''''''''''''
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+(null)
+))))))))))))
+,>>-./>012
+--- Registers ---
+--- Stack Trace (EBP chain) ---
+-No Luck
+-No Skill
+..//Data//Util//RESET.ini
+.00cfg
+.fptable
+.rdata
+//  Mob
+// ---------------------------------%d.QUEST----------------------------------------------
+// SPK
+//Comment
+//Enable
+//EventName
+//Group
+//Level
+//Map   X      Y      TX      TY      MinLevel   MaxLevel   MinReset   MaxReset   AccountLevel
+//Message
+//MinLevel   MaxLevel   MinMasterLevel   MaxMasterLevel   MinReset   MaxReset   MinMasterReset   MaxMasterReset   ExperienceRate
+//MinReset   MaxReset   Level_AL0   Level_AL1   Level_AL2   Level_AL3   Money_AL0   Money_AL1   Money_AL2   Money_AL3   Point_AL0   Point_AL1   Point_AL2   Point_AL3
+//MonsterClass
+//Reward
+//Section
+//Section   Type   Level
+//Section   Type   MaxSocket   Comment
+//WarningTime
+//Year
+0%0/0l0u0
+0123456789abcdefghijklmnopqrstuvwxyz
+1 1-14191F1M1R1_1f1k1x1
+1(1-1g1z1
+1(12191F1M1Z1d1k1x1
+1. Bag Mix
+2%2/2l2u2
+2(22292F2M2Z2d2k2x2
+222K2P2i2z2
+22:21:22
+272L2d2
+3(3,3034383
+3(3/343A3H3M3Z3a3f3s3z3
+3)3<3g3
+3. Result Mix
+3.3R3W3
+4(4/444A4H4M4Z4a4f4s4z4
+5=5C5J5
+6(6/646A6H6M6Z6a6f6s6z6
+6.6D6Z6k6r6
+6<6D6H6P6X6
+6Y6p6w6
+757D7K7X7_7g7o7w7
+7K7a7k7u7
+7a7f7l7t7
+8 8-84898F8M8R8_8f8k8x8
+8/8T8Z8
+8X8,9<9C9k9
+9 9-94999F9M9R9_9f9k9x9
+9-999R9s9
+9H9V9_9e9t9
+: :4:9:L:
+:%:,:2:V:
+:N:p:u:
+:N:q:w:
+:anonymous
+<-r(<2
+<-r8<2w4
+<-r9<2w5
+<-rF<2wB
+<-ubC8
+</EventTime>
+</RuleDrop>
+</SPK>
+<2v7<Ar
+<2vB<Ar
+<Dv/<Er
+<Dv:<Er
+<DvK<Er
+<Event
+<EventTime>
+<L<Y<y<
+='=P=V=c=j=
+=(=/=<=F=M=Z=a=n=x=
+=)=6=G=N=
+=,=6=V=x=
+=-=4=f=t=
+=== GameServer Crash Report ===
+===============================
+=a=f=l=t=
+> >->4>9>F>M>R>_>f>k>x>
+>9>E>Q>
+>>>>>3
+>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>
+ARPRQh
+Account
+Account disconnect sucefully
+Account: %s
+Acheron
+AcquireSRWLockExclusive
+Add Nhan Vat %s Cong %d
+AddEventExperienceRate_AL0
+AddEventExperienceRate_AL1
+AddEventExperienceRate_AL2
+AddEventExperienceRate_AL3
+AddExperienceRate_AL0
+AddExperienceRate_AL1
+AddExperienceRate_AL2
+AddExperienceRate_AL3
+AddFontResourceExA
+AddLuckSuccessRate1_AL0
+AddLuckSuccessRate1_AL1
+AddLuckSuccessRate1_AL2
+AddLuckSuccessRate1_AL3
+AddLuckSuccessRate2_AL0
+AddLuckSuccessRate2_AL1
+AddLuckSuccessRate2_AL2
+AddLuckSuccessRate2_AL3
+AddMasterExperienceRate_AL0
+AddMasterExperienceRate_AL1
+AddMasterExperienceRate_AL2
+AddMasterExperienceRate_AL3
+AddQuestExperienceRate_AL0
+AddQuestExperienceRate_AL1
+AddQuestExperienceRate_AL2
+AddQuestExperienceRate_AL3
+AddVectoredExceptionHandler
+AfterRelifeLevel
+AfterRelifeReset
+AlarmTime
+AllowAnc
+Ancient Battlefield
+AngelDecDamageConstA
+AngelTeamGate
+AnnounceChaosMix
+AnnounceChaosMixText
+AppPolicyGetProcessTerminationMethod
+AppendMenuA
+AppendMenuW
+ApplePotionRate
+ArmorDurabilityRate
+AtkRate
+AtkRng
+AtkSpd
+AtkType
+Atlans
+AttRate
+AttackRange
+AttackRate
+AttackSpeed
+AttackType
+Attrib
+Attribute
+August
+AutoResetExperienceRate_AL0
+AutoResetExperienceRate_AL1
+AutoResetExperienceRate_AL2
+AutoResetExperienceRate_AL3
+Balgass Barracks
+Balgass Refuge
+Ban Can Co %d GP de Mix
+Ban Can Co %d WC de Mix
+Ban Can Co %d WP de Mix
+Ban Can Co %d Zen de Mix
+Base Class Array'
+Base Class Descriptor at (
+BatTat
+BeginPaint
+BitBlt
+BlessRingPenda1
+BlessRingPenda2
+BlessRingPenda3
+BlessRingPenda4
+BlessSoulRingPenAllow
+Blood Castle 1
+Blood Castle 2
+Blood Castle 3
+Blood Castle 4
+Blood Castle 5
+Blood Castle 6
+Blood Castle 7
+Blood Castle 8
+BloodCastleMix
+BloodCastleMixRate1_AL0
+BloodCastleMixRate1_AL1
+BloodCastleMixRate1_AL2
+BloodCastleMixRate1_AL3
+BloodCastleMixRate2_AL0
+BloodCastleMixRate2_AL1
+BloodCastleMixRate2_AL2
+BloodCastleMixRate2_AL3
+BloodCastleMixRate3_AL0
+BloodCastleMixRate3_AL1
+BloodCastleMixRate3_AL2
+BloodCastleMixRate3_AL3
+BloodCastleMixRate4_AL0
+BloodCastleMixRate4_AL1
+BloodCastleMixRate4_AL2
+BloodCastleMixRate4_AL3
+BloodCastleMixRate5_AL0
+BloodCastleMixRate5_AL1
+BloodCastleMixRate5_AL2
+BloodCastleMixRate5_AL3
+BloodCastleMixRate6_AL0
+BloodCastleMixRate6_AL1
+BloodCastleMixRate6_AL2
+BloodCastleMixRate6_AL3
+BloodCastleMixRate7_AL0
+BloodCastleMixRate7_AL1
+BloodCastleMixRate7_AL2
+BloodCastleMixRate7_AL3
+BloodCastleMixRate8_AL0
+BloodCastleMixRate8_AL1
+BloodCastleMixRate8_AL2
+BloodCastleMixRate8_AL3
+BlowUserRate
+BlueFenrirDecDamageConstA
+BonusAllGuild
+BonusManagerSwitch
+BossChienBinh
+BossChuaTe
+BossDauSi
+BossGuild
+BossPhuThuy
+BossThietBinh
+BossThuatSi
+BossTienNu
+BotAlchemist data load error %s
+BotAsociation
+BotName
+BotOnline data load error %s
+BotTrade
+BotTraderSubCoin
+Bots Buffer: %d
+BrandTimeConstA
+BrokenHornMix
+BrokenHornMixRate_AL0
+BrokenHornMixRate_AL1
+BrokenHornMixRate_AL2
+BrokenHornMixRate_AL3
+Buffs%d
+BundleType
+BuyNameColor
+BuyVip
+CBotMixSystem::TradeOk %s
+COMCTL32.dll
+CTC Mini
+CTCMini
+CURRENT
+CallWindowProcA
+CallWindowProcW
+CashShopBannerVersion1
+CashShopBannerVersion2
+CashShopBannerVersion3
+CashShopGoblinPointDelay
+CashShopGoblinPointValue_AL0
+CashShopGoblinPointValue_AL1
+CashShopGoblinPointValue_AL2
+CashShopGoblinPointValue_AL3
+CashShopScriptVersion1
+CashShopScriptVersion2
+CashShopScriptVersion3
+CashShopSwitch
+CastleDeepEvent
+CastleDeepEventTime
+CastleSiegeCycleStartDay
+CastleSiegeCycleStartMonth
+CastleSiegeCycleStartYear
+CastleSiegeDamageRate1
+CastleSiegeDamageRate2
+CastleSiegeDamageRate3
+CastleSiegeDecayAccumulatedTimeValue
+CastleSiegeDefensiveWeaponDamage
+CastleSiegeEvent
+CastleSiegeLowerAccumulatedTimeValue
+CastleSiegeOffensiveWeaponDamage
+CastleSiegeSpecificState
+CastleSiegeStateStartDay
+CastleSiegeStateStartHour
+CastleSiegeStateStartMinute
+CastleSiegeStateStartMonth
+CastleSiegeStateStartYear
+CauHinhGate
+CauHinhTime
+ChangeClass
+Chaos Castle 1
+Chaos Castle 2
+Chaos Castle 3
+Chaos Castle 4
+Chaos Castle 5
+Chaos Castle 6
+Chaos Castle 7
+ChaosCardMix
+ChaosCastleDamageRate
+CharOption
+Character [%s] entered gate [%d]
+Character: %s logged
+Character: %s logout
+CharacterCreateSwitch
+CheDo1
+CheDo2
+CheDoBoss
+CheckAutoComboHack
+CheckAutoComboHackTolerance
+CheckAutoPotionHack
+CheckAutoPotionHackTolerance
+CheckDlgButton
+CheckLatencyHack
+CheckLatencyHackTolerance
+CheckOptionDrop
+CheckPhoiType
+CheckSpeedHack
+CheckSpeedHackTolerance
+CherryBlossomMix
+ChestMix
+ChonLaiNv
+Class Hierarchy Descriptor'
+ClassGate
+ClassTru
+ClearMasterChangeClass
+ClientToScreen
+CloseHandle
+CloseTime
+CoinAtm
+CoinLimit
+CoinMocNap
+CoinNhan
+CoinRenamed
+ComboDamageConstA
+ComboDamageConstB
+ComboSkillHoaDiem
+Command
+Command.txt
+CommandAddPointAutoEnable_AL0
+CommandAddPointAutoEnable_AL1
+CommandAddPointAutoEnable_AL2
+CommandAddPointAutoEnable_AL3
+CommandBlocAccShowMessage
+CommandBlocCharShowMessage
+CommandChangeClassToDK
+CommandChangeClassToDL
+CommandChangeClassToDW
+CommandChangeClassToELF
+CommandChangeClassToMG
+CommandChangeClassToRF
+CommandChangeClassToSU
+CommandChangeLimit_AL0
+CommandChangeLimit_AL1
+CommandChangeLimit_AL2
+CommandChangeLimit_AL3
+CommandGiftLimit
+CommandHelpMonsterAmount
+CommandMarryCost
+CommandMarryLevel
+CommandMarryMinTime
+CommandMarryNoticeDelay
+CommandMarryOnlyGM
+CommandMasterResetCount_AL0
+CommandMasterResetCount_AL1
+CommandMasterResetCount_AL2
+CommandMasterResetCount_AL3
+CommandMasterResetLevel_AL0
+CommandMasterResetLevel_AL1
+CommandMasterResetLevel_AL2
+CommandMasterResetLevel_AL3
+CommandMasterResetLimitDay_AL0
+CommandMasterResetLimitDay_AL1
+CommandMasterResetLimitDay_AL2
+CommandMasterResetLimitDay_AL3
+CommandMasterResetLimitMon_AL0
+CommandMasterResetLimitMon_AL1
+CommandMasterResetLimitMon_AL2
+CommandMasterResetLimitMon_AL3
+CommandMasterResetLimitWek_AL0
+CommandMasterResetLimitWek_AL1
+CommandMasterResetLimitWek_AL2
+CommandMasterResetLimitWek_AL3
+CommandMasterResetLimit_AL0
+CommandMasterResetLimit_AL1
+CommandMasterResetLimit_AL2
+CommandMasterResetLimit_AL3
+CommandMasterResetMoney_AL0
+CommandMasterResetMoney_AL1
+CommandMasterResetMoney_AL2
+CommandMasterResetMoney_AL3
+CommandMasterResetMove_AL0
+CommandMasterResetMove_AL1
+CommandMasterResetMove_AL2
+CommandMasterResetMove_AL3
+CommandMasterResetPointRateDK
+CommandMasterResetPointRateDL
+CommandMasterResetPointRateDW
+CommandMasterResetPointRateFE
+CommandMasterResetPointRateMG
+CommandMasterResetPointRateRF
+CommandMasterResetPointRateSU
+CommandMasterResetPoint_AL0
+CommandMasterResetPoint_AL1
+CommandMasterResetPoint_AL2
+CommandMasterResetPoint_AL3
+CommandMasterResetQuest_AL0
+CommandMasterResetQuest_AL1
+CommandMasterResetQuest_AL2
+CommandMasterResetQuest_AL3
+CommandMasterResetRemoveReset_AL0
+CommandMasterResetRemoveReset_AL1
+CommandMasterResetRemoveReset_AL2
+CommandMasterResetRemoveReset_AL3
+CommandMasterResetReset_AL0
+CommandMasterResetReset_AL1
+CommandMasterResetReset_AL2
+CommandMasterResetReset_AL3
+CommandMasterResetSkill_AL0
+CommandMasterResetSkill_AL1
+CommandMasterResetSkill_AL2
+CommandMasterResetSkill_AL3
+CommandMasterResetStartLevel_AL0
+CommandMasterResetStartLevel_AL1
+CommandMasterResetStartLevel_AL2
+CommandMasterResetStartLevel_AL3
+CommandMasterResetStartReset_AL0
+CommandMasterResetStartReset_AL1
+CommandMasterResetStartReset_AL2
+CommandMasterResetStartReset_AL3
+CommandMasterResetType
+CommandOpenWareOnlySafeZone
+CommandPostType
+CommandRenameDelay_AL0
+CommandRenameDelay_AL1
+CommandRenameDelay_AL2
+CommandRenameDelay_AL3
+CommandRenameNeedTicket
+CommandResetAutoEnable_AL0
+CommandResetAutoEnable_AL1
+CommandResetAutoEnable_AL2
+CommandResetAutoEnable_AL3
+CommandResetCount_AL0
+CommandResetCount_AL1
+CommandResetCount_AL2
+CommandResetCount_AL3
+CommandResetKeepDLCommandPoint_AL0
+CommandResetKeepDLCommandPoint_AL1
+CommandResetKeepDLCommandPoint_AL2
+CommandResetKeepDLCommandPoint_AL3
+CommandResetLevel_AL0
+CommandResetLevel_AL1
+CommandResetLevel_AL2
+CommandResetLevel_AL3
+CommandResetLimitDay_AL0
+CommandResetLimitDay_AL1
+CommandResetLimitDay_AL2
+CommandResetLimitDay_AL3
+CommandResetLimitMon_AL0
+CommandResetLimitMon_AL1
+CommandResetLimitMon_AL2
+CommandResetLimitMon_AL3
+CommandResetLimitWek_AL0
+CommandResetLimitWek_AL1
+CommandResetLimitWek_AL2
+CommandResetLimitWek_AL3
+CommandResetLimit_AL0
+CommandResetLimit_AL1
+CommandResetLimit_AL2
+CommandResetLimit_AL3
+CommandResetMoney_AL0
+CommandResetMoney_AL1
+CommandResetMoney_AL2
+CommandResetMoney_AL3
+CommandResetMove_AL0
+CommandResetMove_AL1
+CommandResetMove_AL2
+CommandResetMove_AL3
+CommandResetPointRateDK
+CommandResetPointRateDL
+CommandResetPointRateDW
+CommandResetPointRateFE
+CommandResetPointRateMG
+CommandResetPointRateRF
+CommandResetPointRateSU
+CommandResetPoint_AL0
+CommandResetPoint_AL1
+CommandResetPoint_AL2
+CommandResetPoint_AL3
+CommandResetQuest_AL0
+CommandResetQuest_AL1
+CommandResetQuest_AL2
+CommandResetQuest_AL3
+CommandResetSkill_AL0
+CommandResetSkill_AL1
+CommandResetSkill_AL2
+CommandResetSkill_AL3
+CommandResetStartLevel_AL0
+CommandResetStartLevel_AL1
+CommandResetStartLevel_AL2
+CommandResetStartLevel_AL3
+CommandResetType
+CommandRewardAllGameMasterLevel
+CommandRewardAllMaxType
+CommandRewardAllMaxValue
+CommandRewardAllSwitch
+CommandRewardAllType10Text
+CommandRewardAllType1Text
+CommandRewardAllType2Text
+CommandRewardAllType3Text
+CommandRewardAllType4Text
+CommandRewardAllType5Text
+CommandRewardAllType6Text
+CommandRewardAllType7Text
+CommandRewardAllType8Text
+CommandRewardAllType9Text
+CommandRewardMaxType
+CommandRewardMaxValue
+CommandRewardType10Text
+CommandRewardType1Text
+CommandRewardType2Text
+CommandRewardType3Text
+CommandRewardType4Text
+CommandRewardType5Text
+CommandRewardType6Text
+CommandRewardType7Text
+CommandRewardType8Text
+CommandRewardType9Text
+CommandWareNumber_AL0
+CommandWareNumber_AL1
+CommandWareNumber_AL2
+CommandWareNumber_AL3
+Comment
+Comment: %s
+CommonShop
+CommonShopBuy
+CommonShopSell
+CompareStringEx
+CompareStringW
+Complete Object Locator'
+Config
+Config.xml
+ConfigCheck
+ConfigCheckVip
+ConfigClass
+ConfigDanhHieu
+ConfigGate
+ConfigHonHoan
+ConfigMocNap
+ConfigQuanHam
+ConfigRewardTop1
+ConfigRewardTop2
+ConfigRewardTop3
+ConfigRewardTop4
+ConfigRewardTop5
+ConfigShop
+ConfigTuLuyen
+ConfigVongQuay
+Confirm
+Cong Huong
+Cong Huong Plus
+ConnectServerAddress
+ConnectServerPort
+Consolas
+CoordX
+CoordY
+CopyRect
+CorExitProcess
+Could not allocate memory
+Could not create the list box
+Could not determine tag type
+Could not open GameServer
+Could not start GameServer
+CountGrp
+CrashDump
+CreateBot
+CreateCharacterFullSkill
+CreateCompatibleDC
+CreateDirectoryA
+CreateFileA
+CreateFileW
+CreateFontA
+CreateFontW
+CreateMutexA
+CreatePopupMenu
+CreateSemaphoreA
+CreateSolidBrush
+CreateThread
+CreateTime
+CreateTimerQueue
+CreateTimerQueueTimer
+CreateWindowExA
+CreateWindowExW
+CriDame
+CriDmg
+CriDmgRate
+CriticalDamage
+Cross Dupe Serial: [%s][%s] %02X
+Crywolf Fortress
+CrywolfBenefitChaosRate
+CrywolfBenefitMonsterLife
+CrywolfBenefitSwitch
+CrywolfEvent
+CrywolfPenaltyExperience
+CrywolfPenaltyJewelDrop
+CrywolfPenaltySwitch
+CustomArenaDamageRate
+CustomAttack
+CustomAttackAutoBuffDelay
+CustomAttackAutoBuff_AL0
+CustomAttackAutoBuff_AL1
+CustomAttackAutoBuff_AL2
+CustomAttackAutoBuff_AL3
+CustomAttackAutoPotionDelay
+CustomAttackAutoResume_AL0
+CustomAttackAutoResume_AL1
+CustomAttackAutoResume_AL2
+CustomAttackAutoResume_AL3
+CustomAttackDelay
+CustomAttackOfflineGPGain
+CustomAttackTime_AL0
+CustomAttackTime_AL1
+CustomAttackTime_AL2
+CustomAttackTime_AL3
+CustomCashShop
+CustomDeathMessageSwitch
+CustomEventTimeSwitch
+CustomMocNap
+CustomNewBuff
+CustomNewBuff load fail: %s (%s)
+CustomNpcCollectorSwitch
+CustomNpcQuestSwitch
+CustomPick
+CustomQuest
+CustomQuestSwitch
+CustomQuizSwitch
+CustomRankUserSwitch
+CustomRankUserType
+CustomRankingSwitch
+CustomShopMessageBox
+CustomStore
+CustomStoreCommandJoBSyntax
+CustomStoreCommandJoCSyntax
+CustomStoreCommandJoSSyntax
+CustomStoreCommandWCCSyntax
+CustomStoreCommandWCGSyntax
+CustomStoreCommandWCPSyntax
+CustomStoreJoBName
+CustomStoreJoCName
+CustomStoreJoSName
+CustomStoreTime_AL0
+CustomStoreTime_AL1
+CustomStoreTime_AL2
+CustomStoreTime_AL3
+CustomStoreWCCName
+CustomStoreWCGName
+CustomStoreWCPName
+CustomVongQuay
+CustomerKeyVersion
+CustomerName
+DKAttackSuccessRateConstA
+DKAttackSuccessRateConstB
+DKAttackSuccessRateConstC
+DKAttackSuccessRateConstD
+DKAttackSuccessRatePvPConstA
+DKAttackSuccessRatePvPConstB
+DKAttackSuccessRatePvPConstC
+DKAttackSuccessRatePvPConstD
+DKBPRecoveryRate
+DKDamageMultiplierConstA
+DKDamageMultiplierMaxRate
+DKDamageRatePvM
+DKDamageRatePvP
+DKDamageRateToDK
+DKDamageRateToDL
+DKDamageRateToDW
+DKDamageRateToFE
+DKDamageRateToMG
+DKDamageRateToRF
+DKDamageRateToSU
+DKDamageStuckRate
+DKDefenseConstA
+DKDefenseSuccessRateConstA
+DKDefenseSuccessRatePvPConstA
+DKDefenseSuccessRatePvPConstB
+DKDefenseSuccessRatePvPConstC
+DKHPRecoveryRate
+DKLevelUpPoint
+DKMPRecoveryRate
+DKMagicDamageMaxConstA
+DKMagicDamageMinConstA
+DKMagicSpeedConstA
+DKPhysiDamageMaxConstA
+DKPhysiDamageMinConstA
+DKPhysiSpeedConstA
+DKPlasmaStormDamageConstA
+DKPlasmaStormDamageConstB
+DKPlasmaStormDamageConstC
+DKPlasmaStormDamageConstD
+DKSDRecoveryRate
+DLAttackSuccessRateConstA
+DLAttackSuccessRateConstB
+DLAttackSuccessRateConstC
+DLAttackSuccessRateConstD
+DLAttackSuccessRateConstE
+DLAttackSuccessRatePvPConstA
+DLAttackSuccessRatePvPConstB
+DLAttackSuccessRatePvPConstC
+DLAttackSuccessRatePvPConstD
+DLBPRecoveryRate
+DLCreateLevel_AL0
+DLCreateLevel_AL1
+DLCreateLevel_AL2
+DLCreateLevel_AL3
+DLCreateMasterReset_AL0
+DLCreateMasterReset_AL1
+DLCreateMasterReset_AL2
+DLCreateMasterReset_AL3
+DLCreateReset_AL0
+DLCreateReset_AL1
+DLCreateReset_AL2
+DLCreateReset_AL3
+DLCreateType
+DLDamageMultiplierConstA
+DLDamageMultiplierMaxRate
+DLDamageRatePvM
+DLDamageRatePvP
+DLDamageRateToDK
+DLDamageRateToDL
+DLDamageRateToDW
+DLDamageRateToFE
+DLDamageRateToMG
+DLDamageRateToRF
+DLDamageRateToSU
+DLDamageStuckRate
+DLDefenseConstA
+DLDefenseSuccessRateConstA
+DLDefenseSuccessRatePvPConstA
+DLDefenseSuccessRatePvPConstB
+DLDefenseSuccessRatePvPConstC
+DLHPRecoveryRate
+DLLevelUpPoint
+DLMPRecoveryRate
+DLMagicDamageMaxConstA
+DLMagicDamageMinConstA
+DLMagicSpeedConstA
+DLPhysiDamageMaxConstA
+DLPhysiDamageMaxConstB
+DLPhysiDamageMinConstA
+DLPhysiDamageMinConstB
+DLPhysiSpeedConstA
+DLPlasmaStormDamageConstA
+DLPlasmaStormDamageConstB
+DLPlasmaStormDamageConstC
+DLPlasmaStormDamageConstD
+DLPlasmaStormDamageConstE
+DLSDRecoveryRate
+DLSkillDamageConstA
+DLSkillDamageConstB
+DWAttackSuccessRateConstA
+DWAttackSuccessRateConstB
+DWAttackSuccessRateConstC
+DWAttackSuccessRateConstD
+DWAttackSuccessRatePvPConstA
+DWAttackSuccessRatePvPConstB
+DWAttackSuccessRatePvPConstC
+DWAttackSuccessRatePvPConstD
+DWBPRecoveryRate
+DWDamageMultiplierMaxRate
+DWDamageRatePvM
+DWDamageRatePvP
+DWDamageRateToDK
+DWDamageRateToDL
+DWDamageRateToDW
+DWDamageRateToFE
+DWDamageRateToMG
+DWDamageRateToRF
+DWDamageRateToSU
+DWDamageStuckRate
+DWDefenseConstA
+DWDefenseSuccessRateConstA
+DWDefenseSuccessRatePvPConstA
+DWDefenseSuccessRatePvPConstB
+DWDefenseSuccessRatePvPConstC
+DWHPRecoveryRate
+DWLevelUpPoint
+DWMPRecoveryRate
+DWMagicDamageMaxConstA
+DWMagicDamageMinConstA
+DWMagicSpeedConstA
+DWPhysiDamageMaxConstA
+DWPhysiDamageMinConstA
+DWPhysiSpeedConstA
+DWPlasmaStormDamageConstA
+DWPlasmaStormDamageConstB
+DWPlasmaStormDamageConstC
+DWPlasmaStormDamageConstD
+DWSDRecoveryRate
+Damage
+DamageMax
+DamageMin
+DamageRate
+DamageReductRate
+DameBossC
+DameBossCount
+DameBossTop
+DanhMuc
+Dark Lord
+DarkHorseDecDamageConstA
+DarkHorseDecDamageConstB
+DarkSpiritAttackDamageMaxConstA
+DarkSpiritAttackDamageMaxConstB
+DarkSpiritAttackDamageMaxConstC
+DarkSpiritAttackDamageMinConstA
+DarkSpiritAttackDamageMinConstB
+DarkSpiritAttackDamageMinConstC
+DarkSpiritAttackSpeedConstA
+DarkSpiritAttackSpeedConstB
+DarkSpiritAttackSpeedConstC
+DarkSpiritAttackSpeedConstD
+DarkSpiritAttackSuccessRateConstA
+DarkSpiritAttackSuccessRateConstB
+DarkSpiritAttackSuccessRateConstC
+DarkSpiritCriticalDamageRate
+DarkSpiritExcellentDamageRate
+DarkSpiritRangeAttackRate
+DataResult
+DataServerAddress
+DataServerPort
+DauTruongTruCoin
+Davias
+DayOfWeek
+DeathGate
+Debanter
+DecDmgA
+DecDmgB
+December
+DecodePointer
+DefRate
+DefWindowProcA
+Defense
+DefenseConstA
+DefensePvP
+DefenseRate
+DefenseTimeConstA
+Delete
+Delete All
+Delete All Rows
+Delete Row
+Delete This Row
+DeleteCriticalSection
+DeleteDC
+DeleteObject
+DeleteTimerQueue
+Demon Battle
+Demon Event Coin Reward
+DestroyMenu
+DestroyWindow
+Devil Square
+DevilSquareMix
+DevilSquareMixRate1_AL0
+DevilSquareMixRate1_AL1
+DevilSquareMixRate1_AL2
+DevilSquareMixRate1_AL3
+DevilSquareMixRate2_AL0
+DevilSquareMixRate2_AL1
+DevilSquareMixRate2_AL2
+DevilSquareMixRate2_AL3
+DevilSquareMixRate3_AL0
+DevilSquareMixRate3_AL1
+DevilSquareMixRate3_AL2
+DevilSquareMixRate3_AL3
+DevilSquareMixRate4_AL0
+DevilSquareMixRate4_AL1
+DevilSquareMixRate4_AL2
+DevilSquareMixRate4_AL3
+DevilSquareMixRate5_AL0
+DevilSquareMixRate5_AL1
+DevilSquareMixRate5_AL2
+DevilSquareMixRate5_AL3
+DevilSquareMixRate6_AL0
+DevilSquareMixRate6_AL1
+DevilSquareMixRate6_AL2
+DevilSquareMixRate6_AL3
+DevilSquareMixRate7_AL0
+DevilSquareMixRate7_AL1
+DevilSquareMixRate7_AL2
+DevilSquareMixRate7_AL3
+DevilTeamGate
+DialogBoxParamA
+DialogBoxParamW
+DieMonsterSwitch
+DieUserSwitch
+DieuKienGuildWin
+DieuKienLevel
+DieuKienRelife
+DifferenceMaxLevel
+DinorantDecDamageConstA
+DinorantDecDamageConstB
+DinorantMix
+DinorantMixRate_AL0
+DinorantMixRate_AL1
+DinorantMixRate_AL2
+DinorantMixRate_AL3
+DisableCycloneEffect
+DisableExpMessage
+DisableFallingEffect
+DisableLightningEffect
+DisableLungEffect
+DisableTwistEffect
+DisableUpperCutEffect
+DisableWingMixDL
+DisableWingMixRF
+DisableWingMixSU
+DisconnectOnlineAccount
+DispatchMessageA
+DmgMax
+DmgMin
+Doppelganger 1
+Doppelganger 2
+Doppelganger 3
+Doppelganger 4
+DoubleDamageRate
+DoubleDmgRate
+DoubleGoerDifficultRate
+DoubleGoerEvent
+DragonSlayerConstA
+DragonSlayerConstB
+DragonSlayerConstC
+DragonSlayerConstD
+DragonSlayerMaxRate
+DrainLifeConstA
+DrainLifeConstB
+DrawMenuBar
+DropRate
+DropZen
+Duel Arena
+DuelArenaAnnounceSwitch
+DuelArenaDisableRestoreHP
+DuelArenaDisableRestoreSD
+DuelBet
+DuelDamageRate
+DuelMaxScore
+DuelSwitch
+Dump saved: %s
+DungLuyen
+Dungeon
+DupeDame
+Durability
+Duration
+EAX=0x%08X  EBX=0x%08X  ECX=0x%08X  EDX=0x%08X
+ELFDamageMultiplierMaxRate
+EarthquakeDamageConstA
+EarthquakeDamageConstB
+EarthquakeDamageConstC
+Effect
+Effect.txt
+Elbeland
+ElectricSparkDamageConstA
+ElectricSparkDamageConstB
+ElfBufferDamageConstA
+ElfBufferDamageConstB
+ElfBufferDefenseConstA
+ElfBufferDefenseConstB
+ElfBufferMaxLevel_AL0
+ElfBufferMaxLevel_AL1
+ElfBufferMaxLevel_AL2
+ElfBufferMaxLevel_AL3
+ElfBufferMaxReset_AL0
+ElfBufferMaxReset_AL1
+ElfBufferMaxReset_AL2
+ElfBufferMaxReset_AL3
+ElfNoBoltArrow
+EliteLifePotionRate
+EliteManaPotionRate
+EliteShieldPotionRate
+Empire Fortress 1
+Empire Fortress 2
+Empire Fortress 3
+Empire Fortress 4
+Enable
+EnableComboToAllSwitch
+EnableCsSkillsAllMaps
+EnableGlobalMessMix
+EnableQuest
+EnableWindow
+Enabled
+EnabledEvent
+EncDecKey1
+EncDecKey2
+EncodePointer
+EndDialog
+EndPaint
+EnterCriticalSection
+EnumChildWindows
+EnumSystemLocalesEx
+EnumSystemLocalesW
+Error : %s %d
+Error : %s %d (%d)
+Error open file
+Error parsing CDATA section
+Error parsing PCDATA section
+Error parsing comment
+Error parsing document declaration/processing instruction
+Error parsing document type declaration
+Error parsing element attribute
+Error parsing end element tag
+Error parsing start element tag
+Error reading from file/stream
+Error:[%d] %s
+EvenNPC
+EventConfig
+EventDauTruong
+EventGvGMaxUsers
+EventGvGMinUsers
+EventGvGNpc
+EventGvGNpcMap
+EventGvGNpcX
+EventGvGNpcY
+EventGvGSwitch
+EventHideAndSeekAutoReward1
+EventHideAndSeekAutoReward2
+EventHideAndSeekAutoReward3
+EventHideAndSeekMaxTime
+EventHideAndSeekSwitch
+EventKillAllAutoReward1Rank1
+EventKillAllAutoReward1Rank2
+EventKillAllAutoReward1Rank3
+EventKillAllAutoReward2Rank1
+EventKillAllAutoReward2Rank2
+EventKillAllAutoReward2Rank3
+EventKillAllAutoReward3Rank1
+EventKillAllAutoReward3Rank2
+EventKillAllAutoReward3Rank3
+EventKillAllDeadDecrease
+EventKillAllMaxPlayers
+EventKillAllMaxScore
+EventKillAllMaxTime
+EventKillAllMinPlayers
+EventKillAllSwitch
+EventKillAllTimeToEnter
+EventMap
+EventPvPAutoReward1
+EventPvPAutoReward2
+EventPvPAutoReward3
+EventPvPMaxScore
+EventPvPMaxTime
+EventPvPSwitch
+EventRewardKill
+EventRewardTeam
+EventRunAndCatchAutoReward1
+EventRunAndCatchAutoReward2
+EventRunAndCatchAutoReward3
+EventRunAndCatchMaxTime
+EventRunAndCatchSwitch
+EventRunAndCatchTimeToEnter
+EventRussianRouletteAutoReward1
+EventRussianRouletteAutoReward2
+EventRussianRouletteAutoReward3
+EventRussianRouletteMaxPlayer
+EventRussianRouletteMaxTime
+EventRussianRouletteSwitch
+EventRussianRouletteTimeToEnter
+EventStage
+EventStartSwitch
+EventStartTime
+EventThanMa
+EventTime
+EventTvTNpc
+EventTvTNpcMap
+EventTvTNpcX
+EventTvTNpcY
+EventTvTSwitch
+EventTvtMaxUsers
+EventTvtMinUsers
+EventWin
+EventYeuCau
+Ex Dame
+ExGameServer
+ExcDmg
+ExcMax
+ExcMin
+ExcOpt
+ExcOption
+Excellent
+Exception Address: 0x%08X
+Exception Code: 0x%08X
+ExeRand
+ExitProcess
+ExitThread
+ExlDmgRate
+ExlOption
+ExpRank%d
+ExpRate
+ExperienceRate
+ExperienceTable1
+ExperienceTable2
+ExtendShop
+ExtraExpStage0
+ExtraExpStage1
+ExtraExpStage2
+FEAttackSuccessRateConstA
+FEAttackSuccessRateConstB
+FEAttackSuccessRateConstC
+FEAttackSuccessRateConstD
+FEAttackSuccessRatePvPConstA
+FEAttackSuccessRatePvPConstB
+FEAttackSuccessRatePvPConstC
+FEAttackSuccessRatePvPConstD
+FEBPRecoveryRate
+FEDamageRatePvM
+FEDamageRatePvP
+FEDamageRateToDK
+FEDamageRateToDL
+FEDamageRateToDW
+FEDamageRateToFE
+FEDamageRateToMG
+FEDamageRateToRF
+FEDamageRateToSU
+FEDamageStuckRate
+FEDefenseConstA
+FEDefenseSuccessRateConstA
+FEDefenseSuccessRatePvPConstA
+FEDefenseSuccessRatePvPConstB
+FEDefenseSuccessRatePvPConstC
+FEHPRecoveryRate
+FELevelUpPoint
+FEMPRecoveryRate
+FEMagicDamageMaxConstA
+FEMagicDamageMinConstA
+FEMagicSpeedConstA
+FEPhysiDamageMaxBowConstA
+FEPhysiDamageMaxBowConstB
+FEPhysiDamageMaxConstA
+FEPhysiDamageMinBowConstA
+FEPhysiDamageMinBowConstB
+FEPhysiDamageMinConstA
+FEPhysiSpeedConstA
+FEPlasmaStormDamageConstA
+FEPlasmaStormDamageConstB
+FEPlasmaStormDamageConstC
+FEPlasmaStormDamageConstD
+FESDRecoveryRate
+FailMes
+Failed Control Creation
+Failed to load %s file (%s)
+FakeDapDo
+FakeDapDo_Level_Max
+FakeDapDo_Level_Min
+FakeDapDo_Map
+FakeDapDo_Rate
+FakeDapDo_Speed
+FakeOnlineData
+FeatherOfCondorMix
+FeatherOfCondorMixRate_AL0
+FeatherOfCondorMixRate_AL1
+FeatherOfCondorMixRate_AL2
+FeatherOfCondorMixRate_AL3
+February
+File %s load fail. Error: %s
+File not found...
+File was not found
+FillRect
+FindClose
+FindFirstFileA
+FindFirstFileExW
+FindNextFileA
+FindNextFileW
+FireSlashConstA
+FireSlashConstB
+FireSlashMaxRate
+FireSlashTimeConstA
+Firework
+Fireworks
+FitnessConstA
+FitnessConstB
+FitnessTimeConstA
+FitnessTimeConstB
+FlsAlloc
+FlsFree
+FlsGetValue
+FlsGetValue2
+FlsSetValue
+FlushFileBuffers
+FreeEnvironmentStringsW
+FreeLibrary
+FreeLibraryAndExitThread
+Friday
+FruitAddPointMax
+FruitAddPointMin
+FruitAddPointSuccessRate_AL0
+FruitAddPointSuccessRate_AL1
+FruitAddPointSuccessRate_AL2
+FruitAddPointSuccessRate_AL3
+FruitMix
+FruitMixRate_AL0
+FruitMixRate_AL1
+FruitMixRate_AL2
+FruitMixRate_AL3
+FruitSubPointMax
+FruitSubPointMin
+FruitSubPointSuccessRate_AL0
+FruitSubPointSuccessRate_AL1
+FruitSubPointSuccessRate_AL2
+FruitSubPointSuccessRate_AL3
+GPoint
+Game response error detected but bypassed [%d][%s][%s][%s]
+GameMaster
+GameMasterList
+GameServer Crash
+GateEvent
+GateFinal
+GateNpcLife
+GateNumber
+GateVaoMap
+GeneralDamageRatePvM
+GeneralDamageRatePvP
+GensBattle
+GensDamageRate
+GensSystemContributionFloodTime
+GensSystemFinalRewardDay
+GensSystemGuildLock
+GensSystemPartyLock
+GensSystemStartRewardDay
+GensSystemSwitch
+GensSystemVictimContributionDecrease
+GensSystemVictimMaxContributionDecrease
+GensSystemVictimMinContributionDecrease
+GetACP
+GetClassNameA
+GetClientRect
+GetCommandLineA
+GetCommandLineW
+GetConsoleMode
+GetConsoleOutputCP
+GetCurrentProcess
+GetCursorPos
+GetDateFormatEx
+GetDateFormatW
+GetDesktopWindow
+GetEnvironmentStringsW
+GetFileSize
+GetFileSizeEx
+GetFileType
+GetFocus
+GetLastError
+GetLocalTime
+GetMenu
+GetMessageA
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleA
+GetModuleHandleExW
+GetModuleHandleW
+GetOEMCP
+GetParent
+GetPrivateProfileStringA
+GetProcAddress
+GetProcessHeap
+GetQueuedCompletionStatus
+GetStdHandle
+GetStockObject
+GetStringTypeW
+GetSubMenu
+GetSystemMetrics
+GetSystemTime
+GetSystemTimeAsFileTime
+GetTickCount
+GetTimeFormatEx
+GetTimeFormatW
+GetUserDefaultLocaleName
+GetWindowLongA
+GetWindowRect
+GetWindowTextA
+GetWindowTextLengthW
+GetWindowTextW
+GiaCoin
+GiaTriNap
+GioiHan
+GioiHanRS
+GioiHanRS =%d
+GioiHanTyLeSatThuongChiMang
+GioiHanTyLeSatThuongHoanHao
+GioiHanTyLeX2SatThuong
+GioiHanTyLeX3SatThuong
+GiuOption
+GmSetCoin
+GobinP
+GodenFenrirDecDamageConstA
+GreaterCriticalDamageConstA
+GreaterCriticalDamageConstB
+GreaterCriticalDamageTimeConstA
+GreaterCriticalDamageTimeConstB
+GreaterDamageConstA
+GreaterDamageConstB
+GreaterDamageRateDK
+GreaterDamageRateDL
+GreaterDamageRateDW
+GreaterDamageRateFE
+GreaterDamageRateMG
+GreaterDamageRateRF
+GreaterDamageRateSU
+GreaterDamageTimeConstA
+GreaterDefenseConstA
+GreaterDefenseConstB
+GreaterDefenseRateDK
+GreaterDefenseRateDL
+GreaterDefenseRateDW
+GreaterDefenseRateFE
+GreaterDefenseRateMG
+GreaterDefenseRateRF
+GreaterDefenseRateSU
+GreaterDefenseSuccessRateConstA
+GreaterDefenseSuccessRateConstB
+GreaterDefenseSuccessRateTimeConstA
+GreaterDefenseSuccessRateTimeConstB
+GreaterDefenseTimeConstA
+GreaterLifeConstA
+GreaterLifeConstB
+GreaterLifeConstC
+GreaterLifeMaxRate
+GreaterLifeRateDK
+GreaterLifeRateDL
+GreaterLifeRateDW
+GreaterLifeRateFE
+GreaterLifeRateMG
+GreaterLifeRateRF
+GreaterLifeRateSU
+GreaterLifeTimeConstA
+GreaterLifeTimeConstB
+GreaterManaConstA
+GreaterManaTimeConstA
+GroupDungLuyen
+GuardianDurabilityRate
+GuidWin
+GuildAllianceMaxCount
+GuildAllianceMinUser
+GuildCreateMinLevel
+GuildCreateSwitch
+GuildDeleteSwitch
+GuildMinPlayer
+GuildName
+GuildName =
+GuildOwnerDestroyLimit
+GuildVault
+GuildWarehouseEnable
+GuildWarehouseStatus
+GuildWin
+GuildWinOLD
+HH:mm:ss
+Harmony enhancement
+HarmonySuccessRate_AL0
+HarmonySuccessRate_AL1
+HarmonySuccessRate_AL2
+HarmonySuccessRate_AL3
+HealConstA
+HealConstB
+HeapAlloc
+HeapFree
+HeapReAlloc
+HeapSize
+HelperActiveDelay
+HelperActiveLevel
+HelperActiveMoney1
+HelperActiveMoney2
+HelperActiveMoney3
+HelperActiveMoney4
+HelperActiveMoney5
+HelperEnable
+HelperSwitch
+HideAndSeek
+HonHoan
+HornOfFenrirGoldMixRate_AL0
+HornOfFenrirGoldMixRate_AL1
+HornOfFenrirGoldMixRate_AL2
+HornOfFenrirGoldMixRate_AL3
+HornOfFenrirMix
+HornOfFenrirMixRate_AL0
+HornOfFenrirMixRate_AL1
+HornOfFenrirMixRate_AL2
+HornOfFenrirMixRate_AL3
+HornOfFenrirUpgradeMix
+HornOfFenrirUpgradeMixRate_AL0
+HornOfFenrirUpgradeMixRate_AL1
+HornOfFenrirUpgradeMixRate_AL2
+HornOfFenrirUpgradeMixRate_AL3
+HpBonus_AL0
+HpBonus_AL1
+HpBonus_AL2
+HpBonus_AL3
+HpBonus_MAX
+JanFebMarAprMayJunJulAugSepOctNovDec
+January
+JewelOfHarmonyOption.txt
+JewelOfHarmonyType.txt
+JewelSocketPentagram
+JoLOption
+JoinServerAddress
+JoinServerPort
+KERNEL32.dll
+Kalima 1
+Kalima 2
+Kalima 3
+Kalima 4
+Kalima 5
+Kalima 6
+Kalima 7
+Kantru
+Kantru 3
+Kantru K4
+KanturuEvent
+Karuntan 1
+Karuntan 2
+KeepLevel
+KeepOption
+KillAll
+KillBoss
+KillBossC
+KillBossCount
+KillCount
+KillMess
+KillTimer
+KingOfMu
+Knight
+LCMapStringEx
+LCMapStringW
+Land of Trials
+LargeCompoundPotionRate1
+LargeCompoundPotionRate2
+LargeLifePotionRate
+LargeManaPotionRate
+LargeShieldPotionRate
+LeaveCriticalSection
+LesserDamageConstA
+LesserDamageConstB
+LesserDamageConstC
+LesserDamageConstD
+LesserDamageMaxRate
+LesserDamageTimeConstA
+LesserDamageTimeConstB
+LesserDefenseConstA
+LesserDefenseConstB
+LesserDefenseConstC
+LesserDefenseConstD
+LesserDefenseMaxRate
+LesserDefenseTimeConstA
+LesserDefenseTimeConstB
+LevelMax
+LevelMin
+LevelOption
+LevelReq
+LevelUp
+LevelVip
+LifeStoneMix
+LifeSuccessRate_AL0
+LifeSuccessRate_AL1
+LifeSuccessRate_AL2
+LifeSuccessRate_AL3
+LoadAcceleratorsA
+LoadBitmapA
+LoadCursorA
+LoadLibraryA
+LoadLibraryExW
+LoadMenuA
+LoadStringA
+LoaiNgoc
+LoaiNgoc1
+Log Error - Total: %d
+Log Error - Total: 0
+Lorencia
+LostTower
+LuckOption
+LuckySpin
+LvDanhHieu
+LvHonHoan
+LvQuanHam
+LvTuLuyen
+MGAttackSuccessRateConstA
+MGAttackSuccessRateConstB
+MGAttackSuccessRateConstC
+MGAttackSuccessRateConstD
+MGAttackSuccessRatePvPConstA
+MGAttackSuccessRatePvPConstB
+MGAttackSuccessRatePvPConstC
+MGAttackSuccessRatePvPConstD
+MGBPRecoveryRate
+MGCreateLevel_AL0
+MGCreateLevel_AL1
+MGCreateLevel_AL2
+MGCreateLevel_AL3
+MGCreateMasterReset_AL0
+MGCreateMasterReset_AL1
+MGCreateMasterReset_AL2
+MGCreateMasterReset_AL3
+MGCreateReset_AL0
+MGCreateReset_AL1
+MGCreateReset_AL2
+MGCreateReset_AL3
+MGCreateType
+MGDamageMultiplierConstA
+MGDamageMultiplierMaxRate
+MGDamageRatePvM
+MGDamageRatePvP
+MGDamageRateToDK
+MGDamageRateToDL
+MGDamageRateToDW
+MGDamageRateToFE
+MGDamageRateToMG
+MGDamageRateToRF
+MGDamageRateToSU
+MGDamageStuckRate
+MGDefenseConstA
+MGDefenseSuccessRateConstA
+MGDefenseSuccessRatePvPConstA
+MGDefenseSuccessRatePvPConstB
+MGDefenseSuccessRatePvPConstC
+MGHPRecoveryRate
+MGLevelUpPoint
+MGMPRecoveryRate
+MGMagicDamageMaxConstA
+MGMagicDamageMinConstA
+MGMagicSpeedConstA
+MGPhysiDamageMaxConstA
+MGPhysiDamageMaxConstB
+MGPhysiDamageMinConstA
+MGPhysiDamageMinConstB
+MGPhysiSpeedConstA
+MGPlasmaStormDamageConstA
+MGPlasmaStormDamageConstB
+MGPlasmaStormDamageConstC
+MGPlasmaStormDamageConstD
+MGSDRecoveryRate
+MM/dd/yy
+MSGThongBao
+Magic Gladiator
+MagicCircleConstA
+MagicCircleTimeConstA
+MagicDef
+MagicDefense
+MainChecksum
+ManaShieldConstA
+ManaShieldConstB
+ManaShieldConstC
+ManaShieldMaxRate
+ManaShieldRateDK
+ManaShieldRateDL
+ManaShieldRateDW
+ManaShieldRateFE
+ManaShieldRateMG
+ManaShieldRateRF
+ManaShieldRateSU
+ManaShieldTimeConstA
+ManaShieldTimeConstB
+MapDialogRect
+MapDienRa
+MapManager.txt
+MapNumber
+MapWindowPoints
+MariaDecDamageConstA
+MasterSkillTree
+MasterSkillTreeMaxLevel
+MasterSkillTreePoint
+MaxCount
+MaxDameTop
+MaxDeath
+MaxLevel
+MaxLevelUp
+MaxLevelUpEvent
+MaxLevelUpQuest
+MaxLife
+MaxMLevel
+MaxMReset
+MaxMana
+MaxMasterReset
+MaxMoneyCount
+MaxOpt
+MaxPages
+MaxReset
+MaxReset   AccountLevel   Gate
+MaxStatPointCMD_AL0
+MaxStatPointCMD_AL1
+MaxStatPointCMD_AL2
+MaxStatPointCMD_AL3
+MaxStatPoint_AL0
+MaxStatPoint_AL1
+MaxStatPoint_AL2
+MaxStatPoint_AL3
+MaxTimeConnectionVerify
+MaxUser
+MessKillBoss
+Message
+Message.xml
+MessageBoxA
+MessageBoxW
+MidleCompoundPotionRate1
+MidleCompoundPotionRate2
+MidleLifePotionRate
+MidleManaPotionRate
+MidleShieldPotionRate
+MinLevel
+MinLevel   MaxLevel
+MinLvl
+MinMLevel
+MinMReset
+MinMasterExperienceMonsterLevel_AL0
+MinMasterExperienceMonsterLevel_AL1
+MinMasterExperienceMonsterLevel_AL2
+MinMasterExperienceMonsterLevel_AL3
+MinMasterReset
+MinMoneyCount
+MinOpt
+MinReset
+MinUser
+MiniDumpWriteDump
+Minute
+Mix Fail [%s %s] %s
+MixData
+MixMoney
+MixName
+MoGioiHanDameQuai
+MocNap
+ModeMess
+Module Base: 0x%08X (%s)
+Monday
+MoneyAmountDropRate_AL0
+MoneyAmountDropRate_AL1
+MoneyAmountDropRate_AL2
+MoneyAmountDropRate_AL3
+MoneyDropTime
+MoneyRank%d
+MoneyRate
+MoneyTable1
+MoneyTable2
+MoneyValue_AL0
+MoneyValue_AL1
+MoneyValue_AL2
+MoneyValue_AL3
+Monster
+Monster.ini
+MonsterClass
+MonsterHealthBarSwitch
+MonsterLifeRate
+MonsterMaxLevel
+MonsterMinLevel
+MonsterSkill
+Monsters: %d/%d
+MossMerchantEvent
+MossMerchantEventTime
+MoveRange
+MoveRng
+MoveSafeZone
+MoveSpd
+MoveSpeed
+MoveWindow
+Msftedit.dll
+MuOffHelperEnabled_AL0
+MuOffHelperEnabled_AL1
+MuOffHelperEnabled_AL2
+MuOffHelperEnabled_AL3
+MuOffHelperPickUpEnabled_AL0
+MuOffHelperPickUpEnabled_AL1
+MuOffHelperPickUpEnabled_AL2
+MuOffHelperPickUpEnabled_AL3
+MuOffHelperTime_AL0
+MuOffHelperTime_AL1
+MuOffHelperTime_AL2
+MuOffHelperTime_AL3
+MultiByteToWideChar
+MuunDurabilityRate
+NPCClass
+NPCDir
+NPCMap
+NPCTalk
+NULL100
+NULL35
+NULL43
+NULL44
+NULL54
+NULL55
+NULL59
+NULL60
+NULL61
+NULL73
+NULL74
+NULL75
+NULL76
+NULL77
+NULL78
+NULL79
+NULL82
+NULL83
+NULL84
+NULL85
+NULL87
+NULL88
+NULL91
+NULL92
+NULL93
+NULL94
+NULL95
+NULL98
+NULL99
+Name Comment
+NameColorConfig
+NameShop
+NameSlot
+NeedExc
+NeilConstA
+New Effect
+New Group
+New Map
+New Message
+New Monster
+New Move
+New Option
+New Pet
+New Skill
+New Spin
+New command
+New notice
+NewBot
+NewKey
+NewO1V
+NewO2V
+NewO3V
+NewO4V
+No Name
+No document element found
+No error
+NoName
+Notice
+NotifyTime
+NovaDamageConstA
+NovaDamageConstB
+NovaDamageConstC
+November
+NpcBuff
+Number
+O(P'Q(h
+October
+OffAttack: %d
+OffAttackExperienceRate_AL0
+OffAttackExperienceRate_AL1
+OffAttackExperienceRate_AL2
+OffAttackExperienceRate_AL3
+OffStore: %d
+OffsetRect
+Online
+OnlineGmSwitch
+OnlineRewardOfflineSystems
+OnlineUserSwitch
+OnlyVip
+OptMax
+OptMin
+OptStaff
+OptVal1
+OptVal2
+OptWeapon
+Option
+OptionChar
+OptionValue
+OutputDebugStringW
+PKCanJoin
+PKDisableShop
+PKDisableTrade
+PKDownTime1
+PKDownTime2
+PKLimitFree
+PVPMode
+Packet Unk from Client(%d) (%x): %x %x %x (%x) %x %x %x %x %x %x
+PartyDisablePK
+PartyGeneralExperience1
+PartyGeneralExperience2
+PartyGeneralExperience3
+PartyGeneralExperience4
+PartyGeneralExperience5
+PartyMaxMembers
+PartyMode
+PartyReconnectTime
+PartySpecialExperience1
+PartySpecialExperience2
+PartySpecialExperience3
+PartySpecialExperience4
+PartySpecialExperience5
+Password
+PendantDurabilityRate
+PersonalCodeCheck
+PersonalShopSwitch
+PetDurabilityRate
+PetMix
+PetMixRate_AL0
+PetMixRate_AL1
+PetMixRate_AL2
+PetMixRate_AL3
+PetRec
+PhaCong
+PhaTru
+PhamViTrain
+PieceOfHornMix
+PieceOfHornMixRate_AL0
+PieceOfHornMixRate_AL1
+PieceOfHornMixRate_AL2
+PieceOfHornMixRate_AL3
+PkCanEnterBC
+PkCanEnterCC
+PkCanEnterDS
+PkMove
+Player %s exchanged %d ATM for %d WC in Extend Shop
+Please check CrashDump folder.
+PlusStatPoint
+PostKhiDie
+PostMsg
+PostQuitMessage
+Power1
+Power2
+Power3
+Power4
+PriceCount
+PriceType
+Purchase Shop
+QuanHam
+Quantity
+QueryPerformanceCounter
+Quest_Name
+QuicklyEvent
+QuicklyEventAutoReward1
+QuicklyEventAutoReward2
+QuicklyEventAutoReward3
+RFAttackSuccessRateConstA
+RFAttackSuccessRateConstB
+RFAttackSuccessRateConstC
+RFAttackSuccessRateConstD
+RFAttackSuccessRatePvPConstA
+RFAttackSuccessRatePvPConstB
+RFAttackSuccessRatePvPConstC
+RFAttackSuccessRatePvPConstD
+RFBPRecoveryRate
+RFCreateLevel_AL0
+RFCreateLevel_AL1
+RFCreateLevel_AL2
+RFCreateLevel_AL3
+RFCreateMasterReset_AL0
+RFCreateMasterReset_AL1
+RFCreateMasterReset_AL2
+RFCreateMasterReset_AL3
+RFCreateReset_AL0
+RFCreateReset_AL1
+RFCreateReset_AL2
+RFCreateReset_AL3
+RFCreateType
+RFDamageMultiplierConstA
+RFDamageMultiplierConstB
+RFDamageMultiplierConstC
+RFDamageMultiplierMaxRate
+RFDamageRatePvM
+RFDamageRatePvP
+RFDamageRateToDK
+RFDamageRateToDL
+RFDamageRateToDW
+RFDamageRateToFE
+RFDamageRateToMG
+RFDamageRateToRF
+RFDamageRateToSU
+RFDamageStuckRate
+RFDefenseConstA
+RFDefenseSuccessRateConstA
+RFDefenseSuccessRatePvPConstA
+RFDefenseSuccessRatePvPConstB
+RFDefenseSuccessRatePvPConstC
+RFHPRecoveryRate
+RFLevelUpPoint
+RFMPRecoveryRate
+RFMagicDamageMaxConstA
+RFMagicDamageMinConstA
+RFMagicSpeedConstA
+RFPhysiDamageMaxConstA
+RFPhysiDamageMaxConstB
+RFPhysiDamageMinConstA
+RFPhysiDamageMinConstB
+RFPhysiSpeedConstA
+RFPlasmaStormDamageConstA
+RFPlasmaStormDamageConstB
+RFPlasmaStormDamageConstC
+RFPlasmaStormDamageConstD
+RFSDRecoveryRate
+Rage Fighter
+RaiseException
+Raklion
+Raklion Boss
+RaklionEvent
+Random
+RateExchange
+ReadConsoleW
+ReadFile
+Recharge Milestone
+Recovery
+Refinement failed: [%s][%s] %s :%d %d %d %d %d Socket: %d %d %d %d %d - Bonus [%d]
+Refinement failed: [%s][%s] Lost %s :%d %d %d %d %d Socket: %d %d %d %d %d - Bonus [%d]
+Refinement succeeded: [%s][%s] %s -> %s :%d %d %d %d %d Socket: %d %d %d %d %d - Bonus %d
+Reflect
+ReflectDamageConstA
+ReflectDamageConstB
+ReflectDamageMaxRate
+ReflectDamageRateDK
+ReflectDamageRateDL
+ReflectDamageRateDW
+ReflectDamageRateFE
+ReflectDamageRateMG
+ReflectDamageRatePvM
+ReflectDamageRatePvP
+ReflectDamageRateRF
+ReflectDamageRateSU
+ReflectDamageTimeConstA
+ReflectDamageTimeConstB
+RegTime
+RegenTime
+RegenType
+RegisterClassExA
+ReiDoMUCordX
+ReiDoMUCordY
+ReiDoMUEvent
+ReiDoMUGuildMinMembers
+ReiDoMUMap
+ReleaseDC
+ReleaseSRWLockExclusive
+ReleaseSemaphore
+Relife
+RemoveMenu
+RemoveRequisites
+RenameChar
+RenderTimeDamageBoss
+RenderTimeDamageDelay
+ReqCoinATM
+ReqCoinC
+ReqCoinG
+ReqCoinP
+ReqCoinR
+ReqEnergy
+ReqGuild
+ReqKill
+ReqLead
+ReqLevel
+ReqZen
+RequireMoney
+ResetChange
+ResetFriday
+ResetGiay
+ResetGio
+ResetMonday
+ResetNhiemVu
+ResetPhut
+ResetPointCharOut
+ResetSaturday
+ResetSunday
+ResetThursday
+ResetTuesday
+ResetWednesday
+ResistCrit
+ResistDouble
+ResistExl
+ResistStun
+Response error after connection causes conclusion [%d][%s][%s][%s]
+RestrictRequest
+ResumeThread
+Return
+RichEdit20A
+Riched20.dll
+RingDurabilityRate
+RoUninitialize
+Roboto Condensed
+RtlUnwind
+RuleDrop
+RunAndCatch
+SKBonus
+SUAttackSuccessRateConstA
+SUAttackSuccessRateConstB
+SUAttackSuccessRateConstC
+SUAttackSuccessRateConstD
+SUAttackSuccessRatePvPConstA
+SUAttackSuccessRatePvPConstB
+SUAttackSuccessRatePvPConstC
+SUAttackSuccessRatePvPConstD
+SUBPRecoveryRate
+SUCreateLevel_AL0
+SUCreateLevel_AL1
+SUCreateLevel_AL2
+SUCreateLevel_AL3
+SUCreateMasterReset_AL0
+SUCreateMasterReset_AL1
+SUCreateMasterReset_AL2
+SUCreateMasterReset_AL3
+SUCreateReset_AL0
+SUCreateReset_AL1
+SUCreateReset_AL2
+SUCreateReset_AL3
+SUCreateType
+SUDamageMultiplierMaxRate
+SUDamageRatePvM
+SUDamageRatePvP
+SUDamageRateToDK
+SUDamageRateToDL
+SUDamageRateToDW
+SUDamageRateToFE
+SUDamageRateToMG
+SUDamageRateToRF
+SUDamageRateToSU
+SUDamageStuckRate
+SUDefenseConstA
+SUDefenseSuccessRateConstA
+SUDefenseSuccessRatePvPConstA
+SUDefenseSuccessRatePvPConstB
+SUDefenseSuccessRatePvPConstC
+SUHPRecoveryRate
+SULevelUpPoint
+SUMPRecoveryRate
+SUMagicDamageMaxConstA
+SUMagicDamageMinConstA
+SUMagicSpeedConstA
+SUPhysiDamageMaxConstA
+SUPhysiDamageMinConstA
+SUPhysiSpeedConstA
+SUPlasmaStormDamageConstA
+SUPlasmaStormDamageConstB
+SUPlasmaStormDamageConstC
+SUPlasmaStormDamageConstD
+SUSDRecoveryRate
+SahamuttConstA
+Saturday
+Save file %s fail
+ScoreDie
+ScoreKill
+ScreenToClient
+Second
+Section
+SelectObject
+SendMessageA
+SendMessageW
+SeniorMix
+Sep 18 2026
+September
+ServerCode
+ServerLock
+ServerMaxLevel
+ServerMaxLevelUpPoint
+ServerMaxLevelUpPointLevel
+ServerMaxMasterReset
+ServerMaxReset
+ServerMaxUserNumber
+ServerMinLevel
+ServerMinMasterReset
+ServerMinReset
+ServerName
+ServerPort
+ServerSerial
+ServerVersion
+Set WarehouseExt
+SetBkColor
+SetBkMode
+SetEndOfFile
+SetEnvironmentVariableW
+SetErrorMode
+SetFilePointer
+SetFilePointerEx
+SetFocus
+SetLastError
+SetNPC
+SetOpt
+SetOption
+SetSkin
+SetStdHandle
+SetTextColor
+SetThreadPriority
+SetTimer
+SetUnhandledExceptionFilter
+SetWareHouseCoin
+SetWindowLongA
+SetWindowLongW
+SetWindowPos
+SetWindowTextA
+SetWindowTextW
+ShieldGaugeAttackComboMiss
+ShieldGaugeAttackRate
+ShieldGaugeConstA
+ShieldGaugeConstB
+ShieldGaugeRate
+ShieldPotionMix
+ShieldPotionMixRate1_AL0
+ShieldPotionMixRate1_AL1
+ShieldPotionMixRate1_AL2
+ShieldPotionMixRate1_AL3
+ShieldPotionMixRate2_AL0
+ShieldPotionMixRate2_AL1
+ShieldPotionMixRate2_AL2
+ShieldPotionMixRate2_AL3
+ShieldPotionMixRate3_AL0
+ShieldPotionMixRate3_AL1
+ShieldPotionMixRate3_AL2
+ShieldPotionMixRate3_AL3
+ShieldRecoverConstA
+ShieldRecoverConstB
+ShopManager.txt
+ShowWindow
+SiegePotionMix
+Silent Map
+SizeBMD
+Skill1
+Skill2
+SkillDocDW
+SkillOption
+Sky Event awarded %d WC
+Sky Event awarded %d WG
+Sky Event awarded %d WP
+Sky Event has advanced to a new stage.
+Sky Event participant count: %d
+SkyEvent
+SleepConditionVariableSRW
+SleepConstA
+SleepConstB
+SleepMaxTime
+SleepTimeConstA
+SleepTimeConstB
+SlotBless_%d
+SlotChaos_%d
+SlotCre_%d
+SlotLife_%d
+SlotSoul_%d
+SmallCompoundPotionRate1
+SmallCompoundPotionRate2
+SmallLifePotionRate
+SmallManaPotionRate
+SmallShieldPotionRate
+SmeltStoneSuccessRate1_AL0
+SmeltStoneSuccessRate1_AL1
+SmeltStoneSuccessRate1_AL2
+SmeltStoneSuccessRate1_AL3
+SmeltStoneSuccessRate2_AL0
+SmeltStoneSuccessRate2_AL1
+SmeltStoneSuccessRate2_AL2
+SmeltStoneSuccessRate2_AL3
+So Luong
+SoLuong
+SoLuong1
+SoTruCanChiem
+Socket1
+Socket2
+Socket3
+Socket4
+Socket5
+SocketOption
+SoulRingPenda1
+SoulRingPenda2
+SoulRingPenda3
+SoulRingPenda4
+SoulSuccessRate_AL0
+SoulSuccessRate_AL1
+SoulSuccessRate_AL2
+SoulSuccessRate_AL3
+Special
+SpecialValue
+StageMin0
+StageMin1
+StageMin2
+StandTime
+Start-end tags mismatch
+Static
+StatueNpcLife
+Status
+SternTimeConstA
+Sub-%d %s
+SuccessMes
+SuccessRate
+SumMonRate
+SumMonster
+SumMonsterRate
+SumMonterC
+SumMonterCount
+SummonMonster1
+SummonMonster2
+SummonMonster3
+SummonMonster4
+SummonMonster5
+SummonMonster6
+SummonMonster7
+Summoner
+SunMonTueWedThuFriSat
+Sunday
+Swamp of Calmness
+SwordPowerConstA
+SwordPowerConstB
+SwordPowerMaxRate
+SwordPowerTimeConstA
+SwordPowerTimeConstB
+SystemFunction036
+TaiSinh
+TangMau
+TangPT
+TangSD
+TangST
+Tao Nv
+Tarkan
+TatCungGuildPK
+TerminateProcess
+TerminateThread
+Terrain Map Render (terrain%d.att)
+TextOutA
+TextOutW
+Than Ma
+Than Ma Chien
+ThoiGian
+ThoiGianChoangDamGio
+ThoiGianChoangSkillMasterNguTien
+ThoiGianDameDocDW
+Thong bao
+ThongBao
+Thursday
+Time: %04d-%02d-%02d %02d:%02d:%02d
+TimeChuanBi
+TimeEndBoss
+TimeOutGame
+TimeReturn
+TimeSuKien
+TlsAlloc
+TlsFree
+TlsGetValue
+TlsSetValue
+TrackPopupMenu
+TradeSwitch
+TradeValue
+TrangBiExcOption1
+TrangBiExcOption2
+TrangBiExcOption3
+TrangBiExcOption4
+TrangBiExcOption5
+TrangBiExcOption6
+TransformationRing1
+TransformationRing2
+TransformationRing3
+TransformationRing4
+TransformationRing5
+TransformationRing6
+TranslateAcceleratorA
+TranslateMessage
+TripleDamageRate
+TuDongReset
+TuLuyen
+Tuesday
+TyLeRaChoangSkillMasterNguTien
+Type   Count   Opacity   Delay   Red   Green   Blue   Speed   RepeatTime
+Type Descriptor'
+TypeDauTruong
+TypeFail
+TypeOp%d
+TypeOp1
+TypeOp2
+TypeOp3
+TypeOp4
+TypeOp5
+TypeOp6
+USER32.dll
+Unable to append nodes: root is not an element or document
+UnhandledExceptionFilter
+Unknown
+Unknown error
+Unknown exception
+UpdateWindow
+UseBuffs_0
+UseBuffs_1
+UseBuffs_2
+UserHealthBarSwitch
+VKExcOption1
+VKExcOption2
+VKExcOption3
+VKExcOption4
+VKExcOption5
+VKExcOption6
+Valley of Loren
+Value1
+Value2
+Value3
+Value4
+ValueOp%d
+ValueOp1
+ValueOp2
+ValueOp3
+ValueOp4
+ValueOp5
+ValueOp6
+Version 5.2
+ViewRange
+ViewRng
+Village's Santa
+VipName
+VirtualProtect
+VongQuay
+Vulcanus
+WCoinC
+WCoinG
+WCoinP
+WS2_32.dll
+WSAAccept
+WSARecv
+WSASend
+WSASocketA
+WSAStartup() failed with error: %d
+WShLEc
+WZ_MU_GS_MUTEX_%d
+WaitForSingleObject
+WaitingGate
+WakeAllConditionVariable
+Warning
+WarningTime
+WeaponDurabilityRate
+Wednesday
+WideCharToMultiByte
+WinQuest
+Wing1Mix
+Wing1MixRate_AL0
+Wing1MixRate_AL1
+Wing1MixRate_AL2
+Wing1MixRate_AL3
+Wing2Mix
+Wing2MixRate_AL0
+Wing2MixRate_AL1
+Wing2MixRate_AL2
+Wing2MixRate_AL3
+Wing3Mix
+Wing3MixRate_AL0
+Wing3MixRate_AL1
+Wing3MixRate_AL2
+Wing3MixRate_AL3
+WingDurabilityRate
+Wizard
+WriteConsoleW
+WriteFile
+WritePrivateProfileStringA
+Wrong Class:%d (%s %d)
+Xac nhan
+Zalo: 0775 838 858 - [Server 5.2 BY SPK]
+ZenDropSystem
+[ CRYWOLF ] SYNC Occupation: %d, State: %d
+[ Crywolf ] Fail - Chang Map Attribute (State:%d)
+[ Crywolf ][Altar Op.] [%s][%s] Attempt to contract Altar[%d]
+[%s -> Failure][%s][%s] Rate: %d%% - Base item lost: %s
+[%s] Could not alloc file buffer
+[%s] Could not get file buffer
+[%s] Could not open file
+[%s] Could not read file
+[%s] The file were not configured correctly
+[%s] Unknow error code: %d
+[%s] [%s][%s] Total: %s - %s = %s %s
+[%s][%s] BuyVip (Level: %d)
+[%s][%s] CheckSumTime Error (bypass disconnect)
+[%s][%s] Client Latency Hack Detected [%d][%d]
+[%s][%s] Client Speed Hack Detected [%d][%d]
+[%s][%s] Guild Request - Dismiss All : %s
+[%s][%s] Guild Request - Leave : %s
+[%s][%s] Kill [%s][%s]
+[%s][%s] Main CheckSum error (bypass disconnect)
+[0xBF] Unknown packet BF:%d
+[AccountAlreadyConnected] Disconnect old session [%d](%s)(%s)
+[BossGuild] Bat Dau Event Boss Guild
+[BossGuild] Boss %s (Class:%d) was killed by %s (Guild:%s)
+[BossGuild] Finish 1
+[BossGuild] Finish 2
+[BossGuild] Guild [%s] Score: %d / %d (KillBoss)
+[BossGuild] Spawn Boss next (Class:%d)...
+[BossGuild] Start Boss %s
+[BossGuild] Winning guild member reward: %s
+[BossGuild] Winning guild: %s
+[BossGuild] Xoa Monster Boss Guild
+[BotOnline] All bots have been unloaded.
+[BotOnline] Loaded successfully %s
+[BotTrade] (%s)(%s) OPEN Type[%d],State[%d], Use[%d]
+[BotTrade] Load COnffig OK Enable %d
+[CExperienceTable] ExperienceTable configuration reloaded.
+[CGameMaster] GameMaster configuration reloaded.
+[CGate] Gate configuration reloaded.
+[CMoveSummon] MoveSummon configuration reloaded.
+[CMove] Move configuration reloaded.
+[CNotice] Notice configuration reloaded.
+[CResetTable] ResetTable configuration reloaded.
+[CSkillManager] Skill configuration reloaded.
+[CTC Mini] Bonus Guild Member Reward: %s
+[CTC Mini] Bonus b_PhaCong Member Reward: %s
+[CTC Mini] Bonus b_PhaTru Member Reward: %s
+[CTC Mini] Finish 1
+[CTC Mini] Finish 2
+[CTC Mini] Gate destruction bonus %s
+[CTC Mini] Guild Winner: %s
+[CTC Mini] Tower destruction bonus %s
+[CURRENT]
+[CastleSiege] [0x80][0x18] GS_DGAnsCastleTributeMoney() - Money Tribute OK (%d)
+[Command Manager] Saved Command.txt
+[CommandAddPointAuto][%s][%s] - (Type: %d, Amount: %d)
+[CommandAddPoint][%s][%s] - (Type: %d, Amount: %d)
+[CommandBlocAcc][%s][%s] - (Acc: %s)
+[CommandBlocChar][%s][%s] - (Name: %s)
+[CommandChangeClass][%s][%s] - (ClassNum: %d)
+[CommandChange][%s][%s] - (ChangeUp: %d)
+[CommandDisablePvP][%s][%s] - Used
+[CommandDisconnect][%s][%s] - (Name: %s)
+[CommandDrop] Account:[%s] Name:[%s] - (Section: %d, Type: %d, Level: %d, Skill: %d, Luck: %d, Option: %d, Exc: %d, Set: %d, Sockets: %d)
+[CommandFireworks][%s][%s] - (Map: %d, X: %d, Y: %d)
+[CommandGMMove][%s][%s] - (Name: %s, Map: %d, X: %d, Y: %d)
+[CommandGMPost][%s][%s] - (Message: %s)
+[CommandHelper][%s][%s] - Used
+[CommandHide][%s][%s] - (State: %d)
+[CommandLock][%s][%s] - Password: %d
+[CommandMarry][%s][%d][%d][%d][%s][%s][%s]
+[CommandMasterReset][%s][%s] - (MasterReset: %d)
+[CommandMoney][%s][%s] - (Money: %d)
+[CommandMoveAll][%s][%s] - (Map: %d, X: %d, Y: %d)
+[CommandMoveGuild][%s][%s] - (Guild: %s, Map: %d, X: %d, Y: %d)
+[CommandNotice][%s][%s] - (Message: %s)
+[CommandPKClear][%s][%s] - (PKLevel: %d)
+[CommandPost][%s][%s] - (Message: %s)
+[CommandReAdd][%s] [%s] - OK
+[CommandReMaster][%s][%s] - Used
+[CommandRename][%s][%s] - (NewName: %s)
+[CommandReset][%s][%s] - (Reset: %d)
+[CommandRewardAll][%s][%s] - (Type: %d, Value: %d)
+[CommandReward][%s][%s] - (Player: %s, Type: %d, Value: %d)
+[CommandSetCoin][%s][%s] - (Coin: %d, Value: %d)
+[CommandSetLevel] Account:[%s] Name:[%s] - (Name:%s, Level: %d)
+[CommandSetMoney][%s][%s] - (Name: %s, Money: %d)
+[CommandSetReset] Account:[%s] Name:[%s] - (Name:%s, Reset: %d)
+[CommandSetpass][%s][%s] - Password: %d
+[CommandSkin][%s][%s] - (Name: %s, Change: %d)
+[CommandSpot][%s][%s] - (Monster: %d, Qtd: %d)
+[CommandStartBC][%s][%s] - Used
+[CommandStartCC][%s][%s] - Used
+[CommandStartDS][%s][%s] - Used
+[CommandStartKingOfMu][%s][%s] - Used
+[CommandTrace][%s][%s] - (Name: %s)
+[CommandTrack][%s][%s] - (Name: %s)
+[CommandUnLock][%s][%s] - Password: %d
+[CommandWare][%s][%s] - (Number: %d)
+[Connection] Max msg size (Type: 1, Size: %d)
+[Connection] Max msg size (Type: 2, Size: %d)
+[Connection] Protocol header error (Header: %x)
+[Connection] Protocol size error (Header: %x, Size: %d, Head: %x)
+[Connection] WSAAsyncSelect() failed with error: %d
+[Connection] connect() failed with error: %d
+[Connection] recv() failed with error: %d
+[Connection] send() failed with error: %d
+[CustomCongHuong] Reloaded Config
+[CustomGift][%s][%s] Gift Error
+[CustomGift][%s][%s] GiftNumber: %d
+[CustomHarmony] Reloaded CustomHarmony.xml
+[CustomLuckySpin] Reloaded config
+[CustomLuckySpin] Saved config to %s
+[CustomNpcQuest][%s][%s] - (NpcQuest %d: Completed)
+[CustomPick][%s][%s] - (Disable: %s)
+[CustomPick][%s][%s] - (Enable: %s)
+[CustomQuest][%s][%s] - (Quest %d: Completed)
+[CustomRename][%s][%s] - (NewName: %s)
+[CustomRename][%s][%s] - Error (NewName: %s)
+[CustomRename][%s][%s] - Name exists (NewName: %s)
+[CustomRename][%s][%s] - Success (OldName: %s, Cost: %d WCoinC)
+[EVENT PVP] (Winner1: %s)
+[EVENT PVP] (Winner2: %s)
+[EVENT PVP] (Winner3: %s)
+[EVENT PVP] Finish
+[EVENT RUN AND CATCH] (Catched: %s)
+[EVENT RUN AND CATCH] (Winner: %s)
+[EVENT RUN AND CATCH] Canceled
+[EVENT RUN AND CATCH] Member add (%s)
+[EVENT RUN AND CATCH] Start by %s
+[EVENT RUN AND CATCH] Time is over
+[ExWinQuestSystem] Loaded OK
+[FakeOnline] Load Data OK
+[General][%s][%s] - (Message: %s)
+[GuildWinOLD]
+[Map Manager] Saved MapManager.txt
+[MapServerMng] CMapServerManager::LoadData() - file load error : Map Number is out of bound (SVR:%d, MAP:%d)
+[MapServerMng] CMapServerManager::LoadData() - file load error : lpMapSvrData == NULL (SVR:%d)
+[MapServerMng] CMapServerManager::LoadData() - file load error : sDEST_SVR_CODE < -1 (SVR:%d, DEST_SVR:%d) - 2
+[MapServerMng] CMapServerManager::LoadData() - file load error : sSVR_CODE < 0 (SVR:%d) - 1
+[MapServerMng] CMapServerManager::LoadData() - file load error : sSVR_CODE < 0 (SVR:%d) - 2
+[MapServerMng] CMapServerManager::LoadData() - file load error : sSVR_CODE wasn't registered (SVR:%d)
+[MapServerMng] CheckMoveMapSvr() - m_lpThisMapSvrData == NULL [%s][%s] : %d
+[Mini Castle Siege] Event started
+[Mini Castle Siege] Started at %02d:%02d:00
+[MonsterAdd] No need to load Monster for Map %d [%d,%d,%d]
+[ResetChange] Config index not found (%d) for [%s]
+[SPK] AddBuff configuration saved and reloaded.
+[SPK] CustomBuyVip configuration reloaded.
+[SPK] CustomMonsterSkill configuration saved and reloaded.
+[SPK] CustomShop configuration reloaded.
+[SPK] HonHoan configuration Load OK.
+[SPK] ResetChange configuration saved and reloaded.
+[SPK_Relife] Reloaded configuration from XML
+[SPK_Relife] Saved configuration to %s
+[SellPesonalShop Coin][%s][%s] -> [%s][%s], Serial:%08X, WCC:%d, WCP:%d, WGP:%d, Type:%d (%s), Level:%d, %d, %d, %d, %d, %d, %d, %d, Sock:%d,%d,%d,%d,%d
+[SellPesonalShop Jewel][%s][%s] -> [%s][%s], Serial:%08X, Value:%d, Bless:%d, Soul:%d, Chaos:%d, Type:%d (%s), Level:%d, %d, %d, %d, %d, %d, %03d, %03d, Sock:%03d,%03d,%03d,%03d,%03d
+[SellPesonalShop Zen][%s][%s] -> [%s][%s], Serial: %08X, Zen: %d, Type: %04d (%s), Level %d, %d, %d, %d, %d, %d, %03d, %03d, SocketOption: %03d, %03d, %03d, %03d, %03d)
+[Set BC Start] At %02d:%02d:00
+[Set Boss Guild Start] At %2d:%2d:00
+[Set CC Start] At %02d:%02d:00
+[Set DS Start] At %02d:%02d:00
+[Set GreatPK Event Start] At %2d:%2d:00
+[Set King of Mu Start] At %02d:%02d:00
+[Set ThanMaChien] At %2d:%2d:00
+[Sh,Hc
+[Sh4Hc
+[Shop Manager] Deleted all and reloaded file: %s
+[Shop Manager] Saved and reloaded file: %s
+[Sky Event] - Experience: %d
+[Sky Event]Error Load Monster
+[SkyEvent] Starts in %d minutes.
+[SocketMaker] Reloaded config
+[SocketManagerUdp] Max msg size (Size: %d)
+[SocketManagerUdp] WSASocket() failed with error: %d
+[SocketManagerUdp] gethostbyname() failed with error: %d
+[SocketManagerUdp] sendto() failed with error: %d
+[SocketManager] Create Accept Thread failed with error: %d
+[SocketManager] Create Queue Thread failed with error: %d
+[SocketManager] Create Worker Thread %d failed with error: %d
+[SocketManager] CreateSemaphore() failed with error: %d
+[SocketManager] GetQueuedCompletionStatus() failed with error: %d
+[SocketManager] Server started on port: %d
+[SocketManager] SetThreadPriority() failed with error: %d
+[SocketManager] WSAAccept() failed with error: %d
+[SocketManager] WSARecv() failed with error: %d
+[SocketManager] WSASend() failed with error: %d
+[SocketManager] WSASocket() failed with error: %d
+[SocketManager] WaitForSingleObject() failed with error: %d
+[SocketManager] closesocket() failed with error: %d
+[SocketManager] gObjAdd() failed with error: %d
+[SocketManager] listen() failed with error: %d
+[SocketManager] socket() failed with error: %d
+[Start SkyEvent] At %02d:%02d:00
+[Store][%s][%s] Timeout
+[Union ViewPort] ERROR : iVp1Count is OUT of BOUND: %d
+[Using Class Error] Error UseClass %d
+[Using Class Error] Error UseClass %s
+[Warning] -> Activity: Port scan / Junk packet sent (Header: %02X)
+[Warning] -> Suggestion: Check whether the client has been modified by hacking software.
+[Whisper][%s][%s] - (Name: %s, Message: %s)
+__based(
+__cdecl
+__clrcall
+__eabi
+__fastcall
+__preserve_none
+__ptr64
+__restrict
+__stdcall
+__swift_1
+__swift_2
+__swift_3
+__thiscall
+__unaligned
+__vectorcall
+_hypot
+_nextafter
+abcdefghijklmnopqrstuvwxyz
+address family not supported
+address in use
+address not available
+already connected
+argument list too long
+argument out of domain
+bad address
+bad allocation
+bad array new length
+bad cast
+bad exception
+bad file descriptor
+bad locale name
+bad message
+broken pipe
+cLevel
+cashshop
+chaosmix
+character
+common
+connection aborted
+connection already in progress
+connection refused
+connection reset
+creation
+cross device link
+custom
+dbghelp.dll
+dddd, MMMM dd, yyyy
+delete[]
+deque<T> too long
+destination address required
+device or resource busy
+directory not empty
+divorce
+divorcespk
+eeeeee
+eeeeeeee
+eeeeeeeeee
+error-L3 [%s][%d]
+eventitembag
+executable format error
+file exists
+file too large
+filename too long
+function not supported
+guardian
+harmony
+highstone
+host unreachable
+iLevel
+identifier removed
+ii4iiiiiiQiRiiiiiiiSTUiiVii
+iiiiiiii
+illegal byte sequence
+inappropriate io control operation
+interrupted
+invalid argument
+invalid hash bucket count
+invalid random_device value
+invalid seek
+invalid string position
+io error
+ios_base::badbit set
+ios_base::eofbit set
+ios_base::failbit set
+iostream
+iostream stream error
+is a directory
+lowstone
+lstrcmpiA
+map/set too long
+maxLV0
+maxLV1
+maxLV2
+maxLV3
+maxRS0
+maxRS1
+maxRS2
+maxRS3
+message size
+minLV0
+minLV1
+minLV2
+minLV3
+minRS0
+minRS1
+minRS2
+minRS3
+msctls_statusbar32
+nan(ind)
+nan(snan)
+network down
+network reset
+network unreachable
+no buffer space
+no child process
+no link
+no lock available
+no message
+no message available
+no protocol option
+no space on device
+no stream resources
+no such device
+no such device or address
+no such file or directory
+no such process
+not a directory
+not a socket
+not a stream
+not connected
+not enough memory
+not supported
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+operator
+operator co_await
+operator<=>
+owner dead
+permission denied
+protocol error
+protocol not supported
+rDanhHieu
+rHonHoan
+rQuanHam
+rTuLuyen
+read only file system
+regex_error
+regex_error(error_backref): The expression contained an invalid back reference.
+regex_error(error_brack): The expression contained mismatched [ and ].
+regex_error(error_collate): The expression contained an invalid collating element name.
+regex_error(error_complexity): The complexity of an attempted match against a regular expression exceeded a pre-set level.
+regex_error(error_ctype): The expression contained an invalid character class name.
+regex_error(error_escape): The expression contained an invalid escaped character, or a trailing escape.
+regex_error(error_paren): The expression contained mismatched ( and ).
+regex_error(error_parse)
+regex_error(error_range): The expression contained an invalid character range, such as [b-a] in most encodings.
+regex_error(error_space): There was insufficient memory to convert the expression into a finite state machine.
+regex_error(error_stack): There was insufficient memory to determine whether the regular expression could match the specified character sequence.
+regex_error(error_syntax)
+resource deadlock would occur
+resource unavailable try again
+restrict(
+result out of range
+setitem
+socket
+state not recoverable
+stream timeout
+string too long
+success
+text file busy
+timed out
+too many files open
+too many files open in system
+too many links
+too many symbolic link levels
+u7f9Cdu1
+unordered_map/set too long
+vT<5tP<-r
+value too large
+vc<5t_<-r
+vector too long
+vector<bool> too long
+vv<5tr<-r
+wktK-m
+wktK-y
+wrong protocol type
+wsprintfA
+xdigit

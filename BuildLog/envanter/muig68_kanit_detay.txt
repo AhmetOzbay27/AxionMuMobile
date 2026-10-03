@@ -1,0 +1,107 @@
+===== APIGameGuard (01.10.2026 06:34:40) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== AUTOHP (01.10.2026 06:34:42) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== AntiSkillDelay (01.10.2026 06:34:45) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== B_MocNap (01.10.2026 06:34:48) =====
+  [CANLI-EXE] CoinMocNap
+  [BIZIM-EXE] CoinMocNap
+  [CANLI-EXE] CoinNhan
+  [BIZIM-EXE] CoinNhan
+  [CANLI-EXE] ConfigMocNap
+  [BIZIM-EXE] ConfigMocNap
+  [CANLI-EXE] CustomMocNap
+  [BIZIM-EXE] CustomMocNap
+  [CANLI-EXE] Firework
+  [BIZIM-EXE] Firework
+  [CANLI-EXE] GiaTriNap
+  [BIZIM-EXE] GiaTriNap
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== BlackList (01.10.2026 06:34:54) =====
+  [DONOR-CFG] BlackList_Block.txt | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== BotTrade (01.10.2026 06:34:58) =====
+  [BIZIM-EXE] Vui long dat dung vat pham
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CGMEarringManager (01.10.2026 06:35:10) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CGMFlagNatManager (01.10.2026 06:35:12) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CGMHardwareId (01.10.2026 06:35:14) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CGMPetManager (01.10.2026 06:35:17) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CMixGoblinExpansion (01.10.2026 06:35:21) =====
+  [CANLI-EXE] MaxLevel
+  [BIZIM-EXE] MaxLevel
+  [CANLI-EXE] MinLevel
+  [BIZIM-EXE] MinLevel
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CharacterAdvance (01.10.2026 06:35:30) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== ChatManager (01.10.2026 06:35:31) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] Message 
+===== ConsoleDebug (01.10.2026 06:35:33) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CustomExchangeCoin (01.10.2026 06:35:37) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== CustomJewelBank (01.10.2026 06:35:39) =====
+  [CANLI-EXE] MaxCount
+  [BIZIM-EXE] MaxCount
+  [CANLI-EXE] MaxPages
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== EventFindPath (01.10.2026 06:35:47) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== EventGvG (01.10.2026 06:35:49) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== GMHolyItem (01.10.2026 06:35:52) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== LogToFile (01.10.2026 06:36:00) =====
+  [DONOR-CFG] s.txt | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== MasterResetTable (01.10.2026 06:36:02) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== MultiLanguage (01.10.2026 06:36:04) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== MyTimer (01.10.2026 06:36:05) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== PC_AddBuff (01.10.2026 06:36:07) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== SendMessage (01.10.2026 06:36:10) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== SkillDamage (01.10.2026 06:36:11) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== SkillDamageConfig (01.10.2026 06:36:12) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== ThuongDanhBoss (01.10.2026 06:36:16) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -
+===== WindowsConsole (01.10.2026 06:36:20) =====
+  [DONOR-CFG]  | [CANLI-DATA] -
+  [CANLI-LOG] -

@@ -1,0 +1,34 @@
+09:48:47 [BossGuild] Ko tao duoc NPC
+09:48:48 [BossGuild] Ko tao duoc NPC
+09:48:49 [BossGuild] Ko tao duoc NPC
+09:48:51 [MSTEST] ===== SELFTEST BASLADI =====
+09:48:51 [MSTEST] Instance()=01EFD200 gCustomMonsterSkill=01EFD200 ayni=1 | kayit=16 (canli SPK\CustomMonsterSkill.txt = 16 satir)
+09:48:51 [MSTEST] loader yolu: ..\Data\SPK\CustomMonsterSkill.txt
+09:48:51 [MSTEST] GetSkillMonster(750) -> {class=750,skill1=41,skill2=232} beklenen {750,41,232} OK
+09:48:51 [MSTEST] GetSkillMonster(704) -> {class=704,skill1=42,skill2=264} beklenen {704,42,264} OK
+09:48:51 [MSTEST] GetSkillMonster(706) -> {class=706,skill1=38,skill2=0} beklenen {706,38,0} OK
+09:48:51 [MSTEST] GetSkillMonster(561) -> {class=561,skill1=38,skill2=0} beklenen {561,38,0} OK
+09:48:51 [MSTEST] GetSkillMonster(754) -> {class=754,skill1=78,skill2=0} beklenen {754,78,0} OK
+09:48:51 [MSTEST] GetSkillMonster(722) -> {class=722,skill1=13,skill2=0} beklenen {722,13,0} OK
+09:48:51 [MSTEST] 719 mukerrer kayit ilk-eslesme kurali -> skill1=232 skill2=0 (beklenen ilk kayit 232/0)
+09:48:51 [MSTEST] GetSkillMonster(99999)=00000000 (beklenen 0)
+09:48:51 [MSTEST] gObjSetMonster custom dal: class=704 skill1=42 skill2=264
+09:48:51 [MSTEST] spawn idx=1143 class=704 AttackType=150 Type=2 | GetSkill(42)=1 GetSkill(38)=0 GetSkill(264)=1
+09:48:51 [MSTEST] gObjSetMonster custom dal: class=706 skill1=38 skill2=0
+09:48:51 [MSTEST] spawn idx=1216 class=706 AttackType=150 Type=2 | GetSkill(42)=0 GetSkill(38)=1 GetSkill(264)=0
+09:48:51 [MSTEST] spawn idx=1338 class=700 AttackType=150 Type=2 | GetSkill(42)=0 GetSkill(38)=0 GetSkill(264)=0
+09:48:51 [MSTEST] gObjMonsterAttack DURATION dal secildi: class=704 custom=1 (561 mi=0)
+09:48:51 [MSTEST] gObjMonsterAttack cagrildi: attacker idx=1143 class=704 -> target idx=1216 class=706
+09:48:51 [SPK] CustomMonsterSkill configuration saved and reloaded.
+09:48:51 [MSTEST] Reload sonrasi kayit=16 (once=16)
+09:48:51 [MSTEST] ===== SELFTEST BITTI (spawn edilen 3 obje silindi) =====
+09:48:51 [BossGuild] Ko tao duoc NPC
+09:48:52 [BossGuild] Ko tao duoc NPC
+09:48:43 [BossGuild] Ko tao duoc NPC
+09:48:44 [BossGuild] Ko tao duoc NPC
+09:48:45 [BossGuild] Ko tao duoc NPC
+09:48:46 [BossGuild] Ko tao duoc NPC
+09:48:47 [BossGuild] Ko tao duoc NPC
+09:48:48 [BossGuild] Ko tao duoc NPC
+09:48:49 [BossGuild] Ko tao duoc NPC
+09:48:51 [MSTEST] ===== SELFTEST BASLADI =====

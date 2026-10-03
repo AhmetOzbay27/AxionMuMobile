@@ -1,0 +1,187 @@
+diff --git a/Source/4.GameServer/GameServer/EventGvG.cpp b/Source/4.GameServer/GameServer/EventGvG.cpp
+index c748ead4a..8ee80236c 100644
+--- a/Source/4.GameServer/GameServer/EventGvG.cpp
++++ b/Source/4.GameServer/GameServer/EventGvG.cpp
+@@ -14,6 +14,7 @@
+ #include "Message.h"
+ #include "ServerInfo.h"
+ #include "Util.h"
++#include "Path.h"	// 2c.1-TEST (GECICI): gPath.GetFullPath — test tetik dosyasi
+ 
+ // =============================================================================
+ // 2c.1-B2 (01.10.2026) — CGvGEvent TAM UYGULAMA
+@@ -262,6 +263,41 @@ void CGvGEvent::MainProc() // donor birebir
+ 	{
+ 		this->m_TickCount = GetTickCount();
+ 
++		// ===== 2c.1-TEST (GECICI — test sonrasi kaldirilir) =====
++		{
++			static int l_TestLastState = -1;
++			static int l_TestLastRemain = -1;
++
++			if(this->m_State != l_TestLastState || this->m_RemainTime != l_TestLastRemain)
++			{
++				l_TestLastState = this->m_State;
++				l_TestLastRemain = this->m_RemainTime;
++				LogAdd(LOG_EVENT,"[GVGTEST] state=%d remain=%d users=%d guilds=%d enter=%d switch=%d",this->m_State,this->m_RemainTime,this->GetUserCount(),this->GetGuildCount(),this->EnterEnabled,gServerInfo.m_GvGEventSwitch);
++			}
++
++			char* l_TestFlag = gPath.GetFullPath("Event\\GvG_selftest.flag");
++
++			if(GetFileAttributes(l_TestFlag) != INVALID_FILE_ATTRIBUTES)
++			{
++				DeleteFile(l_TestFlag);
++				this->GvGSelfTest();
++			}
++
++			// 2c.1-TEST: zaman tablosu E2E icin 2 test guild'i kaydeder (STAND gecisi GetGuildCount()>=2 ister).
++			char* l_GuildTestFlag = gPath.GetFullPath("Event\\GvG_testguilds.flag");
++
++			if(GetFileAttributes(l_GuildTestFlag) != INVALID_FILE_ATTRIBUTES)
++			{
++				DeleteFile(l_GuildTestFlag);
++
++				int l_AddA = (this->AddGuild(1) != 0) ? 1 : 0;
++				int l_AddB = (this->AddGuild(2) != 0) ? 1 : 0;
++
++				LogAdd(LOG_EVENT,"[GVGTEST] TEST GUILD KAYDI: AddGuild(1)=%d AddGuild(2)=%d guildCount=%d state=%d",l_AddA,l_AddB,this->GetGuildCount(),this->m_State);
++			}
++		}
++		// ===== /2c.1-TEST =====
++
+ 		this->m_RemainTime = (int)difftime(this->TargetTime,time(0));
+ 
+ 	if(gServerInfo.m_GvGEventSwitch == 0)
+@@ -1070,7 +1106,9 @@ void CGvGEvent::UserDieProc(LPOBJ lpObj,LPOBJ lpTarget) // donor birebir (oldure
+ 
+ 	//GUILD_INFO_STRUCT* lpGuildInfo = gGuildClass.SearchGuild_Number(lpUserB->Guild);
+ 
+-	this->NoticeSendToAll(0,gMessage.GlobalText(874),lpGuild->Point,lpTarget->GuildName);
++	// 2c.1-B2 takip: canli metni (Message.xml 574) "[GvGEvent] Guild %s scored %d points!"
++	// → arguman sirasi (guild adi, puan) olarak duzeltildi (donor ters gonderiyordu).
++	this->NoticeSendToAll(0,gMessage.GlobalText(874),lpTarget->GuildName,lpGuild->Point);
+ }
+ 
+ void CGvGEvent::NoticeSendToAll(int type,char* message,...) // donor birebir
+@@ -1189,3 +1227,121 @@ void CGvGEvent::StartGvG() // donor birebir (admin menu/komut start'i: simdi+2dk
+ 
+ 	this->Init();
+ }
++
++// =============================================================================
++// 2c.1-TEST (GECICI — test sonrasi KALDIRILIR; pariteye girmez)
++// Amac: client olmadan EventGvG akisinin sunucu tarafi dogrulamasi.
++// Tetik: ..\Data\Event\GvG_selftest.flag (MainProc 1sn tick dosyayi gorup siler).
++// Kapsam: (1) Dialog gate'i icin NPC spawn eslesmesi (Class/Map/X/Y tam esitlik),
++//         (2) guild kaydi (AddGuild + StartGate+n), (3) kill puanlama
++//         (UserDieProc), (4) kazanan/rank (CalcRank — CLEAN gecisi).
++// Sentetik user indeksleri 9001/9002 (OBJECT_START_USER=9000 uzeri, BAGLANTISIZ
++// → DataSend socket guard'i no-op yapar; gObj[] dizisine ASLA yazilmaz).
++// =============================================================================
++void CGvGEvent::GvGSelfTest()
++{
++	LogAdd(LOG_EVENT,"[GVGTEST] ===== SELFTEST BASLADI ===== switch=%d state=%d minUsers=%d maxUsers=%d",gServerInfo.m_GvGEventSwitch,this->m_State,gServerInfo.m_GvGEventMinUsers,gServerInfo.m_GvGEventMaxUsers);
++
++	// (1) NPC eslesmesi — Dialog() gate'i: Class/Map/X/Y tam esitlik arar
++	int TestNpcMatch = 0;
++	int TestNpcIndex = -1;
++
++	for(int n=0;n < MAX_OBJECT;n++)
++	{
++		if(gObj[n].Class != gServerInfo.m_GvGEventNPC || gObj[n].Class == 0)
++		{
++			continue;
++		}
++
++		if(gObj[n].Map == gServerInfo.m_GvGEventNPCMap && gObj[n].X == gServerInfo.m_GvGEventNPCX && gObj[n].Y == gServerInfo.m_GvGEventNPCY)
++		{
++			TestNpcMatch++;
++			TestNpcIndex = n;
++			LogAdd(LOG_EVENT,"[GVGTEST] NPC MATCH idx=%d class=%d map=%d x=%d y=%d type=%d connected=%d",n,gObj[n].Class,gObj[n].Map,gObj[n].X,gObj[n].Y,gObj[n].Type,gObjIsConnected(n));
++		}
++	}
++
++	LogAdd(LOG_EVENT,"[GVGTEST] NPC eslesme=%d (config: class=%d map=%d x=%d y=%d) -> %s",TestNpcMatch,gServerInfo.m_GvGEventNPC,gServerInfo.m_GvGEventNPCMap,gServerInfo.m_GvGEventNPCX,gServerInfo.m_GvGEventNPCY,(TestNpcMatch>0)?"DIALOG GATE HAZIR":"NPC BULUNAMADI");
++
++	// (1b) Dialog() cagrisi — NPC konusma girisi: gercek NPC (gObj[TestNpcIndex]) + sentetik oyuncu.
++	// Sentetik oyuncuda Guild=0 → CheckEnterEnabled "guild yok" (mesaj 872) yolundan doner;
++	// AddUser/gObjMoveGate cagrilmaz (yan etkisiz dogrulama).
++	if(TestNpcIndex >= 0)
++	{
++		OBJECTSTRUCT TestDlgPlayer;
++
++		memset(&TestDlgPlayer,0,sizeof(TestDlgPlayer));
++
++		TestDlgPlayer.Index = 9001;
++		TestDlgPlayer.PartyNumber = -1;
++		TestDlgPlayer.DuelUser = -1;
++		TestDlgPlayer.Guild = 0;
++		TestDlgPlayer.GuildStatus = 0;
++		TestDlgPlayer.GuildNumber = 0;
++		TestDlgPlayer.Level = 1;
++
++		int TestDialog = (this->Dialog(&TestDlgPlayer,&gObj[TestNpcIndex]) != false) ? 1 : 0;
++
++		LogAdd(LOG_EVENT,"[GVGTEST] Dialog() cagrisi=%d (NPC idx=%d class=%d) -> guildsiz user yolu (mesaj 872), AddUser cagrilmadi",TestDialog,TestNpcIndex,gObj[TestNpcIndex].Class);
++	}
++
++	// (2) Guild kaydi — AddGuild + StartGate+n slot atamasi
++	this->CleanGuild();
++
++	int TestGuildA = 1;
++	int TestGuildB = 2;
++
++	int TestAddA = (this->AddGuild(TestGuildA) != 0) ? 1 : 0;
++	int TestAddB = (this->AddGuild(TestGuildB) != 0) ? 1 : 0;
++
++	LogAdd(LOG_EVENT,"[GVGTEST] AddGuild(%d)=%d AddGuild(%d)=%d guildCount=%d gateA=%d gateB=%d (StartGate=%d)",TestGuildA,TestAddA,TestGuildB,TestAddB,this->GetGuildCount(),this->Guild[0].Gate,this->Guild[1].Gate,this->StartGate);
++
++	// (3) Kill puanlama — UserDieProc: olduren (lpTarget) guild +1 puan
++	OBJECTSTRUCT TestVictim;
++	OBJECTSTRUCT TestKiller;
++
++	memset(&TestVictim,0,sizeof(TestVictim));
++	memset(&TestKiller,0,sizeof(TestKiller));
++
++	TestVictim.Index = 9002;	// oldu (guild A)
++	strcpy_s(TestVictim.GuildName,"GVGA");	// OBJECTSTRUCT::GuildName[11] — en fazla 10 karakter (tasma strcpy_s fast-fail verir)
++	TestVictim.GuildNumber = TestGuildA;
++
++	TestKiller.Index = 9001;	// olduren (guild B)
++	strcpy_s(TestKiller.GuildName,"GVGB");	// OBJECTSTRUCT::GuildName[11] siniri
++	TestKiller.GuildNumber = TestGuildB;
++
++	this->CleanUser();
++
++	this->User[0].Index = TestVictim.Index;
++	this->User[0].Guild = TestGuildA;
++	this->User[0].Gate = this->StartGate+0;
++
++	this->User[1].Index = TestKiller.Index;
++	this->User[1].Guild = TestGuildB;
++	this->User[1].Gate = this->StartGate+1;
++
++	this->SetState(GVG_EVENT_STATE_START);	// UserDieProc yalniz START'ta puanlar
++
++	this->UserDieProc(&TestVictim,&TestKiller);
++	this->UserDieProc(&TestVictim,&TestKiller);
++
++	LogAdd(LOG_EVENT,"[GVGTEST] UserDieProc x2 -> guildA(%d).Point=%d guildB(%d).Point=%d (beklenen: A=0 B=2)",TestGuildA,this->Guild[0].Point,TestGuildB,this->Guild[1].Point);
++
++	this->CleanUser();	// sentetik kayitlar silinir (gObj dokunulmaz)
++
++	// (4) CalcRank — CLEAN gecisi uzerinden kazanan/rank hesabi
++	this->SetState(GVG_EVENT_STATE_CLEAN);
++
++	GUILD_INFO_STRUCT* lpTestInfo = gGuildClass.SearchGuild_Number(this->Winner);
++
++	LogAdd(LOG_EVENT,"[GVGTEST] CalcRank -> Winner=%d (beklenen B=%d) | A rank=%d point=%d | B rank=%d point=%d | isim=%s",this->Winner,TestGuildB,this->Guild[0].Rank,this->Guild[0].Point,this->Guild[1].Rank,this->Guild[1].Point,(lpTestInfo!=NULL)?lpTestInfo->Name:"(DB'de guild yok -> isim sorgusu NULL)");
++
++	LogAdd(LOG_EVENT,"[GVGTEST] odul coinleri: Coin1=%d Coin2=%d Coin3=%d | CLEAN'da user yok -> GDSetCoinSend tetiklenmez",this->Coin1,this->Coin2,this->Coin3);
++
++	// (5) Gercek akisa donus: guild kayitlari KORUNUR (planli EMPTY->STAND->START
++	// zincirinin gercek zamanlamayla kosmasi icin), user listesi temiz kalir.
++	this->Init();
++
++	LogAdd(LOG_EVENT,"[GVGTEST] ===== SELFTEST BITTI ===== state=%d guilds=%d users=%d (guild kayitlari korundu)",this->m_State,this->GetGuildCount(),this->GetUserCount());
++}

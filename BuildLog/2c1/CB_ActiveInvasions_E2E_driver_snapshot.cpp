@@ -1,0 +1,727 @@
+#include "StdAfx.h"
+#include "CB_ActiveInvasions.h"
+#include "Util.h"
+#if(CB_ActiveInvasions_TEST)
+#include "User.h"				// 2c.1-B3 TEST (GECICI)
+#include "InvasionManager.h"	// 2c.1-B3 TEST (GECICI)
+#include "MonsterSetBase.h"		// 2c.1-B3 TEST (GECICI)
+#include "ServerInfo.h"		// 2c.1-B3 TEST (GECICI)
+#include "Log.h"				// 2c.1-B3 TEST (GECICI)
+#include "Path.h"				// 2c.1-B3 TEST (GECICI)
+#endif
+#if(CB_ActiveInvasionsD)
+// =============================================================================
+// 2c.1-B3 (01.10.2026) — canli ActiveInvasions.obj disasm paritesi
+// Canli gvdeler (live_disasm.txt):
+//   monster_add          0x41E950 : map<int,UInvasionsData> bul/ekle;
+//                          varsa count++ & max_count++ (iki sayac birlikte);
+//                          bool arg 1 ise update_by_monster_id (broadcast).
+//                          (CInvasionManager::SetMonster + CObjectManager::
+//                          ObjectSetStateProc boss-regen yolundan boyle
+//                          cagriliyor — 0x4F1EBF/0x4F1EFC, 0x538687)
+//   update_by_monster_id 0x41EA80 : paket C1 10 F3 99 {id, count, 0} (14 B)
+//                          -> tum bagli istemciler (canli filtre [obj+4]==3
+//                          = Connected/playing — bizim DataSendAll esdegeri).
+//   send_list_to_client  0x41EB20 : paket C2 [size] F3 98 {count, N x 12 B
+//                          {id, count, max}} -> tek istemci (aIndex) veya
+//                          canli F3 40 sub2 cekme zinciriyle tüm istemciler.
+// Donor kaynakta modul YOK (MUIG ozel).
+// =============================================================================
+
+CB_ActiveInvasions gCB_ActiveInvasions;
+
+CB_ActiveInvasions::CB_ActiveInvasions()
+{
+	this->m_data.clear();
+}
+
+void CB_ActiveInvasions::monster_add(int monster_id,bool send_update) // 2c.1-B3: canli imza (0x41E950)
+{
+	std::map<int,UInvasionsData>::iterator it = this->m_data.find(monster_id);
+
+	if (it == this->m_data.end())
+	{
+		this->m_data.insert(std::pair<int,UInvasionsData>(monster_id,UInvasionsData(1,1)));
+	}
+	else
+	{
+		it->second.count += 1;
+		it->second.max_count += 1;	// 2c.1-B3: canli iki sayaci birlikte artirir (0x41E99F: inc [+14], inc [+18])
+	}
+
+	if (send_update != false)		// 2c.1-B3: canli bool arg = broadcast (0x41E9A5)
+	{
+		this->update_by_monster_id(monster_id);
+	}
+}
+
+void CB_ActiveInvasions::monster_del(int monster_id,bool send_update)
+{
+	std::map<int,UInvasionsData>::iterator it = this->m_data.find(monster_id);
+
+	if (it == this->m_data.end())
+	{
+		//LogAdd(LOG_RED, "[CB_ActiveInvasions] Error! Monster not found, id : %d", monster_id);
+	}
+	else
+	{
+		if (it->second.count > 0)
+		{
+			it->second.count -= 1;
+			it->second.max_count -= 1;	// 2c.1-B3: canli iki sayaci birlikte azaltir (0x4F1C0C blok: dec [+14], dec [+18])
+
+			if (send_update != false)
+			{
+				this->update_by_monster_id(monster_id);
+			}
+		}
+
+		if (it->second.count == 0)		// 2c.1-B3: canli erase kriteri sadece count==0 (max korunmaz — CInvasionManager::MonsterDieProc/SetState_EMPTY)
+		{
+			this->m_data.erase(monster_id);
+		}
+	}
+}
+
+void CB_ActiveInvasions::update_by_monster_id(int monster_id) // canli 0x41EA80 birebir karsilik
+{
+	std::map<int,UInvasionsData>::iterator it = this->m_data.find(monster_id);
+
+	if (it == this->m_data.end())
+	{
+		return;
+	}
+
+	PMSG_ACTIVE_INVASIONS_UPDATE_SEND pMsg;
+
+	pMsg.header.set(0xF3,0x99,sizeof(pMsg));	// 2c.1-B3: canli C1 10 F3 99 (bizim eski D3 99 idi)
+
+	pMsg.monster_id = monster_id;
+
+	pMsg.count = it->second.count;
+
+	pMsg.spare = 0;									// canli paketin son 4 Bayti 0 (0x41EABE)
+
+	DataSendAll(reinterpret_cast<BYTE*>(&pMsg),pMsg.header.size);
+}
+
+void CB_ActiveInvasions::send_list_to_client() // 2c.1-B3: eski toplu cagri noktalari icin herkese gonderim
+{
+	BYTE send[8192];
+
+	PMSG_ACTIVE_INVASIONS_SEND pMsg;
+
+	pMsg.header.set(0xF3,0x98,0);	// 2c.1-B3: canli C2 F3 98 (bizim eski D3 98 idi)
+
+	int size = sizeof(pMsg);
+
+	pMsg.count = 0;
+
+	PMSG_ACTIVE_INVASIONS info;
+
+	for (std::map<int,UInvasionsData>::iterator it = this->m_data.begin(); it != this->m_data.end(); it++)
+	{
+		info.monster_id = it->first;
+		info.count = it->second;
+
+		memcpy(&send[size],&info,sizeof(info));
+		size += sizeof(info);
+
+		pMsg.count++;
+	}
+
+	pMsg.header.size[0] = SET_NUMBERHB(size);
+
+	pMsg.header.size[1] = SET_NUMBERLB(size);
+
+	memcpy(send,&pMsg,sizeof(pMsg));
+
+	DataSendAll(send,size);
+}
+
+void CB_ActiveInvasions::send_list_to_client(int aIndex) // 2c.1-B3: canli tekil imza (0x41EB20 — F7 sub 0x02 istegi + ProtocolCore)
+{
+	BYTE send[8192];
+
+	PMSG_ACTIVE_INVASIONS_SEND pMsg;
+
+	pMsg.header.set(0xF3,0x98,0);
+
+	int size = sizeof(pMsg);
+
+	pMsg.count = 0;
+
+	PMSG_ACTIVE_INVASIONS info;
+
+	for (std::map<int,UInvasionsData>::iterator it = this->m_data.begin(); it != this->m_data.end(); it++)
+	{
+		info.monster_id = it->first;
+		info.count = it->second;
+
+		memcpy(&send[size],&info,sizeof(info));
+		size += sizeof(info);
+
+		pMsg.count++;
+	}
+
+	pMsg.header.size[0] = SET_NUMBERHB(size);
+
+	pMsg.header.size[1] = SET_NUMBERLB(size);
+
+	memcpy(send,&pMsg,sizeof(pMsg));
+
+	DataSend(aIndex,send,size);
+}
+
+#if(CB_ActiveInvasions_TEST)
+// =========================================================================================
+// 2c.1-B3 TEST (GECICI) — CB_ActiveInvasions cagri zincirleri E2E selftest
+// -----------------------------------------------------------------------------------------
+// Tetik: ..\Data\CB_ActiveInvasions_selftest.flag (EventMainManager 1 sn tick gorup siler).
+// Paket yakalama: Util.cpp DataSend (tek istemci) + DataSendAll (herkese) kancasi.
+// Kapsam (canli disasm karsiligi):
+//   1) F7 sub 0x02 list istegi  -> ProtocolCore (canli 0x54FA37) -> send_list_to_client(aIndex)
+//   2) Giris push'u             -> gObjSecondProc CacheSendOnlogin dali (tek istemci + SendThongTin...)
+//   3) Spawn artisi             -> CInvasionManager::SetState(START) -> SetMonster -> monster_add
+//   4) Olum azalisi             -> CInvasionManager::MonsterDieProc (0x4F2094) -> monster_del(true)
+//   5) SetState(EMPTY) temizlik -> ClearMonster -> monster_del(false) x N (0x4F1C0C/0x4F1C1B) + sonda liste
+//   6) Sayac semantigi          -> (count,max) cift artis/azalis, count==0 erase, yeniden (1,1)
+// Tur sonunda kaldirilir; snapshot + patch BuildLog/2c1 altinda arsivlenir. Pariteye GIRMEZ.
+// =========================================================================================
+
+int gCB_AI_TestCaptureOn = 0;   // 0: kapali
+int gCB_AI_TestSkipIndex = -1;  // gObjSecondProc: bu indeksten sonra test-only erken cikis
+int gCB_AI_TestOnlyIndex = -1;  // gObjSecondProc: >=0 ise yalniz bu obje islenir (test izolasyonu)
+
+#define CB_AI_TEST_MAX_EVT		64
+#define CB_AI_TEST_DATA_SIZE	96
+
+struct CB_AI_TEST_EVT
+{
+	int  aIndex;   // -1 = DataSendAll (herkese)
+	int  size;
+	int  isList;   // 1 = C2 F3 98 liste, 0 = C1 10 F3 99 sayac
+	BYTE data[CB_AI_TEST_DATA_SIZE];
+};
+
+static CB_AI_TEST_EVT l_TestEvt[CB_AI_TEST_MAX_EVT];
+static LONG l_TestEvtCount = 0;
+static LONG l_TestOtherPkt = 0;
+
+void CB_ActiveInvasionsTestCapture(int aIndex,BYTE* lpMsg,int size) // Util.cpp kancasindan cagrilir
+{
+	if(gCB_AI_TestCaptureOn == 0 || lpMsg == 0 || size < 4)
+	{
+		return;
+	}
+
+	int l_IsList = -1;
+
+	// PMSG_ACTIVE_INVASIONS_SEND: C2 [sizeHI][sizeLO] F3 98 (head=idx3, sub=idx4)
+	if(lpMsg[0] == 0xC2 && size >= 5 && lpMsg[3] == 0xF3 && lpMsg[4] == 0x98)
+	{
+		l_IsList = 1;
+	}
+	// PMSG_ACTIVE_INVASIONS_UPDATE_SEND: C1 [size] F3 99 (head=idx2, sub=idx3)
+	else if(lpMsg[0] == 0xC1 && lpMsg[2] == 0xF3 && lpMsg[3] == 0x99)
+	{
+		l_IsList = 0;
+	}
+	else
+	{
+		InterlockedIncrement(&l_TestOtherPkt);
+		return;
+	}
+
+	// DataSendAll (OBJECT_START_USER..MAX_OBJECT, gObjIsConnected) her hedef icin ayri DataSend cagirir;
+	// hedef OBJECT_USER degilse (bot/monster/rezerve slot) kayit tutulmaz, sadece sayilir.
+	if(aIndex >= 0 && (OBJECT_USER_RANGE(aIndex) == 0 || gObj[aIndex].Type != OBJECT_USER))
+	{
+		InterlockedIncrement(&l_TestOtherPkt);
+		return;
+	}
+
+	LONG l_Slot = InterlockedIncrement(&l_TestEvtCount)-1;
+
+	if(l_Slot >= 0 && l_Slot < CB_AI_TEST_MAX_EVT)
+	{
+		CB_AI_TEST_EVT* lpEvt = &l_TestEvt[l_Slot];
+
+		lpEvt->aIndex = aIndex;
+		lpEvt->size = size;
+		lpEvt->isList = l_IsList;
+
+		memset(lpEvt->data,0,sizeof(lpEvt->data));
+
+		memcpy(lpEvt->data,lpMsg,((size < CB_AI_TEST_DATA_SIZE)?size:CB_AI_TEST_DATA_SIZE));
+
+		char l_Hex[CB_AI_TEST_DATA_SIZE*3+1] = {0};
+		int  l_Len = 0;
+		int  l_Limit = ((size < 48)?size:48);
+
+		for(int n=0;n < l_Limit;n++)
+		{
+			l_Len += sprintf_s(&l_Hex[l_Len],sizeof(l_Hex)-l_Len,"%02X ",lpMsg[n]);
+		}
+
+		LogAdd(LOG_RED,"[AITEST][PKT] #%d %s hedef=%s idx=%d size=%d hex=%s",(int)l_Slot+1,
+			((l_IsList != 0)?"LISTE(C2 F3 98)":"SAYAC(C1 10 F3 99)"),
+			((aIndex < 0)?"HERKESE(DataSendAll)":"TEK-ISTEMCI"),aIndex,size,l_Hex);
+	}
+}
+
+static int CB_AITestFindEvt(int aIndex,int isList,int from) // -1: bulunamadi
+{
+	for(int n=from;n < (int)l_TestEvtCount && n < CB_AI_TEST_MAX_EVT;n++)
+	{
+		if(l_TestEvt[n].aIndex == aIndex && l_TestEvt[n].isList == isList)
+		{
+			return n;
+		}
+	}
+
+	return -1;
+}
+
+static int CB_AITestMatch(int evt,int expectSize,BYTE* expect) // 1: bayt-birebir
+{
+	if(evt < 0 || evt >= (int)l_TestEvtCount)
+	{
+		return 0;
+	}
+
+	if(l_TestEvt[evt].size != expectSize || expectSize > CB_AI_TEST_DATA_SIZE)
+	{
+		return 0;
+	}
+
+	return ((memcmp(l_TestEvt[evt].data,expect,expectSize) == 0)?1:0);
+}
+
+static int CB_AITestBuildList(BYTE* lpOut,int* lpIds,int lpCounts[][2],int count) // beklenen liste paketi
+{
+	PMSG_ACTIVE_INVASIONS_SEND l_Head;
+
+	l_Head.header.set(0xF3,0x98,0);
+
+	l_Head.count = (BYTE)count;
+
+	memcpy(lpOut,&l_Head,sizeof(l_Head));
+
+	int l_Size = sizeof(l_Head);
+
+	for(int n=0;n < count;n++)
+	{
+		PMSG_ACTIVE_INVASIONS l_Info;
+
+		l_Info.monster_id = lpIds[n];
+
+		l_Info.count = UInvasionsData(lpCounts[n][0],lpCounts[n][1]);
+
+		memcpy(&lpOut[l_Size],&l_Info,sizeof(l_Info));
+
+		l_Size += sizeof(l_Info);
+	}
+
+	lpOut[1] = SET_NUMBERHB(l_Size);
+
+	lpOut[2] = SET_NUMBERLB(l_Size);
+
+	return l_Size;
+}
+
+static int CB_AITestBuildUpdate(BYTE* lpOut,int id,int count) // beklenen sayac paketi
+{
+	PMSG_ACTIVE_INVASIONS_UPDATE_SEND l_Msg;
+
+	l_Msg.header.set(0xF3,0x99,sizeof(l_Msg));
+
+	l_Msg.monster_id = id;
+
+	l_Msg.count = count;
+
+	l_Msg.spare = 0;
+
+	memcpy(lpOut,&l_Msg,sizeof(l_Msg));
+
+	return sizeof(l_Msg);
+}
+
+static void CB_AITestDescribeList(int evt,char* lpOut,int lpOutSize) // yakalanan listeyi okunur yaz
+{
+	lpOut[0] = 0;
+
+	if(evt < 0 || evt >= (int)l_TestEvtCount)
+	{
+		sprintf_s(lpOut,lpOutSize,"(paket yok)");
+		return;
+	}
+
+	BYTE* lpData = l_TestEvt[evt].data;
+
+	int l_Count = lpData[5];
+	int l_Off = 6;
+	int l_Len = sprintf_s(lpOut,lpOutSize,"size=%d count=%d",l_TestEvt[evt].size,l_Count);
+
+	for(int n=0;n < l_Count;n++)
+	{
+		if(l_Off+12 > l_TestEvt[evt].size || l_Off+12 > CB_AI_TEST_DATA_SIZE)
+		{
+			break;
+		}
+
+		int id = 0,c1 = 0,c2 = 0;
+
+		memcpy(&id,&lpData[l_Off],4);
+		memcpy(&c1,&lpData[l_Off+4],4);
+		memcpy(&c2,&lpData[l_Off+8],4);
+
+		l_Len += sprintf_s(&lpOut[l_Len],lpOutSize-l_Len," {%d:(%d,%d)}",id,c1,c2);
+
+		l_Off += 12;
+	}
+}
+
+void CB_ActiveInvasionsSelfTest()
+{
+	LogAdd(LOG_RED,"[AITEST] ===== CB_ActiveInvasions E2E SELFTEST BASLADI =====");
+
+	l_TestEvtCount = 0;
+	l_TestOtherPkt = 0;
+	gCB_AI_TestCaptureOn = 1;
+
+	BYTE l_Exp[8192];
+	int  l_ExpSize = 0;
+	char l_Desc[512];
+
+	// ---------------------------------------------------------------
+	// HAZIRLIK: bilinen icerik (send_update=false -> paket uretmez)
+	// ---------------------------------------------------------------
+	gCB_ActiveInvasions.monster_add(701,false);
+	gCB_ActiveInvasions.monster_add(702,false);
+	gCB_ActiveInvasions.monster_add(701,false);	// 701 -> (2,2)
+
+	LogAdd(LOG_RED,"[AITEST][1] hazirlik: monster_add(701)x2 + monster_add(702)x1 -> beklenen harita {701:(2,2), 702:(1,1)} | cb disi paket=%d",(int)l_TestOtherPkt);
+
+	// ---------------------------------------------------------------
+	// ADIM 2: F7 sub 0x02 — gercek ProtocolCore dispatch (canli 0x54FA37)
+	// ---------------------------------------------------------------
+	int l_FakeIndex = MAX_OBJECT-1;	// 9999: kullanici araligi tepesi (OBJECT_START_USER=9000)
+
+	// DIKKAT: OBJECTSTRUCT_HEADER slotlari varsayilan olarak TEK paylasilan CommonStruct'i gosterir
+	// (User.h:1338-1351); ham memset paylasilan bellegi bozar. Bu yuzden sentetik slot sunucunun
+	// kendi yasam dongusuyle kurulur: gObjAdd -> gObjAllocData (slota ozel OBJECTSTRUCT + Alloc/Bind:
+	// VpPlayer/Skill/Inventory + PShopTrade CS) + gObjCharZeroSet.
+	int l_AddResult = (int)gObjAdd(INVALID_SOCKET,(char*)"127.0.0.1",l_FakeIndex);
+
+	gObj[l_FakeIndex].Connected = OBJECT_ONLINE;	// gObjAdd OBJECT_CONNECTED birakir; char secimi sonrasi durum
+	gObj[l_FakeIndex].CacheSendOnlogin = 1;			// bu adimda giris push'u tetiklenmesin
+	gObj[l_FakeIndex].IsBot = 1;					// TEST: BCustomItemBank DS sorgusunu kapatir (gercek kullanici yolunda yok)
+	gObj[l_FakeIndex].PartyNumber = -1;
+	gObj[l_FakeIndex].DuelUser = -1;
+	gObj[l_FakeIndex].Map = 1;						// BsvEvent (Map 0) gate yolundan uzak dur
+
+	strcpy_s(gObj[l_FakeIndex].Name,"CBTEST");
+	strcpy_s(gObj[l_FakeIndex].Account,"CBTESTACC");
+
+	LogAdd(LOG_RED,"[AITEST] sentetik slot: gObjAdd(9999)=%d Type=%d Connected=%d (kendi struct'i; slota ozel struct; paylasilan CommonStruct korunur)",
+		l_AddResult,gObj[l_FakeIndex].Type,gObj[l_FakeIndex].Connected);
+
+	BYTE l_F7Msg[8] = {0xC1,0x04,0xF7,0x02,0,0,0,0};
+
+	int l_EvtBefore = (int)l_TestEvtCount;
+
+	// recv yolu args (SocketManager 0xC1 dali: head=lpMsg[2], encrypt=0, serial=-1)
+	ProtocolCore(l_F7Msg[2],l_F7Msg,4,l_FakeIndex,0,-1);
+
+	int l_F7Evt = CB_AITestFindEvt(l_FakeIndex,1,l_EvtBefore);
+
+	int l_Ids2[2] = {701,702};
+	int l_Counts2[2][2] = {{2,2},{1,1}};
+
+	l_ExpSize = CB_AITestBuildList(l_Exp,l_Ids2,l_Counts2,2);
+
+	CB_AITestDescribeList(l_F7Evt,l_Desc,sizeof(l_Desc));
+
+	LogAdd(LOG_RED,"[AITEST][2] F7 sub 0x02 -> ProtocolCore: tek-istemci liste=%s birebir=%d (beklenen boyut=%d C2 1E F3 98) | okunan: %s",
+		((l_F7Evt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_F7Evt,l_ExpSize,l_Exp),l_ExpSize,l_Desc);
+
+	// ---------------------------------------------------------------
+	// ADIM 3: giris push'u — gercek gObjSecondProc CacheSendOnlogin dali
+	// ---------------------------------------------------------------
+	// on-kosul sayimi: user araliginda hangi objeler var (DataSendAll dongusunun hedefleri) — yalniz bilgi
+	int l_ConnOnline = 0,l_TypeUser = 0,l_UserOnline = 0,l_CacheOn = 0;
+
+	for(int n=OBJECT_START_USER;n < MAX_OBJECT;n++)
+	{
+		if(gObj[n].Connected == OBJECT_ONLINE){ l_ConnOnline++; }
+		if(gObj[n].Type == OBJECT_USER){ l_TypeUser++; }
+		if(gObj[n].Type == OBJECT_USER && gObj[n].Connected == OBJECT_ONLINE){ l_UserOnline++; }
+		if(gObj[n].Type == OBJECT_USER && gObj[n].Connected == OBJECT_ONLINE && gObj[n].CacheSendOnlogin != 0){ l_CacheOn++; }
+	}
+
+	LogAdd(LOG_RED,"[AITEST][3-on] user araligi sayimi (%d..%d): Connected==ONLINE=%d, Type==USER=%d, USER+ONLINE=%d, USER+ONLINE+cache=1=%d",
+		OBJECT_START_USER,MAX_OBJECT-1,l_ConnOnline,l_TypeUser,l_UserOnline,l_CacheOn);
+
+	gObj[l_FakeIndex].CacheSendOnlogin = 0;
+
+	gCB_AI_TestSkipIndex = l_FakeIndex;	// TEST-ONLY: push blogundan sonra diger user alt sistemleri atlanir
+	gCB_AI_TestOnlyIndex = l_FakeIndex;	// TEST-ONLY: dongude yalniz sentetik slot islenir
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gObjSecondProc();	// GERCEK per-obje proc (test: yalniz sentetik slot)
+
+	gCB_AI_TestOnlyIndex = -1;
+	gCB_AI_TestSkipIndex = -1;
+
+	int l_PushEvt = CB_AITestFindEvt(l_FakeIndex,1,l_EvtBefore);
+	int l_PushBcEvt = CB_AITestFindEvt(-1,1,((l_PushEvt >= 0)?l_PushEvt+1:l_EvtBefore));
+	int l_PushFlag = gObj[l_FakeIndex].CacheSendOnlogin;
+
+	LogAdd(LOG_RED,"[AITEST][3] giris push: CacheSendOnlogin=%d (beklenen 1) | tek-istemci liste=%s birebir=%d | SendThongTinSauKhiVaoGame toplu liste=%s",
+		l_PushFlag,((l_PushEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_PushEvt,l_ExpSize,l_Exp),((l_PushBcEvt >= 0)?"BULUNDU":"YOK"));
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gCB_AI_TestOnlyIndex = l_FakeIndex;	// TEST-ONLY: dongude yalniz sentetik slot islenir
+
+	gObjSecondProc();	// gate: 2. cagri yeni paket uretmemeli
+
+	gCB_AI_TestOnlyIndex = -1;
+
+	int l_PushEvt2 = CB_AITestFindEvt(l_FakeIndex,1,l_EvtBefore);
+
+	LogAdd(LOG_RED,"[AITEST][3b] gate: 2. gObjSecondProc sonrasi yeni liste=%s (beklenen YOK), CacheSendOnlogin=%d",
+		((l_PushEvt2 >= 0)?"VAR (BEKLENMEYEN)":"YOK"),gObj[l_FakeIndex].CacheSendOnlogin);
+
+	gObj[l_FakeIndex].Connected = OBJECT_OFFLINE;	// gObjDel kullanici-disi kapanis (canli yol: gObjDel)
+	gObjFreeData(l_FakeIndex);						// slot yeniden kullanilabilir (struct allocator'da kalir — canli tasarim)
+
+	// ---------------------------------------------------------------
+	// ADIM 4: spawn artisi — gercek SetState(START) -> SetMonster -> monster_add
+	// ---------------------------------------------------------------
+	CInvasionManager* lpIM = &gInvasionManager;
+	INVASION_INFO* lpInfo = &lpIM->m_InvasionInfo[2];	// .dat index 2 (Boss Vang): msb Type3 / class 43 / Map 0 / Value 0
+
+	int l_SaveState = lpInfo->State;
+	int l_SaveRemainTime = lpInfo->RemainTime;
+	int l_SaveTargetTime = lpInfo->TargetTime;
+	DWORD l_SaveTickCount = lpInfo->TickCount;
+	int l_SaveInvasionTime = lpInfo->InvasionTime;
+	int l_SaveBossIndex = lpInfo->BossIndex;
+	int l_SaveBossMessage = lpInfo->BossMessage;
+	std::vector<INVASION_START_TIME> l_SaveStartTime = lpInfo->StartTime;
+	std::vector<INVASION_RESPWAN_INFO> l_SaveRespawn0 = lpInfo->RespawnInfo[0];
+
+	static int l_SaveMonsterIndex[MAX_INVASION_MONSTER];
+
+	memcpy(l_SaveMonsterIndex,lpInfo->MonsterIndex,sizeof(l_SaveMonsterIndex));
+
+	lpInfo->RespawnInfo[0].clear();
+
+	INVASION_RESPWAN_INFO l_RI;
+
+	l_RI.Group = 0;
+	l_RI.Map = 0;
+	l_RI.Value = 0;
+
+	lpInfo->RespawnInfo[0].push_back(l_RI);
+
+	lpInfo->StartTime.clear();	// CheckSync -> BLANK (gercek tabloya dokunulmaz)
+	lpInfo->InvasionTime = 60;
+
+	int l_MsbMatch = 0;
+
+	for(int n=0;n < gMonsterSetBase.m_count;n++)
+	{
+		MONSTER_SET_BASE_INFO* lpMsb = &gMonsterSetBase.m_MonsterSetBaseInfo[n];
+
+		if(lpMsb->Type == 3 && lpMsb->MonsterClass == 43 && lpMsb->Map == 0 && lpMsb->Value == 0)
+		{
+			l_MsbMatch++;
+		}
+	}
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	lpIM->SetState(lpInfo,INVASION_STATE_START);	// GERCEK spawn zinciri
+
+	int l_SpawnReal = lpIM->GetMonsterCount(lpInfo);
+	int l_SpawnEvt = CB_AITestFindEvt(-1,1,l_EvtBefore);
+
+	int l_Ids3[3] = {43,701,702};
+	int l_Counts3[3][2] = {{l_MsbMatch,l_MsbMatch},{2,2},{1,1}};
+
+	l_ExpSize = CB_AITestBuildList(l_Exp,l_Ids3,l_Counts3,3);
+
+	CB_AITestDescribeList(l_SpawnEvt,l_Desc,sizeof(l_Desc));
+
+	LogAdd(LOG_RED,"[AITEST][4] SetState(START): msb(Type3/43/Map0/Val0)=%d, gercek spawn=%d, monster_add sayaci=%d | sonda liste=%s birebir=%d | okunan: %s | beklenen: {43:(%d,%d)} {701:(2,2)} {702:(1,1)}",
+		l_MsbMatch,l_SpawnReal,l_MsbMatch,((l_SpawnEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_SpawnEvt,l_ExpSize,l_Exp),l_Desc,l_MsbMatch,l_MsbMatch);
+
+	// ---------------------------------------------------------------
+	// ADIM 5: olum azalisi — gercek MonsterDieProc (canli 0x4F2094) -> sayac dususu + update
+	// ---------------------------------------------------------------
+	int l_MonIndex = -1;
+
+	for(int n=0;n < MAX_INVASION_MONSTER;n++)
+	{
+		if(OBJECT_RANGE(lpInfo->MonsterIndex[n]) != 0)
+		{
+			l_MonIndex = lpInfo->MonsterIndex[n];
+			break;
+		}
+	}
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	if(OBJECT_RANGE(l_MonIndex) != 0)
+	{
+		lpIM->MonsterDieProc(&gObj[l_MonIndex],&gObj[l_MonIndex]);	// GERCEK olum zinciri
+	}
+
+	int l_DieEvt = CB_AITestFindEvt(-1,0,l_EvtBefore);
+
+	l_ExpSize = CB_AITestBuildUpdate(l_Exp,43,((l_MsbMatch>0)?(l_MsbMatch-1):0));
+
+	LogAdd(LOG_RED,"[AITEST][5] MonsterDieProc(idx=%d class=%d): sayac update=%s birebir=%d (beklenen C1 10 F3 99 {43,%d,0}) | invasion obje sayaci=%d",
+		l_MonIndex,((OBJECT_RANGE(l_MonIndex) != 0)?gObj[l_MonIndex].Class:-1),((l_DieEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_DieEvt,l_ExpSize,l_Exp),((l_MsbMatch>0)?(l_MsbMatch-1):0),lpIM->GetMonsterCount(lpInfo));
+
+	// ---------------------------------------------------------------
+	// ADIM 6: SetState(EMPTY) temizligi — ClearMonster (canli 0x4F1C0C/0x4F1C1B bloklari)
+	// ---------------------------------------------------------------
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	lpIM->SetState(lpInfo,INVASION_STATE_EMPTY);	// GERCEK temizlik zinciri
+
+	int l_ClearEvt = CB_AITestFindEvt(-1,1,l_EvtBefore);
+
+	l_ExpSize = CB_AITestBuildList(l_Exp,l_Ids2,l_Counts2,2);
+
+	CB_AITestDescribeList(l_ClearEvt,l_Desc,sizeof(l_Desc));
+
+	LogAdd(LOG_RED,"[AITEST][6] SetState(EMPTY)/ClearMonster: kalan invasion obje=%d | sonda toplu liste=%s birebir=%d | okunan: %s | beklenen {701:(2,2)} {702:(1,1)} (43 kaydi erase)",
+		lpIM->GetMonsterCount(lpInfo),((l_ClearEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_ClearEvt,l_ExpSize,l_Exp),l_Desc);
+
+	// ---------------------------------------------------------------
+	// ADIM 7: sayac semantigi — cift artis/azalis, erase + yeniden (1,1), broadcast'li update
+	// ---------------------------------------------------------------
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gCB_ActiveInvasions.monster_add(703,true);	// (1,1) + C1 10 F3 99 broadcast
+
+	int l_AddEvt = CB_AITestFindEvt(-1,0,l_EvtBefore);
+
+	l_ExpSize = CB_AITestBuildUpdate(l_Exp,703,1);
+
+	LogAdd(LOG_RED,"[AITEST][7] monster_add(703,true): update=%s birebir=%d (beklenen {703,1,0} broadcast)",
+		((l_AddEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_AddEvt,l_ExpSize,l_Exp));
+
+	gCB_ActiveInvasions.monster_add(703,false);
+	gCB_ActiveInvasions.monster_add(703,false);	// (3,3)
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gCB_ActiveInvasions.monster_del(703,true);	// (2,2) + update
+
+	int l_DelEvt = CB_AITestFindEvt(-1,0,l_EvtBefore);
+
+	l_ExpSize = CB_AITestBuildUpdate(l_Exp,703,2);
+
+	LogAdd(LOG_RED,"[AITEST][7a] monster_del(703,true): update=%s birebir=%d (beklenen {703,2,0}) | (count,max) cift azalis",
+		((l_DelEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_DelEvt,l_ExpSize,l_Exp));
+
+	gCB_ActiveInvasions.monster_del(703,false);	// (1,1) sessiz
+	gCB_ActiveInvasions.monster_del(703,false);	// (0,0) -> erase (sessiz)
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gCB_ActiveInvasions.monster_add(703,false);	// erase sonrasi yeniden: (1,1) olmali
+	gCB_ActiveInvasions.send_list_to_client();	// void overload: herkese liste
+
+	int l_ReAddEvt = CB_AITestFindEvt(-1,1,l_EvtBefore);
+
+	int l_Ids7[3] = {701,702,703};
+	int l_Counts7[3][2] = {{2,2},{1,1},{1,1}};
+
+	l_ExpSize = CB_AITestBuildList(l_Exp,l_Ids7,l_Counts7,3);
+
+	CB_AITestDescribeList(l_ReAddEvt,l_Desc,sizeof(l_Desc));
+
+	LogAdd(LOG_RED,"[AITEST][7b] erase + yeniden ekleme: toplu liste=%s birebir=%d | okunan: %s | beklenen {701:(2,2)} {702:(1,1)} {703:(1,1)} (max sifirlanmali)",
+		((l_ReAddEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_ReAddEvt,l_ExpSize,l_Exp),l_Desc);
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gCB_ActiveInvasions.monster_del(99999,true);	// haritada yok -> sessiz erken cikis
+	gCB_ActiveInvasions.update_by_monster_id(99999);
+
+	LogAdd(LOG_RED,"[AITEST][7c] negatif yol (99999): yeni paket=%d (beklenen 0)",(int)l_TestEvtCount-l_EvtBefore);
+
+	// ---------------------------------------------------------------
+	// TEMIZLIK: test kayitlari silinir, son liste bos olmali
+	// ---------------------------------------------------------------
+	gCB_ActiveInvasions.monster_del(701,false);
+	gCB_ActiveInvasions.monster_del(701,false);	// (2,2) -> (0,0) erase
+	gCB_ActiveInvasions.monster_del(702,false);	// (1,1) -> erase
+	gCB_ActiveInvasions.monster_del(703,false);	// (1,1) -> erase
+
+	l_EvtBefore = (int)l_TestEvtCount;
+
+	gCB_ActiveInvasions.send_list_to_client();
+
+	int l_EmptyEvt = CB_AITestFindEvt(-1,1,l_EvtBefore);
+
+	l_ExpSize = CB_AITestBuildList(l_Exp,l_Ids7,l_Counts7,0);
+
+	LogAdd(LOG_RED,"[AITEST][8] temizlik: test kayitlari silindi | bos liste=%s birebir=%d (boyut=%d, count=0)",
+		((l_EmptyEvt >= 0)?"BULUNDU":"YOK"),CB_AITestMatch(l_EmptyEvt,l_ExpSize,l_Exp),l_ExpSize);
+
+	// ---------------------------------------------------------------
+	// GERI ALMA (global durum)
+	// ---------------------------------------------------------------
+	lpInfo->State = l_SaveState;
+	lpInfo->RemainTime = l_SaveRemainTime;
+	lpInfo->TargetTime = l_SaveTargetTime;
+	lpInfo->TickCount = l_SaveTickCount;
+	lpInfo->InvasionTime = l_SaveInvasionTime;
+	lpInfo->BossIndex = l_SaveBossIndex;
+	lpInfo->BossMessage = l_SaveBossMessage;
+	lpInfo->StartTime = l_SaveStartTime;
+	lpInfo->RespawnInfo[0] = l_SaveRespawn0;
+
+	memcpy(lpInfo->MonsterIndex,l_SaveMonsterIndex,sizeof(l_SaveMonsterIndex));
+
+	gCB_AI_TestCaptureOn = 0;
+
+	LogAdd(LOG_RED,"[AITEST] ===== SELFTEST BITTI ===== yakalanan cb paketi=%d, cb disi paket=%d, yakalama kapatildi (FlyingDragonsSwitch=%d)",
+		(int)l_TestEvtCount,(int)l_TestOtherPkt,gServerInfo.m_FlyingDragonsSwitch);
+}
+
+bool CB_ActiveInvasionsTestTick()
+{
+	static DWORD l_TickCount = 0;
+
+	if((GetTickCount()-l_TickCount) < 1000)
+	{
+		return 0;
+	}
+
+	l_TickCount = GetTickCount();
+
+	char* l_TestFlag = gPath.GetFullPath("CB_ActiveInvasions_selftest.flag");
+
+	if(GetFileAttributes(l_TestFlag) == INVALID_FILE_ATTRIBUTES)
+	{
+		return 0;
+	}
+
+	DeleteFile(l_TestFlag);
+
+	CB_ActiveInvasionsSelfTest();
+
+	return 1;
+}
+#endif
+#endif

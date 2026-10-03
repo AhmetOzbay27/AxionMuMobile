@@ -1,0 +1,2035 @@
+?Save@CustomSetDameItem@@QAEXPAD@Z:
+  00477360: 55                 push        ebp
+  00477361: 8B EC              mov         ebp,esp
+  00477363: 6A FF              push        0FFFFFFFFh
+  00477365: 68 4B 5D 62 00     push        625D4Bh
+  0047736A: 64 A1 00 00 00 00  mov         eax,dword ptr fs:[00000000h]
+  00477370: 50                 push        eax
+  00477371: 81 EC 68 01 00 00  sub         esp,168h
+  00477377: A1 80 10 66 00     mov         eax,dword ptr [___security_cookie]
+  0047737C: 33 C5              xor         eax,ebp
+  0047737E: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  00477381: 53                 push        ebx
+  00477382: 56                 push        esi
+  00477383: 57                 push        edi
+  00477384: 50                 push        eax
+  00477385: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00477388: 64 A3 00 00 00 00  mov         dword ptr fs:[00000000h],eax
+  0047738E: 8B D9              mov         ebx,ecx
+  00477390: 89 9D 94 FE FF FF  mov         dword ptr [ebp-16Ch],ebx
+  00477396: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00477399: 8D 8D A4 FE FF FF  lea         ecx,[ebp-15Ch]
+  0047739F: 89 85 90 FE FF FF  mov         dword ptr [ebp-170h],eax
+  004773A5: C7 85 A4 FE FF FF  mov         dword ptr [ebp-15Ch],0
+            00 00 00 00
+  004773AF: C7 85 A8 FE FF FF  mov         dword ptr [ebp-158h],0
+            00 00 00 00
+  004773B9: E8 22 08 0E 00     call        ?create@xml_document@pugi@@AAEXXZ
+  004773BE: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  004773C5: 8B 8D A4 FE FF FF  mov         ecx,dword ptr [ebp-15Ch]
+  004773CB: 85 C9              test        ecx,ecx
+  004773CD: 74 60              je          0047742F
+  004773CF: 8B 01              mov         eax,dword ptr [ecx]
+  004773D1: 83 E0 07           and         eax,7
+  004773D4: 40                 inc         eax
+  004773D5: 83 F8 01           cmp         eax,1
+  004773D8: 74 05              je          004773DF
+  004773DA: 83 F8 02           cmp         eax,2
+  004773DD: 75 50              jne         0047742F
+  004773DF: 8B 01              mov         eax,dword ptr [ecx]
+  004773E1: 83 E0 E0           and         eax,0FFFFFFE0h
+  004773E4: 6A 02              push        2
+  004773E6: 8B 10              mov         edx,dword ptr [eax]
+  004773E8: E8 13 DE 0D 00     call        00555200
+  004773ED: 83 C4 04           add         esp,4
+  004773F0: 89 85 9C FE FF FF  mov         dword ptr [ebp-164h],eax
+  004773F6: 8B F0              mov         esi,eax
+  004773F8: 85 C0              test        eax,eax
+  004773FA: 74 3B              je          00477437
+  004773FC: 8B 08              mov         ecx,dword ptr [eax]
+  004773FE: 83 E1 07           and         ecx,7
+  00477401: 89 85 9C FE FF FF  mov         dword ptr [ebp-164h],eax
+  00477407: 41                 inc         ecx
+  00477408: 83 E9 02           sub         ecx,2
+  0047740B: 74 0A              je          00477417
+  0047740D: 83 E9 04           sub         ecx,4
+  00477410: 74 05              je          00477417
+  00477412: 83 E9 01           sub         ecx,1
+  00477415: 75 20              jne         00477437
+  00477417: 68 94 C6 63 00     push        offset ??_C@_08CPMOEKCE@ItemData@
+  0047741C: 6A 10              push        10h
+  0047741E: 8D 4E 08           lea         ecx,[esi+8]
+  00477421: 8B D6              mov         edx,esi
+  00477423: E8 A8 E2 0D 00     call        005556D0
+  00477428: 83 C4 08           add         esp,8
+  0047742B: 8B C6              mov         eax,esi
+  0047742D: EB 02              jmp         00477431
+  0047742F: 33 C0              xor         eax,eax
+  00477431: 89 85 9C FE FF FF  mov         dword ptr [ebp-164h],eax
+  00477437: 8B 3B              mov         edi,dword ptr [ebx]
+  00477439: 8B 53 04           mov         edx,dword ptr [ebx+4]
+  0047743C: 89 BD A0 FE FF FF  mov         dword ptr [ebp-160h],edi
+  00477442: 89 95 98 FE FF FF  mov         dword ptr [ebp-168h],edx
+  00477448: 3B FA              cmp         edi,edx
+  0047744A: 0F 84 FC 0B 00 00  je          0047804C
+  00477450: 85 C0              test        eax,eax
+  00477452: 0F 84 DD 0B 00 00  je          00478035
+  00477458: 8B 08              mov         ecx,dword ptr [eax]
+  0047745A: 83 E1 07           and         ecx,7
+  0047745D: 41                 inc         ecx
+  0047745E: 83 F9 01           cmp         ecx,1
+  00477461: 74 09              je          0047746C
+  00477463: 83 F9 02           cmp         ecx,2
+  00477466: 0F 85 C9 0B 00 00  jne         00478035
+  0047746C: 8B 08              mov         ecx,dword ptr [eax]
+  0047746E: 83 E1 E0           and         ecx,0FFFFFFE0h
+  00477471: 6A 02              push        2
+  00477473: 8B 11              mov         edx,dword ptr [ecx]
+  00477475: 8B C8              mov         ecx,eax
+  00477477: E8 84 DD 0D 00     call        00555200
+  0047747C: 8B F0              mov         esi,eax
+  0047747E: 83 C4 04           add         esp,4
+  00477481: 8B DE              mov         ebx,esi
+  00477483: 85 F6              test        esi,esi
+  00477485: 0F 84 9E 0B 00 00  je          00478029
+  0047748B: 8B 06              mov         eax,dword ptr [esi]
+  0047748D: 83 E0 07           and         eax,7
+  00477490: 40                 inc         eax
+  00477491: 83 E8 02           sub         eax,2
+  00477494: 74 0A              je          004774A0
+  00477496: 83 E8 04           sub         eax,4
+  00477499: 74 05              je          004774A0
+  0047749B: 83 E8 01           sub         eax,1
+  0047749E: 75 16              jne         004774B6
+  004774A0: 68 74 7F 63 00     push        offset ??_C@_04BGCMBJDA@Item@
+  004774A5: 6A 10              push        10h
+  004774A7: 8D 4B 08           lea         ecx,[ebx+8]
+  004774AA: 8B D3              mov         edx,ebx
+  004774AC: E8 1F E2 0D 00     call        005556D0
+  004774B1: 83 C4 08           add         esp,8
+  004774B4: 8B F3              mov         esi,ebx
+  004774B6: 8B 06              mov         eax,dword ptr [esi]
+  004774B8: 24 07              and         al,7
+  004774BA: 3C 01              cmp         al,1
+  004774BC: 74 11              je          004774CF
+  004774BE: 85 F6              test        esi,esi
+  004774C0: 0F 84 63 0B 00 00  je          00478029
+  004774C6: 8B 06              mov         eax,dword ptr [esi]
+  004774C8: 83 E0 07           and         eax,7
+  004774CB: 3C 06              cmp         al,6
+  004774CD: 75 6C              jne         0047753B
+  004774CF: 8B 16              mov         edx,dword ptr [esi]
+  004774D1: 8B CE              mov         ecx,esi
+  004774D3: 83 E2 E0           and         edx,0FFFFFFE0h
+  004774D6: 8B 12              mov         edx,dword ptr [edx]
+  004774D8: E8 C3 DD 0D 00     call        005552A0
+  004774DD: 8B F8              mov         edi,eax
+  004774DF: 85 FF              test        edi,edi
+  004774E1: 74 14              je          004774F7
+  004774E3: 68 A4 C8 63 00     push        offset ??_C@_07OEBDPOLH@Section@
+  004774E8: 6A 10              push        10h
+  004774EA: 8D 4F 04           lea         ecx,[edi+4]
+  004774ED: 8B D7              mov         edx,edi
+  004774EF: E8 DC E1 0D 00     call        005556D0
+  004774F4: 83 C4 08           add         esp,8
+  004774F7: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  004774FD: 85 FF              test        edi,edi
+  004774FF: 74 2C              je          0047752D
+  00477501: FF 30              push        dword ptr [eax]
+  00477503: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477509: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  0047750E: 50                 push        eax
+  0047750F: E8 5C 40 06 00     call        _sprintf
+  00477514: 83 C4 0C           add         esp,0Ch
+  00477517: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047751D: 8B D7              mov         edx,edi
+  0047751F: 8D 4F 08           lea         ecx,[edi+8]
+  00477522: 50                 push        eax
+  00477523: 6A 08              push        8
+  00477525: E8 A6 E1 0D 00     call        005556D0
+  0047752A: 83 C4 08           add         esp,8
+  0047752D: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477533: 85 F6              test        esi,esi
+  00477535: 0F 84 EE 0A 00 00  je          00478029
+  0047753B: 8B 06              mov         eax,dword ptr [esi]
+  0047753D: 24 07              and         al,7
+  0047753F: 3C 01              cmp         al,1
+  00477541: 74 11              je          00477554
+  00477543: 85 F6              test        esi,esi
+  00477545: 0F 84 DE 0A 00 00  je          00478029
+  0047754B: 8B 06              mov         eax,dword ptr [esi]
+  0047754D: 83 E0 07           and         eax,7
+  00477550: 3C 06              cmp         al,6
+  00477552: 75 6D              jne         004775C1
+  00477554: 8B 16              mov         edx,dword ptr [esi]
+  00477556: 8B CE              mov         ecx,esi
+  00477558: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047755B: 8B 12              mov         edx,dword ptr [edx]
+  0047755D: E8 3E DD 0D 00     call        005552A0
+  00477562: 8B F8              mov         edi,eax
+  00477564: 85 FF              test        edi,edi
+  00477566: 74 14              je          0047757C
+  00477568: 68 10 82 63 00     push        offset ??_C@_05FNNGFGLF@Index@
+  0047756D: 6A 10              push        10h
+  0047756F: 8D 4F 04           lea         ecx,[edi+4]
+  00477572: 8B D7              mov         edx,edi
+  00477574: E8 57 E1 0D 00     call        005556D0
+  00477579: 83 C4 08           add         esp,8
+  0047757C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477582: 85 FF              test        edi,edi
+  00477584: 74 2D              je          004775B3
+  00477586: FF 70 04           push        dword ptr [eax+4]
+  00477589: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047758F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477594: 50                 push        eax
+  00477595: E8 D6 3F 06 00     call        _sprintf
+  0047759A: 83 C4 0C           add         esp,0Ch
+  0047759D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004775A3: 8B D7              mov         edx,edi
+  004775A5: 8D 4F 08           lea         ecx,[edi+8]
+  004775A8: 50                 push        eax
+  004775A9: 6A 08              push        8
+  004775AB: E8 20 E1 0D 00     call        005556D0
+  004775B0: 83 C4 08           add         esp,8
+  004775B3: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  004775B9: 85 F6              test        esi,esi
+  004775BB: 0F 84 68 0A 00 00  je          00478029
+  004775C1: 8B 06              mov         eax,dword ptr [esi]
+  004775C3: 24 07              and         al,7
+  004775C5: 3C 01              cmp         al,1
+  004775C7: 74 11              je          004775DA
+  004775C9: 85 F6              test        esi,esi
+  004775CB: 0F 84 58 0A 00 00  je          00478029
+  004775D1: 8B 06              mov         eax,dword ptr [esi]
+  004775D3: 83 E0 07           and         eax,7
+  004775D6: 3C 06              cmp         al,6
+  004775D8: 75 6D              jne         00477647
+  004775DA: 8B 16              mov         edx,dword ptr [esi]
+  004775DC: 8B CE              mov         ecx,esi
+  004775DE: 83 E2 E0           and         edx,0FFFFFFE0h
+  004775E1: 8B 12              mov         edx,dword ptr [edx]
+  004775E3: E8 B8 DC 0D 00     call        005552A0
+  004775E8: 8B F8              mov         edi,eax
+  004775EA: 85 FF              test        edi,edi
+  004775EC: 74 14              je          00477602
+  004775EE: 68 AC C8 63 00     push        offset ??_C@_06LBEFNKEP@Effect@
+  004775F3: 6A 10              push        10h
+  004775F5: 8D 4F 04           lea         ecx,[edi+4]
+  004775F8: 8B D7              mov         edx,edi
+  004775FA: E8 D1 E0 0D 00     call        005556D0
+  004775FF: 83 C4 08           add         esp,8
+  00477602: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477608: 85 FF              test        edi,edi
+  0047760A: 74 2D              je          00477639
+  0047760C: FF 70 08           push        dword ptr [eax+8]
+  0047760F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477615: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  0047761A: 50                 push        eax
+  0047761B: E8 50 3F 06 00     call        _sprintf
+  00477620: 83 C4 0C           add         esp,0Ch
+  00477623: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477629: 8B D7              mov         edx,edi
+  0047762B: 8D 4F 08           lea         ecx,[edi+8]
+  0047762E: 50                 push        eax
+  0047762F: 6A 08              push        8
+  00477631: E8 9A E0 0D 00     call        005556D0
+  00477636: 83 C4 08           add         esp,8
+  00477639: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  0047763F: 85 F6              test        esi,esi
+  00477641: 0F 84 E2 09 00 00  je          00478029
+  00477647: 8B 06              mov         eax,dword ptr [esi]
+  00477649: 24 07              and         al,7
+  0047764B: 3C 01              cmp         al,1
+  0047764D: 74 11              je          00477660
+  0047764F: 85 F6              test        esi,esi
+  00477651: 0F 84 D2 09 00 00  je          00478029
+  00477657: 8B 06              mov         eax,dword ptr [esi]
+  00477659: 83 E0 07           and         eax,7
+  0047765C: 3C 06              cmp         al,6
+  0047765E: 75 6D              jne         004776CD
+  00477660: 8B 16              mov         edx,dword ptr [esi]
+  00477662: 8B CE              mov         ecx,esi
+  00477664: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477667: 8B 12              mov         edx,dword ptr [edx]
+  00477669: E8 32 DC 0D 00     call        005552A0
+  0047766E: 8B F8              mov         edi,eax
+  00477670: 85 FF              test        edi,edi
+  00477672: 74 14              je          00477688
+  00477674: 68 B4 C8 63 00     push        offset ??_C@_02FLIMDJ@Lv@
+  00477679: 6A 10              push        10h
+  0047767B: 8D 4F 04           lea         ecx,[edi+4]
+  0047767E: 8B D7              mov         edx,edi
+  00477680: E8 4B E0 0D 00     call        005556D0
+  00477685: 83 C4 08           add         esp,8
+  00477688: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  0047768E: 85 FF              test        edi,edi
+  00477690: 74 2D              je          004776BF
+  00477692: FF 70 0C           push        dword ptr [eax+0Ch]
+  00477695: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047769B: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004776A0: 50                 push        eax
+  004776A1: E8 CA 3E 06 00     call        _sprintf
+  004776A6: 83 C4 0C           add         esp,0Ch
+  004776A9: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004776AF: 8B D7              mov         edx,edi
+  004776B1: 8D 4F 08           lea         ecx,[edi+8]
+  004776B4: 50                 push        eax
+  004776B5: 6A 08              push        8
+  004776B7: E8 14 E0 0D 00     call        005556D0
+  004776BC: 83 C4 08           add         esp,8
+  004776BF: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  004776C5: 85 F6              test        esi,esi
+  004776C7: 0F 84 5C 09 00 00  je          00478029
+  004776CD: 8B 06              mov         eax,dword ptr [esi]
+  004776CF: 24 07              and         al,7
+  004776D1: 3C 01              cmp         al,1
+  004776D3: 74 11              je          004776E6
+  004776D5: 85 F6              test        esi,esi
+  004776D7: 0F 84 4C 09 00 00  je          00478029
+  004776DD: 8B 06              mov         eax,dword ptr [esi]
+  004776DF: 83 E0 07           and         eax,7
+  004776E2: 3C 06              cmp         al,6
+  004776E4: 75 6D              jne         00477753
+  004776E6: 8B 16              mov         edx,dword ptr [esi]
+  004776E8: 8B CE              mov         ecx,esi
+  004776EA: 83 E2 E0           and         edx,0FFFFFFE0h
+  004776ED: 8B 12              mov         edx,dword ptr [edx]
+  004776EF: E8 AC DB 0D 00     call        005552A0
+  004776F4: 8B F8              mov         edi,eax
+  004776F6: 85 FF              test        edi,edi
+  004776F8: 74 14              je          0047770E
+  004776FA: 68 CC 7F 63 00     push        offset ??_C@_03CGOLMCK@Opt@
+  004776FF: 6A 10              push        10h
+  00477701: 8D 4F 04           lea         ecx,[edi+4]
+  00477704: 8B D7              mov         edx,edi
+  00477706: E8 C5 DF 0D 00     call        005556D0
+  0047770B: 83 C4 08           add         esp,8
+  0047770E: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477714: 85 FF              test        edi,edi
+  00477716: 74 2D              je          00477745
+  00477718: FF 70 10           push        dword ptr [eax+10h]
+  0047771B: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477721: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477726: 50                 push        eax
+  00477727: E8 44 3E 06 00     call        _sprintf
+  0047772C: 83 C4 0C           add         esp,0Ch
+  0047772F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477735: 8B D7              mov         edx,edi
+  00477737: 8D 4F 08           lea         ecx,[edi+8]
+  0047773A: 50                 push        eax
+  0047773B: 6A 08              push        8
+  0047773D: E8 8E DF 0D 00     call        005556D0
+  00477742: 83 C4 08           add         esp,8
+  00477745: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  0047774B: 85 F6              test        esi,esi
+  0047774D: 0F 84 D6 08 00 00  je          00478029
+  00477753: 8B 06              mov         eax,dword ptr [esi]
+  00477755: 24 07              and         al,7
+  00477757: 3C 01              cmp         al,1
+  00477759: 74 11              je          0047776C
+  0047775B: 85 F6              test        esi,esi
+  0047775D: 0F 84 C6 08 00 00  je          00478029
+  00477763: 8B 06              mov         eax,dword ptr [esi]
+  00477765: 83 E0 07           and         eax,7
+  00477768: 3C 06              cmp         al,6
+  0047776A: 75 6D              jne         004777D9
+  0047776C: 8B 16              mov         edx,dword ptr [esi]
+  0047776E: 8B CE              mov         ecx,esi
+  00477770: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477773: 8B 12              mov         edx,dword ptr [edx]
+  00477775: E8 26 DB 0D 00     call        005552A0
+  0047777A: 8B F8              mov         edi,eax
+  0047777C: 85 FF              test        edi,edi
+  0047777E: 74 14              je          00477794
+  00477780: 68 B8 C8 63 00     push        offset ??_C@_03KAHOEKJK@Dmg@
+  00477785: 6A 10              push        10h
+  00477787: 8D 4F 04           lea         ecx,[edi+4]
+  0047778A: 8B D7              mov         edx,edi
+  0047778C: E8 3F DF 0D 00     call        005556D0
+  00477791: 83 C4 08           add         esp,8
+  00477794: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  0047779A: 85 FF              test        edi,edi
+  0047779C: 74 2D              je          004777CB
+  0047779E: FF 70 14           push        dword ptr [eax+14h]
+  004777A1: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004777A7: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004777AC: 50                 push        eax
+  004777AD: E8 BE 3D 06 00     call        _sprintf
+  004777B2: 83 C4 0C           add         esp,0Ch
+  004777B5: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004777BB: 8B D7              mov         edx,edi
+  004777BD: 8D 4F 08           lea         ecx,[edi+8]
+  004777C0: 50                 push        eax
+  004777C1: 6A 08              push        8
+  004777C3: E8 08 DF 0D 00     call        005556D0
+  004777C8: 83 C4 08           add         esp,8
+  004777CB: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  004777D1: 85 F6              test        esi,esi
+  004777D3: 0F 84 50 08 00 00  je          00478029
+  004777D9: 8B 06              mov         eax,dword ptr [esi]
+  004777DB: 24 07              and         al,7
+  004777DD: 3C 01              cmp         al,1
+  004777DF: 74 11              je          004777F2
+  004777E1: 85 F6              test        esi,esi
+  004777E3: 0F 84 40 08 00 00  je          00478029
+  004777E9: 8B 06              mov         eax,dword ptr [esi]
+  004777EB: 83 E0 07           and         eax,7
+  004777EE: 3C 06              cmp         al,6
+  004777F0: 75 6D              jne         0047785F
+  004777F2: 8B 16              mov         edx,dword ptr [esi]
+  004777F4: 8B CE              mov         ecx,esi
+  004777F6: 83 E2 E0           and         edx,0FFFFFFE0h
+  004777F9: 8B 12              mov         edx,dword ptr [edx]
+  004777FB: E8 A0 DA 0D 00     call        005552A0
+  00477800: 8B F8              mov         edi,eax
+  00477802: 85 FF              test        edi,edi
+  00477804: 74 14              je          0047781A
+  00477806: 68 BC C8 63 00     push        offset ??_C@_05KICACMKE@AddSD@
+  0047780B: 6A 10              push        10h
+  0047780D: 8D 4F 04           lea         ecx,[edi+4]
+  00477810: 8B D7              mov         edx,edi
+  00477812: E8 B9 DE 0D 00     call        005556D0
+  00477817: 83 C4 08           add         esp,8
+  0047781A: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477820: 85 FF              test        edi,edi
+  00477822: 74 2D              je          00477851
+  00477824: FF 70 18           push        dword ptr [eax+18h]
+  00477827: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047782D: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477832: 50                 push        eax
+  00477833: E8 38 3D 06 00     call        _sprintf
+  00477838: 83 C4 0C           add         esp,0Ch
+  0047783B: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477841: 8B D7              mov         edx,edi
+  00477843: 8D 4F 08           lea         ecx,[edi+8]
+  00477846: 50                 push        eax
+  00477847: 6A 08              push        8
+  00477849: E8 82 DE 0D 00     call        005556D0
+  0047784E: 83 C4 08           add         esp,8
+  00477851: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477857: 85 F6              test        esi,esi
+  00477859: 0F 84 CA 07 00 00  je          00478029
+  0047785F: 8B 06              mov         eax,dword ptr [esi]
+  00477861: 24 07              and         al,7
+  00477863: 3C 01              cmp         al,1
+  00477865: 74 11              je          00477878
+  00477867: 85 F6              test        esi,esi
+  00477869: 0F 84 BA 07 00 00  je          00478029
+  0047786F: 8B 06              mov         eax,dword ptr [esi]
+  00477871: 83 E0 07           and         eax,7
+  00477874: 3C 06              cmp         al,6
+  00477876: 75 6D              jne         004778E5
+  00477878: 8B 16              mov         edx,dword ptr [esi]
+  0047787A: 8B CE              mov         ecx,esi
+  0047787C: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047787F: 8B 12              mov         edx,dword ptr [edx]
+  00477881: E8 1A DA 0D 00     call        005552A0
+  00477886: 8B F8              mov         edi,eax
+  00477888: 85 FF              test        edi,edi
+  0047788A: 74 14              je          004778A0
+  0047788C: 68 C4 C8 63 00     push        offset ??_C@_05JGPNLHGA@AddHP@
+  00477891: 6A 10              push        10h
+  00477893: 8D 4F 04           lea         ecx,[edi+4]
+  00477896: 8B D7              mov         edx,edi
+  00477898: E8 33 DE 0D 00     call        005556D0
+  0047789D: 83 C4 08           add         esp,8
+  004778A0: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  004778A6: 85 FF              test        edi,edi
+  004778A8: 74 2D              je          004778D7
+  004778AA: FF 70 1C           push        dword ptr [eax+1Ch]
+  004778AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004778B3: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004778B8: 50                 push        eax
+  004778B9: E8 B2 3C 06 00     call        _sprintf
+  004778BE: 83 C4 0C           add         esp,0Ch
+  004778C1: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004778C7: 8B D7              mov         edx,edi
+  004778C9: 8D 4F 08           lea         ecx,[edi+8]
+  004778CC: 50                 push        eax
+  004778CD: 6A 08              push        8
+  004778CF: E8 FC DD 0D 00     call        005556D0
+  004778D4: 83 C4 08           add         esp,8
+  004778D7: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  004778DD: 85 F6              test        esi,esi
+  004778DF: 0F 84 44 07 00 00  je          00478029
+  004778E5: 8B 06              mov         eax,dword ptr [esi]
+  004778E7: 24 07              and         al,7
+  004778E9: 3C 01              cmp         al,1
+  004778EB: 74 11              je          004778FE
+  004778ED: 85 F6              test        esi,esi
+  004778EF: 0F 84 34 07 00 00  je          00478029
+  004778F5: 8B 06              mov         eax,dword ptr [esi]
+  004778F7: 83 E0 07           and         eax,7
+  004778FA: 3C 06              cmp         al,6
+  004778FC: 75 6D              jne         0047796B
+  004778FE: 8B 16              mov         edx,dword ptr [esi]
+  00477900: 8B CE              mov         ecx,esi
+  00477902: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477905: 8B 12              mov         edx,dword ptr [edx]
+  00477907: E8 94 D9 0D 00     call        005552A0
+  0047790C: 8B F8              mov         edi,eax
+  0047790E: 85 FF              test        edi,edi
+  00477910: 74 14              je          00477926
+  00477912: 68 CC C8 63 00     push        offset ??_C@_05JADGHFIL@AddMP@
+  00477917: 6A 10              push        10h
+  00477919: 8D 4F 04           lea         ecx,[edi+4]
+  0047791C: 8B D7              mov         edx,edi
+  0047791E: E8 AD DD 0D 00     call        005556D0
+  00477923: 83 C4 08           add         esp,8
+  00477926: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  0047792C: 85 FF              test        edi,edi
+  0047792E: 74 2D              je          0047795D
+  00477930: FF 70 20           push        dword ptr [eax+20h]
+  00477933: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477939: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  0047793E: 50                 push        eax
+  0047793F: E8 2C 3C 06 00     call        _sprintf
+  00477944: 83 C4 0C           add         esp,0Ch
+  00477947: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047794D: 8B D7              mov         edx,edi
+  0047794F: 8D 4F 08           lea         ecx,[edi+8]
+  00477952: 50                 push        eax
+  00477953: 6A 08              push        8
+  00477955: E8 76 DD 0D 00     call        005556D0
+  0047795A: 83 C4 08           add         esp,8
+  0047795D: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477963: 85 F6              test        esi,esi
+  00477965: 0F 84 BE 06 00 00  je          00478029
+  0047796B: 8B 06              mov         eax,dword ptr [esi]
+  0047796D: 24 07              and         al,7
+  0047796F: 3C 01              cmp         al,1
+  00477971: 74 11              je          00477984
+  00477973: 85 F6              test        esi,esi
+  00477975: 0F 84 AE 06 00 00  je          00478029
+  0047797B: 8B 06              mov         eax,dword ptr [esi]
+  0047797D: 83 E0 07           and         eax,7
+  00477980: 3C 06              cmp         al,6
+  00477982: 75 6D              jne         004779F1
+  00477984: 8B 16              mov         edx,dword ptr [esi]
+  00477986: 8B CE              mov         ecx,esi
+  00477988: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047798B: 8B 12              mov         edx,dword ptr [edx]
+  0047798D: E8 0E D9 0D 00     call        005552A0
+  00477992: 8B F8              mov         edi,eax
+  00477994: 85 FF              test        edi,edi
+  00477996: 74 14              je          004779AC
+  00477998: 68 D4 C8 63 00     push        offset ??_C@_03LHHGCKGD@Def@
+  0047799D: 6A 10              push        10h
+  0047799F: 8D 4F 04           lea         ecx,[edi+4]
+  004779A2: 8B D7              mov         edx,edi
+  004779A4: E8 27 DD 0D 00     call        005556D0
+  004779A9: 83 C4 08           add         esp,8
+  004779AC: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  004779B2: 85 FF              test        edi,edi
+  004779B4: 74 2D              je          004779E3
+  004779B6: FF 70 24           push        dword ptr [eax+24h]
+  004779B9: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004779BF: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004779C4: 50                 push        eax
+  004779C5: E8 A6 3B 06 00     call        _sprintf
+  004779CA: 83 C4 0C           add         esp,0Ch
+  004779CD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004779D3: 8B D7              mov         edx,edi
+  004779D5: 8D 4F 08           lea         ecx,[edi+8]
+  004779D8: 50                 push        eax
+  004779D9: 6A 08              push        8
+  004779DB: E8 F0 DC 0D 00     call        005556D0
+  004779E0: 83 C4 08           add         esp,8
+  004779E3: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  004779E9: 85 F6              test        esi,esi
+  004779EB: 0F 84 38 06 00 00  je          00478029
+  004779F1: 8B 06              mov         eax,dword ptr [esi]
+  004779F3: 24 07              and         al,7
+  004779F5: 3C 01              cmp         al,1
+  004779F7: 74 11              je          00477A0A
+  004779F9: 85 F6              test        esi,esi
+  004779FB: 0F 84 28 06 00 00  je          00478029
+  00477A01: 8B 06              mov         eax,dword ptr [esi]
+  00477A03: 83 E0 07           and         eax,7
+  00477A06: 3C 06              cmp         al,6
+  00477A08: 75 6D              jne         00477A77
+  00477A0A: 8B 16              mov         edx,dword ptr [esi]
+  00477A0C: 8B CE              mov         ecx,esi
+  00477A0E: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477A11: 8B 12              mov         edx,dword ptr [edx]
+  00477A13: E8 88 D8 0D 00     call        005552A0
+  00477A18: 8B F8              mov         edi,eax
+  00477A1A: 85 FF              test        edi,edi
+  00477A1C: 74 14              je          00477A32
+  00477A1E: 68 D8 C8 63 00     push        offset ??_C@_0L@LENCMBBB@ExlDmgRate@
+  00477A23: 6A 10              push        10h
+  00477A25: 8D 4F 04           lea         ecx,[edi+4]
+  00477A28: 8B D7              mov         edx,edi
+  00477A2A: E8 A1 DC 0D 00     call        005556D0
+  00477A2F: 83 C4 08           add         esp,8
+  00477A32: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477A38: 85 FF              test        edi,edi
+  00477A3A: 74 2D              je          00477A69
+  00477A3C: FF 70 28           push        dword ptr [eax+28h]
+  00477A3F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477A45: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477A4A: 50                 push        eax
+  00477A4B: E8 20 3B 06 00     call        _sprintf
+  00477A50: 83 C4 0C           add         esp,0Ch
+  00477A53: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477A59: 8B D7              mov         edx,edi
+  00477A5B: 8D 4F 08           lea         ecx,[edi+8]
+  00477A5E: 50                 push        eax
+  00477A5F: 6A 08              push        8
+  00477A61: E8 6A DC 0D 00     call        005556D0
+  00477A66: 83 C4 08           add         esp,8
+  00477A69: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477A6F: 85 F6              test        esi,esi
+  00477A71: 0F 84 B2 05 00 00  je          00478029
+  00477A77: 8B 06              mov         eax,dword ptr [esi]
+  00477A79: 24 07              and         al,7
+  00477A7B: 3C 01              cmp         al,1
+  00477A7D: 74 11              je          00477A90
+  00477A7F: 85 F6              test        esi,esi
+  00477A81: 0F 84 A2 05 00 00  je          00478029
+  00477A87: 8B 06              mov         eax,dword ptr [esi]
+  00477A89: 83 E0 07           and         eax,7
+  00477A8C: 3C 06              cmp         al,6
+  00477A8E: 75 6D              jne         00477AFD
+  00477A90: 8B 16              mov         edx,dword ptr [esi]
+  00477A92: 8B CE              mov         ecx,esi
+  00477A94: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477A97: 8B 12              mov         edx,dword ptr [edx]
+  00477A99: E8 02 D8 0D 00     call        005552A0
+  00477A9E: 8B F8              mov         edi,eax
+  00477AA0: 85 FF              test        edi,edi
+  00477AA2: 74 14              je          00477AB8
+  00477AA4: 68 E4 C8 63 00     push        offset ??_C@_0L@BNCNONE@CriDmgRate@
+  00477AA9: 6A 10              push        10h
+  00477AAB: 8D 4F 04           lea         ecx,[edi+4]
+  00477AAE: 8B D7              mov         edx,edi
+  00477AB0: E8 1B DC 0D 00     call        005556D0
+  00477AB5: 83 C4 08           add         esp,8
+  00477AB8: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477ABE: 85 FF              test        edi,edi
+  00477AC0: 74 2D              je          00477AEF
+  00477AC2: FF 70 2C           push        dword ptr [eax+2Ch]
+  00477AC5: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477ACB: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477AD0: 50                 push        eax
+  00477AD1: E8 9A 3A 06 00     call        _sprintf
+  00477AD6: 83 C4 0C           add         esp,0Ch
+  00477AD9: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477ADF: 8B D7              mov         edx,edi
+  00477AE1: 8D 4F 08           lea         ecx,[edi+8]
+  00477AE4: 50                 push        eax
+  00477AE5: 6A 08              push        8
+  00477AE7: E8 E4 DB 0D 00     call        005556D0
+  00477AEC: 83 C4 08           add         esp,8
+  00477AEF: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477AF5: 85 F6              test        esi,esi
+  00477AF7: 0F 84 2C 05 00 00  je          00478029
+  00477AFD: 8B 06              mov         eax,dword ptr [esi]
+  00477AFF: 24 07              and         al,7
+  00477B01: 3C 01              cmp         al,1
+  00477B03: 74 11              je          00477B16
+  00477B05: 85 F6              test        esi,esi
+  00477B07: 0F 84 1C 05 00 00  je          00478029
+  00477B0D: 8B 06              mov         eax,dword ptr [esi]
+  00477B0F: 83 E0 07           and         eax,7
+  00477B12: 3C 06              cmp         al,6
+  00477B14: 75 6D              jne         00477B83
+  00477B16: 8B 16              mov         edx,dword ptr [esi]
+  00477B18: 8B CE              mov         ecx,esi
+  00477B1A: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477B1D: 8B 12              mov         edx,dword ptr [edx]
+  00477B1F: E8 7C D7 0D 00     call        005552A0
+  00477B24: 8B F8              mov         edi,eax
+  00477B26: 85 FF              test        edi,edi
+  00477B28: 74 14              je          00477B3E
+  00477B2A: 68 F0 C8 63 00     push        offset ??_C@_0O@OONAIFMC@DoubleDmgRate@
+  00477B2F: 6A 10              push        10h
+  00477B31: 8D 4F 04           lea         ecx,[edi+4]
+  00477B34: 8B D7              mov         edx,edi
+  00477B36: E8 95 DB 0D 00     call        005556D0
+  00477B3B: 83 C4 08           add         esp,8
+  00477B3E: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477B44: 85 FF              test        edi,edi
+  00477B46: 74 2D              je          00477B75
+  00477B48: FF 70 30           push        dword ptr [eax+30h]
+  00477B4B: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477B51: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477B56: 50                 push        eax
+  00477B57: E8 14 3A 06 00     call        _sprintf
+  00477B5C: 83 C4 0C           add         esp,0Ch
+  00477B5F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477B65: 8B D7              mov         edx,edi
+  00477B67: 8D 4F 08           lea         ecx,[edi+8]
+  00477B6A: 50                 push        eax
+  00477B6B: 6A 08              push        8
+  00477B6D: E8 5E DB 0D 00     call        005556D0
+  00477B72: 83 C4 08           add         esp,8
+  00477B75: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477B7B: 85 F6              test        esi,esi
+  00477B7D: 0F 84 A6 04 00 00  je          00478029
+  00477B83: 8B 06              mov         eax,dword ptr [esi]
+  00477B85: 24 07              and         al,7
+  00477B87: 3C 01              cmp         al,1
+  00477B89: 74 11              je          00477B9C
+  00477B8B: 85 F6              test        esi,esi
+  00477B8D: 0F 84 96 04 00 00  je          00478029
+  00477B93: 8B 06              mov         eax,dword ptr [esi]
+  00477B95: 83 E0 07           and         eax,7
+  00477B98: 3C 06              cmp         al,6
+  00477B9A: 75 6D              jne         00477C09
+  00477B9C: 8B 16              mov         edx,dword ptr [esi]
+  00477B9E: 8B CE              mov         ecx,esi
+  00477BA0: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477BA3: 8B 12              mov         edx,dword ptr [edx]
+  00477BA5: E8 F6 D6 0D 00     call        005552A0
+  00477BAA: 8B F8              mov         edi,eax
+  00477BAC: 85 FF              test        edi,edi
+  00477BAE: 74 14              je          00477BC4
+  00477BB0: 68 00 C9 63 00     push        offset ??_C@_0N@DCBGEKBJ@ResistDouble@
+  00477BB5: 6A 10              push        10h
+  00477BB7: 8D 4F 04           lea         ecx,[edi+4]
+  00477BBA: 8B D7              mov         edx,edi
+  00477BBC: E8 0F DB 0D 00     call        005556D0
+  00477BC1: 83 C4 08           add         esp,8
+  00477BC4: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477BCA: 85 FF              test        edi,edi
+  00477BCC: 74 2D              je          00477BFB
+  00477BCE: FF 70 34           push        dword ptr [eax+34h]
+  00477BD1: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477BD7: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477BDC: 50                 push        eax
+  00477BDD: E8 8E 39 06 00     call        _sprintf
+  00477BE2: 83 C4 0C           add         esp,0Ch
+  00477BE5: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477BEB: 8B D7              mov         edx,edi
+  00477BED: 8D 4F 08           lea         ecx,[edi+8]
+  00477BF0: 50                 push        eax
+  00477BF1: 6A 08              push        8
+  00477BF3: E8 D8 DA 0D 00     call        005556D0
+  00477BF8: 83 C4 08           add         esp,8
+  00477BFB: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477C01: 85 F6              test        esi,esi
+  00477C03: 0F 84 20 04 00 00  je          00478029
+  00477C09: 8B 06              mov         eax,dword ptr [esi]
+  00477C0B: 24 07              and         al,7
+  00477C0D: 3C 01              cmp         al,1
+  00477C0F: 74 11              je          00477C22
+  00477C11: 85 F6              test        esi,esi
+  00477C13: 0F 84 10 04 00 00  je          00478029
+  00477C19: 8B 06              mov         eax,dword ptr [esi]
+  00477C1B: 83 E0 07           and         eax,7
+  00477C1E: 3C 06              cmp         al,6
+  00477C20: 75 6D              jne         00477C8F
+  00477C22: 8B 16              mov         edx,dword ptr [esi]
+  00477C24: 8B CE              mov         ecx,esi
+  00477C26: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477C29: 8B 12              mov         edx,dword ptr [edx]
+  00477C2B: E8 70 D6 0D 00     call        005552A0
+  00477C30: 8B F8              mov         edi,eax
+  00477C32: 85 FF              test        edi,edi
+  00477C34: 74 14              je          00477C4A
+  00477C36: 68 10 C9 63 00     push        offset ??_C@_0BA@LDIEIGGN@ResistIgnoreDef@
+  00477C3B: 6A 10              push        10h
+  00477C3D: 8D 4F 04           lea         ecx,[edi+4]
+  00477C40: 8B D7              mov         edx,edi
+  00477C42: E8 89 DA 0D 00     call        005556D0
+  00477C47: 83 C4 08           add         esp,8
+  00477C4A: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477C50: 85 FF              test        edi,edi
+  00477C52: 74 2D              je          00477C81
+  00477C54: FF 70 38           push        dword ptr [eax+38h]
+  00477C57: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477C5D: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477C62: 50                 push        eax
+  00477C63: E8 08 39 06 00     call        _sprintf
+  00477C68: 83 C4 0C           add         esp,0Ch
+  00477C6B: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477C71: 8B D7              mov         edx,edi
+  00477C73: 8D 4F 08           lea         ecx,[edi+8]
+  00477C76: 50                 push        eax
+  00477C77: 6A 08              push        8
+  00477C79: E8 52 DA 0D 00     call        005556D0
+  00477C7E: 83 C4 08           add         esp,8
+  00477C81: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477C87: 85 F6              test        esi,esi
+  00477C89: 0F 84 9A 03 00 00  je          00478029
+  00477C8F: 8B 06              mov         eax,dword ptr [esi]
+  00477C91: 24 07              and         al,7
+  00477C93: 3C 01              cmp         al,1
+  00477C95: 74 11              je          00477CA8
+  00477C97: 85 F6              test        esi,esi
+  00477C99: 0F 84 8A 03 00 00  je          00478029
+  00477C9F: 8B 06              mov         eax,dword ptr [esi]
+  00477CA1: 83 E0 07           and         eax,7
+  00477CA4: 3C 06              cmp         al,6
+  00477CA6: 75 6D              jne         00477D15
+  00477CA8: 8B 16              mov         edx,dword ptr [esi]
+  00477CAA: 8B CE              mov         ecx,esi
+  00477CAC: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477CAF: 8B 12              mov         edx,dword ptr [edx]
+  00477CB1: E8 EA D5 0D 00     call        005552A0
+  00477CB6: 8B F8              mov         edi,eax
+  00477CB8: 85 FF              test        edi,edi
+  00477CBA: 74 14              je          00477CD0
+  00477CBC: 68 20 C9 63 00     push        offset ??_C@_0P@NDNLCHID@ResistIgnoreSD@
+  00477CC1: 6A 10              push        10h
+  00477CC3: 8D 4F 04           lea         ecx,[edi+4]
+  00477CC6: 8B D7              mov         edx,edi
+  00477CC8: E8 03 DA 0D 00     call        005556D0
+  00477CCD: 83 C4 08           add         esp,8
+  00477CD0: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477CD6: 85 FF              test        edi,edi
+  00477CD8: 74 2D              je          00477D07
+  00477CDA: FF 70 3C           push        dword ptr [eax+3Ch]
+  00477CDD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477CE3: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477CE8: 50                 push        eax
+  00477CE9: E8 82 38 06 00     call        _sprintf
+  00477CEE: 83 C4 0C           add         esp,0Ch
+  00477CF1: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477CF7: 8B D7              mov         edx,edi
+  00477CF9: 8D 4F 08           lea         ecx,[edi+8]
+  00477CFC: 50                 push        eax
+  00477CFD: 6A 08              push        8
+  00477CFF: E8 CC D9 0D 00     call        005556D0
+  00477D04: 83 C4 08           add         esp,8
+  00477D07: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477D0D: 85 F6              test        esi,esi
+  00477D0F: 0F 84 14 03 00 00  je          00478029
+  00477D15: 8B 06              mov         eax,dword ptr [esi]
+  00477D17: 24 07              and         al,7
+  00477D19: 3C 01              cmp         al,1
+  00477D1B: 74 11              je          00477D2E
+  00477D1D: 85 F6              test        esi,esi
+  00477D1F: 0F 84 04 03 00 00  je          00478029
+  00477D25: 8B 06              mov         eax,dword ptr [esi]
+  00477D27: 83 E0 07           and         eax,7
+  00477D2A: 3C 06              cmp         al,6
+  00477D2C: 75 6D              jne         00477D9B
+  00477D2E: 8B 16              mov         edx,dword ptr [esi]
+  00477D30: 8B CE              mov         ecx,esi
+  00477D32: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477D35: 8B 12              mov         edx,dword ptr [edx]
+  00477D37: E8 64 D5 0D 00     call        005552A0
+  00477D3C: 8B F8              mov         edi,eax
+  00477D3E: 85 FF              test        edi,edi
+  00477D40: 74 14              je          00477D56
+  00477D42: 68 30 C9 63 00     push        offset ??_C@_0L@BKONCCPA@ResistCrit@
+  00477D47: 6A 10              push        10h
+  00477D49: 8D 4F 04           lea         ecx,[edi+4]
+  00477D4C: 8B D7              mov         edx,edi
+  00477D4E: E8 7D D9 0D 00     call        005556D0
+  00477D53: 83 C4 08           add         esp,8
+  00477D56: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477D5C: 85 FF              test        edi,edi
+  00477D5E: 74 2D              je          00477D8D
+  00477D60: FF 70 40           push        dword ptr [eax+40h]
+  00477D63: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477D69: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477D6E: 50                 push        eax
+  00477D6F: E8 FC 37 06 00     call        _sprintf
+  00477D74: 83 C4 0C           add         esp,0Ch
+  00477D77: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477D7D: 8B D7              mov         edx,edi
+  00477D7F: 8D 4F 08           lea         ecx,[edi+8]
+  00477D82: 50                 push        eax
+  00477D83: 6A 08              push        8
+  00477D85: E8 46 D9 0D 00     call        005556D0
+  00477D8A: 83 C4 08           add         esp,8
+  00477D8D: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477D93: 85 F6              test        esi,esi
+  00477D95: 0F 84 8E 02 00 00  je          00478029
+  00477D9B: 8B 06              mov         eax,dword ptr [esi]
+  00477D9D: 24 07              and         al,7
+  00477D9F: 3C 01              cmp         al,1
+  00477DA1: 74 11              je          00477DB4
+  00477DA3: 85 F6              test        esi,esi
+  00477DA5: 0F 84 7E 02 00 00  je          00478029
+  00477DAB: 8B 06              mov         eax,dword ptr [esi]
+  00477DAD: 83 E0 07           and         eax,7
+  00477DB0: 3C 06              cmp         al,6
+  00477DB2: 75 6D              jne         00477E21
+  00477DB4: 8B 16              mov         edx,dword ptr [esi]
+  00477DB6: 8B CE              mov         ecx,esi
+  00477DB8: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477DBB: 8B 12              mov         edx,dword ptr [edx]
+  00477DBD: E8 DE D4 0D 00     call        005552A0
+  00477DC2: 8B F8              mov         edi,eax
+  00477DC4: 85 FF              test        edi,edi
+  00477DC6: 74 14              je          00477DDC
+  00477DC8: 68 3C C9 63 00     push        offset ??_C@_09DFBFBGHO@ResistExl@
+  00477DCD: 6A 10              push        10h
+  00477DCF: 8D 4F 04           lea         ecx,[edi+4]
+  00477DD2: 8B D7              mov         edx,edi
+  00477DD4: E8 F7 D8 0D 00     call        005556D0
+  00477DD9: 83 C4 08           add         esp,8
+  00477DDC: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477DE2: 85 FF              test        edi,edi
+  00477DE4: 74 2D              je          00477E13
+  00477DE6: FF 70 44           push        dword ptr [eax+44h]
+  00477DE9: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477DEF: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477DF4: 50                 push        eax
+  00477DF5: E8 76 37 06 00     call        _sprintf
+  00477DFA: 83 C4 0C           add         esp,0Ch
+  00477DFD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477E03: 8B D7              mov         edx,edi
+  00477E05: 8D 4F 08           lea         ecx,[edi+8]
+  00477E08: 50                 push        eax
+  00477E09: 6A 08              push        8
+  00477E0B: E8 C0 D8 0D 00     call        005556D0
+  00477E10: 83 C4 08           add         esp,8
+  00477E13: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477E19: 85 F6              test        esi,esi
+  00477E1B: 0F 84 08 02 00 00  je          00478029
+  00477E21: 8B 06              mov         eax,dword ptr [esi]
+  00477E23: 24 07              and         al,7
+  00477E25: 3C 01              cmp         al,1
+  00477E27: 74 11              je          00477E3A
+  00477E29: 85 F6              test        esi,esi
+  00477E2B: 0F 84 F8 01 00 00  je          00478029
+  00477E31: 8B 06              mov         eax,dword ptr [esi]
+  00477E33: 83 E0 07           and         eax,7
+  00477E36: 3C 06              cmp         al,6
+  00477E38: 75 6D              jne         00477EA7
+  00477E3A: 8B 16              mov         edx,dword ptr [esi]
+  00477E3C: 8B CE              mov         ecx,esi
+  00477E3E: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477E41: 8B 12              mov         edx,dword ptr [edx]
+  00477E43: E8 58 D4 0D 00     call        005552A0
+  00477E48: 8B F8              mov         edi,eax
+  00477E4A: 85 FF              test        edi,edi
+  00477E4C: 74 14              je          00477E62
+  00477E4E: 68 48 C9 63 00     push        offset ??_C@_0L@PKHHEKGB@ResistStun@
+  00477E53: 6A 10              push        10h
+  00477E55: 8D 4F 04           lea         ecx,[edi+4]
+  00477E58: 8B D7              mov         edx,edi
+  00477E5A: E8 71 D8 0D 00     call        005556D0
+  00477E5F: 83 C4 08           add         esp,8
+  00477E62: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477E68: 85 FF              test        edi,edi
+  00477E6A: 74 2D              je          00477E99
+  00477E6C: FF 70 48           push        dword ptr [eax+48h]
+  00477E6F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477E75: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477E7A: 50                 push        eax
+  00477E7B: E8 F0 36 06 00     call        _sprintf
+  00477E80: 83 C4 0C           add         esp,0Ch
+  00477E83: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477E89: 8B D7              mov         edx,edi
+  00477E8B: 8D 4F 08           lea         ecx,[edi+8]
+  00477E8E: 50                 push        eax
+  00477E8F: 6A 08              push        8
+  00477E91: E8 3A D8 0D 00     call        005556D0
+  00477E96: 83 C4 08           add         esp,8
+  00477E99: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477E9F: 85 F6              test        esi,esi
+  00477EA1: 0F 84 82 01 00 00  je          00478029
+  00477EA7: 8B 06              mov         eax,dword ptr [esi]
+  00477EA9: 24 07              and         al,7
+  00477EAB: 3C 01              cmp         al,1
+  00477EAD: 74 11              je          00477EC0
+  00477EAF: 85 F6              test        esi,esi
+  00477EB1: 0F 84 72 01 00 00  je          00478029
+  00477EB7: 8B 06              mov         eax,dword ptr [esi]
+  00477EB9: 83 E0 07           and         eax,7
+  00477EBC: 3C 06              cmp         al,6
+  00477EBE: 75 6D              jne         00477F2D
+  00477EC0: 8B 16              mov         edx,dword ptr [esi]
+  00477EC2: 8B CE              mov         ecx,esi
+  00477EC4: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477EC7: 8B 12              mov         edx,dword ptr [edx]
+  00477EC9: E8 D2 D3 0D 00     call        005552A0
+  00477ECE: 8B F8              mov         edi,eax
+  00477ED0: 85 FF              test        edi,edi
+  00477ED2: 74 14              je          00477EE8
+  00477ED4: 68 54 C9 63 00     push        offset ??_C@_07NLAFAPNO@Reflect@
+  00477ED9: 6A 10              push        10h
+  00477EDB: 8D 4F 04           lea         ecx,[edi+4]
+  00477EDE: 8B D7              mov         edx,edi
+  00477EE0: E8 EB D7 0D 00     call        005556D0
+  00477EE5: 83 C4 08           add         esp,8
+  00477EE8: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477EEE: 85 FF              test        edi,edi
+  00477EF0: 74 2D              je          00477F1F
+  00477EF2: FF 70 4C           push        dword ptr [eax+4Ch]
+  00477EF5: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477EFB: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477F00: 50                 push        eax
+  00477F01: E8 6A 36 06 00     call        _sprintf
+  00477F06: 83 C4 0C           add         esp,0Ch
+  00477F09: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477F0F: 8B D7              mov         edx,edi
+  00477F11: 8D 4F 08           lea         ecx,[edi+8]
+  00477F14: 50                 push        eax
+  00477F15: 6A 08              push        8
+  00477F17: E8 B4 D7 0D 00     call        005556D0
+  00477F1C: 83 C4 08           add         esp,8
+  00477F1F: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477F25: 85 F6              test        esi,esi
+  00477F27: 0F 84 FC 00 00 00  je          00478029
+  00477F2D: 8B 06              mov         eax,dword ptr [esi]
+  00477F2F: 24 07              and         al,7
+  00477F31: 3C 01              cmp         al,1
+  00477F33: 74 11              je          00477F46
+  00477F35: 85 F6              test        esi,esi
+  00477F37: 0F 84 EC 00 00 00  je          00478029
+  00477F3D: 8B 06              mov         eax,dword ptr [esi]
+  00477F3F: 83 E0 07           and         eax,7
+  00477F42: 3C 06              cmp         al,6
+  00477F44: 75 69              jne         00477FAF
+  00477F46: 8B 16              mov         edx,dword ptr [esi]
+  00477F48: 8B CE              mov         ecx,esi
+  00477F4A: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477F4D: 8B 12              mov         edx,dword ptr [edx]
+  00477F4F: E8 4C D3 0D 00     call        005552A0
+  00477F54: 8B F8              mov         edi,eax
+  00477F56: 85 FF              test        edi,edi
+  00477F58: 74 14              je          00477F6E
+  00477F5A: 68 24 85 63 00     push        offset ??_C@_04OKOFBOPB@Time@
+  00477F5F: 6A 10              push        10h
+  00477F61: 8D 4F 04           lea         ecx,[edi+4]
+  00477F64: 8B D7              mov         edx,edi
+  00477F66: E8 65 D7 0D 00     call        005556D0
+  00477F6B: 83 C4 08           add         esp,8
+  00477F6E: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477F74: 85 FF              test        edi,edi
+  00477F76: 74 2D              je          00477FA5
+  00477F78: FF 70 50           push        dword ptr [eax+50h]
+  00477F7B: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477F81: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00477F86: 50                 push        eax
+  00477F87: E8 E4 35 06 00     call        _sprintf
+  00477F8C: 83 C4 0C           add         esp,0Ch
+  00477F8F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477F95: 8B D7              mov         edx,edi
+  00477F97: 8D 4F 08           lea         ecx,[edi+8]
+  00477F9A: 50                 push        eax
+  00477F9B: 6A 08              push        8
+  00477F9D: E8 2E D7 0D 00     call        005556D0
+  00477FA2: 83 C4 08           add         esp,8
+  00477FA5: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00477FAB: 85 F6              test        esi,esi
+  00477FAD: 74 7A              je          00478029
+  00477FAF: 8B 06              mov         eax,dword ptr [esi]
+  00477FB1: 24 07              and         al,7
+  00477FB3: 3C 01              cmp         al,1
+  00477FB5: 74 0D              je          00477FC4
+  00477FB7: 85 F6              test        esi,esi
+  00477FB9: 74 6E              je          00478029
+  00477FBB: 8B 06              mov         eax,dword ptr [esi]
+  00477FBD: 83 E0 07           and         eax,7
+  00477FC0: 3C 06              cmp         al,6
+  00477FC2: 75 65              jne         00478029
+  00477FC4: 8B 16              mov         edx,dword ptr [esi]
+  00477FC6: 8B CE              mov         ecx,esi
+  00477FC8: 83 E2 E0           and         edx,0FFFFFFE0h
+  00477FCB: 8B 12              mov         edx,dword ptr [edx]
+  00477FCD: E8 CE D2 0D 00     call        005552A0
+  00477FD2: 8B F0              mov         esi,eax
+  00477FD4: 85 F6              test        esi,esi
+  00477FD6: 74 14              je          00477FEC
+  00477FD8: 68 5C C9 63 00     push        offset ??_C@_09DLFAMNKA@SetOption@
+  00477FDD: 6A 10              push        10h
+  00477FDF: 8D 4E 04           lea         ecx,[esi+4]
+  00477FE2: 8B D6              mov         edx,esi
+  00477FE4: E8 E7 D6 0D 00     call        005556D0
+  00477FE9: 83 C4 08           add         esp,8
+  00477FEC: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00477FF2: 85 F6              test        esi,esi
+  00477FF4: 74 2D              je          00478023
+  00477FF6: FF 70 54           push        dword ptr [eax+54h]
+  00477FF9: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00477FFF: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478004: 50                 push        eax
+  00478005: E8 66 35 06 00     call        _sprintf
+  0047800A: 83 C4 0C           add         esp,0Ch
+  0047800D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478013: 8B D6              mov         edx,esi
+  00478015: 8D 4E 08           lea         ecx,[esi+8]
+  00478018: 50                 push        eax
+  00478019: 6A 08              push        8
+  0047801B: E8 B0 D6 0D 00     call        005556D0
+  00478020: 83 C4 08           add         esp,8
+  00478023: 8B BD A0 FE FF FF  mov         edi,dword ptr [ebp-160h]
+  00478029: 8B 85 9C FE FF FF  mov         eax,dword ptr [ebp-164h]
+  0047802F: 8B 95 98 FE FF FF  mov         edx,dword ptr [ebp-168h]
+  00478035: 83 C7 58           add         edi,58h
+  00478038: 89 BD A0 FE FF FF  mov         dword ptr [ebp-160h],edi
+  0047803E: 3B FA              cmp         edi,edx
+  00478040: 0F 85 0A F4 FF FF  jne         00477450
+  00478046: 8B 9D 94 FE FF FF  mov         ebx,dword ptr [ebp-16Ch]
+  0047804C: 8B 95 94 FE FF FF  mov         edx,dword ptr [ebp-16Ch]
+  00478052: 8B 5B 0C           mov         ebx,dword ptr [ebx+0Ch]
+  00478055: 89 9D A0 FE FF FF  mov         dword ptr [ebp-160h],ebx
+  0047805B: 8B 52 10           mov         edx,dword ptr [edx+10h]
+  0047805E: 89 95 98 FE FF FF  mov         dword ptr [ebp-168h],edx
+  00478064: 3B DA              cmp         ebx,edx
+  00478066: 0F 84 F2 0A 00 00  je          00478B5E
+  0047806C: 0F 1F 40 00        nop         dword ptr [eax]
+  00478070: 85 C0              test        eax,eax
+  00478072: 0F 84 D5 0A 00 00  je          00478B4D
+  00478078: 8B 08              mov         ecx,dword ptr [eax]
+  0047807A: 83 E1 07           and         ecx,7
+  0047807D: 41                 inc         ecx
+  0047807E: 83 F9 01           cmp         ecx,1
+  00478081: 74 09              je          0047808C
+  00478083: 83 F9 02           cmp         ecx,2
+  00478086: 0F 85 C1 0A 00 00  jne         00478B4D
+  0047808C: 8B 08              mov         ecx,dword ptr [eax]
+  0047808E: 83 E1 E0           and         ecx,0FFFFFFE0h
+  00478091: 6A 02              push        2
+  00478093: 8B 11              mov         edx,dword ptr [ecx]
+  00478095: 8B C8              mov         ecx,eax
+  00478097: E8 64 D1 0D 00     call        00555200
+  0047809C: 8B F0              mov         esi,eax
+  0047809E: 83 C4 04           add         esp,4
+  004780A1: 8B FE              mov         edi,esi
+  004780A3: 85 F6              test        esi,esi
+  004780A5: 0F 84 97 01 00 00  je          00478242
+  004780AB: 8B 06              mov         eax,dword ptr [esi]
+  004780AD: 83 E0 07           and         eax,7
+  004780B0: 40                 inc         eax
+  004780B1: 83 E8 02           sub         eax,2
+  004780B4: 74 0A              je          004780C0
+  004780B6: 83 E8 04           sub         eax,4
+  004780B9: 74 05              je          004780C0
+  004780BB: 83 E8 01           sub         eax,1
+  004780BE: 75 16              jne         004780D6
+  004780C0: 68 5C 97 63 00     push        offset ??_C@_07FBEEDFAI@ItemSet@
+  004780C5: 6A 10              push        10h
+  004780C7: 8D 4F 08           lea         ecx,[edi+8]
+  004780CA: 8B D7              mov         edx,edi
+  004780CC: E8 FF D5 0D 00     call        005556D0
+  004780D1: 83 C4 08           add         esp,8
+  004780D4: 8B F7              mov         esi,edi
+  004780D6: 8B 06              mov         eax,dword ptr [esi]
+  004780D8: 24 07              and         al,7
+  004780DA: 3C 01              cmp         al,1
+  004780DC: 74 11              je          004780EF
+  004780DE: 85 F6              test        esi,esi
+  004780E0: 0F 84 5C 01 00 00  je          00478242
+  004780E6: 8B 06              mov         eax,dword ptr [esi]
+  004780E8: 83 E0 07           and         eax,7
+  004780EB: 3C 06              cmp         al,6
+  004780ED: 75 5A              jne         00478149
+  004780EF: 8B 16              mov         edx,dword ptr [esi]
+  004780F1: 8B CE              mov         ecx,esi
+  004780F3: 83 E2 E0           and         edx,0FFFFFFE0h
+  004780F6: 8B 12              mov         edx,dword ptr [edx]
+  004780F8: E8 A3 D1 0D 00     call        005552A0
+  004780FD: 8B F8              mov         edi,eax
+  004780FF: 85 FF              test        edi,edi
+  00478101: 74 14              je          00478117
+  00478103: 68 10 82 63 00     push        offset ??_C@_05FNNGFGLF@Index@
+  00478108: 6A 10              push        10h
+  0047810A: 8D 4F 04           lea         ecx,[edi+4]
+  0047810D: 8B D7              mov         edx,edi
+  0047810F: E8 BC D5 0D 00     call        005556D0
+  00478114: 83 C4 08           add         esp,8
+  00478117: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0047811A: 85 FF              test        edi,edi
+  0047811C: 74 2B              je          00478149
+  0047811E: 50                 push        eax
+  0047811F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478125: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  0047812A: 50                 push        eax
+  0047812B: E8 40 34 06 00     call        _sprintf
+  00478130: 83 C4 0C           add         esp,0Ch
+  00478133: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478139: 8B D7              mov         edx,edi
+  0047813B: 8D 4F 08           lea         ecx,[edi+8]
+  0047813E: 50                 push        eax
+  0047813F: 6A 08              push        8
+  00478141: E8 8A D5 0D 00     call        005556D0
+  00478146: 83 C4 08           add         esp,8
+  00478149: 85 F6              test        esi,esi
+  0047814B: 0F 84 F1 00 00 00  je          00478242
+  00478151: 8B 06              mov         eax,dword ptr [esi]
+  00478153: 24 07              and         al,7
+  00478155: 3C 01              cmp         al,1
+  00478157: 74 11              je          0047816A
+  00478159: 85 F6              test        esi,esi
+  0047815B: 0F 84 E1 00 00 00  je          00478242
+  00478161: 8B 06              mov         eax,dword ptr [esi]
+  00478163: 83 E0 07           and         eax,7
+  00478166: 3C 06              cmp         al,6
+  00478168: 75 5F              jne         004781C9
+  0047816A: 8B 16              mov         edx,dword ptr [esi]
+  0047816C: 8B CE              mov         ecx,esi
+  0047816E: 83 E2 E0           and         edx,0FFFFFFE0h
+  00478171: 8B 12              mov         edx,dword ptr [edx]
+  00478173: E8 28 D1 0D 00     call        005552A0
+  00478178: 8B F8              mov         edi,eax
+  0047817A: 85 FF              test        edi,edi
+  0047817C: 74 14              je          00478192
+  0047817E: 68 AC C8 63 00     push        offset ??_C@_06LBEFNKEP@Effect@
+  00478183: 6A 10              push        10h
+  00478185: 8D 4F 04           lea         ecx,[edi+4]
+  00478188: 8B D7              mov         edx,edi
+  0047818A: E8 41 D5 0D 00     call        005556D0
+  0047818F: 83 C4 08           add         esp,8
+  00478192: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478198: 85 FF              test        edi,edi
+  0047819A: 74 2D              je          004781C9
+  0047819C: FF 70 08           push        dword ptr [eax+8]
+  0047819F: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004781A5: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004781AA: 50                 push        eax
+  004781AB: E8 C0 33 06 00     call        _sprintf
+  004781B0: 83 C4 0C           add         esp,0Ch
+  004781B3: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004781B9: 8B D7              mov         edx,edi
+  004781BB: 8D 4F 08           lea         ecx,[edi+8]
+  004781BE: 50                 push        eax
+  004781BF: 6A 08              push        8
+  004781C1: E8 0A D5 0D 00     call        005556D0
+  004781C6: 83 C4 08           add         esp,8
+  004781C9: 85 F6              test        esi,esi
+  004781CB: 74 75              je          00478242
+  004781CD: 8B 06              mov         eax,dword ptr [esi]
+  004781CF: 24 07              and         al,7
+  004781D1: 3C 01              cmp         al,1
+  004781D3: 74 0D              je          004781E2
+  004781D5: 85 F6              test        esi,esi
+  004781D7: 74 69              je          00478242
+  004781D9: 8B 06              mov         eax,dword ptr [esi]
+  004781DB: 83 E0 07           and         eax,7
+  004781DE: 3C 06              cmp         al,6
+  004781E0: 75 60              jne         00478242
+  004781E2: 8B 16              mov         edx,dword ptr [esi]
+  004781E4: 8B CE              mov         ecx,esi
+  004781E6: 83 E2 E0           and         edx,0FFFFFFE0h
+  004781E9: 8B 12              mov         edx,dword ptr [edx]
+  004781EB: E8 B0 D0 0D 00     call        005552A0
+  004781F0: 8B F8              mov         edi,eax
+  004781F2: 85 FF              test        edi,edi
+  004781F4: 74 14              je          0047820A
+  004781F6: 68 B4 C8 63 00     push        offset ??_C@_02FLIMDJ@Lv@
+  004781FB: 6A 10              push        10h
+  004781FD: 8D 4F 04           lea         ecx,[edi+4]
+  00478200: 8B D7              mov         edx,edi
+  00478202: E8 C9 D4 0D 00     call        005556D0
+  00478207: 83 C4 08           add         esp,8
+  0047820A: 8B 9D A0 FE FF FF  mov         ebx,dword ptr [ebp-160h]
+  00478210: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  00478213: 85 FF              test        edi,edi
+  00478215: 74 31              je          00478248
+  00478217: 50                 push        eax
+  00478218: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047821E: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478223: 50                 push        eax
+  00478224: E8 47 33 06 00     call        _sprintf
+  00478229: 83 C4 0C           add         esp,0Ch
+  0047822C: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478232: 8B D7              mov         edx,edi
+  00478234: 8D 4F 08           lea         ecx,[edi+8]
+  00478237: 50                 push        eax
+  00478238: 6A 08              push        8
+  0047823A: E8 91 D4 0D 00     call        005556D0
+  0047823F: 83 C4 08           add         esp,8
+  00478242: 8B 9D A0 FE FF FF  mov         ebx,dword ptr [ebp-160h]
+  00478248: 85 F6              test        esi,esi
+  0047824A: 0F 84 EB 08 00 00  je          00478B3B
+  00478250: 8B 06              mov         eax,dword ptr [esi]
+  00478252: 24 07              and         al,7
+  00478254: 3C 01              cmp         al,1
+  00478256: 74 11              je          00478269
+  00478258: 85 F6              test        esi,esi
+  0047825A: 0F 84 DB 08 00 00  je          00478B3B
+  00478260: 8B 06              mov         eax,dword ptr [esi]
+  00478262: 83 E0 07           and         eax,7
+  00478265: 3C 06              cmp         al,6
+  00478267: 75 5A              jne         004782C3
+  00478269: 8B 16              mov         edx,dword ptr [esi]
+  0047826B: 8B CE              mov         ecx,esi
+  0047826D: 83 E2 E0           and         edx,0FFFFFFE0h
+  00478270: 8B 12              mov         edx,dword ptr [edx]
+  00478272: E8 29 D0 0D 00     call        005552A0
+  00478277: 8B F8              mov         edi,eax
+  00478279: 85 FF              test        edi,edi
+  0047827B: 74 14              je          00478291
+  0047827D: 68 CC 7F 63 00     push        offset ??_C@_03CGOLMCK@Opt@
+  00478282: 6A 10              push        10h
+  00478284: 8D 4F 04           lea         ecx,[edi+4]
+  00478287: 8B D7              mov         edx,edi
+  00478289: E8 42 D4 0D 00     call        005556D0
+  0047828E: 83 C4 08           add         esp,8
+  00478291: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  00478294: 85 FF              test        edi,edi
+  00478296: 74 2B              je          004782C3
+  00478298: 50                 push        eax
+  00478299: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047829F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004782A4: 50                 push        eax
+  004782A5: E8 C6 32 06 00     call        _sprintf
+  004782AA: 83 C4 0C           add         esp,0Ch
+  004782AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004782B3: 8B D7              mov         edx,edi
+  004782B5: 8D 4F 08           lea         ecx,[edi+8]
+  004782B8: 50                 push        eax
+  004782B9: 6A 08              push        8
+  004782BB: E8 10 D4 0D 00     call        005556D0
+  004782C0: 83 C4 08           add         esp,8
+  004782C3: 85 F6              test        esi,esi
+  004782C5: 0F 84 70 08 00 00  je          00478B3B
+  004782CB: 8B 06              mov         eax,dword ptr [esi]
+  004782CD: 24 07              and         al,7
+  004782CF: 3C 01              cmp         al,1
+  004782D1: 74 11              je          004782E4
+  004782D3: 85 F6              test        esi,esi
+  004782D5: 0F 84 60 08 00 00  je          00478B3B
+  004782DB: 8B 06              mov         eax,dword ptr [esi]
+  004782DD: 83 E0 07           and         eax,7
+  004782E0: 3C 06              cmp         al,6
+  004782E2: 75 67              jne         0047834B
+  004782E4: 8B 16              mov         edx,dword ptr [esi]
+  004782E6: 8B CE              mov         ecx,esi
+  004782E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004782EB: 8B 12              mov         edx,dword ptr [edx]
+  004782ED: E8 AE CF 0D 00     call        005552A0
+  004782F2: 8B F8              mov         edi,eax
+  004782F4: 85 FF              test        edi,edi
+  004782F6: 74 14              je          0047830C
+  004782F8: 68 B8 C8 63 00     push        offset ??_C@_03KAHOEKJK@Dmg@
+  004782FD: 6A 10              push        10h
+  004782FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478302: 8B D7              mov         edx,edi
+  00478304: E8 C7 D3 0D 00     call        005556D0
+  00478309: 83 C4 08           add         esp,8
+  0047830C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478312: 85 FF              test        edi,edi
+  00478314: 74 2D              je          00478343
+  00478316: FF 70 14           push        dword ptr [eax+14h]
+  00478319: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047831F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478324: 50                 push        eax
+  00478325: E8 46 32 06 00     call        _sprintf
+  0047832A: 83 C4 0C           add         esp,0Ch
+  0047832D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478333: 8B D7              mov         edx,edi
+  00478335: 8D 4F 08           lea         ecx,[edi+8]
+  00478338: 50                 push        eax
+  00478339: 6A 08              push        8
+  0047833B: E8 90 D3 0D 00     call        005556D0
+  00478340: 83 C4 08           add         esp,8
+  00478343: 85 F6              test        esi,esi
+  00478345: 0F 84 F0 07 00 00  je          00478B3B
+  0047834B: 8B 06              mov         eax,dword ptr [esi]
+  0047834D: 24 07              and         al,7
+  0047834F: 3C 01              cmp         al,1
+  00478351: 74 11              je          00478364
+  00478353: 85 F6              test        esi,esi
+  00478355: 0F 84 E0 07 00 00  je          00478B3B
+  0047835B: 8B 06              mov         eax,dword ptr [esi]
+  0047835D: 83 E0 07           and         eax,7
+  00478360: 3C 06              cmp         al,6
+  00478362: 75 67              jne         004783CB
+  00478364: 8B 16              mov         edx,dword ptr [esi]
+  00478366: 8B CE              mov         ecx,esi
+  00478368: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047836B: 8B 12              mov         edx,dword ptr [edx]
+  0047836D: E8 2E CF 0D 00     call        005552A0
+  00478372: 8B F8              mov         edi,eax
+  00478374: 85 FF              test        edi,edi
+  00478376: 74 14              je          0047838C
+  00478378: 68 BC C8 63 00     push        offset ??_C@_05KICACMKE@AddSD@
+  0047837D: 6A 10              push        10h
+  0047837F: 8D 4F 04           lea         ecx,[edi+4]
+  00478382: 8B D7              mov         edx,edi
+  00478384: E8 47 D3 0D 00     call        005556D0
+  00478389: 83 C4 08           add         esp,8
+  0047838C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478392: 85 FF              test        edi,edi
+  00478394: 74 2D              je          004783C3
+  00478396: FF 70 18           push        dword ptr [eax+18h]
+  00478399: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047839F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004783A4: 50                 push        eax
+  004783A5: E8 C6 31 06 00     call        _sprintf
+  004783AA: 83 C4 0C           add         esp,0Ch
+  004783AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004783B3: 8B D7              mov         edx,edi
+  004783B5: 8D 4F 08           lea         ecx,[edi+8]
+  004783B8: 50                 push        eax
+  004783B9: 6A 08              push        8
+  004783BB: E8 10 D3 0D 00     call        005556D0
+  004783C0: 83 C4 08           add         esp,8
+  004783C3: 85 F6              test        esi,esi
+  004783C5: 0F 84 70 07 00 00  je          00478B3B
+  004783CB: 8B 06              mov         eax,dword ptr [esi]
+  004783CD: 24 07              and         al,7
+  004783CF: 3C 01              cmp         al,1
+  004783D1: 74 11              je          004783E4
+  004783D3: 85 F6              test        esi,esi
+  004783D5: 0F 84 60 07 00 00  je          00478B3B
+  004783DB: 8B 06              mov         eax,dword ptr [esi]
+  004783DD: 83 E0 07           and         eax,7
+  004783E0: 3C 06              cmp         al,6
+  004783E2: 75 67              jne         0047844B
+  004783E4: 8B 16              mov         edx,dword ptr [esi]
+  004783E6: 8B CE              mov         ecx,esi
+  004783E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004783EB: 8B 12              mov         edx,dword ptr [edx]
+  004783ED: E8 AE CE 0D 00     call        005552A0
+  004783F2: 8B F8              mov         edi,eax
+  004783F4: 85 FF              test        edi,edi
+  004783F6: 74 14              je          0047840C
+  004783F8: 68 C4 C8 63 00     push        offset ??_C@_05JGPNLHGA@AddHP@
+  004783FD: 6A 10              push        10h
+  004783FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478402: 8B D7              mov         edx,edi
+  00478404: E8 C7 D2 0D 00     call        005556D0
+  00478409: 83 C4 08           add         esp,8
+  0047840C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478412: 85 FF              test        edi,edi
+  00478414: 74 2D              je          00478443
+  00478416: FF 70 1C           push        dword ptr [eax+1Ch]
+  00478419: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047841F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478424: 50                 push        eax
+  00478425: E8 46 31 06 00     call        _sprintf
+  0047842A: 83 C4 0C           add         esp,0Ch
+  0047842D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478433: 8B D7              mov         edx,edi
+  00478435: 8D 4F 08           lea         ecx,[edi+8]
+  00478438: 50                 push        eax
+  00478439: 6A 08              push        8
+  0047843B: E8 90 D2 0D 00     call        005556D0
+  00478440: 83 C4 08           add         esp,8
+  00478443: 85 F6              test        esi,esi
+  00478445: 0F 84 F0 06 00 00  je          00478B3B
+  0047844B: 8B 06              mov         eax,dword ptr [esi]
+  0047844D: 24 07              and         al,7
+  0047844F: 3C 01              cmp         al,1
+  00478451: 74 11              je          00478464
+  00478453: 85 F6              test        esi,esi
+  00478455: 0F 84 E0 06 00 00  je          00478B3B
+  0047845B: 8B 06              mov         eax,dword ptr [esi]
+  0047845D: 83 E0 07           and         eax,7
+  00478460: 3C 06              cmp         al,6
+  00478462: 75 67              jne         004784CB
+  00478464: 8B 16              mov         edx,dword ptr [esi]
+  00478466: 8B CE              mov         ecx,esi
+  00478468: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047846B: 8B 12              mov         edx,dword ptr [edx]
+  0047846D: E8 2E CE 0D 00     call        005552A0
+  00478472: 8B F8              mov         edi,eax
+  00478474: 85 FF              test        edi,edi
+  00478476: 74 14              je          0047848C
+  00478478: 68 CC C8 63 00     push        offset ??_C@_05JADGHFIL@AddMP@
+  0047847D: 6A 10              push        10h
+  0047847F: 8D 4F 04           lea         ecx,[edi+4]
+  00478482: 8B D7              mov         edx,edi
+  00478484: E8 47 D2 0D 00     call        005556D0
+  00478489: 83 C4 08           add         esp,8
+  0047848C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478492: 85 FF              test        edi,edi
+  00478494: 74 2D              je          004784C3
+  00478496: FF 70 20           push        dword ptr [eax+20h]
+  00478499: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047849F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004784A4: 50                 push        eax
+  004784A5: E8 C6 30 06 00     call        _sprintf
+  004784AA: 83 C4 0C           add         esp,0Ch
+  004784AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004784B3: 8B D7              mov         edx,edi
+  004784B5: 8D 4F 08           lea         ecx,[edi+8]
+  004784B8: 50                 push        eax
+  004784B9: 6A 08              push        8
+  004784BB: E8 10 D2 0D 00     call        005556D0
+  004784C0: 83 C4 08           add         esp,8
+  004784C3: 85 F6              test        esi,esi
+  004784C5: 0F 84 70 06 00 00  je          00478B3B
+  004784CB: 8B 06              mov         eax,dword ptr [esi]
+  004784CD: 24 07              and         al,7
+  004784CF: 3C 01              cmp         al,1
+  004784D1: 74 11              je          004784E4
+  004784D3: 85 F6              test        esi,esi
+  004784D5: 0F 84 60 06 00 00  je          00478B3B
+  004784DB: 8B 06              mov         eax,dword ptr [esi]
+  004784DD: 83 E0 07           and         eax,7
+  004784E0: 3C 06              cmp         al,6
+  004784E2: 75 67              jne         0047854B
+  004784E4: 8B 16              mov         edx,dword ptr [esi]
+  004784E6: 8B CE              mov         ecx,esi
+  004784E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004784EB: 8B 12              mov         edx,dword ptr [edx]
+  004784ED: E8 AE CD 0D 00     call        005552A0
+  004784F2: 8B F8              mov         edi,eax
+  004784F4: 85 FF              test        edi,edi
+  004784F6: 74 14              je          0047850C
+  004784F8: 68 D4 C8 63 00     push        offset ??_C@_03LHHGCKGD@Def@
+  004784FD: 6A 10              push        10h
+  004784FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478502: 8B D7              mov         edx,edi
+  00478504: E8 C7 D1 0D 00     call        005556D0
+  00478509: 83 C4 08           add         esp,8
+  0047850C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478512: 85 FF              test        edi,edi
+  00478514: 74 2D              je          00478543
+  00478516: FF 70 24           push        dword ptr [eax+24h]
+  00478519: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047851F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478524: 50                 push        eax
+  00478525: E8 46 30 06 00     call        _sprintf
+  0047852A: 83 C4 0C           add         esp,0Ch
+  0047852D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478533: 8B D7              mov         edx,edi
+  00478535: 8D 4F 08           lea         ecx,[edi+8]
+  00478538: 50                 push        eax
+  00478539: 6A 08              push        8
+  0047853B: E8 90 D1 0D 00     call        005556D0
+  00478540: 83 C4 08           add         esp,8
+  00478543: 85 F6              test        esi,esi
+  00478545: 0F 84 F0 05 00 00  je          00478B3B
+  0047854B: 8B 06              mov         eax,dword ptr [esi]
+  0047854D: 24 07              and         al,7
+  0047854F: 3C 01              cmp         al,1
+  00478551: 74 11              je          00478564
+  00478553: 85 F6              test        esi,esi
+  00478555: 0F 84 E0 05 00 00  je          00478B3B
+  0047855B: 8B 06              mov         eax,dword ptr [esi]
+  0047855D: 83 E0 07           and         eax,7
+  00478560: 3C 06              cmp         al,6
+  00478562: 75 67              jne         004785CB
+  00478564: 8B 16              mov         edx,dword ptr [esi]
+  00478566: 8B CE              mov         ecx,esi
+  00478568: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047856B: 8B 12              mov         edx,dword ptr [edx]
+  0047856D: E8 2E CD 0D 00     call        005552A0
+  00478572: 8B F8              mov         edi,eax
+  00478574: 85 FF              test        edi,edi
+  00478576: 74 14              je          0047858C
+  00478578: 68 D8 C8 63 00     push        offset ??_C@_0L@LENCMBBB@ExlDmgRate@
+  0047857D: 6A 10              push        10h
+  0047857F: 8D 4F 04           lea         ecx,[edi+4]
+  00478582: 8B D7              mov         edx,edi
+  00478584: E8 47 D1 0D 00     call        005556D0
+  00478589: 83 C4 08           add         esp,8
+  0047858C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478592: 85 FF              test        edi,edi
+  00478594: 74 2D              je          004785C3
+  00478596: FF 70 28           push        dword ptr [eax+28h]
+  00478599: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047859F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004785A4: 50                 push        eax
+  004785A5: E8 C6 2F 06 00     call        _sprintf
+  004785AA: 83 C4 0C           add         esp,0Ch
+  004785AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004785B3: 8B D7              mov         edx,edi
+  004785B5: 8D 4F 08           lea         ecx,[edi+8]
+  004785B8: 50                 push        eax
+  004785B9: 6A 08              push        8
+  004785BB: E8 10 D1 0D 00     call        005556D0
+  004785C0: 83 C4 08           add         esp,8
+  004785C3: 85 F6              test        esi,esi
+  004785C5: 0F 84 70 05 00 00  je          00478B3B
+  004785CB: 8B 06              mov         eax,dword ptr [esi]
+  004785CD: 24 07              and         al,7
+  004785CF: 3C 01              cmp         al,1
+  004785D1: 74 11              je          004785E4
+  004785D3: 85 F6              test        esi,esi
+  004785D5: 0F 84 60 05 00 00  je          00478B3B
+  004785DB: 8B 06              mov         eax,dword ptr [esi]
+  004785DD: 83 E0 07           and         eax,7
+  004785E0: 3C 06              cmp         al,6
+  004785E2: 75 67              jne         0047864B
+  004785E4: 8B 16              mov         edx,dword ptr [esi]
+  004785E6: 8B CE              mov         ecx,esi
+  004785E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004785EB: 8B 12              mov         edx,dword ptr [edx]
+  004785ED: E8 AE CC 0D 00     call        005552A0
+  004785F2: 8B F8              mov         edi,eax
+  004785F4: 85 FF              test        edi,edi
+  004785F6: 74 14              je          0047860C
+  004785F8: 68 E4 C8 63 00     push        offset ??_C@_0L@BNCNONE@CriDmgRate@
+  004785FD: 6A 10              push        10h
+  004785FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478602: 8B D7              mov         edx,edi
+  00478604: E8 C7 D0 0D 00     call        005556D0
+  00478609: 83 C4 08           add         esp,8
+  0047860C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478612: 85 FF              test        edi,edi
+  00478614: 74 2D              je          00478643
+  00478616: FF 70 2C           push        dword ptr [eax+2Ch]
+  00478619: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047861F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478624: 50                 push        eax
+  00478625: E8 46 2F 06 00     call        _sprintf
+  0047862A: 83 C4 0C           add         esp,0Ch
+  0047862D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478633: 8B D7              mov         edx,edi
+  00478635: 8D 4F 08           lea         ecx,[edi+8]
+  00478638: 50                 push        eax
+  00478639: 6A 08              push        8
+  0047863B: E8 90 D0 0D 00     call        005556D0
+  00478640: 83 C4 08           add         esp,8
+  00478643: 85 F6              test        esi,esi
+  00478645: 0F 84 F0 04 00 00  je          00478B3B
+  0047864B: 8B 06              mov         eax,dword ptr [esi]
+  0047864D: 24 07              and         al,7
+  0047864F: 3C 01              cmp         al,1
+  00478651: 74 11              je          00478664
+  00478653: 85 F6              test        esi,esi
+  00478655: 0F 84 E0 04 00 00  je          00478B3B
+  0047865B: 8B 06              mov         eax,dword ptr [esi]
+  0047865D: 83 E0 07           and         eax,7
+  00478660: 3C 06              cmp         al,6
+  00478662: 75 67              jne         004786CB
+  00478664: 8B 16              mov         edx,dword ptr [esi]
+  00478666: 8B CE              mov         ecx,esi
+  00478668: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047866B: 8B 12              mov         edx,dword ptr [edx]
+  0047866D: E8 2E CC 0D 00     call        005552A0
+  00478672: 8B F8              mov         edi,eax
+  00478674: 85 FF              test        edi,edi
+  00478676: 74 14              je          0047868C
+  00478678: 68 F0 C8 63 00     push        offset ??_C@_0O@OONAIFMC@DoubleDmgRate@
+  0047867D: 6A 10              push        10h
+  0047867F: 8D 4F 04           lea         ecx,[edi+4]
+  00478682: 8B D7              mov         edx,edi
+  00478684: E8 47 D0 0D 00     call        005556D0
+  00478689: 83 C4 08           add         esp,8
+  0047868C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478692: 85 FF              test        edi,edi
+  00478694: 74 2D              je          004786C3
+  00478696: FF 70 30           push        dword ptr [eax+30h]
+  00478699: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047869F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004786A4: 50                 push        eax
+  004786A5: E8 C6 2E 06 00     call        _sprintf
+  004786AA: 83 C4 0C           add         esp,0Ch
+  004786AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004786B3: 8B D7              mov         edx,edi
+  004786B5: 8D 4F 08           lea         ecx,[edi+8]
+  004786B8: 50                 push        eax
+  004786B9: 6A 08              push        8
+  004786BB: E8 10 D0 0D 00     call        005556D0
+  004786C0: 83 C4 08           add         esp,8
+  004786C3: 85 F6              test        esi,esi
+  004786C5: 0F 84 70 04 00 00  je          00478B3B
+  004786CB: 8B 06              mov         eax,dword ptr [esi]
+  004786CD: 24 07              and         al,7
+  004786CF: 3C 01              cmp         al,1
+  004786D1: 74 11              je          004786E4
+  004786D3: 85 F6              test        esi,esi
+  004786D5: 0F 84 60 04 00 00  je          00478B3B
+  004786DB: 8B 06              mov         eax,dword ptr [esi]
+  004786DD: 83 E0 07           and         eax,7
+  004786E0: 3C 06              cmp         al,6
+  004786E2: 75 67              jne         0047874B
+  004786E4: 8B 16              mov         edx,dword ptr [esi]
+  004786E6: 8B CE              mov         ecx,esi
+  004786E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004786EB: 8B 12              mov         edx,dword ptr [edx]
+  004786ED: E8 AE CB 0D 00     call        005552A0
+  004786F2: 8B F8              mov         edi,eax
+  004786F4: 85 FF              test        edi,edi
+  004786F6: 74 14              je          0047870C
+  004786F8: 68 00 C9 63 00     push        offset ??_C@_0N@DCBGEKBJ@ResistDouble@
+  004786FD: 6A 10              push        10h
+  004786FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478702: 8B D7              mov         edx,edi
+  00478704: E8 C7 CF 0D 00     call        005556D0
+  00478709: 83 C4 08           add         esp,8
+  0047870C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478712: 85 FF              test        edi,edi
+  00478714: 74 2D              je          00478743
+  00478716: FF 70 34           push        dword ptr [eax+34h]
+  00478719: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047871F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478724: 50                 push        eax
+  00478725: E8 46 2E 06 00     call        _sprintf
+  0047872A: 83 C4 0C           add         esp,0Ch
+  0047872D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478733: 8B D7              mov         edx,edi
+  00478735: 8D 4F 08           lea         ecx,[edi+8]
+  00478738: 50                 push        eax
+  00478739: 6A 08              push        8
+  0047873B: E8 90 CF 0D 00     call        005556D0
+  00478740: 83 C4 08           add         esp,8
+  00478743: 85 F6              test        esi,esi
+  00478745: 0F 84 F0 03 00 00  je          00478B3B
+  0047874B: 8B 06              mov         eax,dword ptr [esi]
+  0047874D: 24 07              and         al,7
+  0047874F: 3C 01              cmp         al,1
+  00478751: 74 11              je          00478764
+  00478753: 85 F6              test        esi,esi
+  00478755: 0F 84 E0 03 00 00  je          00478B3B
+  0047875B: 8B 06              mov         eax,dword ptr [esi]
+  0047875D: 83 E0 07           and         eax,7
+  00478760: 3C 06              cmp         al,6
+  00478762: 75 67              jne         004787CB
+  00478764: 8B 16              mov         edx,dword ptr [esi]
+  00478766: 8B CE              mov         ecx,esi
+  00478768: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047876B: 8B 12              mov         edx,dword ptr [edx]
+  0047876D: E8 2E CB 0D 00     call        005552A0
+  00478772: 8B F8              mov         edi,eax
+  00478774: 85 FF              test        edi,edi
+  00478776: 74 14              je          0047878C
+  00478778: 68 10 C9 63 00     push        offset ??_C@_0BA@LDIEIGGN@ResistIgnoreDef@
+  0047877D: 6A 10              push        10h
+  0047877F: 8D 4F 04           lea         ecx,[edi+4]
+  00478782: 8B D7              mov         edx,edi
+  00478784: E8 47 CF 0D 00     call        005556D0
+  00478789: 83 C4 08           add         esp,8
+  0047878C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478792: 85 FF              test        edi,edi
+  00478794: 74 2D              je          004787C3
+  00478796: FF 70 38           push        dword ptr [eax+38h]
+  00478799: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047879F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004787A4: 50                 push        eax
+  004787A5: E8 C6 2D 06 00     call        _sprintf
+  004787AA: 83 C4 0C           add         esp,0Ch
+  004787AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004787B3: 8B D7              mov         edx,edi
+  004787B5: 8D 4F 08           lea         ecx,[edi+8]
+  004787B8: 50                 push        eax
+  004787B9: 6A 08              push        8
+  004787BB: E8 10 CF 0D 00     call        005556D0
+  004787C0: 83 C4 08           add         esp,8
+  004787C3: 85 F6              test        esi,esi
+  004787C5: 0F 84 70 03 00 00  je          00478B3B
+  004787CB: 8B 06              mov         eax,dword ptr [esi]
+  004787CD: 24 07              and         al,7
+  004787CF: 3C 01              cmp         al,1
+  004787D1: 74 11              je          004787E4
+  004787D3: 85 F6              test        esi,esi
+  004787D5: 0F 84 60 03 00 00  je          00478B3B
+  004787DB: 8B 06              mov         eax,dword ptr [esi]
+  004787DD: 83 E0 07           and         eax,7
+  004787E0: 3C 06              cmp         al,6
+  004787E2: 75 67              jne         0047884B
+  004787E4: 8B 16              mov         edx,dword ptr [esi]
+  004787E6: 8B CE              mov         ecx,esi
+  004787E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004787EB: 8B 12              mov         edx,dword ptr [edx]
+  004787ED: E8 AE CA 0D 00     call        005552A0
+  004787F2: 8B F8              mov         edi,eax
+  004787F4: 85 FF              test        edi,edi
+  004787F6: 74 14              je          0047880C
+  004787F8: 68 20 C9 63 00     push        offset ??_C@_0P@NDNLCHID@ResistIgnoreSD@
+  004787FD: 6A 10              push        10h
+  004787FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478802: 8B D7              mov         edx,edi
+  00478804: E8 C7 CE 0D 00     call        005556D0
+  00478809: 83 C4 08           add         esp,8
+  0047880C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478812: 85 FF              test        edi,edi
+  00478814: 74 2D              je          00478843
+  00478816: FF 70 3C           push        dword ptr [eax+3Ch]
+  00478819: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047881F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478824: 50                 push        eax
+  00478825: E8 46 2D 06 00     call        _sprintf
+  0047882A: 83 C4 0C           add         esp,0Ch
+  0047882D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478833: 8B D7              mov         edx,edi
+  00478835: 8D 4F 08           lea         ecx,[edi+8]
+  00478838: 50                 push        eax
+  00478839: 6A 08              push        8
+  0047883B: E8 90 CE 0D 00     call        005556D0
+  00478840: 83 C4 08           add         esp,8
+  00478843: 85 F6              test        esi,esi
+  00478845: 0F 84 F0 02 00 00  je          00478B3B
+  0047884B: 8B 06              mov         eax,dword ptr [esi]
+  0047884D: 24 07              and         al,7
+  0047884F: 3C 01              cmp         al,1
+  00478851: 74 11              je          00478864
+  00478853: 85 F6              test        esi,esi
+  00478855: 0F 84 E0 02 00 00  je          00478B3B
+  0047885B: 8B 06              mov         eax,dword ptr [esi]
+  0047885D: 83 E0 07           and         eax,7
+  00478860: 3C 06              cmp         al,6
+  00478862: 75 67              jne         004788CB
+  00478864: 8B 16              mov         edx,dword ptr [esi]
+  00478866: 8B CE              mov         ecx,esi
+  00478868: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047886B: 8B 12              mov         edx,dword ptr [edx]
+  0047886D: E8 2E CA 0D 00     call        005552A0
+  00478872: 8B F8              mov         edi,eax
+  00478874: 85 FF              test        edi,edi
+  00478876: 74 14              je          0047888C
+  00478878: 68 30 C9 63 00     push        offset ??_C@_0L@BKONCCPA@ResistCrit@
+  0047887D: 6A 10              push        10h
+  0047887F: 8D 4F 04           lea         ecx,[edi+4]
+  00478882: 8B D7              mov         edx,edi
+  00478884: E8 47 CE 0D 00     call        005556D0
+  00478889: 83 C4 08           add         esp,8
+  0047888C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478892: 85 FF              test        edi,edi
+  00478894: 74 2D              je          004788C3
+  00478896: FF 70 40           push        dword ptr [eax+40h]
+  00478899: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047889F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004788A4: 50                 push        eax
+  004788A5: E8 C6 2C 06 00     call        _sprintf
+  004788AA: 83 C4 0C           add         esp,0Ch
+  004788AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004788B3: 8B D7              mov         edx,edi
+  004788B5: 8D 4F 08           lea         ecx,[edi+8]
+  004788B8: 50                 push        eax
+  004788B9: 6A 08              push        8
+  004788BB: E8 10 CE 0D 00     call        005556D0
+  004788C0: 83 C4 08           add         esp,8
+  004788C3: 85 F6              test        esi,esi
+  004788C5: 0F 84 70 02 00 00  je          00478B3B
+  004788CB: 8B 06              mov         eax,dword ptr [esi]
+  004788CD: 24 07              and         al,7
+  004788CF: 3C 01              cmp         al,1
+  004788D1: 74 11              je          004788E4
+  004788D3: 85 F6              test        esi,esi
+  004788D5: 0F 84 60 02 00 00  je          00478B3B
+  004788DB: 8B 06              mov         eax,dword ptr [esi]
+  004788DD: 83 E0 07           and         eax,7
+  004788E0: 3C 06              cmp         al,6
+  004788E2: 75 67              jne         0047894B
+  004788E4: 8B 16              mov         edx,dword ptr [esi]
+  004788E6: 8B CE              mov         ecx,esi
+  004788E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004788EB: 8B 12              mov         edx,dword ptr [edx]
+  004788ED: E8 AE C9 0D 00     call        005552A0
+  004788F2: 8B F8              mov         edi,eax
+  004788F4: 85 FF              test        edi,edi
+  004788F6: 74 14              je          0047890C
+  004788F8: 68 3C C9 63 00     push        offset ??_C@_09DFBFBGHO@ResistExl@
+  004788FD: 6A 10              push        10h
+  004788FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478902: 8B D7              mov         edx,edi
+  00478904: E8 C7 CD 0D 00     call        005556D0
+  00478909: 83 C4 08           add         esp,8
+  0047890C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478912: 85 FF              test        edi,edi
+  00478914: 74 2D              je          00478943
+  00478916: FF 70 44           push        dword ptr [eax+44h]
+  00478919: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047891F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478924: 50                 push        eax
+  00478925: E8 46 2C 06 00     call        _sprintf
+  0047892A: 83 C4 0C           add         esp,0Ch
+  0047892D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478933: 8B D7              mov         edx,edi
+  00478935: 8D 4F 08           lea         ecx,[edi+8]
+  00478938: 50                 push        eax
+  00478939: 6A 08              push        8
+  0047893B: E8 90 CD 0D 00     call        005556D0
+  00478940: 83 C4 08           add         esp,8
+  00478943: 85 F6              test        esi,esi
+  00478945: 0F 84 F0 01 00 00  je          00478B3B
+  0047894B: 8B 06              mov         eax,dword ptr [esi]
+  0047894D: 24 07              and         al,7
+  0047894F: 3C 01              cmp         al,1
+  00478951: 74 11              je          00478964
+  00478953: 85 F6              test        esi,esi
+  00478955: 0F 84 E0 01 00 00  je          00478B3B
+  0047895B: 8B 06              mov         eax,dword ptr [esi]
+  0047895D: 83 E0 07           and         eax,7
+  00478960: 3C 06              cmp         al,6
+  00478962: 75 67              jne         004789CB
+  00478964: 8B 16              mov         edx,dword ptr [esi]
+  00478966: 8B CE              mov         ecx,esi
+  00478968: 83 E2 E0           and         edx,0FFFFFFE0h
+  0047896B: 8B 12              mov         edx,dword ptr [edx]
+  0047896D: E8 2E C9 0D 00     call        005552A0
+  00478972: 8B F8              mov         edi,eax
+  00478974: 85 FF              test        edi,edi
+  00478976: 74 14              je          0047898C
+  00478978: 68 48 C9 63 00     push        offset ??_C@_0L@PKHHEKGB@ResistStun@
+  0047897D: 6A 10              push        10h
+  0047897F: 8D 4F 04           lea         ecx,[edi+4]
+  00478982: 8B D7              mov         edx,edi
+  00478984: E8 47 CD 0D 00     call        005556D0
+  00478989: 83 C4 08           add         esp,8
+  0047898C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478992: 85 FF              test        edi,edi
+  00478994: 74 2D              je          004789C3
+  00478996: FF 70 48           push        dword ptr [eax+48h]
+  00478999: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  0047899F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  004789A4: 50                 push        eax
+  004789A5: E8 C6 2B 06 00     call        _sprintf
+  004789AA: 83 C4 0C           add         esp,0Ch
+  004789AD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  004789B3: 8B D7              mov         edx,edi
+  004789B5: 8D 4F 08           lea         ecx,[edi+8]
+  004789B8: 50                 push        eax
+  004789B9: 6A 08              push        8
+  004789BB: E8 10 CD 0D 00     call        005556D0
+  004789C0: 83 C4 08           add         esp,8
+  004789C3: 85 F6              test        esi,esi
+  004789C5: 0F 84 70 01 00 00  je          00478B3B
+  004789CB: 8B 06              mov         eax,dword ptr [esi]
+  004789CD: 24 07              and         al,7
+  004789CF: 3C 01              cmp         al,1
+  004789D1: 74 11              je          004789E4
+  004789D3: 85 F6              test        esi,esi
+  004789D5: 0F 84 60 01 00 00  je          00478B3B
+  004789DB: 8B 06              mov         eax,dword ptr [esi]
+  004789DD: 83 E0 07           and         eax,7
+  004789E0: 3C 06              cmp         al,6
+  004789E2: 75 67              jne         00478A4B
+  004789E4: 8B 16              mov         edx,dword ptr [esi]
+  004789E6: 8B CE              mov         ecx,esi
+  004789E8: 83 E2 E0           and         edx,0FFFFFFE0h
+  004789EB: 8B 12              mov         edx,dword ptr [edx]
+  004789ED: E8 AE C8 0D 00     call        005552A0
+  004789F2: 8B F8              mov         edi,eax
+  004789F4: 85 FF              test        edi,edi
+  004789F6: 74 14              je          00478A0C
+  004789F8: 68 54 C9 63 00     push        offset ??_C@_07NLAFAPNO@Reflect@
+  004789FD: 6A 10              push        10h
+  004789FF: 8D 4F 04           lea         ecx,[edi+4]
+  00478A02: 8B D7              mov         edx,edi
+  00478A04: E8 C7 CC 0D 00     call        005556D0
+  00478A09: 83 C4 08           add         esp,8
+  00478A0C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478A12: 85 FF              test        edi,edi
+  00478A14: 74 2D              je          00478A43
+  00478A16: FF 70 4C           push        dword ptr [eax+4Ch]
+  00478A19: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478A1F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478A24: 50                 push        eax
+  00478A25: E8 46 2B 06 00     call        _sprintf
+  00478A2A: 83 C4 0C           add         esp,0Ch
+  00478A2D: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478A33: 8B D7              mov         edx,edi
+  00478A35: 8D 4F 08           lea         ecx,[edi+8]
+  00478A38: 50                 push        eax
+  00478A39: 6A 08              push        8
+  00478A3B: E8 90 CC 0D 00     call        005556D0
+  00478A40: 83 C4 08           add         esp,8
+  00478A43: 85 F6              test        esi,esi
+  00478A45: 0F 84 F0 00 00 00  je          00478B3B
+  00478A4B: 8B 06              mov         eax,dword ptr [esi]
+  00478A4D: 24 07              and         al,7
+  00478A4F: 3C 01              cmp         al,1
+  00478A51: 74 11              je          00478A64
+  00478A53: 85 F6              test        esi,esi
+  00478A55: 0F 84 E0 00 00 00  je          00478B3B
+  00478A5B: 8B 06              mov         eax,dword ptr [esi]
+  00478A5D: 83 E0 07           and         eax,7
+  00478A60: 3C 06              cmp         al,6
+  00478A62: 75 63              jne         00478AC7
+  00478A64: 8B 16              mov         edx,dword ptr [esi]
+  00478A66: 8B CE              mov         ecx,esi
+  00478A68: 83 E2 E0           and         edx,0FFFFFFE0h
+  00478A6B: 8B 12              mov         edx,dword ptr [edx]
+  00478A6D: E8 2E C8 0D 00     call        005552A0
+  00478A72: 8B F8              mov         edi,eax
+  00478A74: 85 FF              test        edi,edi
+  00478A76: 74 14              je          00478A8C
+  00478A78: 68 24 85 63 00     push        offset ??_C@_04OKOFBOPB@Time@
+  00478A7D: 6A 10              push        10h
+  00478A7F: 8D 4F 04           lea         ecx,[edi+4]
+  00478A82: 8B D7              mov         edx,edi
+  00478A84: E8 47 CC 0D 00     call        005556D0
+  00478A89: 83 C4 08           add         esp,8
+  00478A8C: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478A92: 85 FF              test        edi,edi
+  00478A94: 74 2D              je          00478AC3
+  00478A96: FF 70 50           push        dword ptr [eax+50h]
+  00478A99: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478A9F: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478AA4: 50                 push        eax
+  00478AA5: E8 C6 2A 06 00     call        _sprintf
+  00478AAA: 83 C4 0C           add         esp,0Ch
+  00478AAD: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478AB3: 8B D7              mov         edx,edi
+  00478AB5: 8D 4F 08           lea         ecx,[edi+8]
+  00478AB8: 50                 push        eax
+  00478AB9: 6A 08              push        8
+  00478ABB: E8 10 CC 0D 00     call        005556D0
+  00478AC0: 83 C4 08           add         esp,8
+  00478AC3: 85 F6              test        esi,esi
+  00478AC5: 74 74              je          00478B3B
+  00478AC7: 8B 06              mov         eax,dword ptr [esi]
+  00478AC9: 24 07              and         al,7
+  00478ACB: 3C 01              cmp         al,1
+  00478ACD: 74 0D              je          00478ADC
+  00478ACF: 85 F6              test        esi,esi
+  00478AD1: 74 68              je          00478B3B
+  00478AD3: 8B 06              mov         eax,dword ptr [esi]
+  00478AD5: 83 E0 07           and         eax,7
+  00478AD8: 3C 06              cmp         al,6
+  00478ADA: 75 5F              jne         00478B3B
+  00478ADC: 8B 16              mov         edx,dword ptr [esi]
+  00478ADE: 8B CE              mov         ecx,esi
+  00478AE0: 83 E2 E0           and         edx,0FFFFFFE0h
+  00478AE3: 8B 12              mov         edx,dword ptr [edx]
+  00478AE5: E8 B6 C7 0D 00     call        005552A0
+  00478AEA: 8B F0              mov         esi,eax
+  00478AEC: 85 F6              test        esi,esi
+  00478AEE: 74 14              je          00478B04
+  00478AF0: 68 5C C9 63 00     push        offset ??_C@_09DLFAMNKA@SetOption@
+  00478AF5: 6A 10              push        10h
+  00478AF7: 8D 4E 04           lea         ecx,[esi+4]
+  00478AFA: 8B D6              mov         edx,esi
+  00478AFC: E8 CF CB 0D 00     call        005556D0
+  00478B01: 83 C4 08           add         esp,8
+  00478B04: 8B 85 A0 FE FF FF  mov         eax,dword ptr [ebp-160h]
+  00478B0A: 85 F6              test        esi,esi
+  00478B0C: 74 2D              je          00478B3B
+  00478B0E: FF 70 54           push        dword ptr [eax+54h]
+  00478B11: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478B17: 68 2C 83 63 00     push        offset ??_C@_02DPKJAMEF@?$CFd@
+  00478B1C: 50                 push        eax
+  00478B1D: E8 4E 2A 06 00     call        _sprintf
+  00478B22: 83 C4 0C           add         esp,0Ch
+  00478B25: 8D 85 6C FF FF FF  lea         eax,[ebp-94h]
+  00478B2B: 8B D6              mov         edx,esi
+  00478B2D: 8D 4E 08           lea         ecx,[esi+8]
+  00478B30: 50                 push        eax
+  00478B31: 6A 08              push        8
+  00478B33: E8 98 CB 0D 00     call        005556D0
+  00478B38: 83 C4 08           add         esp,8
+  00478B3B: 8B 85 9C FE FF FF  mov         eax,dword ptr [ebp-164h]
+  00478B41: 8B 9D A0 FE FF FF  mov         ebx,dword ptr [ebp-160h]
+  00478B47: 8B 95 98 FE FF FF  mov         edx,dword ptr [ebp-168h]
+  00478B4D: 83 C3 58           add         ebx,58h
+  00478B50: 89 9D A0 FE FF FF  mov         dword ptr [ebp-160h],ebx
+  00478B56: 3B DA              cmp         ebx,edx
+  00478B58: 0F 85 12 F5 FF FF  jne         00478070
+  00478B5E: 68 8C 1E 64 00     push        offset ??_C@_02GMLFBBN@wb@
+  00478B63: FF B5 90 FE FF FF  push        dword ptr [ebp-170h]
+  00478B69: E8 87 FF 17 00     call        _fopen
+  00478B6E: 8B F0              mov         esi,eax
+  00478B70: 83 C4 08           add         esp,8
+  00478B73: 85 F6              test        esi,esi
+  00478B75: 74 3B              je          00478BB2
+  00478B77: C7 85 8C FE FF FF  mov         dword ptr [ebp-174h],offset ??_7xml_writer_file@pugi@@6B@
+            AC 1E 64 00
+  00478B81: 89 B5 90 FE FF FF  mov         dword ptr [ebp-170h],esi
+  00478B87: 83 EC 0C           sub         esp,0Ch
+  00478B8A: C6 45 FC 01        mov         byte ptr [ebp-4],1
+  00478B8E: 8D 85 8C FE FF FF  lea         eax,[ebp-174h]
+  00478B94: 8D 8D A4 FE FF FF  lea         ecx,[ebp-15Ch]
+  00478B9A: 50                 push        eax
+  00478B9B: E8 40 F1 0D 00     call        ?save@xml_document@pugi@@QBEXAAVxml_writer@2@PBDIW4xml_encoding@2@@Z
+  00478BA0: 56                 push        esi
+  00478BA1: E8 1C 2F 19 00     call        _ferror
+  00478BA6: 83 C4 04           add         esp,4
+  00478BA9: 56                 push        esi
+  00478BAA: E8 C8 01 18 00     call        _fclose
+  00478BAF: 83 C4 04           add         esp,4
+  00478BB2: 8D 8D A4 FE FF FF  lea         ecx,[ebp-15Ch]
+  00478BB8: C7 45 FC 02 00 00  mov         dword ptr [ebp-4],2
+            00
+  00478BBF: E8 AC F0 0D 00     call        ?destroy@xml_document@pugi@@AAEXXZ
+  00478BC4: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00478BC7: 64 89 0D 00 00 00  mov         dword ptr fs:[0],ecx
+            00
+  00478BCE: 59                 pop         ecx
+  00478BCF: 5F                 pop         edi
+  00478BD0: 5E                 pop         esi
+  00478BD1: 5B                 pop         ebx
+  00478BD2: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  00478BD5: 33 CD              xor         ecx,ebp
+  00478BD7: E8 8F AB 17 00     call        @__security_check_cookie@4
+  00478BDC: 8B E5              mov         esp,ebp
+  00478BDE: 5D                 pop         ebp
+  00478BDF: C2 04 00           ret         4
+  00478BE2: CC CC CC CC CC CC CC CC CC CC CC CC CC CC        ÞÞÞÞÞÞÞÞÞÞÞÞÞÞ

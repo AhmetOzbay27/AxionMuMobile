@@ -1,0 +1,1106 @@
+?Load@CustomSetDameItem@@QAEXPAD@Z:
+  00476640: 53                 push        ebx
+  00476641: 8B DC              mov         ebx,esp
+  00476643: 83 EC 08           sub         esp,8
+  00476646: 83 E4 F8           and         esp,0FFFFFFF8h
+  00476649: 83 C4 04           add         esp,4
+  0047664C: 55                 push        ebp
+  0047664D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00476650: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00476654: 8B EC              mov         ebp,esp
+  00476656: 6A FF              push        0FFFFFFFFh
+  00476658: 68 20 6D 62 00     push        626D20h
+  0047665D: 64 A1 00 00 00 00  mov         eax,dword ptr fs:[00000000h]
+  00476663: 50                 push        eax
+  00476664: 53                 push        ebx
+  00476665: 81 EC A0 01 00 00  sub         esp,1A0h
+  0047666B: A1 80 10 66 00     mov         eax,dword ptr [___security_cookie]
+  00476670: 33 C5              xor         eax,ebp
+  00476672: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  00476675: 56                 push        esi
+  00476676: 57                 push        edi
+  00476677: 50                 push        eax
+  00476678: 8D 45 F4           lea         eax,[ebp-0Ch]
+  0047667B: 64 A3 00 00 00 00  mov         dword ptr fs:[00000000h],eax
+  00476681: 8B F9              mov         edi,ecx
+  00476683: 8B 07              mov         eax,dword ptr [edi]
+  00476685: 8B 73 08           mov         esi,dword ptr [ebx+8]
+  00476688: 3B 47 04           cmp         eax,dword ptr [edi+4]
+  0047668B: 74 03              je          00476690
+  0047668D: 89 47 04           mov         dword ptr [edi+4],eax
+  00476690: 8D 47 0C           lea         eax,[edi+0Ch]
+  00476693: 89 85 BC FE FF FF  mov         dword ptr [ebp-144h],eax
+  00476699: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0047669C: 3B 47 10           cmp         eax,dword ptr [edi+10h]
+  0047669F: 74 03              je          004766A4
+  004766A1: 89 47 10           mov         dword ptr [edi+10h],eax
+  004766A4: 8D 8D C8 FE FF FF  lea         ecx,[ebp-138h]
+  004766AA: C7 85 C8 FE FF FF  mov         dword ptr [ebp-138h],0
+            00 00 00 00
+  004766B4: C7 85 CC FE FF FF  mov         dword ptr [ebp-134h],0
+            00 00 00 00
+  004766BE: E8 1D 15 0E 00     call        ?create@xml_document@pugi@@AAEXXZ
+  004766C3: 8D 8D C8 FE FF FF  lea         ecx,[ebp-138h]
+  004766C9: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  004766D0: E8 9B 15 0E 00     call        ?destroy@xml_document@pugi@@AAEXXZ
+  004766D5: 8D 8D C8 FE FF FF  lea         ecx,[ebp-138h]
+  004766DB: E8 00 15 0E 00     call        ?create@xml_document@pugi@@AAEXXZ
+  004766E0: 68 C4 7E 63 00     push        offset ??_C@_02JDPG@rb@
+  004766E5: 56                 push        esi
+  004766E6: E8 0A 24 18 00     call        _fopen
+  004766EB: 50                 push        eax
+  004766EC: 8D 95 C8 FE FF FF  lea         edx,[ebp-138h]
+  004766F2: 8D 8D 54 FE FF FF  lea         ecx,[ebp-1ACh]
+  004766F8: E8 53 0F 0E 00     call        00557650
+  004766FD: 83 C4 0C           add         esp,0Ch
+  00476700: 83 BD 54 FE FF FF  cmp         dword ptr [ebp-1ACh],0
+            00
+  00476707: 0F 85 38 0C 00 00  jne         00477345
+  0047670D: 8B B5 C8 FE FF FF  mov         esi,dword ptr [ebp-138h]
+  00476713: 85 F6              test        esi,esi
+  00476715: 74 49              je          00476760
+  00476717: 8B 76 10           mov         esi,dword ptr [esi+10h]
+  0047671A: 85 F6              test        esi,esi
+  0047671C: 74 42              je          00476760
+  0047671E: 66 90              nop
+  00476720: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00476723: 85 C0              test        eax,eax
+  00476725: 74 32              je          00476759
+  00476727: B9 94 C6 63 00     mov         ecx,offset ??_C@_08CPMOEKCE@ItemData@
+  0047672C: 0F 1F 40 00        nop         dword ptr [eax]
+  00476730: 8A 11              mov         dl,byte ptr [ecx]
+  00476732: 3A 10              cmp         dl,byte ptr [eax]
+  00476734: 75 1A              jne         00476750
+  00476736: 84 D2              test        dl,dl
+  00476738: 74 12              je          0047674C
+  0047673A: 8A 51 01           mov         dl,byte ptr [ecx+1]
+  0047673D: 3A 50 01           cmp         dl,byte ptr [eax+1]
+  00476740: 75 0E              jne         00476750
+  00476742: 83 C1 02           add         ecx,2
+  00476745: 83 C0 02           add         eax,2
+  00476748: 84 D2              test        dl,dl
+  0047674A: 75 E4              jne         00476730
+  0047674C: 33 C0              xor         eax,eax
+  0047674E: EB 05              jmp         00476755
+  00476750: 1B C0              sbb         eax,eax
+  00476752: 83 C8 01           or          eax,1
+  00476755: 85 C0              test        eax,eax
+  00476757: 74 09              je          00476762
+  00476759: 8B 76 18           mov         esi,dword ptr [esi+18h]
+  0047675C: 85 F6              test        esi,esi
+  0047675E: 75 C0              jne         00476720
+  00476760: 33 F6              xor         esi,esi
+  00476762: 68 74 7F 63 00     push        offset ??_C@_04BGCMBJDA@Item@
+  00476767: 8D 85 C4 FE FF FF  lea         eax,[ebp-13Ch]
+  0047676D: 89 B5 C0 FE FF FF  mov         dword ptr [ebp-140h],esi
+  00476773: 50                 push        eax
+  00476774: 8D 8D C0 FE FF FF  lea         ecx,[ebp-140h]
+  0047677A: E8 A1 11 0E 00     call        ?child@xml_node@pugi@@QBE?AV12@PBD@Z
+  0047677F: 83 BD C4 FE FF FF  cmp         dword ptr [ebp-13Ch],0
+            00
+  00476786: 0F 84 CA 05 00 00  je          00476D56
+  0047678C: 0F 1F 40 00        nop         dword ptr [eax]
+  00476790: 68 A4 C8 63 00     push        offset ??_C@_07OEBDPOLH@Section@
+  00476795: 8D 85 60 FE FF FF  lea         eax,[ebp-1A0h]
+  0047679B: 50                 push        eax
+  0047679C: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004767A2: E8 E9 11 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004767A7: 8B 30              mov         esi,dword ptr [eax]
+  004767A9: 85 F6              test        esi,esi
+  004767AB: 74 1C              je          004767C9
+  004767AD: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004767B0: 85 F6              test        esi,esi
+  004767B2: 74 15              je          004767C9
+  004767B4: 8B CE              mov         ecx,esi
+  004767B6: E8 D5 0D 0E 00     call        00557590
+  004767BB: 50                 push        eax
+  004767BC: 6A 00              push        0
+  004767BE: 56                 push        esi
+  004767BF: E8 15 4A 19 00     call        _strtol
+  004767C4: 83 C4 0C           add         esp,0Ch
+  004767C7: EB 02              jmp         004767CB
+  004767C9: 33 C0              xor         eax,eax
+  004767CB: 89 45 90           mov         dword ptr [ebp-70h],eax
+  004767CE: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004767D4: 68 10 82 63 00     push        offset ??_C@_05FNNGFGLF@Index@
+  004767D9: 8D 85 B8 FE FF FF  lea         eax,[ebp-148h]
+  004767DF: 50                 push        eax
+  004767E0: E8 AB 11 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004767E5: 8B 30              mov         esi,dword ptr [eax]
+  004767E7: 85 F6              test        esi,esi
+  004767E9: 74 1C              je          00476807
+  004767EB: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004767EE: 85 F6              test        esi,esi
+  004767F0: 74 15              je          00476807
+  004767F2: 8B CE              mov         ecx,esi
+  004767F4: E8 97 0D 0E 00     call        00557590
+  004767F9: 50                 push        eax
+  004767FA: 6A 00              push        0
+  004767FC: 56                 push        esi
+  004767FD: E8 D7 49 19 00     call        _strtol
+  00476802: 83 C4 0C           add         esp,0Ch
+  00476805: EB 02              jmp         00476809
+  00476807: 33 C0              xor         eax,eax
+  00476809: 89 45 94           mov         dword ptr [ebp-6Ch],eax
+  0047680C: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476812: 68 AC C8 63 00     push        offset ??_C@_06LBEFNKEP@Effect@
+  00476817: 8D 85 B4 FE FF FF  lea         eax,[ebp-14Ch]
+  0047681D: 50                 push        eax
+  0047681E: E8 6D 11 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476823: 8B 30              mov         esi,dword ptr [eax]
+  00476825: 85 F6              test        esi,esi
+  00476827: 74 1C              je          00476845
+  00476829: 8B 76 08           mov         esi,dword ptr [esi+8]
+  0047682C: 85 F6              test        esi,esi
+  0047682E: 74 15              je          00476845
+  00476830: 8B CE              mov         ecx,esi
+  00476832: E8 59 0D 0E 00     call        00557590
+  00476837: 50                 push        eax
+  00476838: 6A 00              push        0
+  0047683A: 56                 push        esi
+  0047683B: E8 99 49 19 00     call        _strtol
+  00476840: 83 C4 0C           add         esp,0Ch
+  00476843: EB 02              jmp         00476847
+  00476845: 33 C0              xor         eax,eax
+  00476847: 89 45 98           mov         dword ptr [ebp-68h],eax
+  0047684A: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476850: 68 B4 C8 63 00     push        offset ??_C@_02FLIMDJ@Lv@
+  00476855: 8D 85 B0 FE FF FF  lea         eax,[ebp-150h]
+  0047685B: 50                 push        eax
+  0047685C: E8 2F 11 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476861: 8B 30              mov         esi,dword ptr [eax]
+  00476863: 85 F6              test        esi,esi
+  00476865: 74 1C              je          00476883
+  00476867: 8B 76 08           mov         esi,dword ptr [esi+8]
+  0047686A: 85 F6              test        esi,esi
+  0047686C: 74 15              je          00476883
+  0047686E: 8B CE              mov         ecx,esi
+  00476870: E8 1B 0D 0E 00     call        00557590
+  00476875: 50                 push        eax
+  00476876: 6A 00              push        0
+  00476878: 56                 push        esi
+  00476879: E8 5B 49 19 00     call        _strtol
+  0047687E: 83 C4 0C           add         esp,0Ch
+  00476881: EB 02              jmp         00476885
+  00476883: 33 C0              xor         eax,eax
+  00476885: 89 45 9C           mov         dword ptr [ebp-64h],eax
+  00476888: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  0047688E: 68 CC 7F 63 00     push        offset ??_C@_03CGOLMCK@Opt@
+  00476893: 8D 85 AC FE FF FF  lea         eax,[ebp-154h]
+  00476899: 50                 push        eax
+  0047689A: E8 F1 10 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  0047689F: 8B 30              mov         esi,dword ptr [eax]
+  004768A1: 85 F6              test        esi,esi
+  004768A3: 74 1C              je          004768C1
+  004768A5: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004768A8: 85 F6              test        esi,esi
+  004768AA: 74 15              je          004768C1
+  004768AC: 8B CE              mov         ecx,esi
+  004768AE: E8 DD 0C 0E 00     call        00557590
+  004768B3: 50                 push        eax
+  004768B4: 6A 00              push        0
+  004768B6: 56                 push        esi
+  004768B7: E8 1D 49 19 00     call        _strtol
+  004768BC: 83 C4 0C           add         esp,0Ch
+  004768BF: EB 02              jmp         004768C3
+  004768C1: 33 C0              xor         eax,eax
+  004768C3: 89 45 A0           mov         dword ptr [ebp-60h],eax
+  004768C6: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004768CC: 68 B8 C8 63 00     push        offset ??_C@_03KAHOEKJK@Dmg@
+  004768D1: 8D 85 A8 FE FF FF  lea         eax,[ebp-158h]
+  004768D7: 50                 push        eax
+  004768D8: E8 B3 10 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004768DD: 8B 30              mov         esi,dword ptr [eax]
+  004768DF: 85 F6              test        esi,esi
+  004768E1: 74 1C              je          004768FF
+  004768E3: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004768E6: 85 F6              test        esi,esi
+  004768E8: 74 15              je          004768FF
+  004768EA: 8B CE              mov         ecx,esi
+  004768EC: E8 9F 0C 0E 00     call        00557590
+  004768F1: 50                 push        eax
+  004768F2: 6A 00              push        0
+  004768F4: 56                 push        esi
+  004768F5: E8 DF 48 19 00     call        _strtol
+  004768FA: 83 C4 0C           add         esp,0Ch
+  004768FD: EB 02              jmp         00476901
+  004768FF: 33 C0              xor         eax,eax
+  00476901: 89 45 A4           mov         dword ptr [ebp-5Ch],eax
+  00476904: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  0047690A: 68 BC C8 63 00     push        offset ??_C@_05KICACMKE@AddSD@
+  0047690F: 8D 85 A4 FE FF FF  lea         eax,[ebp-15Ch]
+  00476915: 50                 push        eax
+  00476916: E8 75 10 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  0047691B: 8B 30              mov         esi,dword ptr [eax]
+  0047691D: 85 F6              test        esi,esi
+  0047691F: 74 1C              je          0047693D
+  00476921: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476924: 85 F6              test        esi,esi
+  00476926: 74 15              je          0047693D
+  00476928: 8B CE              mov         ecx,esi
+  0047692A: E8 61 0C 0E 00     call        00557590
+  0047692F: 50                 push        eax
+  00476930: 6A 00              push        0
+  00476932: 56                 push        esi
+  00476933: E8 A1 48 19 00     call        _strtol
+  00476938: 83 C4 0C           add         esp,0Ch
+  0047693B: EB 02              jmp         0047693F
+  0047693D: 33 C0              xor         eax,eax
+  0047693F: 89 45 A8           mov         dword ptr [ebp-58h],eax
+  00476942: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476948: 68 C4 C8 63 00     push        offset ??_C@_05JGPNLHGA@AddHP@
+  0047694D: 8D 85 A0 FE FF FF  lea         eax,[ebp-160h]
+  00476953: 50                 push        eax
+  00476954: E8 37 10 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476959: 8B 30              mov         esi,dword ptr [eax]
+  0047695B: 85 F6              test        esi,esi
+  0047695D: 74 1C              je          0047697B
+  0047695F: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476962: 85 F6              test        esi,esi
+  00476964: 74 15              je          0047697B
+  00476966: 8B CE              mov         ecx,esi
+  00476968: E8 23 0C 0E 00     call        00557590
+  0047696D: 50                 push        eax
+  0047696E: 6A 00              push        0
+  00476970: 56                 push        esi
+  00476971: E8 63 48 19 00     call        _strtol
+  00476976: 83 C4 0C           add         esp,0Ch
+  00476979: EB 02              jmp         0047697D
+  0047697B: 33 C0              xor         eax,eax
+  0047697D: 89 45 AC           mov         dword ptr [ebp-54h],eax
+  00476980: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476986: 68 CC C8 63 00     push        offset ??_C@_05JADGHFIL@AddMP@
+  0047698B: 8D 85 9C FE FF FF  lea         eax,[ebp-164h]
+  00476991: 50                 push        eax
+  00476992: E8 F9 0F 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476997: 8B 30              mov         esi,dword ptr [eax]
+  00476999: 85 F6              test        esi,esi
+  0047699B: 74 1C              je          004769B9
+  0047699D: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004769A0: 85 F6              test        esi,esi
+  004769A2: 74 15              je          004769B9
+  004769A4: 8B CE              mov         ecx,esi
+  004769A6: E8 E5 0B 0E 00     call        00557590
+  004769AB: 50                 push        eax
+  004769AC: 6A 00              push        0
+  004769AE: 56                 push        esi
+  004769AF: E8 25 48 19 00     call        _strtol
+  004769B4: 83 C4 0C           add         esp,0Ch
+  004769B7: EB 02              jmp         004769BB
+  004769B9: 33 C0              xor         eax,eax
+  004769BB: 89 45 B0           mov         dword ptr [ebp-50h],eax
+  004769BE: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004769C4: 68 D4 C8 63 00     push        offset ??_C@_03LHHGCKGD@Def@
+  004769C9: 8D 85 98 FE FF FF  lea         eax,[ebp-168h]
+  004769CF: 50                 push        eax
+  004769D0: E8 BB 0F 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004769D5: 8B 30              mov         esi,dword ptr [eax]
+  004769D7: 85 F6              test        esi,esi
+  004769D9: 74 1C              je          004769F7
+  004769DB: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004769DE: 85 F6              test        esi,esi
+  004769E0: 74 15              je          004769F7
+  004769E2: 8B CE              mov         ecx,esi
+  004769E4: E8 A7 0B 0E 00     call        00557590
+  004769E9: 50                 push        eax
+  004769EA: 6A 00              push        0
+  004769EC: 56                 push        esi
+  004769ED: E8 E7 47 19 00     call        _strtol
+  004769F2: 83 C4 0C           add         esp,0Ch
+  004769F5: EB 02              jmp         004769F9
+  004769F7: 33 C0              xor         eax,eax
+  004769F9: 89 45 B4           mov         dword ptr [ebp-4Ch],eax
+  004769FC: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476A02: 68 D8 C8 63 00     push        offset ??_C@_0L@LENCMBBB@ExlDmgRate@
+  00476A07: 8D 85 94 FE FF FF  lea         eax,[ebp-16Ch]
+  00476A0D: 50                 push        eax
+  00476A0E: E8 7D 0F 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476A13: 8B 30              mov         esi,dword ptr [eax]
+  00476A15: 85 F6              test        esi,esi
+  00476A17: 74 1C              je          00476A35
+  00476A19: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476A1C: 85 F6              test        esi,esi
+  00476A1E: 74 15              je          00476A35
+  00476A20: 8B CE              mov         ecx,esi
+  00476A22: E8 69 0B 0E 00     call        00557590
+  00476A27: 50                 push        eax
+  00476A28: 6A 00              push        0
+  00476A2A: 56                 push        esi
+  00476A2B: E8 A9 47 19 00     call        _strtol
+  00476A30: 83 C4 0C           add         esp,0Ch
+  00476A33: EB 02              jmp         00476A37
+  00476A35: 33 C0              xor         eax,eax
+  00476A37: 89 45 B8           mov         dword ptr [ebp-48h],eax
+  00476A3A: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476A40: 68 E4 C8 63 00     push        offset ??_C@_0L@BNCNONE@CriDmgRate@
+  00476A45: 8D 85 90 FE FF FF  lea         eax,[ebp-170h]
+  00476A4B: 50                 push        eax
+  00476A4C: E8 3F 0F 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476A51: 8B 30              mov         esi,dword ptr [eax]
+  00476A53: 85 F6              test        esi,esi
+  00476A55: 74 1C              je          00476A73
+  00476A57: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476A5A: 85 F6              test        esi,esi
+  00476A5C: 74 15              je          00476A73
+  00476A5E: 8B CE              mov         ecx,esi
+  00476A60: E8 2B 0B 0E 00     call        00557590
+  00476A65: 50                 push        eax
+  00476A66: 6A 00              push        0
+  00476A68: 56                 push        esi
+  00476A69: E8 6B 47 19 00     call        _strtol
+  00476A6E: 83 C4 0C           add         esp,0Ch
+  00476A71: EB 02              jmp         00476A75
+  00476A73: 33 C0              xor         eax,eax
+  00476A75: 89 45 BC           mov         dword ptr [ebp-44h],eax
+  00476A78: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476A7E: 68 F0 C8 63 00     push        offset ??_C@_0O@OONAIFMC@DoubleDmgRate@
+  00476A83: 8D 85 8C FE FF FF  lea         eax,[ebp-174h]
+  00476A89: 50                 push        eax
+  00476A8A: E8 01 0F 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476A8F: 8B 30              mov         esi,dword ptr [eax]
+  00476A91: 85 F6              test        esi,esi
+  00476A93: 74 1C              je          00476AB1
+  00476A95: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476A98: 85 F6              test        esi,esi
+  00476A9A: 74 15              je          00476AB1
+  00476A9C: 8B CE              mov         ecx,esi
+  00476A9E: E8 ED 0A 0E 00     call        00557590
+  00476AA3: 50                 push        eax
+  00476AA4: 6A 00              push        0
+  00476AA6: 56                 push        esi
+  00476AA7: E8 2D 47 19 00     call        _strtol
+  00476AAC: 83 C4 0C           add         esp,0Ch
+  00476AAF: EB 02              jmp         00476AB3
+  00476AB1: 33 C0              xor         eax,eax
+  00476AB3: 89 45 C0           mov         dword ptr [ebp-40h],eax
+  00476AB6: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476ABC: 68 00 C9 63 00     push        offset ??_C@_0N@DCBGEKBJ@ResistDouble@
+  00476AC1: 8D 85 88 FE FF FF  lea         eax,[ebp-178h]
+  00476AC7: 50                 push        eax
+  00476AC8: E8 C3 0E 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476ACD: 8B 30              mov         esi,dword ptr [eax]
+  00476ACF: 85 F6              test        esi,esi
+  00476AD1: 74 1C              je          00476AEF
+  00476AD3: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476AD6: 85 F6              test        esi,esi
+  00476AD8: 74 15              je          00476AEF
+  00476ADA: 8B CE              mov         ecx,esi
+  00476ADC: E8 AF 0A 0E 00     call        00557590
+  00476AE1: 50                 push        eax
+  00476AE2: 6A 00              push        0
+  00476AE4: 56                 push        esi
+  00476AE5: E8 EF 46 19 00     call        _strtol
+  00476AEA: 83 C4 0C           add         esp,0Ch
+  00476AED: EB 02              jmp         00476AF1
+  00476AEF: 33 C0              xor         eax,eax
+  00476AF1: 89 45 C4           mov         dword ptr [ebp-3Ch],eax
+  00476AF4: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476AFA: 68 10 C9 63 00     push        offset ??_C@_0BA@LDIEIGGN@ResistIgnoreDef@
+  00476AFF: 8D 85 84 FE FF FF  lea         eax,[ebp-17Ch]
+  00476B05: 50                 push        eax
+  00476B06: E8 85 0E 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476B0B: 8B 30              mov         esi,dword ptr [eax]
+  00476B0D: 85 F6              test        esi,esi
+  00476B0F: 74 1C              je          00476B2D
+  00476B11: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476B14: 85 F6              test        esi,esi
+  00476B16: 74 15              je          00476B2D
+  00476B18: 8B CE              mov         ecx,esi
+  00476B1A: E8 71 0A 0E 00     call        00557590
+  00476B1F: 50                 push        eax
+  00476B20: 6A 00              push        0
+  00476B22: 56                 push        esi
+  00476B23: E8 B1 46 19 00     call        _strtol
+  00476B28: 83 C4 0C           add         esp,0Ch
+  00476B2B: EB 02              jmp         00476B2F
+  00476B2D: 33 C0              xor         eax,eax
+  00476B2F: 89 45 C8           mov         dword ptr [ebp-38h],eax
+  00476B32: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476B38: 68 20 C9 63 00     push        offset ??_C@_0P@NDNLCHID@ResistIgnoreSD@
+  00476B3D: 8D 85 80 FE FF FF  lea         eax,[ebp-180h]
+  00476B43: 50                 push        eax
+  00476B44: E8 47 0E 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476B49: 8B 30              mov         esi,dword ptr [eax]
+  00476B4B: 85 F6              test        esi,esi
+  00476B4D: 74 1C              je          00476B6B
+  00476B4F: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476B52: 85 F6              test        esi,esi
+  00476B54: 74 15              je          00476B6B
+  00476B56: 8B CE              mov         ecx,esi
+  00476B58: E8 33 0A 0E 00     call        00557590
+  00476B5D: 50                 push        eax
+  00476B5E: 6A 00              push        0
+  00476B60: 56                 push        esi
+  00476B61: E8 73 46 19 00     call        _strtol
+  00476B66: 83 C4 0C           add         esp,0Ch
+  00476B69: EB 02              jmp         00476B6D
+  00476B6B: 33 C0              xor         eax,eax
+  00476B6D: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00476B70: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476B76: 68 30 C9 63 00     push        offset ??_C@_0L@BKONCCPA@ResistCrit@
+  00476B7B: 8D 85 7C FE FF FF  lea         eax,[ebp-184h]
+  00476B81: 50                 push        eax
+  00476B82: E8 09 0E 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476B87: 8B 30              mov         esi,dword ptr [eax]
+  00476B89: 85 F6              test        esi,esi
+  00476B8B: 74 1C              je          00476BA9
+  00476B8D: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476B90: 85 F6              test        esi,esi
+  00476B92: 74 15              je          00476BA9
+  00476B94: 8B CE              mov         ecx,esi
+  00476B96: E8 F5 09 0E 00     call        00557590
+  00476B9B: 50                 push        eax
+  00476B9C: 6A 00              push        0
+  00476B9E: 56                 push        esi
+  00476B9F: E8 35 46 19 00     call        _strtol
+  00476BA4: 83 C4 0C           add         esp,0Ch
+  00476BA7: EB 02              jmp         00476BAB
+  00476BA9: 33 C0              xor         eax,eax
+  00476BAB: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00476BAE: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476BB4: 68 3C C9 63 00     push        offset ??_C@_09DFBFBGHO@ResistExl@
+  00476BB9: 8D 85 78 FE FF FF  lea         eax,[ebp-188h]
+  00476BBF: 50                 push        eax
+  00476BC0: E8 CB 0D 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476BC5: 8B 30              mov         esi,dword ptr [eax]
+  00476BC7: 85 F6              test        esi,esi
+  00476BC9: 74 1C              je          00476BE7
+  00476BCB: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476BCE: 85 F6              test        esi,esi
+  00476BD0: 74 15              je          00476BE7
+  00476BD2: 8B CE              mov         ecx,esi
+  00476BD4: E8 B7 09 0E 00     call        00557590
+  00476BD9: 50                 push        eax
+  00476BDA: 6A 00              push        0
+  00476BDC: 56                 push        esi
+  00476BDD: E8 F7 45 19 00     call        _strtol
+  00476BE2: 83 C4 0C           add         esp,0Ch
+  00476BE5: EB 02              jmp         00476BE9
+  00476BE7: 33 C0              xor         eax,eax
+  00476BE9: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  00476BEC: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476BF2: 68 48 C9 63 00     push        offset ??_C@_0L@PKHHEKGB@ResistStun@
+  00476BF7: 8D 85 74 FE FF FF  lea         eax,[ebp-18Ch]
+  00476BFD: 50                 push        eax
+  00476BFE: E8 8D 0D 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476C03: 8B 30              mov         esi,dword ptr [eax]
+  00476C05: 85 F6              test        esi,esi
+  00476C07: 74 1C              je          00476C25
+  00476C09: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476C0C: 85 F6              test        esi,esi
+  00476C0E: 74 15              je          00476C25
+  00476C10: 8B CE              mov         ecx,esi
+  00476C12: E8 79 09 0E 00     call        00557590
+  00476C17: 50                 push        eax
+  00476C18: 6A 00              push        0
+  00476C1A: 56                 push        esi
+  00476C1B: E8 B9 45 19 00     call        _strtol
+  00476C20: 83 C4 0C           add         esp,0Ch
+  00476C23: EB 02              jmp         00476C27
+  00476C25: 33 C0              xor         eax,eax
+  00476C27: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  00476C2A: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476C30: 68 54 C9 63 00     push        offset ??_C@_07NLAFAPNO@Reflect@
+  00476C35: 8D 85 70 FE FF FF  lea         eax,[ebp-190h]
+  00476C3B: 50                 push        eax
+  00476C3C: E8 4F 0D 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476C41: 8B 30              mov         esi,dword ptr [eax]
+  00476C43: 85 F6              test        esi,esi
+  00476C45: 74 1C              je          00476C63
+  00476C47: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476C4A: 85 F6              test        esi,esi
+  00476C4C: 74 15              je          00476C63
+  00476C4E: 8B CE              mov         ecx,esi
+  00476C50: E8 3B 09 0E 00     call        00557590
+  00476C55: 50                 push        eax
+  00476C56: 6A 00              push        0
+  00476C58: 56                 push        esi
+  00476C59: E8 7B 45 19 00     call        _strtol
+  00476C5E: 83 C4 0C           add         esp,0Ch
+  00476C61: EB 02              jmp         00476C65
+  00476C63: 33 C0              xor         eax,eax
+  00476C65: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00476C68: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476C6E: 68 24 85 63 00     push        offset ??_C@_04OKOFBOPB@Time@
+  00476C73: 8D 85 6C FE FF FF  lea         eax,[ebp-194h]
+  00476C79: 50                 push        eax
+  00476C7A: E8 11 0D 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476C7F: 8B 30              mov         esi,dword ptr [eax]
+  00476C81: 85 F6              test        esi,esi
+  00476C83: 74 1C              je          00476CA1
+  00476C85: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476C88: 85 F6              test        esi,esi
+  00476C8A: 74 15              je          00476CA1
+  00476C8C: 8B CE              mov         ecx,esi
+  00476C8E: E8 FD 08 0E 00     call        00557590
+  00476C93: 50                 push        eax
+  00476C94: 6A 00              push        0
+  00476C96: 56                 push        esi
+  00476C97: E8 3D 45 19 00     call        _strtol
+  00476C9C: 83 C4 0C           add         esp,0Ch
+  00476C9F: EB 02              jmp         00476CA3
+  00476CA1: 33 C0              xor         eax,eax
+  00476CA3: 89 45 E0           mov         dword ptr [ebp-20h],eax
+  00476CA6: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476CAC: 68 5C C9 63 00     push        offset ??_C@_09DLFAMNKA@SetOption@
+  00476CB1: 8D 85 68 FE FF FF  lea         eax,[ebp-198h]
+  00476CB7: 50                 push        eax
+  00476CB8: E8 D3 0C 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476CBD: 8B 30              mov         esi,dword ptr [eax]
+  00476CBF: 85 F6              test        esi,esi
+  00476CC1: 74 1C              je          00476CDF
+  00476CC3: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476CC6: 85 F6              test        esi,esi
+  00476CC8: 74 15              je          00476CDF
+  00476CCA: 8B CE              mov         ecx,esi
+  00476CCC: E8 BF 08 0E 00     call        00557590
+  00476CD1: 50                 push        eax
+  00476CD2: 6A 00              push        0
+  00476CD4: 56                 push        esi
+  00476CD5: E8 FF 44 19 00     call        _strtol
+  00476CDA: 83 C4 0C           add         esp,0Ch
+  00476CDD: EB 02              jmp         00476CE1
+  00476CDF: 33 C0              xor         eax,eax
+  00476CE1: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  00476CE4: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00476CE7: 3B 47 08           cmp         eax,dword ptr [edi+8]
+  00476CEA: 74 37              je          00476D23
+  00476CEC: 0F 10 45 90        movups      xmm0,xmmword ptr [ebp-70h]
+  00476CF0: 0F 11 00           movups      xmmword ptr [eax],xmm0
+  00476CF3: 0F 10 45 A0        movups      xmm0,xmmword ptr [ebp-60h]
+  00476CF7: 0F 11 40 10        movups      xmmword ptr [eax+10h],xmm0
+  00476CFB: 0F 10 45 B0        movups      xmm0,xmmword ptr [ebp-50h]
+  00476CFF: 0F 11 40 20        movups      xmmword ptr [eax+20h],xmm0
+  00476D03: 0F 10 45 C0        movups      xmm0,xmmword ptr [ebp-40h]
+  00476D07: 0F 11 40 30        movups      xmmword ptr [eax+30h],xmm0
+  00476D0B: 0F 10 45 D0        movups      xmm0,xmmword ptr [ebp-30h]
+  00476D0F: 0F 11 40 40        movups      xmmword ptr [eax+40h],xmm0
+  00476D13: F3 0F 7E 45 E0     movq        xmm0,mmword ptr [ebp-20h]
+  00476D18: 66 0F D6 40 50     movq        mmword ptr [eax+50h],xmm0
+  00476D1D: 83 47 04 58        add         dword ptr [edi+4],58h
+  00476D21: EB 0C              jmp         00476D2F
+  00476D23: 8D 4D 90           lea         ecx,[ebp-70h]
+  00476D26: 51                 push        ecx
+  00476D27: 50                 push        eax
+  00476D28: 8B CF              mov         ecx,edi
+  00476D2A: E8 21 35 00 00     call        ??$_Emplace_reallocate@ABUBuffData@@@?$vector@UBuffData@@V?$allocator@UBuffData@@@std@@@std@@AAEPAUBuffData@@QAU2@ABU2@@Z
+  00476D2F: 68 74 7F 63 00     push        offset ??_C@_04BGCMBJDA@Item@
+  00476D34: 8D 85 64 FE FF FF  lea         eax,[ebp-19Ch]
+  00476D3A: 50                 push        eax
+  00476D3B: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476D41: E8 BA 0C 0E 00     call        ?next_sibling@xml_node@pugi@@QBE?AV12@PBD@Z
+  00476D46: 8B 00              mov         eax,dword ptr [eax]
+  00476D48: 89 85 C4 FE FF FF  mov         dword ptr [ebp-13Ch],eax
+  00476D4E: 85 C0              test        eax,eax
+  00476D50: 0F 85 3A FA FF FF  jne         00476790
+  00476D56: 68 5C 97 63 00     push        offset ??_C@_07FBEEDFAI@ItemSet@
+  00476D5B: 8D 85 C4 FE FF FF  lea         eax,[ebp-13Ch]
+  00476D61: 50                 push        eax
+  00476D62: 8D 8D C0 FE FF FF  lea         ecx,[ebp-140h]
+  00476D68: E8 B3 0B 0E 00     call        ?child@xml_node@pugi@@QBE?AV12@PBD@Z
+  00476D6D: 83 BD C4 FE FF FF  cmp         dword ptr [ebp-13Ch],0
+            00
+  00476D74: 0F 84 99 05 00 00  je          00477313
+  00476D7A: 66 0F 1F 44 00 00  nop         word ptr [eax+eax]
+  00476D80: 68 10 82 63 00     push        offset ??_C@_05FNNGFGLF@Index@
+  00476D85: 8D 85 64 FE FF FF  lea         eax,[ebp-19Ch]
+  00476D8B: C7 45 90 00 00 00  mov         dword ptr [ebp-70h],0
+            00
+  00476D92: 50                 push        eax
+  00476D93: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476D99: E8 F2 0B 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476D9E: 8B 30              mov         esi,dword ptr [eax]
+  00476DA0: 85 F6              test        esi,esi
+  00476DA2: 74 1C              je          00476DC0
+  00476DA4: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476DA7: 85 F6              test        esi,esi
+  00476DA9: 74 15              je          00476DC0
+  00476DAB: 8B CE              mov         ecx,esi
+  00476DAD: E8 DE 07 0E 00     call        00557590
+  00476DB2: 50                 push        eax
+  00476DB3: 6A 00              push        0
+  00476DB5: 56                 push        esi
+  00476DB6: E8 1E 44 19 00     call        _strtol
+  00476DBB: 83 C4 0C           add         esp,0Ch
+  00476DBE: EB 02              jmp         00476DC2
+  00476DC0: 33 C0              xor         eax,eax
+  00476DC2: 89 45 94           mov         dword ptr [ebp-6Ch],eax
+  00476DC5: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476DCB: 68 AC C8 63 00     push        offset ??_C@_06LBEFNKEP@Effect@
+  00476DD0: 8D 85 68 FE FF FF  lea         eax,[ebp-198h]
+  00476DD6: 50                 push        eax
+  00476DD7: E8 B4 0B 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476DDC: 8B 30              mov         esi,dword ptr [eax]
+  00476DDE: 85 F6              test        esi,esi
+  00476DE0: 74 1C              je          00476DFE
+  00476DE2: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476DE5: 85 F6              test        esi,esi
+  00476DE7: 74 15              je          00476DFE
+  00476DE9: 8B CE              mov         ecx,esi
+  00476DEB: E8 A0 07 0E 00     call        00557590
+  00476DF0: 50                 push        eax
+  00476DF1: 6A 00              push        0
+  00476DF3: 56                 push        esi
+  00476DF4: E8 E0 43 19 00     call        _strtol
+  00476DF9: 83 C4 0C           add         esp,0Ch
+  00476DFC: EB 02              jmp         00476E00
+  00476DFE: 33 C0              xor         eax,eax
+  00476E00: 89 45 98           mov         dword ptr [ebp-68h],eax
+  00476E03: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476E09: 68 B4 C8 63 00     push        offset ??_C@_02FLIMDJ@Lv@
+  00476E0E: 8D 85 6C FE FF FF  lea         eax,[ebp-194h]
+  00476E14: 50                 push        eax
+  00476E15: E8 76 0B 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476E1A: 8B 30              mov         esi,dword ptr [eax]
+  00476E1C: 85 F6              test        esi,esi
+  00476E1E: 74 1C              je          00476E3C
+  00476E20: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476E23: 85 F6              test        esi,esi
+  00476E25: 74 15              je          00476E3C
+  00476E27: 8B CE              mov         ecx,esi
+  00476E29: E8 62 07 0E 00     call        00557590
+  00476E2E: 50                 push        eax
+  00476E2F: 6A 00              push        0
+  00476E31: 56                 push        esi
+  00476E32: E8 A2 43 19 00     call        _strtol
+  00476E37: 83 C4 0C           add         esp,0Ch
+  00476E3A: EB 02              jmp         00476E3E
+  00476E3C: 33 C0              xor         eax,eax
+  00476E3E: 89 45 9C           mov         dword ptr [ebp-64h],eax
+  00476E41: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476E47: 68 CC 7F 63 00     push        offset ??_C@_03CGOLMCK@Opt@
+  00476E4C: 8D 85 70 FE FF FF  lea         eax,[ebp-190h]
+  00476E52: 50                 push        eax
+  00476E53: E8 38 0B 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476E58: 8B 30              mov         esi,dword ptr [eax]
+  00476E5A: 85 F6              test        esi,esi
+  00476E5C: 74 1C              je          00476E7A
+  00476E5E: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476E61: 85 F6              test        esi,esi
+  00476E63: 74 15              je          00476E7A
+  00476E65: 8B CE              mov         ecx,esi
+  00476E67: E8 24 07 0E 00     call        00557590
+  00476E6C: 50                 push        eax
+  00476E6D: 6A 00              push        0
+  00476E6F: 56                 push        esi
+  00476E70: E8 64 43 19 00     call        _strtol
+  00476E75: 83 C4 0C           add         esp,0Ch
+  00476E78: EB 02              jmp         00476E7C
+  00476E7A: 33 C0              xor         eax,eax
+  00476E7C: 89 45 A0           mov         dword ptr [ebp-60h],eax
+  00476E7F: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476E85: 68 B8 C8 63 00     push        offset ??_C@_03KAHOEKJK@Dmg@
+  00476E8A: 8D 85 74 FE FF FF  lea         eax,[ebp-18Ch]
+  00476E90: 50                 push        eax
+  00476E91: E8 FA 0A 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476E96: 8B 30              mov         esi,dword ptr [eax]
+  00476E98: 85 F6              test        esi,esi
+  00476E9A: 74 1C              je          00476EB8
+  00476E9C: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476E9F: 85 F6              test        esi,esi
+  00476EA1: 74 15              je          00476EB8
+  00476EA3: 8B CE              mov         ecx,esi
+  00476EA5: E8 E6 06 0E 00     call        00557590
+  00476EAA: 50                 push        eax
+  00476EAB: 6A 00              push        0
+  00476EAD: 56                 push        esi
+  00476EAE: E8 26 43 19 00     call        _strtol
+  00476EB3: 83 C4 0C           add         esp,0Ch
+  00476EB6: EB 02              jmp         00476EBA
+  00476EB8: 33 C0              xor         eax,eax
+  00476EBA: 89 45 A4           mov         dword ptr [ebp-5Ch],eax
+  00476EBD: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476EC3: 68 BC C8 63 00     push        offset ??_C@_05KICACMKE@AddSD@
+  00476EC8: 8D 85 78 FE FF FF  lea         eax,[ebp-188h]
+  00476ECE: 50                 push        eax
+  00476ECF: E8 BC 0A 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476ED4: 8B 30              mov         esi,dword ptr [eax]
+  00476ED6: 85 F6              test        esi,esi
+  00476ED8: 74 1C              je          00476EF6
+  00476EDA: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476EDD: 85 F6              test        esi,esi
+  00476EDF: 74 15              je          00476EF6
+  00476EE1: 8B CE              mov         ecx,esi
+  00476EE3: E8 A8 06 0E 00     call        00557590
+  00476EE8: 50                 push        eax
+  00476EE9: 6A 00              push        0
+  00476EEB: 56                 push        esi
+  00476EEC: E8 E8 42 19 00     call        _strtol
+  00476EF1: 83 C4 0C           add         esp,0Ch
+  00476EF4: EB 02              jmp         00476EF8
+  00476EF6: 33 C0              xor         eax,eax
+  00476EF8: 89 45 A8           mov         dword ptr [ebp-58h],eax
+  00476EFB: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476F01: 68 C4 C8 63 00     push        offset ??_C@_05JGPNLHGA@AddHP@
+  00476F06: 8D 85 7C FE FF FF  lea         eax,[ebp-184h]
+  00476F0C: 50                 push        eax
+  00476F0D: E8 7E 0A 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476F12: 8B 30              mov         esi,dword ptr [eax]
+  00476F14: 85 F6              test        esi,esi
+  00476F16: 74 1C              je          00476F34
+  00476F18: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476F1B: 85 F6              test        esi,esi
+  00476F1D: 74 15              je          00476F34
+  00476F1F: 8B CE              mov         ecx,esi
+  00476F21: E8 6A 06 0E 00     call        00557590
+  00476F26: 50                 push        eax
+  00476F27: 6A 00              push        0
+  00476F29: 56                 push        esi
+  00476F2A: E8 AA 42 19 00     call        _strtol
+  00476F2F: 83 C4 0C           add         esp,0Ch
+  00476F32: EB 02              jmp         00476F36
+  00476F34: 33 C0              xor         eax,eax
+  00476F36: 89 45 AC           mov         dword ptr [ebp-54h],eax
+  00476F39: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476F3F: 68 CC C8 63 00     push        offset ??_C@_05JADGHFIL@AddMP@
+  00476F44: 8D 85 80 FE FF FF  lea         eax,[ebp-180h]
+  00476F4A: 50                 push        eax
+  00476F4B: E8 40 0A 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476F50: 8B 30              mov         esi,dword ptr [eax]
+  00476F52: 85 F6              test        esi,esi
+  00476F54: 74 1C              je          00476F72
+  00476F56: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476F59: 85 F6              test        esi,esi
+  00476F5B: 74 15              je          00476F72
+  00476F5D: 8B CE              mov         ecx,esi
+  00476F5F: E8 2C 06 0E 00     call        00557590
+  00476F64: 50                 push        eax
+  00476F65: 6A 00              push        0
+  00476F67: 56                 push        esi
+  00476F68: E8 6C 42 19 00     call        _strtol
+  00476F6D: 83 C4 0C           add         esp,0Ch
+  00476F70: EB 02              jmp         00476F74
+  00476F72: 33 C0              xor         eax,eax
+  00476F74: 89 45 B0           mov         dword ptr [ebp-50h],eax
+  00476F77: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476F7D: 68 D4 C8 63 00     push        offset ??_C@_03LHHGCKGD@Def@
+  00476F82: 8D 85 84 FE FF FF  lea         eax,[ebp-17Ch]
+  00476F88: 50                 push        eax
+  00476F89: E8 02 0A 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476F8E: 8B 30              mov         esi,dword ptr [eax]
+  00476F90: 85 F6              test        esi,esi
+  00476F92: 74 1C              je          00476FB0
+  00476F94: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476F97: 85 F6              test        esi,esi
+  00476F99: 74 15              je          00476FB0
+  00476F9B: 8B CE              mov         ecx,esi
+  00476F9D: E8 EE 05 0E 00     call        00557590
+  00476FA2: 50                 push        eax
+  00476FA3: 6A 00              push        0
+  00476FA5: 56                 push        esi
+  00476FA6: E8 2E 42 19 00     call        _strtol
+  00476FAB: 83 C4 0C           add         esp,0Ch
+  00476FAE: EB 02              jmp         00476FB2
+  00476FB0: 33 C0              xor         eax,eax
+  00476FB2: 89 45 B4           mov         dword ptr [ebp-4Ch],eax
+  00476FB5: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476FBB: 68 D8 C8 63 00     push        offset ??_C@_0L@LENCMBBB@ExlDmgRate@
+  00476FC0: 8D 85 88 FE FF FF  lea         eax,[ebp-178h]
+  00476FC6: 50                 push        eax
+  00476FC7: E8 C4 09 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00476FCC: 8B 30              mov         esi,dword ptr [eax]
+  00476FCE: 85 F6              test        esi,esi
+  00476FD0: 74 1C              je          00476FEE
+  00476FD2: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00476FD5: 85 F6              test        esi,esi
+  00476FD7: 74 15              je          00476FEE
+  00476FD9: 8B CE              mov         ecx,esi
+  00476FDB: E8 B0 05 0E 00     call        00557590
+  00476FE0: 50                 push        eax
+  00476FE1: 6A 00              push        0
+  00476FE3: 56                 push        esi
+  00476FE4: E8 F0 41 19 00     call        _strtol
+  00476FE9: 83 C4 0C           add         esp,0Ch
+  00476FEC: EB 02              jmp         00476FF0
+  00476FEE: 33 C0              xor         eax,eax
+  00476FF0: 89 45 B8           mov         dword ptr [ebp-48h],eax
+  00476FF3: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00476FF9: 68 E4 C8 63 00     push        offset ??_C@_0L@BNCNONE@CriDmgRate@
+  00476FFE: 8D 85 8C FE FF FF  lea         eax,[ebp-174h]
+  00477004: 50                 push        eax
+  00477005: E8 86 09 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  0047700A: 8B 30              mov         esi,dword ptr [eax]
+  0047700C: 85 F6              test        esi,esi
+  0047700E: 74 1C              je          0047702C
+  00477010: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00477013: 85 F6              test        esi,esi
+  00477015: 74 15              je          0047702C
+  00477017: 8B CE              mov         ecx,esi
+  00477019: E8 72 05 0E 00     call        00557590
+  0047701E: 50                 push        eax
+  0047701F: 6A 00              push        0
+  00477021: 56                 push        esi
+  00477022: E8 B2 41 19 00     call        _strtol
+  00477027: 83 C4 0C           add         esp,0Ch
+  0047702A: EB 02              jmp         0047702E
+  0047702C: 33 C0              xor         eax,eax
+  0047702E: 89 45 BC           mov         dword ptr [ebp-44h],eax
+  00477031: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00477037: 68 F0 C8 63 00     push        offset ??_C@_0O@OONAIFMC@DoubleDmgRate@
+  0047703C: 8D 85 90 FE FF FF  lea         eax,[ebp-170h]
+  00477042: 50                 push        eax
+  00477043: E8 48 09 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00477048: 8B 30              mov         esi,dword ptr [eax]
+  0047704A: 85 F6              test        esi,esi
+  0047704C: 74 1C              je          0047706A
+  0047704E: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00477051: 85 F6              test        esi,esi
+  00477053: 74 15              je          0047706A
+  00477055: 8B CE              mov         ecx,esi
+  00477057: E8 34 05 0E 00     call        00557590
+  0047705C: 50                 push        eax
+  0047705D: 6A 00              push        0
+  0047705F: 56                 push        esi
+  00477060: E8 74 41 19 00     call        _strtol
+  00477065: 83 C4 0C           add         esp,0Ch
+  00477068: EB 02              jmp         0047706C
+  0047706A: 33 C0              xor         eax,eax
+  0047706C: 89 45 C0           mov         dword ptr [ebp-40h],eax
+  0047706F: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00477075: 68 00 C9 63 00     push        offset ??_C@_0N@DCBGEKBJ@ResistDouble@
+  0047707A: 8D 85 94 FE FF FF  lea         eax,[ebp-16Ch]
+  00477080: 50                 push        eax
+  00477081: E8 0A 09 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00477086: 8B 30              mov         esi,dword ptr [eax]
+  00477088: 85 F6              test        esi,esi
+  0047708A: 74 1C              je          004770A8
+  0047708C: 8B 76 08           mov         esi,dword ptr [esi+8]
+  0047708F: 85 F6              test        esi,esi
+  00477091: 74 15              je          004770A8
+  00477093: 8B CE              mov         ecx,esi
+  00477095: E8 F6 04 0E 00     call        00557590
+  0047709A: 50                 push        eax
+  0047709B: 6A 00              push        0
+  0047709D: 56                 push        esi
+  0047709E: E8 36 41 19 00     call        _strtol
+  004770A3: 83 C4 0C           add         esp,0Ch
+  004770A6: EB 02              jmp         004770AA
+  004770A8: 33 C0              xor         eax,eax
+  004770AA: 89 45 C4           mov         dword ptr [ebp-3Ch],eax
+  004770AD: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004770B3: 68 10 C9 63 00     push        offset ??_C@_0BA@LDIEIGGN@ResistIgnoreDef@
+  004770B8: 8D 85 98 FE FF FF  lea         eax,[ebp-168h]
+  004770BE: 50                 push        eax
+  004770BF: E8 CC 08 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004770C4: 8B 30              mov         esi,dword ptr [eax]
+  004770C6: 85 F6              test        esi,esi
+  004770C8: 74 1C              je          004770E6
+  004770CA: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004770CD: 85 F6              test        esi,esi
+  004770CF: 74 15              je          004770E6
+  004770D1: 8B CE              mov         ecx,esi
+  004770D3: E8 B8 04 0E 00     call        00557590
+  004770D8: 50                 push        eax
+  004770D9: 6A 00              push        0
+  004770DB: 56                 push        esi
+  004770DC: E8 F8 40 19 00     call        _strtol
+  004770E1: 83 C4 0C           add         esp,0Ch
+  004770E4: EB 02              jmp         004770E8
+  004770E6: 33 C0              xor         eax,eax
+  004770E8: 89 45 C8           mov         dword ptr [ebp-38h],eax
+  004770EB: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004770F1: 68 20 C9 63 00     push        offset ??_C@_0P@NDNLCHID@ResistIgnoreSD@
+  004770F6: 8D 85 9C FE FF FF  lea         eax,[ebp-164h]
+  004770FC: 50                 push        eax
+  004770FD: E8 8E 08 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00477102: 8B 30              mov         esi,dword ptr [eax]
+  00477104: 85 F6              test        esi,esi
+  00477106: 74 1C              je          00477124
+  00477108: 8B 76 08           mov         esi,dword ptr [esi+8]
+  0047710B: 85 F6              test        esi,esi
+  0047710D: 74 15              je          00477124
+  0047710F: 8B CE              mov         ecx,esi
+  00477111: E8 7A 04 0E 00     call        00557590
+  00477116: 50                 push        eax
+  00477117: 6A 00              push        0
+  00477119: 56                 push        esi
+  0047711A: E8 BA 40 19 00     call        _strtol
+  0047711F: 83 C4 0C           add         esp,0Ch
+  00477122: EB 02              jmp         00477126
+  00477124: 33 C0              xor         eax,eax
+  00477126: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00477129: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  0047712F: 68 30 C9 63 00     push        offset ??_C@_0L@BKONCCPA@ResistCrit@
+  00477134: 8D 85 A0 FE FF FF  lea         eax,[ebp-160h]
+  0047713A: 50                 push        eax
+  0047713B: E8 50 08 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00477140: 8B 30              mov         esi,dword ptr [eax]
+  00477142: 85 F6              test        esi,esi
+  00477144: 74 1C              je          00477162
+  00477146: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00477149: 85 F6              test        esi,esi
+  0047714B: 74 15              je          00477162
+  0047714D: 8B CE              mov         ecx,esi
+  0047714F: E8 3C 04 0E 00     call        00557590
+  00477154: 50                 push        eax
+  00477155: 6A 00              push        0
+  00477157: 56                 push        esi
+  00477158: E8 7C 40 19 00     call        _strtol
+  0047715D: 83 C4 0C           add         esp,0Ch
+  00477160: EB 02              jmp         00477164
+  00477162: 33 C0              xor         eax,eax
+  00477164: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00477167: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  0047716D: 68 3C C9 63 00     push        offset ??_C@_09DFBFBGHO@ResistExl@
+  00477172: 8D 85 A4 FE FF FF  lea         eax,[ebp-15Ch]
+  00477178: 50                 push        eax
+  00477179: E8 12 08 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  0047717E: 8B 30              mov         esi,dword ptr [eax]
+  00477180: 85 F6              test        esi,esi
+  00477182: 74 1C              je          004771A0
+  00477184: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00477187: 85 F6              test        esi,esi
+  00477189: 74 15              je          004771A0
+  0047718B: 8B CE              mov         ecx,esi
+  0047718D: E8 FE 03 0E 00     call        00557590
+  00477192: 50                 push        eax
+  00477193: 6A 00              push        0
+  00477195: 56                 push        esi
+  00477196: E8 3E 40 19 00     call        _strtol
+  0047719B: 83 C4 0C           add         esp,0Ch
+  0047719E: EB 02              jmp         004771A2
+  004771A0: 33 C0              xor         eax,eax
+  004771A2: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  004771A5: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004771AB: 68 48 C9 63 00     push        offset ??_C@_0L@PKHHEKGB@ResistStun@
+  004771B0: 8D 85 A8 FE FF FF  lea         eax,[ebp-158h]
+  004771B6: 50                 push        eax
+  004771B7: E8 D4 07 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004771BC: 8B 30              mov         esi,dword ptr [eax]
+  004771BE: 85 F6              test        esi,esi
+  004771C0: 74 1C              je          004771DE
+  004771C2: 8B 76 08           mov         esi,dword ptr [esi+8]
+  004771C5: 85 F6              test        esi,esi
+  004771C7: 74 15              je          004771DE
+  004771C9: 8B CE              mov         ecx,esi
+  004771CB: E8 C0 03 0E 00     call        00557590
+  004771D0: 50                 push        eax
+  004771D1: 6A 00              push        0
+  004771D3: 56                 push        esi
+  004771D4: E8 00 40 19 00     call        _strtol
+  004771D9: 83 C4 0C           add         esp,0Ch
+  004771DC: EB 02              jmp         004771E0
+  004771DE: 33 C0              xor         eax,eax
+  004771E0: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  004771E3: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004771E9: 68 54 C9 63 00     push        offset ??_C@_07NLAFAPNO@Reflect@
+  004771EE: 8D 85 AC FE FF FF  lea         eax,[ebp-154h]
+  004771F4: 50                 push        eax
+  004771F5: E8 96 07 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  004771FA: 8B 30              mov         esi,dword ptr [eax]
+  004771FC: 85 F6              test        esi,esi
+  004771FE: 74 1C              je          0047721C
+  00477200: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00477203: 85 F6              test        esi,esi
+  00477205: 74 15              je          0047721C
+  00477207: 8B CE              mov         ecx,esi
+  00477209: E8 82 03 0E 00     call        00557590
+  0047720E: 50                 push        eax
+  0047720F: 6A 00              push        0
+  00477211: 56                 push        esi
+  00477212: E8 C2 3F 19 00     call        _strtol
+  00477217: 83 C4 0C           add         esp,0Ch
+  0047721A: EB 02              jmp         0047721E
+  0047721C: 33 C0              xor         eax,eax
+  0047721E: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00477221: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00477227: 68 24 85 63 00     push        offset ??_C@_04OKOFBOPB@Time@
+  0047722C: 8D 85 B0 FE FF FF  lea         eax,[ebp-150h]
+  00477232: 50                 push        eax
+  00477233: E8 58 07 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00477238: 8B 30              mov         esi,dword ptr [eax]
+  0047723A: 85 F6              test        esi,esi
+  0047723C: 74 1C              je          0047725A
+  0047723E: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00477241: 85 F6              test        esi,esi
+  00477243: 74 15              je          0047725A
+  00477245: 8B CE              mov         ecx,esi
+  00477247: E8 44 03 0E 00     call        00557590
+  0047724C: 50                 push        eax
+  0047724D: 6A 00              push        0
+  0047724F: 56                 push        esi
+  00477250: E8 84 3F 19 00     call        _strtol
+  00477255: 83 C4 0C           add         esp,0Ch
+  00477258: EB 02              jmp         0047725C
+  0047725A: 33 C0              xor         eax,eax
+  0047725C: 89 45 E0           mov         dword ptr [ebp-20h],eax
+  0047725F: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  00477265: 68 5C C9 63 00     push        offset ??_C@_09DLFAMNKA@SetOption@
+  0047726A: 8D 85 B4 FE FF FF  lea         eax,[ebp-14Ch]
+  00477270: 50                 push        eax
+  00477271: E8 1A 07 0E 00     call        ?attribute@xml_node@pugi@@QBE?AVxml_attribute@2@PBD@Z
+  00477276: 8B 30              mov         esi,dword ptr [eax]
+  00477278: 85 F6              test        esi,esi
+  0047727A: 74 1C              je          00477298
+  0047727C: 8B 76 08           mov         esi,dword ptr [esi+8]
+  0047727F: 85 F6              test        esi,esi
+  00477281: 74 15              je          00477298
+  00477283: 8B CE              mov         ecx,esi
+  00477285: E8 06 03 0E 00     call        00557590
+  0047728A: 50                 push        eax
+  0047728B: 6A 00              push        0
+  0047728D: 56                 push        esi
+  0047728E: E8 46 3F 19 00     call        _strtol
+  00477293: 83 C4 0C           add         esp,0Ch
+  00477296: EB 02              jmp         0047729A
+  00477298: 33 C0              xor         eax,eax
+  0047729A: 8B 8D BC FE FF FF  mov         ecx,dword ptr [ebp-144h]
+  004772A0: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  004772A3: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  004772A6: 3B 41 08           cmp         eax,dword ptr [ecx+8]
+  004772A9: 74 37              je          004772E2
+  004772AB: 0F 10 45 90        movups      xmm0,xmmword ptr [ebp-70h]
+  004772AF: 0F 11 00           movups      xmmword ptr [eax],xmm0
+  004772B2: 0F 10 45 A0        movups      xmm0,xmmword ptr [ebp-60h]
+  004772B6: 0F 11 40 10        movups      xmmword ptr [eax+10h],xmm0
+  004772BA: 0F 10 45 B0        movups      xmm0,xmmword ptr [ebp-50h]
+  004772BE: 0F 11 40 20        movups      xmmword ptr [eax+20h],xmm0
+  004772C2: 0F 10 45 C0        movups      xmm0,xmmword ptr [ebp-40h]
+  004772C6: 0F 11 40 30        movups      xmmword ptr [eax+30h],xmm0
+  004772CA: 0F 10 45 D0        movups      xmm0,xmmword ptr [ebp-30h]
+  004772CE: 0F 11 40 40        movups      xmmword ptr [eax+40h],xmm0
+  004772D2: F3 0F 7E 45 E0     movq        xmm0,mmword ptr [ebp-20h]
+  004772D7: 66 0F D6 40 50     movq        mmword ptr [eax+50h],xmm0
+  004772DC: 83 41 04 58        add         dword ptr [ecx+4],58h
+  004772E0: EB 0A              jmp         004772EC
+  004772E2: 8D 55 90           lea         edx,[ebp-70h]
+  004772E5: 52                 push        edx
+  004772E6: 50                 push        eax
+  004772E7: E8 64 2F 00 00     call        ??$_Emplace_reallocate@ABUBuffData@@@?$vector@UBuffData@@V?$allocator@UBuffData@@@std@@@std@@AAEPAUBuffData@@QAU2@ABU2@@Z
+  004772EC: 68 5C 97 63 00     push        offset ??_C@_07FBEEDFAI@ItemSet@
+  004772F1: 8D 85 B8 FE FF FF  lea         eax,[ebp-148h]
+  004772F7: 50                 push        eax
+  004772F8: 8D 8D C4 FE FF FF  lea         ecx,[ebp-13Ch]
+  004772FE: E8 FD 06 0E 00     call        ?next_sibling@xml_node@pugi@@QBE?AV12@PBD@Z
+  00477303: 8B 00              mov         eax,dword ptr [eax]
+  00477305: 89 85 C4 FE FF FF  mov         dword ptr [ebp-13Ch],eax
+  0047730B: 85 C0              test        eax,eax
+  0047730D: 0F 85 6D FA FF FF  jne         00476D80
+  00477313: 8D 8D C8 FE FF FF  lea         ecx,[ebp-138h]
+  00477319: C7 45 FC 02 00 00  mov         dword ptr [ebp-4],2
+            00
+  00477320: E8 4B 09 0E 00     call        ?destroy@xml_document@pugi@@AAEXXZ
+  00477325: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00477328: 64 89 0D 00 00 00  mov         dword ptr fs:[0],ecx
+            00
+  0047732F: 59                 pop         ecx
+  00477330: 5F                 pop         edi
+  00477331: 5E                 pop         esi
+  00477332: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  00477335: 33 CD              xor         ecx,ebp
+  00477337: E8 2F C4 17 00     call        @__security_check_cookie@4
+  0047733C: 8B E5              mov         esp,ebp
+  0047733E: 5D                 pop         ebp
+  0047733F: 8B E3              mov         esp,ebx
+  00477341: 5B                 pop         ebx
+  00477342: C2 04 00           ret         4
+  00477345: 8D 8D 54 FE FF FF  lea         ecx,[ebp-1ACh]
+  0047734B: E8 90 07 0E 00     call        ?description@xml_parse_result@pugi@@QBEPBDXZ
+  00477350: 50                 push        eax
+  00477351: 56                 push        esi
+  00477352: 68 34 7F 63 00     push        offset ??_C@_0BN@KJOENND@File?5?$CFs?5load?5fail?4?5Error?3?5?$CFs@
+  00477357: E8 D4 65 17 00     call        ?ErrorMessageBox@@YAXPADZZ
+  0047735C: CC                 int         3
+  0047735D: CC CC CC                                         ооо
+?Save@CustomSetDameItem@@QAEXPAD@Z:

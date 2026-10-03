@@ -1,0 +1,46 @@
+11:42:48 [AITEST] ===== CB_ActiveInvasions E2E SELFTEST BASLADI =====
+11:42:48 [AITEST][1] hazirlik: monster_add(701)x2 + monster_add(702)x1 -> beklenen harita {701:(2,2), 702:(1,1)} | cb disi paket=0
+11:42:48 [AITEST] sentetik slot: gObjAdd(9999)=9999 Type=1 Connected=3 (kendi struct'i; slota ozel struct; paylasilan CommonStruct korunur)
+11:42:48 [AITEST][PKT] #1 LISTE(C2 F3 98) hedef=TEK-ISTEMCI idx=9999 size=30 hex=C2 00 1E F3 98 02 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][2] F7 sub 0x02 -> ProtocolCore: tek-istemci liste=BULUNDU birebir=1 (beklenen boyut=30 C2 1E F3 98) | okunan: size=30 count=2 {701:(2,2)} {702:(1,1)}
+11:42:48 [AITEST][3-on] user araligi sayimi (9000..9999): Connected==ONLINE=1, Type==USER=1, USER+ONLINE=1, USER+ONLINE+cache=1=1
+11:42:48 [AITEST][PKT] #2 LISTE(C2 F3 98) hedef=TEK-ISTEMCI idx=9999 size=30 hex=C2 00 1E F3 98 02 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][PKT] #3 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=30 hex=C2 00 1E F3 98 02 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][PKT] #4 LISTE(C2 F3 98) hedef=TEK-ISTEMCI idx=9999 size=30 hex=C2 00 1E F3 98 02 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][3] giris push: CacheSendOnlogin=1 (beklenen 1) | tek-istemci liste=BULUNDU birebir=1 | SendThongTinSauKhiVaoGame toplu liste=BULUNDU
+11:42:48 [AITEST][3b] gate: 2. gObjSecondProc sonrasi yeni liste=YOK (beklenen YOK), CacheSendOnlogin=1
+11:42:48 [AITEST][PKT] #5 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=42 hex=C2 00 2A F3 98 03 2B 00 00 00 08 00 00 00 08 00 00 00 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][PKT] #6 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=54 hex=C2 00 36 F3 98 04 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 
+11:42:48 [AITEST][PKT] #7 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=66 hex=C2 00 42 F3 98 05 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 BD 02 00 00 02 00 
+11:42:48 [AITEST][PKT] #8 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=78 hex=C2 00 4E F3 98 06 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #9 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=90 hex=C2 00 5A F3 98 07 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #10 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=102 hex=C2 00 66 F3 98 08 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #11 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=114 hex=C2 00 72 F3 98 09 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #12 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=126 hex=C2 00 7E F3 98 0A 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #13 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=138 hex=C2 00 8A F3 98 0B 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #14 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=150 hex=C2 00 96 F3 98 0C 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #15 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=162 hex=C2 00 A2 F3 98 0D 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #16 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=174 hex=C2 00 AE F3 98 0E 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #17 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=186 hex=C2 00 BA F3 98 0F 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #18 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=198 hex=C2 00 C6 F3 98 10 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #19 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=210 hex=C2 00 D2 F3 98 11 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #20 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=222 hex=C2 00 DE F3 98 12 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #21 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=234 hex=C2 00 EA F3 98 13 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #22 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=246 hex=C2 00 F6 F3 98 14 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #23 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=258 hex=C2 01 02 F3 98 15 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][PKT] #24 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=270 hex=C2 01 0E F3 98 16 2B 00 00 00 08 00 00 00 08 00 00 00 2C 00 00 00 01 00 00 00 01 00 00 00 35 00 00 00 08 00 00 00 08 00 00 00 36 00 00 00 08 00 
+11:42:48 [AITEST][4] SetState(START): msb(Type3/43/Map0/Val0)=8, gercek spawn=108, monster_add sayaci=8 | sonda liste=BULUNDU birebir=1 | okunan: size=42 count=3 {43:(8,8)} {701:(2,2)} {702:(1,1)} | beklenen: {43:(8,8)} {701:(2,2)} {702:(1,1)}
+11:42:48 [AITEST][PKT] #25 SAYAC(C1 10 F3 99) hedef=HERKESE(DataSendAll) idx=-1 size=16 hex=C1 10 F3 99 2B 00 00 00 07 00 00 00 00 00 00 00 
+11:42:48 [AITEST][5] MonsterDieProc(idx=1216 class=43): sayac update=BULUNDU birebir=1 (beklenen C1 10 F3 99 {43,7,0}) | invasion obje sayaci=108
+11:42:48 [AITEST][PKT] #26 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=30 hex=C2 00 1E F3 98 02 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][6] SetState(EMPTY)/ClearMonster: kalan invasion obje=0 | sonda toplu liste=BULUNDU birebir=1 | okunan: size=30 count=2 {701:(2,2)} {702:(1,1)} | beklenen {701:(2,2)} {702:(1,1)} (43 kaydi erase)
+11:42:48 [AITEST][PKT] #27 SAYAC(C1 10 F3 99) hedef=HERKESE(DataSendAll) idx=-1 size=16 hex=C1 10 F3 99 BF 02 00 00 01 00 00 00 00 00 00 00 
+11:42:48 [AITEST][7] monster_add(703,true): update=BULUNDU birebir=1 (beklenen {703,1,0} broadcast)
+11:42:48 [AITEST][PKT] #28 SAYAC(C1 10 F3 99) hedef=HERKESE(DataSendAll) idx=-1 size=16 hex=C1 10 F3 99 BF 02 00 00 02 00 00 00 00 00 00 00 
+11:42:48 [AITEST][7a] monster_del(703,true): update=BULUNDU birebir=1 (beklenen {703,2,0}) | (count,max) cift azalis
+11:42:48 [AITEST][PKT] #29 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=42 hex=C2 00 2A F3 98 03 BD 02 00 00 02 00 00 00 02 00 00 00 BE 02 00 00 01 00 00 00 01 00 00 00 BF 02 00 00 01 00 00 00 01 00 00 00 
+11:42:48 [AITEST][7b] erase + yeniden ekleme: toplu liste=BULUNDU birebir=1 | okunan: size=42 count=3 {701:(2,2)} {702:(1,1)} {703:(1,1)} | beklenen {701:(2,2)} {702:(1,1)} {703:(1,1)} (max sifirlanmali)
+11:42:48 [AITEST][7c] negatif yol (99999): yeni paket=0 (beklenen 0)
+11:42:48 [AITEST][PKT] #30 LISTE(C2 F3 98) hedef=HERKESE(DataSendAll) idx=-1 size=6 hex=C2 00 06 F3 98 00 
+11:42:48 [AITEST][8] temizlik: test kayitlari silindi | bos liste=BULUNDU birebir=1 (boyut=6, count=0)
+11:42:48 [AITEST] ===== SELFTEST BITTI ===== yakalanan cb paketi=30, cb disi paket=3, yakalama kapatildi (FlyingDragonsSwitch=1)

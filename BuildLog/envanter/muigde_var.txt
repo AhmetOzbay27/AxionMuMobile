@@ -1,0 +1,4 @@
+AddBuffer
+CAUTOHP
+CCustomJewelBank
+CSkillDamage

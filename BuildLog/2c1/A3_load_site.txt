@@ -1,0 +1,86 @@
+  00569AD3: 68 84 B0 A9 00     push        0A9B084h
+  00569AD8: 8B F0              mov         esi,eax
+  00569ADA: E8 51 F8 08 00     call        _strcpy_s
+  00569ADF: 83 C4 0C           add         esp,0Ch
+  00569AE2: 68 28 D7 63 00     push        offset ??_C@_0BG@HNOFJIAB@SPK?2CustomHarmony?4xml@
+  00569AE7: 6A 64              push        64h
+  00569AE9: 68 84 B0 A9 00     push        0A9B084h
+  00569AEE: E8 1D 15 0A 00     call        _strcat_s
+  00569AF3: 83 C4 0C           add         esp,0Ch
+  00569AF6: 8B CE              mov         ecx,esi
+  00569AF8: 68 84 B0 A9 00     push        0A9B084h
+  00569AFD: E8 0E A5 F2 FF     call        ?Load@CustomHarmony@@QAEXPAD@Z
+  00569B02: E8 09 F4 F2 FF     call        ?Instance@SystemItemChanger@@SAPAV1@XZ
+  00569B07: 68 20 B0 A9 00     push        offset ?gPath@@3VCPath@@A
+  00569B0C: 6A 64              push        64h
+  00569B0E: 68 84 B0 A9 00     push        0A9B084h
+  00569B13: 8B F0              mov         esi,eax
+  00569B15: E8 16 F8 08 00     call        _strcpy_s
+  00569B1A: 83 C4 0C           add         esp,0Ch
+  00569B1D: 68 C4 D8 63 00     push        offset ??_C@_0BD@JNKFGBEG@SPK?2ChangeItem?4xml@
+  00569B22: 6A 64              push        64h
+  00569B24: 68 84 B0 A9 00     push        0A9B084h
+  00569B29: E8 E2 14 0A 00     call        _strcat_s
+  00569B2E: 83 C4 0C           add         esp,0Ch
+  00569B31: 8B CE              mov         ecx,esi
+  00569B33: 68 84 B0 A9 00     push        0A9B084h
+  00569B38: E8 03 F5 F2 FF     call        ?Load@SystemItemChanger@@QAEXPAD@Z
+  00569B3D: E8 4E E2 EB FF     call        ?Instance@MoveOptionNew@@SAPAV1@XZ
+  00569B42: 68 20 B0 A9 00     push        offset ?gPath@@3VCPath@@A
+  00569B47: 6A 64              push        64h
+  00569B49: 68 84 B0 A9 00     push        0A9B084h
+  00569B4E: 8B F0              mov         esi,eax
+  00569B50: E8 DB F7 08 00     call        _strcpy_s
+  00569B55: 83 C4 0C           add         esp,0Ch
+  00569B58: 68 F8 95 63 00     push        offset ??_C@_0BI@HPIIDPGB@SPK?2CustomCongHuong?4xml@
+  00569B5D: 6A 64              push        64h
+  00569B5F: 68 84 B0 A9 00     push        0A9B084h
+  00569B64: E8 A7 14 0A 00     call        _strcat_s
+  00569B69: 83 C4 0C           add         esp,0Ch
+  00569B6C: 8B CE              mov         ecx,esi
+  00569B6E: 68 84 B0 A9 00     push        0A9B084h
+  00569B73: E8 78 E4 EB FF     call        ?Load@MoveOptionNew@@QAEXPAD@Z
+  00569B78: E8 53 CA F0 FF     call        ?Instance@CustomSetDameItem@@SAPAV1@XZ
+  00569B7D: 68 20 B0 A9 00     push        offset ?gPath@@3VCPath@@A
+  00569B82: 6A 64              push        64h
+  00569B84: 68 84 B0 A9 00     push        0A9B084h
+  00569B89: 8B F0              mov         esi,eax
+  00569B8B: E8 A0 F7 08 00     call        _strcpy_s
+  00569B90: 83 C4 0C           add         esp,0Ch
+  00569B93: 68 68 C9 63 00     push        offset ??_C@_0BJ@IEOGBCNK@SPK?2CustomItemSetPro?4xml@
+  00569B98: 6A 64              push        64h
+  00569B9A: 68 84 B0 A9 00     push        0A9B084h
+  00569B9F: E8 6C 14 0A 00     call        _strcat_s
+  00569BA4: 83 C4 0C           add         esp,0Ch
+  00569BA7: 8B CE              mov         ecx,esi
+  00569BA9: 68 84 B0 A9 00     push        0A9B084h
+  00569BAE: E8 8D CA F0 FF     call        ?Load@CustomSetDameItem@@QAEXPAD@Z
+  00569BB3: E8 08 80 F0 FF     call        ?Instance@CCustomBuyVip@@SAPAV1@XZ
+  00569BB8: 68 20 B0 A9 00     push        offset ?gPath@@3VCPath@@A
+  00569BBD: 6A 64              push        64h
+  00569BBF: 68 84 B0 A9 00     push        0A9B084h
+  00569BC4: 8B F0              mov         esi,eax
+  00569BC6: E8 65 F7 08 00     call        _strcpy_s
+  00569BCB: 83 C4 0C           add         esp,0Ch
+  00569BCE: 68 AC C5 63 00     push        offset ??_C@_0BF@NPJFDGMI@SPK?2CustomBuyVip?4txt@
+  00569BD3: 6A 64              push        64h
+  00569BD5: 68 84 B0 A9 00     push        0A9B084h
+  00569BDA: E8 31 14 0A 00     call        _strcat_s
+  00569BDF: 83 C4 0C           add         esp,0Ch
+  00569BE2: 8B CE              mov         ecx,esi
+  00569BE4: 68 84 B0 A9 00     push        0A9B084h
+  00569BE9: E8 42 80 F0 FF     call        ?Load@CCustomBuyVip@@QAEXPAD@Z
+  00569BEE: E8 CD AC F0 FF     call        ?Instance@CustomDameItem@@SAPAV1@XZ
+  00569BF3: 68 20 B0 A9 00     push        offset ?gPath@@3VCPath@@A
+  00569BF8: 6A 64              push        64h
+  00569BFA: 68 84 B0 A9 00     push        0A9B084h
+  00569BFF: 8B F0              mov         esi,eax
+  00569C01: E8 2A F7 08 00     call        _strcpy_s
+  00569C06: 83 C4 0C           add         esp,0Ch
+  00569C09: 68 10 C7 63 00     push        offset ??_C@_0BG@NFIPHAJL@SPK?2CustomItemPro?4xml@
+  00569C0E: 6A 64              push        64h
+  00569C10: 68 84 B0 A9 00     push        0A9B084h
+  00569C15: E8 F6 13 0A 00     call        _strcat_s
+  00569C1A: 83 C4 0C           add         esp,0Ch
+  00569C1D: 8B CE              mov         ecx,esi
+  00569C1F: 68 84 B0 A9 00     push        0A9B084h
