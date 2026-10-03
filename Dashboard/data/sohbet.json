@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 22:55",
+  "updated": "2026-10-04 02:10",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 02:10",
+      "kim": "ajan",
+      "text": "PROJE ÇAPINDA DENETİM (docs/33): 2 kritik + 4 orta bulgu. (istek: \"bütün projeyi ve amaçları baştan aşağı tara, eksik/yanlış var mı\")\n\nKRİTİK\n K1 Dağıtım ikilileri bayat: EX803 derlemeleri dağıtım yoluna akmıyor — GS \\MuServe Classic 5.2 Lorencia\\GameServer (izlenmeyen), DS/JS/CS Source\\...\\Release. MuServer'daki yığın 30.09-02.10 tarihli ve 2e.6-2e.9 düzeltmelerini içermiyor; 4 bileşenin md5'i yeni derlemelerden farklı. H-018 sonrası Main.exe de yok → \"çalışan çift\" hâlâ H-018 öncesi.\n K2 Main derlemesi kırık (3C.0 işi, commit'siz): SPKData.h:40'ta iki #define tek satıra yapışmış (SPK_CAMERA_FPS_OFFSET yorum içinde) → C2065+C2660; SPKMenuBar.cpp:158/181 DisplayWidth/g_pBCustomMenuInfo tanımsız; BuildLog\\5Main\\vc143.pdb C1033. MSBuild EXIT=1. Düzeltilmedi (başka ajanın dosyaları).\n\nORTA\n • docs/00-02-03 geride kalmıştı (2c.1 ve 2e.6-2e.9 yoktu) → bu turda güncellendi.\n • docs/30-31 sayımları tablolarıyla uyuşmuyordu: GS 11→10, istemci 8→7, docs/31 6→5; docs/30'un bozuk ham-veri yolu düzeltildi + denetim notları eklendi.\n • GetMainInfo.exe 15:02'de yeniden derlenmiş, commit'siz (md5 1991c037… vs HEAD c480e0ba…).\n • H-018 kaynakta 4/4 elle doğrulandı ama çalışan çiftte değil; viewport_layout.js dört alanı eşleyemeyip yine \"HIZALI\" diyor.\n\nDOĞRULANANLAR\n • Sunucu hattı taze derleme: GS/DS/JS/CS Release_EX803 EXIT=0 ×4 (0 hata).\n • DB: 14/14 tablo, DataNapGame'de STT yok, gcoin iki DB'de de yok.\n • docs/32 opcode iddiası birebir: Protocol.cpp benzersiz case = 166.\n • HEAD==origin/main; sunucu süreçleri kapalı (§5.1); pano JSON geçerli (CR=0).\n\nKanıt: docs/33-DENETIM-PROJE-CAPINDA.md · BuildLog/denetim/"
+    },
     {
       "ts": "2026-10-03 22:55",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-02 19:40",
       "kim": "ajan",
       "text": "2e.1 bağımsız doğrulama: PC derleme hattı EKSİKSİZ — kaynakta 45.87.120.29:44405 gömülü, exe'de (71b008ad) eski IP yok, canlı ConnectIP.bmd (8ac74a5b) 0x20/0x22 = 44405/55858 okunuyor ve MainLoad çalışma anında uyguluyor. İstisna: derleme dışı mobil dosyalarda (android_main.cpp, LauncherHelper.h yorumu) eski MOBİL fallback 171.235.182.88:63000 duruyor — hiçbir vcxproj'da yok, exe'ye girmiyor; farklı mobil dağıtımın değeri olduğu için değiştirilmedi. H-004 + docs/22 kapsam notu eklendi."
-    },
-    {
-      "ts": "2026-10-02 19:30",
-      "kim": "ajan",
-      "text": "2e.2 ek kabul koşusu (run10) TAMAM: Map/Sound/Music hariç tam görsel set (~380 MB) pakete kondu; istemci ÇÖKMEDEN açıldı (Axion Mu, t≈1 s). Tek kalan: t≈4,9 s diyaloğu Data/Local/Eng/itemtooltip_Eng.bmd - File not exist. — SPK paketinde bu adla karşılık yok; tooltip içeriği Config/Text.bmd + ToolTipText.txt + MasterSkillTooltip.bmd içinde farklı şemada → kalan boşluk içerik/şema eşlemesi (2e.4). Kanıt: BuildLog/2e2/results/run10-full-assets.json + evidence/KEN_run10.txt + 3 ekran görüntüsü. docs/22 güncellendi; docs/04'e H-013 eklendi, docs/21 H-012 atfı düzeltildi."
     }
   ]
 }

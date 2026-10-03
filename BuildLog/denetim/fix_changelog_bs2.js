@@ -1,0 +1,16 @@
+const fs = require('fs');
+const BS = String.fromCharCode(92);
+const VT = String.fromCharCode(11);
+const ENQ = String.fromCharCode(5);
+const file = 'docs/CHANGELOG.md';
+let s = fs.readFileSync(file, 'utf8');
+const bad1 = '`MuServe Classic 5.2 LorenciaGameServer` (izlenmeyen), DS `Source...Release`.';
+const good1 = '`MuServe Classic 5.2 Lorencia' + BS + 'GameServer` (izlenmeyen), DS `Source' + BS + '...' + BS + 'Release`.';
+const bad2 = '`BuildLog' + ENQ + 'Main' + VT + 'c143.pdb` C1033';
+const good2 = '`BuildLog' + BS + '5Main' + BS + 'vc143.pdb` C1033';
+if (!s.includes(bad1)) throw new Error('bad1 yok');
+s = s.split(bad1).join(good1);
+if (!s.includes(bad2)) throw new Error('bad2 yok');
+s = s.split(bad2).join(good2);
+fs.writeFileSync(file, s, 'utf8');
+console.log('changelog bs fix OK', s.length);

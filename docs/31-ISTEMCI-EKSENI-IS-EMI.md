@@ -39,7 +39,11 @@ Sonuç: sunucu modülleri yazılsa bile **oyuncu bu özelliklere erişemiyor**, 
 | 19 | 0 | Kullanılmıyor | — (canlıda kullanılmıyor) | — | ⬜ yok |
 | 20 | 0 | Kullanılmıyor | — (canlıda kullanılmıyor) | — | ⬜ yok |
 
-**20 slotun 6'sı bizde karşılık buluyor (%30); 14'ü hiç yazılmamış.** 17–20 canlıda kullanılmıyor → kapsam dışı.
+**20 slotun 5'i bizde karşılık buluyor (%25); 15'i hiç yazılmamış.** 17–20 canlıda kullanılmıyor → kapsam dışı.
+
+> **Denetim düzeltmesi (04.10.2026):** Tablo sayımı 5 ✅ (01/05/06/07/08); "6" ve "14"
+> tabloyla uyuşmuyordu. Slot 04'ün canlı varlığı (`ingame_Bt_Reset.ozt`) var ama bizim
+> istemcide kod/varlık yok — sayılmadı.
 
 Ek canlı anahtarlar: `Ranking1..7` (7 sıralama türü) · `MaxLevelDanhHieu=20` · `MaxLevelQuanHam=12` · `MaxLevelTuChan=22` · `MaxLevelHonHoan=50` · `JewelBankTab=2` · `ButtonClassUP` · shop birim butonları (Wcoin C/P/G, JwBless, JwSoul, Chaos, Zens) · `CreateCharSeason` · `RF_GLOVE` / `MG_HELM`
 

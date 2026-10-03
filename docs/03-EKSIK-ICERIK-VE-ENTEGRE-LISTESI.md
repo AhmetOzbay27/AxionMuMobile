@@ -8,6 +8,10 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 
 ---
 
+> **04.10.2026 denetim güncellemesi:** 2c ilerlemesi burada geride kalmıştı — tamamlanan ilk
+> kalemler: A1/A2/A3 · B1/B2/B3 (C-01b ✅). Ölçüm artık 5 eksen: [30](30-PARITE-MANIFESTI.md).
+> Denetim raporu: [33](33-DENETIM-PROJE-CAPINDA.md).
+
 ## A. SUNUCU (GameServer) — 58 eksik modül (map tabanlı kesin sayı)
 
 > Kaynak kanıtı: canlı `GameServer.map` sembol analizi (bkz.
@@ -18,7 +22,7 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 | # | Modül / Özellik | Kaynak | Hedef | Durum |
 |---|-----------------|--------|-------|-------|
 | A-01 | 4 MUIG donor modülü: AddBuffer, CAUTOHP, CCustomJewelBank, CSkillDamage | MUIG donor GS | `Source\4.GameServer\` | ✅ Faz 2b.0 (30.09.2026) — derlendi + PDB doğrulandı |
-| A-02 | 54 SPK-özel modül — tam liste 06 envanter §2: SPKViet (CThanMaChien, cTuLuyen, cQuanHam, cHonHoan, cDanhHieu, cRanking, cSkyEvent, cSystemGuildUpgrade, cMessageNew, cCustomNameColor, cZenDrop, cCItemLevel, CSystemMocNap, CReiDoMU, TaiSinh, ExWinQuestSystem, CustomHarmony) · Bot (BotTradeMixCore, CBotMixSystem, ObjBotOnline) · Event (EventMainManager, CActiveInvasions, CEventHideAndSeek, CEventRunAndCatch, CEventKillAll, CastleStartGuild) · UI (CCommandUI, CEffectManagerUI, CEventItemBagUI, CEventItemBagManagerUI, CMapManagerUI, CShopManagerUI, CLogErrorForm) · Item/Dmg (CustomDameItem, CustomSetDameItem, CCustomStartItemDame, CCustomStartSetItemDame, CItemExOptionRate, CItemSubMix, CustomNewBuff, CheckItemVip, ItemPassLocker, SystemItemChanger, MoveOptionNew) · Karakter (CCustomCharOption, CCustomChangeClass, CCustomRenameChar, CCustomLuckySpin, CCustomGreatPK, CPartySetPass, CResetChange, ResetLitmitLock, CSGetInfoCharacter, ViewItemPlayer) · Ekonomi (CExtendShop, NewCashShop, VPDameBoss) · Diğer (CSocketMaker, SPK_ToolKitMain) | ❓ yok — sıfırdan (map + PDB + canlı config analizi) | `Source\4.GameServer\` | ⬜ Faz 2c (öncelikler 05 dokümanında hazır) |
+| A-02 | 54 SPK-özel modül — tam liste 06 envanter §2: SPKViet (CThanMaChien, cTuLuyen, cQuanHam, cHonHoan, cDanhHieu, cRanking, cSkyEvent, cSystemGuildUpgrade, cMessageNew, cCustomNameColor, cZenDrop, cCItemLevel, CSystemMocNap, CReiDoMU, TaiSinh, ExWinQuestSystem, CustomHarmony) · Bot (BotTradeMixCore, CBotMixSystem, ObjBotOnline) · Event (EventMainManager, CActiveInvasions, CEventHideAndSeek, CEventRunAndCatch, CEventKillAll, CastleStartGuild) · UI (CCommandUI, CEffectManagerUI, CEventItemBagUI, CEventItemBagManagerUI, CMapManagerUI, CShopManagerUI, CLogErrorForm) · Item/Dmg (CustomDameItem, CustomSetDameItem, CCustomStartItemDame, CCustomStartSetItemDame, CItemExOptionRate, CItemSubMix, CustomNewBuff, CheckItemVip, ItemPassLocker, SystemItemChanger, MoveOptionNew) · Karakter (CCustomCharOption, CCustomChangeClass, CCustomRenameChar, CCustomLuckySpin, CCustomGreatPK, CPartySetPass, CResetChange, ResetLitmitLock, CSGetInfoCharacter, ViewItemPlayer) · Ekonomi (CExtendShop, NewCashShop, VPDameBoss) · Diğer (CSocketMaker, SPK_ToolKitMain) | ❓ yok — sıfırdan (map + PDB + canlı config analizi) | `Source\4.GameServer\` | 🔄 2c devam — ilk 6 kalem tamam (A1/A2/A3/B1/B2/B3); sıra: docs/13 · 5-eksen: docs/30 |
 | A-03 | MuServer config seti (canlı 450 dosya; 24 SPK-özel config dahil) | Canlı `Sub-1\Data\` (SALT OKUNUR kopya) | `MuServer\...\Data\` | ⬜ modül modül 2c ile |
 
 ### A-03 alt kırılım — Data\SPK config tanınırlığı
@@ -44,7 +48,7 @@ Durum kodları: ⬜ eksik · 🔄 işlemde · ✅ entegre · ❓ araştırılaca
 | # | Kalem | Kaynak | Hedef | Durum |
 |---|-------|--------|-------|-------|
 | C-01 | MUIG'in 161 daha yeni ortak dosyası | MUIG donor | `Source\` (SPK taban) | ✅ 2b.1 matrisi + 2b.2 7 dalga (66 alındı / 147 korundu) |
-| C-01b | **YENİ (2b.3 keşfi): EventGvG modülü** — canlı ServerInfo 7 config anahtarı kanıtlı (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers), bizim ServerInfo.cpp'te yok | canlı kanıttan sıfırdan | `Source\4.GameServer\` | ⬜ 2c (05 listesine 60. kalem) |
+| C-01b | **YENİ (2b.3 keşfi): EventGvG modülü** — canlı ServerInfo 7 config anahtarı kanıtlı (EventGvGSwitch/Npc/NpcMap/NpcX/NpcY/MinUsers/MaxUsers), bizim ServerInfo.cpp'te yok | canlı kanıttan sıfırdan | `Source\4.GameServer\` | ✅ **2c.1-B2 (02.10.2026)** — donor birebir port + E2E; rapor: docs/15 |
 | C-02 | DB şeması (DB_SQL_12.bak) ile GS beklentileri uyumu | `ServerTools\DB_SQL_12.bak` | test DB | ✅ 2e.6 (03.10.2026): **tam şema denetimi yapıldı** — 743 dosya / 308 SQL literal tarandı, eksik tablo **15 → 0** (55 → 69 tablo), 14/14 tablo gerçek sorgularla duman testinden geçti; 2 gerçek kod hatası düzeltildi (`ChoTroi.cpp` ItemMarketData eksik sütun + koşulsuz CREATE; `Guild/PartyMatching.cpp` `<algorithm>` eksikliği → **DataServer 0 hata ile derleniyor**). Rapor [26](26-C02-DB-SEMA-UYUMU.md) |
 
 ## D. BİLİNEN KÜÇÜK SAPMALAR (parite, düşük risk)

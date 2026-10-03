@@ -122,11 +122,15 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   **FAZ 2b TAMAMLANDI → sıradaki 2c.1.**
 
 ### Faz 2c — 57 eksik modülün yeniden yazımı
-- ⬜ **2c.1** 05-SPK-MODUL-ENVANTERI.md'yi öncelik sırasına diz (oyun akışı
-  etkisine göre: core gameplay > event > QoL > anticheat > kosmetik).
-- ⬜ **2c.2..N** Modül modül: iskelet yaz → GS derle → config dosyasını üret →
+- ✅ **2c.1** 01.10.2026: 60 modül oyun-akışı önceliğine dizildi → [13](13-2C1-ONCELIK-IS-EMRI.md)
+  (A=24 çekirdek · B=9 event · C=21 QoL · D=3 anticheat · E=3 kosmetik).
+- 🔄 **2c.2..N** Modül modül: iskelet yaz → GS derle → config dosyasını üret →
   istemci tarafı ihtiyacı varsa Main'e ekle → test → CHANGELOG + commit.
-  (Her modül kendi satırını alacak; plan onayından sonra buraya açılır.)
+  **Tamamlanan kalemler:** A1 Harmony, A2 MonsterSkill ([16](16-SPK-MONSTERSKILL-A2.md)),
+  A3 CustomItemSetPro ([18](18-SPK-CUSTOMITEMSETPRO-A3.md)), B1 EventMainManager,
+  B2 EventGvG ([15](15-EVENTGVG-E2E-DOGRULAMA.md)), B3 ActiveInvasions ([17](17-CB-ACTIVEINVAISIONS-E2E.md)).
+  **03.10.2026 ölçüm güncellemesi:** parite 5 eksene ayrıldı → [30](30-PARITE-MANIFESTI.md);
+  istemci ekseni iş emri [31](31-ISTEMCI-EKSENI-IS-EMRI.md); opcode kaydı [32](32-PROTOKOL-KAYDI.md).
 
 ### Faz 2d — GetMainInfo birleşimi
 - ✅ **2d.0** (2a.4'te açıldı) **SPK istemci format katmanı:** 5.Main'e
@@ -196,9 +200,24 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   `restore_test_db.sh` `DB_SQL_12.bak`'ı yerel `MuOnlineS6`'ya restore eder (idempotent).
   Smoke test: CS→DS→JS→GS ayakta; GS→DS/JS bağlantıları kuruldu; sonra kapatıldı. Rapor: docs/23.
 
+- ✅ **2e.6** (03.10.2026) C-02 DB şema denetimi kapandı; sunucu hattı derlenebilir hale getirildi
+  (14 eksik tablo oluşturuldu, 5 bileşen 0 hata). H-018 açık risk olarak kayda geçti. Rapor: [26](26-C02-DB-SEMA-UYUMU.md).
+- ✅ **2e.7** (03.10.2026) H-018 kapandı: canlı GameServer.pdb (DIA) ile viewport düzenleri ölçüldü
+  (36/38/20/20 B); istemci yapıları sunucuyla hizalandı; `viewport_layout.js` 4/4 HİZALI. Kabul edilen
+  fark: EX803 dağıtımı canlıdan 13/1/11 bayt farklı — canlı bayt paritesi için EX603+HAISLOTRING=0. Rapor: [27](27-H018-VIEWPORT-PAKET-DUZENI.md).
+- ✅ **2e.8** (03.10.2026) Sunucu kaynaklarında okuma/mesaj hatası taraması: 4 gerçek kusur düzeltildi;
+  kapsam sınırı ölçülerek yazıldı (102 ek çağrı açık). Rapor: [28](28-OKUMA-MESAJ-HATASI-TARAMASI.md).
+- ✅ **2e.9** (03.10.2026) 14 tablo için kalıcı veri katmanı (CDataStore) + MEMB_INFO tutarlılığı:
+  59/59 test geçti; 2 gerçek kusur düzeltildi. Rapor: [29](29-14-TABLO-KALICI-VERI-KATMANI.md).
+
 ### ÇIKIŞ KRİTERİ (Faz 2 → 3 geçişi)
 Tüm 2a-2e adımları ✅ + GS/Main/CS/DS/JS derlemeleri hatasız + modül
 envanterinde açık kalem kalmamış.
+
+> **Denetim notu (04.10.2026):** Çıkış kriteri HENÜZ sağlanmadı — Main derlemesi kırık
+> (3C.0 işi) ve modül envanteri açık (bkz. [30](30-PARITE-MANIFESTI.md)). Faz 3.1/3.2
+> kullanıcı talebiyle kısmen koşuldu; tam geçiş önce bu kriterin kapanmasına bağlı.
+> Ayrıntı: [33](33-DENETIM-PROJE-CAPINDA.md).
 
 ---
 

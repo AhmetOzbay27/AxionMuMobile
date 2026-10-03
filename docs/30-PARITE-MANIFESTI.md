@@ -1,7 +1,7 @@
 # 30 — PARİTE MANİFESTİ (özellik sözleşmesi)
 
 > **Tarih:** 03.10.2026 · **Kapsam:** canlı SPK ile birebir parite · **Kaynak:** docs/13 (56 + 4 özellik) + otomatik kanıt taraması
-> Ham veri: `BuildLogenvanterparite_ozellik_kaniti.tsv`
+> Ham veri: `BuildLog\envanter\parite_ozellik_kaniti.tsv` (2.816 B)
 
 ---
 
@@ -25,11 +25,17 @@ Bir özellik **ancak beş eksenin tamamı yeşil** ise paritedir:
 
 | Eksen | Yeşil | Toplam | Oran |
 |---|---|---|---|
-| 1 — GS kaynağı | 11 | 60 | %18 |
+| 1 — GS kaynağı | 10 | 60 | %17 |
 | 2 — Config | 28 | 28 | %100 |
-| 3 — İstemci | 8 | 60 | %13 |
+| 3 — İstemci | 7 | 60 | %12 |
 | 4 — Protokol | 6 | 60 | dış opcode seti birebir (docs/11); **viewport paket düzeni bayt-bayt doğrulandı ve hizalandı (H-018, 2e.7 — canlı PDB kanıtı, [docs/27](27-H018-VIEWPORT-PAKET-DUZENI.md))**; modül opcode kaydı yok |
 | 5 — E2E | 6 | 60 | %10 (6'sı sunucu içi; **istemci içeren 1** — B-08 tooltip zinciri, 2e.5: `ToolTipText.txt` → istemci tooltip tablosu → runtime kanıtı) |
+
+> **Denetim düzeltmesi (04.10.2026):** Başlık sayıları bu tablodan üretilemiyordu; düzeltildi.
+> Tablo sayımı: GS 10 (6 ana + §3'teki 4) · istemci karşılığı dolu satır 7 (A1/A8/B3/C47/C39/C41/C49;
+> "core MU" parantezliler hariç). A16 satırındaki istemci karşılığı "YOK" yanlış — `CB_AutoNapGame`
+> istemcide var ve [31](31-ISTEMCI-EKSENI-IS-EMRI.md) slot 08'de sayıyor. "~31 kutu" değeri config
+> ekseni dışlanarak hesaplanmış görünüyor (10+7+6+6=29); sayım kuralı belirsiz.
 
 **Sonuç:** Parite = `5 eksen × 60 özellik = 300 kutu`; bugün ~`31` kutu yeşil. **En büyük boşluk: 3. eksen (istemci) ve 4. eksen (protokol kaydı).**
 
@@ -149,5 +155,5 @@ Bir özellik **ancak beş eksenin tamamı yeşil** ise paritedir:
 
 ## 5. HAM VERİ
 
-- `BuildLogenvanterparite_ozellik_kaniti.tsv` — bu tablonun makine-okunur hali
+- `BuildLog\envanter\parite_ozellik_kaniti.tsv` — bu tablonun makine-okunur hali
 

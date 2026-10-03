@@ -1,0 +1,11 @@
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  SPKData.cpp
+  SPKMenuBar.cpp
+C:\Axion Mu Source\Source\5.Main\source\SPKMenuBar.cpp(16,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SPKMenuBar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\SPKData.cpp(11,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SPKData.cpp' kaynak dosyasç derleniyor)
+  
+EXIT_Main=1
