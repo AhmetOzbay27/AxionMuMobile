@@ -44,6 +44,8 @@ Runtime: run26 KEN.txt → `[SPK] ToolTipText: 19 kayit`; `run21/22/26` TCP kan�
 run19/run20 (127.0.0.1 → trap'e hiç bağlantı yok + popup). Rapor: **docs/25**;
 kanıt: `BuildLog\2e4\{results,shots,evidence}`.
 
+**Commit** — `010c41da8` (2e.5 B-08 SPK ToolTipText yükleyicisi + Faz 3 E2E bağlantı kanıtı).
+
 
 ## [26.10.03 00:40] PROTOKOL KAYDI (docs/32) — 16 özelliğe opcode tahsisi
 
