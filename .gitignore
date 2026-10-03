@@ -1,2 +1,49 @@
-# Ajan köprüsü PIN dosyası — asla commit'lenmez
+# ── Ajan köprüsü ────────────────────────────────────────────────────────────
 Dashboard/data/pin.txt
+
+# ── Windows çöp dosyaları ────────────────────────────────────────────────────
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ── Derleme / IDE artıkları ─────────────────────────────────────────────────
+*.dmp
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.aps
+*.user
+*.suo
+*.bak
+*.tmp
+.vs/
+ipch/
+
+# ── Çalışma zamanı log / crash klasörleri ───────────────────────────────────
+LOG/
+Logs/
+Crash/
+MuServer/7.Log/
+MuServer/5.Antihack/LOG/
+
+# ── Veritabanı yedekleri ────────────────────────────────────────────────────
+MuServer/7.DataBase/*.bak
+MuServer/7.DataBase/*.mdf
+MuServer/7.DataBase/*.ldf
+
+# ── Üçüncü taraf kütüphaneler (depoya alınmaz; ~850 MB) ─────────────────────
+Source/5.Main/boost_1_80_0/
+
+# ── Android / Gradle (ayrı proje yapısı) ────────────────────────────────────
+android/.gradle/
+android/.idea/
+android/captures/
+android/local.properties
+android/.cxx/
