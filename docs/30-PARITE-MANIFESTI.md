@@ -34,7 +34,7 @@ Bir özellik **ancak beş eksenin tamamı yeşil** ise paritedir:
 > **Denetim düzeltmesi (04.10.2026):** Başlık sayıları bu tablodan üretilemiyordu; düzeltildi.
 > Tablo sayımı: GS 10 (6 ana + §3'teki 4) · istemci karşılığı dolu satır 7 (A1/A8/B3/C47/C39/C41/C49;
 > "core MU" parantezliler hariç). A16 satırındaki istemci karşılığı "YOK" yanlış — `CB_AutoNapGame`
-> istemcide var ve [31](31-ISTEMCI-EKSENI-IS-EMRI.md) slot 08'de sayıyor. "~31 kutu" değeri config
+> istemcide var ve [31](31-ISTEMCI-EKSENI-IS-EMI.md) slot 08'de sayıyor. "~31 kutu" değeri config
 > ekseni dışlanarak hesaplanmış görünüyor (10+7+6+6=29); sayım kuralı belirsiz.
 
 **Sonuç:** Parite = `5 eksen × 60 özellik = 300 kutu`; bugün ~`31` kutu yeşil. **En büyük boşluk: 3. eksen (istemci) ve 4. eksen (protokol kaydı).**

@@ -130,7 +130,7 @@ Durum kodları: ⬜ bekliyor · 🔄 devam ediyor · ✅ tamamlandı · ⏸ enge
   A3 CustomItemSetPro ([18](18-SPK-CUSTOMITEMSETPRO-A3.md)), B1 EventMainManager,
   B2 EventGvG ([15](15-EVENTGVG-E2E-DOGRULAMA.md)), B3 ActiveInvasions ([17](17-CB-ACTIVEINVAISIONS-E2E.md)).
   **03.10.2026 ölçüm güncellemesi:** parite 5 eksene ayrıldı → [30](30-PARITE-MANIFESTI.md);
-  istemci ekseni iş emri [31](31-ISTEMCI-EKSENI-IS-EMRI.md); opcode kaydı [32](32-PROTOKOL-KAYDI.md).
+  istemci ekseni iş emri [31](31-ISTEMCI-EKSENI-IS-EMI.md); opcode kaydı [32](32-PROTOKOL-KAYDI.md).
 
 ### Faz 2d — GetMainInfo birleşimi
 - ✅ **2d.0** (2a.4'te açıldı) **SPK istemci format katmanı:** 5.Main'e

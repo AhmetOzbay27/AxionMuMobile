@@ -41,7 +41,7 @@ raporlar [15](15-EVENTGVG-E2E-DOGRULAMA.md)-[18](18-SPK-CUSTOMITEMSETPRO-A3.md);
 Faz 2d ✅ (D4/D5 hariç) · Faz 2e.1-2e.9 ✅ ([22](22-2E1-2E2-PAKET.md)-[29](29-14-TABLO-KALICI-VERI-KATMANI.md)).
 **04.10.2026 — PROJE ÇAPINDA DENETİM → [33](33-DENETIM-PROJE-CAPINDA.md):** 2 kritik bulgu
 (dağıtım ikilileri bayat; Main derlemesi kırık), durum belgeleri bu turda güncellendi.
-**Parite ölçümü artık 5 eksen:** [30](30-PARITE-MANIFESTI.md) · [31](31-ISTEMCI-EKSENI-IS-EMRI.md) · [32](32-PROTOKOL-KAYDI.md).
+**Parite ölçümü artık 5 eksen:** [30](30-PARITE-MANIFESTI.md) · [31](31-ISTEMCI-EKSENI-IS-EMI.md) · [32](32-PROTOKOL-KAYDI.md).
 **Sıradaki:** 3C.0 Main derlemesinin açılması + 2c kalan kalemleri.
 
 > **26.10.01 13:50 — E-kalemleri kapatıldı** (E-01/E-02/E-04/E-06/E-09/E-11,
