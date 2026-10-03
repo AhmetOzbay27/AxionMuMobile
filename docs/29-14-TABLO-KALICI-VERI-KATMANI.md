@@ -153,3 +153,24 @@ alındı.
   dokunan kısmı hedef alındı, göç bu turda yapılmadı.
 * `MuOnlineS6` DSN'i **kullanıcı** kapsamında yazıldı (yönetici hakkı
   gerekmedi). Başka makinede kurulum gerekir.
+
+---
+
+## 9. ÇALIŞMA ANI KANITI (son kontrolde eklendi)
+
+Derlenmiş `DataServer.exe` **gerçekten çalıştırıldı** — `BuildLog/2e9/runtest`
+dizini, dağıtılan `DataServer.ini` (`DataServerODBC = MuOnlineS6`) ile:
+
+```
+22:53:01 [DataStore] MuOnlineS6 kalici veri katmani acildi (ODBC=MuOnlineS6)
+22:53:01 [DataStore] Sema denetimi: 14/14 tablo yerinde
+```
+
+Kanıt: `BuildLog/2e9/runtime_datastore.log`. Yani katman yalnızca derlenmiş
+ve test harness'ında çalışmış değil; **üretim ikilisi** de aynı kod yolundan
+geçip gerçek veritabanında 14/14 tabloyu doğrulamış.
+
+Bu sırada doğrulanan ikinci bir nokta: `CLog::Output` `Active == 0` iken
+erken dönüyor. `gServerDisplayer.Init()` (→ `gLog.AddLog`) `DataServer.cpp:68`
+de, `gDataStore.Open()` ise `:123`'te çağrıldığı için **log kanalı store
+açılmadan önce etkinleşmiş** durumdadır; katmanın logları gerçekten yazılır.

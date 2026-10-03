@@ -1,0 +1,5 @@
+# 2e.9 runtime kaniti - DataServer.exe gercekten calistirildi
+# 03.10.2026 22:53:01, CWD=BuildLog/2e9/runtest, DataServer.ini DataServerODBC=MuOnlineS6
+
+22:53:01 [DataStore] MuOnlineS6 kalici veri katmani acildi (ODBC=MuOnlineS6)
+22:53:01 [DataStore] Sema denetimi: 14/14 tablo yerinde
