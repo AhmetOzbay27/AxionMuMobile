@@ -9,6 +9,7 @@
 #include "QueryManager.h"
 #include "ServerDisplayer.h"
 #include "SocketManager.h"
+#include "DataStore.h"
 #include "ThemidaSDK.h"
 #include "Util.h"
 #if(CB_AutoBanking)
@@ -104,6 +105,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 			if(gSocketManager.Start(DataServerPort) == 0)
 			{
 				gQueryManager.Disconnect();
+				gDataStore.Close();
 			}
 			else
 			{
@@ -114,6 +116,18 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 				SetTimer(hWnd,TIMER_1000,1000,0);
 
 				gGuildManager.Init();
+
+				// 14 tablo icin kalici veri katmani (2e9). Semada eksik tablo
+				// varsa sunucu bozuk semada calismaya devam etmesin.
+				char szSchemaReport[1024];
+				if(gDataStore.Open(DataServerODBC,DataServerUSER,DataServerPASS) == false)
+				{
+					LogAdd(LOG_RED,"[DataStore] MuOnlineS6 veri katmani acilamadi.");
+				}
+				else if(gDataStore.SchemaCheck(szSchemaReport,sizeof(szSchemaReport)) != 0)
+				{
+					LogAdd(LOG_RED,"[DataStore] SEMA EKSIGI - 14 tablonun bir kismi yok.");
+				}
 			}
 		}
 	}

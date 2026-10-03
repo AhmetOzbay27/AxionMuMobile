@@ -1,0 +1,72 @@
+### 2e9 uc-uca dogrulama
+  veri katmani DSN: MuOnlineS6
+  MEMB_INFO  DSN : MuOnline
+
+      [log] [DataStore] MuOnlineS6 kalici veri katmani acildi (ODBC=MuOnlineS6)
+      [log] [DataStore] Sema denetimi: 14/14 tablo yerinde
+  GECTI  A0  sema denetimi: 14/14 tablo
+  GECTI  A1  CardPhone INSERT
+  GECTI  A1  CardPhone LOAD
+  GECTI  A1  CardPhone UPDATE status/timeduyet
+  GECTI  A1  CardPhone UPDATE menhgia
+  GECTI  A1  CardPhone UPDATE addvpoint
+  GECTI  A1  CardPhone UPDATE acc ile
+  GECTI  A2  CustomItemBank INSERT
+  GECTI  A2  CustomItemBank UPDATE
+  GECTI  A2  CustomItemBank LOAD
+  GECTI  A2  CustomItemBank DELETE
+  ATLA  A3  CustomNpcQuest - MuOnlineS6.Character tablosu bos, FK test edilemiyor
+  GECTI  A4  DataNapGame INSERT
+  GECTI  A4  DataNapGame LOAD (Checking ile eslesiyor)
+  GECTI  A4  DataNapGame UPDATE nap (STT'siz)
+  GECTI  A4  DataNapGame UPDATE done
+  GECTI  A4  DataNapGame degerler gercekten yazildi
+  GECTI  A4  DataNapGame Pending listesi calisiyor
+  GECTI  A5  EquipInventory INSERT(256)
+  GECTI  A5  EquipInventory LOAD(256)
+  GECTI  A5  EquipInventory UPDATE
+  GECTI  A5  EquipInventory UPDATE dogrulama
+  GECTI  A6  EventInventory INSERT(512)
+  GECTI  A6  EventInventory LOAD(512)
+  GECTI  A6  EventInventory UPDATE
+  GECTI  A7  MuunInventory INSERT(992)
+  GECTI  A7  MuunInventory LOAD(992)
+  GECTI  A7  MuunInventory UPDATE
+  GECTI  A7  MuunInventory UPDATE dogrulama
+  GECTI  A8  MuRummyCard INSERT
+  GECTI  A8  MuRummyCard UPDATE slot/status
+  GECTI  A9  MuRummyData INSERT
+  GECTI  A9  MuRummyData UPDATE
+  GECTI  A9  MuRummyData LOAD
+  GECTI  A10 PcPointData INSERT
+  GECTI  A10 PcPointData UPDATE
+  GECTI  A10 PcPointData LOAD
+  GECTI  A11 PentagramJewel INSERT(17 kolon)
+  GECTI  A11 PentagramJewel UPDATE
+  GECTI  A11 PentagramJewel DELETE
+  GECTI  A12 PShopItemValue INSERT
+  GECTI  A12 PShopItemValue UPDATE
+  GECTI  A12 PShopItemValue DELETE
+  GECTI  A13 SNSData INSERT(blob)
+  GECTI  A13 SNSData LOAD(blob)
+  GECTI  A13 SNSData UPDATE(blob)
+  GECTI  A13 SNSData UPDATE dogrulama
+  GECTI  A14 ItemMarketData INSERT (IDENTITY dondu)
+  GECTI  A14 ItemMarketData UPDATE Item
+  GECTI  A14 ItemMarketData UPDATE Status
+  GECTI  A14 ItemMarketData COUNT
+  GECTI  A14 ItemMarketData DELETE by ID
+  GECTI  A14 ItemMarketData DELETE by Account
+
+--- B) MEMB_INFO tutarliligi (JoinServer <-> DataServer) ---
+  GECTI  B0 MEMB_INFO baglantisi (DSN)
+        (veritabani = MuOnline)
+  GECTI  B1 MEMB_INFO test hesabi yarat
+  GECTI  B2 iki sunucunun sorgusu ayni sifreyi okuyor
+  GECTI  B3 hesap aramasi BUYUK/KUCUK harf duyarli (iki sunucu ayni COLLATE)
+  GECTI  B4 yazma (AccountLevel) ikinci sunucu sorgusunda gorunur
+  GECTI  B5 sifre yazimi diger sunucu sorgusunda gorunur
+  BULGU B6 gcoin kolonu MEMB_INFO'da YOK - DataServer gcoin sorgulari (CB_AutoNapGame.cpp) iki DB'de de hata verir  GECTI  B7 olmayan hesap iki sunucuda da ayni davranis
+
+### SONUCE GECTI=59  KALDI=0
+### 14 TABLO + MEMB_INFO UC-UCA DOGRULANDI

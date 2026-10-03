@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 21:40",
+  "updated": "2026-10-03 22:55",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-03 22:55",
+      "kim": "ajan",
+      "text": "14 tablo için kalıcı veri katmanı eklendi, JoinServer/DataServer tutarlılığı uçtan uca doğrulandı. (istek: \"yeni oluşturulan 14 tablo için kalıcı veri katmanı ekleyip JoinServer ve DataServer arasındaki senkron akışını uçtan uca doğrula\")\n\nÖNCE DÜZELTİLEN VARSAYIM\n İki sunucu arasında protokol akışı YOK. JoinServer ConnectServer'a (127.0.0.1:63001)\n bağlanıyor, DataServer GameServer'dan 63002'den istek alıyor. Ortak yüzey aynı\n veritabanındaki MEMB_INFO. (MuOnlineJoin bir veritabanı değil, MuOnline'a\n işaret eden bir DSN.) Kullanıcı kararı: MEMB_INFO veri tutarlılığı doğrulanacak.\n\nVERİ KATMANI — CDataStore (DataStore.h 284 + DataStore.cpp 775 satır)\n • 14 tablo için tipli kayıt yapıları — semadan birebir (BuildLog/2e9/schema_14.txt)\n • Hazırlanmış ifade + parametre bağlama: hesap/karakter adları SQL'e gömülmüyor\n • SchemaCheck() açılışta 14/14 yoklama; eksikse sunucu bozuk semada çalışmaz\n • 7 yeni Delete yolu (karakter silme): CardPhone, EquipInventory, EventInventory,\n   MuunInventory, MuRummyData, PcPointData, SNSData\n • Yeni kullanıcı DSN'i MuOnlineS6 → WIN-4TMUUQ42DNHSQLEXPRESS / MuOnlineS6\n • DataServer.ini → MuOnlineS6\n\nBULUNAN VE DÜZELTİLEN GERÇEK KUSURLAR\n 1) DataNapGame.STT YOK — CB_AutoNapGame.cpp semada olmayan kolonu okuyor ve iki\n    UPDATE'de \"and STT='%d'\" kullanıyordu → canlı DB: Msg 207 Invalid column name\n    'STT'. Satır artık (Account,Name,Checking) üçlüsüyle tanımlanıyor.\n 2) BindInt ölü adres bağlıyordu (uçtan uca testin bulduğu kusur): parametre &val\n    yerel kopyasına bağlanıyordu, ODBC tamponu SQLExecute anında okuduğu için\n    BÜTÜN tam sayı parametreleri bozuk gidiyordu. m_ParamInt[] üyesine kopyalandı.\n\nDOĞRULAMA — TEST_EXIT=0 · 59 GECTI · 0 KALDI\n • BuildLog/2e9/dstest/ds_e2e.exe gerçek MuOnlineS6 + MuOnline üzerinde\n • 14 tablo: INSERT → LOAD → UPDATE → LOAD doğrula → DELETE\n • MEMB_INFO: iki sunucunun sorgusu aynı şifreyi okuyor; yazmalar birbirini\n   görüyor; olmayan hesapta aynı davranış\n • DataServer derlemesi MSBUILD_EXIT=0 (DataServer.exe 1.062.912 B)\n • Ölçülen bilgi: COLLATE Latin1_General_BIN nedeniyle hesap araması BÜYÜK/küçük\n   harf duyarlı; iki sunucu da aynı ifadeyi kullandığı için tutarlı\n\nAÇIK KALANLAR\n • gcoin kolonu ne MuOnline'da ne MuOnlineS6'da yok → CB_AutoNapGame.cpp gcoin\n   sorguları çalışma anında hata veriyor (düzeltilmedi)\n • MuOnlineS6.Character boş → CustomNpcQuest FK testi ATLANDI\n • 391 ExecQuery çağrısının 14 tabloya dokunan kısmı henüz katmana taşınmadı\n\nKanıt: docs/29-14-TABLO-KALICI-VERI-KATMANI.md · BuildLog/2e9/"
+    },
     {
       "ts": "2026-10-03 21:40",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-02 19:30",
       "kim": "ajan",
       "text": "2e.2 ek kabul koşusu (run10) TAMAM: Map/Sound/Music hariç tam görsel set (~380 MB) pakete kondu; istemci ÇÖKMEDEN açıldı (Axion Mu, t≈1 s). Tek kalan: t≈4,9 s diyaloğu Data/Local/Eng/itemtooltip_Eng.bmd - File not exist. — SPK paketinde bu adla karşılık yok; tooltip içeriği Config/Text.bmd + ToolTipText.txt + MasterSkillTooltip.bmd içinde farklı şemada → kalan boşluk içerik/şema eşlemesi (2e.4). Kanıt: BuildLog/2e2/results/run10-full-assets.json + evidence/KEN_run10.txt + 3 ekran görüntüsü. docs/22 güncellendi; docs/04'e H-013 eklendi, docs/21 H-012 atfı düzeltildi."
-    },
-    {
-      "ts": "2026-10-02 19:10",
-      "kim": "ajan",
-      "text": "2e.1 + 2e.2 tamamlandı: gömülü IP 45.87.120.29:44405 ile hizalandı; APICB.dll/FreeImage.dll importları kaldırıldı; paket DLL kapanışı (wzAudio->ogg+vorbisfile) ve Data/SPK/Config kurulumu BuildLog/2e2/deploy_spk_package.sh ile yapıldı; istemci pakette kendi penceresini açtı (kanıt: BuildLog/2e2/shots + results/run*.json + KEN.txt/STACK_ERROR). Kalan: tam Data kopyası (disk %100), 2e.4 SPK-first varlık çözümleme katmanı, CSprite::Create boş-bitmap AV (H-011). Raporlar docs/21 + docs/22; CHANGELOG + docs/02-04 güncellendi."
     }
   ]
 }

@@ -9,6 +9,51 @@
 
 
 
+
+## [26.10.03 22:55] 2e.9 — 14 tablo için kalıcı veri katmanı + MEMB_INFO tutarlılığı doğrulaması (docs/29)
+
+**Ne yapıldı**
+
+`CDataStore` (DataStore.h/.cpp, 284+775 satır): 14 tablo için tipli kayıt
+yapıları, hazırlanmış ifade (prepared statement) ve parametre bağlama. Hesap/
+karakter adları artık SQL metnine gömülmüyor. Açılışta `SchemaCheck()` 14
+tabloyu yoklar; eksikse sunucu bozuk semada sessizce çalışmaz. Yeni kullanıcı
+DSN'i `MuOnlineS6` + DataServer.ini buna çevrildi.
+
+**Önce düzeltilen varsayım:** JoinServer ile DataServer arasında protokol
+akışı **yok** — JoinServer ConnectServer'a (63001), DataServer GameServer'dan
+(63002) besleniyor. Ortak yüzey aynı veritabanındaki `MEMB_INFO`. Kullanıcı
+kararıyla o doğrulandı.
+
+**Bulunan ve düzeltilen GERÇEK KUSURLAR**
+
+1. **DataNapGame.STT yok** — `CB_AutoNapGame.cpp` semada olmayan `STT`
+   kolonunu okuyordu ve iki UPDATE'de `and STT='%d'` kullanıyordu; canlı DB'de
+   `Msg 207 Invalid column name 'STT'`. Satır artık (Account,Name,Checking)
+   üçlüsüyle tanımlanıyor.
+2. **BindInt ölü adres** (uçtan uca test buldu) — parametre `&val` yerel
+   kopyasına bağlanıyordu; ODBC tamponu `SQLExecute` anında okuduğu için
+   **bütün tam sayı parametreleri bozuk** gidiyordu. `m_ParamInt[]` üyesine
+   kopyalandı.
+
+**Doğrulama**
+
+* `BuildLog/2e9/dstest/ds_e2e.exe` gerçek MuOnlineS6 + MuOnline üzerinde:
+  **TEST_EXIT=0 · 59 GECTI · 0 KALDI** (BuildLog/2e9/e2e_result.txt).
+  14 tablo INSERT→LOAD→UPDATE→LOAD→DELETE; MEMB_INFO için iki sunucunun
+  sorgusunun aynı değeri okuduğu, yazmaların birbirini gördüğü, olmayan
+  hesapta aynı davrandığı doğrulandı.
+* DataServer derlemesi **MSBUILD_EXIT=0** (DataServer.exe 1.062.912 B).
+
+**AÇIK KALANLAR (düzeltilmedi)**
+* `gcoin` kolonu ne MuOnline'da ne MuOnlineS6'da yok →
+  `CB_AutoNapGame.cpp` gcoin sorguları çalışma anında hata veriyor.
+* `MuOnlineS6.Character` boş → `CustomNpcQuest` FK testi ATLANDI.
+* Mevcut 391 `ExecQuery` çağrısının 14 tabloya dokunan kısmı henüz katmana
+  taşınmadı.
+
+**Kanıt:** docs/29-14-TABLO-KALICI-VERI-KATMANI.md · BuildLog/2e9/
+
 ## [26.10.03 21:40] Sunucu kaynaklarında okuma + mesaj hatası taraması — yok sayılan dönüş değerleri düzeltildi
 
 **Ne yapıldı**

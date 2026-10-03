@@ -39,6 +39,9 @@
     <ClInclude Include="DataServerProtocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="QueryManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -180,6 +183,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MemScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="QueryManager.cpp">

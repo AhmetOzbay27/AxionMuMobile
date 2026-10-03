@@ -1,0 +1,187 @@
+.NET Framework iáin MSBuild sÅrÅm 17.14.60+43b635718
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  stdafx.cpp
+  AllowableIpList.cpp
+  ArcaBattle.cpp
+  BadSyntax.cpp
+  CashShop.cpp
+  CastleDBSet.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CashShop.cpp(574,138): warning C4146: tek iülenenli eksi iüareti iüaretsiz tÅre uygulandç; sonuá hala iüaretsiz [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CashShop.cpp' kaynak dosyasç derleniyor)
+  
+  CB_AutoNapGame.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(18,13): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(26,9): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(37,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(38,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(43,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(44,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(53,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(54,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(64,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(65,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(220,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(241,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(388,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(354,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(374,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+  CharacterManager.cpp
+  ChoTroi.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.h(50,1): warning C5208: TypeDef adçnda kullançlan adlandçrçlmamçü sçnçf, statik olmayan veri Åyeleri, Åye sabit listeleri veya Åye sçnçflarç dçüçnda Åye bildiremez [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(308,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(317,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(339,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(355,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(376,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(389,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(397,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(442,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(516,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(521,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(526,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(531,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(536,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(541,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(549,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(568,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(572,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(578,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.cpp(582,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/ChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+  CommandManager.cpp
+  CriticalSection.cpp
+  CSProtocol.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CSProtocol.cpp(542,24): warning C4267: '=': 'size_t' - 'short' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CSProtocol.cpp' kaynak dosyasç derleniyor)
+  
+  DataServer.cpp
+  DataServerProtocol.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\ChoTroi.h(50,1): warning C5208: TypeDef adçnda kullançlan adlandçrçlmamçü sçnçf, statik olmayan veri Åyeleri, Åye sabit listeleri veya Åye sçnçflarç dçüçnda Åye bildiremez [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/DataServerProtocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServerProtocol.cpp(1460,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/DataServerProtocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServerProtocol.cpp(3687,49): warning C4244: '=': 'DWORD' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/DataServerProtocol.cpp' kaynak dosyasç derleniyor)
+  
+  ESProtocol.cpp
+  EventInventory.cpp
+  GensSystem.cpp
+  GuildManager.cpp
+  GuildMatching.cpp
+  Helper.cpp
+  Log.cpp
+  Derleniyor...
+  LuckyCoin.cpp
+  LuckyItem.cpp
+  MasterSkillTree.cpp
+  MemScript.cpp
+  MiniDump.cpp
+  MuRummy.cpp
+  MuunSystem.cpp
+  NewUIMyInventory.cpp
+  NpcTalk.cpp
+  PartyMatching.cpp
+  PcPoint.cpp
+  PentagramSystem.cpp
+  PersonalShop.cpp
+  Protect.cpp
+  DataStore.cpp
+  QueryManager.cpp
+  Quest.cpp
+  QuestWorld.cpp
+  Queue.cpp
+  ReiDoMU.cpp
+  Derleniyor...
+  ServerDisplayer.cpp
+  ServerManager.cpp
+  SocketManager.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\SocketManager.cpp(136,21): warning C4996: 'WSASocketA': Use WSASocketW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\SocketManager.cpp(574,39): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\SocketManager.cpp(624,36): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+  Util.cpp
+  Warehouse.cpp
+  Kod Åretiliyor
+  Previous IPDB not found, fall back to full compilation.
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(329): warning C4172: yerel deßiükenin veya geáici : buffer'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  All 1648 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun Åretilmesi tamamlandç
+  DataServer.vcxproj -> C:\Axion Mu Source\Source\2.DataServer\DataServer\Release\DataServer.exe
+MSBUILD_EXIT=0

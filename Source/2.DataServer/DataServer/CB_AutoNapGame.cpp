@@ -364,7 +364,8 @@ DWORD WINAPI TCheckKQNapBank(LPVOID lpThreadParameter)
 			while (gQueryManager.Fetch() != SQL_NO_DATA)
 			{
 				DataGETKQNapTien info;
-				info.STT = gQueryManager.GetAsInteger("STT");
+				// STT yalniz CardPhone tablosunda vardir; DataNapGame semasinda YOK.
+				// Eski satir calisma aninda Msg 207 (Invalid column name) uretiyordu.
 				gQueryManager.GetAsString("Account", info.Account, sizeof(info.Account));
 				gQueryManager.GetAsString("Name", info.Name, sizeof(info.Name));
 				info.TienNap = gQueryManager.GetAsInteger("TienNap");
@@ -424,10 +425,11 @@ DWORD WINAPI TCheckKQNapBank(LPVOID lpThreadParameter)
 					}
 					else
 					{
-						gQueryManager.ExecQuery("Update DataNapGame set Status='2' where Account='%s' and Name='%s'and STT='%d' and Checking='%s'",
+						// DataNapGame semasinda STT kolonu YOK; "and STT=%d" kosulu Msg 207 veriyordu.
+						// Satir artik (Account,Name,Checking) uclusuyle tanimlanir.
+						gQueryManager.ExecQuery("Update DataNapGame set Status='2' where Account='%s' and Name='%s' and Checking='%s'",
 							gCBAutoNapGame.mDataGETKQNapTien[n].Account,
 							gCBAutoNapGame.mDataGETKQNapTien[n].Name,
-							gCBAutoNapGame.mDataGETKQNapTien[n].STT,
 							gCBAutoNapGame.mDataGETKQNapTien[n].Checking);
 						gQueryManager.Fetch();
 						gQueryManager.Close();
@@ -487,11 +489,12 @@ DWORD WINAPI TCheckKQNapBank(LPVOID lpThreadParameter)
 		{
 			gCBAutoNapGame.mDataGETKQNapTien[n].TienNap = (int)KQNapThe;
 			gCBAutoNapGame.mDataGETKQNapTien[n].Status = 1;
-			gQueryManager.ExecQuery("Update DataNapGame set TienNap='%d',Status='1' where Account='%s' and Name='%s'and STT='%d'",
+			// DataNapGame semasinda STT kolonu YOK -> Checking ile eslesiyor.
+			gQueryManager.ExecQuery("Update DataNapGame set TienNap='%d',Status='1' where Account='%s' and Name='%s' and Checking='%s'",
 				gCBAutoNapGame.mDataGETKQNapTien[n].TienNap,
 				gCBAutoNapGame.mDataGETKQNapTien[n].Account,
 				gCBAutoNapGame.mDataGETKQNapTien[n].Name,
-				gCBAutoNapGame.mDataGETKQNapTien[n].STT);
+				gCBAutoNapGame.mDataGETKQNapTien[n].Checking);
 			gQueryManager.Fetch();
 			gQueryManager.Close();
 

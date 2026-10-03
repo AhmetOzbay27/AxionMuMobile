@@ -182,6 +182,7 @@
     <ClInclude Include="PentagramSystem.h" />
     <ClInclude Include="PersonalShop.h" />
     <ClInclude Include="Protect.h" />
+    <ClInclude Include="DataStore.h" />
     <ClInclude Include="QueryManager.h" />
     <ClInclude Include="Quest.h" />
     <ClInclude Include="QuestWorld.h" />
@@ -231,6 +232,7 @@
     <ClCompile Include="PentagramSystem.cpp" />
     <ClCompile Include="PersonalShop.cpp" />
     <ClCompile Include="Protect.cpp" />
+    <ClCompile Include="DataStore.cpp" />
     <ClCompile Include="QueryManager.cpp" />
     <ClCompile Include="Quest.cpp" />
     <ClCompile Include="QuestWorld.cpp" />
