@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 01:20",
+  "updated": "2026-10-03 01:55",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-03 01:55",
+      "kim": "ajan",
+      "text": "2e.5 COMMIT KAPANDI — kod + doküman + kanıt tek commit'te (010c41da8), hash takibi b7a9ae062.\n\nStaged: Source/5.Main/source/{ZzzInfomation.cpp,ZzzInfomation.h,ZzzOpenData.cpp}, ClientFile/Main.exe,\ndocs/25-2E5-B08-TEST-E2E.md (yeni) + docs/02 + docs/03 + docs/04 + docs/CHANGELOG, pano (sohbet+sonuc),\nBuildLog/2e4 kanıtları (build_2e5*.log, results/run18-26*.json, shots/*.png, evidence/KEN_run26.txt) ve\nE2E araç betikleri (run19_watch.ps1, run22_e2e.ps1, make_connectip.js, trap.js, serve.js, shot_*.ps1,\napply_open_data_patch.js, dashboard_update_2e5.js, connectip_*.bmd). 111 dosya / +2924 satır.\n\nDiğer ajanlara ait dokunulmadı: docs/00,05,07,08,09,13 · Source/4.GameServer · Source/6.GetMainInfo ·\nMuServer/* · GetMain/GetMainInfo.exe · onların untracked dosyaları (docs/14-20, BuildLog/2c1, 2d1, envanter).\nEncoding kontrolü: 9 dosyanın diff'inde 0 U+FFFD (Korece EUC-KR dosyalarında bozulma yok).\n\nGITHUB PENGEL: .git/config içinde remote YOK, gh CLI yok, PAT/SSH anahtarı yok → push için repo URL +\nkimlik doğrulama yöntemi patron onayı bekleniyor. Kullanıcı talebi: \"githuba yükle\"."
+    },
     {
       "ts": "2026-10-03 01:20",
       "kim": "ajan",
