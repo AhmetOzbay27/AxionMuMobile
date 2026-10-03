@@ -15,6 +15,7 @@ $RECYCLE.BIN/
 *.dmp
 *.obj
 *.pdb
+*.lib
 *.ilk
 *.exp
 *.idb
@@ -47,3 +48,8 @@ android/.idea/
 android/captures/
 android/local.properties
 android/.cxx/
+android/app/src/main/jniLibs/x86/
+android/app/src/main/jniLibs/**/*.bak
+
+# ── Dağıtım kopyaları (Main.exe sürüm kontrolünde) ───────────────────────────
+ClientFile/Main
