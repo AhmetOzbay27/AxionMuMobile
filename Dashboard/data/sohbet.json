@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 01:55",
+  "updated": "2026-10-03 06:30",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-03 06:30",
+      "kim": "ajan",
+      "text": "GITHUB PUSH TAMAM — https://github.com/AhmetOzbay27/AxionMuMobile (public, default branch main).\n\nRemote eklendi: `git remote add origin https://github.com/AhmetOzbay27/AxionMuMobile.git`.\nPush PAT istemeden geçti — Git Credential Manager (`credential.helper=manager`) kayıtlı kimliği kullandı;\ntoken hiçbir dosyaya veya .git/config'e yazılmadı. Hazırlanan askpass yardımcısı kullanılmadı (gereksiz kaldı).\n\nDOĞRULAMA:\n • `git ls-remote origin` → refs/heads/main = c0e41b24b (2e.5 commit'i) = yerel HEAD ile aynı.\n • GitHub tree API: 50.474+ blob (kırpılmış, üst sınır) — tüm ağaç yüklendi.\n • raw.githubusercontent.com üzerinden docs/25 indirildi: 200, 11.071 B = yerel dosya boyutuyla birebir.\n • Paralel ajanların 7 commit'i de (2c.1/2d.1 düzeltmeleri, docs/14-20, .gitignore genişletme, BuildLog kanıtları)\n   GitHub'da; son durum `main == origin/main == 564a69c69` (0 ileri / 0 geri).\n • Repo öncesi boştu (size 0, branch yok) → force gerekmedi, temiz push.\n\nGÜVENLİK TARAMASI (push öncesi): izlenen dosyalarda parolalar bulundu — JoinServer.ini `GlobalPassword`\n(KENDEV2039 / AFgRVFTYDd), DatEditor `Password=AIUEWUROE12`, MuEditor `Password=2n2zjw13`, AutoTrain.xml bot\nhesap/parolaları. Kullanıcı kararı: \"olduğu gibi push et\" — bunlar MuServer'ın herkese açık dağıtımlarındaki\nvarsayılanlar, GitHub/kişisel hesap parolası değil. Not: paralel ajan `3142bb439` DataServer.ini'deki gerçek DB\nparolasını zaten temizlemişti.\n\nPUSH SONRASI UYARI: .gitignore genişletildi (564a69c69) ama geçmişteki blob'lar değişmedi; ~742 MB paket\nyüklendi. Depo GitHub'ın 1 GB \"rahat sınır\"ının üzerinde — ileride büyümeyi sınırlamak için\nServerTools/ ve MuServer/ altındaki derleme çıktıları düşünülebilir."
+    },
     {
       "ts": "2026-10-03 01:55",
       "kim": "ajan",

@@ -8,6 +8,35 @@
 ---
 
 
+## [26.10.03 06:30] GITHUB — kaynak GitHub'a yüklendi (remote `origin`)
+
+**Ne yapıldı**
+- `git remote add origin https://github.com/AhmetOzbay27/AxionMuMobile.git`; `main` dalı
+  uzak depoya gönderildi. Depo public, default branch `main`, push öncesi boştu (`size: 0`,
+  branch yok) → force gerekmedi.
+- **Kimlik doğrulama:** `credential.helper=manager` (Git Credential Manager) kayıtlı tokenı
+  kullandı; PAT gerekmedi, token hiçbir dosyaya veya `.git/config`'e yazılmadı.
+- **Güvenlik taraması (push öncesi):** izlenen dosyalarda parolalar bulundu —
+  `MuServer\3.JoinServer\JoinServer.ini` `GlobalPassword = KENDEV2039`,
+  `ServerTools\MuServer_S6_2020\JoinServer\JoinServer.ini` `GlobalPassword = AFgRVFTYDd`,
+  `MuServer\6.DatEditor\Config.ini` `Password=AIUEWUROE12`, MuEditor `config.ini`
+  `Password=2n2zjw13`, `AutoTrain.xml` bot hesap/parolaları. Kullanıcı bilgilendirildi ve
+  "olduğu gibi push et" kararı verildi: bunlar MuServer'ın herkese açık dağıtımlarındaki
+  varsayılanlar, GitHub/kişisel hesap parolası değil. (Paralel ajan `3142bb439` bu sırada
+  `DataServer.ini`'deki gerçek DB parolasını zaten temizlemişti.)
+
+**Neden** — 2e.5 ve öncesi tüm çalışma (117 commit, ~742 MB paket) yalnızca yerel `.git`
+içindeydi; `.git/config` boştu, `gh` CLI ve SSH anahtarı yoktu. Kullanıcı talebi: "githuba yükle".
+
+**Doğrulama** — `git ls-remote origin` → `refs/heads/main = c0e41b24b` (2e.5 commit'i) =
+yerel HEAD; GitHub tree API 50.474+ blob döndürdü (üst sınır nedeniyle kırpılmış);
+`raw.githubusercontent.com` üzerinden `docs/25` indirildi → HTTP 200, 11.071 B = yerel
+dosya boyutuyla birebir. Paralel ajanların 7 commit'i de GitHub'da; son durum
+`main == origin/main == 564a69c69` (0 ileri / 0 geri).
+
+**Commit** — (bu kayıt; hash takibi sonraki commit'te)
+
+
 ## [26.10.03 01:20] 2e.5 — B-08 (SPK ToolTipText yükleyicisi) + Faz 3 E2E bağlantı kanıtı (docs/25)
 
 **Ne yapıldı**
