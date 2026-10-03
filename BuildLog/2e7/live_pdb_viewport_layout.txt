@@ -1,16 +1,96 @@
+# Canli GameServer.pdb icinden PMSG_VIEWPORT_* yerlesimi
+# Kaynak: C:\Axion Mu Mobile\4.MuServer\Sub-1\GameServer\GameServer.pdb
+# Uretim: ./pdbtype.exe "C:\Axion Mu Mobile\4.MuServer\Sub-1\GameServer\GameServer.pdb" "PMSG_VIEWPORT" 1
+# (msdia140.dll + DIA SDK; ayri birim degistirmesi: 'std::' ile baslayan tasma satirlari elendi)
+# Zaman damgasi 6AAE6177 = 19.09.2026 13:18:31 (exe ile ayni derleme)
+
 PMSG_VIEWPORT_DESTROY   size=2
+  +0     index                   <[2]>                             this+
 PMSG_VIEWPORT_STATE   size=1
+  +0     effect                                                    this+
 PMSG_VIEWPORT_DESTROY_ITEM_SEND   size=5
+  +0     header                 PWMSG_HEAD                         this+
+  +4     count                                                     this+
 PMSG_VIEWPORT_DESTROY_SEND   size=4
+  +0     header                 PBMSG_HEAD                         this+
+  +3     count                                                     this+
 PMSG_VIEWPORT_NEWS_SEND   size=7
+  +0     header                 PSWMSG_HEAD                        this+
+  +5     count                                                     this+
+  +6     Viewport                                                  this+
 PMSG_VIEWPORT_PLAYER_NEWS   size=16
+  +0     name                    <[11]>                            this+
+  +12    WingIndex                                                 this+
+  +14    index                                                     this+
 PMSG_VIEWPORT_SUMMON   size=20
+  +0     index                   <[2]>                             this+
+  +2     type                    <[2]>                             this+
+  +4     x                                                         this+
+  +5     y                                                         this+
+  +6     tx                                                        this+
+  +7     ty                                                        this+
+  +8     DirAndPkLevel                                             this+
+  +9     name                    <[10]>                            this+
+  +19    count                                                     this+
 PMSG_VIEWPORT_MONSTER   size=20
+  +0     index                   <[2]>                             this+
+  +2     type                    <[2]>                             this+
+  +4     x                                                         this+
+  +5     y                                                         this+
+  +6     tx                                                        this+
+  +7     ty                                                        this+
+  +8     DirAndPkLevel                                             this+
+  +9     CurHp                                                     this+
+  +10    Level                                                     this+
+  +12    Life                                                      this+
+  +16    count                                                     this+
 PMSG_VIEWPORT_PLAYER   size=36
+  +0     index                   <[2]>                             this+
+  +2     x                                                         this+
+  +3     y                                                         this+
+  +4     CharSet                 <[18]>                            this+
+  +22    name                    <[10]>                            this+
+  +32    tx                                                        this+
+  +33    ty                                                        this+
+  +34    DirAndPkLevel                                             this+
+  +35    count                                                     this+
 PMSG_VIEWPORT_SEND   size=5
+  +0     header                 PWMSG_HEAD                         this+
+  +4     count                                                     this+
 PMSG_VIEWPORT_ITEM   size=16
+  +0     index                   <[2]>                             this+
+  +2     x                                                         this+
+  +3     y                                                         this+
+  +4     ItemInfo                <[12]>                            this+
 PMSG_VIEWPORT_CHANGE   size=38
+  +0     index                   <[2]>                             this+
+  +2     x                                                         this+
+  +3     y                                                         this+
+  +4     skin                    <[2]>                             this+
+  +6     name                    <[10]>                            this+
+  +16    tx                                                        this+
+  +17    ty                                                        this+
+  +18    DirAndPkLevel                                             this+
+  +19    CharSet                 <[18]>                            this+
+  +37    count                                                     this+
 PMSG_VIEWPORT_GUILD   size=12
+  +0     number                                                    this+
+  +4     status                                                    this+
+  +5     type                                                      this+
+  +6     relationship                                              this+
+  +7     index                   <[2]>                             this+
+  +9     owner                                                     this+
 PMSG_VIEWPORT_UNION   size=20
+  +0     index                   <[2]>                             this+
+  +4     number                                                    this+
+  +8     relationship                                              this+
+  +9     UnionName               <[8]>                             this+
 PMSG_VIEWPORT_CASTLE_SIEGE_WEAPON   size=25
+  +0     type                                                      this+
+  +1     skin                    <[2]>                             this+
+  +3     index                   <[2]>                             this+
+  +5     x                                                         this+
+  +6     y                                                         this+
+  +7     CharSet                 <[17]>                            this+
+  +24    count                                                     this+
 ### eslesen=27

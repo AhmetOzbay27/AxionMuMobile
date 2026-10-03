@@ -183,6 +183,19 @@ birebir aynıdır:
 
 Bu, hem düzeltmeyi hem de aracı doğrulayan bir çapraz kontroltür.
 
+Bu kontrol **elle değil, otomatik** olarak da doğrulanır —
+`node BuildLog/2e7/crosscheck_live_parity.js` (çıktı:
+`crosscheck_live_parity.txt`). Araç dört yapının **her alanının ofsetini**
+canlı PDB kaydıyla tek tek karşılaştırır ve eşleşmezse `exit 1` verir:
+
+```
+  ESIT   PMSG_VIEWPORT_PLAYER  sizeof 36/36  alan 9
+  ESIT   PMSG_VIEWPORT_CHANGE  sizeof 38/38  alan 10
+  ESIT   PMSG_VIEWPORT_MONSTER sizeof 20/20  alan 11 (CurHp,Level,Life dahil)
+  ESIT   PMSG_VIEWPORT_SUMMON  sizeof 20/20  alan 9
+### CANLI PARITE DOGRULANDI (tum yapilar bayt-bayt ayni)
+```
+
 ### Derleme kanıtı
 
 | Bileşen | Sonuç | Kanıt |
@@ -236,6 +249,7 @@ cmd /c "C:\Axion Mu Source\BuildLog\2e7\build_pdbtype.bat"
 # 2) Kaynak düzenlerini hesapla ve karşılaştır
 node viewport_layout.js 803 1        # dağıtım yapımız  -> HİZALI (exit 0)
 node viewport_layout.js 603 0        # canlı yapılandırma
+node crosscheck_live_parity.js  # arac ciktisi vs canli PDB (exit 0 = bayt-bayt ayni)
 
 # 3) Canlı disassembly
 bash dis_live_gs.sh                 # /tmp/live_gs.dis

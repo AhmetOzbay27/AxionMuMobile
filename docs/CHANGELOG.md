@@ -46,6 +46,9 @@
 **Nasıl doğrulandı**
 - `node BuildLog/2e7/viewport_layout.js 803 1` → **`### TUM PAKETLER HIZALI`,
   exit 0** (`layout_803_1.txt`).
+- `node BuildLog/2e7/crosscheck_live_parity.js` → **exit 0**; dört yapının her
+  alan ofseti canlı PDB ile otomatik karşılaştırıldı (`crosscheck_live_parity.txt`).
+  Kanıt dosyası `pdbtype ... 1` (derinlik 1) ile alan ofsetlerini içerecek şekilde yeniden üretildi.
 - Aynı araç `603 0` ile çalıştırıldığında canlı PDB'nin değerlerini
   **birebir** üretiyor (PLAYER 36/count@35, CHANGE 38/count@37,
   MONSTER CurHp@9-Level@10-Life@12-count@16-20, SUMMON name@9/count@19).

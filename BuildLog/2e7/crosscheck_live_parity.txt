@@ -1,0 +1,10 @@
+# viewport_layout.js 603 0 -> cocuk exit=1 (beklenen: 1, istemci EX803 biciminde)
+
+capraz kontrol: viewport_layout.js (603/0)  vs  canli GameServer.pdb
+
+  ESIT   PMSG_VIEWPORT_PLAYER  sizeof 36/36  alan 9/index,x,y,CharSet,name,tx,ty,DirAndPkLevel,count
+  ESIT   PMSG_VIEWPORT_CHANGE  sizeof 38/38  alan 10/index,x,y,skin,name,tx,ty,DirAndPkLevel,CharSet,count
+  ESIT   PMSG_VIEWPORT_MONSTER  sizeof 20/20  alan 11/index,type,x,y,tx,ty,DirAndPkLevel,CurHp,Level,Life,count
+  ESIT   PMSG_VIEWPORT_SUMMON  sizeof 20/20  alan 9/index,type,x,y,tx,ty,DirAndPkLevel,name,count
+
+### CANLI PARITE DOGRULANDI (tum yapilar bayt-bayt ayni)
