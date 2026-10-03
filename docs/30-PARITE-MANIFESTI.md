@@ -28,10 +28,10 @@ Bir özellik **ancak beş eksenin tamamı yeşil** ise paritedir:
 | 1 — GS kaynağı | 11 | 60 | %18 |
 | 2 — Config | 28 | 28 | %100 |
 | 3 — İstemci | 8 | 60 | %13 |
-| 4 — Protokol | 5 | 60 | dış opcode seti birebir (docs/11); modül opcode kaydı yok |
+| 4 — Protokol | 6 | 60 | dış opcode seti birebir (docs/11); **viewport paket düzeni bayt-bayt doğrulandı ve hizalandı (H-018, 2e.7 — canlı PDB kanıtı, [docs/27](27-H018-VIEWPORT-PAKET-DUZENI.md))**; modül opcode kaydı yok |
 | 5 — E2E | 6 | 60 | %10 (6'sı sunucu içi; **istemci içeren 1** — B-08 tooltip zinciri, 2e.5: `ToolTipText.txt` → istemci tooltip tablosu → runtime kanıtı) |
 
-**Sonuç:** Parite = `5 eksen × 60 özellik = 300 kutu`; bugün ~`30` kutu yeşil. **En büyük boşluk: 3. eksen (istemci) ve 4. eksen (protokol kaydı).**
+**Sonuç:** Parite = `5 eksen × 60 özellik = 300 kutu`; bugün ~`31` kutu yeşil. **En büyük boşluk: 3. eksen (istemci) ve 4. eksen (protokol kaydı).**
 
 > **Güncelleme 03.10.2026 (2e.6):** E2E eksenindeki "istemci içeren 0" ifadesi 2e.5 sonrası
 > bayatlamıştı; B-08 tooltip hattı istemci içinde uçtan uca koşturulup log kanıtı alındığı

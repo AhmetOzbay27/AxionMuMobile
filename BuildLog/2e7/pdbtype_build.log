@@ -1,0 +1,10 @@
+pdbtype.cpp
+pdbtype.cpp(97): warning C4477: 'printf' : '%u' bi‡im dizesi 'unsigned int' tr bir ba§msz de§iŸken gerektirir, ancak 8 de§iŸen sayda ba§msz de§iŸkenin tr 'ULONGLONG'
+pdbtype.cpp(97): note: bi‡im dizesinde '%llu' kullanmay dŸnn
+pdbtype.cpp(97): note: bi‡im dizesinde '%I64u' kullanmay dŸnn
+pdbtype.cpp(156): warning C4477: 'printf' : '%S' bi‡im dizesi 'wchar_t *' tr bir ba§msz de§iŸken gerektirir, ancak 1 de§iŸen sayda ba§msz de§iŸkenin tr 'const char *'
+pdbtype.cpp(156): note: bi‡im dizesinde '%hS' kullanmay dŸnn
+pdbtype.cpp(156): note: bi‡im dizesinde '%TS' kullanmay dŸnn
+COMPILE_EXIT=0
+DONE
+EXIT=0

@@ -572,9 +572,16 @@ typedef struct {
 	BYTE         TargetX;
 	BYTE         TargetY;
 	BYTE         Path;
+	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
+	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
+	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	BYTE         Attribute;
 #if (HAISLOTRING)
 	BYTE         MuunItem[2];
 #endif
+	BYTE         Level[2];
+	BYTE         MaxHP[4];
+	BYTE         CurHP[4];
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_CHARACTER, * LPPCREATE_CHARACTER;
@@ -594,9 +601,16 @@ typedef struct
 	BYTE         Path;
 	BYTE         Class;
 	BYTE         Equipment[EQUIPMENT_LENGTH];
+	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
+	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
+	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	BYTE         Attribute;
 #if (HAISLOTRING)
 	BYTE         MuunItem[2];
 #endif
+	BYTE         Level[2];
+	BYTE         MaxHP[4];
+	BYTE         CurHP[4];
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_TRANSFORM, * LPPCREATE_TRANSFORM;
@@ -613,6 +627,13 @@ typedef struct {
 	BYTE         TargetY;
 	BYTE         Path;
 	BYTE         ID[MAX_ID_SIZE];
+	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
+	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
+	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	BYTE         Attribute;
+	BYTE         Level[2];
+	BYTE         MaxHP[4];
+	BYTE         CurHP[4];
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_SUMMON, * LPPCREATE_SUMMON;
@@ -628,6 +649,13 @@ typedef struct {
 	BYTE         TargetX;
 	BYTE         TargetY;
 	BYTE         Path;
+	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
+	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
+	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	BYTE         Attribute;
+	BYTE         Level[2];
+	BYTE         MaxHP[4];
+	BYTE         CurHP[4];
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_MONSTER, * LPPCREATE_MONSTER;

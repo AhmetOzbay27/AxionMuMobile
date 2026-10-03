@@ -1,0 +1,1264 @@
+===== GameServer Release_EX803 (2e.7 H-018) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  BCustomItemBank.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(687,49): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(687,39): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(706,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(706,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(720,51): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(720,41): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(741,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(741,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(755,51): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(755,41): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(776,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(776,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(790,51): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(790,41): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(814,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(814,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(1096,49): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(1096,39): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+  CastleSiege.cpp
+  CastleSiegeWeapon.cpp
+  CustomAttack.cpp
+  CustomEventDrop.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomEventDrop.cpp(438,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomEventDrop.cpp' kaynak dosyasç derleniyor)
+  
+  CustomMonterPoint.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMonterPoint.cpp(94,60): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMonterPoint.cpp' kaynak dosyasç derleniyor)
+  
+  CustomOnlineLottery.cpp
+  CustomPick.cpp
+  CustomQuiz.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomQuiz.cpp(435,13): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomQuiz.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomQuiz.cpp(467,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomQuiz.cpp' kaynak dosyasç derleniyor)
+  
+  DSProtocol.cpp
+  DarkSpirit.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(763,31): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(854,62): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(908,47): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(1009,53): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(1013,128): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+  ESProtocol.cpp
+  EffectManager.cpp
+  FakeOnline.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(77,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(79,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(81,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(396,30): warning C4805: '==' : iülemde gÅvenli olmayan 'BYTE' tÅrÅ ve 'bool' tÅrÅ karçüçmç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(558,25): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(1046,9): warning C4390: ';': boü denetlenen deyim bulundu; amaálanan bu muydu? [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(1227,9): warning C4390: ';': boü denetlenen deyim bulundu; amaálanan bu muydu? [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+  GensSystem.cpp
+  GuildClass.cpp
+  IllusionTemple.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\IllusionTemple.cpp(2694,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/IllusionTemple.cpp' kaynak dosyasç derleniyor)
+  
+  ItemManager.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ItemManager.cpp(3243,58): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ItemManager.cpp' kaynak dosyasç derleniyor)
+  
+  Monster.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(757,53): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(798,48): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(846,51): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(887,51): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(1003,48): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+  MonsterAIUtil.cpp
+  Derleniyor...
+  MonsterSkillManager.cpp
+  OfflineMode.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\OfflineMode.cpp(763,90): warning C4805: '==' : iülemde gÅvenli olmayan 'BYTE' tÅrÅ ve 'bool' tÅrÅ karçüçmç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/OfflineMode.cpp' kaynak dosyasç derleniyor)
+  
+  PersonalShop.cpp
+  Protocol.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.h(41,16): warning C4091: 'typedef ': hiábir deßiüken bildirimi yapçlmadçßçnda 'VCSEV_COUNTLIST' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protocol.cpp(2208,20): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protocol.cpp(6194,40): warning C4244: '=': 'float' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protocol.cpp(6200,45): warning C4244: '=': 'float' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+  AUTOHP.cpp
+  SkillManager.cpp
+  User.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\User.cpp(2683,59): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\User.cpp(2700,59): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+  Util.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(653,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(697,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(698,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(703,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(704,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(713,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(714,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(724,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(725,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(803,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(834,61): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(816,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+  Viewport.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Viewport.cpp(2337,53): warning C4390: ';': boü denetlenen deyim bulundu; amaálanan bu muydu? [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+  Kod Åretiliyor
+  1 of 20025 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    294 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
+GS_EXIT=0
+===== Main Global Release (2e.7 H-018) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  APICB.cpp
+  BuffIcon.cpp
+  Button.cpp
+  CBChoTroi.cpp
+  CBInterface.cpp
+  CBInterfaceVIPChar.cpp
+  CB_ActiveInvasions.cpp
+  CB_AutoLogin.cpp
+  CB_AutoNapGame.cpp
+  CB_AutoResetInfo.cpp
+  CB_BossGuild.cpp
+C:\Axion Mu Source\Source\5.Main\source\Button.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Button.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CBChoTroi.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CBChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+  CB_BotTrader.cpp
+  CB_BXHTopDmg.cpp
+C:\Axion Mu Source\Source\5.Main\source\APICB.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/APICB.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\BuffIcon.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/BuffIcon.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CBInterfaceVIPChar.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CBInterfaceVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_ActiveInvasions.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_ActiveInvasions.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CBInterface.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CBInterface.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_AutoLogin.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_AutoLogin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_AutoResetInfo.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_AutoResetInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_BossGuild.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_BossGuild.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_AutoNapGame.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+  CB_CongHuong.cpp
+  CB_CTCMini.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_BXHTopDmg.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_BXHTopDmg.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_BotTrader.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_BotTrader.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_CTCMini.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_CTCMini.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_CongHuong.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_CongHuong.cpp' kaynak dosyasç derleniyor)
+  
+  CB_DangKyInGame.cpp
+  CB_DanhHieu.cpp
+  CB_DoiMK.cpp
+  CB_DrawCustomRank.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_DanhHieu.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_DangKyInGame.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_DangKyInGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_DoiMK.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_DoiMK.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_DrawCustomRank.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_DrawCustomRank.cpp' kaynak dosyasç derleniyor)
+  
+  CB_GetMixRate.cpp
+  CB_HuyDongExc.cpp
+  CB_InfoCustomMix.cpp
+  CB_LockItem.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_HuyDongExc.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_HuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_InfoCustomMix.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_InfoCustomMix.cpp' kaynak dosyasç derleniyor)
+  
+  CB_Mapping.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_GetMixRate.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_GetMixRate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_LockItem.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_LockItem.cpp' kaynak dosyasç derleniyor)
+  
+  CB_MUHelper.cpp
+  CB_NewQuest.cpp
+  CB_OffMuHelper.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_Mapping.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_Mapping.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_MUHelper.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_MUHelper.cpp' kaynak dosyasç derleniyor)
+  
+  CB_StatsAdvance.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_NewQuest.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_NewQuest.cpp' kaynak dosyasç derleniyor)
+  
+  CB_ViewCharItem.cpp
+  CB_JewelBank.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_OffMuHelper.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_OffMuHelper.cpp' kaynak dosyasç derleniyor)
+  
+  CB_NewJewelBank.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_StatsAdvance.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_StatsAdvance.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_JewelBank.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_JewelBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CB_ViewCharItem.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_ViewCharItem.cpp' kaynak dosyasç derleniyor)
+  
+  CB_OffTrade.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_NewJewelBank.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_NewJewelBank.cpp' kaynak dosyasç derleniyor)
+  
+  CComGem.cpp
+  CDirection.cpp
+  CharInfoBalloon.cpp
+C:\Axion Mu Source\Source\5.Main\source\CB_OffTrade.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CB_OffTrade.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CComGem.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CComGem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CDirection.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CDirection.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CharInfoBalloon.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CharInfoBalloon.cpp' kaynak dosyasç derleniyor)
+  
+  CharMakeWin.cpp
+  CharSelMainWin.cpp
+  CKANTURUDirection.cpp
+  CMVP1stDirection.cpp
+C:\Axion Mu Source\Source\5.Main\source\CharSelMainWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CharSelMainWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CharMakeWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CharMakeWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CKANTURUDirection.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CKANTURUDirection.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CMVP1stDirection.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CMVP1stDirection.cpp' kaynak dosyasç derleniyor)
+  
+  CreditWin.cpp
+  CSChaosCastle.cpp
+  CSEventMatch.cpp
+  CSItemOption.cpp
+C:\Axion Mu Source\Source\5.Main\source\CSChaosCastle.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSChaosCastle.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CreditWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CreditWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CSEventMatch.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSEventMatch.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CSItemOption.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSItemOption.cpp' kaynak dosyasç derleniyor)
+  
+  CSMapServer.cpp
+  CSParts.cpp
+  CSPetSystem.cpp
+  CSQuest.cpp
+C:\Axion Mu Source\Source\5.Main\source\CSQuest.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSQuest.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CSParts.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSParts.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CSPetSystem.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSPetSystem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CSMapServer.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CSMapServer.cpp' kaynak dosyasç derleniyor)
+  
+  CUIController.cpp
+  CustomBuyVip.cpp
+  CustomCloak.cpp
+  CustomEventTime.cpp
+C:\Axion Mu Source\Source\5.Main\source\CUIController.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CUIController.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CustomEventTime.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CustomEventTime.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CustomBuyVip.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CustomBuyVip.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CustomCloak.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CustomCloak.cpp' kaynak dosyasç derleniyor)
+  
+  CustomJewel.cpp
+  CustomRanking.cpp
+  CustomRankUser.cpp
+  DuelMgr.cpp
+C:\Axion Mu Source\Source\5.Main\source\CustomJewel.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CustomJewel.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\CustomRanking.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CustomRanking.cpp' kaynak dosyasç derleniyor)
+  
+  Event.cpp
+C:\Axion Mu Source\Source\5.Main\source\CustomRankUser.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/CustomRankUser.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\DuelMgr.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/DuelMgr.cpp' kaynak dosyasç derleniyor)
+  
+  InGameShopSystem.cpp
+  MsgBoxIGSBuyConfirm.cpp
+  MsgBoxIGSBuyPackageItem.cpp
+C:\Axion Mu Source\Source\5.Main\source\Event.cpp(6,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Event.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\InGameShopSystem.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/InGameShopSystem.cpp' kaynak dosyasç derleniyor)
+  
+  MsgBoxIGSBuySelectItem.cpp
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSBuyConfirm.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSBuyConfirm.cpp' kaynak dosyasç derleniyor)
+  
+  MsgBoxIGSCommon.cpp
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSBuyPackageItem.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSBuyPackageItem.cpp' kaynak dosyasç derleniyor)
+  
+  MsgBoxIGSDeleteItemConfirm.cpp
+  MsgBoxIGSGiftStorageItemInfo.cpp
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSCommon.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSCommon.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSBuySelectItem.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSBuySelectItem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSDeleteItemConfirm.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSDeleteItemConfirm.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSGiftStorageItemInfo.cpp(6,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSGiftStorageItemInfo.cpp' kaynak dosyasç derleniyor)
+  
+  MsgBoxIGSSendGift.cpp
+  MsgBoxIGSSendGiftConfirm.cpp
+  MsgBoxIGSStorageItemInfo.cpp
+  MsgBoxIGSUseBuffConfirm.cpp
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSSendGift.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSSendGift.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSStorageItemInfo.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSStorageItemInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSUseBuffConfirm.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSUseBuffConfirm.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSSendGiftConfirm.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSSendGiftConfirm.cpp' kaynak dosyasç derleniyor)
+  
+  MsgBoxIGSUseItemConfirm.cpp
+  NewUIInGameShop.cpp
+  GIPetManager.cpp
+  GM3rdChangeUp.cpp
+C:\Axion Mu Source\Source\5.Main\source\GameShop\MsgBoxIGSUseItemConfirm.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/MsgBoxIGSUseItemConfirm.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GameShop\NewUIInGameShop.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GameShop/NewUIInGameShop.cpp' kaynak dosyasç derleniyor)
+  
+  GMAida.cpp
+  GMBattleCastle.cpp
+C:\Axion Mu Source\Source\5.Main\source\GIPetManager.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GIPetManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GM3rdChangeUp.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GM3rdChangeUp.cpp' kaynak dosyasç derleniyor)
+  
+  GMCryingWolf2nd.cpp
+  GMCrywolf1st.cpp
+C:\Axion Mu Source\Source\5.Main\source\GMBattleCastle.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMBattleCastle.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GMAida.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMAida.cpp' kaynak dosyasç derleniyor)
+  
+  GMDoppelGanger1.cpp
+  GMHellas.cpp
+C:\Axion Mu Source\Source\5.Main\source\GMCryingWolf2nd.cpp(2,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMCryingWolf2nd.cpp' kaynak dosyasç derleniyor)
+  
+  GMHuntingGround.cpp
+C:\Axion Mu Source\Source\5.Main\source\GMCrywolf1st.cpp(2,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMCrywolf1st.cpp' kaynak dosyasç derleniyor)
+  
+  GMKarutan1.cpp
+C:\Axion Mu Source\Source\5.Main\source\GMHuntingGround.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMHuntingGround.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GMDoppelGanger1.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMDoppelGanger1.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GMHellas.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMHellas.cpp' kaynak dosyasç derleniyor)
+  
+  GM_kanturu_1st.cpp
+  GM_Kanturu_2nd.cpp
+C:\Axion Mu Source\Source\5.Main\source\GMKarutan1.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GMKarutan1.cpp' kaynak dosyasç derleniyor)
+  
+  GM_Kanturu_3rd.cpp
+  GuildCache.cpp
+C:\Axion Mu Source\Source\5.Main\source\GM_kanturu_1st.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GM_kanturu_1st.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GM_Kanturu_2nd.cpp(6,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GM_Kanturu_2nd.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\GuildCache.cpp(9,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GuildCache.cpp' kaynak dosyasç derleniyor)
+  
+  GuildManager.cpp
+C:\Axion Mu Source\Source\5.Main\source\GM_Kanturu_3rd.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GM_Kanturu_3rd.cpp' kaynak dosyasç derleniyor)
+  
+  Input.cpp
+  ItemAddOptioninfo.cpp
+  ItemTooltip.cpp
+C:\Axion Mu Source\Source\5.Main\source\GuildManager.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/GuildManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\Input.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Input.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ItemTooltip.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ItemTooltip.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ItemAddOptioninfo.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ItemAddOptioninfo.cpp' kaynak dosyasç derleniyor)
+  
+  LoadData.cpp
+  LoginMainWin.cpp
+  LoginWin.cpp
+  MainLoad.cpp
+C:\Axion Mu Source\Source\5.Main\source\LoginWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/LoginWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\LoadData.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/LoadData.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\LoginMainWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/LoginMainWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\MainLoad.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MainLoad.cpp' kaynak dosyasç derleniyor)
+  
+  SPKData.cpp
+  SPKMenuBar.cpp
+  MapManager.cpp
+  MatchEvent.cpp
+C:\Axion Mu Source\Source\5.Main\source\SPKData.cpp(11,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SPKData.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\SPKMenuBar.cpp(16,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SPKMenuBar.cpp' kaynak dosyasç derleniyor)
+  
+  MenuCustom.cpp
+C:\Axion Mu Source\Source\5.Main\source\MatchEvent.cpp(2,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MatchEvent.cpp' kaynak dosyasç derleniyor)
+  
+  MixMgr.cpp
+C:\Axion Mu Source\Source\5.Main\source\MapManager.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MapManager.cpp' kaynak dosyasç derleniyor)
+  
+  MocDonate.cpp
+  MonkSystem.cpp
+C:\Axion Mu Source\Source\5.Main\source\MenuCustom.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MenuCustom.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\MixMgr.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MixMgr.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\MocDonate.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MocDonate.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\MonkSystem.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MonkSystem.cpp' kaynak dosyasç derleniyor)
+  
+  MsgWin.cpp
+  NewBloodCastleSystem.cpp
+  NewChaosCastleSystem.cpp
+  NewUIBattleSoccerScore.cpp
+C:\Axion Mu Source\Source\5.Main\source\MsgWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/MsgWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewBloodCastleSystem.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewBloodCastleSystem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewChaosCastleSystem.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewChaosCastleSystem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIBattleSoccerScore.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIBattleSoccerScore.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIBCustomMenu.cpp
+  NewUIBloodCastleEnter.cpp
+  NewUIBloodCastleTime.cpp
+  NewUIBMacro.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIBCustomMenu.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIBCustomMenu.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIBuffWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIBloodCastleTime.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIBloodCastleTime.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIBloodCastleEnter.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIBloodCastleEnter.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIBMacro.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIBMacro.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIButton.cpp
+  NewUICastleWindow.cpp
+  NewUICatapultWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIBuffWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIBuffWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIButton.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIButton.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIChaosCastleTime.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICastleWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICastleWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUICharacterInfoWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICatapultWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICatapultWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIChatInputBox.cpp
+  NewUIChatLogWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIChaosCastleTime.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIChaosCastleTime.cpp' kaynak dosyasç derleniyor)
+  
+  NewUICommandWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICharacterInfoWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICharacterInfoWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIChatInputBox.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIChatInputBox.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIChatLogWindow.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIChatLogWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUICommon.cpp
+  NewUICommonMessageBox.cpp
+  NewUICryWolf.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICommandWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICommandWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUICommon.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICommon.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUICryWolf.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICryWolf.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUICommonMessageBox.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICommonMessageBox.cpp' kaynak dosyasç derleniyor)
+  
+  NewUICursedTempleEnter.cpp
+  NewUICursedTempleResult.cpp
+  NewUICursedTempleSystem.cpp
+  NewUICustomMessageBox.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICursedTempleEnter.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICursedTempleEnter.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUICursedTempleSystem.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICursedTempleSystem.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIDoppelGangerFrame.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICursedTempleResult.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICursedTempleResult.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIDoppelGangerWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUICustomMessageBox.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUICustomMessageBox.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIDuelWatchMainFrameWindow.cpp
+  NewUIDuelWatchUserListWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIDoppelGangerWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIDoppelGangerWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIDoppelGangerFrame.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIDoppelGangerFrame.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIDuelWatchWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIDuelWatchUserListWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIDuelWatchUserListWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIDuelWindow.cpp
+  NewUIEmpireGuardianNPC.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIDuelWatchMainFrameWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIDuelWatchMainFrameWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIEmpireGuardianTimer.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIDuelWatchWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIDuelWatchWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIEnterDevilSquare.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIDuelWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIDuelWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIEmpireGuardianNPC.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIEmpireGuardianNPC.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIEmpireGuardianTimer.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIEmpireGuardianTimer.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIExchangeLuckyCoin.cpp
+  NewUIFriendWindow.cpp
+  NewUIGatemanWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIEnterDevilSquare.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIEnterDevilSquare.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIFriendWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIFriendWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIExchangeLuckyCoin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIExchangeLuckyCoin.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIGateSwitchWindow.cpp
+  NewUIGensRanking.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIGatemanWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGatemanWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIGoldBowmanLena.cpp
+  NewUIGoldBowmanWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIGateSwitchWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGateSwitchWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIGuardWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIGensRanking.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGensRanking.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIGoldBowmanLena.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGoldBowmanLena.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIGoldBowmanWindow.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGoldBowmanWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIGuildInfoWindow.cpp
+  NewUIGuildMakeWindow.cpp
+  NewUIHelpWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIGuardWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGuardWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIHeroPositionInfo.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIGuildInfoWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGuildInfoWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIGuildMakeWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIGuildMakeWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIHotKey.cpp
+  NewUIInventoryCtrl.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIHelpWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIHelpWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIInventoryExtension.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIHeroPositionInfo.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIHeroPositionInfo.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIItemEnduranceInfo.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIHotKey.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIHotKey.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIInventoryCtrl.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIInventoryCtrl.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIItemExplanationWindow.cpp
+  NewUIKanturuEvent.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIInventoryExtension.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIInventoryExtension.cpp' kaynak dosyasç derleniyor)
+  
+  NewUILuckyItemWnd.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIItemEnduranceInfo.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIItemEnduranceInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIItemExplanationWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIItemExplanationWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIMainFrameWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIKanturuEvent.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  NewUIMasterLevel.cpp
+  ('/source/NewUIKanturuEvent.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUILuckyItemWnd.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUILuckyItemWnd.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIMasterSkillTree.cpp
+  NewUIMessageBox.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIMasterLevel.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMasterLevel.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMainFrameWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  NewUIMiniMap.cpp
+  ('/source/NewUIMainFrameWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMessageBox.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMessageBox.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMasterSkillTree.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMasterSkillTree.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIMixInventory.cpp
+  NewUIMoveCommandWindow.cpp
+  NewUIMuHelper.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIMiniMap.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMiniMap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMixInventory.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMixInventory.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMuHelper.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMuHelper.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMoveCommandWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMoveCommandWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIMyInventory.cpp
+  NewUIMyQuestInfoWindow.cpp
+  NewUIMyShopInventory.cpp
+  NewUINameWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIMyShopInventory.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMyShopInventory.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMyQuestInfoWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMyQuestInfoWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIMyInventory.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIMyInventory.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUINameWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUINameWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUINPCDialogue.cpp
+  NewUINPCQuest.cpp
+  NewUINPCShop.cpp
+  NewUIOptionWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUINPCDialogue.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUINPCDialogue.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUINPCShop.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUINPCShop.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUINPCQuest.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUINPCQuest.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIOptionWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIOptionWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIPartyInfoWindow.cpp
+  NewUIPartyListWindow.cpp
+  NewUIPetInfoWindow.cpp
+  NewUIPurchaseShopInventory.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIPurchaseShopInventory.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIPurchaseShopInventory.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIPetInfoWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIPetInfoWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIPartyListWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIPartyListWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIQuestProgress.cpp
+  NewUIQuestProgressByEtc.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIPartyInfoWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIPartyInfoWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIQuickCommandWindow.cpp
+  NewUIRegistrationLuckyCoin.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIQuestProgress.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIQuestProgress.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIQuestProgressByEtc.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIQuestProgressByEtc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIQuickCommandWindow.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIQuickCommandWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIScrollBar.cpp
+  NewUISeigeWarfare.cpp
+  NewUISetItemExplanation.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIRegistrationLuckyCoin.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIRegistrationLuckyCoin.cpp' kaynak dosyasç derleniyor)
+  
+  NewUISiegeWarBase.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUISeigeWarfare.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISeigeWarfare.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUISetItemExplanation.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISetItemExplanation.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUISiegeWarBase.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISiegeWarBase.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIScrollBar.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIScrollBar.cpp' kaynak dosyasç derleniyor)
+  
+  NewUISiegeWarCommander.cpp
+  NewUISiegeWarObserver.cpp
+  NewUISiegeWarSoldier.cpp
+  NewUISlideWindow.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUISiegeWarObserver.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISiegeWarObserver.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUISiegeWarCommander.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISiegeWarCommander.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUISiegeWarSoldier.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISiegeWarSoldier.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUISlideWindow.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISlideWindow.cpp' kaynak dosyasç derleniyor)
+  
+  NewUIStorageInventory.cpp
+  NewUIStorageInventoryExt.cpp
+  NewUISystem.cpp
+  NewUITextBox.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUIStorageInventoryExt.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIStorageInventoryExt.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIStorageInventory.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIStorageInventory.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUITextBox.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUITextBox.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUISystem.cpp(2,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUISystem.cpp' kaynak dosyasç derleniyor)
+  
+  NewUITrade.cpp
+  NewUIUnitedMarketPlaceWindow.cpp
+  NewUIWindowMenu.cpp
+  npcBreeder.cpp
+C:\Axion Mu Source\Source\5.Main\source\NewUITrade.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUITrade.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIUnitedMarketPlaceWindow.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIUnitedMarketPlaceWindow.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\NewUIWindowMenu.cpp(6,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/NewUIWindowMenu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\npcBreeder.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/npcBreeder.cpp' kaynak dosyasç derleniyor)
+  
+  npcGateSwitch.cpp
+  OptionWin.cpp
+  PacketManager.cpp
+  PersonalShopTitleImp.cpp
+C:\Axion Mu Source\Source\5.Main\source\OptionWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/OptionWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\PersonalShopTitleImp.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/PersonalShopTitleImp.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\PacketManager.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/PacketManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\npcGateSwitch.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/npcGateSwitch.cpp' kaynak dosyasç derleniyor)
+  
+  PetProtocol.cpp
+  Protocol.cpp
+  QuestMng.cpp
+  Ranking.cpp
+C:\Axion Mu Source\Source\5.Main\source\PetProtocol.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/PetProtocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\Protocol.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\QuestMng.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/QuestMng.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\Ranking.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Ranking.cpp' kaynak dosyasç derleniyor)
+  
+  Reconnect.cpp
+  ServerMsgWin.cpp
+  ServerSelWin.cpp
+  SkillManager.cpp
+C:\Axion Mu Source\Source\5.Main\source\ServerMsgWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ServerMsgWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\Reconnect.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Reconnect.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ServerSelWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ServerSelWin.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\SkillManager.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SkillManager.cpp' kaynak dosyasç derleniyor)
+  
+  SocketSystem.cpp
+  SummonSystem.cpp
+  SysMenuWin.cpp
+  UIControls.cpp
+C:\Axion Mu Source\Source\5.Main\source\SocketSystem.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SocketSystem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIControls.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIControls.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\SummonSystem.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SummonSystem.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\SysMenuWin.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/SysMenuWin.cpp' kaynak dosyasç derleniyor)
+  
+  UIGateKeeper.cpp
+  UIGuardsMan.cpp
+  UIGuildInfo.cpp
+  UIGuildMaster.cpp
+C:\Axion Mu Source\Source\5.Main\source\UIGuildMaster.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIGuildMaster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIGuardsMan.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIGuardsMan.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIGuildInfo.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIGuildInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIGateKeeper.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIGateKeeper.cpp' kaynak dosyasç derleniyor)
+  
+  UIJewelHarmony.cpp
+  UIManager.cpp
+  UIMapName.cpp
+  UIMng.cpp
+C:\Axion Mu Source\Source\5.Main\source\UIJewelHarmony.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIJewelHarmony.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIMng.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIMng.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIManager.cpp(9,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIMapName.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIMapName.cpp' kaynak dosyasç derleniyor)
+  
+  UIPopup.cpp
+  UISenatus.cpp
+  UIWindows.cpp
+  UsefulDef.cpp
+C:\Axion Mu Source\Source\5.Main\source\UISenatus.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UISenatus.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIPopup.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIPopup.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UsefulDef.cpp(9,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UsefulDef.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\UIWindows.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/UIWindows.cpp' kaynak dosyasç derleniyor)
+  
+  Util.cpp
+  VongQuay.cpp
+  Win.cpp
+  WindowClass.cpp
+C:\Axion Mu Source\Source\5.Main\source\Util.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\VongQuay.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/VongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\WindowClass.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/WindowClass.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\Win.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Win.cpp' kaynak dosyasç derleniyor)
+  
+  Winmain.cpp
+  w_BuffScriptLoader.cpp
+  w_BuffStateValueControl.cpp
+  w_BuffTimeControl.cpp
+C:\Axion Mu Source\Source\5.Main\source\w_BuffScriptLoader.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_BuffScriptLoader.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\Winmain.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/Winmain.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\w_BuffTimeControl.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_BuffTimeControl.cpp' kaynak dosyasç derleniyor)
+  
+  w_CursedTemple.cpp
+C:\Axion Mu Source\Source\5.Main\source\w_BuffStateValueControl.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_BuffStateValueControl.cpp' kaynak dosyasç derleniyor)
+  
+  w_PetActionCollecter.cpp
+  w_PetActionCollecter_Add.cpp
+  w_PetActionUnicorn.cpp
+C:\Axion Mu Source\Source\5.Main\source\w_CursedTemple.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_CursedTemple.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\w_PetActionUnicorn.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_PetActionUnicorn.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\w_PetActionCollecter.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_PetActionCollecter.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\w_PetActionCollecter_Add.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/w_PetActionCollecter_Add.cpp' kaynak dosyasç derleniyor)
+  
+  ZzzAI.cpp
+  ZzzBMD.cpp
+  ZzzCharacter.cpp
+  ZzzEffectBlurSpark.cpp
+C:\Axion Mu Source\Source\5.Main\source\ZzzBMD.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzBMD.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectBlurSpark.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectBlurSpark.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzAI.cpp(8,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzAI.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzCharacter.cpp(8,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzCharacter.cpp' kaynak dosyasç derleniyor)
+  
+  ZzzEffectFireLeave.cpp
+  ZzzEffectJoint.cpp
+  ZzzEffectMagicSkill.cpp
+  ZzzEffectNoUse.cpp
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectFireLeave.cpp(7,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectFireLeave.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectMagicSkill.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectMagicSkill.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectNoUse.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectNoUse.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectJoint.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectJoint.cpp' kaynak dosyasç derleniyor)
+  
+  ZzzEffectParticle.cpp
+  ZzzEffectPoint.cpp
+  ZzzEffectPointer.cpp
+  zzzeffectsprite.cpp
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectPoint.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectPoint.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectParticle.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectParticle.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzEffectPointer.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzEffectPointer.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\zzzeffectsprite.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/zzzeffectsprite.cpp' kaynak dosyasç derleniyor)
+  
+  ZzzInfomation.cpp
+  ZzzLodTerrain.cpp
+  zzzMixInvetory.cpp
+  ZzzObject.cpp
+C:\Axion Mu Source\Source\5.Main\source\ZzzInfomation.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzInfomation.cpp' kaynak dosyasç derleniyor)
+  
+  ZzzOpenData.cpp
+C:\Axion Mu Source\Source\5.Main\source\ZzzLodTerrain.cpp(5,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzLodTerrain.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\zzzMixInvetory.cpp(9,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/zzzMixInvetory.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzObject.cpp(3,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzObject.cpp' kaynak dosyasç derleniyor)
+  
+  ZzzOpenglUtil.cpp
+  ZzzTexture.cpp
+C:\Axion Mu Source\Source\5.Main\source\ZzzOpenData.cpp(1,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzOpenData.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzOpenglUtil.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzOpenglUtil.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\5.Main\source\ZzzTexture.cpp(4,10): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/ZzzTexture.cpp' kaynak dosyasç derleniyor)
+  
+MAIN_EXIT=1
+ALL_DONE

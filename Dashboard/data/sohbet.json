@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-03 15:30",
+  "updated": "2026-10-03 20:55",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-03 20:55",
+      "kim": "ajan",
+      "text": "H-018 KAPANDI — viewport paketleri sunucu↔istemci arasında bayt-bayt hizalandı. (istek: \"canlı SPK sunucusundan GameServer viewport paketlerini yakalayıp bizimkiyle karşılaştırarak H-018 protokol uyuşmazlığını kapat\")\n\nNEDEN TEL ÜZERİ YAKALAMA YAPILMADI\n • Canlı yığın KAPALI: 44405 ve 55858 ECONNREFUSED, netstat'ta yok.\n • 4.MuServer/Sub-1/ içinde yalnız GameServer var (Main/Connect/Join yok) → trafiğin\n   üretilmesi teknik olarak imkânsız.\n • Yerine daha kesin kanıt: canlı GameServer.exe'ın KENDİ PDB'si okundu (27 MB, 19.09.2026).\n   PDB ile exe aynı derleme (zaman damgası 6AAE6177).\n\nCANLI SUNUCUNUN DERLENMİŞ PAKET DÜZENİ (DIA ile)\n • PMSG_VIEWPORT_PLAYER  36 B  (index,x,y,CharSet[18],name[10],tx,ty,DirAndPkLevel,count@35)\n • PMSG_VIEWPORT_CHANGE  38 B  (count@37)\n • PMSG_VIEWPORT_MONSTER 20 B  (CurHp@9, Level[2]@10, Life@12, count@16)\n • PMSG_VIEWPORT_SUMMON  20 B  (name@9, count@19)\n • dumpbin /disasm + GameServer.map çapraz doğrulaması: sabit kısım 0x6D→0x90 = 36 bayt,\n   ardından GenerateEffectList çıktısı.\n\nKÖK NEDEN — derleme yapılandırması\n • Canlı = HAISLOTRING 0 + GAMESERVER_UPDATE>=402 (disassembly'de GetDuelArenaBySpectator\n   çağrısı var) → Release_EX603.\n • Bizim 2e.6 derlemesi Release_EX803'tü: sunucu 49 bayt gönderiyor, istemcinin PCREATE_*\n   yapılarında attribute/level/MaxHP/CurHP alanları YOKTU → pet tipi attribute'tan,\n   s_BuffCount muun item'ın düşük baytından okunuyor, viewport karakterleri kayıyordu.\n\nDÜZELTME (kullanıcı kararı: EX803 korunur, eksik alanlar istemciye eklenir)\n • WSclient.h: dört PCREATE_* yapısına Attribute → MuunItem[2] → Level[2] → MaxHP[4]\n   → CurHP[4] kabloda aynı sırayla eklendi.\n • WSclient.cpp: ReceiveCreatePlayer/Monster/SummonViewport → c->Level artık level[2]'den.\n • Viewport.h + Viewport.cpp: canlı <701 PMSG_VIEWPORT_MONSTER varyantı (CurHp/Level/Life)\n   eklendi; EX803 dalı değiştirilmedi.\n\nDOĞRULAMA\n • node BuildLog/2e7/viewport_layout.js 803 1 → \"### TUM PAKETLER HIZALI\", exit 0.\n • Aynı araç 603 0 ile canlı PDB'nin değerlerini BİREBİR üretiyor (aracın kendi doğrulaması).\n • GameServer Release_EX803: GS_EXIT=0 · 11.294.208 B · md5 fd7e2c14f891ddbf9599967741468e2e.\n • WSclient.cpp tek başına derlendi: WSCLIENT_BUILD_EXIT=0 · 4.852.503 B.\n   (Main tam derlemesi başka ajanın aynı anda düzenlediği SPKData.cpp/SPKMenuBar.cpp'deki\n   4 hatada duruyor; o dosyalara dokunulmadı.)\n\nKABUL EDİLEN FARK: dağıtım yapımız canlıdan PLAYER/CHANGE 13, MONSTER 1, SUMMON 11 bayt\n farklı (bilinçli). Tam parite = Release_EX603 + HAISLOTRING 0; kaynak bunu destekliyor.\n\nKanıt: docs/27-H018-VIEWPORT-PAKET-DUZENI.md · BuildLog/2e7/ (pdbtype.cpp, viewport_layout.js,\nlive_pdb_viewport_layout.txt, live_gs_GCViewportPlayerSend.asm, layout_*.txt, build logları)"
+    },
     {
       "ts": "2026-10-03 15:30",
       "kim": "ajan",
@@ -71,146 +76,6 @@
       "ts": "2026-10-02 19:05",
       "kim": "ajan",
       "text": "2d.2 kabul testi dokümanı yazıldı (docs/21): canlı Engine.exe bizim üretim ConnectIP+ServerData ile 4 koşu; üretim koşusunda 45.87.120.29:44405 SynSent kanıtı; negatif kontrol dersi (pencere+TCP içerik kanıtı değil, birincil kanıt bayt karşılaştırması)."
-    },
-    {
-      "ts": "2026-10-02 13:40",
-      "kim": "kullanıcı",
-      "text": "2d.1 — Seçilen varyanta göre kaynağı düzenle (2a.5 kararı doğrultusunda)."
-    },
-    {
-      "ts": "2026-10-02 14:05",
-      "kim": "ajan",
-      "text": "TAMAM: 2d.1 ilk dalga (D1-D3, D6, D7) yazıldı, derlendi ve canlı araçla bayt-birebir doğrulandı. YÖNTEM: canlı üretici GetMainInfo.exe (SPK/GetMain MU 5.2) BuildLog/2d1/sandbox'ta birebir Client+GetMain+ExMain_SPK dizin yapısıyla koşturuldu; sentinel ini varyantlarıyla (round A sayısal 21..120, round B metin RN1..RN10) ini→çıktı bayt haritası çıkarıldı; araç deterministik ve tam jeneratör (ConnectIP/ServerData silinip koşuldu → aynı çıktı). FORMAT ÇÖZÜMLERİ: (1) ConnectIP'te CRC YOK — decode son 4 bayt IpAddressPort u16 LE + AntiPort u16 LE (canlı 0xAD75=44405, 0xDA32=55858); docs/07 §1.3/§6-1 kapandı; SPK_CIBMD ise dosyanın tamamının standart CRC32'si (rapor değeri, dosyaya gömülmez). (2) ServerData ini haritası kesinleşti: MENU_BUTTON_01..20 0x4F9..0x50C; ButtonCharracter/JwBless/JwSoul/Chaos/WcoinC/P/G 0x50D..0x513; Zens 0x515; Ranking1..7 0x516..0x51C; SkillManaPet 0x51D/EnableCoinTitle 0x51E/TextTips3Line 0x51F; RF_GLOVE 0x521/MG_HELM 0x522; CreateCharSeason 0x524/ButtonClassUP 0x525/JewelBankTab 0x526; MaxLevelDanhHieu..HonHoan 0x52B..0x52E; MaxGameInstances 0x52F; hızlar 0x530..0x54B; ReconnectTime 0x54C; 0x554 = CRC32(client/ClientName dosyası) yoksa 0; CameraDefault 0x558 + DefaultFPS 0x55C HAM float (×10 değil). Etkisiz: TabInfoStats. (3) SPK_CRCFILE.ini kuralları: SPK_MEXE = client/Engine.exe, SPK_PBMD = client/Data/Player/player.bmd, SDBMD/CIBMD üretilen dosyalar; 0 değeri 0x0 yazılır, diğerleri 0x%08X; 9 girdi + 12 Config/Info kontrolü (CustomMonster.bmd iki kez — parite); İngilizce gün adı. UYGULAMA: Source/6.GetMainInfo/GetMainInfo/SPK/{GetEngineConfig, ConnectIPWriter, ServerDataWriter, CrcFileReport, SpkUtil, main_spk}; GetMainInfo.cpp SPK varsayılan + --mode:muig legacy; vcxproj/filters + $(ProjectDir). DOĞRULAMA: Release v143 LTCG 0 hata → GetMain/GetMainInfo.exe 3.723.776 B md5 c480e0baf79cd1bf32c8bcfc79c1aed1; 3 senaryoda canlı araçla ConnectIP+ServerData BAYT-BİREBİR (baseline 8ac74a5b/e3617db7; round A 193b21f3/3cf20916; round B c2da1433/07e889c5) — şablon = canlı istemcinin eski dosyası (en güçlü yama testi); raporlar zaman satırı dışında birebir; --check 14/14 OK. Tutulan tuZAK: ini anahtarı ButtonShopChaos (Jw'siz) — round A tek bayt (0x510) farkıyla düzeltildi. KALAN: D4/D5 (kanat 0x6B8+stride 0x154 / item+LEVEL tam jeneratör) + RenderEffect.bmd üretimi + Engine.exe kabul testi 2d.2. Rapor: docs/20-2D1-SPK-GETMAININFO.md; kanıt BuildLog/2d1/*. Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 13:05",
-      "kim": "kullanıcı",
-      "text": "2d.0 (2a.4'te açıldı) SPK istemci format katmanı: 5.Main'e ConnectIP.bmd/ServerData.bmd/SPK.ini/Data/SPK okuma desteği ekle (referans: Client/Engine.exe + docs/07)."
-    },
-    {
-      "ts": "2026-10-02 13:35",
-      "kim": "ajan",
-      "text": "TAMAM: 2d.0 SPK istemci format katmanı yazıldı, derlendi ve test edildi. YAPILAN: Source/5.Main/source/SPKData.{h,cpp} (CSPKData + gSPKData) — ConnectIP.bmd (36 B, XOR 0x20, 12 B IP), ServerData.bmd (1.089.576 B tam boyut şart, XOR 0x20; 4 sunucu adı + ClientName/CustomerName/WindowName/ScreenShotPath/ClientVersion/ClientSerial + 7 sınıf hız limiti + kamera/FPS), SPK.ini (MainCode/FontName/FontHeight/Resolution/Lang/BODY_X20), Data/SPK GetPath/GetConfigPath; MainLoad::Load içinde LoadEncDec sonrası / CheckPluginFile öncesi SPK bloğu (dosyalar yok/bozuksa MUIG CBGetMain.bin hattı aynen; IP her zaman override, Version/Serial koşulsuz, kimlik/hız alanları doluysa); Main.vcxproj + .filters girdileri. OFSET DÜZELTMESİ (canlı dosya hex dökümü; docs/07 tahminleri yanlıştı): hız bloğu 0x52C → 0x530 (7x int32, 0x530-0x54B = 65000), kamera ~0x55A → 0x558 (float 45.0), FPS 0x55C (float 240.0 = 24.0x10); docs/07 Rev. 02.10.2026 + §4/§5 sözde kod güncellendi. DOĞRULAMA: Global Release v143 Win32 0 hata (sadece LNK4099); Main.exe 12.027.904 B md5 39f2af32f35114241c7feb586cdd92ad (13:30); SPKData.obj disasm 530h/558h/55Ch (eski 52Ch/55Ah YOK); exe'de ConnectIP.bmd/ServerData.bmd/BODY_X20/MainCode literalleri. Standalone koşucu (BuildLog/5Main/spktest, gerçek SPKData.cpp'nin sed kopyası) canlı dosyalarla: Load=true, flags dir/connectip/serverdata/spkini=1 mismatch=0, 4 sunucu adı, 45.87.120.29, 1.03.34 / !571Axion@Mobile, 7x65000, kamera 45.00 FPS 24.00, ini alanları doğru; olmayan dizin: Load=false EXIT=1; test kopyaları canlıyla md5-birebir (8ac74a5b/53982bf8/763ee112). EK: gerçek proje obj'si (BuildLog/5Main/SPKData.obj) konsol koşucusuyla link edilip koşuldu (LIBPATH + /FORCE:UNRESOLVED; yalnız g_render_lock/g_protocol_lock /include zorlaması + LNK2011 PCH uyarısı) — aynı sonuçlar, EXIT 0/1; gerçek obj link kısıtı kapandı (build_realobj_test.bat). Engine.exe kabul testi 2d.2'ye bırakıldı (ConnectIP CRC alanı hâlâ açık kalem, docs/07 §6/1). Rapor: docs/19-SPK-ISTEMCI-FORMAT-KATMANI-2D0.md. Yığın açılmadı (derleme odaklı). Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 12:55",
-      "kim": "kullanıcı",
-      "text": "2c.2..N — Modül modül: iskelet yaz → GS derle → config dosyasını üret."
-    },
-    {
-      "ts": "2026-10-02 12:55",
-      "kim": "ajan",
-      "text": "TAMAM: 2c.2..N dalgasının ilk modülü A3 SPK_CustomItemSetPro canlı kanıttan yazıldı, derlendi ve config üretildi. CANLI KANIT (CustomItemSetPro.obj): ?Instance @0x4765D0, ?Load @0x476640 (pugixml; ItemData altında iki döngü — child/next_sibling 'Item' 22 alan, 'ItemSet' 21 alan ve Section alanı açıkça 0'lanır), ?Save @0x477360 (ItemData kökü; Item 22 attribute, ItemSet Section'sız 21 attribute; fopen wb + pugixml varsayılan biçim), ?CalcCharacter @0x478BF0 (flag != 0 -> erken dönüş; Item satırları kendi Section'ıyla; ItemSet satırları 0x58 bayt kopya + ilk alan 7..11 olacak şekilde 5 kez uygulanır), lambda @0x478C90 (wear taraması slot 2..11 = 0x1F8..0xAD4, adım 0xFC = CItem boyu; taban [obj+0x3A8] doğrulaması C380ItemOption @0x404A21 ile aynı desen; koşullar m_Index == Section*512+Index, m_Level >= Lv, m_NewOption >= Opt (canlı byte +9F), m_SetOption == SetOption (canlı byte +0B6); eşleşen her yuvaya EKLEME: Dmg altı hasar alanına, AddSD/AddHP/AddMP/Def + 9 rate + Reflect). YAPILAN: SPK/CustomItemSetPro.{cpp,h} (ConfigSetDataDamage 22 int + CustomSetDameItem Load/Save/CalcCharacter/CalcSlot + gCustomSetDameItem/Instance), vcxproj girdileri, ServerInfo::ReadCustomInfo Load kancası (canlı 0x569B78/0x569BAE sırası), ObjectManager::CharacterCalcAttribute içinde MasterSkillTree sonrası CalcCharacter(lpObj,0) (canlı 0x5424D5 sırası). CONFIG: MuServer/4.GameServer/Sub 1/Data/SPK/CustomItemSetPro.xml canlıdan bayt-birebir (50858 B, md5 9b2d6ef9...; 92 Item + 84 ItemSet). DOĞRULAMA: Release_EX603 v143 Win32 0 hata; exe 10.819.072 -> 10.824.704 B (md5 43f086d9..., 12:45); bizim disasm: ?Load @0x465F00 + çağrı 0x525BA0, ?CalcSlot @0x4FBDF0 + çağrılar 0x4FBE14/0x4FBEE3, 0x4FBE80 mov ecx,7 (ItemSet 7..11), gCustomSetDameItem init/atexit; exe içinde SPK/CustomItemSetPro yolu. NOT: kalkan (Section 6) satırları canlıda da taranmayan slotta (wear 2..11) — bilinçli parite; Opt/SetOption -> m_NewOption/m_SetOption eşlemesi çıkarım (sıradaki turda E2E ile teyit edilecek). E2E yapılmadı (derleme odaklı tur; yığın açılmadı). Rapor: docs/18-SPK-CUSTOMITEMSETPRO-A3.md; kanıt arşivi BuildLog/2c1/A3_*.txt. Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 11:56",
-      "kim": "kullanıcı",
-      "text": "CB_ActiveInvasions E2E doğrulama turu (istek: giriş push'u + F7 sub 0x02 + spawn/ölüm sayaç akışını uçtan uca doğrula). Test yığını açıldı, geçici sürücü + DataSend/DataSendAll paket yakalama kancası (C2 F3 98 liste / C1 10 F3 99 sayaç) ile 9 kalem doğrulandı ve paketler BAYT-BİREBİR çıktı: F7 sub 0x02 -> ProtocolCore -> tekil liste; giriş push'u (CacheSendOnlogin) + gate (2. tik paket üretmez); SetState(START) -> SetMonster -> monster_add (class 43 = 8, 20 sınıf = 108 obje); MonsterDieProc -> C1 10 F3 99 {43,7,0}; SetState(EMPTY) -> ClearMonster (108 obje, 20 sınıf kaydı erase); sayaç semantiği (çift artış/azalış, count==0 erase, yeniden (1,1)); negatif yol (99999 -> paket yok). BONUS parite denetimi (canlı disasm + map çağrı sayımı) -> 4 fark: void send_list_to_client() + giriş push'u + SendThongTinSauKhiVaoGame canlı binary'de YOK (canlı tasarım F7 pull; tekil listenin tek çağrı noktası ProtocolCore 0x54FA38); ObjectSetStateProc respawn yolundaki monster_add(class,true) (0x538687) bizde EKSİK. İki çökme sürücü kaynaklıydı (yanlış ProtocolCore head argümanı + OBJECTSTRUCT_HEADER paylaşılan CommonStruct'ına ham memset) ve düzeltildi; üretim kodu etkilenmedi. Sürücü kaldırıldı, temiz build 10.819.072 B md5 d03a0a91..., temiz açılış 11:55:20, yığın 11:56:22'de KAPATILDI (kural 5.1). Rapor: docs/17-CB-ACTIVEINVAISIONS-E2E.md; arşiv BuildLog/2c1/CB_ActiveInvasions_E2E_*. Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 10:23",
-      "kim": "kullanıcı",
-      "text": "Sistem performansından tasarruf etmek ve süreci hızlı ilerletmek için testler bitince açık olan gameserverleri kapat (dataserver, connectserver vs.) — ihtiyaç olunca yine açarsın; bunu kural olarak yaz."
-    },
-    {
-      "ts": "2026-10-02 10:23",
-      "kim": "ajan",
-      "text": "TAMAM: kural yazıldı ve bu turda uygulandı. docs/00-PROJE-HARITASI.md §5 'Kritik kurallar' bloğuna kalıcı kural eklendi (test/doğrulama bitince GameServer + DataServer + JoinServer + ConnectServer, varsa AntiServer, kapatılır — açık bırakılmaz; gerekçe performans + tur hızı; ajan varsayılanı) ve yeni §5.1 'Sunucu yığınını açma / kapatma' bölümü açıldı (4 hazır Start-Process komutu + tek satır taskkill döngüsü). Kural hemen uygulandı: A2 E2E sonrası açık kalan yığın 10:20:29'da kapatıldı (GameServer PID 9152, DataServer 10200, JoinServer 6400, ConnectServer 3640); tasklist doğrulaması ilgili süreç kalmadığını gösteriyor, yeni .dmp yok (temiz kill). Pano protokol notu da aynı kuralla güncellendi. CHANGELOG kaydı: [26.10.02 10:23]. Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 09:58",
-      "kim": "kullanıcı",
-      "text": "2c.1-A dalgasındaki A2 MonsterSkill kalemini canlı kanıtla uygulamaya al."
-    },
-    {
-      "ts": "2026-10-02 09:58",
-      "kim": "ajan",
-      "text": "TAMAM: 2c.1-A2 SPK_MonsterSkill canlı kanıttan uygulandı. CANLI KANIT: ?Instance@CCustomMonsterSkill@004A4D00 (Meyers singleton, guard 0213C8D4h/nesne 0213C8D8h), ?Load@004A4D70 (CMemScript 0x318 + vector clear 004A4E90 + section 0 + 'end' + GetNumber/2×GetAsNumber + push_back), ?GetSkillMonster@004A4FC0 (vector taraması, eleman 12 B add eax,0Ch); canlıda Save/Reload YOK (dosya yazımı SPK GUI editöründe, kapsam dışı); yükleyici 0x569791/0x5697C7 + 'SPK/CustomMonsterSkill.txt' literali 0x63DCB4; canlı log stringi exe 2344740 = '[SPK] CustomMonsterSkill configuration saved and reloaded.' (nokta dahil); dosya formatı editör 0x4A55B9'da birebir okundu. YAPILAN: modül SPK/SPK_MonsterSkill.{cpp,h} (canlı obje adı) — Instance() + std::vector (sabit 1000'lik dizi/m_count ve taşma korumasızlığı kaldırıldı), Load akışı birebir, Reload hata tespiti m_LoadResult; yol Custom/ → SPK/ (eski Data/Custom/CustomMonsterSkill.txt silindi, canlıda yok); Data/SPK/CustomMonsterSkill.txt canlı dosya ile byte-birebir (cmp OK, 206 B/16 satır); vcxproj + ServerInfo + CommandManager + Monster.cpp yorumları güncellendi. TÜKETİCİLER: canlı gObjSetMonster @0x51FD62 ve gObjMonsterAttack @0x521571 zaten pariteydi — canlıda görünen CheckSkillRequire* zinciri CSkillManager::AddSkill (SkillManager.cpp:798) LTCG inline'ı (OBJECT_USER gate'li, monsterda ölü dal) olduğu tespit edildi; custom skill bloğu canlıda if(AttackType != 0) İÇİNDE (0051EC7D → 0051FE59). E2E (geçici sürücü, SPK/MonsterSkill_selftest.flag, LOG 4523-4543): kayit=16; GetSkillMonster 750/704/706/561/754/722 OK; mükerrer 719 → ilk kayıt 232; 99999 → 0; gObjSetMonster(704) → GetSkill(42)=1 GetSkill(264)=1, (706) → GetSkill(38)=1, kontrol (700) → yok; gObjMonsterAttack DURATION dalı class=704 custom=1; Reload canlı stringi yazdı; 3 obje silindi, çökme yok. Sürücü kaldırıldı (arşiv BuildLog/2c1/A2_SPK_MonsterSkill_E2E_driver_snapshot.cpp + A2_E2E_driver.patch + A2_E2E_log.txt), temiz derleme 10.819.072 B açılışı 'Custom loaded successfully'. Rapor: docs/16-SPK-MONSTERSKILL-A2.md. Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 08:45",
-      "kim": "kullanıcı",
-      "text": "EventGvG'yi test sunucusunda uçtan uca doğrula: Switch=1, zaman tablosu, NPC dialog girişi, STAND→START geçişi, UserDieProc puanlama ve CalcRank kazanan akışı."
-    },
-    {
-      "ts": "2026-10-02 08:45",
-      "kim": "ajan",
-      "text": "TAMAM: EventGvG E2E doğrulaması yapıldı — 6 kalem ✅. ENGELLER: sunucu hiç açılmıyordu; 4 hata bulunup canlı kanıtla düzeltildi: (1) CustomJewel .txt yolunda CUSTOM_JEWEL_INFO içindeki std::map tam-struct memset ile bozulduğu için SetInfo'da kopya kurucusu AV veriyordu (minidump 0xC0000005 @ RVA 0x63D7E = std::_Tree::_Copy); (2) canlı struct 212 B/15 eleman/ModelName@0x54[64] → canlıda EnableSlotRing YOK, .txt satırları 12 joker (biz 13 okuyorduk) → .txt yolunda alan okunmuyor; (3) canlı Load bölüm 3'ü de okuyor (cmp eax,3 → 4 sayı → std::vector<CUSTOM_JEWEL_UPGRADE_INFO>) → bizim okuyucuda eksikti, dosya sonunda 1 sn token zaman aşımı veriyordu; (4) SkyEvent Monster.ini 5 kolon (Stage Class X Y Dir), bizim B1 okuyucusu 4 okuyordu. KANIT: [GVGTEST] satırları — switch=1; remain tam HH:MM:00'a geri saydı; NPC MATCH idx=16 class=479 map=0 x=130 y=133 type=3 + Dialog()=1 (guildsiz yol, mesaj 872); 08:31:01 state=2 remain=60 guilds=2 → 08:32:01 state=3 remain=120 (STAND→START); UserDieProc x2 → guildA=0 guildB=2; CalcRank → Winner=2 rank B=1/A=2; negatif yol: STAND'da GetGuildCount()<2 → iptal+EMPTY. Geçici sürücü kaldırıldı (snapshot BuildLog/2c1/EventGvG_E2E_driver_snapshot.* + full diff); temiz build açılışta tüm katmanları yükledi (10.817.536 B). Rapor: docs/15-EVENTGVG-E2E-DOGRULAMA.md. Commit atılmadı."
-    },
-    {
-      "ts": "2026-10-02 06:50",
-      "kim": "kullanıcı",
-      "text": "Canlı ve bizim exe'de istemci paket tabanını karşılaştır: F3 98/99 dışında taslakta yanlış başlıkla kalmış diğer SPK paketlerini tara ve raporla."
-    },
-    {
-      "ts": "2026-10-02 06:50",
-      "kim": "ajan",
-      "text": "TAMAM: SPK paket başlık taraması (canlı vs bizim exe) — kod değişikliği yok. 320/331 fonksiyon eşleşti; 67 farkın 9'u SPK klasöründe. Kesin 7 bulgu: MocNap D3 9A/9B→16/17, Harmony SendListItemPoint D3 24→0C, JewelBank C1 30 F3 F5→C2 0084 F3 F5 (30 slot), BotMix D3 2E→23, LuckySpin D3 8C→21, CastleEvent SendKillCTCMini F3 33→43, Buff GC_BuffInfo F3 13→F3 26 (F3 13 çakışması). 4 aday: Harmony ProcMix/SetStateInterface/SendInfoItemCache + Store 18 06. Rapor: docs/14-SPK-PAKET-BASLIK-TARAMASI.md."
-    },
-    {
-      "ts": "2026-10-01 23:40",
-      "kim": "kullanıcı",
-      "text": "GameServer.rc menüsüne IDM_STARTGVG görsel girdisini ekle (resource.h 121 hazır bekliyor) ve derleyip doğrula."
-    },
-    {
-      "ts": "2026-10-01 23:40",
-      "kim": "ajan",
-      "text": "TAMAM: GameServer.rc IDR_MAINFRAME \"Events\" menüsüne satır 95 olarak MENUITEM \"Start Guild vs Guild\", IDM_STARTGVG eklendi (donor rc:92 metni birebir, hizalama kolon 50). UTF-16LE+BOM+CRLF korundu: 30.610→30.738 B (+128). Diff: 471→472 satır, GvG satırı çıkarılınca birebir eşleşiyor (tek-satır eklenti). Derleme 0 hata → exe 10.816.512 B (23:34); wide string kanıtı \"Start Guild vs Guild\" off 10.666.404 ve menü sırası rc ile aynı (Drop→BSV→GVG→Invasion). Bayt-fark analizi: \".text\" kod bölümü bayt-birebir aynı; boyut sabit çünkü +48 B .rsrc bölüm dolgusuna sığdı. Handler B2'den bağlı: menü → gGvGEvent.StartGvG() (Switch=0 inert)."
-    },
-    {
-      "ts": "2026-10-01 23:24",
-      "kim": "kullanıcı",
-      "text": "2c.1-B dalgasında sıradaki B3 ActiveInvasions modülünü canlı kanıtla inceleyip uygulamaya al."
-    },
-    {
-      "ts": "2026-10-01 23:24",
-      "kim": "ajan",
-      "text": "2c.1-B3 TAMAM: ActiveInvasions canlı disasm paritesi — sürpriz: modül bizde ilk commit'ten beri vardı (taslak), donor'da hiç yok (MUIG-özel). Denetim: paketler taslak D3 99/98 → canlı C1 10 F3 99 / C2 F3 98'e çekildi (exe byte kanıtı), monster_del iki-sayaç birlikte azaltma + erase(count==0), monster_add(int,bool) broadcast, eksik F7 sub 0x02 → send_list_to_client(aIndex) isteği eklendi, giriş push'u tek istemciye. Derleme temiz → 10.816.512 B (23:22)."
-    },
-    {
-      "ts": "2026-10-01 21:43",
-      "kim": "kullanıcı",
-      "text": "EventGvG iskeletini tam uygulamaya taşı: donor 1138 satırı canlı kanıtla denetleyip NPC spawn/Dialog/rank/StartGvG işlevlerini bağla."
-    },
-    {
-      "ts": "2026-10-01 21:43",
-      "kim": "ajan",
-      "text": "2c.1-B2 TAMAM: EventGvG tam uygulama — donor 1138 satır birebir port (tek sapma: donor gettype→GetAsNumber + load guard); canlı denetim: canlı map'te CGvGEvent sembolleri YOK, donor canlısında GvGEvent.dat deploy'suz + /startgvg yok → kapalı modül kararı (inert GvGEvent.dat ×3, Switch=0 BLANK). 9 kanca donor wiring birebir (Load/Init/Dialog/Attack/respawn/UserDie/IDM/komut). Derleme temiz → 10.816.512 B (21:42)."
-    },
-    {
-      "ts": "2026-10-01 20:58",
-      "kim": "kullanıcı",
-      "text": "2c.1-B ilk iş: EventMainManager event iskeletini canlı kanıtlarla yaz (diğer event'lerin taşıyıcısı)."
-    },
-    {
-      "ts": "2026-10-01 20:58",
-      "kim": "ajan",
-      "text": "2c.1-B1 TAMAM: EventMainManager iskeleti (9454d5d98) — canlı SPK_EventMainManager.obj 3 katman çözüldü (SPK editor / config şema anahtarları / SkyEvent runtime); SkyEvent canlı şemalarından yazıldı (Config.xml Stage/Time/Win + Monster.ini stage bölümleri), 5-durum state machine + jokerli CheckSync, kancalar ReadEventInfo+gObjEventRunProc; 5 canlı .ini + SkyEvent deploy'a kopyalandı (şemalar bizimle birebir; .dat→.ini yol-geçişi ayrı kalem). Derleme temiz → 10.809.344 B (20:55). Sirada: B tekil event'leri veya A2."
-    },
-    {
-      "ts": "2026-10-01 20:33",
-      "kim": "kullanıcı",
-      "text": "2c.1-A dalgasını başlat: SPK_Harmony modülünü canlı CustomHarmony.xml şemasından sıfırdan yaz, derle + commit et."
-    },
-    {
-      "ts": "2026-10-01 20:33",
-      "kim": "ajan",
-      "text": "2c.1-A1 TAMAM: SPK_Harmony sıfırdan yazıldı (01c7d2b16) — canlı yüzey (10 metot + map<int,HM_HAMORNY>), XML şeması birebir; kritik bulgu: canlı OptIndex = engine harmony-byte kodlaması (opt<<4|level); dispatcher canlı jump-table'den çözülüp 0xD3 ailesine 4 dal olarak bağlandı (0x6F/0x70/0x71/0x72, SauChangeItem deseni); ProcMix XML tablo+kademeli Rate+taşı 14,41+coin/Zen ödeme; canlı stringler birebir. Derleme temiz → 10.802.688 B (20:30); obj'de canlı mangled sembol birebir. Sirada: A2 MonsterSkill."
-    },
-    {
-      "ts": "2026-10-01 19:42",
-      "kim": "kullanıcı",
-      "text": "docs/09'daki kalan E-kalemlerini (E-01, E-02, E-04, E-06, E-09, E-11) stratejilerine göre işle, her kalemde derle + CHANGELOG + commit. Bu iş bitti mi?"
-    },
-    {
-      "ts": "2026-10-01 19:42",
-      "kim": "ajan",
-      "text": "KALAN PARÇALAR TURU TAMAM: E-04 ClearMasterChangeClass anahtar+koşul (0c0f57431); E-02 5 hata stringi canlı format (d75ca6f2a); E-09 karar kaydı — OnlineReward entegre edilmedi (canlıda kanıt yok), regresar korundu (5417f5d02); E-11 kapandı. E-06 (1/2): canlı EventTime.xml Load+GetEventTime+store+deploy, switch 1→0 (8af2a6f3a); E-01 (1/2): 7 kill-notice+StartBoss+Winning+Finish+CTCMini yolu (6c27fbcd8). Derleme 10.795.520 B (19:39). 2c'ye kalan: E-06 canlı GCReqEventTime paket çözümü + invasion tablo dolumu; E-01 SpawnBoss/HandleBossKill/MonsterDie yeniden-yazımı (2/2)."
-    },
-    {
-      "ts": "2026-10-01 18:49",
-      "kim": "kullanıcı",
-      "text": "Reload ailesinin kalanını uygula: GameMaster ve ExperienceTable'a (/reload gamemaster, /reload experiencetable) + SPK alt kümesine (AddBuff, CustomMonsterSkill, CustomShop, ResetChange — canlı 'saved and reloaded' deseni) m_Path+Reload ekle, derle + CHANGELOG + commit."
     }
   ]
 }

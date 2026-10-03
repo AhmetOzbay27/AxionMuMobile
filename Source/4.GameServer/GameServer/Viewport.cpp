@@ -915,6 +915,15 @@ void CViewport::GCViewportMonsterSend(int aIndex) // OK
 
 		#endif
 
+		#if(GAMESERVER_UPDATE<701)
+		// Canli ile ayni alan karsiligi (bkz. Viewport.h ve docs/27).
+		int iMaxLife = lpTarget->MaxLife + lpTarget->AddLife;
+		info.CurHp = (BYTE)((iMaxLife > 0)?((lpTarget->Life * 100) / iMaxLife):0);
+		info.Level[0] = SET_NUMBERHB(lpTarget->Level);
+		info.Level[1] = SET_NUMBERLB(lpTarget->Level);
+		info.Life = (DWORD)lpTarget->Life;
+		#endif
+
 		#if(GAMESERVER_TYPE==1)
 
 		if(lpTarget->Class == 216)

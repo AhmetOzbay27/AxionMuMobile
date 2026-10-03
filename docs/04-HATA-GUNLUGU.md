@@ -12,29 +12,46 @@ Durum: 🔴 AÇIK · 🟢 ÇÖZÜLDÜ · 🟡 ERTELENDİ
 
 | ID | Tarih | Bileşen | Hata | Durum |
 |----|-------|---------|------|-------|
-| H-018 | 03.10.2026 | GameServer ↔ Main (protokol) | **Viewport paket düzeni uyuşmazlığı:** GS `PMSG_VIEWPORT_PLAYER` / `PMSG_VIEWPORT_CHANGE` (`Viewport.h`) `MuunItem[2]` alanını `attribute`'tan SONRA (upstream 8.03 bloğu) koyar; istemcinin karşılığı olan `PCREATE_CHARACTER` (`WSclient.h:564`) ise `Path`'ten SONRA, `s_BuffCount`'tan ÖNCE konumlandırır ve `Equipment[]`/`attribute`/`level`/`MaxHP`/`CurHP` alanlarını **içermez**. İki yazıcı da `info.MuunItem`'a yazıyor ama **farklı veri** koyuyor: HAISLOTRING bloğu `EquipInventory[EQUIPMENT_PET_1]` (pet ekipmanı), 803 bloğu `MuunInventory[0]` (muun envanteri). İstemci okuduğu alanı `m_dwPetType = Type + 1171` olarak **pet modeli** için kullanıyor | 🔴 **AÇIK — doğrulama gerekiyor** |
+| H-018 | 03.10.2026 | GameServer ↔ Main (protokol) | **Viewport paket düzeni uyuşmazlığı** — GS `Release_EX803` derlemesi 49 baytlık `PMSG_VIEWPORT_PLAYER` gönderiyordu; istemcinin `PCREATE_CHARACTER` yapısı ise `attribute`/`level`/`MaxHP`/`CurHP` alanlarını içermediği için pet tipi `attribute`'tan, `s_BuffCount` muun item'ın düşük baytından okunuyor ve viewport karakterleri kayıyordu | ✅ **KAPANDI (2e.7)** — canlı `GameServer.pdb` (DIA) ile canlı düzen çıkarıldı, istemci yapıları sunucuyla bayt-bayt hizalandı, `viewport_layout.js` 4/4 HİZALI (exit 0). Kanıt: [docs/27](27-H018-VIEWPORT-PAKET-DUZENI.md) |
 
-### H-018 hakkında bilinenler ve bu turdaki karar
+### H-018 KAPANIŞ NOTLARI (03.10.2026, 2e.7 turu)
 
-Bu turda **derleme kırılması** giderildi (aşağıda), ancak **protokol doğruluğu
-derinlemesine doğrulanmadı** — çünkü doğrulamanın tek güvenilir yolu canlı pakette
-izleme (Faz 3.3).
+**Kök neden — derleme yapılandırması seçilememişti.** Bu projenin GameServer'ı
+8 ayrı `GAMESERVER_UPDATE` varyantıyla derleniyor; `Viewport.h` her sürüm için
+farklı alanlar ekliyor. İstemci ise **tek** düzen okuyor ve o düzen `< 701`
+dönemine ait. 2e.6'da GameServer `Release_EX803` ile derlendiği için iki taraf
+konuşmuyordu.
 
-| Konu | Durum |
-|---|---|
-| Derleme | ✅ Çözüldü — `Viewport.h`'te iki blok da `HAISLOTRING && GAMESERVER_UPDATE<701` / `GAMESERVER_UPDATE>=803` ile karşılıklı dışlandı. **Paket boyutu her konfigürasyonda aynı (tek 2 bayt alan)** |
-| Yazıcı tutarlılığı | ✅ `Viewport.cpp` 4 yazıcı bloğu da aynı koşulla eşitlendi; `>=701`'de `MuunInventory[0]`, daha eski sürümlerde pet ekipmanı gönderilir |
-| GS ↔ istemci düzen eşleşmesi | ❌ **Doğrulanmadı** — yukarıdaki tablo |
-| Pet ekipmanı **ve** muun envanteri ayrı ayrı gönderilmeli mi? | ❓ Bilinmiyor. İstemci tek alan okuyor; ikinci alanı okuyorsa doğru yerleşim başka olmalı |
-| Karar verilecek yer | **Faz 3.3** — canlı GS ile paket yakalama (aynı karakter için `PMSG_VIEWPORT_PLAYER` baytları canlıyla karşılaştırılacak) |
+**Canlı sunucunun ne gönderdiği ölçüldü** (tel yakalaması mümkün değildi: canlı
+yığın kapalı, 44405/55858 `ECONNREFUSED`; `4.MuServer/Sub-1/` içinde yalnız
+GameServer var). Onun yerine canlı `GameServer.exe`'ın **kendi PDB'si** DIA ile
+okundu (`BuildLog/2e7/pdbtype.cpp`) ve disassembly ile çapraz doğrulandı:
 
-> **Neden "tahminle çözülmedi":** iki seçenek de tel üzerinde farklı sonuç verir.
-> Alanı teke indirmek (yapılan) paketi derlenebilir ve boyut sabit tutar; ama
-> pet ekipmanı bilgisi ile muun envanteri bilgisinden hangisinin canlıda
-> gönderildiği ancak canlı izleme ile kesinleşir. Bu yüzden risk **gizlenmedi**,
-> `docs/04` açık hata listesine alındı.
+| Yapı | Canlı (PDB) | 2e.6 öncesi bizim |
+|---|---|---|
+| `PMSG_VIEWPORT_PLAYER` | 36 B | 49 B |
+| `PMSG_VIEWPORT_CHANGE` | 38 B | 51 B |
+| `PMSG_VIEWPORT_MONSTER` | 20 B (CurHp/Level/Life) | 21 B |
+| `PMSG_VIEWPORT_SUMMON` | 20 B | 31 B |
 
+Canlı derleme yapılandırması kanıttan çıkarıldı: `HAISLOTRING=0`
+(MuunItem yok) + `GAMESERVER_UPDATE>=402` (disassembly'de
+`GetDuelArenaBySpectator` çağrısı var) → **Release_EX603**.
 
+**Düzeltme (kullanıcı kararı: EX803 korunur, eksik alanlar istemciye eklenir).**
+Dört `PCREATE_*` yapısına sunucunun gönderdiği blok aynı kabloda sırayla eklendi:
+`Attribute` → `MuunItem[2]` → `Level[2]` → `MaxHP[4]` → `CurHP[4]`.
+Ayrıca canlı `< 701` `PMSG_VIEWPORT_MONSTER` varyantı (`CurHp`/`Level`/`Life`)
+kaynağa eklendi.
+
+**Doğrulama:** `BuildLog/2e7/viewport_layout.js` gerçek başlık dosyalarını okuyup
+iki tarafın bayt haritasını karşılaştırıyor. Dağıtım yapımızda (803/1)
+**`### TUM PAKETLER HIZALI`, exit 0**. Aynı araç `603/0` ile çalıştırıldığında
+canlı PDB'nin raporladığı değerleri **birebir** üretiyor.
+
+**Kabul edilen fark:** dağıtım yapımız canlıdan PLAYER/CHANGE'te 13, MONSTER'de 1,
+SUMMON'da 11 bayt farklıdır. Bayt-bayt canlı parite istenirse tek gereken
+`Release_EX603` + `HAISLOTRING=0` — kaynak bunu zaten destekliyor.
 
 **Kapanış notları (03.10.2026, 2e.5 turu):**
 - **H-005** 🟢 → uygulama tamamlandı: SPK `GetEngine` hattı benimsendi ve **2d.0/2d.1**

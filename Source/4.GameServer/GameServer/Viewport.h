@@ -96,6 +96,14 @@ struct PMSG_VIEWPORT_MONSTER
 	BYTE level[2];
 	BYTE MaxHP[4];
 	BYTE CurHP[4];
+	#else
+	// Canli SPK sunucusu bu blokta 7 baytlik CurHp/Level/Life gonderiyor.
+	// Kanit: canli GameServer.pdb (derleme zaman damgasi 6AAE6177 = 19.09.2026,
+	// GAMESERVER_UPDATE=603) -> CurHp@+9, Level[2]@+10, Life@+12, count@+16,
+	// sizeof=20. Kayit: BuildLog/2e7/live_pdb_viewport_layout.txt
+	BYTE CurHp;
+	BYTE Level[2];
+	DWORD Life;
 	#endif
 	BYTE count;
 };

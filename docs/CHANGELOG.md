@@ -7,6 +7,62 @@
 
 
 
+
+## [26.10.03 20:50] H-018 KAPANDI — viewport paketleri sunucu↔istemci arasında bayt-bayt hizalandı
+
+**Ne yapıldı**
+
+**(A) Canlı sunucunun paket düzeni ölçüldü**
+- İstek "canlı SPK sunucusundan paketleri yakala" idi; **yakalama imkânsızdı**:
+  canlı yığın kapalı (44405 ve 55858 `ECONNREFUSED`, `netstat`'ta yok) ve
+  `4.MuServer/Sub-1/` içinde yalnız `GameServer` var (`Main`/`Connect`/`Join` yok).
+- Bunun yerine **canlı `GameServer.exe`'ın kendi PDB'si** okundu. Araç:
+  VS DIA SDK ile `BuildLog/2e7/pdbtype.cpp` → `pdbtype.exe`; çıktı
+  `BuildLog/2e7/live_pdb_viewport_layout.txt`. PDB ile exe aynı derleme
+  (zaman damgası `6AAE6177` = 19.09.2026).
+- `dumpbin /disasm` + `GameServer.map` ile çapraz doğrulama
+  (`live_gs_GCViewportPlayerSend.asm`): sabit kısım `0x6D→0x90` = **36 bayt**,
+  ardından `GenerateEffectList` çıktısı.
+
+**(B) Kök neden: derleme yapılandırması**
+- Canlı: `HAISLOTRING=0` (MuunItem yok) + `GAMESERVER_UPDATE>=402`
+  (disassembly'de `GetDuelArenaBySpectator` çağrısı) → **Release_EX603**.
+- Bizim 2e.6 derlemesi `Release_EX803`'tü: sunucu 49 bayt gönderiyor,
+  istemcinin `PCREATE_*` yapıları `attribute`/`level`/`MaxHP`/`CurHP`
+  alanlarını içermiyordu → pet tipi `attribute`'tan, `s_BuffCount` muun
+  item'ın düşük baytından okunuyor, viewport bozuk geliyordu.
+
+**(C) Düzeltme** (kullanıcı kararı: EX803 korunur, alanlar istemciye eklenir)
+- `Source/5.Main/source/WSclient.h`: dört `PCREATE_*` yapısına
+  `Attribute` → `MuunItem[2]` → `Level[2]` → `MaxHP[4]` → `CurHP[4]`
+  kabloda aynı sırayla eklendi.
+- `Source/5.Main/source/WSclient.cpp`: üç viewport alıcısında `c->Level`
+  artık `level[2]` kablodan okunuyor.
+- `Viewport.h` + `Viewport.cpp`: canlı `< 701` `PMSG_VIEWPORT_MONSTER`
+  varyantı (`CurHp`/`Level[2]`/`Life`) eklendi (EX803 dalı değişmedi).
+
+**Yeni araçlar:** `BuildLog/2e7/{pdbtype.cpp, viewport_layout.js, apply_h018.js}`
+
+**Nasıl doğrulandı**
+- `node BuildLog/2e7/viewport_layout.js 803 1` → **`### TUM PAKETLER HIZALI`,
+  exit 0** (`layout_803_1.txt`).
+- Aynı araç `603 0` ile çalıştırıldığında canlı PDB'nin değerlerini
+  **birebir** üretiyor (PLAYER 36/count@35, CHANGE 38/count@37,
+  MONSTER CurHp@9-Level@10-Life@12-count@16-20, SUMMON name@9/count@19).
+- GameServer `Release_EX803`: **`GS_EXIT=0`**, 11.294.208 B,
+  md5 `fd7e2c14f891ddbf9599967741468e2e`.
+- `WSclient.cpp` tek başına derlendi: **`WSCLIENT_BUILD_EXIT=0`**, 4.852.503 B.
+  (Main projesinin tam derlemesi, başka bir ajanın aynı anda düzenlediği
+  `SPKData.cpp` / `SPKMenuBar.cpp` dosyalarındaki 4 hatada duruyor;
+  `ClCompile` varsayılanı `ErrorAndStop` olduğu için derleme oraya kadar
+  gelmiyor. Bu dosyalara dokunulmadı.)
+
+**Kabul edilen fark:** dağıtım yapımız canlıdan PLAYER/CHANGE 13, MONSTER 1,
+SUMMON 11 bayt farklı (bilinçli). Tam parite için `Release_EX603` +
+`HAISLOTRING=0` yeterli — kaynak bunu destekliyor.
+
+**Commit:** H-018 kapanışı (kod + kanıt + docs)
+
 ## [26.10.03 15:30] C-02 KAPANDI — DB şema denetimi + sunucu hattı **tamamen derlenebilir** hale getirildi
 
 **Ne yapıldı**

@@ -2384,6 +2384,7 @@ void ReceiveCreatePlayerViewport(BYTE *ReceiveBuffer,int Size)
 			c->PositionY = Data2->PositionY;
 			c->TargetX = Data2->TargetX;
 			c->TargetY = Data2->TargetY;
+			c->Level = MAKE_NUMBERW(Data2->Level[0],Data2->Level[1]);
 			
 			c->Object.Angle[2] = ((float)(Data2->Path>>4)-1.f)*45.f;
 			
@@ -2782,6 +2783,7 @@ void ReceiveCreateMonsterViewport( BYTE *ReceiveBuffer )
 		g_ConsoleDebug->Write(MCD_RECEIVE, "0x13 [ReceiveCreateMonsterViewport(Type : %d | Key : %d)]", Type, Key);
 		
 		if(c == NULL) break;
+		c->Level = MAKE_NUMBERW(Data2->Level[0],Data2->Level[1]);
 
 		OBJECT *o = &c->Object;
 
@@ -2926,6 +2928,7 @@ void ReceiveCreateSummonViewport( BYTE *ReceiveBuffer )
 		c->TargetY = Data2->PositionY;
 		o->Kind = KIND_PLAYER;
 		c->PK   = Data2->Path&0xf;
+		c->Level = MAKE_NUMBERW(Data2->Level[0],Data2->Level[1]);
 			
 		if(c->PK >= PVP_MURDERER2)
 			c->Level = 1;
