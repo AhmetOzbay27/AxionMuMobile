@@ -1,0 +1,7 @@
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  StdAfx.cpp
+  WSclient.cpp
+C:\Axion Mu Source\Source\5.Main\source\WSclient.cpp(101,1): error C1189: #error:  Main yalniz canli SPK 5.2 ile derlenir: GAMESERVER_UPDATE=603 + GAMESERVER_HAISLOTRING=0 (bkz. docs/37) [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  ('/source/WSclient.cpp' kaynak dosyasç derleniyor)
+  

@@ -31,6 +31,8 @@ EX803 istemci derlemesi artik bilincli kapi degisikligi gerektirir.
   (`gate_bad_hais1.log`, `gate_bad_803.log`).
 - MSBuild Main Global Release|Win32 v143 (incremental): 0 error, EXIT=0
   (`main_gate_build.log`); WSclient.cpp yeniden derlendi, Main.exe linklendi.
+- Projeye enjekte yanlis makro (gecici Directory.Build.props + SelectedFiles): C1189 +
+  EXIT=1 (`gate_bad_msbuild.log`).
 - Yeni Main.exe vs HEAD: kod bolumleri ozdes (yalniz 13 bayt meta) -> HEAD e geri
   alindi (docs/36 kurali).
 - Harici denetim `verify_603_layout.cpp` tekrar: EXIT=0.

@@ -50,10 +50,14 @@ static_assert(sizeof(PCREATE_MONSTER) - MAX_BUFF_SLOT_INDEX == 20, "MONSTER tel 
 | 2 | `/DGAMESERVER_HAISLOTRING=1` | C1189 + EXIT=2 | `BuildLog/denetim/gate_bad_hais1.log` |
 | 3 | `/DGAMESERVER_UPDATE=803` | C1189 + EXIT=2 | `BuildLog/denetim/gate_bad_803.log` |
 | 4 | MSBuild Main "Global Release" Win32 v143 (incremental) | 0 error, EXIT=0 | `BuildLog/denetim/main_gate_build.log` |
+| 4b | MSBuild projesine enjekte yanlis makro (gecici Directory.Build.props + SelectedFiles) | C1189 + EXIT=1 | `BuildLog/denetim/gate_bad_msbuild.log` |
 | 5 | Yeni Main.exe vs HEAD | kod ozdes; 13 bayt meta | `BuildLog/denetim/main_gate_exe_cmp.txt` |
 | 6 | Harici denetim `verify_603_layout.cpp` (tekrar) | EXIT=0 | `BuildLog/denetim/verify_603_layout_rerun.log` |
 
 - Test 4: WSclient.cpp yeniden derlendi (obj 13:29) ve Main.exe linklendi; hata yok.
+- Test 4b: projeye yalniz WSclient.cpp icin `GAMESERVER_UPDATE=803` enjekte edildi (gecici
+  `Directory.Build.props` + `/t:ClCompile /p:SelectedFiles`); MSBuild C1189 ile durdu
+  (yalniz StdAfx.cpp + WSclient.cpp derlendi, link yok). Gecici props silindi.
 - Test 5 ayrinti: iki exe ayni boyutta (12.034.048 B); fark yalniz HEADER 3B
   (COFF `TimeDateStamp`) + `.rdata` 10B (3x debug-directory ts + RSDS age).
   Kod bolumleri birebir oldugundan `ClientFile/Main.exe` HEAD'e geri alindi
