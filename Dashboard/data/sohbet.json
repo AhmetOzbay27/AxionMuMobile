@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 03:10",
+  "updated": "2026-10-04 06:50",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 06:50",
+      "kim": "ajan",
+      "text": "MAIN 603 TAM DERLEMESI (docs/35). (istek: \"Main tam derlemesini EXIT=0 yap; SPKData.h/SPKMenuBar.cpp hatalarini gider ve istemciyi 603 duzeniyle derleyip Main.exe uret\")\n\nYAPILANLAR\n - K2 kapatildi: SPKData.h:40 yapisik #define ikiye bolundu (SPK_CAMERA_FPS_OFFSET tanimsizdi -> C2065 + memcpy C2660).\n - SPKMenuBar.cpp: DisplayWidth -> DisplayWin (CBInterface.h:21; MenuCustom.cpp ile ayni desen); NewUISystem.h include edildi (g_pBCustomMenuInfo makrosu).\n - vc143.pdb C1033: dosya kilitli degil BOZUKTU; kenara tasindi, build PDB y i sifirdan yazdi.\n - Main \"Global Release\" v143 tam derleme: 407 .cpp, 0 error, EXIT=0. Yeni ClientFile/Main.exe 12.034.048 B, md5 91fa8da9 (onceki 12.031.488 B).\n - 3C.0 dosyalari (SPKData.cpp/SPKMenuBar.*/CBInterface.cpp/Main.vcxproj) ilk kez commit edildi; kod ikilide dogrulandi (etiket dizeleri Main.exe icinde).\n\nDOGRULAMA\n - Build logu: BuildLog/denetim/main_603_build.log (455 satir, 0 error; 40 LNK4099 detours + 1 MSB8004 zararsiz).\n - 603 kilit: tlog da GAMESERVER_UPDATE/HAISLOTRING override i YOK; verify_603_layout.cpp proje bayraklariyla EXIT=0 -> 603/0, tel govde 36/38/20/20, count@+35/+37/+19/+16, MONSTER CurHp/Level/Life +9/+10/+12 (canli PDB ile ayni).\n - NOT: istemci struct sizeof 68/70/52/52 BIR HATA DEGIL (sabit govde + s_BuffCount buff kuyrugu; ilerletme sizeof-(32-count)).\n\nKALAN\n - H-018 runtime testi artik mumkun (EX603 GameServer + yeni Main.exe).\n - GetMain ikilileri sahipsiz/commit disi; K1 dagitim yolu ve B3/gcoin kararlari acik.\n\nKanit: docs/35-MAIN-603-DERLEME.md - BuildLog/denetim/"
+    },
     {
       "ts": "2026-10-04 03:10",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-02 22:35",
       "kim": "ajan",
       "text": "2e.4 TAMAM: canlı SPK-first varlık çözümleyici (SPKAsset.cpp: Local/Config eşlemesi) 20 çağrı noktasına ve harita/nesne yol paritesine (World%d -> Map\\World%d; Object -> Map\\Object; Minimap SPK\\Minimap öncelik) uygulandı; H-011/H-014/H-015 kapandı. Derleme: run14 b386bd65c4fbdc1aec840adfcfb8af8a (12.029.952 B); kaynaktaki 26 bozuk EUC-KR satırı HEAD baytlarıyla geri konuldu ve yeniden derlendi -> nihai md5 6dc52f5fb63746cb51575ab1370f7e6c, 0 hata. Sahada run14 + run15-17: diyalogsuz/çökmesiz (run17: t=21,9 s 45.87.120.29:44405 SYN_SENT); kanıt BuildLog/2e4/{results,shots,evidence} + docs/24. Bu turda ayrıca gereksiz BuildLog kopyaları (2e2/deploy 324 MB, 5Main obj 161 MB, 2e3/deploy 25 MB, 2d1 sandbox/ourtool 35 MB) silindi. Kalan: içerik/şema eşlemesi (B-08), tam Data kopyası, SPK_CRCFILE, E2E login. Commit: 8daa52f38 (2e.4; hash takibi bf3ad8666)."
-    },
-    {
-      "ts": "2026-10-02 19:50",
-      "kim": "ajan",
-      "text": "2e.3 TAMAM — sunucu test klasörü: BuildLog/2e3/deploy_server_test.sh bizim Release_EX603 GS/CS/DS/JS çıktılarını (md5: CS 4c1f91bf, DS 916e9625, JS 91ee93d7, GS 43f086d9) canlı düzenini aynalayarak BuildLog/2e3/deploy'a kurdu (25 MB, MSVCP140+VCRUNTIME140 kapanışı). DB: DB_SQL_12.bak -> yerel SQLEXPRESS MuOnlineS6 (ONLINE, 55 tablo; idempotent restore). Smoke test: CS->DS->JS->GS başlatıldı; portlar 63000/63001udp/63002/63003, GS->DS/JS bağlantıları kuruldu (LOG_CONNECT kanıtı), sonra Stop_TestServer.bat ile tamamen kapatıldı (kalıntı yok). Rapor docs/23; kanıt BuildLog/2e3/results/smoke1.json + GS logları."
     }
   ]
 }

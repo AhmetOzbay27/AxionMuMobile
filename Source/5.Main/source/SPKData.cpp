@@ -203,6 +203,38 @@ bool CSPKData::LoadServerData(char* basePath)	// docs/07 §3a header alanlari
 	memcpy(&fps, buffer + SPK_OFF_CAMERA_DEFAULT + SPK_CAMERA_FPS_OFFSET, 4);
 	this->m_DefaultFps = (fps > 0.0f && fps < 1000.0f) ? fps : 0.0f;	// canli 240.0 — HAM deger (docs/20: 'x10 degil')
 
+	// 3C.0 (docs/31): ozellik menusu/buton baytlari 0x4F9..0x52F. Bu blok ham bayt
+	// olarak tutulur (0 = kapali, 1 = acik) — canli ini ile birebir dogrulandi.
+	for (int i = 0; i < SPK_MAX_MENU_BUTTON; i++)
+	{
+		this->m_MenuButton[i] = buffer[SPK_OFF_MENU_BUTTON + i];
+	}
+
+	this->m_ButtonCharracter = buffer[SPK_OFF_BUTTON_CHAR];
+
+	for (int i = 0; i < SPK_MAX_SHOP_BUTTON; i++)
+	{
+		this->m_ShopButton[i] = buffer[SPK_OFF_SHOP_BUTTON + i];
+	}
+
+	for (int i = 0; i < SPK_MAX_RANKING; i++)
+	{
+		this->m_Ranking[i] = buffer[SPK_OFF_RANKING + i];
+	}
+
+	this->m_SkillManaPet = buffer[SPK_OFF_SKILLMANA_PET];
+	this->m_EnableCoinTitle = buffer[SPK_OFF_COIN_TITLE];
+	this->m_ReconnectTime = buffer[SPK_OFF_RECONNECT];
+	this->m_JewelBankTab = buffer[SPK_OFF_JEWELBANK_TAB];
+
+	for (int i = 0; i < SPK_MAX_LEVEL_ENTRY; i++)
+	{
+		this->m_MaxLevel[i] = buffer[SPK_OFF_MAXLEVEL + i];
+	}
+
+	this->m_MaxGameInstances = buffer[SPK_OFF_MAX_INSTANCES];
+	this->m_MenuBlockLoaded = true;
+
 	delete[] buffer;
 
 	// canli istemci de ServerData icerigini dogrular ("The input data is inconsistent!")

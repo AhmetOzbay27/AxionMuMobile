@@ -40,6 +40,30 @@
 #define SPK_OFF_CAMERA_DEFAULT	0x558	// float = 45.0 (canli dosyada dogrulandi; docs/07'de ~0x55A tahminiydi)
 #define SPK_CAMERA_FPS_OFFSET	4		// 0x55C: float = 240.0 (FPS x10, canli)
 
+// 3C.0 (docs/31): ServerData.bmd 0x4F9.. — ozellik menusu bayt alanlari.
+// Dogrulama (BuildLog/envanter/bmd/ServerData_Client.bmd, XOR 0x20 sonrasi):
+//   0x4F9..0x50C = MENU_BUTTON_01..20   (canli GetEngine.ini [SuperKhung] ile ayni blok)
+//   0x50D..0x515 = ButtonCharracter + shop butonlari (JwBless/JwSoul/Chaos/WcoinC/P/G, Zens, bos)
+//   0x516..0x51C = Ranking1..7          (canli: 1,1,1,1,1,1,1  ✔)
+//   0x51D        = SkillManaPet · 0x51E = EnableCoinTitle
+//   0x525 = ReconnectTime(1) · 0x526 = JewelBankTab(2)
+//   0x52B..0x52E = MaxLevelDanhHieu(20)/QuanHam(12)/TuChan(22)/HonHoan(50)
+//   0x52F        = MaxGameInstances(10)  — canli ini ile birebir tutarlilik 03.10.2026'da dogrulandi.
+#define SPK_OFF_MENU_BUTTON		0x4F9		// MENU_BUTTON_01..20 (20 x byte)
+#define SPK_MAX_MENU_BUTTON		20
+#define SPK_OFF_BUTTON_CHAR		0x50D		// ButtonCharracter
+#define SPK_OFF_SHOP_BUTTON		0x50E		// JwBless,JwSoul,Chaos,WcoinC,WcoinP,WcoinG,(bos),Zens
+#define SPK_MAX_SHOP_BUTTON		8
+#define SPK_OFF_RANKING			0x516		// Ranking1..7
+#define SPK_MAX_RANKING			7
+#define SPK_OFF_SKILLMANA_PET		0x51D
+#define SPK_OFF_COIN_TITLE		0x51E
+#define SPK_OFF_RECONNECT		0x525
+#define SPK_OFF_JEWELBANK_TAB		0x526
+#define SPK_OFF_MAXLEVEL		0x52B		// +0 DanhHieu, +1 QuanHam, +2 TuChan, +3 HonHoan
+#define SPK_MAX_LEVEL_ENTRY		4
+#define SPK_OFF_MAX_INSTANCES		0x52F
+
 class CSPKData
 {
 public:
@@ -70,6 +94,19 @@ public:
 	DWORD m_MaxAttackSpeed[7];	// DW/DK/FE/MG/DL/SU/RF limitleri
 	float m_CameraDefault;		// 0x558, canli 45.0
 	float m_DefaultFps;			// 0x55C, canli 240.0 (ham; docs/20 ofset duzeltmesi)
+
+	// --- 3C.0 (docs/31): ozellik menusu / buton baytlari (0x4F9..0x52F)
+	BYTE m_MenuButton[SPK_MAX_MENU_BUTTON];		// 0x4F9.. MENU_BUTTON_01..20 (canli: 07=1 VIP)
+	BYTE m_ButtonCharracter;					// 0x50D sinif degistirme butonu
+	BYTE m_ShopButton[SPK_MAX_SHOP_BUTTON];		// 0x50E.. shop birim butonlari
+	BYTE m_Ranking[SPK_MAX_RANKING];			// 0x516.. Ranking1..7
+	BYTE m_SkillManaPet;						// 0x51D
+	BYTE m_EnableCoinTitle;					// 0x51E
+	BYTE m_ReconnectTime;						// 0x525
+	BYTE m_JewelBankTab;						// 0x526 (canli: 2)
+	BYTE m_MaxLevel[SPK_MAX_LEVEL_ENTRY];		// 0x52B.. DanhHieu/QuanHam/TuChan/HonHoan
+	BYTE m_MaxGameInstances;					// 0x52F (canli: 10)
+	bool m_MenuBlockLoaded;					// 0x4F9..0x52F blogu okundu mu
 
 	// SPK.ini
 	char m_MainCode[16];		// [Version] MainCode (canli: 1.03.34)

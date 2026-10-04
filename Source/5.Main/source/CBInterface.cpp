@@ -7,6 +7,7 @@
 #include "ZzzInterface.h"
 #include "Other.h"
 #include "MenuCustom.h"
+#include "SPKMenuBar.h"
 #include "Protocol.h"
 #include "CustomEventTime.h"
 #include "Ranking.h"
@@ -692,6 +693,7 @@ void Interface::Work()
 	gAPICB.Work();
 #endif
 	gCustomMenu.Draw();
+	gSPKMenuBar.Draw();	// 3C.0: canli SPK 20 slotlu ozellik menusu cubugu (ServerData.bmd 0x4F9)
 	gCustomEventTime.DrawEventTimePanelWindow();
 	gInterface.DrawWindowMuaVIP();
 	gCustomRanking->DrawRankPanelWindow();

@@ -1,0 +1,5 @@
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  StdAfx.cpp
+C:\Axion Mu Source\Source\5.Main\source\StdAfx.cpp(1,1): error C1033: 'C:\Axion Mu Source\BuildLog\5Main\vc143.pdb' program veritabanç aáçlamçyor [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+MSBUILD_EXIT=1
