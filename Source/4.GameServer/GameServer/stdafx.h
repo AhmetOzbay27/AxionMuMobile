@@ -145,7 +145,11 @@ enum TYPE_CACHEITEM
 #define CB_DANGKYINGAME				1
 #define CB_AUTORESETINFO			1
 #define CB_VIP_CHAR					1
+// 04.10.2026 (docs/34): disaridan verilebilir; SPK 5.2 canli derlemesi
+// HAISLOTRING=0 (kanit: canli PDB viewport 36/38/20/20 -> BuildLog/2e7).
+#ifndef HAISLOTRING
 #define HAISLOTRING					1
+#endif
 // 2b.2-A NOTU: NOTICE_PKSYSTEM ACILMADI — eMessagePK bizim stdafx'te zaten
 // TypeNoticeCustom enum'unda (stdafx:115); donor Notice.h'ndaki ikinci tanim
 // C2365 verir. Donor PK_NOTICE paketi kullanilacaksa enum stdafx'ten silinmeli.

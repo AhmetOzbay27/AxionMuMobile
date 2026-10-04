@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 02:10",
+  "updated": "2026-10-04 03:10",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 03:10",
+      "kim": "ajan",
+      "text": "SPK 5.2 %100 UYUM TURU (docs/34). (istek: \"SPK 5.2 %100 uyumlu olmasi icin kontroller yap; eksik ve hatali bolumler varsa tamamla\")\n\nYAPILANLAR\n - Tel duzeni birebir: istemci PCREATE_* yapilari sunucu Viewport.h kosullarina baglandi (yeni GAMESERVER_HAISLOTRING tel makrosu). Varsayilan = canli: istemci 603+0, sunucu Release_EX603+HAISLOTRING=0.\n - Canli boyutlar derleme zamaninda kilitli: Viewport.cpp static_assert 36/38/20/20 (603+0).\n - GIZLI KUSUR 1: EX603+HAISLOTRING=0 hic derlenmiyordu -> Protocol.cpp EquipInventory else blogu kosullu yapildi; GS EX603 artik EXIT=0.\n - GIZLI KUSUR 2: istemci GAMESERVER_UPDATE>=701 hic derlenmiyordu (PacketManager.h \"using namespace CryptoPP\" -> Singleton C2872) -> duzeltildi; WSclient.cpp 603 ve 803 EXIT=0.\n - docs/28 UUID bulgusu giderildi (4 sunucu); docs/17 B3 eksik respawn monster_add(class,true) eklendi; docs/29 B6 gcoin icin TypeDB=1 uyarisi eklendi.\n\nDOGRULAMA\n - Layout 603/0 + 603/1 + 803/1: 4/4 HIZALI, exit 0 x3 (BuildLog/denetim/layout_*.txt).\n - GS EX603=EXIT0 (MuServer\u0004.GameServerSub 1), GS EX803=EXIT0, DS EX803=EXIT0.\n - Istemci tek dosya: 603 obj 4.850.853 B, 803 obj 4.969.038 B, EXIT=0.\n\nKALAN\n - K2 (baska ajanin 3C.0 dosyalari): Main tam derlemesi hala EXIT=1 -> calisan cift yenilenemedi.\n - Karar bekleyen: K1 EX803 dagitim yolu; B3 §6 fazla cagri noktalari; gcoin kolonu.\n\nKanit: docs/34-SPK52-UYUM-TURU.md - BuildLog/denetim/"
+    },
     {
       "ts": "2026-10-04 02:10",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-02 19:50",
       "kim": "ajan",
       "text": "2e.3 TAMAM — sunucu test klasörü: BuildLog/2e3/deploy_server_test.sh bizim Release_EX603 GS/CS/DS/JS çıktılarını (md5: CS 4c1f91bf, DS 916e9625, JS 91ee93d7, GS 43f086d9) canlı düzenini aynalayarak BuildLog/2e3/deploy'a kurdu (25 MB, MSVCP140+VCRUNTIME140 kapanışı). DB: DB_SQL_12.bak -> yerel SQLEXPRESS MuOnlineS6 (ONLINE, 55 tablo; idempotent restore). Smoke test: CS->DS->JS->GS başlatıldı; portlar 63000/63001udp/63002/63003, GS->DS/JS bağlantıları kuruldu (LOG_CONNECT kanıtı), sonra Stop_TestServer.bat ile tamamen kapatıldı (kalıntı yok). Rapor docs/23; kanıt BuildLog/2e3/results/smoke1.json + GS logları."
-    },
-    {
-      "ts": "2026-10-02 19:40",
-      "kim": "ajan",
-      "text": "2e.1 bağımsız doğrulama: PC derleme hattı EKSİKSİZ — kaynakta 45.87.120.29:44405 gömülü, exe'de (71b008ad) eski IP yok, canlı ConnectIP.bmd (8ac74a5b) 0x20/0x22 = 44405/55858 okunuyor ve MainLoad çalışma anında uyguluyor. İstisna: derleme dışı mobil dosyalarda (android_main.cpp, LauncherHelper.h yorumu) eski MOBİL fallback 171.235.182.88:63000 duruyor — hiçbir vcxproj'da yok, exe'ye girmiyor; farklı mobil dağıtımın değeri olduğu için değiştirilmedi. H-004 + docs/22 kapsam notu eklendi."
     }
   ]
 }

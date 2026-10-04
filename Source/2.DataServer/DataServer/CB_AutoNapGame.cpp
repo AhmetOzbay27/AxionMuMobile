@@ -140,6 +140,12 @@ void CBAutoNapGame::LoadConfig()
 	this->Enable = GetPrivateProfileInt("AutoNapBank", "Enable", 0, PathConfig);
 	this->GetLogUpdateCoin = GetPrivateProfileInt("AutoNapBank", "GetLogUpdateCoin", 1, PathConfig);
 	this->TypeDB = GetPrivateProfileInt("AutoNapBank", "TypeDB", 0, PathConfig);
+	if(this->TypeDB == 1)
+	{
+		// 04.10.2026 (docs/34): TypeDB=1 yolu MEMB_INFO.gcoin kolonuna yazar; bu kolon
+		// MuOnline/MuOnlineS6 semalarinda YOK (docs/29 B6) -> guncelleme hata verir.
+		LogAdd(LOG_RED,"[AutoNap] TypeDB=1: MEMB_INFO.gcoin kolonu gerekli (docs/29 B6).");
+	}
 	GetPrivateProfileString("AutoNapBank", "APIAutoCheckBank", "", this->APIAutoCheckBank, sizeof(this->APIAutoCheckBank), PathConfig);
 	this->TyleNapTien = GetPrivateProfileInt("AutoNapBank", "TyleNapTien", 0, PathConfig);
 	this->GiaTriNapThapNhat = GetPrivateProfileInt("AutoNapBank", "GiaTriNapThapNhat", 0, PathConfig);

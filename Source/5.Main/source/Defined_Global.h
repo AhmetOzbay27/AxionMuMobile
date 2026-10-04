@@ -76,6 +76,13 @@
 
 #define UseReconnect							1
 #define HAISLOTRING								1
+// 04.10.2026 (docs/34): SPK 5.2 canli sunucusu GAMESERVER_UPDATE=603 +
+// HAISLOTRING=0 ile derlenmis (canli GameServer.pdb viewport: 36/38/20/20).
+// Istatemci varsayilani canli ile aynidir; EX803 test cifti icin derleme
+// satirina /DGAMESERVER_UPDATE=803 ekleyin.
+#ifndef GAMESERVER_UPDATE
+#define GAMESERVER_UPDATE				603
+#endif
 #define RANKING_NEW								1
 #define CUSTOM_BCHOTROI							1
 #define CB_AutoBanking							1

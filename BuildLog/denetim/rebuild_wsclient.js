@@ -1,0 +1,23 @@
+const fs = require('fs');
+const headRaw = fs.readFileSync('BuildLog/denetim/ws_head.bak.h', 'latin1');
+const curPath = 'Source/5.Main/source/WSclient.h';
+const curRaw = fs.readFileSync(curPath, 'latin1');
+const NL = headRaw.includes('\r\n') ? '\r\n' : '\n';
+const norm = s => s.replace(/\r?\n/g, NL);
+function grab(re, src) { const out = []; let m; re.lastIndex = 0; while ((m = re.exec(src)) !== null) out.push(m[0]); return out; }
+const newQ = grab(/\/\/ 04\.10\.2026 \(docs\/34\): alanlar sunucudaki PMSG_VIEWPORT_\* yapisiyla AYNI[\s\S]*?\tBYTE +CurHP\[4\];\r?\n#endif\r?\n/g, curRaw);
+const newS = grab(/\/\/ 04\.10\.2026 \(docs\/34\): sunucu SUMMON yapisiyla ayni kosullar\.[\s\S]*?\tBYTE +CurHP\[4\];\r?\n#endif\r?\n/g, curRaw);
+const newM = grab(/\/\/ 04\.10\.2026 \(docs\/34\): sunucu MONSTER yapisiyla ayni kosullar\.[\s\S]*?\tDWORD +Life;\r?\n#endif\r?\n/g, curRaw);
+if (newQ.length !== 2) throw new Error('newQ=' + newQ.length);
+if (newS.length !== 1) throw new Error('newS=' + newS.length);
+if (newM.length !== 1) throw new Error('newM=' + newM.length);
+const reOldQ = /\t\/\/ H-018[\s\S]*?MuunItem\[2\];\r?\n#endif\r?\n\tBYTE +Level\[2\];\r?\n\tBYTE +MaxHP\[4\];\r?\n\tBYTE +CurHP\[4\];\r?\n/g;
+const reOldP = /\t\/\/ H-018(?:(?!MuunItem)[\s\S])*?\tBYTE +CurHP\[4\];\r?\n/g;
+const oldQ = grab(reOldQ, headRaw), oldP = grab(reOldP, headRaw);
+if (oldQ.length !== 2 || oldP.length !== 2) throw new Error('oldQ=' + oldQ.length + ' oldP=' + oldP.length);
+let qi = 0, pi = 0;
+let out = headRaw.replace(reOldQ, () => norm(newQ[qi++]));
+out = out.replace(reOldP, () => norm(pi++ === 0 ? newS[0] : newM[0]));
+if (qi !== 2 || pi !== 2) throw new Error('degisim sayisi qi=' + qi + ' pi=' + pi);
+fs.writeFileSync(curPath, out, 'latin1');
+console.log('OK yeniden kuruldu. NL=' + JSON.stringify(NL));

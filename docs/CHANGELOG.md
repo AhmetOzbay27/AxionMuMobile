@@ -10,6 +10,47 @@
 
 
 
+## [26.10.04 03:10] SPK 5.2 %100 uyum turu - tel duzeni + 2 gizli derleme kusuru (docs/34)
+
+**Ne yapildi**
+
+Istemci `PCREATE_*` yapilari sunucu `Viewport.h` kosullariyla birebir ayni hale getirildi
+(yeni `GAMESERVER_HAISLOTRING` tel makrosu; istemcinin kendi `HAISLOTRING` UI makrosu tel
+duzenine karismaz). Varsayilan = canli SPK 5.2: istemci `GAMESERVER_UPDATE=603`, sunucu
+`Release_EX603` + `HAISLOTRING=0`. Canli boyutlar derleme zamaninda kilitlendi
+(`static_assert` 36/38/20/20, yalniz 603+0).
+
+**Gizli kusurlar (bu turda bulundu)**
+
+1. `Release_EX603`+`HAISLOTRING=0` bu kaynakta HIC derlenmiyordu: `Protocol.cpp` icindeki
+   `else { ...EquipInventory[n]... }` blogu kosulsuzdu (uye `User.h`'de `#if(HAISLOTRING)`
+   icinde) -> C2039/C2660. Blok kosullu yapildi; GS EX603 simdi EXIT=0.
+2. Istemci `GAMESERVER_UPDATE>=701` HIC derlenmiyordu: `PacketManager.h` icindeki
+   `using namespace CryptoPP;` global `Singleton`'i belirsizlestiriyordu (C2872).
+   Nitelendirildi; WSclient.cpp 603 ve 803 tanimlariyla EXIT=0.
+
+**Bilinen kusurlarin kapatilmasi**
+
+- docs/28: `UuidCreateSequential` donus degeri denetimi (4 sunucu `Protect.cpp`).
+- docs/17 B3: respawn yoluna canli 0x538687 karsiligi `monster_add(class,true)` eklendi.
+- docs/29 B6: `TypeDB=1` (gcoin) yolu icin LOG_RED uyarisi; kolon iki semada da yok.
+
+**Dogrulama**
+
+- `viewport_layout.js` 603/0, 603/1, 803/1: 4/4 HIZALI, exit 0 x3 (`BuildLog/denetim/layout_*.txt`).
+- GS EX603 + GS EX803 + DS EX803: EXIT=0 (`BuildLog/denetim/build_spk52.log`, `gs_603.log`).
+- Istemci tek dosya: `wsclient_603.obj` (4.850.853 B) + `wsclient_803.obj` (4.969.038 B), EXIT=0.
+- Main tam derlemesi hala K2 (baska ajanin 3C.0 dosyalari) -> EXIT=1; dokunulmadi.
+
+**Degisen dosyalar**
+
+`Source/4.GameServer/GameServer/{stdafx.h,GameServer.vcxproj,Viewport.cpp,Protocol.cpp,ObjectManager.cpp}`
+`Source/{1.ConnectServer,2.DataServer,3.JoinServer,4.GameServer}/*/Protect.cpp`
+`Source/2.DataServer/DataServer/CB_AutoNapGame.cpp`
+`Source/5.Main/source/{WSclient.h,WSclient.cpp,Defined_Global.h,PacketManager.h}`
+`BuildLog/2e7/viewport_layout.js`, `BuildLog/denetim/*`, `docs/34-SPK52-UYUM-TURU.md`
+
+**Rapor:** `docs/34-SPK52-UYUM-TURU.md`
 ## [26.10.04 02:05] Proje çapında denetim — amaç ↔ kaynak ↔ kanıt (docs/33)
 
 **Ne yapıldı**

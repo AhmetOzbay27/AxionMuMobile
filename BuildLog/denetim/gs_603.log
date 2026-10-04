@@ -1,0 +1,23 @@
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  CCRC32.Cpp
+  CashShop.cpp
+  CriticalSection.cpp
+  CustomMix.cpp
+  CustomStore.cpp
+  EventQuickly.cpp
+  Gate.cpp
+  ItemLevel.cpp
+  KanturuMonsterMng.cpp
+  MiniDump.cpp
+  MonsterAIUtil.cpp
+  PacketManager.cpp
+  Protocol.cpp
+  pugixml.cpp
+  RaklionBattleUser.cpp
+  Shop.cpp
+  Kod retiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 18987 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun retilmesi tamamland
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServer\4.GameServer\Sub 1\GameServer\GameServer.exe

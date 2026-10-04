@@ -20,6 +20,14 @@
 #include "BossGuild.h"
 #include "CTCMini.h"
 #include "BattleSurvivor.h"
+// 04.10.2026 (docs/34): SPK 5.2 canli bayt sayilari derleme zamaninda kilitli.
+// Canli PDB kaniti: BuildLog/2e7/live_pdb_viewport_layout.txt (36/38/20/20).
+#if (GAMESERVER_UPDATE == 603) && !(HAISLOTRING)
+static_assert(sizeof(PMSG_VIEWPORT_PLAYER) == 36, "SPK 5.2 PLAYER 36B olmali");
+static_assert(sizeof(PMSG_VIEWPORT_CHANGE) == 38, "SPK 5.2 CHANGE 38B olmali");
+static_assert(sizeof(PMSG_VIEWPORT_MONSTER) == 20, "SPK 5.2 MONSTER 20B olmali");
+static_assert(sizeof(PMSG_VIEWPORT_SUMMON) == 20, "SPK 5.2 SUMMON 20B olmali");
+#endif
 CViewport gViewport;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

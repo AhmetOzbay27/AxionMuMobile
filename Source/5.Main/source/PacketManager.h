@@ -10,8 +10,10 @@
 #include "..\\..\\Util\\cryptopp\\modes.h"
 #include "..\\..\\Util\\cryptopp\\des.h"
 
-using namespace CryptoPP;
-
+// 04.10.2026 (docs/34): "using namespace CryptoPP;" KALDIRILDI - global
+// "Singleton" sembolu CryptoPP::Singleton ile belirsizlesip istemcinin
+// GAMESERVER_UPDATE>=701 derlemesini C2872 ile kiriyordu (WSclient.cpp).
+// CryptoPP tipleri asagida acikca nitelendirilir.
 #endif
 
 struct ENCDEC_HEADER
@@ -50,8 +52,8 @@ public:
 	void XorData(int start,int end);
 private:
 	#if(GAMESERVER_UPDATE>=701)
-	ECB_Mode<DES_XEX3>::Encryption m_Encryption;
-	ECB_Mode<DES_XEX3>::Decryption m_Decryption;
+	CryptoPP::ECB_Mode<CryptoPP::DES_XEX3>::Encryption m_Encryption;
+	CryptoPP::ECB_Mode<CryptoPP::DES_XEX3>::Decryption m_Decryption;
 	#else
 	ENCDEC_DATA m_Encryption;
 	ENCDEC_DATA m_Decryption;

@@ -12,6 +12,7 @@
 #include "CastleDeep.h"
 #include "CastleSiege.h"
 #include "CastleSiegeSync.h"
+#include "CB_ActiveInvasions.h"	// 2c.1-B3: respawn sayaci (canli 0x538687)
 #include "ChaosBox.h"
 #include "ChaosCastle.h"
 #include "CommandManager.h"
@@ -393,6 +394,8 @@ void CObjectManager::ObjectSetStateProc() // OK
 
 			lpObj->DieRegen = 0;
 			lpObj->State = OBJECT_CREATE;
+
+			gCB_ActiveInvasions.monster_add(lpObj->Class,true);	// 2c.1-B3: canli respawn yolu (0x538687, push 1 + viewport create)
 
 			gObjViewportListProtocolCreate(lpObj);
 		}

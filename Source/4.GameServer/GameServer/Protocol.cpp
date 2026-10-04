@@ -6195,12 +6195,14 @@ void RecvGetInfoChar(int aIndex, XULY_CGPACKET* lpMsg)
 			gItemManager.ItemByteConvert(info.Item, gObj[bIndex].Inventory[n]); // Set Info Item Chinh
 			info.PeriodTime = gObj[bIndex].Inventory[n].m_PeriodicItemTime;
 		}
+#if(HAISLOTRING)
 		else
 		{
 			info.Dur = gObj[bIndex].EquipInventory[n].m_Durability;
 			gItemManager.ItemByteConvert(info.Item, gObj[bIndex].EquipInventory[n]); // Set Info Item Chinh
 			info.PeriodTime = gObj[bIndex].EquipInventory[n].m_PeriodicItemTime;
 		}
+#endif
 		pMsg.Count++;
 		memcpy(&send[size], &info, sizeof(info));
 		size += sizeof(info);

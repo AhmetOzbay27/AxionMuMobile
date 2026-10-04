@@ -2384,7 +2384,9 @@ void ReceiveCreatePlayerViewport(BYTE *ReceiveBuffer,int Size)
 			c->PositionY = Data2->PositionY;
 			c->TargetX = Data2->TargetX;
 			c->TargetY = Data2->TargetY;
+#if(GAMESERVER_UPDATE >= 701)
 			c->Level = MAKE_NUMBERW(Data2->Level[0],Data2->Level[1]);
+#endif
 			
 			c->Object.Angle[2] = ((float)(Data2->Path>>4)-1.f)*45.f;
 			
@@ -2489,7 +2491,7 @@ void ReceiveCreatePlayerViewport(BYTE *ReceiveBuffer,int Size)
 			{
 				//g_pSiegeWarfare->InitSkillUI();
 			}
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (VIEWPORT_HAS_MUUNIT)
 			if (c)
 			{
 
@@ -2638,7 +2640,7 @@ void ReceiveCreateTransformViewport( BYTE *ReceiveBuffer )
 			
 			ChangeCharacterExt(FindCharacterIndex(Key), Data2->Equipment);
 
-#if(HAISLOTRING)
+#if(HAISLOTRING) && (VIEWPORT_HAS_MUUNIT)
 			if (pCha)
 			{
 				if (pCha == Hero)
@@ -2928,7 +2930,9 @@ void ReceiveCreateSummonViewport( BYTE *ReceiveBuffer )
 		c->TargetY = Data2->PositionY;
 		o->Kind = KIND_PLAYER;
 		c->PK   = Data2->Path&0xf;
+#if(GAMESERVER_UPDATE >= 701)
 		c->Level = MAKE_NUMBERW(Data2->Level[0],Data2->Level[1]);
+#endif
 			
 		if(c->PK >= PVP_MURDERER2)
 			c->Level = 1;

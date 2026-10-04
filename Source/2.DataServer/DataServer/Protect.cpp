@@ -58,7 +58,15 @@ bool CProtect::GetComputerHardwareId() // OK
 
 	UUID uuid;
 
-	UuidCreateSequential(&uuid);
+	RPC_STATUS uuidStatus = UuidCreateSequential(&uuid);
+
+	// 04.10.2026 (docs/34): donus degeri denetlenir; basarisizsa (yerel-only
+	// UUID kabul edilir) rastgele UuidCreate kullanilir ki donanim kimligi
+	// uninitialized bellekten uretilmesin (docs/28 bulgusu).
+	if(uuidStatus != ERROR_SUCCESS && uuidStatus != RPC_S_UUID_LOCAL_ONLY)
+	{
+		UuidCreate(&uuid);
+	}
 
 	SYSTEM_INFO SystemInfo;
 

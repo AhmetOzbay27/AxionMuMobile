@@ -4,7 +4,7 @@
 // bayt haritasini karsilastirir.
 //
 // kullanim: node viewport_layout.js [GAMESERVER_UPDATE] [HAISLOTRING]
-// varsayilan: 803 1   (2e.6 derlemesi)
+// varsayilan: 603 0   (canli SPK 5.2); EX803 cifti icin: node viewport_layout.js 803 1
 const fs = require('fs');
 const path = require('path');
 
@@ -195,14 +195,18 @@ const MAP_PLAYER = {
   index: 'KeyH+KeyL', x: 'PositionX', y: 'PositionY', CharSet: 'Class+Equipment',
   name: 'ID', tx: 'TargetX', ty: 'TargetY', DirAndPkLevel: 'Path',
   MuunItem: 'MuunItem', count: 's_BuffCount',
+  attribute: 'Attribute', level: 'Level', MaxHP: 'MaxHP', CurHP: 'CurHP',
 };
 const MAP_CHANGE = {
   index: 'KeyH+KeyL', x: 'PositionX', y: 'PositionY', skin: 'TypeH+TypeL', name: 'ID',
   tx: 'TargetX', ty: 'TargetY', DirAndPkLevel: 'Path', CharSet: 'Class+Equipment',
   MuunItem: 'MuunItem', count: 's_BuffCount',
+  attribute: 'Attribute', level: 'Level', MaxHP: 'MaxHP', CurHP: 'CurHP',
 };
-const MAP_MONSTER = { index: 'KeyH+KeyL', type: 'TypeH+TypeL', x: 'PositionX', y: 'PositionY', tx: 'TargetX', ty: 'TargetY', DirAndPkLevel: 'Path', count: 's_BuffCount' };
-const MAP_SUMMON = { index: 'KeyH+KeyL', type: 'TypeH+TypeL', x: 'PositionX', y: 'PositionY', tx: 'TargetX', ty: 'TargetY', DirAndPkLevel: 'Path', name: 'ID', count: 's_BuffCount' };
+const MAP_MONSTER = { index: 'KeyH+KeyL', type: 'TypeH+TypeL', x: 'PositionX', y: 'PositionY', tx: 'TargetX', ty: 'TargetY', DirAndPkLevel: 'Path', count: 's_BuffCount',
+  attribute: 'Attribute', level: 'Level', MaxHP: 'MaxHP', CurHP: 'CurHP', CurHp: 'CurHp', Level: 'Level', Life: 'Life' };
+const MAP_SUMMON = { index: 'KeyH+KeyL', type: 'TypeH+TypeL', x: 'PositionX', y: 'PositionY', tx: 'TargetX', ty: 'TargetY', DirAndPkLevel: 'Path', name: 'ID', count: 's_BuffCount',
+  attribute: 'Attribute', level: 'Level', MaxHP: 'MaxHP', CurHP: 'CurHP' };
 
 function compare(g, c, map, label) {
   let s = '\n--- ' + label + ' ---\n';
@@ -229,14 +233,17 @@ function compare(g, c, map, label) {
   return s;
 }
 
-const gsu = parseInt(process.argv[2] || '803', 10);
-const hais = parseInt(process.argv[3] || '1', 10);
-const cfg = { GAMESERVER_UPDATE: gsu, HAISLOTRING: hais, GAMESERVER_TYPE: 0, GAMESERVER_LANGUAGE: 1, NEW_PROTOCOL_SYSTEM: 0, EQUIPMENT_LENGTH: CLIENT_CONST.EQUIPMENT_LENGTH };
+const gsu = parseInt(process.argv[2] || '603', 10);
+const hais = parseInt(process.argv[3] || '0', 10);
+// sunucu cfg: kendi HAISLOTRING makrosu; istemci cfg: sunucunun HAISLOTRING'ini
+// temsil eden GAMESERVER_HAISLOTRING (istemcinin KENDI HAISLOTRING'i UI icindir).
+const SERVER_CFG = { GAMESERVER_UPDATE: gsu, HAISLOTRING: hais, GAMESERVER_TYPE: 0, GAMESERVER_LANGUAGE: 1, NEW_PROTOCOL_SYSTEM: 0, EQUIPMENT_LENGTH: CLIENT_CONST.EQUIPMENT_LENGTH };
+const CLIENT_CFG = { GAMESERVER_UPDATE: gsu, GAMESERVER_HAISLOTRING: hais, HAISLOTRING: 1, GAMESERVER_TYPE: 0, GAMESERVER_LANGUAGE: 1, NEW_PROTOCOL_SYSTEM: 0, EQUIPMENT_LENGTH: CLIENT_CONST.EQUIPMENT_LENGTH };
 
 console.log('H-018 viewport paket düzeni denetimi');
 console.log(`GAMESERVER_UPDATE=${gsu}  HAISLOTRING=${hais}  (EQUIPMENT_LENGTH=${CLIENT_CONST.EQUIPMENT_LENGTH}, MAX_ID_SIZE=${CLIENT_CONST.MAX_ID_SIZE}, MAX_BUFF_SLOT_INDEX=${CLIENT_CONST.MAX_BUFF_SLOT_INDEX})`);
 
-const G = gsStructs(cfg), C = clientStructs(cfg);
+const G = gsStructs(SERVER_CFG), C = clientStructs(CLIENT_CFG);
 console.log(table(G.PMSG_VIEWPORT_PLAYER, 'SUNUCU PMSG_VIEWPORT_PLAYER'));
 console.log(table(G.PMSG_VIEWPORT_CHANGE, 'SUNUCU PMSG_VIEWPORT_CHANGE'));
 console.log(table(G.PMSG_VIEWPORT_MONSTER, 'SUNUCU PMSG_VIEWPORT_MONSTER'));
@@ -258,4 +265,4 @@ for (const [g, c, map, lbl] of [
   if (t.indexOf('HIZALI') < 0) verdict++;
 }
 console.log(`\n### ${verdict === 0 ? 'TUM PAKETLER HIZALI' : verdict + ' PAKET KAYMALI'}`);
-process.exit(verdict === 0 ? 0 : 1);
+process.exit(verdict === 0 ? 0 : 1);process.exit(verdict === 0 ? 0 : 1);

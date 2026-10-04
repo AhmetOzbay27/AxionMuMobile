@@ -560,6 +560,21 @@ typedef struct {
 	BYTE         Equipment[EQUIPMENT_LENGTH];
 } PRECEIVE_EQUIPMENT, * LPPRECEIVE_EQUIPMENT;
 
+// 04.10.2026 (docs/34): viewport tel duzeni makrolari.
+// Sunucudaki Viewport.h kosullari aynen istemciye uygulanir; sunucunun derleme
+// degerleri asagidaki iki makro ile verilir. Varsayilan = canli SPK 5.2:
+// GAMESERVER_UPDATE=603 + sunucu HAISLOTRING=0 (kanit: BuildLog/2e7 PDB
+// 36/38/20/20). EX803 cifti icin derlemede /DGAMESERVER_UPDATE=803 verin.
+// Istemcinin KENDI HAISLOTRING makrosu (UI ozellikleri) bundan bagimsizdir.
+#ifndef GAMESERVER_HAISLOTRING
+#define GAMESERVER_HAISLOTRING 0
+#endif
+#if ((GAMESERVER_HAISLOTRING) && (GAMESERVER_UPDATE<701)) || (GAMESERVER_UPDATE>=803)
+#define VIEWPORT_HAS_MUUNIT 1
+#else
+#define VIEWPORT_HAS_MUUNIT 0
+#endif
+
 //receive other map character
 typedef struct {
 	BYTE         KeyH;
@@ -572,16 +587,21 @@ typedef struct {
 	BYTE         TargetX;
 	BYTE         TargetY;
 	BYTE         Path;
-	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
-	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
-	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	// 04.10.2026 (docs/34): kosullar sunucudaki Viewport.h ile BIREBIR aynidir.
+	// Varsayilan = canli SPK 5.2: 603 + sunucu HAISLOTRING 0 -> 36/38/20/20
+	// (kanit: BuildLog/2e7). EX803 cifti icin /DGAMESERVER_UPDATE=803 verin.
+#if(GAMESERVER_HAISLOTRING) && (GAMESERVER_UPDATE < 701)
+	BYTE         MuunItem[2];
+#endif
+#if(GAMESERVER_UPDATE >= 701)
 	BYTE         Attribute;
-#if (HAISLOTRING)
+#if(GAMESERVER_UPDATE >= 803)
 	BYTE         MuunItem[2];
 #endif
 	BYTE         Level[2];
 	BYTE         MaxHP[4];
 	BYTE         CurHP[4];
+#endif
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_CHARACTER, * LPPCREATE_CHARACTER;
@@ -601,16 +621,21 @@ typedef struct
 	BYTE         Path;
 	BYTE         Class;
 	BYTE         Equipment[EQUIPMENT_LENGTH];
-	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
-	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
-	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	// 04.10.2026 (docs/34): kosullar sunucudaki Viewport.h ile BIREBIR aynidir.
+	// Varsayilan = canli SPK 5.2: 603 + sunucu HAISLOTRING 0 -> 36/38/20/20
+	// (kanit: BuildLog/2e7). EX803 cifti icin /DGAMESERVER_UPDATE=803 verin.
+#if(GAMESERVER_HAISLOTRING) && (GAMESERVER_UPDATE < 701)
+	BYTE         MuunItem[2];
+#endif
+#if(GAMESERVER_UPDATE >= 701)
 	BYTE         Attribute;
-#if (HAISLOTRING)
+#if(GAMESERVER_UPDATE >= 803)
 	BYTE         MuunItem[2];
 #endif
 	BYTE         Level[2];
 	BYTE         MaxHP[4];
 	BYTE         CurHP[4];
+#endif
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_TRANSFORM, * LPPCREATE_TRANSFORM;
@@ -627,13 +652,13 @@ typedef struct {
 	BYTE         TargetY;
 	BYTE         Path;
 	BYTE         ID[MAX_ID_SIZE];
-	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
-	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
-	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	// 04.10.2026 (docs/34): sunucu SUMMON yapisiyla ayni kosullar.
+#if(GAMESERVER_UPDATE >= 701)
 	BYTE         Attribute;
 	BYTE         Level[2];
 	BYTE         MaxHP[4];
 	BYTE         CurHP[4];
+#endif
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_SUMMON, * LPPCREATE_SUMMON;
@@ -649,13 +674,18 @@ typedef struct {
 	BYTE         TargetX;
 	BYTE         TargetY;
 	BYTE         Path;
-	// H-018 (2e.7): bu alanlar sunucudaki PMSG_VIEWPORT_* yapisyla ayni
-	// kabloda sirali olmalidir; bkz. Source/4.GameServer/GameServer/Viewport.h
-	// (GAMESERVER_UPDATE=803) ve BuildLog/2e7/viewport_layout.js.
+	// 04.10.2026 (docs/34): sunucu MONSTER yapisiyla ayni kosullar.
+	// <701 (SPK 5.2 canli): CurHp/Level/Life (canli PDB: +9/+10/+12, sizeof=20).
+#if(GAMESERVER_UPDATE >= 701)
 	BYTE         Attribute;
 	BYTE         Level[2];
 	BYTE         MaxHP[4];
 	BYTE         CurHP[4];
+#else
+	BYTE         CurHp;
+	BYTE         Level[2];
+	DWORD        Life;
+#endif
 	BYTE         s_BuffCount;
 	BYTE		 s_BuffEffectState[MAX_BUFF_SLOT_INDEX];
 } PCREATE_MONSTER, * LPPCREATE_MONSTER;

@@ -1,0 +1,12 @@
+const fs = require('fs');
+const f = 'Source/4.GameServer/GameServer/Protocol.cpp';
+const raw = fs.readFileSync(f, 'latin1');
+const NL = raw.includes('\r\n') ? '\r\n' : '\n';
+const re = /\t\telse\r?\n\t\t\{\r?\n(?:[^\n]*EquipInventory[^\n]*\r?\n){3}\t\t\}/g;
+const hits = raw.match(re) || [];
+if (hits.length !== 1) throw new Error('beklenen tek blok, bulunan: ' + hits.length);
+const blok = hits[0];
+const yeni = ['#if(HAISLOTRING)', blok, '#endif'].join(NL);
+let s = raw.replace(re, () => yeni);
+fs.writeFileSync(f, s, 'latin1');
+console.log('Protocol.cpp EquipInventory else blogu #if(HAISLOTRING) icinde NL=' + JSON.stringify(NL));

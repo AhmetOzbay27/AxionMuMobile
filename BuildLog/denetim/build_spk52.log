@@ -1,0 +1,126 @@
+===== GS603 (Release_EX603) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ObjectManager.cpp
+  Protect.cpp
+  Kod Åretiliyor
+  11 of 18987 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    283 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServer\4.GameServer\Sub 1\GameServer\GameServer.exe
+EXIT_GS603=0
+===== GS803 (Release_EX803) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ObjectManager.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.h(41,16): warning C4091: 'typedef ': hiábir deßiüken bildirimi yapçlmadçßçnda 'VCSEV_COUNTLIST' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(1321,109): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(1325,109): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5192,68): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5196,68): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5204,50): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5208,40): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5212,50): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5216,50): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5221,59): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+  Protect.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protect.cpp(123,27): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protect.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protect.cpp(127,19): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protect.cpp' kaynak dosyasç derleniyor)
+  
+  Kod Åretiliyor
+  11 of 20025 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    295 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
+EXIT_GS803=0
+===== DS803 (Release_EX803) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  CB_AutoNapGame.cpp
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(18,13): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(26,9): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(37,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(38,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(43,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(44,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(53,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(54,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(64,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(65,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(226,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(247,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(394,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(360,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\2.DataServer\DataServer\CB_AutoNapGame.cpp(380,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+  Protect.cpp
+  Kod Åretiliyor
+  3 of 1648 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    3 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
+  DataServer.vcxproj -> C:\Axion Mu Source\Source\2.DataServer\DataServer\Release\DataServer.exe
+EXIT_DS803=0

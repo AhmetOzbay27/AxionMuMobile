@@ -1,0 +1,1244 @@
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  stdafx.cpp
+  CCRC32.Cpp
+  Math.cpp
+  380ItemOption.cpp
+  380ItemType.cpp
+  ArcaBattle.cpp
+  Attack.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  BCustomChoTroi.cpp
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(398,59): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(406,59): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(469,35): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(473,44): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(832,62): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(914,52): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(956,24): warning C4244: '-=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(979,47): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1095,53): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1099,128): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1138,122): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1142,58): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1152,58): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1789,52): warning C4244: '+=': '__int64' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1823,47): warning C4244: '+=': '__int64' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(1856,49): warning C4244: '+=': '__int64' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2612,13): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2710,13): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2766,9): warning C4244: 'return': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2823,12): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2827,13): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2833,12): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2842,27): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2851,12): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2858,12): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2920,12): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2924,13): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2930,12): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2939,27): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2993,13): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(2999,23): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(3008,51): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(3127,15): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Attack.cpp(3128,15): warning C4244: 'baülatçlçyor': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Attack.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomChoTroi.cpp(606,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomChoTroi.cpp(755,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomChoTroi.cpp(811,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomChoTroi.cpp' kaynak dosyasç derleniyor)
+  
+  BCustomEdit.cpp
+  BCustomItemBank.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(687,49): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(687,39): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(706,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(706,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(720,51): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(720,41): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(741,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(741,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(755,51): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(755,41): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(776,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(776,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(790,51): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(790,41): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(814,50): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(814,40): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(1096,49): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(1096,39): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomItemBank.cpp' kaynak dosyasç derleniyor)
+  
+  BCustomVIPChar.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.h(41,16): warning C4091: 'typedef ': hiábir deßiüken bildirimi yapçlmadçßçnda 'VCSEV_COUNTLIST' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(226,55): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(226,45): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(230,55): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(230,45): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(277,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BCustomVIPChar.cpp' kaynak dosyasç derleniyor)
+  
+  BattleGround.cpp
+  BattleSoccer.cpp
+  BattleSoccerManager.cpp
+  BattleSurvivor.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BattleSurvivor.cpp(1240,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BattleSurvivor.cpp' kaynak dosyasç derleniyor)
+  
+  BloodCastle.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BloodCastle.cpp(2331,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BloodCastle.cpp' kaynak dosyasç derleniyor)
+  
+  BonusManager.cpp
+  BossGuild.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BossGuild.cpp(1504,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BossGuild.cpp' kaynak dosyasç derleniyor)
+  
+  BotAlchemist.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\readscript2.h(5,13): warning C4091: 'static ': hiábir deßiüken bildirimi yapçlmadçßçnda 'SMDToken' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/BotAlchemist.cpp' kaynak dosyasç derleniyor)
+  
+  BotBuffer.cpp
+  CBCongHuong.cpp
+  Derleniyor...
+  CBHuyDongExc.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(147,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(156,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(164,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(171,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(142,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(146,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(155,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(163,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(170,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CBHuyDongExc.cpp' kaynak dosyasç derleniyor)
+  
+  CB_ActiveInvasions.cpp
+  CB_AutoNapGame.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CB_AutoNapGame.cpp(119,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CB_AutoNapGame.cpp' kaynak dosyasç derleniyor)
+  
+  CB_BotTrader.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CB_BotTrader.cpp(708,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CB_BotTrader.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CB_BotTrader.cpp(902,79): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CB_BotTrader.cpp' kaynak dosyasç derleniyor)
+  
+  CB_NewQuest.cpp
+  CEventName.cpp
+  CSProtocol.cpp
+  CTCMini.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CTCMini.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CTCMini.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CTCMini.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.cpp(1329,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CTCMini.cpp' kaynak dosyasç derleniyor)
+  
+  CannonTower.cpp
+  CashShop.cpp
+  CastleDeep.cpp
+  CastleSiege.cpp
+  CastleSiegeCrown.cpp
+  CastleSiegeCrownSwitch.cpp
+  CastleSiegeSync.cpp
+  CastleSiegeWeapon.cpp
+  ChangeClass.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ChangeClass.cpp(126,98): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ChangeClass.cpp' kaynak dosyasç derleniyor)
+  
+  ChaosBox.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ChaosBox.cpp(594,13): warning C4101: 'ItemInfo': yerel deßiüken baüvurusu kaldçrçldç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ChaosBox.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ChaosBox.cpp(3156,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ChaosBox.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ChaosBox.cpp(5931,15): warning C4244: '=': 'float' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ChaosBox.cpp' kaynak dosyasç derleniyor)
+  
+  ChaosCastle.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ChaosCastle.cpp(1883,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ChaosCastle.cpp' kaynak dosyasç derleniyor)
+  
+  ComboSkill.cpp
+  Derleniyor...
+  Command.cpp
+  CommandManager.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(764,23): warning C4244: 'baülatçlçyor': 'long' - 'short' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CommandManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(775,23): warning C4244: 'baülatçlçyor': 'long' - 'short' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CommandManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(787,23): warning C4244: 'baülatçlçyor': 'long' - 'short' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CommandManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(909,19): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CommandManager.cpp' kaynak dosyasç derleniyor)
+  
+  Connection.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Connection.cpp(47,27): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Connection.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Connection.cpp(51,19): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Connection.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Connection.cpp(69,5): warning C4996: 'WSAAsyncSelect': Use WSAEventSelect() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Connection.cpp' kaynak dosyasç derleniyor)
+  
+  CriticalSection.cpp
+  Crywolf.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Crywolf.cpp(776,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Crywolf.cpp' kaynak dosyasç derleniyor)
+  
+  CrywolfAltar.cpp
+  CrywolfObjInfo.cpp
+  CrywolfStateTimeInfo.cpp
+  CrywolfStatue.cpp
+  CrywolfSync.cpp
+  CrywolfUtil.cpp
+  CustomArena.cpp
+  CustomAttack.cpp
+  CustomBuyVip.cpp
+  CustomCombo.cpp
+  CustomCommandDescription.cpp
+  CustomDeathMessage.cpp
+  CustomEventDrop.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomEventDrop.cpp(438,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomEventDrop.cpp' kaynak dosyasç derleniyor)
+  
+  CustomEventTime.cpp
+  CustomJewel.cpp
+  Derleniyor...
+  CustomMix.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(242,48): warning C4533: 'iter' îßesinin baülatçlmasç 'goto SendClearInfo' etiketiyle atlandç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(242,48):
+      'iter' bildirimine bakçn
+      C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(273,1):
+      'SendClearInfo' bildirimine bakçn
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(223,44): warning C4533: 'itInfo' îßesinin baülatçlmasç 'goto SendClearInfo' etiketiyle atlandç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(223,44):
+      'itInfo' bildirimine bakçn
+      C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(273,1):
+      'SendClearInfo' bildirimine bakçn
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(211,39): warning C4533: 'it' îßesinin baülatçlmasç 'goto SendClearInfo' etiketiyle atlandç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(211,39):
+      'it' bildirimine bakçn
+      C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(273,1):
+      'SendClearInfo' bildirimine bakçn
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(359,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(381,22): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(483,17): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(532,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMix.cpp(545,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMix.cpp' kaynak dosyasç derleniyor)
+  
+  CustomMonster.cpp
+  CustomMonterPoint.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomMonterPoint.cpp(94,60): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomMonterPoint.cpp' kaynak dosyasç derleniyor)
+  
+  CustomMove.cpp
+  CustomNoticeDrop.cpp
+  CustomNpcCollector.cpp
+  CustomNpcCommand.cpp
+  CustomNpcMove.cpp
+  CustomNpcQuest.cpp
+  CustomOnlineLottery.cpp
+  CustomPKFree.cpp
+  CustomPet.cpp
+  CustomPick.cpp
+  CustomQuest.cpp
+  CustomQuiz.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomQuiz.cpp(435,13): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomQuiz.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomQuiz.cpp(467,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomQuiz.cpp' kaynak dosyasç derleniyor)
+  
+  CustomRankUser.cpp
+  CustomRanking.cpp
+  CustomStartItem.cpp
+  CustomStore.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomStore.cpp(467,21): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomStore.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomStore.cpp(467,54): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomStore.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomStore.cpp(467,87): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomStore.cpp' kaynak dosyasç derleniyor)
+  
+  CustomTop.cpp
+  Derleniyor...
+  CustomVongQuay.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(286,3): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(332,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(339,84): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(339,123): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(339,162): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(339,201): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(339,240): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(355,56): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(355,46): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(359,56): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(359,46): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(341,3): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/CustomVongQuay.cpp' kaynak dosyasç derleniyor)
+  
+  CustomWing.cpp
+  CustomWingMix.cpp
+  DSProtocol.cpp
+  DanhHieu.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(141,30): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(141,69): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(160,30): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(160,69): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(179,30): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(179,69): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(198,30): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(198,69): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(217,30): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(217,69): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(239,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(239,62): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(253,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(253,62): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(276,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(276,62): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(290,31): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(290,70): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(313,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(313,62): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(327,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(327,62): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(350,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(350,62): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(364,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(364,62): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(387,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(387,62): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(401,31): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(401,70): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(424,27): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(424,62): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(438,31): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DanhHieu.cpp(438,70): warning C4018: '<=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DanhHieu.cpp' kaynak dosyasç derleniyor)
+  
+  DarkSpirit.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(763,31): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(854,62): warning C4244: '=': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(908,47): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(1009,53): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DarkSpirit.cpp(1013,128): warning C4244: 'baßçmsçz deßiüken': '__int64' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DarkSpirit.cpp' kaynak dosyasç derleniyor)
+  
+  DefaultClassInfo.cpp
+  DevilSquare.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\DevilSquare.cpp(1603,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/DevilSquare.cpp' kaynak dosyasç derleniyor)
+  
+  DoubleGoer.cpp
+  DropReward.cpp
+  Duel.cpp
+  ESProtocol.cpp
+  Effect.cpp
+  EffectManager.cpp
+  EventGvG.cpp
+  EventHideAndSeek.cpp
+  EventInventory.cpp
+  EventKillAll.cpp
+  EventPvP.cpp
+  EventQuickly.cpp
+  Derleniyor...
+  EventRunAndCatch.cpp
+  EventRussianRoulette.cpp
+  EventStart.cpp
+  EventTvT.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\EventTvT.cpp(1020,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/EventTvT.cpp' kaynak dosyasç derleniyor)
+  
+  ExperienceTable.cpp
+  FakeOnline.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(77,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(79,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(81,5): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(396,30): warning C4805: '==' : iülemde gÅvenli olmayan 'BYTE' tÅrÅ ve 'bool' tÅrÅ karçüçmç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(558,25): warning C4018: '>=': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(1046,9): warning C4390: ';': boü denetlenen deyim bulundu; amaálanan bu muydu? [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\FakeOnline.cpp(1227,9): warning C4390: ';': boü denetlenen deyim bulundu; amaálanan bu muydu? [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/FakeOnline.cpp' kaynak dosyasç derleniyor)
+  
+  Filter.cpp
+  FilterRaname.cpp
+  FlyingDragons.cpp
+  Fruit.cpp
+  GameMain.cpp
+  GameMaster.cpp
+  GameServer.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/GameServer.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/GameServer.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/GameServer.cpp' kaynak dosyasç derleniyor)
+  
+  Gate.cpp
+  GensSystem.cpp
+  GuardianStatue.cpp
+  Guild.cpp
+  GuildClass.cpp
+  GuildMatching.cpp
+  HackCheck.cpp
+  Derleniyor...
+  HackPacketCheck.cpp
+  HackSkillCheck.cpp
+  Helper.cpp
+  IllusionTemple.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\IllusionTemple.cpp(2694,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/IllusionTemple.cpp' kaynak dosyasç derleniyor)
+  
+  ImperialGuardian.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ImperialGuardian.cpp(1919,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ImperialGuardian.cpp' kaynak dosyasç derleniyor)
+  
+  InvasionManager.cpp
+  InventoryEquipment.cpp
+  IpManager.cpp
+  Item.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1029,26): warning C4334: '<<': 32-bit kaydçrmançn sonucu îrtÅk olarak 64-bite dînÅütÅrÅldÅ (64-bit kaydçrmayç mç amaálçyordunuz?) [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1796,10): warning C4305: 'return': 'int' iken 'bool' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1812,10): warning C4305: 'return': 'int' iken 'bool' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1822,10): warning C4305: 'return': 'int' iken 'bool' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1832,10): warning C4305: 'return': 'int' iken 'bool' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1848,10): warning C4305: 'return': 'int' iken 'bool' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Item.cpp(1858,10): warning C4305: 'return': 'int' iken 'bool' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Item.cpp' kaynak dosyasç derleniyor)
+  
+  ItemBag.cpp
+  ItemBagEx.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ItemBagEx.cpp(215,23): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ItemBagEx.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ItemBagEx.cpp(349,23): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ItemBagEx.cpp' kaynak dosyasç derleniyor)
+  
+  ItemBagManager.cpp
+  ItemDrop.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ItemDrop.cpp(118,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ItemDrop.cpp' kaynak dosyasç derleniyor)
+  
+  ItemLevel.cpp
+  ItemManager.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ItemManager.cpp(3243,58): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ItemManager.cpp' kaynak dosyasç derleniyor)
+  
+  ItemMove.cpp
+  ItemOption.cpp
+  ItemOptionRate.cpp
+  ItemStack.cpp
+  ItemValue.cpp
+  Derleniyor...
+  ItemValueTrade.cpp
+  JSProtocol.cpp
+  JewelMix.cpp
+  JewelOfHarmonyOption.cpp
+  JewelOfHarmonyType.cpp
+  Kalima.cpp
+  Kanturu.cpp
+  KanturuBattleOfMaya.cpp
+  KanturuBattleOfNightmare.cpp
+  KanturuBattleStanby.cpp
+  KanturuBattleUserMng.cpp
+  KanturuEntranceNPC.cpp
+  KanturuMaya.cpp
+  KanturuMonsterMng.cpp
+  KanturuObjInfo.cpp
+  KanturuStateInfo.cpp
+  KanturuTowerOfRefinement.cpp
+  KanturuUtil.cpp
+  LifeStone.cpp
+  Log.cpp
+  Derleniyor...
+  LuckyCoin.cpp
+  LuckyItem.cpp
+  Map.cpp
+  MapItem.cpp
+  MapManager.cpp
+  MapPath.cpp
+  MapServerManager.cpp
+  MasterSkillTree.cpp
+  MemScript.cpp
+  MemoryAllocator.cpp
+  MemoryAllocatorInfo.cpp
+  Mercenary.cpp
+  Message.cpp
+  MiniDump.cpp
+  MiniMap.cpp
+  MiningSystem.cpp
+  MocNap.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(290,3): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(386,55): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(386,45): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(390,55): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(390,45): warning C4244: 'baßçmsçz deßiüken': 'short' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(428,22): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(436,82): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(436,116): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(436,150): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(436,184): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(436,218): warning C4838: 'int ile 'BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(438,6): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/MocNap.cpp' kaynak dosyasç derleniyor)
+  
+  Monster.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(757,53): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(798,48): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(846,51): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(887,51): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Monster.cpp(1003,48): warning C4018: '>': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Monster.cpp' kaynak dosyasç derleniyor)
+  
+  MonsterAI.cpp
+  MonsterAIAgro.cpp
+  Derleniyor...
+  MonsterAIAutomata.cpp
+  MonsterAIAutomataInfo.cpp
+  MonsterAIElement.cpp
+  MonsterAIElementInfo.cpp
+  MonsterAIGroup.cpp
+  MonsterAIGroupMember.cpp
+  MonsterAIMovePath.cpp
+  MonsterAIMovePathInfo.cpp
+  MonsterAIRule.cpp
+  MonsterAIRuleInfo.cpp
+  MonsterAIState.cpp
+  MonsterAIUnit.cpp
+  MonsterAIUnitInfo.cpp
+  MonsterAIUtil.cpp
+  MonsterManager.cpp
+  MonsterSetBase.cpp
+  MonsterSkillElement.cpp
+  MonsterSkillElementInfo.cpp
+  MonsterSkillElementOption.cpp
+  MonsterSkillInfo.cpp
+  Derleniyor...
+  MonsterSkillManager.cpp
+  MonsterSkillUnit.cpp
+  MonsterSkillUnitInfo.cpp
+  MossMerchant.cpp
+  Move.cpp
+  MoveSummon.cpp
+  MuRummy.cpp
+  MuunSystem.cpp
+  NewUIMyInventory.cpp
+  Notice.cpp
+  NpcTalk.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/NpcTalk.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/NpcTalk.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/NpcTalk.cpp' kaynak dosyasç derleniyor)
+  
+  ObjectManager.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.h(41,16): warning C4091: 'typedef ': hiábir deßiüken bildirimi yapçlmadçßçnda 'VCSEV_COUNTLIST' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(1318,109): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(1322,109): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5189,68): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5193,68): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5201,50): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5205,40): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5209,50): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5213,50): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ObjectManager.cpp(5218,59): warning C4244: 'baßçmsçz deßiüken': 'QWORD' - 'int' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ObjectManager.cpp' kaynak dosyasç derleniyor)
+  
+  OfflineMode.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\OfflineMode.cpp(763,90): warning C4805: '==' : iülemde gÅvenli olmayan 'BYTE' tÅrÅ ve 'bool' tÅrÅ karçüçmç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/OfflineMode.cpp' kaynak dosyasç derleniyor)
+  
+  PacketManager.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/PacketManager.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+  Party.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Party.cpp(283,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Party.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Party.cpp(330,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Party.cpp' kaynak dosyasç derleniyor)
+  
+  PartyMatching.cpp
+  Path.cpp
+  PcPoint.cpp
+  PentagramSystem.cpp
+  PersonalShop.cpp
+  Derleniyor...
+  Protect.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protect.cpp(115,27): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protect.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protect.cpp(119,19): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protect.cpp' kaynak dosyasç derleniyor)
+  
+  Protocol.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.h(41,16): warning C4091: 'typedef ': hiábir deßiüken bildirimi yapçlmadçßçnda 'VCSEV_COUNTLIST' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protocol.cpp(2208,20): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protocol.cpp(6194,40): warning C4244: '=': 'float' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Protocol.cpp(6201,45): warning C4244: '=': 'float' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Protocol.cpp' kaynak dosyasç derleniyor)
+  
+  Quest.cpp
+  QuestObjective.cpp
+  QuestReward.cpp
+  QuestWorld.cpp
+  QuestWorldObjective.cpp
+  QuestWorldReward.cpp
+  Queue.cpp
+  QueueTimer.cpp
+  Raklion.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Raklion.cpp(527,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Raklion.cpp' kaynak dosyasç derleniyor)
+  
+  RaklionBattleOfSelupan.cpp
+  RaklionBattleUser.cpp
+  RaklionBattleUserMng.cpp
+  RaklionObjInfo.cpp
+  RaklionSelupan.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\RaklionSelupan.cpp(364,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/RaklionSelupan.cpp' kaynak dosyasç derleniyor)
+  
+  RaklionUtil.cpp
+  RandomManager.cpp
+  Reconnect.cpp
+  ReiDoMu.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ReiDoMu.cpp(850,21): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ReiDoMu.cpp' kaynak dosyasç derleniyor)
+  
+  Derleniyor...
+  ResetTable.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ResetTable.cpp(396,29): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ResetTable.cpp' kaynak dosyasç derleniyor)
+  
+  ResetTableVIP.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ResetTableVIP.cpp(357,29): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ResetTableVIP.cpp' kaynak dosyasç derleniyor)
+  
+  RespawnLocation.cpp
+  RewardSystem.cpp
+  RuudTokenSellTemplate.cpp
+  AUTOHP.cpp
+  CustomItemSetPro.cpp
+  CustomJewelBank.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\CustomJewelBank.cpp(75,27): warning C4244: '=': 'WORD' - 'BYTE' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SPK/CustomJewelBank.cpp' kaynak dosyasç derleniyor)
+  
+  EventMainManager.cpp
+  PC_AddBuff.cpp
+  SPK_Harmony.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\SPK_Harmony.cpp(253,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SPK/SPK_Harmony.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\SPK_Harmony.cpp(260,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SPK/SPK_Harmony.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\SPK_Harmony.cpp(267,21): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SPK/SPK_Harmony.cpp' kaynak dosyasç derleniyor)
+  
+  SPK_MonsterSkill.cpp
+  SkillDamage.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\SkillDamage.cpp(100,19): warning C4101: 'SkillDamageInfo': yerel deßiüken baüvurusu kaldçrçldç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SPK/SkillDamage.cpp' kaynak dosyasç derleniyor)
+  
+  SauChangeItem.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SauChangeItem.cpp(559,7): warning C4101: 'tmp2': yerel deßiüken baüvurusu kaldçrçldç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SauChangeItem.cpp' kaynak dosyasç derleniyor)
+  
+  ScheduleManager.cpp
+  SerialCheck.cpp
+  ServerDisplayer.cpp
+  ServerInfo.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.h(41,16): warning C4091: 'typedef ': hiábir deßiüken bildirimi yapçlmadçßçnda 'VCSEV_COUNTLIST' solunda yoksayçlçr [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(179,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(454,21): warning C4067: în iülemci yînergesinden sonra beklenmeyen belirteáler var - satçr sonu bekleniyordu [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(4589,15): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(4600,51): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(4601,52): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(4602,52): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(4603,52): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ServerInfo.cpp(4604,53): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ServerInfo.cpp' kaynak dosyasç derleniyor)
+  
+  SetItemOption.cpp
+  SetItemType.cpp
+  Derleniyor...
+  Shop.cpp
+  ShopManager.cpp
+  Skill.cpp
+  SkillHitBox.cpp
+  SkillManager.cpp
+  SocketItemOption.cpp
+  SocketItemType.cpp
+  SocketManager.cpp
+C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5): warning C4297: 'CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase': iülevin îzel durum oluüturmasç beklenmiyor ancak oluüturuyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+      C:\Axion Mu Source\Source\Util\cryptopp\algparam.h(277,5):
+      yçkçcç ve birleütiricinin (muhtemelen îrtÅk) oluümayan bir îzel durum belirtimi var
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SocketManager.cpp(139,21): warning C4996: 'WSASocketA': Use WSASocketW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SocketManager.cpp(727,31): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SocketManager.cpp(754,36): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SocketManager.cpp(771,21): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManager.cpp' kaynak dosyasç derleniyor)
+  
+  SocketManagerUdp.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SocketManagerUdp.cpp(70,39): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManagerUdp.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SocketManagerUdp.cpp(75,19): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/SocketManagerUdp.cpp' kaynak dosyasç derleniyor)
+  
+  StatsAdvance.cpp
+  SummonScroll.cpp
+  TeleportMarlon.cpp
+  ThuMuaDoExc.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(34,37): warning C4805: '==' : iülemde gÅvenli olmayan 'int' tÅrÅ ve 'bool' tÅrÅ karçüçmç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(733,46): warning C4566: '\u1EC9' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(733,46): warning C4566: '\u1EA7' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(733,46): warning C4566: '\u0169' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(739,46): warning C4566: '\u1EAD' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(739,46): warning C4566: '\u1EA9' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(739,46): warning C4566: '\u1EA3' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(739,46): warning C4566: '\u0111' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(739,46): warning C4566: '\u1ED3' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(832,44): warning C4566: '\u0110' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(832,44): warning C4566: '\u1ED5' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(832,44): warning C4566: '\u1ED3' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(832,44): warning C4566: '\u1EA5' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(832,44): warning C4566: '\u1EA1' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(836,44): warning C4566: '\u0110' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(836,44): warning C4566: '\u1ED5' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(836,44): warning C4566: '\u1ED3' evrensel karakter adç ile temsil edilen karakter üu anki kod sayfasçnda (1254) temsil gîsterilemiyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(861,1): warning C4102: 'Cancel': etiket baüvurusu kaldçrçldç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/ThuMuaDoExc.cpp' kaynak dosyasç derleniyor)
+  
+  Trade.cpp
+  Union.cpp
+  UnionInfo.cpp
+  User.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\User.cpp(2683,59): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\User.cpp(2700,59): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/User.cpp' kaynak dosyasç derleniyor)
+  
+  Util.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(653,20): warning C4018: '<': iüaretli/iüaretsiz uyuümazlçßç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(697,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(698,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(703,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(704,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(713,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(714,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(724,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(725,10): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(803,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(834,61): warning C4244: 'baßçmsçz deßiüken': 'DWORD' - 'WORD' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Util.cpp(816,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Util.cpp' kaynak dosyasç derleniyor)
+  
+  Viewport.cpp
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4838: 'int ile 'const BYTE arasçnda dînÅütÅrme bir daraltma dînÅütÅrmesi gerektiriyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4305: 'baülatçlçyor': 'int' iken 'const BYTE' olarak kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CTCMini.h(201,99): warning C4309: 'baülatçlçyor': sabit deßer kesildi [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+C:\Axion Mu Source\Source\4.GameServer\GameServer\Viewport.cpp(2345,53): warning C4390: ';': boü denetlenen deyim bulundu; amaálanan bu muydu? [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  ('/Viewport.cpp' kaynak dosyasç derleniyor)
+  
+  Warehouse.cpp
+  Derleniyor...
+  ZenDrop.cpp
+  pugixml.cpp
+  Kod Åretiliyor
+  2 of 20025 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    292 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
