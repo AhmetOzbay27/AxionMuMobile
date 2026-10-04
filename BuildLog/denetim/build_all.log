@@ -2,7 +2,7 @@
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
   Main.vcxproj -> C:\Axion Mu Source\ClientFile\Main.exe
-EXIT_client=0 (1 sn)
+EXIT_client=0 (3 sn)
 ===== cs603 (Release_EX603) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\ConnectServer.vcxproj]
@@ -218,11 +218,11 @@ EXIT_layout_603_0=0
 ===== cs803 (Release_EX803) =====
 
   ConnectServer.vcxproj -> C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\Release\ConnectServer_EX803\ConnectServer.exe
-EXIT_cs803=0 (0 sn)
+EXIT_cs803=0 (1 sn)
 ===== js803 (Release_EX803) =====
 
   JoinServer.vcxproj -> C:\Axion Mu Source\Source\3.JoinServer\JoinServer\Release\JoinServer_EX803\JoinServer.exe
-EXIT_js803=0 (0 sn)
+EXIT_js803=0 (1 sn)
 ===== ds803 (Release_EX803) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
@@ -232,7 +232,7 @@ EXIT_ds803=0 (1 sn)
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
   GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
-EXIT_gs803=0 (2 sn)
+EXIT_gs803=0 (1 sn)
 ===== LAYOUT 803/1 =====
 H-018 viewport paket d√ºzeni denetimi
 GAMESERVER_UPDATE=803  HAISLOTRING=1  (EQUIPMENT_LENGTH=17, MAX_ID_SIZE=10, MAX_BUFF_SLOT_INDEX=32)

@@ -11,6 +11,7 @@
     bash BuildLog/denetim/build_all.sh              # tam: istemci + EX603 + EX803
     bash BuildLog/denetim/build_all.sh --no-client  # yalniz sunucular
     bash BuildLog/denetim/build_all.sh --help
+    bash BuildLog/denetim/build_all.sh --logdir DIR  # ciktilari DIR altina yaz (pre-push kancasi, docs/39)
 
 Onceki basit `build_all.sh` (yalniz EX803 yigini + Main, dogrulamasiz) bu surumle
 degistirildi; davranis ust kume + dogrulama + ozet.

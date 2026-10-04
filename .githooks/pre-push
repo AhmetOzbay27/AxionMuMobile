@@ -1,0 +1,7 @@
+#!/bin/bash
+# pre-push kancasi (docs/39): 603 derleme kapisi + build_all.sh dogrulamalari.
+# Kurulum (klon basina bir kez): bash BuildLog/denetim/install_hooks.sh
+# Atlatma (acil durum): git push --no-verify
+set -u
+ROOT="$(git rev-parse --show-toplevel)" || exit 1
+exec bash "$ROOT/BuildLog/denetim/pre_push_check.sh"

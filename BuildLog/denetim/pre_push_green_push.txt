@@ -1,0 +1,11 @@
+pre-push dogrulama basladi | HEAD=87c53e61f izlenen-kirli=4
+UYARI: calisma agaci zaten kirli (4 izlenen dosya); dogrulama HEAD'i degil calisma agacini olcer.
+[1/3] build_all.sh (9 hedef, artimli; --logdir=pre_push/build_all_son) ...
+[1/3] build_all.sh OK (17 sn, 12/12)
+[2/3] 603 kapisi: canli makro (603+0) derlemesi, GEC bekleniyor ...
+[2/3] 603 kapisi canli OK (5 sn, GATE_EXIT=0)
+[3/3] 603 kapisi: yanlis makro (HAISLOTRING=1) derlemesi, KIRILMA bekleniyor ...
+[3/3] 603 kapisi negatif OK (3 sn, C1189, exit=2)
+PRE_PUSH_SONUC=PASS | build_all 12/12 + 603 canli/negatif + yeni-kirli temiz | 27 sn
+To C:/Axion Mu Source/BuildLog/denetim/pre_push/test_remote.git
+ * [new branch]          main -> main

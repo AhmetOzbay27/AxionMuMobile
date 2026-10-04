@@ -1,0 +1,7 @@
+pre-push dogrulama basladi | HEAD=87c53e61f izlenen-kirli=5
+UYARI: calisma agaci zaten kirli (5 izlenen dosya); dogrulama HEAD'i degil calisma agacini olcer.
+[1/3] build_all.sh (9 hedef, artimli; --logdir=pre_push/build_all_son) ...
+PRE_PUSH_SONUC=FAIL (build_all.sh BASARISIZ (exit=1, 17 sn) - ozet: BuildLog/denetim/pre_push/build_all_son/build_all_summary.txt)
+Ayrinti: BuildLog/denetim/pre_push/pre_push.log
+Acil durumda atlatma: git push --no-verify
+error: failed to push some refs to 'C:/Axion Mu Source/BuildLog/denetim/pre_push/test_remote.git'

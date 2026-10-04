@@ -2,10 +2,12 @@
 # build_all.sh - tek komutla dogrulanmis derleme + log (docs/38).
 # Hedefler (varsayilan): EX603 istemci (Main "Global Release") + EX603 ve EX803
 # sunucu yiginlari (ConnectServer, JoinServer, DataServer, GameServer).
-# Kullanim:  bash BuildLog/denetim/build_all.sh [--no-client] [--help]
+# Kullanim:  bash BuildLog/denetim/build_all.sh [--no-client] [--logdir DIR] [--help]
 # Cikti:     BuildLog/denetim/build_all.log           (tam bolumlu log)
 #            BuildLog/denetim/build_all/targets/*.log (hedef bazli loglar)
 #            BuildLog/denetim/build_all_summary.txt    (ozet + dogrulama)
+#            --logdir DIR verilirse bu uc dosya DIR altina yazilir (varsayilan:
+#            BuildLog/denetim); pre-push kancasi boyle cagirir (docs/39).
 # Dogrulama: hedef bazinda exit kodu + ': error ' taramasi + cikti ikilisi
 #            (boyut/md5) + tel duzeni (viewport_layout.js) + GS config makrolari.
 # Cikis:     tum hedefler gecerse 0, aksi halde 1.
@@ -15,17 +17,24 @@ export MSYS2_ARG_CONV_EXCL='*'
 ROOT='/c/Axion Mu Source'
 cd "$ROOT" || exit 1
 NOCLIENT=0
-for a in "$@"; do
-  case "$a" in
+LOGDIR=''
+while [ $# -gt 0 ]; do
+  case "$1" in
     --no-client) NOCLIENT=1 ;;
-    --help|-h) sed -n '2,12p' "$0"; exit 0 ;;
-    *) echo "Bilinmeyen arguman: $a"; exit 1 ;;
+    --logdir)
+      shift
+      [ $# -gt 0 ] || { echo "HATA: --logdir bir dizin bekliyor"; exit 1; }
+      LOGDIR="$1" ;;
+    --help|-h) sed -n '2,14p' "$0"; exit 0 ;;
+    *) echo "Bilinmeyen arguman: $1"; exit 1 ;;
   esac
+  shift
 done
 D="$ROOT/BuildLog/denetim"
-OUT="$D/build_all"; TLOGS="$OUT/targets"
+LD="${LOGDIR:-$D}"
+OUT="$LD/build_all"; TLOGS="$OUT/targets"
 mkdir -p "$TLOGS"
-MASTER="$D/build_all.log"; SUM="$D/build_all_summary.txt"
+MASTER="$LD/build_all.log"; SUM="$LD/build_all_summary.txt"
 : > "$MASTER"; : > "$SUM"
 MSB="${MSBUILD:-/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe}"
 [ -x "$MSB" ] || { echo "HATA: MSBuild bulunamadi: $MSB"; exit 1; }

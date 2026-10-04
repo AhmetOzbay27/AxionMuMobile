@@ -10,6 +10,28 @@
 
 
 
+## [26.10.04 20:02] pre-push kancasi: 603 kapisi + build_all dogrulamalari her push oncesi
+
+**Ne yapildi**
+
+`.githooks/pre-push` + `BuildLog/denetim/pre_push_check.sh`: her push oncesi
+build_all.sh 9 hedef + tel duzeni + GS makrolari (12 kontrol) ciktilari izlenmez
+dizine yazarak, 603 kapisi canli makro derlemesi (GECMELI) + negatif derleme
+(C1189 ile KIRILMALI) kosar; kanca kosusu izlenen bir dosyayi degistirdiyse
+(or. yeniden linklenen ikili) push bloklanir. Kurulum `install_hooks.sh`
+(core.hooksPath=.githooks); atlatma `git push --no-verify`. `build_all.sh`
+`--logdir DIR` kazandi (varsayilan davranis ayni).
+
+**Dogrulama**
+
+- Yesil: elle EXIT=0 (34 sn); gercek push EXIT=0, kanca PASS (27 sn), dummy remote
+  `main -> main`. Kirmizi: tel duzeni bozukken elle/gercek push EXIT=1,
+  `failed to push some refs`; dummy remote refsiz kaldi.
+- Arg regresyonu: `--help` EXIT=0 + log md5 leri degismedi; `--bogus` EXIT=1;
+  `--logdir` degersiz EXIT=1. Varsayilan kosu: 12/12 PASS, EXIT=0 (19:53).
+
+**Rapor:** `docs/39-PUSH-ONCESI-KANCA.md`
+
 ## [26.10.04 14:15] build_all.sh --help duzeltmesi: log dosyalari artik sifirlanmiyor
 
 **Ne yapildi**
