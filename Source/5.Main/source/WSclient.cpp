@@ -84,6 +84,38 @@
 #include "CB_OffTrade.h"
 #endif
 
+// ---------------------------------------------------------------------------
+// 04.10.2026 (docs/37): 603 TEL DUZENI DERLEME-ZAMANI KAPISI (Main projesi).
+// Main yalnizca canli SPK 5.2 konfigurasyonu ile derlenir:
+//   GAMESERVER_UPDATE=603 + GAMESERVER_HAISLOTRING=0
+// (canli sunucu: Release_EX603 + HAISLOTRING=0). Yanlis makro ile derleme
+// burada KIRILIR; farkli bir cift (or. EX803 testi) icin once bu kapi bilincli
+// olarak degistirilir.
+// Kanit: canli GameServer.pdb -> PLAYER 36 / CHANGE 38 / MONSTER 20 / SUMMON 20;
+// count@+35/+37/+19/+16; MONSTER CurHp@+9, Level@+10, Life@+12
+// (BuildLog/2e7/live_pdb_viewport_layout.txt). Bagimsiz dis denetim:
+// BuildLog/denetim/verify_603_layout.cpp (ayni sayilar).
+#include <cstddef>
+
+#if (GAMESERVER_UPDATE != 603) || (GAMESERVER_HAISLOTRING != 0)
+#error Main yalniz canli SPK 5.2 ile derlenir: GAMESERVER_UPDATE=603 + GAMESERVER_HAISLOTRING=0 (bkz. docs/37)
+#endif
+
+// Tel govde boylari (sifir buff) = canli sunucu kayit boylari
+static_assert(sizeof(PCREATE_CHARACTER) - MAX_BUFF_SLOT_INDEX == 36, "PLAYER tel boyu 36 olmali");
+static_assert(sizeof(PCREATE_TRANSFORM) - MAX_BUFF_SLOT_INDEX == 38, "CHANGE tel boyu 38 olmali");
+static_assert(sizeof(PCREATE_SUMMON)  - MAX_BUFF_SLOT_INDEX == 20, "SUMMON tel boyu 20 olmali");
+static_assert(sizeof(PCREATE_MONSTER) - MAX_BUFF_SLOT_INDEX == 20, "MONSTER tel boyu 20 olmali");
+// Canli PDB count ofsetleri
+static_assert(offsetof(PCREATE_CHARACTER, s_BuffCount) == 35, "PLAYER count@+35");
+static_assert(offsetof(PCREATE_TRANSFORM, s_BuffCount) == 37, "CHANGE count@+37");
+static_assert(offsetof(PCREATE_SUMMON, s_BuffCount) == 19, "SUMMON count@+19");
+static_assert(offsetof(PCREATE_MONSTER, s_BuffCount) == 16, "MONSTER count@+16");
+// Canli PDB MONSTER alan ofsetleri (603 dali)
+static_assert(offsetof(PCREATE_MONSTER, CurHp) == 9, "MONSTER CurHp@+9");
+static_assert(offsetof(PCREATE_MONSTER, Level) == 10, "MONSTER Level@+10");
+static_assert(offsetof(PCREATE_MONSTER, Life) == 12, "MONSTER Life@+12");
+
 #define MAX_DEBUG_MAX 10
 
 extern BYTE m_AltarState[];

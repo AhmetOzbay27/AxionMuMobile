@@ -1,0 +1,3 @@
+WSclient.cpp
+C:\Axion Mu Source\Source\5.Main\source\WSclient.cpp(101): fatal error C1189: #error:  Main yalniz canli SPK 5.2 ile derlenir: GAMESERVER_UPDATE=603 + GAMESERVER_HAISLOTRING=0 (bkz. docs/37)
+GATE_EXIT_bad_hais1=2

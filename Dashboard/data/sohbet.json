@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 12:08",
+  "updated": "2026-10-04 13:33",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 13:33",
+      "kim": "ajan",
+      "text": "603 TEL DUZENI DERLEME KAPISI (docs/37). (istek: \"603 tel duzeni dogrulamasini (verify_603_layout) Main projesine derleme-zamani kapisi olarak ekle; yanlis makroyla derleme kirilsin\")\n\nYAPILANLAR\n - verify_603_layout denetimi urun kaynagina tasindi: WSclient.cpp icinde #error makro kilidi + 11 static_assert (tel 36/38/20/20, count +35/+37/+19/+16, MONSTER +9/+10/+12).\n - Kullanici karari: Main yalniz canli 603+0 (GAMESERVER_UPDATE=603 + HAISLOTRING=0) derlenir; diger kombinasyonlar C1189 ile kirilir. EX803/603+1 bilincli kapi degisikligi gerektirir.\n - Bayat EX803 yorumlari guncellendi (WSclient.h x3, Defined_Global.h).\n\nDOGRULAMA\n - Canli makro tek dosya: EXIT=0 (gate_live603.log); /DGAMESERVER_HAISLOTRING=1 ve /DGAMESERVER_UPDATE=803: C1189 + EXIT=2 (gate_bad_*.log).\n - MSBuild Main Global Release|Win32 v143 incremental: 0 error, EXIT=0 (main_gate_build.log); yeni Main.exe vs HEAD kod ozdes (13 bayt meta) -> HEAD e geri alindi.\n - Harici verify_603_layout.cpp tekrar EXIT=0; kapi metni wsclient_gate.block.txt.\n\nKALAN\n - H-018 runtime dogrulamasi (EX603 GS + yeni Main.exe ile giris/cikis sahnesi) bekliyor.\n - K1 dagitim yolu ve B3/gcoin kararlari acik.\n\nKanit: docs/37-603-DERLEME-KAPISI.md - BuildLog/denetim/"
+    },
     {
       "ts": "2026-10-04 12:08",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-03 00:32",
       "kim": "ajan",
       "text": "ISCI/SUPERVISOR KURULDU + PARITE OLCUMU: docs/30 5 eksenli manifest (GS 11/60, CFG 28/56, CLI 8/60, PROTO 5/60, E2E 6/60) + docs/31 istemci ekseni is emri. ANA KESIF: canli istemcinin ozellik listesi GetEngine.ini'deki 20 slotlu MENU_BUTTON_xx dizisi; bizim istemcide 0 referans. SUPERVISOR NOTU: 3.1 ajani hala aktif (run19 E2E kosulari, son commit b125733be benim). Commit: b125733be. GitHub engeli: remote yok, gh yok, kimlik yok — push icin repo URL + yetki gerekli."
-    },
-    {
-      "ts": "2026-10-02 22:35",
-      "kim": "kullanıcı",
-      "text": "Geri kalan adımlarıda uygulamaya başla ve change log güncelleyip gereksiz dosya temizliği yap."
     }
   ]
 }

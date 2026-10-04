@@ -10,6 +10,32 @@
 
 
 
+## [26.10.04 13:33] 603 tel duzeni derleme-zamani kapisi: Main yalniz canli 603+0 derlenir (docs/37)
+
+**Ne yapildi**
+
+`verify_603_layout` denetimi urun kaynagina tasindi: `WSclient.cpp` icine `#error`
+makro kilidi + 11 `static_assert` eklendi (tel govde 36/38/20/20, count ofsetleri
++35/+37/+19/+16, MONSTER CurHp/Level/Life +9/+10/+12). Bayat EX803 yorumlari
+guncellendi (`WSclient.h` x3, `Defined_Global.h`).
+
+**Kapsam (kullanici karari)**
+
+Yalniz canli 603+0 kabul edilir; 603+1 / 803+1 / 803+0 ve digerleri C1189 ile kirilir.
+EX803 istemci derlemesi artik bilincli kapi degisikligi gerektirir.
+
+**Dogrulama**
+
+- Canli makroyla tek dosya derleme: EXIT=0 (`BuildLog/denetim/gate_live603.log`).
+- `/DGAMESERVER_HAISLOTRING=1` ve `/DGAMESERVER_UPDATE=803`: C1189 + EXIT=2
+  (`gate_bad_hais1.log`, `gate_bad_803.log`).
+- MSBuild Main Global Release|Win32 v143 (incremental): 0 error, EXIT=0
+  (`main_gate_build.log`); WSclient.cpp yeniden derlendi, Main.exe linklendi.
+- Yeni Main.exe vs HEAD: kod bolumleri ozdes (yalniz 13 bayt meta) -> HEAD e geri
+  alindi (docs/36 kurali).
+- Harici denetim `verify_603_layout.cpp` tekrar: EXIT=0.
+
+**Rapor:** `docs/37-603-DERLEME-KAPISI.md`
 ## [26.10.04 12:08] GetMain ikili karari: sahipsiz yeniden derleme HEAD e geri alindi (docs/36)
 
 **Ne yapildi**

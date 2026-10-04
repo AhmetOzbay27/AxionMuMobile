@@ -78,8 +78,8 @@
 #define HAISLOTRING								1
 // 04.10.2026 (docs/34): SPK 5.2 canli sunucusu GAMESERVER_UPDATE=603 +
 // HAISLOTRING=0 ile derlenmis (canli GameServer.pdb viewport: 36/38/20/20).
-// Istatemci varsayilani canli ile aynidir; EX803 test cifti icin derleme
-// satirina /DGAMESERVER_UPDATE=803 ekleyin.
+// Istatemci varsayilani canli ile aynidir. Farkli ciftler (or. EX803) Main projesinde
+// DERLENEMEZ: derleme kapisi WSclient.cpp (docs/37).
 #ifndef GAMESERVER_UPDATE
 #define GAMESERVER_UPDATE				603
 #endif

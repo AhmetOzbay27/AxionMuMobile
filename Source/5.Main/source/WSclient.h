@@ -564,7 +564,7 @@ typedef struct {
 // Sunucudaki Viewport.h kosullari aynen istemciye uygulanir; sunucunun derleme
 // degerleri asagidaki iki makro ile verilir. Varsayilan = canli SPK 5.2:
 // GAMESERVER_UPDATE=603 + sunucu HAISLOTRING=0 (kanit: BuildLog/2e7 PDB
-// 36/38/20/20). EX803 cifti icin derlemede /DGAMESERVER_UPDATE=803 verin.
+// 36/38/20/20). Farkli ciftler Main projesinde DERLENEMEZ (kapi: WSclient.cpp, docs/37).
 // Istemcinin KENDI HAISLOTRING makrosu (UI ozellikleri) bundan bagimsizdir.
 #ifndef GAMESERVER_HAISLOTRING
 #define GAMESERVER_HAISLOTRING 0
@@ -589,7 +589,7 @@ typedef struct {
 	BYTE         Path;
 	// 04.10.2026 (docs/34): kosullar sunucudaki Viewport.h ile BIREBIR aynidir.
 	// Varsayilan = canli SPK 5.2: 603 + sunucu HAISLOTRING 0 -> 36/38/20/20
-	// (kanit: BuildLog/2e7). EX803 cifti icin /DGAMESERVER_UPDATE=803 verin.
+	// (kanit: BuildLog/2e7). Farkli cift derlemesi Main projesinde kapali (docs/37).
 #if(GAMESERVER_HAISLOTRING) && (GAMESERVER_UPDATE < 701)
 	BYTE         MuunItem[2];
 #endif
@@ -623,7 +623,7 @@ typedef struct
 	BYTE         Equipment[EQUIPMENT_LENGTH];
 	// 04.10.2026 (docs/34): kosullar sunucudaki Viewport.h ile BIREBIR aynidir.
 	// Varsayilan = canli SPK 5.2: 603 + sunucu HAISLOTRING 0 -> 36/38/20/20
-	// (kanit: BuildLog/2e7). EX803 cifti icin /DGAMESERVER_UPDATE=803 verin.
+	// (kanit: BuildLog/2e7). Farkli cift derlemesi Main projesinde kapali (docs/37).
 #if(GAMESERVER_HAISLOTRING) && (GAMESERVER_UPDATE < 701)
 	BYTE         MuunItem[2];
 #endif
