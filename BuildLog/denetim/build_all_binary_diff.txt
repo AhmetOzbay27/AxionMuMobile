@@ -1,0 +1,28 @@
+# build_all ikili karsilastirmasi (HEAD vs 13:59 kosumu) - 04.10.2026
+# yontem: BuildLog/denetim/pe_cmp2.js - PE bolum bazli bayt farki
+# not: Main.exe kod ozdes (13 bayt meta) -> HEAD e geri alindi (docs/36).
+
+--- ClientFile/Main.exe ---
+(geri almadan ONCE olculdu; sonra HEAD e geri alindi - docs/36)
+len A=12034048 B=12034048
+COFF_TS A=1791084603 B=1791111112 (26509 sn)
+total_diffs=13 by_section={"HEADER":3,".rdata":10}  -> kod bolumleri OZDES (13 bayt meta)
+
+--- MuServer/1.ConnectServer/ConnectServer.exe ---
+len A=103936 B=103936
+COFF_TS A=1790759075 B=1791111122 (352047 sn)
+header_diffs=5 [272,273,274,392,560]
+total_diffs=4113 by_section={"HEADER":5,".text":23,".rdata":4035,".reloc":50}
+
+--- MuServer/2.DataServer/DataServer.exe ---
+len A=1030656 B=1034240
+COFF_TS A=1790759131 B=1791111142 (352011 sn)
+header_diffs=369 [60,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146]
+total_diffs=178929 by_section={"HEADER":369,".text":101106,".rdata":31712,".data":2773,".rsrc":31472,".reloc":11497}
+
+--- MuServer/3.JoinServer/JoinServer.exe ---
+len A=943616 B=943616
+COFF_TS A=1790759140 B=1791111128 (351988 sn)
+header_diffs=5 [272,273,274,392,560]
+total_diffs=5222 by_section={"HEADER":5,".text":31,".rdata":5112,".reloc":74}
+

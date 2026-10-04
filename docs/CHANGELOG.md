@@ -10,6 +10,23 @@
 
 
 
+## [26.10.04 14:07] Tek komutlu dogrulanmis build script i: EX603 istemci + EX603/EX803 sunucu (docs/38)
+
+**Ne yapildi**
+
+`BuildLog/denetim/build_all.sh` yeniden yazildi: 9 derleme (Main + CS/JS/DS/GS x
+EX603/EX803), hedef bazli loglar, tel duzeni + GS config makro dogrulamalari ve
+md5 li PASS/FAIL ozeti; exit kodu sonucu yansitir. Test kosusu: 12/12 PASS, EXIT=0.
+
+**Bulgular (kosu)**
+
+- cs603/js603/ds603 izlenen ikilileri bayatti (30.09; docs/34 UUID duzeltmesi yoktu):
+  yeniden derleme kod farki getirdi (CS .text 23 B, JS .text 31 B, DS +3.584 B) ->
+  ikililer guncellendi.
+- Main.exe kod ozdes (13 bayt meta) -> HEAD e geri alindi (docs/36 kurali).
+- gs603 zaten gunceldi; degismedi.
+
+**Rapor:** `docs/38-TOPLU-DERLEME-SCRIPTI.md`
 ## [26.10.04 13:33] 603 tel duzeni derleme-zamani kapisi: Main yalniz canli 603+0 derlenir (docs/37)
 
 **Ne yapildi**

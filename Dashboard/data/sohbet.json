@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 13:33",
+  "updated": "2026-10-04 14:07",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 14:07",
+      "kim": "ajan",
+      "text": "TEK KOMUTLU DOGRULANMIS BUILD SCRIPT (docs/38). (istek: \"Sunucu + istemci derlemelerini tek komutla, dogrulamali ve log'lu calistiran bir build script'i yaz (EX603 istemci + EX603/EX803 sunucular)\")\n\nYAPILANLAR\n - BuildLog/denetim/build_all.sh yeniden yazildi: 9 derleme (Main + CS/JS/DS/GS x EX603/EX803), hedef bazli loglar, tel duzeni + GS config makro dogrulamasi, md5'li PASS/FAIL ozeti; exit kodu sonucu yansitir.\n - Test kosusu: 12/12 PASS, EXIT=0 (ozet: build_all_summary.txt; tam log: build_all.log).\n - Eski script (yalniz EX803 yigini + Main, dogrulamasiz) bu surumle degisti.\n\nBULGULAR (kosu)\n - cs603/js603/ds603 izlenen ikilileri bayatti (30.09; docs/34 UUID duzeltmesi yoktu): yeni derlemeler kod farki getirdi (CS/JS .text ~23-31 B, DS +3.584 B) -> ikililer guncellendi.\n - Main.exe kod ozdes (13 bayt meta) -> HEAD e geri alindi (docs/36).\n - Script testinde 2 hata yakalanip duzeltildi (bash ${u}_${h} genislemesi; node /c/ yolu).\n\nKALAN\n - H-018 runtime dogrulamasi (EX603 GS + istemci giris/cikis sahnesi) bekliyor.\n - K1 dagitim yolu ve B3/gcoin kararlari acik.\n\nKanit: docs/38-TOPLU-DERLEME-SCRIPTI.md - BuildLog/denetim/"
+    },
     {
       "ts": "2026-10-04 13:33",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-03 00:32",
       "kim": "kullanici",
       "text": "Patron direktifi: Faz 3.1'i yapan ajan bitene kadar bekle; sonra kalan tum isleri tamamla (sunucu + istemci, %100 SPK parite), projeyi GitHub'a yukle, CHANGELOG guncelle. Coklu ajan: isci dosya duzenler, supervisor dogrular ve patrona raporlar. Onay sorma — patron modunda."
-    },
-    {
-      "ts": "2026-10-03 00:32",
-      "kim": "ajan",
-      "text": "ISCI/SUPERVISOR KURULDU + PARITE OLCUMU: docs/30 5 eksenli manifest (GS 11/60, CFG 28/56, CLI 8/60, PROTO 5/60, E2E 6/60) + docs/31 istemci ekseni is emri. ANA KESIF: canli istemcinin ozellik listesi GetEngine.ini'deki 20 slotlu MENU_BUTTON_xx dizisi; bizim istemcide 0 referans. SUPERVISOR NOTU: 3.1 ajani hala aktif (run19 E2E kosulari, son commit b125733be benim). Commit: b125733be. GitHub engeli: remote yok, gh yok, kimlik yok — push icin repo URL + yetki gerekli."
     }
   ]
 }
