@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 14:07",
+  "updated": "2026-10-04 14:15",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 14:15",
+      "kim": "ajan",
+      "text": "Tek komutlu build script - --help duzeltmesi (docs/38). (istek: \"Sunucu + istemci derlemelerini tek komutla, dogrulamali ve log'lu calistiran bir build script'i yaz (EX603 istemci + EX603/EX803 sunucular)\")\n\nYAPILANLAR\n - `--help` ve bilinmeyen arguman, arg ayristirmadan ONCE log dosyalarini sifirliyordu; 14:07 cagrisi kanit loglarini bosaltti (0 bayt). Arg ayristirma log kirpmasindan onceye alindi.\n - Kanit loglari duzeltilmis script ile 14:11 kosusunda yeniden uretildi: 12/12 PASS, SCRIPT_EXIT=0 (build_all.log 18.229 B, ozet 1.336 B).\n - docs/38 + CHANGELOG guncellendi; script davranisi degismedi (yalniz sirali arg ayristirma).\n\nDOGRULAMA\n - --help oncesi/sonrasi log md5 leri ayni (d18c958c / 710b355c / 154a02ab), HELP_EXIT=0; --bogus BOGUS_EXIT=1 ve loglara dokunmuyor.\n - 14:11 ozeti: client 91fa8da9 (12.034.048), gs603 02f695e2 (10.656.256), gs803 d1cd380b (11.294.720); layout 603/0 + 803/1 HIZALI.\n\nKALAN\n - H-018 runtime dogrulamasi (EX603 GS + istemci giris/cikis sahnesi) bekliyor.\n - K1 dagitim yolu ve B3/gcoin kararlari acik.\n\nKanit: docs/38-TOPLU-DERLEME-SCRIPTI.md - BuildLog/denetim/build_all_summary.txt"
+    },
     {
       "ts": "2026-10-04 14:07",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-03 00:35",
       "kim": "supervisor",
       "text": "SUPERVISOR RAPORU 1 — 3.1 ajani hala aktif (BuildLog/2e4 run19, son dosya yazimi 00:33); onun dosyalarina dokunulmadi. Bekleme suresinde cakismasiz is yapildi: docs/30 (5 eksenli manifest: GS 11/60, CFG 28/56, CLI 8/60, PROTO 5/60, E2E 6/60), docs/31 (istemci ekseni is emri — canli GetEngine.ini MENU_BUTTON_xx 20 slotu, bizde 0 referans), docs/32 (protokol kaydi; GS'te 166 kullanilan / 90 bos opcode, 16 ozellige C->S + S->C tahsisi). Commit: b125733be, cc3de115c, 54b373238. Temizlik: .git tmp_obj x2, Thumbs.db/desktop.ini silindi; gerekli dosyaya dokunulmadi. GITHub ENGELI: remote yok, gh yok, kimlik yok — depo 730 MB, 100 MB ustu dosya yok (push'a hazir), patron repo URL + yetki vermeli. Not: bagimsiz alt ajan baslatamiyorum; isci/supervisor rolleri sirali ve kanit kapili yurutuluyor."
-    },
-    {
-      "ts": "2026-10-03 00:32",
-      "kim": "kullanici",
-      "text": "Patron direktifi: Faz 3.1'i yapan ajan bitene kadar bekle; sonra kalan tum isleri tamamla (sunucu + istemci, %100 SPK parite), projeyi GitHub'a yukle, CHANGELOG guncelle. Coklu ajan: isci dosya duzenler, supervisor dogrular ve patrona raporlar. Onay sorma — patron modunda."
     }
   ]
 }

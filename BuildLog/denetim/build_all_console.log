@@ -1,6 +1,6 @@
-# build_all - 2026-10-04 13:59:10 | repo 8cd89363a (izlenen degisiklik=35)
+# build_all - 2026-10-04 14:11:07 | repo c7701c57e (izlenen degisiklik=24)
 # --- EX603 (canli): istemci + sunucu yigini ---
-PASS  client  cfg=Global Release  exit=0  hata=0  boyut=12034048  md5=a851551d69d0e69b063af693bf0660ee
+PASS  client  cfg=Global Release  exit=0  hata=0  boyut=12034048  md5=91fa8da9d5e4b57f863504069d0e4f61
 PASS  cs603  cfg=Release_EX603  exit=0  hata=0  boyut=103936  md5=516d6a496b236a38d4b69cd89c8c2351
 PASS  js603  cfg=Release_EX603  exit=0  hata=0  boyut=943616  md5=4698cff71701f38909298742cad0d934
 PASS  ds603  cfg=Release_EX603  exit=0  hata=0  boyut=1034240  md5=4fe2cda2994b24c5784dfdacdbb94336
@@ -15,5 +15,5 @@ PASS  gs803  cfg=Release_EX803  exit=0  hata=0  boyut=11294720  md5=d1cd380b5b6b
 PASS  layout 803/1  exit=0  TUM PAKETLER HIZALI
 # --- ozet ---
 TOPLAM: 12 PASS / 0 FAIL (hedef+dogrulama=12)
-SONUC: TUM HEDEFLER GECTI (2026-10-04 13:59:10)
+SONUC: TUM HEDEFLER GECTI (2026-10-04 14:11:07)
 SCRIPT_EXIT=0

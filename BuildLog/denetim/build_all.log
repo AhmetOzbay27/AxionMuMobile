@@ -1,0 +1,473 @@
+===== client (Global Release) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
+  Main.vcxproj -> C:\Axion Mu Source\ClientFile\Main.exe
+EXIT_client=0 (1 sn)
+===== cs603 (Release_EX603) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\ConnectServer.vcxproj]
+  ConnectServer.vcxproj -> C:\Axion Mu Source\MuServer\1.ConnectServer\ConnectServer.exe
+EXIT_cs603=0 (1 sn)
+===== js603 (Release_EX603) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\3.JoinServer\JoinServer\JoinServer.vcxproj]
+  JoinServer.vcxproj -> C:\Axion Mu Source\MuServer\3.JoinServer\JoinServer.exe
+EXIT_js603=0 (1 sn)
+===== ds603 (Release_EX603) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  DataServer.vcxproj -> C:\Axion Mu Source\MuServer\2.DataServer\DataServer.exe
+EXIT_ds603=0 (1 sn)
+===== gs603 (Release_EX603) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServer\4.GameServer\Sub 1\GameServer\GameServer.exe
+EXIT_gs603=0 (1 sn)
+===== LAYOUT 603/0 =====
+H-018 viewport paket dÃ¼zeni denetimi
+GAMESERVER_UPDATE=603  HAISLOTRING=0  (EQUIPMENT_LENGTH=17, MAX_ID_SIZE=10, MAX_BUFF_SLOT_INDEX=32)
+
+== SUNUCU PMSG_VIEWPORT_PLAYER ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     1  BYTE x
+    3     1  BYTE y
+    4    18  BYTE[18] CharSet
+   22    10  char[10] name
+   32     1  BYTE tx
+   33     1  BYTE ty
+   34     1  BYTE DirAndPkLevel
+   35     1  BYTE count
+  sizeof = 36
+
+
+== SUNUCU PMSG_VIEWPORT_CHANGE ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     1  BYTE x
+    3     1  BYTE y
+    4     2  BYTE[2] skin
+    6    10  char[10] name
+   16     1  BYTE tx
+   17     1  BYTE ty
+   18     1  BYTE DirAndPkLevel
+   19    18  BYTE[18] CharSet
+   37     1  BYTE count
+  sizeof = 38
+
+
+== SUNUCU PMSG_VIEWPORT_MONSTER ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     2  BYTE[2] type
+    4     1  BYTE x
+    5     1  BYTE y
+    6     1  BYTE tx
+    7     1  BYTE ty
+    8     1  BYTE DirAndPkLevel
+    9     1  BYTE CurHp
+   10     2  BYTE[2] Level
+   12     4  DWORD Life
+   16     1  BYTE count
+  sizeof = 20
+
+
+== SUNUCU PMSG_VIEWPORT_SUMMON ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     2  BYTE[2] type
+    4     1  BYTE x
+    5     1  BYTE y
+    6     1  BYTE tx
+    7     1  BYTE ty
+    8     1  BYTE DirAndPkLevel
+    9    10  char[10] name
+   19     1  BYTE count
+  sizeof = 20
+
+
+== ISTEMCI PCREATE_CHARACTER ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE PositionX
+    3     1  BYTE PositionY
+    4     1  BYTE Class
+    5    17  BYTE[17] Equipment
+   22    10  BYTE[10] ID
+   32     1  BYTE TargetX
+   33     1  BYTE TargetY
+   34     1  BYTE Path
+   35     1  BYTE s_BuffCount
+   36    32  BYTE[32] s_BuffEffectState
+  sizeof = 68
+
+
+== ISTEMCI PCREATE_TRANSFORM ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE PositionX
+    3     1  BYTE PositionY
+    4     1  BYTE TypeH
+    5     1  BYTE TypeL
+    6    10  BYTE[10] ID
+   16     1  BYTE TargetX
+   17     1  BYTE TargetY
+   18     1  BYTE Path
+   19     1  BYTE Class
+   20    17  BYTE[17] Equipment
+   37     1  BYTE s_BuffCount
+   38    32  BYTE[32] s_BuffEffectState
+  sizeof = 70
+
+
+== ISTEMCI PCREATE_MONSTER ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE TypeH
+    3     1  BYTE TypeL
+    4     1  BYTE PositionX
+    5     1  BYTE PositionY
+    6     1  BYTE TargetX
+    7     1  BYTE TargetY
+    8     1  BYTE Path
+    9     1  BYTE CurHp
+   10     2  BYTE[2] Level
+   12     4  DWORD Life
+   16     1  BYTE s_BuffCount
+   17    32  BYTE[32] s_BuffEffectState
+  sizeof = 52
+
+
+== ISTEMCI PCREATE_SUMMON ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE TypeH
+    3     1  BYTE TypeL
+    4     1  BYTE PositionX
+    5     1  BYTE PositionY
+    6     1  BYTE TargetX
+    7     1  BYTE TargetY
+    8     1  BYTE Path
+    9    10  BYTE[10] ID
+   19     1  BYTE s_BuffCount
+   20    32  BYTE[32] s_BuffEffectState
+  sizeof = 52
+
+
+--- PLAYER paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 x             ( 1B) -> istemci PositionX              +2
+  OK   GS +  3 y             ( 1B) -> istemci PositionY              +3
+  OK   GS +  4 CharSet       (18B) -> istemci Class+Equipment        +4
+  OK   GS + 22 name          (10B) -> istemci ID                     +22
+  OK   GS + 32 tx            ( 1B) -> istemci TargetX                +32
+  OK   GS + 33 ty            ( 1B) -> istemci TargetY                +33
+  OK   GS + 34 DirAndPkLevel ( 1B) -> istemci Path                   +34
+  OK   GS + 35 count         ( 1B) -> istemci s_BuffCount            +35
+  sonuc: HIZALI
+
+
+--- CHANGE paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 x             ( 1B) -> istemci PositionX              +2
+  OK   GS +  3 y             ( 1B) -> istemci PositionY              +3
+  OK   GS +  4 skin          ( 2B) -> istemci TypeH+TypeL            +4
+  OK   GS +  6 name          (10B) -> istemci ID                     +6
+  OK   GS + 16 tx            ( 1B) -> istemci TargetX                +16
+  OK   GS + 17 ty            ( 1B) -> istemci TargetY                +17
+  OK   GS + 18 DirAndPkLevel ( 1B) -> istemci Path                   +18
+  OK   GS + 19 CharSet       (18B) -> istemci Class+Equipment        +19
+  OK   GS + 37 count         ( 1B) -> istemci s_BuffCount            +37
+  sonuc: HIZALI
+
+
+--- MONSTER paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 type          ( 2B) -> istemci TypeH+TypeL            +2
+  OK   GS +  4 x             ( 1B) -> istemci PositionX              +4
+  OK   GS +  5 y             ( 1B) -> istemci PositionY              +5
+  OK   GS +  6 tx            ( 1B) -> istemci TargetX                +6
+  OK   GS +  7 ty            ( 1B) -> istemci TargetY                +7
+  OK   GS +  8 DirAndPkLevel ( 1B) -> istemci Path                   +8
+  OK   GS +  9 CurHp         ( 1B) -> istemci CurHp                  +9
+  OK   GS + 10 Level         ( 2B) -> istemci Level                  +10
+  OK   GS + 12 Life          ( 4B) -> istemci Life                   +12
+  OK   GS + 16 count         ( 1B) -> istemci s_BuffCount            +16
+  sonuc: HIZALI
+
+
+--- SUMMON paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 type          ( 2B) -> istemci TypeH+TypeL            +2
+  OK   GS +  4 x             ( 1B) -> istemci PositionX              +4
+  OK   GS +  5 y             ( 1B) -> istemci PositionY              +5
+  OK   GS +  6 tx            ( 1B) -> istemci TargetX                +6
+  OK   GS +  7 ty            ( 1B) -> istemci TargetY                +7
+  OK   GS +  8 DirAndPkLevel ( 1B) -> istemci Path                   +8
+  OK   GS +  9 name          (10B) -> istemci ID                     +9
+  OK   GS + 19 count         ( 1B) -> istemci s_BuffCount            +19
+  sonuc: HIZALI
+
+
+### TUM PAKETLER HIZALI
+EXIT_layout_603_0=0
+===== cs803 (Release_EX803) =====
+
+  ConnectServer.vcxproj -> C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\Release\ConnectServer_EX803\ConnectServer.exe
+EXIT_cs803=0 (0 sn)
+===== js803 (Release_EX803) =====
+
+  JoinServer.vcxproj -> C:\Axion Mu Source\Source\3.JoinServer\JoinServer\Release\JoinServer_EX803\JoinServer.exe
+EXIT_js803=0 (0 sn)
+===== ds803 (Release_EX803) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  DataServer.vcxproj -> C:\Axion Mu Source\Source\2.DataServer\DataServer\Release\DataServer.exe
+EXIT_ds803=0 (1 sn)
+===== gs803 (Release_EX803) =====
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
+EXIT_gs803=0 (2 sn)
+===== LAYOUT 803/1 =====
+H-018 viewport paket dÃ¼zeni denetimi
+GAMESERVER_UPDATE=803  HAISLOTRING=1  (EQUIPMENT_LENGTH=17, MAX_ID_SIZE=10, MAX_BUFF_SLOT_INDEX=32)
+
+== SUNUCU PMSG_VIEWPORT_PLAYER ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     1  BYTE x
+    3     1  BYTE y
+    4    18  BYTE[18] CharSet
+   22    10  char[10] name
+   32     1  BYTE tx
+   33     1  BYTE ty
+   34     1  BYTE DirAndPkLevel
+   35     1  BYTE attribute
+   36     2  BYTE[2] MuunItem
+   38     2  BYTE[2] level
+   40     4  BYTE[4] MaxHP
+   44     4  BYTE[4] CurHP
+   48     1  BYTE count
+  sizeof = 49
+
+
+== SUNUCU PMSG_VIEWPORT_CHANGE ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     1  BYTE x
+    3     1  BYTE y
+    4     2  BYTE[2] skin
+    6    10  char[10] name
+   16     1  BYTE tx
+   17     1  BYTE ty
+   18     1  BYTE DirAndPkLevel
+   19    18  BYTE[18] CharSet
+   37     1  BYTE attribute
+   38     2  BYTE[2] MuunItem
+   40     2  BYTE[2] level
+   42     4  BYTE[4] MaxHP
+   46     4  BYTE[4] CurHP
+   50     1  BYTE count
+  sizeof = 51
+
+
+== SUNUCU PMSG_VIEWPORT_MONSTER ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     2  BYTE[2] type
+    4     1  BYTE x
+    5     1  BYTE y
+    6     1  BYTE tx
+    7     1  BYTE ty
+    8     1  BYTE DirAndPkLevel
+    9     1  BYTE attribute
+   10     2  BYTE[2] level
+   12     4  BYTE[4] MaxHP
+   16     4  BYTE[4] CurHP
+   20     1  BYTE count
+  sizeof = 21
+
+
+== SUNUCU PMSG_VIEWPORT_SUMMON ==
+  ofs  bayt  alan
+    0     2  BYTE[2] index
+    2     2  BYTE[2] type
+    4     1  BYTE x
+    5     1  BYTE y
+    6     1  BYTE tx
+    7     1  BYTE ty
+    8     1  BYTE DirAndPkLevel
+    9    10  char[10] name
+   19     1  BYTE attribute
+   20     2  BYTE[2] level
+   22     4  BYTE[4] MaxHP
+   26     4  BYTE[4] CurHP
+   30     1  BYTE count
+  sizeof = 31
+
+
+== ISTEMCI PCREATE_CHARACTER ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE PositionX
+    3     1  BYTE PositionY
+    4     1  BYTE Class
+    5    17  BYTE[17] Equipment
+   22    10  BYTE[10] ID
+   32     1  BYTE TargetX
+   33     1  BYTE TargetY
+   34     1  BYTE Path
+   35     1  BYTE Attribute
+   36     2  BYTE[2] MuunItem
+   38     2  BYTE[2] Level
+   40     4  BYTE[4] MaxHP
+   44     4  BYTE[4] CurHP
+   48     1  BYTE s_BuffCount
+   49    32  BYTE[32] s_BuffEffectState
+  sizeof = 81
+
+
+== ISTEMCI PCREATE_TRANSFORM ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE PositionX
+    3     1  BYTE PositionY
+    4     1  BYTE TypeH
+    5     1  BYTE TypeL
+    6    10  BYTE[10] ID
+   16     1  BYTE TargetX
+   17     1  BYTE TargetY
+   18     1  BYTE Path
+   19     1  BYTE Class
+   20    17  BYTE[17] Equipment
+   37     1  BYTE Attribute
+   38     2  BYTE[2] MuunItem
+   40     2  BYTE[2] Level
+   42     4  BYTE[4] MaxHP
+   46     4  BYTE[4] CurHP
+   50     1  BYTE s_BuffCount
+   51    32  BYTE[32] s_BuffEffectState
+  sizeof = 83
+
+
+== ISTEMCI PCREATE_MONSTER ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE TypeH
+    3     1  BYTE TypeL
+    4     1  BYTE PositionX
+    5     1  BYTE PositionY
+    6     1  BYTE TargetX
+    7     1  BYTE TargetY
+    8     1  BYTE Path
+    9     1  BYTE Attribute
+   10     2  BYTE[2] Level
+   12     4  BYTE[4] MaxHP
+   16     4  BYTE[4] CurHP
+   20     1  BYTE s_BuffCount
+   21    32  BYTE[32] s_BuffEffectState
+  sizeof = 53
+
+
+== ISTEMCI PCREATE_SUMMON ==
+  ofs  bayt  alan
+    0     1  BYTE KeyH
+    1     1  BYTE KeyL
+    2     1  BYTE TypeH
+    3     1  BYTE TypeL
+    4     1  BYTE PositionX
+    5     1  BYTE PositionY
+    6     1  BYTE TargetX
+    7     1  BYTE TargetY
+    8     1  BYTE Path
+    9    10  BYTE[10] ID
+   19     1  BYTE Attribute
+   20     2  BYTE[2] Level
+   22     4  BYTE[4] MaxHP
+   26     4  BYTE[4] CurHP
+   30     1  BYTE s_BuffCount
+   31    32  BYTE[32] s_BuffEffectState
+  sizeof = 63
+
+
+--- PLAYER paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 x             ( 1B) -> istemci PositionX              +2
+  OK   GS +  3 y             ( 1B) -> istemci PositionY              +3
+  OK   GS +  4 CharSet       (18B) -> istemci Class+Equipment        +4
+  OK   GS + 22 name          (10B) -> istemci ID                     +22
+  OK   GS + 32 tx            ( 1B) -> istemci TargetX                +32
+  OK   GS + 33 ty            ( 1B) -> istemci TargetY                +33
+  OK   GS + 34 DirAndPkLevel ( 1B) -> istemci Path                   +34
+  OK   GS + 35 attribute     ( 1B) -> istemci Attribute              +35
+  OK   GS + 36 MuunItem      ( 2B) -> istemci MuunItem               +36
+  OK   GS + 38 level         ( 2B) -> istemci Level                  +38
+  OK   GS + 40 MaxHP         ( 4B) -> istemci MaxHP                  +40
+  OK   GS + 44 CurHP         ( 4B) -> istemci CurHP                  +44
+  OK   GS + 48 count         ( 1B) -> istemci s_BuffCount            +48
+  sonuc: HIZALI
+
+
+--- CHANGE paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 x             ( 1B) -> istemci PositionX              +2
+  OK   GS +  3 y             ( 1B) -> istemci PositionY              +3
+  OK   GS +  4 skin          ( 2B) -> istemci TypeH+TypeL            +4
+  OK   GS +  6 name          (10B) -> istemci ID                     +6
+  OK   GS + 16 tx            ( 1B) -> istemci TargetX                +16
+  OK   GS + 17 ty            ( 1B) -> istemci TargetY                +17
+  OK   GS + 18 DirAndPkLevel ( 1B) -> istemci Path                   +18
+  OK   GS + 19 CharSet       (18B) -> istemci Class+Equipment        +19
+  OK   GS + 37 attribute     ( 1B) -> istemci Attribute              +37
+  OK   GS + 38 MuunItem      ( 2B) -> istemci MuunItem               +38
+  OK   GS + 40 level         ( 2B) -> istemci Level                  +40
+  OK   GS + 42 MaxHP         ( 4B) -> istemci MaxHP                  +42
+  OK   GS + 46 CurHP         ( 4B) -> istemci CurHP                  +46
+  OK   GS + 50 count         ( 1B) -> istemci s_BuffCount            +50
+  sonuc: HIZALI
+
+
+--- MONSTER paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 type          ( 2B) -> istemci TypeH+TypeL            +2
+  OK   GS +  4 x             ( 1B) -> istemci PositionX              +4
+  OK   GS +  5 y             ( 1B) -> istemci PositionY              +5
+  OK   GS +  6 tx            ( 1B) -> istemci TargetX                +6
+  OK   GS +  7 ty            ( 1B) -> istemci TargetY                +7
+  OK   GS +  8 DirAndPkLevel ( 1B) -> istemci Path                   +8
+  OK   GS +  9 attribute     ( 1B) -> istemci Attribute              +9
+  OK   GS + 10 level         ( 2B) -> istemci Level                  +10
+  OK   GS + 12 MaxHP         ( 4B) -> istemci MaxHP                  +12
+  OK   GS + 16 CurHP         ( 4B) -> istemci CurHP                  +16
+  OK   GS + 20 count         ( 1B) -> istemci s_BuffCount            +20
+  sonuc: HIZALI
+
+
+--- SUMMON paketi: sunucu -> istemci ---
+  OK   GS +  0 index         ( 2B) -> istemci KeyH+KeyL              +0
+  OK   GS +  2 type          ( 2B) -> istemci TypeH+TypeL            +2
+  OK   GS +  4 x             ( 1B) -> istemci PositionX              +4
+  OK   GS +  5 y             ( 1B) -> istemci PositionY              +5
+  OK   GS +  6 tx            ( 1B) -> istemci TargetX                +6
+  OK   GS +  7 ty            ( 1B) -> istemci TargetY                +7
+  OK   GS +  8 DirAndPkLevel ( 1B) -> istemci Path                   +8
+  OK   GS +  9 name          (10B) -> istemci ID                     +9
+  OK   GS + 19 attribute     ( 1B) -> istemci Attribute              +19
+  OK   GS + 20 level         ( 2B) -> istemci Level                  +20
+  OK   GS + 22 MaxHP         ( 4B) -> istemci MaxHP                  +22
+  OK   GS + 26 CurHP         ( 4B) -> istemci CurHP                  +26
+  OK   GS + 30 count         ( 1B) -> istemci s_BuffCount            +30
+  sonuc: HIZALI
+
+
+### TUM PAKETLER HIZALI
+EXIT_layout_803_1=0
+ALL_DONE

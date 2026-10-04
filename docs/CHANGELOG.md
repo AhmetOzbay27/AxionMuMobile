@@ -10,6 +10,26 @@
 
 
 
+## [26.10.04 14:15] build_all.sh --help duzeltmesi: log dosyalari artik sifirlanmiyor
+
+**Ne yapildi**
+
+`--help` ve bilinmeyen arguman yollarinda arg ayristirma, log kirpmasindan ONCEYE
+alindi; boylece yardim / yanlis kullanim cagrilari kanit loglarini bosaltmiyor.
+Kanit loglari (`build_all.log`, `build_all_summary.txt`, `build_all_console.log`)
+duzeltilmis script ile 14:11 kosusunda yeniden uretildi: **12/12 PASS, SCRIPT_EXIT=0**.
+
+**Dogrulama**
+
+- `bash BuildLog/denetim/build_all.sh --help` oncesi/sonrasi log md5 leri birebir
+  ayni: log `d18c958c`, ozet `710b355c`, konsol `154a02ab`; `HELP_EXIT=0`.
+- Bilinmeyen arguman (`--bogus`): `BOGUS_EXIT=1`, loglar yine degismedi.
+- 14:11 ozeti: client 12.034.048 / `91fa8da9...`, cs603 103.936 / `516d6a49...`,
+  js603 943.616 / `4698cff7...`, ds603 1.034.240 / `4fe2cda2...`, gs603 10.656.256 /
+  `02f695e2...`; cs803 `7e5775f8...`, js803 `504a1908...`, ds803 `dfddd76d...`,
+  gs803 `d1cd380b...`; layout 603/0 + 803/1 "TUM PAKETLER HIZALI".
+
+**Rapor:** `docs/38-TOPLU-DERLEME-SCRIPTI.md`
 ## [26.10.04 14:07] Tek komutlu dogrulanmis build script i: EX603 istemci + EX603/EX803 sunucu (docs/38)
 
 **Ne yapildi**

@@ -14,13 +14,6 @@ set -u
 export MSYS2_ARG_CONV_EXCL='*'
 ROOT='/c/Axion Mu Source'
 cd "$ROOT" || exit 1
-D="$ROOT/BuildLog/denetim"
-OUT="$D/build_all"; TLOGS="$OUT/targets"
-mkdir -p "$TLOGS"
-MASTER="$D/build_all.log"; SUM="$D/build_all_summary.txt"
-: > "$MASTER"; : > "$SUM"
-MSB="${MSBUILD:-/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe}"
-[ -x "$MSB" ] || { echo "HATA: MSBuild bulunamadi: $MSB"; exit 1; }
 NOCLIENT=0
 for a in "$@"; do
   case "$a" in
@@ -29,6 +22,13 @@ for a in "$@"; do
     *) echo "Bilinmeyen arguman: $a"; exit 1 ;;
   esac
 done
+D="$ROOT/BuildLog/denetim"
+OUT="$D/build_all"; TLOGS="$OUT/targets"
+mkdir -p "$TLOGS"
+MASTER="$D/build_all.log"; SUM="$D/build_all_summary.txt"
+: > "$MASTER"; : > "$SUM"
+MSB="${MSBUILD:-/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe}"
+[ -x "$MSB" ] || { echo "HATA: MSBuild bulunamadi: $MSB"; exit 1; }
 FAIL=0; PASS=0; TOTAL=0
 STAMP="$(date '+%Y-%m-%d %H:%M:%S')"
 HASH="$(git rev-parse --short HEAD 2>/dev/null || echo -)"

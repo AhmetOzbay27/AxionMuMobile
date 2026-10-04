@@ -1,6 +1,7 @@
 # 38 - Tek Komutlu Dogrulanmis Derleme: build_all.sh
 
-> Tarih: 2026-10-04 14:07
+> Tarih: 2026-10-04 14:15 (ilk kosu 13:59; --help duzeltmesi sonrasi kanit loglari
+> 14:11 kosusuyla yeniden uretildi)
 > Istek (kullanici): "Sunucu + istemci derlemelerini tek komutla, dogrulamali ve
 > log'lu calistiran bir build script'i yaz (EX603 istemci + EX603/EX803 sunucular)"
 > Durum: script yazildi, 3 test kosusuyla dogrulandi; son kosu **12/12 PASS, EXIT=0**.
@@ -50,11 +51,11 @@ C1189 verir ve script bunu FAIL sayar. EX803 istemcisi bilincli olarak kapalidir
 - `BuildLog/denetim/build_all_summary.txt` - PASS/FAIL ozeti (boyut + md5 ile).
 - `BuildLog/denetim/build_all_console.log` - kosu konsol kaydi (ozetle ayni satirlar).
 
-## Test kosusu (04.10 13:59) - 12/12 PASS, SCRIPT_EXIT=0
+## Test kosusu (04.10 14:11; ilk kosu 13:59) - 12/12 PASS, SCRIPT_EXIT=0
 
 | Hedef | Sonuc | Boyut (B) | md5 |
 |-------|-------|-----------|-----|
-| client | PASS | 12.034.048 | a851551d69d0e69b063af693bf0660ee |
+| client | PASS | 12.034.048 | 91fa8da9d5e4b57f863504069d0e4f61 |
 | cs603  | PASS | 103.936 | 516d6a496b236a38d4b69cd89c8c2351 |
 | js603  | PASS | 943.616 | 4698cff71701f38909298742cad0d934 |
 | ds603  | PASS | 1.034.240 | 4fe2cda2994b24c5784dfdacdbb94336 |
@@ -67,6 +68,10 @@ C1189 verir ve script bunu FAIL sayar. EX803 istemcisi bilincli olarak kapalidir
 | layout 803/1 | PASS | - | TUM PAKETLER HIZALI |
 | GS config makrolari | PASS | - | EX603=603+HAISLOTRING=0, EX803=803 |
 
+Not: client 13:59 kosusunda tam yeniden derlenip `a851551d...` uretti (yalniz 13 bayt
+meta); docs/36 geregi HEAD ikilisi (`91fa8da9...`) korundu. 14:11 kosusu MSBuild
+linkini atladi ve ozet depodaki ikiliyi dogruladi.
+
 ## Kosuda cikan bulgular
 
 1. **cs603/js603/ds603 izlenen ikilileri bayatti (30.09)** ve yeniden derleme KOD
@@ -77,12 +82,18 @@ C1189 verir ve script bunu FAIL sayar. EX803 istemcisi bilincli olarak kapalidir
    RSDS age) -> docs/36 kurali geregi HEAD'e geri alindi (md5 `91fa8da9...`).
 3. gs603 zaten gunceldi (04.10 03:07 derlemesi); yeniden link yapilmadi, degismedi.
 
-## Script testinde yakalanan 2 hata (duzeltildi)
+## Script testinde yakalanan 3 hata (duzeltildi)
 
 1. `local u="$1" h="$2" log="$OUT/layout_$u_$h.log"` -> bash `$u_` diye degisken
    arar; `set -u` ile "unbound variable". `${u}_${h}` + ayri satira bolundu.
 2. `node "$ROOT/BuildLog/..."` -> node Windows'ta `/c/...` yolunu `C:\c\...`
    cozumler; script repo kokune `cd` ettigi icin goreli yol kullanildi.
+3. `--help` ve bilinmeyen arguman, arg ayristirmadan ONCE log dosyalarini
+   sifirliyordu; 14:07 cagrisi kanit loglarini bosaltti (0 bayt). Arg ayristirma
+   log kirpmasindan onceye alindi. Dogrulama: `--help` oncesi/sonrasi log md5 leri
+   birebir ayni (d18c958c / 710b355c / 154a02ab), HELP_EXIT=0; `--bogus` ise
+   BOGUS_EXIT=1 ve loglara yine dokunmuyor. Kanit loglari 14:11 kosusuyla
+   yeniden uretildi.
 
 ## Notlar
 
