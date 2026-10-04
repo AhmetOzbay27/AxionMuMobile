@@ -10,6 +10,26 @@
 
 
 
+## [26.10.04 12:08] GetMain ikili karari: sahipsiz yeniden derleme HEAD e geri alindi (docs/36)
+
+**Ne yapildi**
+
+`GetMain/GetMainInfo.exe` + `GetMainInfo.pdb` (03.10 15:02 artigi) incelendi. Farkin
+tamami derleme meta verisi (16 bayt = COFF ts 3B + 4x debug-dir ts 12B + RSDS age 4->5
+1B); `.text` dahil tum kod bolumleri HEAD ile birebir ayni. Islevsel delta yok ->
+`git checkout --` ile HEAD e geri alindi; ikililer zaten `32f5cdcb0` soydan geliyor.
+
+**Dogrulama**
+
+- `cmp -l`: tam 16 bayt fark (`BuildLog/denetim/getmain_cmp_exe.txt`).
+- PE bolum denetimi (`BuildLog/denetim/pe_cmp.js`): fark yalniz HEADER=3 + .rdata=13;
+  diger tum bolumler + dosya uzunlugu birebir ayni.
+- Geri alma sonrasi md5 = HEAD: exe `c480e0ba...`, pdb `c1e9fe73...`; `git diff` bos.
+- Yeniden derleme kopyasi `BuildLog/Getmain/GetMainInfo.rebuilt.{exe,pdb}` arsivde.
+
+**Kural:** Kaynak degismeden ikili yeniden derleme commit edilmez.
+
+**Rapor:** `docs/36-GETMAIN-IKILI-KARARI.md`
 ## [26.10.04 06:50] Main 603 tam derlemesi EXIT=0 - K2 kapatildi (docs/35)
 
 **Ne yapildi**

@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 06:50",
+  "updated": "2026-10-04 12:08",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-04 12:08",
+      "kim": "ajan",
+      "text": "SAHIPSIZ GETMAIN IKILILERI KARARI (docs/36). (istek: \"Sahipsiz GetMain ikililerini (GetMainInfo.exe/pdb) incele: yeniden derlenmeli mi, hangi commit e ait olmali, yoksa geri alinmali mi karar ver\")\n\nYAPILANLAR\n - GetMain/GetMainInfo.exe+pdb (03.10 15:02 artigi) incelendi: fark TAM 16 bayt = COFF ts 3B + 4x debug-dir ts 12B + RSDS age 4->5 1B; .text dahil tum kod bolumleri HEAD ile birebir ayni.\n - Islevsel fark yok, kaynakta commit disi degisiklik yok, ikililer zaten 32f5cdcb0 soydan -> KARAR: HEAD e geri alindi (git checkout --).\n - Yeniden derleme kopyasi BuildLog/Getmain/GetMainInfo.rebuilt.{exe,pdb} arsivlendi.\n\nDOGRULAMA\n - cmp -l: 16 bayt (BuildLog/denetim/getmain_cmp_exe.txt); PE bolum denetimi (pe_cmp.js): fark yalniz HEADER=3 + .rdata=13.\n - Geri alma sonrasi md5 = HEAD blogu (exe c480e0ba..., pdb c1e9fe73...); git diff bos.\n\nKALAN\n - H-018 runtime dogrulamasi (EX603 GS + yeni Main.exe ile giris/cikis sahnesi) bekliyor.\n - K1 dagitim yolu ve B3/gcoin kararlari acik.\n\nKanit: docs/36-GETMAIN-IKILI-KARARI.md - BuildLog/denetim/"
+    },
     {
       "ts": "2026-10-04 06:50",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-02 22:35",
       "kim": "kullanıcı",
       "text": "Geri kalan adımlarıda uygulamaya başla ve change log güncelleyip gereksiz dosya temizliği yap."
-    },
-    {
-      "ts": "2026-10-02 22:35",
-      "kim": "ajan",
-      "text": "2e.4 TAMAM: canlı SPK-first varlık çözümleyici (SPKAsset.cpp: Local/Config eşlemesi) 20 çağrı noktasına ve harita/nesne yol paritesine (World%d -> Map\\World%d; Object -> Map\\Object; Minimap SPK\\Minimap öncelik) uygulandı; H-011/H-014/H-015 kapandı. Derleme: run14 b386bd65c4fbdc1aec840adfcfb8af8a (12.029.952 B); kaynaktaki 26 bozuk EUC-KR satırı HEAD baytlarıyla geri konuldu ve yeniden derlendi -> nihai md5 6dc52f5fb63746cb51575ab1370f7e6c, 0 hata. Sahada run14 + run15-17: diyalogsuz/çökmesiz (run17: t=21,9 s 45.87.120.29:44405 SYN_SENT); kanıt BuildLog/2e4/{results,shots,evidence} + docs/24. Bu turda ayrıca gereksiz BuildLog kopyaları (2e2/deploy 324 MB, 5Main obj 161 MB, 2e3/deploy 25 MB, 2d1 sandbox/ourtool 35 MB) silindi. Kalan: içerik/şema eşlemesi (B-08), tam Data kopyası, SPK_CRCFILE, E2E login. Commit: 8daa52f38 (2e.4; hash takibi bf3ad8666)."
     }
   ]
 }
