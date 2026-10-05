@@ -1,3 +1,39 @@
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\3.JoinServer\JoinServer\JoinServer.vcxproj]
+  stdafx.cpp
+  MD5.cpp
+  AccountManager.cpp
+  AllowableIpList.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(3800,24): warning C4244: '=': 'LONG' - 'char' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\3.JoinServer\JoinServer\JoinServer.vcxproj]
+  ('/AccountManager.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(3800,24):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Axion Mu Source\Source\3.JoinServer\JoinServer\AccountManager.cpp(83,7):
+          derlenen üablon iülevi '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,LONG(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Elem=char,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Fn=LONG (__cdecl *)(int)
+          ]
+  
+  CriticalSection.cpp
+  JoinServer.cpp
+  JoinServerProtocol.cpp
+  Log.cpp
+  MemScript.cpp
+  MiniDump.cpp
+  Protect.cpp
+  QueryManager.cpp
+  Queue.cpp
+  ServerDisplayer.cpp
+  ServerManager.cpp
+  SocketManager.cpp
+  SocketManagerUdp.cpp
+  Util.cpp
+  Kod Åretiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 708 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun Åretilmesi tamamlandç
   JoinServer.vcxproj -> C:\Axion Mu Source\MuServer\3.JoinServer\JoinServer.exe

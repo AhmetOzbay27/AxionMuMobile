@@ -1,3 +1,55 @@
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  stdafx.cpp
+  AllowableIpList.cpp
+  ArcaBattle.cpp
+  BadSyntax.cpp
+  CashShop.cpp
+  CastleDBSet.cpp
+  CB_AutoNapGame.cpp
+  CharacterManager.cpp
+  ChoTroi.cpp
+  CommandManager.cpp
+  CriticalSection.cpp
+  CSProtocol.cpp
+  DataServer.cpp
+  DataServerProtocol.cpp
+  ESProtocol.cpp
+  EventInventory.cpp
+  GensSystem.cpp
+  GuildManager.cpp
+  GuildMatching.cpp
+  Helper.cpp
+  Log.cpp
+  Derleniyor...
+  LuckyCoin.cpp
+  LuckyItem.cpp
+  MasterSkillTree.cpp
+  MemScript.cpp
+  MiniDump.cpp
+  MuRummy.cpp
+  MuunSystem.cpp
+  NewUIMyInventory.cpp
+  NpcTalk.cpp
+  PartyMatching.cpp
+  PcPoint.cpp
+  PentagramSystem.cpp
+  PersonalShop.cpp
+  Protect.cpp
+  DataStore.cpp
+  QueryManager.cpp
+  Quest.cpp
+  QuestWorld.cpp
+  Queue.cpp
+  ReiDoMU.cpp
+  Derleniyor...
+  ServerDisplayer.cpp
+  ServerManager.cpp
+  SocketManager.cpp
+  Util.cpp
+  Warehouse.cpp
+  Kod retiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 1268 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun retilmesi tamamland
   DataServer.vcxproj -> C:\Axion Mu Source\MuServer\2.DataServer\DataServer.exe

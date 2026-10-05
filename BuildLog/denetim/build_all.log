@@ -2,27 +2,421 @@
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\5.Main\Main.vcxproj]
   Main.vcxproj -> C:\Axion Mu Source\ClientFile\Main.exe
-EXIT_client=0 (3 sn)
+EXIT_client=0 (2 sn)
 ===== cs603 (Release_EX603) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\ConnectServer.vcxproj]
+  Kod Åretiliyor
+  0 of 529 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Kodun Åretilmesi tamamlandç
   ConnectServer.vcxproj -> C:\Axion Mu Source\MuServer\1.ConnectServer\ConnectServer.exe
 EXIT_cs603=0 (1 sn)
 ===== js603 (Release_EX603) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\3.JoinServer\JoinServer\JoinServer.vcxproj]
+  stdafx.cpp
+  MD5.cpp
+  AccountManager.cpp
+  AllowableIpList.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(3800,24): warning C4244: '=': 'LONG' - 'char' dînÅüÅmÅ; veri kaybç olabilir [C:\Axion Mu Source\Source\3.JoinServer\JoinServer\JoinServer.vcxproj]
+  ('/AccountManager.cpp' kaynak dosyasç derleniyor)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\algorithm(3800,24):
+      üablon îrneßi oluüturma baßlamç (înce en eski olan)
+          C:\Axion Mu Source\Source\3.JoinServer\JoinServer\AccountManager.cpp(83,7):
+          derlenen üablon iülevi '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,LONG(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' îrneßi oluüturma baüvurusuna bakçn
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Elem=char,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Fn=LONG (__cdecl *)(int)
+          ]
+  
+  CriticalSection.cpp
+  JoinServer.cpp
+  JoinServerProtocol.cpp
+  Log.cpp
+  MemScript.cpp
+  MiniDump.cpp
+  Protect.cpp
+  QueryManager.cpp
+  Queue.cpp
+  ServerDisplayer.cpp
+  ServerManager.cpp
+  SocketManager.cpp
+  SocketManagerUdp.cpp
+  Util.cpp
+  Kod Åretiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 708 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun Åretilmesi tamamlandç
   JoinServer.vcxproj -> C:\Axion Mu Source\MuServer\3.JoinServer\JoinServer.exe
-EXIT_js603=0 (1 sn)
+EXIT_js603=0 (5 sn)
 ===== ds603 (Release_EX603) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\2.DataServer\DataServer\DataServer.vcxproj]
+  stdafx.cpp
+  AllowableIpList.cpp
+  ArcaBattle.cpp
+  BadSyntax.cpp
+  CashShop.cpp
+  CastleDBSet.cpp
+  CB_AutoNapGame.cpp
+  CharacterManager.cpp
+  ChoTroi.cpp
+  CommandManager.cpp
+  CriticalSection.cpp
+  CSProtocol.cpp
+  DataServer.cpp
+  DataServerProtocol.cpp
+  ESProtocol.cpp
+  EventInventory.cpp
+  GensSystem.cpp
+  GuildManager.cpp
+  GuildMatching.cpp
+  Helper.cpp
+  Log.cpp
+  Derleniyor...
+  LuckyCoin.cpp
+  LuckyItem.cpp
+  MasterSkillTree.cpp
+  MemScript.cpp
+  MiniDump.cpp
+  MuRummy.cpp
+  MuunSystem.cpp
+  NewUIMyInventory.cpp
+  NpcTalk.cpp
+  PartyMatching.cpp
+  PcPoint.cpp
+  PentagramSystem.cpp
+  PersonalShop.cpp
+  Protect.cpp
+  DataStore.cpp
+  QueryManager.cpp
+  Quest.cpp
+  QuestWorld.cpp
+  Queue.cpp
+  ReiDoMU.cpp
+  Derleniyor...
+  ServerDisplayer.cpp
+  ServerManager.cpp
+  SocketManager.cpp
+  Util.cpp
+  Warehouse.cpp
+  Kod Åretiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 1268 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun Åretilmesi tamamlandç
   DataServer.vcxproj -> C:\Axion Mu Source\MuServer\2.DataServer\DataServer.exe
-EXIT_ds603=0 (1 sn)
+EXIT_ds603=0 (14 sn)
 ===== gs603 (Release_EX603) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  stdafx.cpp
+  CCRC32.Cpp
+  Math.cpp
+  380ItemOption.cpp
+  380ItemType.cpp
+  ArcaBattle.cpp
+  Attack.cpp
+  BattleGround.cpp
+  BattleSoccer.cpp
+  BattleSoccerManager.cpp
+  BattleSurvivor.cpp
+  BCustomChoTroi.cpp
+  BCustomEdit.cpp
+  BCustomItemBank.cpp
+  BCustomVIPChar.cpp
+  BloodCastle.cpp
+  BonusManager.cpp
+  BossGuild.cpp
+  EventGvG.cpp
+  BotBuffer.cpp
+  CannonTower.cpp
+  Derleniyor...
+  CashShop.cpp
+  CastleDeep.cpp
+  CastleSiege.cpp
+  CastleSiegeCrown.cpp
+  CastleSiegeCrownSwitch.cpp
+  CastleSiegeSync.cpp
+  CastleSiegeWeapon.cpp
+  CBCongHuong.cpp
+  CBHuyDongExc.cpp
+  CB_ActiveInvasions.cpp
+  CB_AutoNapGame.cpp
+  CB_BotTrader.cpp
+  CB_NewQuest.cpp
+  ChangeClass.cpp
+  ChaosBox.cpp
+  ChaosCastle.cpp
+  ComboSkill.cpp
+  Command.cpp
+  CommandManager.cpp
+  Connection.cpp
+  Derleniyor...
+  CriticalSection.cpp
+  Crywolf.cpp
+  CrywolfAltar.cpp
+  CrywolfObjInfo.cpp
+  CrywolfStateTimeInfo.cpp
+  CrywolfStatue.cpp
+  CrywolfSync.cpp
+  CrywolfUtil.cpp
+  CEventName.cpp
+  CSProtocol.cpp
+  CTCMini.cpp
+  CustomArena.cpp
+  CustomAttack.cpp
+  CustomBuyVip.cpp
+  CustomCombo.cpp
+  CustomCommandDescription.cpp
+  CustomDeathMessage.cpp
+  CustomEventDrop.cpp
+  CustomEventTime.cpp
+  CustomJewel.cpp
+  Derleniyor...
+  CustomMix.cpp
+  CustomMonster.cpp
+  SPK_MonsterSkill.cpp
+  CustomItemSetPro.cpp
+  CustomMonterPoint.cpp
+  CustomMove.cpp
+  CustomNoticeDrop.cpp
+  CustomNpcCollector.cpp
+  CustomNpcCommand.cpp
+  CustomNpcMove.cpp
+  CustomNpcQuest.cpp
+  CustomOnlineLottery.cpp
+  CustomPet.cpp
+  CustomPick.cpp
+  CustomPKFree.cpp
+  CustomQuest.cpp
+  CustomQuiz.cpp
+  CustomRanking.cpp
+  CustomRankUser.cpp
+  CustomStartItem.cpp
+  Derleniyor...
+  CustomStore.cpp
+  CustomTop.cpp
+  CustomVongQuay.cpp
+  CustomWing.cpp
+  CustomWingMix.cpp
+  DanhHieu.cpp
+  DarkSpirit.cpp
+  DefaultClassInfo.cpp
+  DevilSquare.cpp
+  DoubleGoer.cpp
+  DropReward.cpp
+  DSProtocol.cpp
+  Duel.cpp
+  Effect.cpp
+  EffectManager.cpp
+  ESProtocol.cpp
+  EventHideAndSeek.cpp
+  EventInventory.cpp
+  EventKillAll.cpp
+  EventPvP.cpp
+  Derleniyor...
+  EventQuickly.cpp
+  EventRunAndCatch.cpp
+  EventRussianRoulette.cpp
+  EventStart.cpp
+  EventTvT.cpp
+  ExperienceTable.cpp
+  FakeOnline.cpp
+  Filter.cpp
+  FilterRaname.cpp
+  FlyingDragons.cpp
+  Fruit.cpp
+  GameMain.cpp
+  AUTOHP.cpp
+  CustomJewelBank.cpp
+  SkillDamage.cpp
+  PC_AddBuff.cpp
+  SPK_Harmony.cpp
+  EventMainManager.cpp
+  GameMaster.cpp
+  GameServer.cpp
+  Derleniyor...
+  Gate.cpp
+  GensSystem.cpp
+  GuardianStatue.cpp
+  Guild.cpp
+  GuildClass.cpp
+  GuildMatching.cpp
+  HackCheck.cpp
+  HackPacketCheck.cpp
+  HackSkillCheck.cpp
+  Helper.cpp
+  IllusionTemple.cpp
+  ImperialGuardian.cpp
+  InvasionManager.cpp
+  InventoryEquipment.cpp
+  IpManager.cpp
+  Item.cpp
+  ItemBag.cpp
+  ItemBagEx.cpp
+  ItemBagManager.cpp
+  ItemDrop.cpp
+  Derleniyor...
+  ItemLevel.cpp
+  ItemManager.cpp
+  ItemMove.cpp
+  ItemOption.cpp
+  ItemOptionRate.cpp
+  ItemStack.cpp
+  ItemValue.cpp
+  ItemValueTrade.cpp
+  JewelMix.cpp
+  JewelOfHarmonyOption.cpp
+  JewelOfHarmonyType.cpp
+  JSProtocol.cpp
+  Kalima.cpp
+  Kanturu.cpp
+  KanturuBattleOfMaya.cpp
+  KanturuBattleOfNightmare.cpp
+  KanturuBattleStanby.cpp
+  KanturuBattleUserMng.cpp
+  KanturuEntranceNPC.cpp
+  KanturuMaya.cpp
+  Derleniyor...
+  KanturuMonsterMng.cpp
+  KanturuObjInfo.cpp
+  KanturuStateInfo.cpp
+  KanturuTowerOfRefinement.cpp
+  KanturuUtil.cpp
+  LifeStone.cpp
+  Log.cpp
+  LuckyCoin.cpp
+  LuckyItem.cpp
+  Map.cpp
+  MapItem.cpp
+  MapManager.cpp
+  MapPath.cpp
+  MapServerManager.cpp
+  MasterSkillTree.cpp
+  MemoryAllocator.cpp
+  MemoryAllocatorInfo.cpp
+  MemScript.cpp
+  Mercenary.cpp
+  Message.cpp
+  Derleniyor...
+  MiniDump.cpp
+  MiniMap.cpp
+  MiningSystem.cpp
+  MocNap.cpp
+  Monster.cpp
+  MonsterAI.cpp
+  MonsterAIAgro.cpp
+  MonsterAIAutomata.cpp
+  MonsterAIAutomataInfo.cpp
+  MonsterAIElement.cpp
+  MonsterAIElementInfo.cpp
+  MonsterAIGroup.cpp
+  MonsterAIGroupMember.cpp
+  MonsterAIMovePath.cpp
+  MonsterAIMovePathInfo.cpp
+  MonsterAIRule.cpp
+  MonsterAIRuleInfo.cpp
+  MonsterAIState.cpp
+  MonsterAIUnit.cpp
+  MonsterAIUnitInfo.cpp
+  Derleniyor...
+  MonsterAIUtil.cpp
+  MonsterManager.cpp
+  MonsterSetBase.cpp
+  MonsterSkillElement.cpp
+  MonsterSkillElementInfo.cpp
+  MonsterSkillElementOption.cpp
+  MonsterSkillInfo.cpp
+  MonsterSkillManager.cpp
+  MonsterSkillUnit.cpp
+  MonsterSkillUnitInfo.cpp
+  MossMerchant.cpp
+  Move.cpp
+  MoveSummon.cpp
+  MuRummy.cpp
+  MuunSystem.cpp
+  NewUIMyInventory.cpp
+  Notice.cpp
+  NpcTalk.cpp
+  ObjectManager.cpp
+  OfflineMode.cpp
+  Derleniyor...
+  PacketManager.cpp
+  Party.cpp
+  PartyMatching.cpp
+  Path.cpp
+  PcPoint.cpp
+  PentagramSystem.cpp
+  PersonalShop.cpp
+  Protect.cpp
+  Protocol.cpp
+  pugixml.cpp
+  Quest.cpp
+  QuestObjective.cpp
+  QuestReward.cpp
+  QuestWorld.cpp
+  QuestWorldObjective.cpp
+  QuestWorldReward.cpp
+  Queue.cpp
+  QueueTimer.cpp
+  Raklion.cpp
+  RaklionBattleOfSelupan.cpp
+  Derleniyor...
+  RaklionBattleUser.cpp
+  RaklionBattleUserMng.cpp
+  RaklionObjInfo.cpp
+  RaklionSelupan.cpp
+  RaklionUtil.cpp
+  RandomManager.cpp
+  Reconnect.cpp
+  ReiDoMu.cpp
+  ResetTable.cpp
+  ResetTableVIP.cpp
+  RespawnLocation.cpp
+  RewardSystem.cpp
+  RuudTokenSellTemplate.cpp
+  SauChangeItem.cpp
+  ScheduleManager.cpp
+  SerialCheck.cpp
+  ServerDisplayer.cpp
+  ServerInfo.cpp
+  SetItemOption.cpp
+  SetItemType.cpp
+  Derleniyor...
+  Shop.cpp
+  ShopManager.cpp
+  Skill.cpp
+  SkillHitBox.cpp
+  SkillManager.cpp
+  SocketItemOption.cpp
+  SocketItemType.cpp
+  SocketManager.cpp
+  SocketManagerUdp.cpp
+  StatsAdvance.cpp
+  SummonScroll.cpp
+  TeleportMarlon.cpp
+  ThuMuaDoExc.cpp
+  BotAlchemist.cpp
+  Trade.cpp
+  Union.cpp
+  UnionInfo.cpp
+  User.cpp
+  Util.cpp
+  Viewport.cpp
+  Derleniyor...
+  Warehouse.cpp
+  ZenDrop.cpp
+  Kod Åretiliyor
+  Previous IPDB not found, fall back to full compilation.
+  All 18987 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun Åretilmesi tamamlandç
   GameServer.vcxproj -> C:\Axion Mu Source\MuServer\4.GameServer\Sub 1\GameServer\GameServer.exe
-EXIT_gs603=0 (1 sn)
+EXIT_gs603=0 (145 sn)
 ===== LAYOUT 603/0 =====
 H-018 viewport paket d√ºzeni denetimi
 GAMESERVER_UPDATE=603  HAISLOTRING=0  (EQUIPMENT_LENGTH=17, MAX_ID_SIZE=10, MAX_BUFF_SLOT_INDEX=32)
@@ -231,8 +625,29 @@ EXIT_ds803=0 (1 sn)
 ===== gs803 (Release_EX803) =====
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir eßik áizgiyle bitmiyor. Output dizininin dÅzgÅn deßerlendirilmesi iáin bu eßik áizgi gerekli oldußundan bu oluüturma îrneßi eßik áizgiyi ekleyecek. [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  Kod Åretiliyor
+  Previous IPDB not found, fall back to full compilation.
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SauChangeItem.cpp(136): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ResetTableVIP.cpp(118): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ThuMuaDoExc.cpp(182): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\ResetTable.cpp(159): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\MocNap.cpp(133): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CustomVongQuay.cpp(128): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\SPK\CustomJewelBank.cpp(51): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CB_BotTrader.cpp(44): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBHuyDongExc.cpp(87): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CBCongHuong.cpp(674): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomItemBank.cpp(498): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomVIPChar.cpp(106): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BCustomChoTroi.cpp(124): warning C4172: yerel deßiükenin veya geáici : Error'nin adresini dîndÅrÅyor [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BattleSurvivor.cpp(871): warning C4700: baülatçlmamçü yerel deßiüken 'pMsg' kullançldç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(4682): warning C4715: 'CCommandManager::CommandSetReset': tÅm denetim yollarç deßer dîndÅrmez [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\BossGuild.cpp(1483): warning C4700: baülatçlmamçü yerel deßiüken 'GuildNumber' kullançldç [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+C:\Axion Mu Source\Source\4.GameServer\GameServer\CommandManager.cpp(4657): warning C4715: 'CCommandManager::CommandSetLevel': tÅm denetim yollarç deßer dîndÅrmez [C:\Axion Mu Source\Source\4.GameServer\GameServer\GameServer.vcxproj]
+  All 20025 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Kodun Åretilmesi tamamlandç
   GameServer.vcxproj -> C:\Axion Mu Source\MuServe Classic 5.2 Lorencia\GameServer\GameServer.exe
-EXIT_gs803=0 (1 sn)
+EXIT_gs803=0 (75 sn)
 ===== LAYOUT 803/1 =====
 H-018 viewport paket d√ºzeni denetimi
 GAMESERVER_UPDATE=803  HAISLOTRING=1  (EQUIPMENT_LENGTH=17, MAX_ID_SIZE=10, MAX_BUFF_SLOT_INDEX=32)

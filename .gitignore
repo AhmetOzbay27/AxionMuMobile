@@ -39,6 +39,27 @@ MuServer/7.DataBase/*.bak
 MuServer/7.DataBase/*.mdf
 MuServer/7.DataBase/*.ldf
 
+# ── MSBuild ara çıktıları (docs/33 §4 H1; üretim artığı, yeniden üretilebilir) ─
+*.iobj
+*.ipdb
+*.pch
+*.tlog/
+*.recipe
+
+# ── Üretim / dağıtım çıktı dizinleri (build_all.sh yeniden üretir) ───────────
+Source/*/Release/
+MuServe Classic 5.2 Lorencia/
+BuildLog/1CS/
+BuildLog/2DS/
+BuildLog/3JS/
+BuildLog/4GS/
+BuildLog/5Main/
+BuildLog/Getmain/
+BuildLog/github/
+BuildLog/h018/drvout/
+BuildLog/h018/deploy/
+BuildLog/h018/vinput/obj/
+
 # ── Üçüncü taraf kütüphaneler (depoya alınmaz; ~850 MB) ─────────────────────
 Source/5.Main/boost_1_80_0/
 

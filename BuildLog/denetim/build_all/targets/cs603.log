@@ -1,3 +1,8 @@
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(524,5): warning MSB8004: Output dizini sonda bir e§ik ‡izgiyle bitmiyor. Output dizininin dzgn de§erlendirilmesi i‡in bu e§ik ‡izgi gerekli oldu§undan bu oluŸturma ”rne§i e§ik ‡izgiyi ekleyecek. [C:\Axion Mu Source\Source\1.ConnectServer\ConnectServer\ConnectServer.vcxproj]
+  Kod retiliyor
+  0 of 529 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Kodun retilmesi tamamland
   ConnectServer.vcxproj -> C:\Axion Mu Source\MuServer\1.ConnectServer\ConnectServer.exe

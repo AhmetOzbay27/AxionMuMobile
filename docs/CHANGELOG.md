@@ -10,6 +10,48 @@
 
 
 
+## [26.10.05 08:20] Gereksiz dosya temizligi: 1067 MB + .gitignore kalici duzeltmesi (docs/41)
+
+**Ne yapildi**
+
+Disk %100 doluyken (208 MB bos) izlenmeyen uretim artiklari temizlendi:
+derleme ara dizinleri (`BuildLog/5Main,4GS,2DS,3JS,1CS`, Getmain objs), EX803
+cikti agaclari (`Source/*/Release`, `Source/Util/cryptopp/Release` objeleri -
+`MuServe Classic 5.2 Lorencia/`), h018 surucu sembolleri/ekran goruntuleri,
+istemci `Main.pdb` + bayat `ClientFile/Main`, Android/Gradle artiklari.
+Her hedefte once `git ls-files` ile izlenen dosya sayisi dogrulandi; 4GS (8) ve
+Getmain (2) icin `rm -rf` yerine `git clean -fdx` kullanildi.
+
+**Olcum**
+
+- Bos disk: 208 MB -> **1286 MB** (kazanc **1067 MB**); `BuildLog/` 671M->147M,
+  `android/` 175M->65M, `Source/1..4`+`Util` ~370M->11M.
+- `git status` izlenmeyen gurultu: 1384 -> 96 girdi. I**zlenen dosya silinmedi**
+  (yalniz onceden var olan ` M ClientFile/Main.exe` kalir).
+- Calisan E2E yigini (CS/DS/JS/GS, `BuildLog/h018/deploy`) etkilenmedi.
+
+**Kalici duzeltme**
+
+`.gitignore`: `*.iobj`, `*.ipdb`, `*.pch`, `*.tlog/`, `*.recipe`,
+`Source/*/Release/`, `MuServe Classic 5.2 Lorencia/`, `BuildLog/{1CS,2DS,3JS,4GS,5Main,Getmain,github}/`,
+`BuildLog/h018/{drvout,deploy}/`, `BuildLog/h018/vinput/obj/` -> docs/33 §4 H1 kapandi.
+
+**Duzeltme (push denemesi #1, ~20 dk)**
+
+Ilk kanca kosumu 5 hedefte dustu (7 PASS / 5 FAIL): (a) tam yeniden derleme disk'i
+yeniden doldurdu (`FTK1005`/`MSB6003`/`C1085` - "Diskte yeterli yer yok"); `%TEMP%`
+temizligi ile 711 MB acildi (`BuildLog/denetim/temp_cleanup.sh`, 6669 dosya); ayni
+kosumda EX803 CS/DS/JS hedefleri gecti. (b) silinen
+`Source/Util/cryptopp/Release/cryptlib.lib` gercekte **link girdisiydi**: referans
+vcxproj'da degil GS `stdafx.h` icindeki `#pragma comment(lib,...)` satirinda
+oldugu icin ilk taramada gorunmedi; `gs603`/`gs803` `LNK1104` ile dustu.
+`cryptlib.vcxproj` (Release/Win32/v143) ile lib yeniden uretildi.
+
+**Not:** Derleme onbellegi silindigi icin bir sonraki push oncesi pre-push kancasi
+tam yeniden derleme yapar (artik ignore'lu, ~700 MB alan).
+
+**Rapor:** `docs/41-GEREKSIZ-DOSYA-TEMIZLIGI.md`
+
 ## [26.10.05 07:20] H-018 runtime dogrulamasi: giris/cikis sahnesi + paket duzeni (docs/40)
 
 **Ne yapildi**
