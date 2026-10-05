@@ -2,6 +2,9 @@
 
 Tarih: 2026-10-05 · Durum: ✅ TAMAM · Izlenen dosya: **80.312 -> 11.837** (-68.475, %85)
 
+> **Guncelleme (docs/43):** Gecmis de yeniden yazildi - `.git` **776 MB -> 178 MB**.
+> Asagidaki "`.git` degismedi" ifadeleri bu turun (izlemeden cikarma) olcumudur.
+
 Istek: "Boost kutuphanesini surum kontrolunden cikarip indirilebilir/yerel bir
 bagimliliga donustur; depo ve push boyutunu olculebilir sekilde kucult."
 
@@ -125,8 +128,8 @@ zorlamak icin `--force`, baska hedefe acmak icin `BOOST_DEST=...`.
 
 ## 6. SINIRLAR / KALAN ISLER
 
-1. `.git` kuculmesi bu turda **saglanmadi** - gecmis yeniden yazimi (ayri karar).
-   Rewrite yapilirsa docs/42'deki bu bolum guncellenmelidir.
+1. `.git` kuculmesi: **TAMAMLANDI (docs/43)** - gecmis yeniden yazildi:
+   `.git` 776 MB -> **178 MB**, pack 766,96 -> 176,27 MiB, nesne 95.668 -> 9.942.
 2. `Main.vcxproj` L51/52/63/64/175 harici `C:\Libraries\boost_1_75_0` yollari hala
    duruyor (baska konfigurasyonlar). Temizlik ayri bir is.
 3. Boost'u izlemeyen baska makinelerin yerel kopyasi en az bir kez
