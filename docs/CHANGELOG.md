@@ -10,6 +10,45 @@
 
 
 
+## [26.10.05 10:40] Boost yerel bagimlilik: 68.475 dosya izlemeden cikarildi (docs/42)
+
+**Ne yapildi**
+
+`Source/5.Main/boost_1_80_0/` (847 MB, 68.475 dosya - depodaki tum izlenen
+dosyalarin %85'i) `git rm -r --cached` ile izlemeden cikarildi; **diskteki kopya
+korundu** (istemci derlemesi bozulmadi). `.gitignore` kurali docs/41 turunda
+zaten eklenmisti. Yerine indirilebilir/yerel bagimlilik geldi:
+
+- `BuildLog/denetim/fetch_boost.sh` (YENI): resmi arsivden indirir
+  (`archives.boost.io/.../boost_1_80_0.tar.gz`, 136.670.223 bayt, sha256
+  `4b2136f98bdd1f5857f1c3dea9ac2018effe65286cf251534b6ae20cc45e1847`), dogrular ve
+  `Source/5.Main/boost_1_80_0/` altina acar (idempotent; `--force`, `BOOST_DEST`).
+- `BuildLog/denetim/build_all.sh`: istemci hedefinden once "yerel boost include
+  var mi" on kosul kapisi; yoksa hedefler baslamadan exit 1 + fetch onerisi.
+- `.gitignore`: boost kuralinin aciklamasina geri yukleme ipucu eklendi.
+
+**Olcum**
+
+- Izlenen dosya: **80.312 -> 11.837** (-68.475, %85); izlenen ham bayt -651,6 MB.
+- `.git` 785 MB: degismedi - boost blob'lari gecmiste duruyor; gercek kuculme
+  history rewrite ister (kullanici karari). Paketteki boost payi **134,7 MB**;
+  ayrica HEAD'de bulunmayan `ClientBuild_192.168.99.200/` ~440 MB pakette duruyor.
+
+**Dogrulama**
+
+- fetch_boost.sh **gercek kosum**: indirme + sha256 + cikarma (72.069 dosya /
+  847 MB, version 1_80) -> exit 0, 278 sn. Kosum sirasinda 2 gercek hata bulunup
+  duzeltildi (hedef ust dizini yokken disk kontrolu; `MSYS2_ARG_CONV_EXCL` altinda
+  yerel curl'e POSIX yol verilmesi).
+- build_all on kosulu **negatif test**: marker gizlenince exit 1, 0 hedef basladi,
+  ozet `ONKOSUL HATA ... COZUM: fetch_boost.sh`; marker geri konuldu.
+- Arsiv karsilastirmasi: 68.235 dosya birebir ayni; 83 satir-sonu farki
+  (autocrlf normalize); 156 gercek fark - 155 dokuman/test + yalnizca
+  `dynamic_bitset.hpp` basligi (proje kodunda kullanilmiyor).
+- Pre-push kancasi: build_all 12/12 + 603 kapisi canli/negatif GECTI.
+
+**Rapor:** `docs/42-BOOST-YEREL-BAGIMLILIK.md`
+
 ## [26.10.05 08:20] Gereksiz dosya temizligi: 1067 MB + .gitignore kalici duzeltmesi (docs/41)
 
 **Ne yapildi**

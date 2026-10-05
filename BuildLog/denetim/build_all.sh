@@ -12,6 +12,8 @@
 #            (boyut/md5) + tel duzeni (viewport_layout.js) + GS config makrolari.
 # Cikis:     tum hedefler gecerse 0, aksi halde 1.
 # Not: Main istemcisi 603+0 derleme kapisina tabidir (docs/37); yanlis makroda C1189.
+# On kosul: yerel boost (Source/5.Main/boost_1_80_0, izlenmez; docs/42) yoksa
+#           istemci hedefi baslamadan durur: bash BuildLog/denetim/fetch_boost.sh
 set -u
 export MSYS2_ARG_CONV_EXCL='*'
 ROOT='/c/Axion Mu Source'
@@ -44,6 +46,19 @@ HASH="$(git rev-parse --short HEAD 2>/dev/null || echo -)"
 DIRTY="$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
 record() { echo "$1" >> "$SUM"; echo "$1"; }
 record "# build_all - $STAMP | repo $HASH (izlenen degisiklik=$DIRTY)"
+
+# --- On kosul: yerel boost bagimliligi (artik izlenmez; docs/42) ---
+if [ "$NOCLIENT" -eq 0 ]; then
+  BOOSTHDR="$ROOT/Source/5.Main/boost_1_80_0/boost/math/tools/precision.hpp"
+  if [ -f "$BOOSTHDR" ]; then
+    record "ONKOSUL OK   boost yerel bagimlilik mevcut (Source/5.Main/boost_1_80_0)"
+  else
+    record "ONKOSUL HATA boost dizini yok: $BOOSTHDR"
+    record "COZUM: bash BuildLog/denetim/fetch_boost.sh  (docs/42-BOOST-YEREL-BAGIMLILIK.md)"
+    record "SONUC: BASARISIZ ($STAMP) - eksik bagimlilik, derleme baslatilmadi"
+    exit 1
+  fi
+fi
 
 build_target() { # ad proje_win config cikti_msys
   local name="$1" proj="$2" cfg="$3" art="$4"

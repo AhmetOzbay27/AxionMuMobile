@@ -61,6 +61,7 @@ BuildLog/h018/deploy/
 BuildLog/h018/vinput/obj/
 
 # ── Üçüncü taraf kütüphaneler (depoya alınmaz; ~850 MB) ─────────────────────
+#    Geri yükleme (temiz klon, bir kez): bash BuildLog/denetim/fetch_boost.sh  (docs/42)
 Source/5.Main/boost_1_80_0/
 
 # ── Android / Gradle (ayrı proje yapısı) ────────────────────────────────────
