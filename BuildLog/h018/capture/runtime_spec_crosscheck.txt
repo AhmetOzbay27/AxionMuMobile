@@ -1,0 +1,38 @@
+# H-018 runtime paketleri <-> layout spec capraz kontrolu
+
+spec    : BuildLog/h018/capture/layout_spec_603_0.txt
+  PLAYER  sizeof=36 alan=9
+  CHANGE  sizeof=38 alan=10
+  MONSTER sizeof=20 alan=11
+  SUMMON  sizeof=20 alan=9
+
+istemci : BuildLog/h018/client/H018DRV_recv.bin (3310 bayt) -> paket=72 sapan=0
+tel     : BuildLog/h018/capture/s2c.bin (3675 bayt, K1=0x3F K2=0x24, baglanti basi=65) -> paket=72 sapan=0
+
+## Tel kaydindan cozulen kayitlar
+0x12 PLAYER  : 2 kayit
+0x13 MONSTER : 1 kayit
+0x45 CHANGE  : 0 kayit
+0x1F SUMMON  : 0 kayit
+
+  PLAYER  +0 index=10403  +2 x=143  +3 y=122  +4 CharSet=0x2000FFFFFFF3000000F8000020FFFFFF0000  +22 name="H018Test"  +32 tx=143  +33 ty=122  +34 DirAndPkLevel=3  +35 count=0
+  PLAYER  +0 index=16415  +2 x=136  +3 y=126  +4 CharSet=0x58FFFFFFFFFF000000F80000F0FFFFFF0060  +22 name="BufferElfa"  +32 tx=136  +33 ty=126  +34 DirAndPkLevel=51  +35 count=0
+  MONSTER +0 index=2816  +2 type=61440  +4 x=146  +5 y=110  +6 tx=146  +7 ty=110  +8 DirAndPkLevel=48  +9 CurHp=100  +10 Level=512  +12 Life=75  +16 count=0
+
+
+## Kontroller
+PASS  0x12 cerceve boyu = 4+1+36*n  [size=41 n=1 govde=36 beklenen=36]
+PASS  0x12 cerceve boyu = 4+1+36*n  [size=41 n=1 govde=36 beklenen=36]
+PASS  0x13 cerceve boyu = 4+1+20*n  [size=25 n=1 govde=20 beklenen=20]
+PASS  PLAYER name@+22 = H018Test (kendi karakter)  [PLAYER kayitlari=2]
+PASS  PLAYER CharSet@+4 (18B) canli
+PASS  PLAYER count@+35 = 0 (buff yok)
+PASS  MONSTER CurHp@+9 = 100
+PASS  MONSTER count@+16 = 0
+PASS  0x12 cerceve boyu = 4+1+36*n  [size=41 n=1 govde=36 beklenen=36]
+PASS  0x12 cerceve boyu = 4+1+36*n  [size=41 n=1 govde=36 beklenen=36]
+PASS  0x13 cerceve boyu = 4+1+20*n  [size=25 n=1 govde=20 beklenen=20]
+PASS  istemci duz metni = proxy tel kaydi (PLAYER 36B birebir)  [istemci=2 tel=2]
+PASS  istemci duz metni = proxy tel kaydi (MONSTER 20B birebir)  [istemci=1 tel=1]
+
+SONUC=PASS  (FAIL=0, kontrol=13)

@@ -10,6 +10,32 @@
 
 
 
+## [26.10.05 07:20] H-018 runtime dogrulamasi: giris/cikis sahnesi + paket duzeni (docs/40)
+
+**Ne yapildi**
+
+EX603 GameServer + yeni Main ile uctan uca sahne testi gecirildi: sunucu secimi
+-> GS baglantisi -> giris -> karakter listesi -> MAIN_SCENE (dunya) -> cikis(1) ->
+karakter sahnesi -> cikis(2) -> giris sahnesi. Karakter listesinin bos donme
+koku nedeni bulundu: DataServer listeyi `AccountCharacter.GameID1..5`
+slotlarindan kuruyor; `e2etest` satirinda slotlar NULL idi (karakter `Character`
+tablosunda duruyordu ama hesaba bagli degildi). Slot dolduruldu.
+
+**Dogrulama**
+
+- `H018DRV.log`: SONUC=PASS rc=0; asama0..6 tamam, MAIN_SCENE yuklendi
+  (`canli_oyuncu=2`), istemci WM_CLOSE ile temiz kapandi.
+- Runtime paketleri <-> layout spec: **13/13 PASS**. Iki bagimsiz kayit
+  (istemci duz metni `H018DRV_recv.bin` + proxy tel kaydi `s2c.bin`, K1/K2 ile
+  cozuldu) karsilastirildi; ikisi de 72 cerceve / 0 sapan ve birbiriyle bayt
+  duzeyinde ayni. PLAYER 36 B (name@+22=H018Test, count@+35), MONSTER 20 B
+  (CurHp@+9=100, count@+16).
+- Statik: `node BuildLog/2e7/viewport_layout.js 603 0` -> TUM PAKETLER HIZALI.
+- Arac duzeltmesi: `parse_gs_wire.js` iniVal() regex hatasi (tek backslash ->
+  `^s*`) giderildi; araç artik CustomerName/ServerSerial okuyabiliyor.
+
+**Rapor:** `docs/40-H018-RUNTIME-DOGRULAMA.md`
+
 ## [26.10.04 20:02] pre-push kancasi: 603 kapisi + build_all dogrulamalari her push oncesi
 
 **Ne yapildi**

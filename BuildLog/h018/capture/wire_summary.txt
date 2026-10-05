@@ -1,0 +1,21 @@
+# H-018 tel dogrulama
+kayit   : BuildLog/h018/capture/s2c.bin (3675 ham bayt)
+anahtar : CustomerName='AxionMu' ServerSerial='!571Axion@Mobile' -> K1=0x3F K2=0x24 (sum=0xa4e)
+paket   : 79 cerceve, sapan bayt=0
+opcode  : 0x00x1 0x03x1 0x0Bx2 0x0Dx3 0x0Fx3 0x12x2 0x13x1 0xA0x1 0xAEx1 0xBFx1 0xC0x1 0xD2x4 0xD3x2 0xDEx2 0xF1x6 0xF3x37 0xF6x2 0xFAx2 0xFBx1 C3C4_sifrelix6
+
+## Viewport ozeti
+0x12 PLAYER : kayit=2 | [{"off":1287,"index":10403,"x":143,"y":122,"name":"H018Test","tx":143,"ty":122,"dirPk":3,"kuyruk":0},{"off":1809,"index":16415,"x":136,"y":126,"name":"BufferElfa","tx":136,"ty":126,"dirPk":51,"kuyruk":0}]
+0x13 MONSTER: kayit=1 | [{"off":1850,"index":2816,"type":61440,"x":146,"y":110,"curHp":100,"level":512,"life":75}]
+0x1F SUMMON : kayit=0 | []
+0x45 CHANGE : kayit=0 | []
+
+## Kontroller
+PASS  0x12 PLAYER boyut = 5+36*n  [size=41 n=1 beklenen=41]
+PASS  0x12 PLAYER boyut = 5+36*n  [size=41 n=1 beklenen=41]
+PASS  0x13 MONSTER boyut = 5+20*n  [size=25 n=1 beklenen=25]
+PASS  cerceveleme saglam (sapan bayt yok)  [sapan=0]
+PASS  0x12 oyuncu paketi geldi  [kayit=2]
+PASS  kendi karakter viewport'ta (H018Test)  [index=10403 x=143 y=122]
+
+SONUC=PASS  (FAIL=0, kontrol=6)

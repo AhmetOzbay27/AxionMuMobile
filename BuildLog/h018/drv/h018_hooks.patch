@@ -1,0 +1,44 @@
+diff --git a/Source/5.Main/source/WSclient.cpp b/Source/5.Main/source/WSclient.cpp
+index c3e903947..4a5a8abb7 100644
+--- a/Source/5.Main/source/WSclient.cpp
++++ b/Source/5.Main/source/WSclient.cpp
+@@ -12227,6 +12227,11 @@ extern int g_MaxMessagePerCycle;
+ 
+ void ProtocolCompiler( CWsctlc *pSocketClient, int iTranslation, int iParam)
+ {
++	//H-018 runtime test kancasi (yalniz H018_TDRV derlemesinde)
++#ifdef H018_TDRV
++	extern void H018LoopTick(void);
++	H018LoopTick();
++#endif
+ 	//if(CurrentProtocolState >= RECEIVE_JOIN_MAP_SERVER)
+ 	//	return;
+ 	//== Fix FPS
+@@ -13461,6 +13466,11 @@ void Receive_Master_SkillList(BYTE* ReceiveBuffer)
+ //==== Protocol.
+ BOOL TranslateProtocol( int HeadCode, BYTE *ReceiveBuffer, int Size, BOOL bEncrypted)
+ {
++	//H-018 runtime test kancasi (yalniz H018_TDRV derlemesinde)
++#ifdef H018_TDRV
++	extern void H018PktDump(int HeadCode, BYTE* buf, int size, BOOL enc);
++	H018PktDump(HeadCode, ReceiveBuffer, Size, bEncrypted);
++#endif
+ 	if (ReceiveBuffer[0] == 0xC1)
+ 	{
+ 		LPPHEADER_DEFAULT_SUBCODE Data = (LPPHEADER_DEFAULT_SUBCODE)ReceiveBuffer;
+diff --git a/Source/5.Main/source/ZzzScene.cpp b/Source/5.Main/source/ZzzScene.cpp
+index 0a443b864..ceba452bf 100644
+--- a/Source/5.Main/source/ZzzScene.cpp
++++ b/Source/5.Main/source/ZzzScene.cpp
+@@ -3806,6 +3806,11 @@ extern GLvoid KillGLWindow(GLvoid);
+ void Scene(HDC hDC)
+ {
+ 	//::Sleep(1);
++	//H-018 runtime test kancasi (yalniz H018_TDRV derlemesinde)
++#ifdef H018_TDRV
++	extern void H018DrvTick(void);
++	H018DrvTick();
++#endif
+     g_render_lock->lock();
+     wglMakeCurrent(hDC, g_hRC);
+     try

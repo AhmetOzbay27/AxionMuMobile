@@ -1,0 +1,13 @@
+{"ev":"proxy_start","ts":"2026-10-04T22:42:27.229Z","ports":[55920,55901],"target":{"host":"127.0.0.1","port":55902}}
+{"ev":"conn_open","id":1,"from":"45.87.120.29:63079 -> :55920","ts":"2026-10-04T22:42:57.021Z","s2c_off":0,"c2s_off":0}
+{"ev":"conn_close","id":1,"side":"gs","ts":"2026-10-04T22:43:59.534Z","s2c_off":41,"c2s_off":122}
+{"ev":"conn_close","id":1,"side":"client","ts":"2026-10-04T22:43:59.535Z","s2c_off":41,"c2s_off":122}
+{"ev":"conn_open","id":2,"from":"85.217.149.3:46998 -> :55901","ts":"2026-10-04T23:34:28.005Z","s2c_off":41,"c2s_off":122}
+{"ev":"conn_close","id":2,"side":"gs","ts":"2026-10-04T23:34:28.018Z","s2c_off":53,"c2s_off":365}
+{"ev":"conn_close","id":2,"side":"client","ts":"2026-10-04T23:34:28.020Z","s2c_off":53,"c2s_off":365}
+{"ev":"conn_open","id":3,"from":"85.217.149.1:39366 -> :55901","ts":"2026-10-05T00:42:43.246Z","s2c_off":53,"c2s_off":365}
+{"ev":"conn_close","id":3,"side":"gs","ts":"2026-10-05T00:42:43.254Z","s2c_off":65,"c2s_off":373}
+{"ev":"conn_close","id":3,"side":"client","ts":"2026-10-05T00:42:43.255Z","s2c_off":65,"c2s_off":373}
+{"ev":"conn_open","id":4,"from":"45.87.120.29:52234 -> :55920","ts":"2026-10-05T03:37:04.250Z","s2c_off":65,"c2s_off":373}
+{"ev":"conn_close","id":4,"side":"client","ts":"2026-10-05T03:37:56.261Z","s2c_off":3675,"c2s_off":647}
+{"ev":"conn_close","id":4,"side":"gs","ts":"2026-10-05T03:37:56.262Z","s2c_off":3675,"c2s_off":647}

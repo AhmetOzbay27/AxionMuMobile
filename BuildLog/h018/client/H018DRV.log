@@ -1,0 +1,41 @@
+[t=0] H018DRV baslat: Main_h018 (H018_TDRV) sahne=1 protokol=0
+[t=0] yazma: log=1 pkt=1 raw=1
+[t=0] uyari: H018DRV.ini yok -> varsayilan e2etest/test123 dwell=25000
+[t=0] kimlik id='e2etest' sifre_uzunluk=7 dwell=25000 ms
+[t=0] dongu: sahne=1 protokol=0 paket=0
+[t=891] nabiz: asama=0 sahne=1 protokol=0 paket=0
+[t=24094] dongu: sahne=2 protokol=0 paket=0
+[t=24156] nabiz: asama=0 sahne=2 protokol=0 paket=0
+[t=33516] dongu: sahne=2 protokol=0 paket=0
+[t=33609] nabiz: asama=0 sahne=2 protokol=0 paket=2
+[t=33609] asama0: LOG_IN_SCENE + sunucu listesi hazir (protokol=0) - 1 sn oturma
+[t=35641] asama0 OK: grup_sira=1 sunucu_idx=1 connect_idx=0 yuzde=0 nonpvp=0x01 -> SendRequestServerAddress
+[t=38687] dongu: sahne=2 protokol=2 paket=4
+[t=38812] nabiz: asama=1 sahne=2 protokol=2 paket=4
+[t=38812] asama1 OK: GS baglantisi kuruldu (protokol=2) -> SendRequestLogIn('e2etest')
+[t=42922] asama2 OK: karakter listesi geldi secilen idx=0 id='H018Test' -> StartGame()
+[t=43406] asama3 OK: MAIN_SCENE dunya yuklendi | karakter='H018Test' idx=0 konum=(0,0) canli_oyuncu=0 canli_yaratik=0
+[t=43687] dongu: sahne=5 protokol=60 paket=8
+[t=44062] nabiz: asama=4 sahne=5 protokol=60 paket=8
+[t=48766] dongu: sahne=5 protokol=60 paket=8
+[t=49187] nabiz: asama=4 sahne=5 protokol=60 paket=8
+[t=53781] dongu: sahne=5 protokol=60 paket=8
+[t=54187] nabiz: asama=4 sahne=5 protokol=60 paket=8
+[t=56109] asama4 ara: canli_oyuncu=0 canli_yaratik=0
+[t=58812] dongu: sahne=5 protokol=60 paket=8
+[t=59187] nabiz: asama=4 sahne=5 protokol=60 paket=8
+[t=63812] dongu: sahne=5 protokol=60 paket=8
+[t=65484] nabiz: asama=4 sahne=5 protokol=61 paket=41
+[t=80719] dongu: sahne=5 protokol=61 paket=41
+[t=80812] nabiz: asama=4 sahne=5 protokol=61 paket=69
+[t=80812] asama4 OK: dunya beklemesi bitti (canli_oyuncu=2 canli_yaratik=0) -> SendRequestLogOut(1)
+[t=86516] dongu: sahne=5 protokol=61 paket=69
+[t=86812] nabiz: asama=5 sahne=4 protokol=0 paket=74
+[t=86812] asama5 OK: cikis(1) sonrasi CHARACTER_SCENE (protokol=0) -> SendRequestLogOut(2)
+[t=88016] asama6 OK: tam cikis - LOG_IN_SCENE (protokol=0)
+[t=88016] == OZET: paket=75 ==
+[t=88016] bas kodlari: 0x00=2 0x01=0 0x0F=3 0x12=2 0x13=1 0x1F=0 0x1C=0 0x45=0 0xF1=4 0xF3=39 0xF4=2
+[t=88016] son canli: oyuncu=2 yaratik=0 | karakter='H018Test' idx=0
+[t=88016] SONUC=PASS rc=0
+[t=88016] H018DRV log kapaniyor
+[t=90391] kapanis: WM_CLOSE gonderiliyor

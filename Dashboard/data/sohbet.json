@@ -1,7 +1,12 @@
 {
-  "updated": "2026-10-04 20:02",
+  "updated": "2026-10-05 07:20",
   "note": "AJAN PROTOKOLU: her turun sonunda en üste 1 kayit ekle (kullanici istegi + yapilan + commit). Panel son 15 kaydi gosterir. Tarih/saat damgasi zorunlu. KURAL (02.10.2026): test/doğrulama işi biter bitmez sunucu yığını KAPATILIR (GameServer/DataServer/JoinServer/ConnectServer — taskkill //IM ... //F); ihtiyaç anında yeniden açılır (docs/00 §5.1). Sunucu yapım aşamasında, oyuncu yok — gerekçe: sistem performansı + tur hızı.",
   "entries": [
+    {
+      "ts": "2026-10-05 07:20",
+      "kim": "ajan",
+      "text": "H-018 runtime dogrulamasi: giris/cikis sahnesi + paket duzeni (docs/40). (istek: \"EX603 GameServer + yeni Main.exe ile giris/cikis sahnesi testini yapip H-018 viewport paket duzeni runtime'da dogrula\")\n\nYAPILANLAR\n - Yerel test yigini ayakta dogrulandi (CS 44405 / proxy 55901 / GS 55902 / DS 63002 / JS 63003); deploy GS md5 = MuServer EX603 ikilisi ile ayni.\n - Bos karakter listesinin koku: DataServer listeyi `AccountCharacter.GameID1..5` slotlarindan kuruyor; `e2etest` slotlari NULL idi. `fix_account_char.sql` ile slot dolduruldu.\n - Surucu (Main_h018.exe) uctan uca gecti: sunucu secimi -> GS -> giris -> karakter (`H018Test`) -> MAIN_SCENE dunya -> cikis(1) -> karakter sahnesi -> cikis(2) -> giris sahnesi; SONUC=PASS rc=0.\n\nDOGRULAMA\n - Runtime paketleri <-> layout spec (603/0): **13/13 PASS**. Iki bagimsiz kayit (istemci duz metni + proxy teli, K1/K2=0x3F/0x24) birebir ayni; 72 cerceve / 0 sapan.\n - PLAYER 36 B (name@+22=\"H018Test\", count@+35=0), MONSTER 20 B (CurHp@+9=100, Level@+10, Life@+12, count@+16=0).\n - Statik capraz kontrol: `viewport_layout.js 603 0` -> TUM PAKETLER HIZALI. Arac hatasi (parse_gs_wire.js iniVal) duzeltildi.\n\nKALAN\n - CHANGE/SUMMON runtime kaniti (donusum/pet sahnesi ile tetiklenmeli); spec tarafi hazir.\n - K1 (EX803 dagitim yolu) ve B3/gcoin kararlari acik.\n\nKanit: docs/40-H018-RUNTIME-DOGRULAMA.md - BuildLog/h018/capture/runtime_spec_crosscheck.txt - BuildLog/h018/client/H018DRV.log"
+    },
     {
       "ts": "2026-10-04 20:02",
       "kim": "ajan",
@@ -71,11 +76,6 @@
       "ts": "2026-10-03 01:55",
       "kim": "ajan",
       "text": "2e.5 COMMIT KAPANDI — kod + doküman + kanıt tek commit'te (010c41da8), hash takibi b7a9ae062.\n\nStaged: Source/5.Main/source/{ZzzInfomation.cpp,ZzzInfomation.h,ZzzOpenData.cpp}, ClientFile/Main.exe,\ndocs/25-2E5-B08-TEST-E2E.md (yeni) + docs/02 + docs/03 + docs/04 + docs/CHANGELOG, pano (sohbet+sonuc),\nBuildLog/2e4 kanıtları (build_2e5*.log, results/run18-26*.json, shots/*.png, evidence/KEN_run26.txt) ve\nE2E araç betikleri (run19_watch.ps1, run22_e2e.ps1, make_connectip.js, trap.js, serve.js, shot_*.ps1,\napply_open_data_patch.js, dashboard_update_2e5.js, connectip_*.bmd). 111 dosya / +2924 satır.\n\nDiğer ajanlara ait dokunulmadı: docs/00,05,07,08,09,13 · Source/4.GameServer · Source/6.GetMainInfo ·\nMuServer/* · GetMain/GetMainInfo.exe · onların untracked dosyaları (docs/14-20, BuildLog/2c1, 2d1, envanter).\nEncoding kontrolü: 9 dosyanın diff'inde 0 U+FFFD (Korece EUC-KR dosyalarında bozulma yok).\n\nGITHUB PENGEL: .git/config içinde remote YOK, gh CLI yok, PAT/SSH anahtarı yok → push için repo URL +\nkimlik doğrulama yöntemi patron onayı bekleniyor. Kullanıcı talebi: \"githuba yükle\"."
-    },
-    {
-      "ts": "2026-10-03 01:20",
-      "kim": "ajan",
-      "text": "2e.5 TAMAM — B-08 (SPK ToolTipText) + FAZ 3 E2E BAĞLANTI KANITI (docs/25).\n\nB-08: canlı pakette itemtooltiptext_*.bmd yok; tablo düz metin Data\\SPK\\Config\\ToolTipText.txt (19 kayıt) içinde.\nYeni yükleyici load_item_tooltip_text_spk() (ZzzInfomation.cpp) tabloyu tooltip_text_data[] üyesine aktarıyor\n(markup <f c=...></f> temizliği, type=-1), ZzzOpenData itemtooltiptext çözümlenemezse çözümleyici üzerinden çağırıyor.\nRuntime kanıt (Release): KEN.txt → \"[SPK] ToolTipText: 19 kayit\". Derleme md5 c49383bf62c412bf53adf1ec62c67f77 (12.031.488 B).\n\nFAZ 3.1: CS/DS/JS/GS + MuOnlineS6 DB + MuOnlineS6ODBC DSN; GS ServerVersion=1.03.34/ServerSerial=!571Axion@Mobile;\nCS ServerList → 45.87.120.29:55901; e2etest hesabı; istemci ConnectIP = 45.87.120.29:63000 (make_connectip.js).\nFAZ 3.2 (kısmi): istemci ConnectServer'a TCP ESTABLISHED (t≈4,4 s; 100 ms örnekleme) + SUNUCU SEÇİM EKRANI görüntülendi;\ndiyalog/çökme/kalıntı süreç yok (run21/22/26).\n\nYENİ BULGULAR: (H-016) istemci 127.0.0.1 hedefini kasten reddediyor (WSctlc.cpp:230 → hiç SYN yok + MESSAGE_SERVER_LOST)\n→ E2E hedefi makinenin gerçek IPv4'ü olmalı; (H-017) ajan oturumu disconnected (GetForegroundWindow()==0) → UI tıklaması\notomatikleştirilemiyor; sunucu seç → GS/login adımı etkileşimli masaüstü oturumunda elle koşulacak (run22-25 denemeleri, docs/25 §4.3).\n\nKAPANIŞ: H-005/H-006/H-007 kapatıldı (docs/04); B-08 → docs/03 ✅; Faz 3 durumu docs/02; test yığını KAPATILDI (§5.1);\ngeçici kopyalar silindi (2e2\\deploy, 2e3\\deploy, 5Main → ~513 MB kazanç).\n\nGITHUB: remote tanımlı değil, gh CLI ve kimlik bilgisi yok → repo URL + erişim bilgisi gerekli (patron onayı bekleniyor)."
     }
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "spec": "BuildLog/h018/capture/layout_spec_603_0.txt",
+  "specSizes": {
+    "player": 36,
+    "change": 38,
+    "monster": 20,
+    "summon": 20
+  },
+  "sources": {
+    "istemci": {
+      "file": "BuildLog/h018/client/H018DRV_recv.bin",
+      "bytes": 3310,
+      "packets": 72,
+      "stray": 0
+    },
+    "tel": {
+      "file": "BuildLog/h018/capture/s2c.bin",
+      "bytes": 3675,
+      "packets": 72,
+      "stray": 0,
+      "K1": 63,
+      "K2": 36,
+      "connStart": 65
+    }
+  },
+  "records": {
+    "player": 2,
+    "monster": 1,
+    "change": 0,
+    "summon": 0
+  },
+  "checks": [
+    {
+      "name": "0x12 cerceve boyu = 4+1+36*n",
+      "ok": true,
+      "detail": "size=41 n=1 govde=36 beklenen=36"
+    },
+    {
+      "name": "0x12 cerceve boyu = 4+1+36*n",
+      "ok": true,
+      "detail": "size=41 n=1 govde=36 beklenen=36"
+    },
+    {
+      "name": "0x13 cerceve boyu = 4+1+20*n",
+      "ok": true,
+      "detail": "size=25 n=1 govde=20 beklenen=20"
+    },
+    {
+      "name": "PLAYER name@+22 = H018Test (kendi karakter)",
+      "ok": true,
+      "detail": "PLAYER kayitlari=2"
+    },
+    {
+      "name": "PLAYER CharSet@+4 (18B) canli",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "PLAYER count@+35 = 0 (buff yok)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "MONSTER CurHp@+9 = 100",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "MONSTER count@+16 = 0",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "0x12 cerceve boyu = 4+1+36*n",
+      "ok": true,
+      "detail": "size=41 n=1 govde=36 beklenen=36"
+    },
+    {
+      "name": "0x12 cerceve boyu = 4+1+36*n",
+      "ok": true,
+      "detail": "size=41 n=1 govde=36 beklenen=36"
+    },
+    {
+      "name": "0x13 cerceve boyu = 4+1+20*n",
+      "ok": true,
+      "detail": "size=25 n=1 govde=20 beklenen=20"
+    },
+    {
+      "name": "istemci duz metni = proxy tel kaydi (PLAYER 36B birebir)",
+      "ok": true,
+      "detail": "istemci=2 tel=2"
+    },
+    {
+      "name": "istemci duz metni = proxy tel kaydi (MONSTER 20B birebir)",
+      "ok": true,
+      "detail": "istemci=1 tel=1"
+    }
+  ],
+  "verdict": "PASS",
+  "fails": 0
+}

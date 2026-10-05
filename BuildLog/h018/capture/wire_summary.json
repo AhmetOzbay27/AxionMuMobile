@@ -1,0 +1,108 @@
+{
+  "s2c": "BuildLog/h018/capture/s2c.bin",
+  "rawBytes": 3675,
+  "packets": 79,
+  "stray": 0,
+  "hist": {
+    "0xF1": 6,
+    "0xF3": 37,
+    "C3C4_sifreli": 6,
+    "0xDE": 2,
+    "0x0F": 3,
+    "0x03": 1,
+    "0xD3": 2,
+    "0xA0": 1,
+    "0xD2": 4,
+    "0xBF": 1,
+    "0x12": 2,
+    "0x0D": 3,
+    "0x00": 1,
+    "0xFB": 1,
+    "0x13": 1,
+    "0xC0": 1,
+    "0xF6": 2,
+    "0xAE": 1,
+    "0xFA": 2,
+    "0x0B": 2
+  },
+  "keys": {
+    "customer": "AxionMu",
+    "serial": "!571Axion@Mobile",
+    "K1": 63,
+    "K2": 36,
+    "sum": 2638
+  },
+  "vp": {
+    "players": [
+      {
+        "off": 1287,
+        "index": 10403,
+        "x": 143,
+        "y": 122,
+        "name": "H018Test",
+        "tx": 143,
+        "ty": 122,
+        "dirPk": 3,
+        "kuyruk": 0
+      },
+      {
+        "off": 1809,
+        "index": 16415,
+        "x": 136,
+        "y": 126,
+        "name": "BufferElfa",
+        "tx": 136,
+        "ty": 126,
+        "dirPk": 51,
+        "kuyruk": 0
+      }
+    ],
+    "monsters": [
+      {
+        "off": 1850,
+        "index": 2816,
+        "type": 61440,
+        "x": 146,
+        "y": 110,
+        "curHp": 100,
+        "level": 512,
+        "life": 75
+      }
+    ],
+    "summons": [],
+    "changes": []
+  },
+  "checks": [
+    {
+      "name": "0x12 PLAYER boyut = 5+36*n",
+      "ok": true,
+      "detail": "size=41 n=1 beklenen=41"
+    },
+    {
+      "name": "0x12 PLAYER boyut = 5+36*n",
+      "ok": true,
+      "detail": "size=41 n=1 beklenen=41"
+    },
+    {
+      "name": "0x13 MONSTER boyut = 5+20*n",
+      "ok": true,
+      "detail": "size=25 n=1 beklenen=25"
+    },
+    {
+      "name": "cerceveleme saglam (sapan bayt yok)",
+      "ok": true,
+      "detail": "sapan=0"
+    },
+    {
+      "name": "0x12 oyuncu paketi geldi",
+      "ok": true,
+      "detail": "kayit=2"
+    },
+    {
+      "name": "kendi karakter viewport'ta (H018Test)",
+      "ok": true,
+      "detail": "index=10403 x=143 y=122"
+    }
+  ],
+  "verdict": "PASS"
+}
